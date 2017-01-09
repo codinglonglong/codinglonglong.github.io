@@ -105,7 +105,7 @@
 'scale_images', (97792, 56)
 'copy_assets:output\\assets\\css\\images\\ie6\\borderTopLeft.png', (98304, 526)
 'copy_assets:output\\assets\\fonts\\glyphicons-halflings-regular.woff2', (99328, 540)
-'sitemap:output\\sitemap.xml', (162304, 2631)
+'sitemap:output\\sitemap.xml', (162304, 2629)
 'copy_assets:output\\assets\\css\\images\\controls.png', (102400, 506)
 'render_galleries:output\\galleries', (102912, 145)
 'render_taxonomies:output\\rss.xml', (131072, 1152)
