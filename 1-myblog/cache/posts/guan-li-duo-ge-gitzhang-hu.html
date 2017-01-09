@@ -1,0 +1,44 @@
+<p>因为博客用了两个github账户，一个放文章，一个放图片，所以出现了两个git账户同时存在的问题。这时可以通过如下的方法解决冲突：</p>
+<ol class="arabic simple">
+<li>生成两个ssh key.</li>
+</ol>
+<pre class="code bash"><a name="rest_code_ee30a8a1a31849bf9ff5074ff1b4ae9a-1"></a>&gt;&gt; ssh-keygen -t rsa -C <span class="s2">&quot;email address 1&quot;</span>
+<a name="rest_code_ee30a8a1a31849bf9ff5074ff1b4ae9a-2"></a>&gt;&gt; ssh-keygen -t rsa -C <span class="s2">&quot;email address 2&quot;</span>
+</pre><ol class="arabic simple" start="2">
+<li>添加上一步生成的两个ssh key.</li>
+</ol>
+<pre class="code bash"><a name="rest_code_e51552ede4804630afb587ffd9c4b872-1"></a>&gt;&gt; ssh-add ~/.ssh/id_rsa1
+<a name="rest_code_e51552ede4804630afb587ffd9c4b872-2"></a>&gt;&gt; ssh-add ~/.ssh/id_rsa2
+</pre><ol class="arabic simple" start="3">
+<li>创建配置文件.</li>
+</ol>
+<pre class="code bash"><a name="rest_code_66c9c21315144d46b2a16724f713a307-1"></a>&gt;&gt; touch config
+</pre><table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-1"> 1</a>
+<a href="#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-2"> 2</a>
+<a href="#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-3"> 3</a>
+<a href="#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-4"> 4</a>
+<a href="#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-5"> 5</a>
+<a href="#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-6"> 6</a>
+<a href="#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-7"> 7</a>
+<a href="#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-8"> 8</a>
+<a href="#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-9"> 9</a>
+<a href="#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-10">10</a></pre></div></td><td class="code"><pre class="code bash"><a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-1"></a><span class="c1"># github1</span>
+<a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-2"></a>Host github1
+<a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-3"></a>     HostName github.com
+<a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-4"></a>     PreferredAuthentications publickey
+<a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-5"></a>     IdentityFile ~/.ssh/id_rsa1
+<a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-6"></a><span class="c1"># github2</span>
+<a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-7"></a>Host github2
+<a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-8"></a>     HostName github.com
+<a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-9"></a>     PreferredAuthentications publickey
+<a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-10"></a>     IdentityFile ~/.ssh/id_rsa2
+</pre></td></tr></table><ol class="arabic simple" start="4">
+<li>测试.</li>
+</ol>
+<pre class="code bash"><a name="rest_code_5bc22e57ff614e5b971ec9b58a782dd0-1"></a>&gt;&gt; ssh -T git@github1
+<a name="rest_code_5bc22e57ff614e5b971ec9b58a782dd0-2"></a>&gt;&gt; ssh -T git@github2
+</pre><p><strong>注意</strong></p>
+<ol class="arabic simple">
+<li>过程之中遇到yes或者no，都输入yes。</li>
+<li>生成的ssh key别忘了放进github的“设置”里，并且注意结尾不能有回车。</li>
+</ol>

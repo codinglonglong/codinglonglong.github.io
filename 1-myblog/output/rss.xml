@@ -1,5 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><lastBuildDate>Mon, 09 Jan 2017 12:31:54 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>友情链接</title><link>https://codinglonglong.github.io/posts/you-qing-lian-jie/</link><dc:creator>龙龙</dc:creator><description>&lt;ul class="simple"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><lastBuildDate>Mon, 09 Jan 2017 13:56:40 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>管理多个git账户</title><link>https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;因为博客用了两个github账户，一个放文章，一个放图片，所以出现了两个git账户同时存在的问题。这时可以通过如下的方法解决冲突：&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;生成两个ssh key.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_ee30a8a1a31849bf9ff5074ff1b4ae9a-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh-keygen -t rsa -C &lt;span class="s2"&gt;"email address 1"&lt;/span&gt;
+&lt;a name="rest_code_ee30a8a1a31849bf9ff5074ff1b4ae9a-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh-keygen -t rsa -C &lt;span class="s2"&gt;"email address 2"&lt;/span&gt;
+&lt;/pre&gt;&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;添加上一步生成的两个ssh key.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_e51552ede4804630afb587ffd9c4b872-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh-add ~/.ssh/id_rsa1
+&lt;a name="rest_code_e51552ede4804630afb587ffd9c4b872-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh-add ~/.ssh/id_rsa2
+&lt;/pre&gt;&lt;ol class="arabic simple" start="3"&gt;
+&lt;li&gt;创建配置文件.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_66c9c21315144d46b2a16724f713a307-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; touch config
+&lt;/pre&gt;&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-1"&gt; 1&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-2"&gt; 2&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-3"&gt; 3&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-4"&gt; 4&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-5"&gt; 5&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-6"&gt; 6&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-7"&gt; 7&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-8"&gt; 8&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-9"&gt; 9&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-10"&gt;10&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code bash"&gt;&lt;a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# github1&lt;/span&gt;
+&lt;a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-2"&gt;&lt;/a&gt;Host github1
+&lt;a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-3"&gt;&lt;/a&gt;     HostName github.com
+&lt;a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-4"&gt;&lt;/a&gt;     PreferredAuthentications publickey
+&lt;a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-5"&gt;&lt;/a&gt;     IdentityFile ~/.ssh/id_rsa1
+&lt;a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-6"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# github2&lt;/span&gt;
+&lt;a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-7"&gt;&lt;/a&gt;Host github2
+&lt;a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-8"&gt;&lt;/a&gt;     HostName github.com
+&lt;a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-9"&gt;&lt;/a&gt;     PreferredAuthentications publickey
+&lt;a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-10"&gt;&lt;/a&gt;     IdentityFile ~/.ssh/id_rsa2
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;ol class="arabic simple" start="4"&gt;
+&lt;li&gt;测试.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_5bc22e57ff614e5b971ec9b58a782dd0-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh -T git@github1
+&lt;a name="rest_code_5bc22e57ff614e5b971ec9b58a782dd0-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh -T git@github2
+&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;过程之中遇到yes或者no，都输入yes。&lt;/li&gt;
+&lt;li&gt;生成的ssh key别忘了放进github的“设置”里，并且注意结尾不能有回车。&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;</description><category>git</category><category>版本管理</category><guid>https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/</guid><pubDate>Mon, 09 Jan 2017 13:28:59 GMT</pubDate></item><item><title>友情链接</title><link>https://codinglonglong.github.io/posts/you-qing-lian-jie/</link><dc:creator>龙龙</dc:creator><description>&lt;ul class="simple"&gt;
 &lt;li&gt;纸鸢@红豆·绿豆 &lt;a class="reference external" href="http://www.cnblogs.com/jlj9520/"&gt;http://www.cnblogs.com/jlj9520/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description><category>友情链接</category><guid>https://codinglonglong.github.io/posts/you-qing-lian-jie/</guid><pubDate>Mon, 09 Jan 2017 12:26:21 GMT</pubDate></item><item><title>回到最初的起点</title><link>https://codinglonglong.github.io/posts/hui-dao-zui-chu-de-qi-dian/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;时间才刚刚过去半年，一切感觉都不对了。没怎么碰代码的自己，在过去的半年里，除了一个字幕生成器以外，几乎没有什么完整的代码。虽然毕业以后，一直在忙碌工作的事情，适应新的环境，还出差学习了视频后期的基础知识，但不写代码的日子，总是在心里缺少些什么。少了刚上大学时“每天一个程序，每个程序都是传奇”的自信，少了争论哪种编程语言最好用时的面红耳赤，少了折腾代码解决bug时的那种驱动感。不过，单纯的我单纯地相信“只要努力，什么时候开始都不晚”，2017年，刚刚忙完教师证，买了新的笔记本，回到最初的起点，重做自己的技术梦。不管以后走不走开发这条路，有一颗热爱技术的心总是好的，因为热爱技术的人往往很可爱~~就像我们几个可爱的小伙伴…………&lt;/p&gt;
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/sunnychasers.jpg" src="https://github.com/longlongpicture/myblogpicture/raw/master/sunnychasers.jpg"&gt;&lt;/div&gt;</description><category>杂文</category><guid>https://codinglonglong.github.io/posts/hui-dao-zui-chu-de-qi-dian/</guid><pubDate>Mon, 09 Jan 2017 08:05:11 GMT</pubDate></item></channel></rss>
