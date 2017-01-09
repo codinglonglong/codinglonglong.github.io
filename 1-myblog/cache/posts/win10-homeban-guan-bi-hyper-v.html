@@ -1,0 +1,18 @@
+<p>在win10的home版中，安装Android Studio提供的haxm，会出现死机的现象，这是由于haxm与hyper-v冲突。而home版无法通过“启用或关闭Windows功能”来关闭hyper-v。这时可以通过如下方法关闭hyper-v。</p>
+<ol class="arabic">
+<li><p class="first">管理员身份运行命令提示符cmd</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_ed97a10336e7472d88b379a552c5f720-1"></a>&gt;&gt; bcdedit /copy <span class="o">{</span>current<span class="o">}</span> /d <span class="s2">&quot;Windows10 no Hyper-V</span>
+<a name="rest_code_ed97a10336e7472d88b379a552c5f720-2"></a><span class="s2">&gt;&gt; bcdedit /set {XXX} hypervisorlaunchtype OFF</span>
+</pre></blockquote>
+<p>注意XXX的部分是上一步的输出结果。</p>
+</li>
+<li><p class="first">重启Win10，选择“Windows10 no Hyper-V”，即可进入没有Hyper-V的win10系统。</p>
+</li>
+</ol>
+<p><strong>注意</strong></p>
+<p>如果要安装haxm，还需要注意以下两点：</p>
+<ol class="arabic simple">
+<li>别忘了在BIOS里打开虚拟化。</li>
+<li>haxm不仅会与hyper-v冲突，与杀毒软件Avast也会冲突，安装haxm之前先卸载掉Avast才行。</li>
+</ol>
