@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><lastBuildDate>Tue, 10 Jan 2017 04:04:08 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>vuejs学习(1)</title><link>https://codinglonglong.github.io/posts/vuejsxue-xi-1/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;本文初步学习如何使用vue-cli建立一个简单的网页组件。&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (文章分类：javascript)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/javascript.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><lastBuildDate>Tue, 10 Jan 2017 04:04:08 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>vuejs学习(1)</title><link>https://codinglonglong.github.io/posts/vuejsxue-xi-1/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;本文初步学习如何使用vue-cli建立一个简单的网页组件。&lt;/p&gt;
 &lt;ol class="arabic"&gt;
 &lt;li&gt;&lt;p class="first"&gt;参考 &lt;a class="reference external" href="https://cn.vuejs.org/v2/guide/installation.html"&gt;https://cn.vuejs.org/v2/guide/installation.html&lt;/a&gt; 安装好vue和vue-cli。&lt;/p&gt;
 &lt;/li&gt;
@@ -128,91 +128,4 @@
 &lt;li&gt;如何做数据绑定；&lt;/li&gt;
 &lt;li&gt;如何把组件和网页联系在一起。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;后面我们将继续尝试多个组件的网站怎么写。&lt;/p&gt;&lt;/div&gt;</description><category>javascript</category><category>vue-cli</category><category>vuejs</category><guid>https://codinglonglong.github.io/posts/vuejsxue-xi-1/</guid><pubDate>Tue, 10 Jan 2017 01:06:42 GMT</pubDate></item><item><title>Win10 home版关闭hyper-v</title><link>https://codinglonglong.github.io/posts/win10-homeban-guan-bi-hyper-v/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;在win10的home版中，安装Android Studio提供的haxm，会出现死机的现象，这是由于haxm与hyper-v冲突。而home版无法通过“启用或关闭Windows功能”来关闭hyper-v。这时可以通过如下方法关闭hyper-v。&lt;/p&gt;
-&lt;ol class="arabic"&gt;
-&lt;li&gt;&lt;p class="first"&gt;管理员身份运行命令提示符cmd&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_ed97a10336e7472d88b379a552c5f720-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; bcdedit /copy &lt;span class="o"&gt;{&lt;/span&gt;current&lt;span class="o"&gt;}&lt;/span&gt; /d &lt;span class="s2"&gt;"Windows10 no Hyper-V&lt;/span&gt;
-&lt;a name="rest_code_ed97a10336e7472d88b379a552c5f720-2"&gt;&lt;/a&gt;&lt;span class="s2"&gt;&amp;gt;&amp;gt; bcdedit /set {XXX} hypervisorlaunchtype OFF&lt;/span&gt;
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;注意XXX的部分是上一步的输出结果。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;重启Win10，选择“Windows10 no Hyper-V”，即可进入没有Hyper-V的win10系统。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;如果要安装haxm，还需要注意以下两点：&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;别忘了在BIOS里打开虚拟化。&lt;/li&gt;
-&lt;li&gt;haxm不仅会与hyper-v冲突，与杀毒软件Avast也会冲突，安装haxm之前先卸载掉Avast才行。&lt;/li&gt;
-&lt;/ol&gt;&lt;/div&gt;</description><category>Android</category><category>haxm</category><category>hyper-v</category><category>win10</category><guid>https://codinglonglong.github.io/posts/win10-homeban-guan-bi-hyper-v/</guid><pubDate>Mon, 09 Jan 2017 20:45:37 GMT</pubDate></item><item><title>Android Studio连接Droid4X调试APP</title><link>https://codinglonglong.github.io/posts/android-studiolian-jie-droid4xdiao-shi-app/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;Android Studio用内置的虚拟机连i7的本都要跑半天，外接手机的话又太费手机，所以我们可以采用第三方Android虚拟机的方式来调试程序，在这里我们使用的是Droid4X。&lt;/p&gt;
-&lt;ol class="arabic"&gt;
-&lt;li&gt;&lt;p class="first"&gt;安装VirtualBox。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;安装Droid4X。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;添加adb到系统路径，我的在&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_f536825dc55649cf96ceea351fe44352-1"&gt;&lt;/a&gt;C:&lt;span class="se"&gt;\U&lt;/span&gt;sers&lt;span class="se"&gt;\l&lt;/span&gt;ong&lt;span class="se"&gt;\A&lt;/span&gt;ppData&lt;span class="se"&gt;\L&lt;/span&gt;ocal&lt;span class="se"&gt;\A&lt;/span&gt;ndroid&lt;span class="se"&gt;\s&lt;/span&gt;dk&lt;span class="se"&gt;\p&lt;/span&gt;latform-tools
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;连接adb到Droid4X。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_9ce0f7a68a6343f1bd7c07dfefb869e5-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; adb connect 127.0.0.1:26944
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;出现&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_b49c234f42774e4183b2bb2bf158a105-1"&gt;&lt;/a&gt;* daemon started successfully *
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;启动调试即可。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;&lt;/div&gt;</description><category>Android</category><category>Droid4X</category><guid>https://codinglonglong.github.io/posts/android-studiolian-jie-droid4xdiao-shi-app/</guid><pubDate>Mon, 09 Jan 2017 20:32:37 GMT</pubDate></item><item><title>Could not open a connection to your authentication agent</title><link>https://codinglonglong.github.io/posts/could-not-open-a-connection-to-your-authentication-agent/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;在执行ssh-add时，如果出现“Could not open a connection to your authentication agent”这一错误信息，可以通过如下方法解决：&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_3d5cf454125c499c959307523af3f02c-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; &lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="sb"&gt;`&lt;/span&gt;ssh-agent&lt;span class="sb"&gt;`&lt;/span&gt;
-&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt; 是 &lt;strong&gt;`&lt;/strong&gt; 而不是 &lt;strong&gt;'&lt;/strong&gt; 。&lt;/p&gt;&lt;/div&gt;</description><category>git</category><guid>https://codinglonglong.github.io/posts/could-not-open-a-connection-to-your-authentication-agent/</guid><pubDate>Mon, 09 Jan 2017 14:11:08 GMT</pubDate></item><item><title>管理多个git账户</title><link>https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;因为博客用了两个github账户，一个放文章，一个放图片，所以出现了两个git账户同时存在的问题。这时可以通过如下的方法解决冲突：&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;生成两个ssh key.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_ee30a8a1a31849bf9ff5074ff1b4ae9a-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh-keygen -t rsa -C &lt;span class="s2"&gt;"email address 1"&lt;/span&gt;
-&lt;a name="rest_code_ee30a8a1a31849bf9ff5074ff1b4ae9a-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh-keygen -t rsa -C &lt;span class="s2"&gt;"email address 2"&lt;/span&gt;
-&lt;/pre&gt;&lt;ol class="arabic simple" start="2"&gt;
-&lt;li&gt;添加上一步生成的两个ssh key.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_e51552ede4804630afb587ffd9c4b872-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh-add ~/.ssh/id_rsa1
-&lt;a name="rest_code_e51552ede4804630afb587ffd9c4b872-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh-add ~/.ssh/id_rsa2
-&lt;/pre&gt;&lt;ol class="arabic simple" start="3"&gt;
-&lt;li&gt;创建配置文件.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_66c9c21315144d46b2a16724f713a307-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; touch config
-&lt;/pre&gt;&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-1"&gt; 1&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-2"&gt; 2&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-3"&gt; 3&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-4"&gt; 4&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-5"&gt; 5&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-6"&gt; 6&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-7"&gt; 7&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-8"&gt; 8&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-9"&gt; 9&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-10"&gt;10&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code bash"&gt;&lt;a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# github1&lt;/span&gt;
-&lt;a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-2"&gt;&lt;/a&gt;Host github1
-&lt;a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-3"&gt;&lt;/a&gt;     HostName github.com
-&lt;a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-4"&gt;&lt;/a&gt;     PreferredAuthentications publickey
-&lt;a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-5"&gt;&lt;/a&gt;     IdentityFile ~/.ssh/id_rsa1
-&lt;a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-6"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# github2&lt;/span&gt;
-&lt;a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-7"&gt;&lt;/a&gt;Host github2
-&lt;a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-8"&gt;&lt;/a&gt;     HostName github.com
-&lt;a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-9"&gt;&lt;/a&gt;     PreferredAuthentications publickey
-&lt;a name="rest_code_06425f0e474b4e30bb3e72d7a83dcdd5-10"&gt;&lt;/a&gt;     IdentityFile ~/.ssh/id_rsa2
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;ol class="arabic simple" start="4"&gt;
-&lt;li&gt;测试.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_5bc22e57ff614e5b971ec9b58a782dd0-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh -T git@github1
-&lt;a name="rest_code_5bc22e57ff614e5b971ec9b58a782dd0-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh -T git@github2
-&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;过程之中遇到yes或者no，都输入yes。&lt;/li&gt;
-&lt;li&gt;生成的ssh key别忘了放进github的“设置”里，并且注意结尾不能有回车。&lt;/li&gt;
-&lt;/ol&gt;&lt;/div&gt;</description><category>git</category><category>版本管理</category><guid>https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/</guid><pubDate>Mon, 09 Jan 2017 13:28:59 GMT</pubDate></item><item><title>友情链接</title><link>https://codinglonglong.github.io/posts/you-qing-lian-jie/</link><dc:creator>龙龙</dc:creator><description>&lt;ul class="simple"&gt;
-&lt;li&gt;纸鸢@红豆·绿豆 &lt;a class="reference external" href="http://www.cnblogs.com/jlj9520/"&gt;http://www.cnblogs.com/jlj9520/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description><category>友情链接</category><guid>https://codinglonglong.github.io/posts/you-qing-lian-jie/</guid><pubDate>Mon, 09 Jan 2017 12:26:21 GMT</pubDate></item><item><title>回到最初的起点</title><link>https://codinglonglong.github.io/posts/hui-dao-zui-chu-de-qi-dian/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;时间才刚刚过去半年，一切感觉都不对了。没怎么碰代码的自己，在过去的半年里，除了一个字幕生成器以外，几乎没有什么完整的代码。虽然毕业以后，一直在忙碌工作的事情，适应新的环境，还出差学习了视频后期的基础知识，但不写代码的日子，总是在心里缺少些什么。少了刚上大学时“每天一个程序，每个程序都是传奇”的自信，少了争论哪种编程语言最好用时的面红耳赤，少了折腾代码解决bug时的那种驱动感。不过，单纯的我单纯地相信“只要努力，什么时候开始都不晚”，2017年，刚刚忙完教师证，买了新的笔记本，回到最初的起点，重做自己的技术梦。不管以后走不走开发这条路，有一颗热爱技术的心总是好的，因为热爱技术的人往往很可爱~~就像我们几个可爱的小伙伴…………&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/sunnychasers.jpg" src="https://github.com/longlongpicture/myblogpicture/raw/master/sunnychasers.jpg"&gt;&lt;/div&gt;</description><category>杂文</category><guid>https://codinglonglong.github.io/posts/hui-dao-zui-chu-de-qi-dian/</guid><pubDate>Mon, 09 Jan 2017 08:05:11 GMT</pubDate></item></channel></rss>
+&lt;p&gt;后面我们将继续尝试多个组件的网站怎么写。&lt;/p&gt;&lt;/div&gt;</description><category>javascript</category><category>vue-cli</category><category>vuejs</category><guid>https://codinglonglong.github.io/posts/vuejsxue-xi-1/</guid><pubDate>Tue, 10 Jan 2017 01:06:42 GMT</pubDate></item></channel></rss>

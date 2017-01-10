@@ -7,102 +7,122 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://codinglonglong.github.io/</loc>
-  <lastmod>2017-01-09T12:23:00Z</lastmod>
+  <lastmod>2017-01-10T00:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/2017/</loc>
-  <lastmod>2017-01-09T12:23:00Z</lastmod>
+  <lastmod>2017-01-10T00:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/archive.html</loc>
-  <lastmod>2017-01-09T20:55:00Z</lastmod>
+  <lastmod>2017-01-10T01:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/</loc>
-  <lastmod>2017-01-09T20:55:00Z</lastmod>
+  <lastmod>2017-01-10T01:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/android/</loc>
-  <lastmod>2017-01-09T20:40:00Z</lastmod>
+  <lastmod>2017-01-10T00:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/ban-ben-guan-li/</loc>
-  <lastmod>2017-01-09T13:49:00Z</lastmod>
+  <lastmod>2017-01-10T00:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/cat_android/</loc>
-  <lastmod>2017-01-09T20:40:00Z</lastmod>
+  <lastmod>2017-01-10T00:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/cat_git/</loc>
-  <lastmod>2017-01-09T13:49:00Z</lastmod>
+  <lastmod>2017-01-10T00:16:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/cat_javascript/</loc>
+  <lastmod>2017-01-10T01:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/cat_you-qing-lian-jie/</loc>
-  <lastmod>2017-01-09T12:31:00Z</lastmod>
+  <lastmod>2017-01-10T00:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/cat_za-wen/</loc>
-  <lastmod>2017-01-09T12:23:00Z</lastmod>
+  <lastmod>2017-01-10T00:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/droid4x/</loc>
-  <lastmod>2017-01-09T20:40:00Z</lastmod>
+  <lastmod>2017-01-10T00:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/git/</loc>
-  <lastmod>2017-01-09T13:49:00Z</lastmod>
+  <lastmod>2017-01-10T00:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/haxm/</loc>
-  <lastmod>2017-01-09T20:55:00Z</lastmod>
+  <lastmod>2017-01-10T00:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/hyper-v/</loc>
-  <lastmod>2017-01-09T20:55:00Z</lastmod>
+  <lastmod>2017-01-10T00:16:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/javascript/</loc>
+  <lastmod>2017-01-10T01:36:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/vue-cli/</loc>
+  <lastmod>2017-01-10T01:36:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/vuejs/</loc>
+  <lastmod>2017-01-10T01:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/win10/</loc>
-  <lastmod>2017-01-09T20:55:00Z</lastmod>
+  <lastmod>2017-01-10T00:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/you-qing-lian-jie/</loc>
-  <lastmod>2017-01-09T12:31:00Z</lastmod>
+  <lastmod>2017-01-10T00:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/za-wen/</loc>
-  <lastmod>2017-01-09T12:23:00Z</lastmod>
+  <lastmod>2017-01-10T00:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/galleries/</loc>
-  <lastmod>2017-01-09T12:23:00Z</lastmod>
+  <lastmod>2017-01-10T00:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/listings/</loc>
-  <lastmod>2017-01-09T12:23:00Z</lastmod>
+  <lastmod>2017-01-10T00:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/android-studiolian-jie-droid4xdiao-shi-app/</loc>
-  <lastmod>2017-01-09T20:40:00Z</lastmod>
+  <lastmod>2017-01-10T00:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/could-not-open-a-connection-to-your-authentication-agent/</loc>
-  <lastmod>2017-01-09T14:14:00Z</lastmod>
+  <lastmod>2017-01-10T00:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/</loc>
-  <lastmod>2017-01-09T13:49:00Z</lastmod>
+  <lastmod>2017-01-10T00:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/hui-dao-zui-chu-de-qi-dian/</loc>
-  <lastmod>2017-01-09T12:23:00Z</lastmod>
+  <lastmod>2017-01-10T00:16:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/posts/vuejsxue-xi-1/</loc>
+  <lastmod>2017-01-10T01:36:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/win10-homeban-guan-bi-hyper-v/</loc>
-  <lastmod>2017-01-09T20:55:00Z</lastmod>
+  <lastmod>2017-01-10T00:16:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/you-qing-lian-jie/</loc>
-  <lastmod>2017-01-09T12:31:00Z</lastmod>
+  <lastmod>2017-01-10T00:16:00Z</lastmod>
  </url>
 </urlset>
