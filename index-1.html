@@ -75,7 +75,49 @@ var _hmt = _hmt || [];
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/could-not-open-a-connection-to-your-authentication-agent/" class="u-url">Could not open a connection to your authentication agent</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/android-studiolian-jie-droid4xdiao-shi-app/" class="u-url">Android Studio连接Droid4X调试APP</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/android-studiolian-jie-droid4xdiao-shi-app/" rel="bookmark"><time class="published dt-published" datetime="2017-01-10T04:32:37+08:00" title="2017-01-10 04:32">2017-01-10 04:32</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>Android Studio用内置的虚拟机连i7的本都要跑半天，外接手机的话又太费手机，所以我们可以采用第三方Android虚拟机的方式来调试程序，在这里我们使用的是Droid4X。</p>
+<ol class="arabic">
+<li>
+<p class="first">安装VirtualBox。</p>
+</li>
+<li>
+<p class="first">安装Droid4X。</p>
+</li>
+<li>
+<p class="first">添加adb到系统路径，我的在</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_f536825dc55649cf96ceea351fe44352-1"></a>C:<span class="se">\U</span>sers<span class="se">\l</span>ong<span class="se">\A</span>ppData<span class="se">\L</span>ocal<span class="se">\A</span>ndroid<span class="se">\s</span>dk<span class="se">\p</span>latform-tools
+</pre>
+</blockquote>
+</li>
+<li>
+<p class="first">连接adb到Droid4X。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_9ce0f7a68a6343f1bd7c07dfefb869e5-1"></a>&gt;&gt; adb connect 127.0.0.1:26944
+</pre>
+</blockquote>
+<p>出现</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_b49c234f42774e4183b2bb2bf158a105-1"></a>* daemon started successfully *
+</pre>
+</blockquote>
+</li>
+<li>
+<p class="first">启动调试即可。</p>
+</li>
+</ol>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/could-not-open-a-connection-to-your-authentication-agent/" class="u-url">Could not open a connection to your authentication agent</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙

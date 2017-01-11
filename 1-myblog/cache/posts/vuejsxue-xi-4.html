@@ -1,0 +1,75 @@
+<p>本文初步学习一下引入外部库函数的方法，我们接着文章 <a class="reference external" href="https://codinglonglong.github.io/posts/vuejsxue-xi-3/">https://codinglonglong.github.io/posts/vuejsxue-xi-3/</a> 的代码做。</p>
+<p>我们修改 TodoList.vue 文件，代码如下：</p>
+<blockquote>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-1"> 1</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-2"> 2</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-3"> 3</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-4"> 4</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-5"> 5</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-6"> 6</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-7"> 7</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-8"> 8</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-9"> 9</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-10">10</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-11">11</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-12">12</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-13">13</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-14">14</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-15">15</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-16">16</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-17">17</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-18">18</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-19">19</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-20">20</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-21">21</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-22">22</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-23">23</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-24">24</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-25">25</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-26">26</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-27">27</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-28">28</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-29">29</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-30">30</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-31">31</a>
+<a href="#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-32">32</a></pre></div></td><td class="code"><pre class="code html"><a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-2"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;todolist&quot;</span><span class="p">&gt;</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-3"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-4"></a>        <span class="p">&lt;</span><span class="nt">TodoItem</span> <span class="na">v-for</span><span class="o">=</span><span class="s">&quot;item in getrange(1, 10, 2)&quot;</span> <span class="na">v-bind:todomessage</span><span class="o">=</span><span class="s">&quot;addhead(item)&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">TodoItem</span><span class="p">&gt;</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-5"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-6"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-7"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-8"></a>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-9"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-10"></a><span class="kr">import</span> <span class="nx">TodoItem</span> <span class="nx">from</span> <span class="s1">&#39;./components/TodoItem&#39;</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-11"></a><span class="kr">import</span> <span class="nx">_</span> <span class="nx">from</span> <span class="s1">&#39;lodash&#39;</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-12"></a>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-13"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-14"></a>    <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-15"></a>        <span class="nx">getrange</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">,</span> <span class="nx">step</span><span class="p">)</span> <span class="p">{</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-16"></a>            <span class="k">return</span> <span class="nx">_</span><span class="p">.</span><span class="nx">range</span><span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">,</span> <span class="nx">step</span><span class="p">);</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-17"></a>        <span class="p">},</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-18"></a>        <span class="nx">addhead</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">tempstr</span><span class="p">)</span> <span class="p">{</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-19"></a>            <span class="k">return</span> <span class="s2">&quot;容器&quot;</span> <span class="o">+</span> <span class="nx">tempstr</span><span class="p">;</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-20"></a>        <span class="p">}</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-21"></a>    <span class="p">},</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-22"></a>    <span class="nx">components</span><span class="o">:</span> <span class="p">{</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-23"></a>        <span class="nx">TodoItem</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-24"></a>    <span class="p">}</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-25"></a><span class="p">}</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-26"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-27"></a>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-28"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-29"></a><span class="nt">li</span><span class="p">{</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-30"></a>    <span class="nb">color</span><span class="o">:</span> <span class="nb">blue</span><span class="p">;</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-31"></a><span class="p">}</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-32"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</pre></td></tr></table></blockquote>
+<p>在上述的代码中，我们需要学到以下几个问题：</p>
+<ol class="arabic simple">
+<li>v-for指令中in的后面可以是一个函数。</li>
+<li>v-bind指令可以绑定子组件中props涉及到的变量。</li>
+<li>绑定的变量可以进行进一步的计算，也就是计算属性。</li>
+<li>想引入外部库函数时，可以先用内部函数封装一下，就可以在template中使用了。</li>
+<li>lodash提供了很多js内置库中没有的工具函数。</li>
+</ol>

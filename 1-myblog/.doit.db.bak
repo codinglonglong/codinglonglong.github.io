@@ -194,3 +194,6 @@
 'render_sources:output\\posts\\vuejsxue-xi-3\\index.rst', (618496, 249)
 'render_pages:output\\posts\\vuejsxue-xi-3\\index.html', (619008, 6125)
 'copy_assets:output\\assets\\css\\code.css', (633344, 141)
+'render_sources:output\\posts\\vuejsxue-xi-4\\index.rst', (637440, 249)
+'render_posts:cache\\posts\\vuejsxue-xi-4.html', (647168, 367)
+'render_pages:output\\posts\\vuejsxue-xi-4\\index.html', (651264, 6124)

@@ -19,7 +19,7 @@ var _hmt = _hmt || [];
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
-</script><link rel="prefetch" href="posts/vuejsxue-xi-3/" type="text/html">
+</script><link rel="prefetch" href="posts/vuejsxue-xi-4/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
@@ -75,7 +75,97 @@ var _hmt = _hmt || [];
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/vuejsxue-xi-3/" class="u-url">vuejs学习(3)</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/vuejsxue-xi-4/" class="u-url">vuejs学习(4)</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/vuejsxue-xi-4/" rel="bookmark"><time class="published dt-published" datetime="2017-01-11T21:20:13+08:00" title="2017-01-11 21:20">2017-01-11 21:20</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>本文初步学习一下引入外部库函数的方法，我们接着文章 <a class="reference external" href="https://codinglonglong.github.io/posts/vuejsxue-xi-3/">https://codinglonglong.github.io/posts/vuejsxue-xi-3/</a> 的代码做。</p>
+<p>我们修改 TodoList.vue 文件，代码如下：</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-1"> 1</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-2"> 2</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-3"> 3</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-4"> 4</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-5"> 5</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-6"> 6</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-7"> 7</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-8"> 8</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-9"> 9</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-10">10</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-11">11</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-12">12</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-13">13</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-14">14</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-15">15</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-16">16</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-17">17</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-18">18</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-19">19</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-20">20</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-21">21</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-22">22</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-23">23</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-24">24</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-25">25</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-26">26</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-27">27</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-28">28</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-29">29</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-30">30</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-31">31</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-32">32</a></pre></div></td>
+<td class="code"><pre class="code html"><a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-2"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"todolist"</span><span class="p">&gt;</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-3"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-4"></a>        <span class="p">&lt;</span><span class="nt">TodoItem</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in getrange(1, 10, 2)"</span> <span class="na">v-bind:todomessage</span><span class="o">=</span><span class="s">"addhead(item)"</span><span class="p">&gt;&lt;/</span><span class="nt">TodoItem</span><span class="p">&gt;</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-5"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-6"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-7"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-8"></a>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-9"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-10"></a><span class="kr">import</span> <span class="nx">TodoItem</span> <span class="nx">from</span> <span class="s1">'./components/TodoItem'</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-11"></a><span class="kr">import</span> <span class="nx">_</span> <span class="nx">from</span> <span class="s1">'lodash'</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-12"></a>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-13"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-14"></a>    <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-15"></a>        <span class="nx">getrange</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">,</span> <span class="nx">step</span><span class="p">)</span> <span class="p">{</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-16"></a>            <span class="k">return</span> <span class="nx">_</span><span class="p">.</span><span class="nx">range</span><span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">,</span> <span class="nx">step</span><span class="p">);</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-17"></a>        <span class="p">},</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-18"></a>        <span class="nx">addhead</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">tempstr</span><span class="p">)</span> <span class="p">{</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-19"></a>            <span class="k">return</span> <span class="s2">"容器"</span> <span class="o">+</span> <span class="nx">tempstr</span><span class="p">;</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-20"></a>        <span class="p">}</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-21"></a>    <span class="p">},</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-22"></a>    <span class="nx">components</span><span class="o">:</span> <span class="p">{</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-23"></a>        <span class="nx">TodoItem</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-24"></a>    <span class="p">}</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-25"></a><span class="p">}</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-26"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-27"></a>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-28"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-29"></a><span class="nt">li</span><span class="p">{</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-30"></a>    <span class="nb">color</span><span class="o">:</span> <span class="nb">blue</span><span class="p">;</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-31"></a><span class="p">}</span>
+<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-32"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p>在上述的代码中，我们需要学到以下几个问题：</p>
+<ol class="arabic simple">
+<li>v-for指令中in的后面可以是一个函数。</li>
+<li>v-bind指令可以绑定子组件中props涉及到的变量。</li>
+<li>绑定的变量可以进行进一步的计算，也就是计算属性。</li>
+<li>想引入外部库函数时，可以先用内部函数封装一下，就可以在template中使用了。</li>
+<li>lodash提供了很多js内置库中没有的工具函数。</li>
+</ol>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/vuejsxue-xi-3/" class="u-url">vuejs学习(3)</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
@@ -575,48 +665,6 @@ var _hmt = _hmt || [];
 <ol class="arabic simple">
 <li>别忘了在BIOS里打开虚拟化。</li>
 <li>haxm不仅会与hyper-v冲突，与杀毒软件Avast也会冲突，安装haxm之前先卸载掉Avast才行。</li>
-</ol>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/android-studiolian-jie-droid4xdiao-shi-app/" class="u-url">Android Studio连接Droid4X调试APP</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/android-studiolian-jie-droid4xdiao-shi-app/" rel="bookmark"><time class="published dt-published" datetime="2017-01-10T04:32:37+08:00" title="2017-01-10 04:32">2017-01-10 04:32</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>Android Studio用内置的虚拟机连i7的本都要跑半天，外接手机的话又太费手机，所以我们可以采用第三方Android虚拟机的方式来调试程序，在这里我们使用的是Droid4X。</p>
-<ol class="arabic">
-<li>
-<p class="first">安装VirtualBox。</p>
-</li>
-<li>
-<p class="first">安装Droid4X。</p>
-</li>
-<li>
-<p class="first">添加adb到系统路径，我的在</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_f536825dc55649cf96ceea351fe44352-1"></a>C:<span class="se">\U</span>sers<span class="se">\l</span>ong<span class="se">\A</span>ppData<span class="se">\L</span>ocal<span class="se">\A</span>ndroid<span class="se">\s</span>dk<span class="se">\p</span>latform-tools
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">连接adb到Droid4X。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_9ce0f7a68a6343f1bd7c07dfefb869e5-1"></a>&gt;&gt; adb connect 127.0.0.1:26944
-</pre>
-</blockquote>
-<p>出现</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_b49c234f42774e4183b2bb2bf158a105-1"></a>* daemon started successfully *
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">启动调试即可。</p>
-</li>
 </ol>
 </div>
     </div>
