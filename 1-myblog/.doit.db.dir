@@ -92,7 +92,7 @@
 'copy_assets:output\\assets\\js\\colorbox-i18n\\jquery.colorbox-hu.js', (83968, 669)
 'post_render', (84992, 56)
 'copy_assets:output\\assets\\css\\ipython.min.css.map', (85504, 493)
-'render_taxonomies:output\\2017\\index.html', (454656, 4472)
+'render_taxonomies:output\\2017\\index.html', (587776, 6677)
 'render_site', (88576, 56)
 'copy_assets:output\\assets\\js\\colorbox-i18n\\jquery.colorbox-et.js', (89088, 668)
 'copy_assets:output\\assets\\js\\bootstrap.min.js', (436736, 614)
