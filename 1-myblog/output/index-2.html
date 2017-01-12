@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_cn">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="龙龙的技术博客">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>写程序的龙龙 (旧文章页 2) | 写程序的龙龙</title>
+<link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+<link rel="canonical" href="https://codinglonglong.github.io/index-2.html">
+<link rel="prev" href="." type="text/html">
+<link rel="next" href="index-1.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?26f9e777606d49ebbdbe4df058bd028c";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><style>
+body{
+    font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
+}
+</style>
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://codinglonglong.github.io/">
+
+                <span id="blog-title">写程序的龙龙</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="archive.html">文章存档</a>
+                </li>
+<li>
+<a href="categories/">标签</a>
+                </li>
+<li>
+<a href="posts/you-qing-lian-jie/">友情链接</a>
+                </li>
+<li>
+<a href="posts/hui-dao-zui-chu-de-qi-dian/">回到最初的起点</a>
+                </li>
+<li>
+<a href="rss.xml">RSS 源</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+
+    
+<div class="postindex">
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/vuejsxue-xi-1/" class="u-url">vuejs学习(1)</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/vuejsxue-xi-1/" rel="bookmark"><time class="published dt-published" datetime="2017-01-10T09:06:42+08:00" title="2017-01-10 09:06">2017-01-10 09:06</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>本文初步学习如何使用vue-cli建立一个简单的网页组件。</p>
+<ol class="arabic">
+<li>
+<p class="first">参考 <a class="reference external" href="https://cn.vuejs.org/v2/guide/installation.html">https://cn.vuejs.org/v2/guide/installation.html</a> 安装好vue和vue-cli。</p>
+</li>
+<li>
+<p class="first">用vue创建一个简单的项目，删除已有src目录中的文件。</p>
+</li>
+<li>
+<p class="first">找到index.html如下，不用改动。</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-1/#rest_code_803f97e20ba745af9b837d5ce99ef239-1"> 1</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_803f97e20ba745af9b837d5ce99ef239-2"> 2</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_803f97e20ba745af9b837d5ce99ef239-3"> 3</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_803f97e20ba745af9b837d5ce99ef239-4"> 4</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_803f97e20ba745af9b837d5ce99ef239-5"> 5</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_803f97e20ba745af9b837d5ce99ef239-6"> 6</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_803f97e20ba745af9b837d5ce99ef239-7"> 7</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_803f97e20ba745af9b837d5ce99ef239-8"> 8</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_803f97e20ba745af9b837d5ce99ef239-9"> 9</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_803f97e20ba745af9b837d5ce99ef239-10">10</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_803f97e20ba745af9b837d5ce99ef239-11">11</a></pre></div></td>
+<td class="code"><pre class="code html"><a name="rest_code_803f97e20ba745af9b837d5ce99ef239-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<a name="rest_code_803f97e20ba745af9b837d5ce99ef239-2"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<a name="rest_code_803f97e20ba745af9b837d5ce99ef239-3"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a name="rest_code_803f97e20ba745af9b837d5ce99ef239-4"></a>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span><span class="p">&gt;</span>
+<a name="rest_code_803f97e20ba745af9b837d5ce99ef239-5"></a>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>test<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<a name="rest_code_803f97e20ba745af9b837d5ce99ef239-6"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a name="rest_code_803f97e20ba745af9b837d5ce99ef239-7"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a name="rest_code_803f97e20ba745af9b837d5ce99ef239-8"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"app"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_803f97e20ba745af9b837d5ce99ef239-9"></a>    <span class="c">&lt;!-- built files will be auto injected --&gt;</span>
+<a name="rest_code_803f97e20ba745af9b837d5ce99ef239-10"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a name="rest_code_803f97e20ba745af9b837d5ce99ef239-11"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p>这里应该留意到已经包含一个id是app的div，未来要写的代码经过编译之后，会放在这个div的位置，而 &lt;div id="app"&gt;&lt;/div&gt; 会被替换掉。</p>
+</li>
+<li>
+<p class="first">在src目录下新建main.js，这是整个网站代码的入口，如下。</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-1/#rest_code_1abae2af26f74e51918ea860aa3e5d43-1">1</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_1abae2af26f74e51918ea860aa3e5d43-2">2</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_1abae2af26f74e51918ea860aa3e5d43-3">3</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_1abae2af26f74e51918ea860aa3e5d43-4">4</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_1abae2af26f74e51918ea860aa3e5d43-5">5</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_1abae2af26f74e51918ea860aa3e5d43-6">6</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_1abae2af26f74e51918ea860aa3e5d43-7">7</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_1abae2af26f74e51918ea860aa3e5d43-8">8</a></pre></div></td>
+<td class="code"><pre class="code html"><a name="rest_code_1abae2af26f74e51918ea860aa3e5d43-1"></a>import Vue from 'vue'
+<a name="rest_code_1abae2af26f74e51918ea860aa3e5d43-2"></a>import App from './App'
+<a name="rest_code_1abae2af26f74e51918ea860aa3e5d43-3"></a>
+<a name="rest_code_1abae2af26f74e51918ea860aa3e5d43-4"></a>new Vue({
+<a name="rest_code_1abae2af26f74e51918ea860aa3e5d43-5"></a>    el: '#app',
+<a name="rest_code_1abae2af26f74e51918ea860aa3e5d43-6"></a>    template: '<span class="p">&lt;</span><span class="nt">App</span><span class="p">/&gt;</span>',
+<a name="rest_code_1abae2af26f74e51918ea860aa3e5d43-7"></a>    components: { App }
+<a name="rest_code_1abae2af26f74e51918ea860aa3e5d43-8"></a>})
+</pre></td>
+</tr></table>
+</blockquote>
+<p>这里应该注意到，el，也就是element，绑定的是前面index.html中的 &lt;div id="app"&gt;&lt;/div&gt; ，而该位置对应的模板则是来自名为App的组件，也就是将App组件渲染到id为app的div的位置上。</p>
+</li>
+<li>
+<p class="first">在src目录下新建App.vue，这是网站的一个组件，可以多次反复使用，代码如下。</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-1"> 1</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-2"> 2</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-3"> 3</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-4"> 4</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-5"> 5</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-6"> 6</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-7"> 7</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-8"> 8</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-9"> 9</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-10">10</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-11">11</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-12">12</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-13">13</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-14">14</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-15">15</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-16">16</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-17">17</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-18">18</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-19">19</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-20">20</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-21">21</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-22">22</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-23">23</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-24">24</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-25">25</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-26">26</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-27">27</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-28">28</a></pre></div></td>
+<td class="code"><pre class="code html"><a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-2"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"myapp"</span><span class="p">&gt;</span>
+<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-3"></a>        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hello, {{Name}}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-4"></a>        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">v-on:click</span><span class="o">=</span><span class="s">"sayhello"</span><span class="p">&gt;</span>sayhello<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-5"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-6"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-7"></a>
+<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-8"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-9"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-10"></a>    <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-11"></a>        <span class="k">return</span> <span class="p">{</span>
+<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-12"></a>            <span class="nx">Name</span><span class="o">:</span> <span class="s2">"龙龙龙"</span>
+<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-13"></a>        <span class="p">}</span>
+<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-14"></a>    <span class="p">},</span>
+<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-15"></a>    <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-16"></a>        <span class="nx">sayhello</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-17"></a>            <span class="nx">alert</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">Name</span><span class="p">);</span>
+<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-18"></a>        <span class="p">}</span>
+<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-19"></a>    <span class="p">}</span>
+<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-20"></a><span class="p">}</span>
+<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-21"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-22"></a>
+<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-23"></a><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-24"></a><span class="nt">p</span> <span class="p">{</span>
+<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-25"></a>    <span class="nb">font-size</span><span class="o">:</span> <span class="m">30px</span><span class="p">;</span>
+<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-26"></a>    <span class="nb">color</span><span class="o">:</span> <span class="nb">blue</span><span class="p">;</span>
+<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-27"></a><span class="p">}</span>
+<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-28"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p>通过这段代码，可以看出：</p>
+<ol class="arabic simple">
+<li>一个vue组件由三大部分组成，&lt;template&gt;&lt;/template&gt;（组件模板），&lt;script&gt;&lt;/script&gt;（组件脚本），&lt;style&gt;&lt;/style&gt;（组件样式）。</li>
+<li>组件样式部分就是最基本的CSS。</li>
+<li>组件脚本部分被export default{}包围，这个例子中给出了data（数据）和methods（方法），可以学到如何绑定数据和如何添加自定义函数。</li>
+<li>组件模板部分必须被一个根div包围，在本例中是 &lt;div id="myapp"&gt;&lt;/div&gt;。</li>
+<li>按钮点击事件的实现采用 &lt;button v-on:click="sayhello"&gt;sayhello&lt;/button&gt;。</li>
+</ol>
+</li>
+</ol>
+<p><strong>总结</strong></p>
+<p>这个简单的例子一共涉及了以下几个问题：</p>
+<ol class="arabic simple">
+<li>vue组件的基本格式；</li>
+<li>如何加样式；</li>
+<li>如何加自定义函数；</li>
+<li>如何做数据绑定；</li>
+<li>如何把组件和网页联系在一起。</li>
+</ol>
+<p>后面我们将继续尝试多个组件的网站怎么写。</p>
+</div>
+    </div>
+    </article>
+</div>
+
+        <nav class="postindexpager"><ul class="pager">
+<li class="previous">
+                <a href="." rel="prev">新一篇</a>
+            </li>
+            <li class="next">
+                <a href="index-1.html" rel="next">旧一篇</a>
+            </li>
+        </ul></nav>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2017         <a href="mailto:codinglonglong@126.com">龙龙</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="assets/js/all-nocdn.js"></script><script src="assets/js/colorbox-i18n/jquery.colorbox-zh-CN.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("zh-cn");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
+</body>
+</html>
