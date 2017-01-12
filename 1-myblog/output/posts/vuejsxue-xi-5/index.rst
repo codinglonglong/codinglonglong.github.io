@@ -99,7 +99,7 @@
         <template>
         <div id="todoitem">
             <button v-on:click="changecolor">更改颜色</button>
-            <div v-bind:class="[flag ? 'blue': 'green', otherclass]"></div>
+            <div v-bind:class="[flag ? 'blue': 'green', 'box’]"></div>
         </div>
         </template>
 
@@ -108,7 +108,6 @@
             data: function(){
                 return{
                     flag: true,
-                    otherclass: "box",
                 }
             },
             methods: {
