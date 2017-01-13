@@ -1,0 +1,56 @@
+<p>本文进一步学习条件渲染。</p>
+<p>我们修改了TodoItem.vue文件，代码如下：</p>
+<blockquote>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_af77cfc65a52489c82f0ae3b1da66cda-1"> 1</a>
+<a href="#rest_code_af77cfc65a52489c82f0ae3b1da66cda-2"> 2</a>
+<a href="#rest_code_af77cfc65a52489c82f0ae3b1da66cda-3"> 3</a>
+<a href="#rest_code_af77cfc65a52489c82f0ae3b1da66cda-4"> 4</a>
+<a href="#rest_code_af77cfc65a52489c82f0ae3b1da66cda-5"> 5</a>
+<a href="#rest_code_af77cfc65a52489c82f0ae3b1da66cda-6"> 6</a>
+<a href="#rest_code_af77cfc65a52489c82f0ae3b1da66cda-7"> 7</a>
+<a href="#rest_code_af77cfc65a52489c82f0ae3b1da66cda-8"> 8</a>
+<a href="#rest_code_af77cfc65a52489c82f0ae3b1da66cda-9"> 9</a>
+<a href="#rest_code_af77cfc65a52489c82f0ae3b1da66cda-10">10</a>
+<a href="#rest_code_af77cfc65a52489c82f0ae3b1da66cda-11">11</a>
+<a href="#rest_code_af77cfc65a52489c82f0ae3b1da66cda-12">12</a>
+<a href="#rest_code_af77cfc65a52489c82f0ae3b1da66cda-13">13</a>
+<a href="#rest_code_af77cfc65a52489c82f0ae3b1da66cda-14">14</a>
+<a href="#rest_code_af77cfc65a52489c82f0ae3b1da66cda-15">15</a>
+<a href="#rest_code_af77cfc65a52489c82f0ae3b1da66cda-16">16</a>
+<a href="#rest_code_af77cfc65a52489c82f0ae3b1da66cda-17">17</a>
+<a href="#rest_code_af77cfc65a52489c82f0ae3b1da66cda-18">18</a>
+<a href="#rest_code_af77cfc65a52489c82f0ae3b1da66cda-19">19</a>
+<a href="#rest_code_af77cfc65a52489c82f0ae3b1da66cda-20">20</a>
+<a href="#rest_code_af77cfc65a52489c82f0ae3b1da66cda-21">21</a>
+<a href="#rest_code_af77cfc65a52489c82f0ae3b1da66cda-22">22</a>
+<a href="#rest_code_af77cfc65a52489c82f0ae3b1da66cda-23">23</a>
+<a href="#rest_code_af77cfc65a52489c82f0ae3b1da66cda-24">24</a></pre></div></td><td class="code"><pre class="code html"><a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-2"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;todoitem&quot;</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-3"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&quot;flag===1&quot;</span><span class="p">&gt;</span>星期一<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-4"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">&quot;flag===2&quot;</span><span class="p">&gt;</span>星期二<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-5"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">&quot;flag===3&quot;</span><span class="p">&gt;</span>星期三<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-6"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">&quot;flag===4&quot;</span><span class="p">&gt;</span>星期四<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-7"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">&quot;flag===5&quot;</span><span class="p">&gt;</span>星期五<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-8"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">&quot;flag===6&quot;</span><span class="p">&gt;</span>星期六<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-9"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">&quot;flag===7&quot;</span><span class="p">&gt;</span>星期日<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-10"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else</span><span class="p">&gt;</span>参数错误<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-11"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-12"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-13"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-14"></a>    <span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-15"></a>        <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-16"></a>            <span class="k">return</span> <span class="p">{</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-17"></a>                <span class="nx">flag</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-18"></a>            <span class="p">}</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-19"></a>        <span class="p">},</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-20"></a>    <span class="p">}</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-21"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-22"></a>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-23"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-24"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</pre></td></tr></table></blockquote>
+<p>在上述的代码中，我们需要学到以下几个问题：</p>
+<ol class="arabic simple">
+<li>可以实现多分支渲染。</li>
+<li>注意js中==和===的区别，我想这个问题可以单独写篇文章了……</li>
+</ol>

@@ -24,7 +24,7 @@ body{
     font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
 }
 </style>
-<link rel="prefetch" href="posts/vuejsxue-xi-5/" type="text/html">
+<link rel="prefetch" href="posts/vuejsxue-xi-6/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
@@ -80,7 +80,78 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/vuejsxue-xi-5/" class="u-url">vuejs学习(5)</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/vuejsxue-xi-6/" class="u-url">vuejs学习(6)</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/vuejsxue-xi-6/" rel="bookmark"><time class="published dt-published" datetime="2017-01-13T08:45:45+08:00" title="2017-01-13 08:45">2017-01-13 08:45</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>本文进一步学习条件渲染。</p>
+<p>我们修改了TodoItem.vue文件，代码如下：</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-1"> 1</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-2"> 2</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-3"> 3</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-4"> 4</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-5"> 5</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-6"> 6</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-7"> 7</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-8"> 8</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-9"> 9</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-10">10</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-11">11</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-12">12</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-13">13</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-14">14</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-15">15</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-16">16</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-17">17</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-18">18</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-19">19</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-20">20</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-21">21</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-22">22</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-23">23</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-24">24</a></pre></div></td>
+<td class="code"><pre class="code html"><a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-2"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"todoitem"</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-3"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-if</span><span class="o">=</span><span class="s">"flag===1"</span><span class="p">&gt;</span>星期一<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-4"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">"flag===2"</span><span class="p">&gt;</span>星期二<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-5"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">"flag===3"</span><span class="p">&gt;</span>星期三<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-6"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">"flag===4"</span><span class="p">&gt;</span>星期四<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-7"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">"flag===5"</span><span class="p">&gt;</span>星期五<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-8"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">"flag===6"</span><span class="p">&gt;</span>星期六<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-9"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">"flag===7"</span><span class="p">&gt;</span>星期日<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-10"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else</span><span class="p">&gt;</span>参数错误<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-11"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-12"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-13"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-14"></a>    <span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-15"></a>        <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-16"></a>            <span class="k">return</span> <span class="p">{</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-17"></a>                <span class="nx">flag</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-18"></a>            <span class="p">}</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-19"></a>        <span class="p">},</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-20"></a>    <span class="p">}</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-21"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-22"></a>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-23"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-24"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p>在上述的代码中，我们需要学到以下几个问题：</p>
+<ol class="arabic simple">
+<li>可以实现多分支渲染。</li>
+<li>注意js中==和===的区别，我想这个问题可以单独写篇文章了……</li>
+</ol>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/vuejsxue-xi-5/" class="u-url">vuejs学习(5)</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
@@ -700,43 +771,6 @@ body{
 <li>v-for 用来绑定一系列数据。</li>
 </ol>
 <p>vuejs提供的类似指令还有很多，我们后面接着学习。</p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/exception-in-thread-main-javautilzipzipexception-error-in-opening-zip-file/" class="u-url">Exception in thread "main" java.util.zip.ZipException: error in opening zip file</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/exception-in-thread-main-javautilzipzipexception-error-in-opening-zip-file/" rel="bookmark"><time class="published dt-published" datetime="2017-01-10T22:59:06+08:00" title="2017-01-10 22:59">2017-01-10 22:59</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>在参考 <a class="reference external" href="https://reactnative.cn/docs/0.40/getting-started.html">https://reactnative.cn/docs/0.40/getting-started.html</a> 配置react-native的过程中，发生了如下错误：</p>
-<pre class="code bash"><a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-1"></a>Starting JS server...
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-2"></a>    Building and installing the app on the device <span class="o">(</span><span class="nb">cd</span> android <span class="o">&amp;&amp;</span> ./gradlew installDebug<span class="o">)</span>...
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-3"></a>    Unzipping /home/long/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4-all.zip to /home/long/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-4"></a>    Exception in thread <span class="s2">"main"</span> java.util.zip.ZipException: error in opening zip file
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-5"></a>        at java.util.zip.ZipFile.open<span class="o">(</span>Native Method<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-6"></a>        at java.util.zip.ZipFile.&lt;init&gt;<span class="o">(</span>ZipFile.java:219<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-7"></a>        at java.util.zip.ZipFile.&lt;init&gt;<span class="o">(</span>ZipFile.java:149<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-8"></a>        at java.util.zip.ZipFile.&lt;init&gt;<span class="o">(</span>ZipFile.java:163<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-9"></a>        at org.gradle.wrapper.Install.unzip<span class="o">(</span>Install.java:159<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-10"></a>        at org.gradle.wrapper.Install.access<span class="nv">$500</span><span class="o">(</span>Install.java:26<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-11"></a>        at org.gradle.wrapper.Install<span class="nv">$1</span>.call<span class="o">(</span>Install.java:69<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-12"></a>        at org.gradle.wrapper.Install<span class="nv">$1</span>.call<span class="o">(</span>Install.java:46<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-13"></a>        at org.gradle.wrapper.ExclusiveFileAccessManager.access<span class="o">(</span>ExclusiveFileAccessManager.java:65<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-14"></a>        at org.gradle.wrapper.Install.createDist<span class="o">(</span>Install.java:46<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-15"></a>        at org.gradle.wrapper.WrapperExecutor.execute<span class="o">(</span>WrapperExecutor.java:126<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-16"></a>        at org.gradle.wrapper.GradleWrapperMain.main<span class="o">(</span>GradleWrapperMain.java:61<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-17"></a>Could not install the app on the device, <span class="nb">read</span> the error above <span class="k">for</span> details.
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-18"></a>Make sure you have an Android emulator running or a device connected and have
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-19"></a><span class="nb">set</span> up your Android development environment:
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-20"></a>https://facebook.github.io/react-native/docs/android-setup.html
-</pre>
-<p>解决方法：</p>
-<p>从 <a class="reference external" href="https://services.gradle.org/distributions">https://services.gradle.org/distributions</a> 下载完整的gradle-2.4-all.zip文件，放到 C:\Users\long\.gradle\wrapper\dists\gradle-2.4-all\6r4uqcc6ovnq6ac6s0txzcpc0 目录中即可正常运行 react-native run-android。</p>
-<p>放张成功之后的截图：</p>
-<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/react-native-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/react-native-1.PNG">
 </div>
     </div>
     </article>
