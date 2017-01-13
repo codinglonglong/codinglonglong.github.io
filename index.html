@@ -24,7 +24,7 @@ body{
     font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
 }
 </style>
-<link rel="prefetch" href="posts/javascriptzhong-he-de-dui-bi/" type="text/html">
+<link rel="prefetch" href="posts/vuejsxue-xi-7/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
@@ -80,7 +80,71 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/javascriptzhong-he-de-dui-bi/" class="u-url">JavaScript中==和===的对比</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/vuejsxue-xi-7/" class="u-url">vuejs学习(7)</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/vuejsxue-xi-7/" rel="bookmark"><time class="published dt-published" datetime="2017-01-13T20:28:47+08:00" title="2017-01-13 20:28">2017-01-13 20:28</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>本文对比两种条件渲染， <strong>v-if</strong> 和 <strong>v-show</strong> 。</p>
+<p>测试代码TodoItem.vue如下：</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-7/#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-1"> 1</a>
+<a href="posts/vuejsxue-xi-7/#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-2"> 2</a>
+<a href="posts/vuejsxue-xi-7/#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-3"> 3</a>
+<a href="posts/vuejsxue-xi-7/#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-4"> 4</a>
+<a href="posts/vuejsxue-xi-7/#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-5"> 5</a>
+<a href="posts/vuejsxue-xi-7/#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-6"> 6</a>
+<a href="posts/vuejsxue-xi-7/#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-7"> 7</a>
+<a href="posts/vuejsxue-xi-7/#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-8"> 8</a>
+<a href="posts/vuejsxue-xi-7/#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-9"> 9</a>
+<a href="posts/vuejsxue-xi-7/#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-10">10</a>
+<a href="posts/vuejsxue-xi-7/#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-11">11</a>
+<a href="posts/vuejsxue-xi-7/#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-12">12</a>
+<a href="posts/vuejsxue-xi-7/#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-13">13</a>
+<a href="posts/vuejsxue-xi-7/#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-14">14</a>
+<a href="posts/vuejsxue-xi-7/#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-15">15</a>
+<a href="posts/vuejsxue-xi-7/#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-16">16</a>
+<a href="posts/vuejsxue-xi-7/#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-17">17</a>
+<a href="posts/vuejsxue-xi-7/#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-18">18</a>
+<a href="posts/vuejsxue-xi-7/#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-19">19</a>
+<a href="posts/vuejsxue-xi-7/#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-20">20</a>
+<a href="posts/vuejsxue-xi-7/#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-21">21</a>
+<a href="posts/vuejsxue-xi-7/#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-22">22</a></pre></div></td>
+<td class="code"><pre class="code html"><a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-2"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"todoitem"</span><span class="p">&gt;</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-3"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-if</span><span class="o">=</span><span class="s">"flag"</span><span class="p">&gt;</span>你好<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-4"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-show</span><span class="o">=</span><span class="s">"flag"</span><span class="p">&gt;</span>你好<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-5"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-if</span><span class="o">=</span><span class="s">"flag1"</span><span class="p">&gt;</span>你好<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-6"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-show</span><span class="o">=</span><span class="s">"flag1"</span><span class="p">&gt;</span>你好<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-7"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-8"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-9"></a>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-10"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-11"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-12"></a>    <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-13"></a>        <span class="k">return</span> <span class="p">{</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-14"></a>            <span class="nx">flag</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-15"></a>            <span class="nx">flag1</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-16"></a>        <span class="p">}</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-17"></a>    <span class="p">},</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-18"></a><span class="p">}</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-19"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-20"></a>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-21"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-22"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p>很明显，输出结果是两行“你好”。貌似v-if和v-show没什么区别，这里需要注意：</p>
+<p><strong>v-if 有更高的切换消耗而 v-show 有更高的初始渲染消耗。因此，如果需要频繁切换使用的话， v-show 较好，而如果在运行时条件不大可能发生改变，则使用 v-if 较好。</strong></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/javascriptzhong-he-de-dui-bi/" class="u-url">JavaScript中==和===的对比</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
@@ -646,147 +710,6 @@ body{
 <li>想引入外部库函数时，可以先用内部函数封装一下，就可以在template中使用了。</li>
 <li>lodash提供了很多js内置库中没有的工具函数。</li>
 </ol>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/vuejsxue-xi-3/" class="u-url">vuejs学习(3)</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/vuejsxue-xi-3/" rel="bookmark"><time class="published dt-published" datetime="2017-01-11T19:09:36+08:00" title="2017-01-11 19:09">2017-01-11 19:09</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>本文初步学习一下vuejs提供的组件。我们做了一个列表的例子。</p>
-<p><strong>main.js</strong></p>
-<blockquote>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-3/#rest_code_cb50873306d94458ade803318ec0a550-1">1</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_cb50873306d94458ade803318ec0a550-2">2</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_cb50873306d94458ade803318ec0a550-3">3</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_cb50873306d94458ade803318ec0a550-4">4</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_cb50873306d94458ade803318ec0a550-5">5</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_cb50873306d94458ade803318ec0a550-6">6</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_cb50873306d94458ade803318ec0a550-7">7</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_cb50873306d94458ade803318ec0a550-8">8</a></pre></div></td>
-<td class="code"><pre class="code js"><a name="rest_code_cb50873306d94458ade803318ec0a550-1"></a><span class="kr">import</span> <span class="nx">Vue</span> <span class="nx">from</span> <span class="s1">'vue'</span>
-<a name="rest_code_cb50873306d94458ade803318ec0a550-2"></a><span class="kr">import</span> <span class="nx">TodoList</span> <span class="nx">from</span> <span class="s1">'./TodoList'</span>
-<a name="rest_code_cb50873306d94458ade803318ec0a550-3"></a>
-<a name="rest_code_cb50873306d94458ade803318ec0a550-4"></a><span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
-<a name="rest_code_cb50873306d94458ade803318ec0a550-5"></a>    <span class="nx">el</span><span class="o">:</span> <span class="s1">'#app'</span><span class="p">,</span>
-<a name="rest_code_cb50873306d94458ade803318ec0a550-6"></a>    <span class="nx">template</span><span class="o">:</span> <span class="s1">'&lt;TodoList/&gt;'</span><span class="p">,</span>
-<a name="rest_code_cb50873306d94458ade803318ec0a550-7"></a>    <span class="nx">components</span><span class="o">:</span> <span class="p">{</span> <span class="nx">TodoList</span> <span class="p">}</span>
-<a name="rest_code_cb50873306d94458ade803318ec0a550-8"></a><span class="p">});</span>
-</pre></td>
-</tr></table>
-</blockquote>
-<p><strong>TodoList.vue</strong></p>
-<blockquote>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-1"> 1</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-2"> 2</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-3"> 3</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-4"> 4</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-5"> 5</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-6"> 6</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-7"> 7</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-8"> 8</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-9"> 9</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-10">10</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-11">11</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-12">12</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-13">13</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-14">14</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-15">15</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-16">16</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-17">17</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-18">18</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-19">19</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-20">20</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-21">21</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-22">22</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-23">23</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-24">24</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-25">25</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-26">26</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-27">27</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-28">28</a></pre></div></td>
-<td class="code"><pre class="code html"><a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-2"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"todolist"</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-3"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-4"></a>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>父容器1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-5"></a>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>父容器2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-6"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-7"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-8"></a>        <span class="p">&lt;</span><span class="nt">TodoItem</span> <span class="na">todomessage</span><span class="o">=</span><span class="s">"子容器1"</span><span class="p">&gt;&lt;/</span><span class="nt">TodoItem</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-9"></a>        <span class="p">&lt;</span><span class="nt">TodoItem</span> <span class="na">todomessage</span><span class="o">=</span><span class="s">"子容器2"</span><span class="p">&gt;&lt;/</span><span class="nt">TodoItem</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-10"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-11"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-12"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-13"></a>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-14"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-15"></a><span class="kr">import</span> <span class="nx">TodoItem</span> <span class="nx">from</span> <span class="s1">'./components/TodoItem'</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-16"></a>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-17"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-18"></a>    <span class="nx">components</span><span class="o">:</span> <span class="p">{</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-19"></a>        <span class="nx">TodoItem</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-20"></a>    <span class="p">}</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-21"></a><span class="p">}</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-22"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-23"></a>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-24"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-25"></a><span class="nt">li</span><span class="p">{</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-26"></a>    <span class="nb">color</span><span class="o">:</span> <span class="nb">blue</span><span class="p">;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-27"></a><span class="p">}</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-28"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-</pre></td>
-</tr></table>
-</blockquote>
-<p><strong>components/TodoItem.vue</strong></p>
-<blockquote>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-1"> 1</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-2"> 2</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-3"> 3</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-4"> 4</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-5"> 5</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-6"> 6</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-7"> 7</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-8"> 8</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-9"> 9</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-10">10</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-11">11</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-12">12</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-13">13</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-14">14</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-15">15</a></pre></div></td>
-<td class="code"><pre class="code html"><a name="rest_code_bd207a4209384949bf37623db89810e1-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-2"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{todomessage}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-3"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-4"></a>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-5"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-6"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-7"></a>    <span class="nx">props</span><span class="o">:</span> <span class="p">[</span><span class="s1">'todomessage'</span><span class="p">],</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-8"></a><span class="p">}</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-9"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-10"></a>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-11"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-12"></a><span class="nt">li</span><span class="p">{</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-13"></a>    <span class="nb">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-14"></a><span class="p">}</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-15"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-</pre></td>
-</tr></table>
-</blockquote>
-<p>在上述的代码中，我们需要学到以下几个问题：</p>
-<ol class="arabic simple">
-<li>父组件在components里引入了子组件。</li>
-<li>父组件通过设定子组件中props涉及到的变量，为子组件传值。</li>
-<li>子组件中的css部分要加上scoped，表明该段样式只在这个组件中有效，否则设定样式可能会无效，或者影响其他组件的样式。</li>
-</ol>
-<p>下图是加上scoped</p>
-<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/vue-component-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/vue-component-1.PNG"><p>下图是不加scoped</p>
-<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/vue-component-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/vue-component-2.PNG">
 </div>
     </div>
     </article>

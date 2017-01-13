@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_cn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>vuejs学习(7) | 写程序的龙龙</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://codinglonglong.github.io/posts/vuejsxue-xi-7/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?26f9e777606d49ebbdbe4df058bd028c";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><style>
+body{
+    font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
+}
+</style>
+<meta name="author" content="龙龙">
+<link rel="prev" href="../javascriptzhong-he-de-dui-bi/" title="JavaScript中==和===的对比" type="text/html">
+<meta property="og:site_name" content="写程序的龙龙">
+<meta property="og:title" content="vuejs学习(7)">
+<meta property="og:url" content="https://codinglonglong.github.io/posts/vuejsxue-xi-7/">
+<meta property="og:description" content='本文对比两种条件渲染， v-if 和 v-show 。
+测试代码TodoItem.vue如下：
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22&lt;template&gt;
+&lt;div id="todoitem"&gt;
+    &lt;div v-if="flag"&gt;你好&lt;/div&gt;
+    &lt;div v-show="flag"&gt;你好'>
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-01-13T20:28:47+08:00">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="vue-cli">
+<meta property="article:tag" content="vuejs">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://codinglonglong.github.io/">
+
+                <span id="blog-title">写程序的龙龙</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../../archive.html">文章存档</a>
+                </li>
+<li>
+<a href="../../categories/">标签</a>
+                </li>
+<li>
+<a href="../you-qing-lian-jie/">友情链接</a>
+                </li>
+<li>
+<a href="../hui-dao-zui-chu-de-qi-dian/">回到最初的起点</a>
+                </li>
+<li>
+<a href="../../rss.xml">RSS 源</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="index.rst" id="sourcelink">源代码</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">vuejs学习(7)</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                    龙龙
+            </span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2017-01-13T20:28:47+08:00" itemprop="datePublished" title="2017-01-13 20:28">2017-01-13 20:28</time></a></p>
+            
+        <p class="sourceline"><a href="index.rst" id="sourcelink">源代码</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>本文对比两种条件渲染， <strong>v-if</strong> 和 <strong>v-show</strong> 。</p>
+<p>测试代码TodoItem.vue如下：</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-1"> 1</a>
+<a href="#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-2"> 2</a>
+<a href="#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-3"> 3</a>
+<a href="#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-4"> 4</a>
+<a href="#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-5"> 5</a>
+<a href="#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-6"> 6</a>
+<a href="#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-7"> 7</a>
+<a href="#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-8"> 8</a>
+<a href="#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-9"> 9</a>
+<a href="#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-10">10</a>
+<a href="#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-11">11</a>
+<a href="#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-12">12</a>
+<a href="#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-13">13</a>
+<a href="#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-14">14</a>
+<a href="#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-15">15</a>
+<a href="#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-16">16</a>
+<a href="#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-17">17</a>
+<a href="#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-18">18</a>
+<a href="#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-19">19</a>
+<a href="#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-20">20</a>
+<a href="#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-21">21</a>
+<a href="#rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-22">22</a></pre></div></td>
+<td class="code"><pre class="code html"><a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-2"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"todoitem"</span><span class="p">&gt;</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-3"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-if</span><span class="o">=</span><span class="s">"flag"</span><span class="p">&gt;</span>你好<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-4"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-show</span><span class="o">=</span><span class="s">"flag"</span><span class="p">&gt;</span>你好<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-5"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-if</span><span class="o">=</span><span class="s">"flag1"</span><span class="p">&gt;</span>你好<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-6"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-show</span><span class="o">=</span><span class="s">"flag1"</span><span class="p">&gt;</span>你好<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-7"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-8"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-9"></a>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-10"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-11"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-12"></a>    <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-13"></a>        <span class="k">return</span> <span class="p">{</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-14"></a>            <span class="nx">flag</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-15"></a>            <span class="nx">flag1</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-16"></a>        <span class="p">}</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-17"></a>    <span class="p">},</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-18"></a><span class="p">}</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-19"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-20"></a>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-21"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
+<a name="rest_code_fc08e01997294968b3d6d3d8ce7cf8a9-22"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p>很明显，输出结果是两行“你好”。貌似v-if和v-show没什么区别，这里需要注意：</p>
+<p><strong>v-if 有更高的切换消耗而 v-show 有更高的初始渲染消耗。因此，如果需要频繁切换使用的话， v-show 较好，而如果在运行时条件不大可能发生改变，则使用 v-if 较好。</strong></p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/javascript/" rel="tag">javascript</a></li>
+            <li><a class="tag p-category" href="../../categories/vue-cli/" rel="tag">vue-cli</a></li>
+            <li><a class="tag p-category" href="../../categories/vuejs/" rel="tag">vuejs</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../javascriptzhong-he-de-dui-bi/" rel="prev" title="JavaScript中==和===的对比">前一篇</a>
+            </li>
+        </ul></nav></aside></article>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2017         <a href="mailto:codinglonglong@126.com">龙龙</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/colorbox-i18n/jquery.colorbox-zh-CN.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("zh-cn");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
+</body>
+</html>
