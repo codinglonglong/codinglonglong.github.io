@@ -18,6 +18,10 @@
   <lastmod>2017-01-13T12:25:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://codinglonglong.github.io/categories/cat_docker.xml</loc>
+  <lastmod>2017-01-21T09:40:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_git.xml</loc>
   <lastmod>2017-01-13T12:25:00Z</lastmod>
  </sitemap>
@@ -40,6 +44,10 @@
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_za-wen.xml</loc>
   <lastmod>2017-01-13T12:25:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://codinglonglong.github.io/categories/docker.xml</loc>
+  <lastmod>2017-01-21T09:40:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/droid4x.xml</loc>
@@ -82,6 +90,10 @@
   <lastmod>2017-01-13T12:25:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://codinglonglong.github.io/categories/windows.xml</loc>
+  <lastmod>2017-01-21T09:40:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://codinglonglong.github.io/categories/you-qing-lian-jie.xml</loc>
   <lastmod>2017-01-13T12:25:00Z</lastmod>
  </sitemap>
@@ -91,10 +103,10 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/rss.xml</loc>
-  <lastmod>2017-01-14T07:19:00Z</lastmod>
+  <lastmod>2017-01-21T09:40:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/sitemap.xml</loc>
-  <lastmod>2017-01-14T07:19:00Z</lastmod>
+  <lastmod>2017-01-21T09:40:00Z</lastmod>
  </sitemap>
 </sitemapindex>

@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><lastBuildDate>Sat, 14 Jan 2017 07:19:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>vuejs学习(8)</title><link>https://codinglonglong.github.io/posts/vuejsxue-xi-8/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;本文要学习的是列表渲染 v-for ，看测试代码 &lt;strong&gt;TodoItem.vue&lt;/strong&gt; ：&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><lastBuildDate>Sat, 21 Jan 2017 09:40:30 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Windows配置Docker</title><link>https://codinglonglong.github.io/posts/windowspei-zhi-docker/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;因为新笔记本的无线网卡和声卡比较新，目前的Linux发行版都无法很好地支持，所以只好先用Windows来进行开发了……&lt;/p&gt;
+&lt;p&gt;第一步，在Windows上部署Linux开发环境，首先考虑到的是用Docker。&lt;/p&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p class="first"&gt;安装docker-toolbox。访问下载安装： &lt;a class="reference external" href="https://www.docker.com/products/docker-toolbox"&gt;https://www.docker.com/products/docker-toolbox&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;在开始菜单双击运行Docker Quickstart Terminal，等待……………………直到出现&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_2685df9ff9f04993999f5b183ce7174a-1"&gt;1&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_2685df9ff9f04993999f5b183ce7174a-2"&gt;2&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_2685df9ff9f04993999f5b183ce7174a-3"&gt;3&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_2685df9ff9f04993999f5b183ce7174a-4"&gt;4&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_2685df9ff9f04993999f5b183ce7174a-5"&gt;5&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_2685df9ff9f04993999f5b183ce7174a-6"&gt;6&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_2685df9ff9f04993999f5b183ce7174a-7"&gt;7&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code bash"&gt;&lt;a name="rest_code_2685df9ff9f04993999f5b183ce7174a-1"&gt;&lt;/a&gt;docker is configured to use the default machine with IP 192.168.99.100
+&lt;a name="rest_code_2685df9ff9f04993999f5b183ce7174a-2"&gt;&lt;/a&gt;For &lt;span class="nb"&gt;help&lt;/span&gt; getting started, check out the docs at https://docs.docker.com
+&lt;a name="rest_code_2685df9ff9f04993999f5b183ce7174a-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_2685df9ff9f04993999f5b183ce7174a-4"&gt;&lt;/a&gt;Start interactive shell
+&lt;a name="rest_code_2685df9ff9f04993999f5b183ce7174a-5"&gt;&lt;/a&gt;
+&lt;a name="rest_code_2685df9ff9f04993999f5b183ce7174a-6"&gt;&lt;/a&gt;long@DESKTOP-N79DL8P MINGW64 ~
+&lt;a name="rest_code_2685df9ff9f04993999f5b183ce7174a-7"&gt;&lt;/a&gt;$
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;运行 &lt;strong&gt;docker pull ubuntu:16.04&lt;/strong&gt; 。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;运行 &lt;strong&gt;docker run -it --rm ubuntu:16.04 bash&lt;/strong&gt; ，进入ubuntu的交互环境。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;</description><category>Docker</category><category>Windows</category><guid>https://codinglonglong.github.io/posts/windowspei-zhi-docker/</guid><pubDate>Sat, 21 Jan 2017 09:27:00 GMT</pubDate></item><item><title>vuejs学习(8)</title><link>https://codinglonglong.github.io/posts/vuejsxue-xi-8/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;本文要学习的是列表渲染 v-for ，看测试代码 &lt;strong&gt;TodoItem.vue&lt;/strong&gt; ：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-1"&gt; 1&lt;/a&gt;
 &lt;a href="https://codinglonglong.github.io/posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-2"&gt; 2&lt;/a&gt;
@@ -889,28 +915,4 @@
 &lt;li&gt;v-if 用来根据某一变量的值决定元素的显示与否。&lt;/li&gt;
 &lt;li&gt;v-for 用来绑定一系列数据。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;vuejs提供的类似指令还有很多，我们后面接着学习。&lt;/p&gt;&lt;/div&gt;</description><category>javascript</category><category>vue-cli</category><category>vuejs</category><guid>https://codinglonglong.github.io/posts/vuejsxue-xi-2/</guid><pubDate>Wed, 11 Jan 2017 06:46:11 GMT</pubDate></item><item><title>Exception in thread "main" java.util.zip.ZipException: error in opening zip file</title><link>https://codinglonglong.github.io/posts/exception-in-thread-main-javautilzipzipexception-error-in-opening-zip-file/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;在参考 &lt;a class="reference external" href="https://reactnative.cn/docs/0.40/getting-started.html"&gt;https://reactnative.cn/docs/0.40/getting-started.html&lt;/a&gt; 配置react-native的过程中，发生了如下错误：&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-1"&gt;&lt;/a&gt;Starting JS server...
-&lt;a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-2"&gt;&lt;/a&gt;    Building and installing the app on the device &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; android &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; ./gradlew installDebug&lt;span class="o"&gt;)&lt;/span&gt;...
-&lt;a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-3"&gt;&lt;/a&gt;    Unzipping /home/long/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4-all.zip to /home/long/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0
-&lt;a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-4"&gt;&lt;/a&gt;    Exception in thread &lt;span class="s2"&gt;"main"&lt;/span&gt; java.util.zip.ZipException: error in opening zip file
-&lt;a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-5"&gt;&lt;/a&gt;        at java.util.zip.ZipFile.open&lt;span class="o"&gt;(&lt;/span&gt;Native Method&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-6"&gt;&lt;/a&gt;        at java.util.zip.ZipFile.&amp;lt;init&amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;ZipFile.java:219&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-7"&gt;&lt;/a&gt;        at java.util.zip.ZipFile.&amp;lt;init&amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;ZipFile.java:149&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-8"&gt;&lt;/a&gt;        at java.util.zip.ZipFile.&amp;lt;init&amp;gt;&lt;span class="o"&gt;(&lt;/span&gt;ZipFile.java:163&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-9"&gt;&lt;/a&gt;        at org.gradle.wrapper.Install.unzip&lt;span class="o"&gt;(&lt;/span&gt;Install.java:159&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-10"&gt;&lt;/a&gt;        at org.gradle.wrapper.Install.access&lt;span class="nv"&gt;$500&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;Install.java:26&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-11"&gt;&lt;/a&gt;        at org.gradle.wrapper.Install&lt;span class="nv"&gt;$1&lt;/span&gt;.call&lt;span class="o"&gt;(&lt;/span&gt;Install.java:69&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-12"&gt;&lt;/a&gt;        at org.gradle.wrapper.Install&lt;span class="nv"&gt;$1&lt;/span&gt;.call&lt;span class="o"&gt;(&lt;/span&gt;Install.java:46&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-13"&gt;&lt;/a&gt;        at org.gradle.wrapper.ExclusiveFileAccessManager.access&lt;span class="o"&gt;(&lt;/span&gt;ExclusiveFileAccessManager.java:65&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-14"&gt;&lt;/a&gt;        at org.gradle.wrapper.Install.createDist&lt;span class="o"&gt;(&lt;/span&gt;Install.java:46&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-15"&gt;&lt;/a&gt;        at org.gradle.wrapper.WrapperExecutor.execute&lt;span class="o"&gt;(&lt;/span&gt;WrapperExecutor.java:126&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-16"&gt;&lt;/a&gt;        at org.gradle.wrapper.GradleWrapperMain.main&lt;span class="o"&gt;(&lt;/span&gt;GradleWrapperMain.java:61&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-17"&gt;&lt;/a&gt;Could not install the app on the device, &lt;span class="nb"&gt;read&lt;/span&gt; the error above &lt;span class="k"&gt;for&lt;/span&gt; details.
-&lt;a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-18"&gt;&lt;/a&gt;Make sure you have an Android emulator running or a device connected and have
-&lt;a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-19"&gt;&lt;/a&gt;&lt;span class="nb"&gt;set&lt;/span&gt; up your Android development environment:
-&lt;a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-20"&gt;&lt;/a&gt;https://facebook.github.io/react-native/docs/android-setup.html
-&lt;/pre&gt;&lt;p&gt;解决方法：&lt;/p&gt;
-&lt;p&gt;从 &lt;a class="reference external" href="https://services.gradle.org/distributions"&gt;https://services.gradle.org/distributions&lt;/a&gt; 下载完整的gradle-2.4-all.zip文件，放到 C:\Users\long\.gradle\wrapper\dists\gradle-2.4-all\6r4uqcc6ovnq6ac6s0txzcpc0 目录中即可正常运行 react-native run-android。&lt;/p&gt;
-&lt;p&gt;放张成功之后的截图：&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/react-native-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/react-native-1.PNG"&gt;&lt;/div&gt;</description><category>react</category><category>react-native</category><guid>https://codinglonglong.github.io/posts/exception-in-thread-main-javautilzipzipexception-error-in-opening-zip-file/</guid><pubDate>Tue, 10 Jan 2017 14:59:06 GMT</pubDate></item></channel></rss>
+&lt;p&gt;vuejs提供的类似指令还有很多，我们后面接着学习。&lt;/p&gt;&lt;/div&gt;</description><category>javascript</category><category>vue-cli</category><category>vuejs</category><guid>https://codinglonglong.github.io/posts/vuejsxue-xi-2/</guid><pubDate>Wed, 11 Jan 2017 06:46:11 GMT</pubDate></item></channel></rss>
