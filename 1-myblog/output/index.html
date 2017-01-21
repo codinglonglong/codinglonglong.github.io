@@ -88,51 +88,57 @@ body{
             <p class="dateline"><a href="posts/dockerchang-yong-ming-ling/" rel="bookmark"><time class="published dt-published" datetime="2017-01-21T20:13:52+08:00" title="2017-01-21 20:13">2017-01-21 20:13</time></a></p>
         </div>
     </header><div class="p-summary entry-summary">
-    <ol class="arabic">
+    <div>
+<ol class="arabic">
 <li>
 <p class="first">创建容器。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_7c647d7b725747c597cc9eb358e578a3-1"></a>docker run --name mypc ubuntu:16.04
+<pre class="code bash"><a name="rest_code_c9c75d1ba1b64febba1c8636aaac0223-1"></a>docker run --name mypc -it ubuntu:16.04 /bin/bash
 </pre>
 </blockquote>
 </li>
+</ol>
+<p>经过实验，目前只有这样创建的容器可以在后边正常start。</p>
+<ol class="arabic" start="2">
 <li>
 <p class="first">查看已有容器及其状态。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_f93fc262b906451c8bf9bb5b2a394942-1"></a>docker ps -a
+<pre class="code bash"><a name="rest_code_e44b02e7ac8a423094f35c1c8b3d85f1-1"></a>docker ps -a
 </pre>
 </blockquote>
 </li>
 <li>
 <p class="first">启动已有容器。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_46464ffbffd14249ad4e9e4be7abe3a4-1"></a>docker start mypc
+<pre class="code bash"><a name="rest_code_43ea6714979d4d9091494382a6ab1f95-1"></a>docker start mypc
 </pre>
 </blockquote>
 </li>
 <li>
 <p class="first">登陆正在运行的容器。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_fc1c62b3126c41b899c6cccf3ed4192b-1"></a>docker <span class="nb">exec</span> -it mypc /bin/bash
+<pre class="code bash"><a name="rest_code_4d2acfaaad9f492b8339434098a489fd-1"></a>docker <span class="nb">exec</span> -it mypc /bin/bash
 </pre>
 </blockquote>
 </li>
 <li>
 <p class="first">关闭正在运行的容器。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_8a06e614cfcc4c3588f6e0fb861f3e21-1"></a>docker stop mypc
+<pre class="code bash"><a name="rest_code_e7c96fcc4db84aee89978be333c6fa5a-1"></a>docker stop mypc
 </pre>
 </blockquote>
 </li>
 <li>
 <p class="first">删除容器。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_046a0159e6314192878bd9ca140fea6f-1"></a>docker rm mypc
+<pre class="code bash"><a name="rest_code_ed0bda4a943c473e900d8c19ae6e9c5e-1"></a>docker rm mypc
 </pre>
 </blockquote>
 </li>
 </ol>
+<p><strong>注意</strong> ：重启电脑之前，记得先把VirtualBox里边的虚拟机正常关机，否则等重启回来，容器可能就找不到了。</p>
 </div>
+    </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/windowspei-zhi-docker/" class="u-url">Windows配置Docker</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">

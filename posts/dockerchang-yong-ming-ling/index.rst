@@ -11,7 +11,9 @@
 
     .. code-block:: bash
 
-        docker run --name mypc ubuntu:16.04
+        docker run --name mypc -it ubuntu:16.04 /bin/bash
+
+经过实验，目前只有这样创建的容器可以在后边正常start。
 
 2. 查看已有容器及其状态。
 
@@ -43,3 +45,4 @@
 
         docker rm mypc
 
+**注意** ：重启电脑之前，记得先把VirtualBox里边的虚拟机正常关机，否则等重启回来，容器可能就找不到了。

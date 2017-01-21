@@ -1,36 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (文章分类：Docker)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/docker.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><lastBuildDate>Sat, 21 Jan 2017 12:43:22 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Docker常用命令</title><link>https://codinglonglong.github.io/posts/dockerchang-yong-ming-ling/</link><dc:creator>龙龙</dc:creator><description>&lt;ol class="arabic"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (文章分类：Docker)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/docker.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><lastBuildDate>Sat, 21 Jan 2017 14:24:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Docker常用命令</title><link>https://codinglonglong.github.io/posts/dockerchang-yong-ming-ling/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;ol class="arabic"&gt;
 &lt;li&gt;&lt;p class="first"&gt;创建容器。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_7c647d7b725747c597cc9eb358e578a3-1"&gt;&lt;/a&gt;docker run --name mypc ubuntu:16.04
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_c9c75d1ba1b64febba1c8636aaac0223-1"&gt;&lt;/a&gt;docker run --name mypc -it ubuntu:16.04 /bin/bash
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;经过实验，目前只有这样创建的容器可以在后边正常start。&lt;/p&gt;
+&lt;ol class="arabic" start="2"&gt;
 &lt;li&gt;&lt;p class="first"&gt;查看已有容器及其状态。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_f93fc262b906451c8bf9bb5b2a394942-1"&gt;&lt;/a&gt;docker ps -a
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_e44b02e7ac8a423094f35c1c8b3d85f1-1"&gt;&lt;/a&gt;docker ps -a
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;启动已有容器。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_46464ffbffd14249ad4e9e4be7abe3a4-1"&gt;&lt;/a&gt;docker start mypc
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_43ea6714979d4d9091494382a6ab1f95-1"&gt;&lt;/a&gt;docker start mypc
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;登陆正在运行的容器。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_fc1c62b3126c41b899c6cccf3ed4192b-1"&gt;&lt;/a&gt;docker &lt;span class="nb"&gt;exec&lt;/span&gt; -it mypc /bin/bash
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_4d2acfaaad9f492b8339434098a489fd-1"&gt;&lt;/a&gt;docker &lt;span class="nb"&gt;exec&lt;/span&gt; -it mypc /bin/bash
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;关闭正在运行的容器。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_8a06e614cfcc4c3588f6e0fb861f3e21-1"&gt;&lt;/a&gt;docker stop mypc
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_e7c96fcc4db84aee89978be333c6fa5a-1"&gt;&lt;/a&gt;docker stop mypc
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;删除容器。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_046a0159e6314192878bd9ca140fea6f-1"&gt;&lt;/a&gt;docker rm mypc
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_ed0bda4a943c473e900d8c19ae6e9c5e-1"&gt;&lt;/a&gt;docker rm mypc
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</description><category>Docker</category><guid>https://codinglonglong.github.io/posts/dockerchang-yong-ming-ling/</guid><pubDate>Sat, 21 Jan 2017 12:13:52 GMT</pubDate></item><item><title>Windows配置Docker</title><link>https://codinglonglong.github.io/posts/windowspei-zhi-docker/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;因为新笔记本的无线网卡和声卡比较新，目前的Linux发行版都无法很好地支持，所以只好先用Windows来进行开发了……&lt;/p&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt; ：重启电脑之前，记得先把VirtualBox里边的虚拟机正常关机，否则等重启回来，容器可能就找不到了。&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><guid>https://codinglonglong.github.io/posts/dockerchang-yong-ming-ling/</guid><pubDate>Sat, 21 Jan 2017 12:13:52 GMT</pubDate></item><item><title>Windows配置Docker</title><link>https://codinglonglong.github.io/posts/windowspei-zhi-docker/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;因为新笔记本的无线网卡和声卡比较新，目前的Linux发行版都无法很好地支持，所以只好先用Windows来进行开发了……&lt;/p&gt;
 &lt;p&gt;第一步，在Windows上部署Linux开发环境，首先考虑到的是用Docker。&lt;/p&gt;
 &lt;ol class="arabic"&gt;
 &lt;li&gt;&lt;p class="first"&gt;安装docker-toolbox。访问下载安装： &lt;a class="reference external" href="https://www.docker.com/products/docker-toolbox"&gt;https://www.docker.com/products/docker-toolbox&lt;/a&gt;&lt;/p&gt;
