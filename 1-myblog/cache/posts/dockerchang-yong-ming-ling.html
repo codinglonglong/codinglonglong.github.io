@@ -1,0 +1,32 @@
+<ol class="arabic">
+<li><p class="first">创建容器。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_7c647d7b725747c597cc9eb358e578a3-1"></a>docker run --name mypc ubuntu:16.04
+</pre></blockquote>
+</li>
+<li><p class="first">查看已有容器及其状态。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_f93fc262b906451c8bf9bb5b2a394942-1"></a>docker ps -a
+</pre></blockquote>
+</li>
+<li><p class="first">启动已有容器。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_46464ffbffd14249ad4e9e4be7abe3a4-1"></a>docker start mypc
+</pre></blockquote>
+</li>
+<li><p class="first">登陆正在运行的容器。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_fc1c62b3126c41b899c6cccf3ed4192b-1"></a>docker <span class="nb">exec</span> -it mypc /bin/bash
+</pre></blockquote>
+</li>
+<li><p class="first">关闭正在运行的容器。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_8a06e614cfcc4c3588f6e0fb861f3e21-1"></a>docker stop mypc
+</pre></blockquote>
+</li>
+<li><p class="first">删除容器。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_046a0159e6314192878bd9ca140fea6f-1"></a>docker rm mypc
+</pre></blockquote>
+</li>
+</ol>
