@@ -19,7 +19,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_docker.xml</loc>
-  <lastmod>2017-01-23T14:41:00Z</lastmod>
+  <lastmod>2017-01-23T15:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_git.xml</loc>
@@ -47,11 +47,15 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/docker.xml</loc>
-  <lastmod>2017-01-23T14:41:00Z</lastmod>
+  <lastmod>2017-01-23T15:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/droid4x.xml</loc>
   <lastmod>2017-01-23T14:41:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://codinglonglong.github.io/categories/flask.xml</loc>
+  <lastmod>2017-01-23T15:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/git.xml</loc>
@@ -68,6 +72,10 @@
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/javascript.xml</loc>
   <lastmod>2017-01-23T14:41:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://codinglonglong.github.io/categories/python.xml</loc>
+  <lastmod>2017-01-23T15:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/react-native.xml</loc>
@@ -103,10 +111,10 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/rss.xml</loc>
-  <lastmod>2017-01-23T14:41:00Z</lastmod>
+  <lastmod>2017-01-23T15:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/sitemap.xml</loc>
-  <lastmod>2017-01-23T14:41:00Z</lastmod>
+  <lastmod>2017-01-23T15:21:00Z</lastmod>
  </sitemap>
 </sitemapindex>

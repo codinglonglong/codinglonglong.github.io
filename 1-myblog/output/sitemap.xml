@@ -15,11 +15,11 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/archive.html</loc>
-  <lastmod>2017-01-23T14:41:00Z</lastmod>
+  <lastmod>2017-01-23T15:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/</loc>
-  <lastmod>2017-01-23T14:41:00Z</lastmod>
+  <lastmod>2017-01-23T15:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/android/</loc>
@@ -70,6 +70,10 @@
   <lastmod>2017-01-23T14:41:00Z</lastmod>
  </url>
  <url>
+  <loc>https://codinglonglong.github.io/categories/flask/</loc>
+  <lastmod>2017-01-23T15:21:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://codinglonglong.github.io/categories/git/</loc>
   <lastmod>2017-01-23T14:41:00Z</lastmod>
  </url>
@@ -84,6 +88,10 @@
  <url>
   <loc>https://codinglonglong.github.io/categories/javascript/</loc>
   <lastmod>2017-01-23T14:41:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/python/</loc>
+  <lastmod>2017-01-23T15:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/react-native/</loc>
@@ -127,7 +135,7 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-3.html</loc>
-  <lastmod>2017-01-23T14:41:00Z</lastmod>
+  <lastmod>2017-01-23T15:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/android-studiolian-jie-droid4xdiao-shi-app/</loc>
@@ -140,6 +148,10 @@
  <url>
   <loc>https://codinglonglong.github.io/posts/dockerchang-yong-ming-ling/</loc>
   <lastmod>2017-01-23T14:41:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/</loc>
+  <lastmod>2017-01-23T15:21:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/exception-in-thread-main-javautilzipzipexception-error-in-opening-zip-file/</loc>
