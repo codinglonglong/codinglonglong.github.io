@@ -1,56 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (文章分类：Docker)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/docker.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><lastBuildDate>Sat, 21 Jan 2017 18:58:25 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Docker创建开发镜像</title><link>https://codinglonglong.github.io/posts/dockerchuang-jian-kai-fa-jing-xiang/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;学习完Docker的基本命令，我们来创建一个用于开发的镜像。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt; ：Docker里默认无法正常显示中文，只好尽量使用英文了。&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;ubuntu:16.04镜像使用apt-get会报错，并且缺少很多工具……所以我们用centos来完成进一步的配置……额……yum也报错……&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;尝试了Ubuntu、CentOS、Debian、Fedora几个主流系统的镜像，基本的使用都出现了问题……不太理解为什么docker镜像里最基本的系统工具都没法用……准确地说，对于菜鸟来说，不太会用……&lt;/p&gt;
-&lt;p&gt;不过还好，不管哪个发行版，有个基本的Linux系统，需要什么工具去http://mirrors.163.com找就可以了。下面以CentOS为例做一下。&lt;/p&gt;
-&lt;ol class="arabic"&gt;
-&lt;li&gt;&lt;p class="first"&gt;创建一个带有共享目录和端口映射的容器。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_42b9b82d532f4b6a9beb14764958951e-1"&gt;&lt;/a&gt;docker run --name mypc -i -t -p 8080:8080 -v ~/share/:/usr/share/ centos:latest /bin/bash
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;安装pip。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_dc115646d7fa4097a8b94eace1a6c44d-1"&gt;&lt;/a&gt;curl -O https://bootstrap.pypa.io/get-pip.py
-&lt;a name="rest_code_dc115646d7fa4097a8b94eace1a6c44d-2"&gt;&lt;/a&gt;python get-pip.py
-&lt;a name="rest_code_dc115646d7fa4097a8b94eace1a6c44d-3"&gt;&lt;/a&gt;pip install flask
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;安装net-tools，提供ifconfig。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_073f30bed04a475f9317dc93a70f6fd7-1"&gt;&lt;/a&gt;rpm -Uvh http://mirrors.163.com/centos/7/os/x86_64/Packages/net-tools-2.0-0.17.20131004git.el7.x86_64.rpm
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;在主系统上编写python程序main.py，存储到用户目录下的share文件夹中。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/dockerchuang-jian-kai-fa-jing-xiang/#rest_code_200649372d7645718b3821ce52c67659-1"&gt;1&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerchuang-jian-kai-fa-jing-xiang/#rest_code_200649372d7645718b3821ce52c67659-2"&gt;2&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerchuang-jian-kai-fa-jing-xiang/#rest_code_200649372d7645718b3821ce52c67659-3"&gt;3&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerchuang-jian-kai-fa-jing-xiang/#rest_code_200649372d7645718b3821ce52c67659-4"&gt;4&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerchuang-jian-kai-fa-jing-xiang/#rest_code_200649372d7645718b3821ce52c67659-5"&gt;5&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerchuang-jian-kai-fa-jing-xiang/#rest_code_200649372d7645718b3821ce52c67659-6"&gt;6&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerchuang-jian-kai-fa-jing-xiang/#rest_code_200649372d7645718b3821ce52c67659-7"&gt;7&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerchuang-jian-kai-fa-jing-xiang/#rest_code_200649372d7645718b3821ce52c67659-8"&gt;8&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerchuang-jian-kai-fa-jing-xiang/#rest_code_200649372d7645718b3821ce52c67659-9"&gt;9&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_200649372d7645718b3821ce52c67659-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;
-&lt;a name="rest_code_200649372d7645718b3821ce52c67659-2"&gt;&lt;/a&gt;&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_200649372d7645718b3821ce52c67659-3"&gt;&lt;/a&gt;
-&lt;a name="rest_code_200649372d7645718b3821ce52c67659-4"&gt;&lt;/a&gt;&lt;span class="nd"&gt;@app.route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'/'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_200649372d7645718b3821ce52c67659-5"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;hello_world&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
-&lt;a name="rest_code_200649372d7645718b3821ce52c67659-6"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s1"&gt;'Hello World!'&lt;/span&gt;
-&lt;a name="rest_code_200649372d7645718b3821ce52c67659-7"&gt;&lt;/a&gt;
-&lt;a name="rest_code_200649372d7645718b3821ce52c67659-8"&gt;&lt;/a&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;'__main__'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a name="rest_code_200649372d7645718b3821ce52c67659-9"&gt;&lt;/a&gt;    &lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;host&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"0.0.0.0"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"8080"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;在Docker中切换到共享目录/usr/share/，启动网站。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_2c2eee7cd175456f9990a50a11732947-1"&gt;&lt;/a&gt;python main.py
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p class="first"&gt;主系统上访问 &lt;a class="reference external" href="http://192.168.99.100:8080/"&gt;http://192.168.99.100:8080/&lt;/a&gt;，即可看到网站主页。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;&lt;/div&gt;</description><category>Docker</category><guid>https://codinglonglong.github.io/posts/dockerchuang-jian-kai-fa-jing-xiang/</guid><pubDate>Sat, 21 Jan 2017 18:41:24 GMT</pubDate></item><item><title>Docker常用命令</title><link>https://codinglonglong.github.io/posts/dockerchang-yong-ming-ling/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;ol class="arabic"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (文章分类：Docker)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/docker.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><lastBuildDate>Mon, 23 Jan 2017 14:41:10 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Docker常用命令</title><link>https://codinglonglong.github.io/posts/dockerchang-yong-ming-ling/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;ol class="arabic"&gt;
 &lt;li&gt;&lt;p class="first"&gt;创建容器。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;pre class="code bash"&gt;&lt;a name="rest_code_c9c75d1ba1b64febba1c8636aaac0223-1"&gt;&lt;/a&gt;docker run --name mypc -it ubuntu:16.04 /bin/bash

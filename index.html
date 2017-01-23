@@ -24,7 +24,7 @@ body{
     font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
 }
 </style>
-<link rel="prefetch" href="posts/dockerchuang-jian-kai-fa-jing-xiang/" type="text/html">
+<link rel="prefetch" href="posts/dockerchang-yong-ming-ling/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
@@ -80,84 +80,7 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerchuang-jian-kai-fa-jing-xiang/" class="u-url">Docker创建开发镜像</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/dockerchuang-jian-kai-fa-jing-xiang/" rel="bookmark"><time class="published dt-published" datetime="2017-01-22T02:41:24+08:00" title="2017-01-22 02:41">2017-01-22 02:41</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>学习完Docker的基本命令，我们来创建一个用于开发的镜像。</p>
-<p><strong>注意</strong> ：Docker里默认无法正常显示中文，只好尽量使用英文了。</p>
-<p><em>ubuntu:16.04镜像使用apt-get会报错，并且缺少很多工具……所以我们用centos来完成进一步的配置……额……yum也报错……</em></p>
-<p>尝试了Ubuntu、CentOS、Debian、Fedora几个主流系统的镜像，基本的使用都出现了问题……不太理解为什么docker镜像里最基本的系统工具都没法用……准确地说，对于菜鸟来说，不太会用……</p>
-<p>不过还好，不管哪个发行版，有个基本的Linux系统，需要什么工具去http://mirrors.163.com找就可以了。下面以CentOS为例做一下。</p>
-<ol class="arabic">
-<li>
-<p class="first">创建一个带有共享目录和端口映射的容器。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_42b9b82d532f4b6a9beb14764958951e-1"></a>docker run --name mypc -i -t -p 8080:8080 -v ~/share/:/usr/share/ centos:latest /bin/bash
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">安装pip。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_dc115646d7fa4097a8b94eace1a6c44d-1"></a>curl -O https://bootstrap.pypa.io/get-pip.py
-<a name="rest_code_dc115646d7fa4097a8b94eace1a6c44d-2"></a>python get-pip.py
-<a name="rest_code_dc115646d7fa4097a8b94eace1a6c44d-3"></a>pip install flask
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">安装net-tools，提供ifconfig。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_073f30bed04a475f9317dc93a70f6fd7-1"></a>rpm -Uvh http://mirrors.163.com/centos/7/os/x86_64/Packages/net-tools-2.0-0.17.20131004git.el7.x86_64.rpm
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">在主系统上编写python程序main.py，存储到用户目录下的share文件夹中。</p>
-<blockquote>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/dockerchuang-jian-kai-fa-jing-xiang/#rest_code_200649372d7645718b3821ce52c67659-1">1</a>
-<a href="posts/dockerchuang-jian-kai-fa-jing-xiang/#rest_code_200649372d7645718b3821ce52c67659-2">2</a>
-<a href="posts/dockerchuang-jian-kai-fa-jing-xiang/#rest_code_200649372d7645718b3821ce52c67659-3">3</a>
-<a href="posts/dockerchuang-jian-kai-fa-jing-xiang/#rest_code_200649372d7645718b3821ce52c67659-4">4</a>
-<a href="posts/dockerchuang-jian-kai-fa-jing-xiang/#rest_code_200649372d7645718b3821ce52c67659-5">5</a>
-<a href="posts/dockerchuang-jian-kai-fa-jing-xiang/#rest_code_200649372d7645718b3821ce52c67659-6">6</a>
-<a href="posts/dockerchuang-jian-kai-fa-jing-xiang/#rest_code_200649372d7645718b3821ce52c67659-7">7</a>
-<a href="posts/dockerchuang-jian-kai-fa-jing-xiang/#rest_code_200649372d7645718b3821ce52c67659-8">8</a>
-<a href="posts/dockerchuang-jian-kai-fa-jing-xiang/#rest_code_200649372d7645718b3821ce52c67659-9">9</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_200649372d7645718b3821ce52c67659-1"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
-<a name="rest_code_200649372d7645718b3821ce52c67659-2"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
-<a name="rest_code_200649372d7645718b3821ce52c67659-3"></a>
-<a name="rest_code_200649372d7645718b3821ce52c67659-4"></a><span class="nd">@app.route</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
-<a name="rest_code_200649372d7645718b3821ce52c67659-5"></a><span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
-<a name="rest_code_200649372d7645718b3821ce52c67659-6"></a>    <span class="k">return</span> <span class="s1">'Hello World!'</span>
-<a name="rest_code_200649372d7645718b3821ce52c67659-7"></a>
-<a name="rest_code_200649372d7645718b3821ce52c67659-8"></a><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
-<a name="rest_code_200649372d7645718b3821ce52c67659-9"></a>    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">"0.0.0.0"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="s2">"8080"</span><span class="p">)</span>
-</pre></td>
-</tr></table>
-</blockquote>
-</li>
-<li>
-<p class="first">在Docker中切换到共享目录/usr/share/，启动网站。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_2c2eee7cd175456f9990a50a11732947-1"></a>python main.py
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">主系统上访问 <a class="reference external" href="http://192.168.99.100:8080/">http://192.168.99.100:8080/</a>，即可看到网站主页。</p>
-</li>
-</ol>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerchang-yong-ming-ling/" class="u-url">Docker常用命令</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerchang-yong-ming-ling/" class="u-url">Docker常用命令</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
@@ -610,6 +533,77 @@ body{
 </blockquote>
 <p>输出结果：</p>
 <img alt="https://github.com/longlongpicture/myblogpicture/raw/master/jsequal.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/jsequal.PNG"><p>我只想说，如果===结果符合测试预期，我一定会一直用===，直到哪天发现==有实际价值，再记住使用的环境。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/vuejsxue-xi-6/" class="u-url">vuejs学习(6)</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/vuejsxue-xi-6/" rel="bookmark"><time class="published dt-published" datetime="2017-01-13T08:45:45+08:00" title="2017-01-13 08:45">2017-01-13 08:45</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>本文进一步学习条件渲染。</p>
+<p>我们修改了TodoItem.vue文件，代码如下：</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-1"> 1</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-2"> 2</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-3"> 3</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-4"> 4</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-5"> 5</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-6"> 6</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-7"> 7</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-8"> 8</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-9"> 9</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-10">10</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-11">11</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-12">12</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-13">13</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-14">14</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-15">15</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-16">16</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-17">17</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-18">18</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-19">19</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-20">20</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-21">21</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-22">22</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-23">23</a>
+<a href="posts/vuejsxue-xi-6/#rest_code_af77cfc65a52489c82f0ae3b1da66cda-24">24</a></pre></div></td>
+<td class="code"><pre class="code html"><a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-2"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"todoitem"</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-3"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-if</span><span class="o">=</span><span class="s">"flag===1"</span><span class="p">&gt;</span>星期一<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-4"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">"flag===2"</span><span class="p">&gt;</span>星期二<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-5"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">"flag===3"</span><span class="p">&gt;</span>星期三<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-6"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">"flag===4"</span><span class="p">&gt;</span>星期四<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-7"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">"flag===5"</span><span class="p">&gt;</span>星期五<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-8"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">"flag===6"</span><span class="p">&gt;</span>星期六<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-9"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">"flag===7"</span><span class="p">&gt;</span>星期日<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-10"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else</span><span class="p">&gt;</span>参数错误<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-11"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-12"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-13"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-14"></a>    <span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-15"></a>        <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-16"></a>            <span class="k">return</span> <span class="p">{</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-17"></a>                <span class="nx">flag</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-18"></a>            <span class="p">}</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-19"></a>        <span class="p">},</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-20"></a>    <span class="p">}</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-21"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-22"></a>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-23"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
+<a name="rest_code_af77cfc65a52489c82f0ae3b1da66cda-24"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p>在上述的代码中，我们需要学到以下几个问题：</p>
+<ol class="arabic simple">
+<li>可以实现多分支渲染。</li>
+<li>注意js中==和===的区别，我想这个问题可以单独写篇文章了……</li>
+</ol>
 </div>
     </div>
     </article>
