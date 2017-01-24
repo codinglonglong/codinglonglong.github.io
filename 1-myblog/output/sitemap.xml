@@ -15,11 +15,11 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/archive.html</loc>
-  <lastmod>2017-01-23T15:21:00Z</lastmod>
+  <lastmod>2017-01-24T05:22:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/</loc>
-  <lastmod>2017-01-23T15:21:00Z</lastmod>
+  <lastmod>2017-01-24T05:22:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/android/</loc>
@@ -46,6 +46,10 @@
   <lastmod>2017-01-23T14:41:00Z</lastmod>
  </url>
  <url>
+  <loc>https://codinglonglong.github.io/categories/cat_python/</loc>
+  <lastmod>2017-01-24T05:22:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://codinglonglong.github.io/categories/cat_react/</loc>
   <lastmod>2017-01-23T14:41:00Z</lastmod>
  </url>
@@ -68,6 +72,10 @@
  <url>
   <loc>https://codinglonglong.github.io/categories/droid4x/</loc>
   <lastmod>2017-01-23T14:41:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/flask-restplus/</loc>
+  <lastmod>2017-01-24T05:22:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/flask/</loc>
@@ -100,6 +108,10 @@
  <url>
   <loc>https://codinglonglong.github.io/categories/react/</loc>
   <lastmod>2017-01-23T14:41:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/swagger-ui/</loc>
+  <lastmod>2017-01-24T05:22:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/vue-cli/</loc>
@@ -135,7 +147,7 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-3.html</loc>
-  <lastmod>2017-01-23T15:21:00Z</lastmod>
+  <lastmod>2017-01-24T05:22:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/android-studiolian-jie-droid4xdiao-shi-app/</loc>
@@ -168,6 +180,10 @@
  <url>
   <loc>https://codinglonglong.github.io/posts/javascriptzhong-he-de-dui-bi/</loc>
   <lastmod>2017-01-23T14:41:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/</loc>
+  <lastmod>2017-01-24T05:22:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/vuejsxue-xi-1/</loc>
