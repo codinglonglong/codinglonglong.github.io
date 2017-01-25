@@ -24,7 +24,7 @@ body{
     font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
 }
 </style>
-<link rel="prefetch" href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/" type="text/html">
+<link rel="prefetch" href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
@@ -80,7 +80,126 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/" class="u-url">使用Flask-Restplus和Swagger UI最小化实现增删改查</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/" class="u-url">Docker中配置Flask-Sqlalchemy和Mysql</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/" rel="bookmark"><time class="published dt-published" datetime="2017-01-25T13:37:42+08:00" title="2017-01-25 13:37">2017-01-25 13:37</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>继文章 <a class="reference external" href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/">https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/</a> 之后，我们进一步配置数据库的部分。</p>
+<p>1、Docker安装Mysql。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_5b01db8151fb40a29633525842b64897-1"></a>apt install mysql-server mysql-client
+</pre>
+</blockquote>
+<p>2、Docker下载安装mysql-connector-python。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_7545170dda2e42d9a6df386a0cdcddc5-1"></a>apt install curl
+<a name="rest_code_7545170dda2e42d9a6df386a0cdcddc5-2"></a>curl -O https://cdn.mysql.com/Downloads/Connector-Python/mysql-connector-python-2.1.5.tar.gz
+<a name="rest_code_7545170dda2e42d9a6df386a0cdcddc5-3"></a>tar zxvf mysql-connector-python-2.1.5.tar.gz
+<a name="rest_code_7545170dda2e42d9a6df386a0cdcddc5-4"></a><span class="nb">cd</span> mysql-connector-python-2.1.5
+<a name="rest_code_7545170dda2e42d9a6df386a0cdcddc5-5"></a>python setup.py install
+</pre>
+</blockquote>
+<p>3、Docker安装Flask-Sqlalchemy和Flask-Script。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_c8dc86cbef7b4d0382a98048a0e70ac8-1"></a>pip install flask-sqlalchemy
+<a name="rest_code_c8dc86cbef7b4d0382a98048a0e70ac8-2"></a>pip install flask-script
+</pre>
+</blockquote>
+<p>4、为已有容器添加端口。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_eca092721f4f4818b82215c20935ba85-1"></a>docker commit mypc newpc
+<a name="rest_code_eca092721f4f4818b82215c20935ba85-2"></a>docker stop mypc
+<a name="rest_code_eca092721f4f4818b82215c20935ba85-3"></a>docker run --name mynewpc -i -t -p 13306:3306 -p 8080:8080 -v ~/share/:/usr/development/  newpc /bin/bash
+</pre>
+</blockquote>
+<p>5、Docker登录Mysql数据库。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_811bef85ab2f4754b74ebb86a42a62dc-1"></a>mysql -u root -p
+<a name="rest_code_811bef85ab2f4754b74ebb86a42a62dc-2"></a>create database test<span class="p">;</span>
+<a name="rest_code_811bef85ab2f4754b74ebb86a42a62dc-3"></a>grant all privileges on *.* to root@<span class="s1">'192.168.99.1'</span> identified by <span class="s1">'root'</span> with grant option<span class="p">;</span>
+<a name="rest_code_811bef85ab2f4754b74ebb86a42a62dc-4"></a>flush privileges<span class="p">;</span>
+<a name="rest_code_811bef85ab2f4754b74ebb86a42a62dc-5"></a><span class="nb">exit</span>
+</pre>
+</blockquote>
+<p>6、Docker修改配置文件，我习惯用emacs，也可以用vim。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_840f8539f13347e0bae2d58171ed3442-1"></a>apt install emacs
+<a name="rest_code_840f8539f13347e0bae2d58171ed3442-2"></a>apt-get install -f
+<a name="rest_code_840f8539f13347e0bae2d58171ed3442-3"></a>emacs /etc/mysql/my.cnf
+<a name="rest_code_840f8539f13347e0bae2d58171ed3442-4"></a>bind-address            <span class="o">=</span> 0.0.0.0
+<a name="rest_code_840f8539f13347e0bae2d58171ed3442-5"></a>C-x C-s
+<a name="rest_code_840f8539f13347e0bae2d58171ed3442-6"></a>C-x C-c
+</pre>
+</blockquote>
+<p>7、重启mysql服务。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_a1dc64c501804022a16f5ad08fdf1bd5-1"></a>sudo service mysql stop
+<a name="rest_code_a1dc64c501804022a16f5ad08fdf1bd5-2"></a>mysqld
+</pre>
+</blockquote>
+<p>8、主系统编辑测试网站main.py。</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-1"> 1</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-2"> 2</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-3"> 3</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-4"> 4</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-5"> 5</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-6"> 6</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-7"> 7</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-8"> 8</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-9"> 9</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-10">10</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-11">11</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-12">12</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-13">13</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-14">14</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-15">15</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-16">16</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-17">17</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-18">18</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-19">19</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-20">20</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-1"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-2"></a><span class="kn">from</span> <span class="nn">flask.ext.script</span> <span class="kn">import</span> <span class="n">Manager</span>
+<a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-3"></a><span class="kn">from</span> <span class="nn">flask.ext.sqlalchemy</span> <span class="kn">import</span> <span class="n">SQLAlchemy</span>
+<a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-4"></a>
+<a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-5"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-6"></a><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'SQLALCHEMY_DATABASE_URI'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'mysql+mysqlconnector://root:root@127.0.0.1:3306/test?charset=utf8'</span>
+<a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-7"></a>
+<a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-8"></a><span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-9"></a><span class="n">manager</span> <span class="o">=</span> <span class="n">Manager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-10"></a>
+<a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-11"></a><span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-12"></a>    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s1">'users'</span>
+<a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-13"></a>    <span class="nb">id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-14"></a>    <span class="n">username</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">80</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-15"></a>    <span class="n">email</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">320</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-16"></a>    <span class="n">password</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-17"></a>
+<a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-18"></a><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-19"></a>    <span class="n">db</span><span class="o">.</span><span class="n">create_all</span><span class="p">()</span>
+<a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-20"></a>    <span class="n">manager</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p>9、开一个新的Docker terminal，启动测试网站。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_dbc364ccf87e4e85b5ab275a7b69d452-1"></a><span class="nb">cd</span> /usr/development
+<a name="rest_code_dbc364ccf87e4e85b5ab275a7b69d452-2"></a>python main.py runserver
+</pre>
+</blockquote>
+<p>10、主系统上打开MySQL Workbench，访问数据库。Hostname：192.168.99.100，Port：13306，Password：root。</p>
+<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/mysqlworkbench.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/mysqlworkbench.PNG"><p><strong>注意</strong></p>
+<p>修改bind-address = 0.0.0.0非常重要，否则主系统访问不到Docker中的数据库。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/" class="u-url">使用Flask-Restplus和Swagger UI最小化实现增删改查</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
@@ -546,141 +665,6 @@ body{
 <p class="first">运行 <strong>docker run -it --rm ubuntu:16.04 bash</strong> ，进入ubuntu的交互环境。</p>
 </li>
 </ol>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/vuejsxue-xi-8/" class="u-url">vuejs学习(8)</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/vuejsxue-xi-8/" rel="bookmark"><time class="published dt-published" datetime="2017-01-14T15:07:00+08:00" title="2017-01-14 15:07">2017-01-14 15:07</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>本文要学习的是列表渲染 v-for ，看测试代码 <strong>TodoItem.vue</strong> ：</p>
-<blockquote>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-1"> 1</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-2"> 2</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-3"> 3</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-4"> 4</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-5"> 5</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-6"> 6</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-7"> 7</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-8"> 8</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-9"> 9</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-10">10</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-11">11</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-12">12</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-13">13</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-14">14</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-15">15</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-16">16</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-17">17</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-18">18</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-19">19</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-20">20</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-21">21</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-22">22</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-23">23</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-24">24</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-25">25</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-26">26</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-27">27</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-28">28</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-29">29</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-30">30</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-31">31</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-32">32</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-33">33</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-34">34</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-35">35</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-36">36</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-37">37</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-38">38</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-39">39</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-40">40</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-41">41</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-42">42</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-43">43</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-44">44</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-45">45</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-46">46</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-47">47</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-48">48</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-49">49</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-50">50</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-51">51</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-52">52</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-53">53</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-54">54</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-55">55</a></pre></div></td>
-<td class="code"><pre class="code html"><a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-2"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"todoitem"</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-3"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-4"></a>        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in items1"</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-5"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-6"></a>    <span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">"1"</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-7"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-8"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>项1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-9"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>项2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-10"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>索引<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-11"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-12"></a>        <span class="p">&lt;</span><span class="nt">tr</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item, index in items2"</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-13"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{item[0]}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-14"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{item[1]}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-15"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{index}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-16"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-17"></a>    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-18"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-19"></a>        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"value, key, index in items3"</span><span class="p">&gt;</span>{{index}}==&gt;{{key}}==&gt;{{value}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-20"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-21"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-22"></a>        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in 3"</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-23"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-24"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-25"></a>        <span class="p">&lt;</span><span class="nt">template</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in items5"</span> <span class="na">v-if</span><span class="o">=</span><span class="s">"male"</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-26"></a>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-27"></a>        <span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-28"></a>        <span class="p">&lt;</span><span class="nt">template</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in items6"</span> <span class="na">v-if</span><span class="o">=</span><span class="s">"!male"</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-29"></a>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-30"></a>        <span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-31"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-32"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-33"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-34"></a>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-35"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-36"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-37"></a>    <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-38"></a>        <span class="k">return</span> <span class="p">{</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-39"></a>            <span class="nx">items1</span><span class="o">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-40"></a>            <span class="nx">items2</span><span class="o">:</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]],</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-41"></a>            <span class="nx">items3</span><span class="o">:</span> <span class="p">{</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-42"></a>                <span class="s1">'name'</span><span class="o">:</span> <span class="s1">'Tom'</span><span class="p">,</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-43"></a>                <span class="s1">'age'</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-44"></a>                <span class="s1">'gender'</span><span class="o">:</span> <span class="s1">'male'</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-45"></a>            <span class="p">},</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-46"></a>            <span class="nx">male</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-47"></a>            <span class="nx">items5</span><span class="o">:</span> <span class="p">[</span><span class="s2">"Boy1"</span><span class="p">,</span> <span class="s2">"Boy2"</span><span class="p">,</span> <span class="s2">"Boy3"</span><span class="p">],</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-48"></a>            <span class="nx">items6</span><span class="o">:</span> <span class="p">[</span><span class="s2">"Girl1"</span><span class="p">,</span> <span class="s2">"Girl2"</span><span class="p">,</span> <span class="s2">"Girl3"</span><span class="p">],</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-49"></a>        <span class="p">}</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-50"></a>    <span class="p">},</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-51"></a><span class="p">}</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-52"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-53"></a>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-54"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
-<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-55"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-</pre></td>
-</tr></table>
-</blockquote>
-<p>运行结果：</p>
-<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/vueforrender.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/vueforrender.PNG"><p>在上述的代码中，我们需要学到以下几个问题：</p>
-<ol class="arabic simple">
-<li>vuejs的v-for和Python的for循环有很多相似的地方，比如元素迭代，比如整数迭代。</li>
-<li>vuejs的迭代可以包含索引，如果是列表，用“item, index in items”；如果是对象，用“value, key, index in items”。</li>
-<li>v-for迭代的目标也可以是函数的可迭代返回值，比如返回列表。</li>
-</ol>
-<p>后面的文章我们将学习更复杂的列表渲染。</p>
 </div>
     </div>
     </article>

@@ -80,7 +80,142 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/vuejsxue-xi-7/" class="u-url">vuejs学习(7)</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/vuejsxue-xi-8/" class="u-url">vuejs学习(8)</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/vuejsxue-xi-8/" rel="bookmark"><time class="published dt-published" datetime="2017-01-14T15:07:00+08:00" title="2017-01-14 15:07">2017-01-14 15:07</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>本文要学习的是列表渲染 v-for ，看测试代码 <strong>TodoItem.vue</strong> ：</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-1"> 1</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-2"> 2</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-3"> 3</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-4"> 4</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-5"> 5</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-6"> 6</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-7"> 7</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-8"> 8</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-9"> 9</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-10">10</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-11">11</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-12">12</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-13">13</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-14">14</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-15">15</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-16">16</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-17">17</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-18">18</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-19">19</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-20">20</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-21">21</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-22">22</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-23">23</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-24">24</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-25">25</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-26">26</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-27">27</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-28">28</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-29">29</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-30">30</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-31">31</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-32">32</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-33">33</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-34">34</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-35">35</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-36">36</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-37">37</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-38">38</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-39">39</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-40">40</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-41">41</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-42">42</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-43">43</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-44">44</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-45">45</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-46">46</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-47">47</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-48">48</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-49">49</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-50">50</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-51">51</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-52">52</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-53">53</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-54">54</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_0ba112aa68c74aef9171eaa5fedb745e-55">55</a></pre></div></td>
+<td class="code"><pre class="code html"><a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-2"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"todoitem"</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-3"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-4"></a>        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in items1"</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-5"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-6"></a>    <span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">"1"</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-7"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-8"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>项1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-9"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>项2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-10"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>索引<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-11"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-12"></a>        <span class="p">&lt;</span><span class="nt">tr</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item, index in items2"</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-13"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{item[0]}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-14"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{item[1]}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-15"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{index}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-16"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-17"></a>    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-18"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-19"></a>        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"value, key, index in items3"</span><span class="p">&gt;</span>{{index}}==&gt;{{key}}==&gt;{{value}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-20"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-21"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-22"></a>        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in 3"</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-23"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-24"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-25"></a>        <span class="p">&lt;</span><span class="nt">template</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in items5"</span> <span class="na">v-if</span><span class="o">=</span><span class="s">"male"</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-26"></a>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-27"></a>        <span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-28"></a>        <span class="p">&lt;</span><span class="nt">template</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in items6"</span> <span class="na">v-if</span><span class="o">=</span><span class="s">"!male"</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-29"></a>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-30"></a>        <span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-31"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-32"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-33"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-34"></a>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-35"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-36"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-37"></a>    <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-38"></a>        <span class="k">return</span> <span class="p">{</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-39"></a>            <span class="nx">items1</span><span class="o">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-40"></a>            <span class="nx">items2</span><span class="o">:</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]],</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-41"></a>            <span class="nx">items3</span><span class="o">:</span> <span class="p">{</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-42"></a>                <span class="s1">'name'</span><span class="o">:</span> <span class="s1">'Tom'</span><span class="p">,</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-43"></a>                <span class="s1">'age'</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-44"></a>                <span class="s1">'gender'</span><span class="o">:</span> <span class="s1">'male'</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-45"></a>            <span class="p">},</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-46"></a>            <span class="nx">male</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-47"></a>            <span class="nx">items5</span><span class="o">:</span> <span class="p">[</span><span class="s2">"Boy1"</span><span class="p">,</span> <span class="s2">"Boy2"</span><span class="p">,</span> <span class="s2">"Boy3"</span><span class="p">],</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-48"></a>            <span class="nx">items6</span><span class="o">:</span> <span class="p">[</span><span class="s2">"Girl1"</span><span class="p">,</span> <span class="s2">"Girl2"</span><span class="p">,</span> <span class="s2">"Girl3"</span><span class="p">],</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-49"></a>        <span class="p">}</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-50"></a>    <span class="p">},</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-51"></a><span class="p">}</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-52"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-53"></a>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-54"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
+<a name="rest_code_0ba112aa68c74aef9171eaa5fedb745e-55"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p>运行结果：</p>
+<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/vueforrender.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/vueforrender.PNG"><p>在上述的代码中，我们需要学到以下几个问题：</p>
+<ol class="arabic simple">
+<li>vuejs的v-for和Python的for循环有很多相似的地方，比如元素迭代，比如整数迭代。</li>
+<li>vuejs的迭代可以包含索引，如果是列表，用“item, index in items”；如果是对象，用“value, key, index in items”。</li>
+<li>v-for迭代的目标也可以是函数的可迭代返回值，比如返回列表。</li>
+</ol>
+<p>后面的文章我们将学习更复杂的列表渲染。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/vuejsxue-xi-7/" class="u-url">vuejs学习(7)</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
