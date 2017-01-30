@@ -10,7 +10,7 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="https://codinglonglong.github.io/">
-<link rel="next" href="index-3.html" type="text/html">
+<link rel="next" href="index-4.html" type="text/html">
 <!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><script>
 var _hmt = _hmt || [];
 (function() {
@@ -24,7 +24,7 @@ body{
     font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
 }
 </style>
-<link rel="prefetch" href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/" type="text/html">
+<link rel="prefetch" href="posts/dockerzhong-emacszhi-chi-tui-ge/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
@@ -80,7 +80,28 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/" class="u-url">Flask-Sqlalchemy连接Mysql并支持中文</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerzhong-emacszhi-chi-tui-ge/" class="u-url">Docker中Emacs支持退格</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/dockerzhong-emacszhi-chi-tui-ge/" rel="bookmark"><time class="published dt-published" datetime="2017-01-30T22:03:15+08:00" title="2017-01-30 22:03">2017-01-30 22:03</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>默认在Docker中，Emacs使用退格无法删除光标前的字符，而是显示帮助信息，这让人有些费解，可以采用如下方法解决：</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_e6443483b7884003a90755ac508d11e3-1"></a>emacs ~/.emacs
+<a name="rest_code_e6443483b7884003a90755ac508d11e3-2"></a><span class="o">(</span>global-set-key <span class="s2">"\C-h"</span> <span class="s1">'backward-delete-char-untabify)</span>
+<a name="rest_code_e6443483b7884003a90755ac508d11e3-3"></a><span class="s1">(global-set-key "\d" '</span>delete-char<span class="o">)</span>
+<a name="rest_code_e6443483b7884003a90755ac508d11e3-4"></a>C-x C-s
+<a name="rest_code_e6443483b7884003a90755ac508d11e3-5"></a>C-x C-c
+</pre>
+</blockquote>
+<p>这时再用emacs命令打开文件，就可以正常使用退格键删除光标前的字符了。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/" class="u-url">Flask-Sqlalchemy连接Mysql并支持中文</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
@@ -661,71 +682,12 @@ body{
 </ol>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerchang-yong-ming-ling/" class="u-url">Docker常用命令</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/dockerchang-yong-ming-ling/" rel="bookmark"><time class="published dt-published" datetime="2017-01-21T20:13:52+08:00" title="2017-01-21 20:13">2017-01-21 20:13</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<ol class="arabic">
-<li>
-<p class="first">创建容器。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_c9c75d1ba1b64febba1c8636aaac0223-1"></a>docker run --name mypc -it ubuntu:16.04 /bin/bash
-</pre>
-</blockquote>
-</li>
-</ol>
-<p>经过实验，目前只有这样创建的容器可以在后边正常start。</p>
-<ol class="arabic" start="2">
-<li>
-<p class="first">查看已有容器及其状态。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_e44b02e7ac8a423094f35c1c8b3d85f1-1"></a>docker ps -a
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">启动已有容器。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_43ea6714979d4d9091494382a6ab1f95-1"></a>docker start mypc
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">登陆正在运行的容器。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_4d2acfaaad9f492b8339434098a489fd-1"></a>docker <span class="nb">exec</span> -it mypc /bin/bash
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">关闭正在运行的容器。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_e7c96fcc4db84aee89978be333c6fa5a-1"></a>docker stop mypc
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">删除容器。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_ed0bda4a943c473e900d8c19ae6e9c5e-1"></a>docker rm mypc
-</pre>
-</blockquote>
-</li>
-</ol>
-<p><strong>注意</strong> ：重启电脑之前，记得先把VirtualBox里边的虚拟机正常关机，否则等重启回来，容器可能就找不到了。</p>
-</div>
-    </div>
     </article>
 </div>
 
         <nav class="postindexpager"><ul class="pager">
 <li class="next">
-                <a href="index-3.html" rel="next">旧一篇</a>
+                <a href="index-4.html" rel="next">旧一篇</a>
             </li>
         </ul></nav>
 </div>

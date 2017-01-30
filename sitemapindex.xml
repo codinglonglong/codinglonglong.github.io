@@ -22,6 +22,10 @@
   <lastmod>2017-01-23T15:32:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://codinglonglong.github.io/categories/cat_emacs.xml</loc>
+  <lastmod>2017-01-30T14:06:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_git.xml</loc>
   <lastmod>2017-01-23T14:41:00Z</lastmod>
  </sitemap>
@@ -31,7 +35,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_python.xml</loc>
-  <lastmod>2017-01-30T13:47:00Z</lastmod>
+  <lastmod>2017-01-30T13:53:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_react.xml</loc>
@@ -51,11 +55,15 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/docker.xml</loc>
-  <lastmod>2017-01-25T05:51:00Z</lastmod>
+  <lastmod>2017-01-30T14:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/droid4x.xml</loc>
   <lastmod>2017-01-23T14:41:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://codinglonglong.github.io/categories/emacs.xml</loc>
+  <lastmod>2017-01-30T14:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/flask-restplus.xml</loc>
@@ -63,7 +71,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/flask-sqlalchemy.xml</loc>
-  <lastmod>2017-01-30T13:47:00Z</lastmod>
+  <lastmod>2017-01-30T13:53:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/flask.xml</loc>
@@ -87,7 +95,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/mysql.xml</loc>
-  <lastmod>2017-01-30T13:47:00Z</lastmod>
+  <lastmod>2017-01-30T13:53:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/python.xml</loc>
@@ -131,10 +139,10 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/rss.xml</loc>
-  <lastmod>2017-01-30T13:47:00Z</lastmod>
+  <lastmod>2017-01-30T14:06:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/sitemap.xml</loc>
-  <lastmod>2017-01-30T13:47:00Z</lastmod>
+  <lastmod>2017-01-30T14:06:00Z</lastmod>
  </sitemap>
 </sitemapindex>

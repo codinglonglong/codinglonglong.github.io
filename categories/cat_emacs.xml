@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (文章分类：Emacs)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_emacs.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><lastBuildDate>Mon, 30 Jan 2017 14:06:50 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Docker中Emacs支持退格</title><link>https://codinglonglong.github.io/posts/dockerzhong-emacszhi-chi-tui-ge/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;默认在Docker中，Emacs使用退格无法删除光标前的字符，而是显示帮助信息，这让人有些费解，可以采用如下方法解决：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_e6443483b7884003a90755ac508d11e3-1"&gt;&lt;/a&gt;emacs ~/.emacs
+&lt;a name="rest_code_e6443483b7884003a90755ac508d11e3-2"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;global-set-key &lt;span class="s2"&gt;"\C-h"&lt;/span&gt; &lt;span class="s1"&gt;'backward-delete-char-untabify)&lt;/span&gt;
+&lt;a name="rest_code_e6443483b7884003a90755ac508d11e3-3"&gt;&lt;/a&gt;&lt;span class="s1"&gt;(global-set-key "\d" '&lt;/span&gt;delete-char&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_e6443483b7884003a90755ac508d11e3-4"&gt;&lt;/a&gt;C-x C-s
+&lt;a name="rest_code_e6443483b7884003a90755ac508d11e3-5"&gt;&lt;/a&gt;C-x C-c
+&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;这时再用emacs命令打开文件，就可以正常使用退格键删除光标前的字符了。&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><category>Emacs</category><guid>https://codinglonglong.github.io/posts/dockerzhong-emacszhi-chi-tui-ge/</guid><pubDate>Mon, 30 Jan 2017 14:03:15 GMT</pubDate></item></channel></rss>
