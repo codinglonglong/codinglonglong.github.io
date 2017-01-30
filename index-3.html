@@ -80,7 +80,53 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/vuejsxue-xi-8/" class="u-url">vuejs学习(8)</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/windowspei-zhi-docker/" class="u-url">Windows配置Docker</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/windowspei-zhi-docker/" rel="bookmark"><time class="published dt-published" datetime="2017-01-21T17:27:00+08:00" title="2017-01-21 17:27">2017-01-21 17:27</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>因为新笔记本的无线网卡和声卡比较新，目前的Linux发行版都无法很好地支持，所以只好先用Windows来进行开发了……</p>
+<p>第一步，在Windows上部署Linux开发环境，首先考虑到的是用Docker。</p>
+<ol class="arabic">
+<li>
+<p class="first">安装docker-toolbox。访问下载安装： <a class="reference external" href="https://www.docker.com/products/docker-toolbox">https://www.docker.com/products/docker-toolbox</a></p>
+</li>
+<li>
+<p class="first">在开始菜单双击运行Docker Quickstart Terminal，等待……………………直到出现</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/windowspei-zhi-docker/#rest_code_2685df9ff9f04993999f5b183ce7174a-1">1</a>
+<a href="posts/windowspei-zhi-docker/#rest_code_2685df9ff9f04993999f5b183ce7174a-2">2</a>
+<a href="posts/windowspei-zhi-docker/#rest_code_2685df9ff9f04993999f5b183ce7174a-3">3</a>
+<a href="posts/windowspei-zhi-docker/#rest_code_2685df9ff9f04993999f5b183ce7174a-4">4</a>
+<a href="posts/windowspei-zhi-docker/#rest_code_2685df9ff9f04993999f5b183ce7174a-5">5</a>
+<a href="posts/windowspei-zhi-docker/#rest_code_2685df9ff9f04993999f5b183ce7174a-6">6</a>
+<a href="posts/windowspei-zhi-docker/#rest_code_2685df9ff9f04993999f5b183ce7174a-7">7</a></pre></div></td>
+<td class="code"><pre class="code bash"><a name="rest_code_2685df9ff9f04993999f5b183ce7174a-1"></a>docker is configured to use the default machine with IP 192.168.99.100
+<a name="rest_code_2685df9ff9f04993999f5b183ce7174a-2"></a>For <span class="nb">help</span> getting started, check out the docs at https://docs.docker.com
+<a name="rest_code_2685df9ff9f04993999f5b183ce7174a-3"></a>
+<a name="rest_code_2685df9ff9f04993999f5b183ce7174a-4"></a>Start interactive shell
+<a name="rest_code_2685df9ff9f04993999f5b183ce7174a-5"></a>
+<a name="rest_code_2685df9ff9f04993999f5b183ce7174a-6"></a>long@DESKTOP-N79DL8P MINGW64 ~
+<a name="rest_code_2685df9ff9f04993999f5b183ce7174a-7"></a>$
+</pre></td>
+</tr></table>
+</blockquote>
+</li>
+<li>
+<p class="first">运行 <strong>docker pull ubuntu:16.04</strong> 。</p>
+</li>
+<li>
+<p class="first">运行 <strong>docker run -it --rm ubuntu:16.04 bash</strong> ，进入ubuntu的交互环境。</p>
+</li>
+</ol>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/vuejsxue-xi-8/" class="u-url">vuejs学习(8)</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
