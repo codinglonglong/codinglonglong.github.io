@@ -1,9 +1,9 @@
 <p>默认在Docker中，Emacs使用退格无法删除光标前的字符，而是显示帮助信息，这让人有些费解，可以采用如下方法解决：</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_e6443483b7884003a90755ac508d11e3-1"></a>emacs ~/.emacs
-<a name="rest_code_e6443483b7884003a90755ac508d11e3-2"></a><span class="o">(</span>global-set-key <span class="s2">&quot;\C-h&quot;</span> <span class="s1">&#39;backward-delete-char-untabify)</span>
-<a name="rest_code_e6443483b7884003a90755ac508d11e3-3"></a><span class="s1">(global-set-key &quot;\d&quot; &#39;</span>delete-char<span class="o">)</span>
-<a name="rest_code_e6443483b7884003a90755ac508d11e3-4"></a>C-x C-s
-<a name="rest_code_e6443483b7884003a90755ac508d11e3-5"></a>C-x C-c
+<pre class="code bash"><a name="rest_code_ff8478bc08a74e11a54217f543f1d9b3-1"></a>emacs ~/.emacs
+<a name="rest_code_ff8478bc08a74e11a54217f543f1d9b3-2"></a><span class="o">(</span>global-set-key <span class="s2">&quot;\C-h&quot;</span> <span class="s1">&#39;backward-delete-char-untabify)</span>
+<a name="rest_code_ff8478bc08a74e11a54217f543f1d9b3-3"></a><span class="s1">(global-set-key &quot;\d&quot; &#39;</span>delete-char<span class="o">)</span>
+<a name="rest_code_ff8478bc08a74e11a54217f543f1d9b3-4"></a>C-x C-s
+<a name="rest_code_ff8478bc08a74e11a54217f543f1d9b3-5"></a>C-x C-c
 </pre></blockquote>
 <p>这时再用emacs命令打开文件，就可以正常使用退格键删除光标前的字符了。</p>

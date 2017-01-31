@@ -1,231 +1,231 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (文章分类：Docker)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/docker.xml" rel="self" type="application/rss+xml"></atom:link><language>zh_cn</language><lastBuildDate>Tue, 31 Jan 2017 07:52:46 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>修改Docker中的系统时间</title><link>https://codinglonglong.github.io/posts/xiu-gai-dockerzhong-de-xi-tong-shi-jian/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;默认在Docker中无法使用常见的命令修改系统时间，会显示没有权限，但测试程序往往需要修改系统时间，可以通过如下方法解决该问题：&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Docker)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/docker.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 31 Jan 2017 09:05:17 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>修改Docker中的系统时间</title><link>https://codinglonglong.github.io/posts/xiu-gai-dockerzhong-de-xi-tong-shi-jian/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;默认在Docker中无法使用常见的命令修改系统时间，会显示没有权限，但测试程序往往需要修改系统时间，可以通过如下方法解决该问题：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-1"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-2"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-3"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-4"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 07:39:26 GMT 2017
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-5"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-1
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-6"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-7"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-8"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 08:39:35 +01 2017
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-9"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-2
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-10"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-11"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-12"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 09:39:40 +02 2017
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-13"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-3
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-14"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-15"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-16"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 10:39:45 +03 2017
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-17"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-4
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-18"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-19"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-20"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 11:42:57 +04 2017
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-21"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-5
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-22"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-23"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-24"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 12:43:05 +05 2017
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-25"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-6
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-26"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-27"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-28"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 13:43:10 +06 2017
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-29"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-7
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-30"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-31"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-32"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 14:43:15 +07 2017
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-33"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-8
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-34"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-35"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-36"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 15:43:20 +08 2017
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-37"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-9
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-38"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-39"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-40"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 16:43:25 +09 2017
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-41"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-10
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-42"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-43"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-44"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 17:43:30 +10 2017
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-45"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-11
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-46"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-47"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-48"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 18:43:35 +11 2017
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-49"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-12
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-50"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-51"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-52"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 19:43:39 +12 2017
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-53"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-13
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-54"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-55"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-56"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 20:43:43 +13 2017
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-57"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-14
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-58"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-59"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-60"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 21:43:50 +14 2017
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-61"&gt;&lt;/a&gt;
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-62"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+1
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-63"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-64"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-65"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 06:44:57 -01 2017
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-66"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+2
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-67"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-68"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-69"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 05:45:01 -02 2017
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-70"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+3
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-71"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-72"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-73"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 04:45:05 -03 2017
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-74"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+4
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-75"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-76"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-77"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 03:45:09 -04 2017
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-78"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+5
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-79"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-80"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-81"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 02:45:13 -05 2017
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-82"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+6
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-83"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-84"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-85"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 01:45:17 -06 2017
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-86"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+7
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-87"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-88"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-89"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 00:45:24 -07 2017
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-90"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+8
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-91"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-92"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-93"&gt;&lt;/a&gt;Mon Jan &lt;span class="m"&gt;30&lt;/span&gt; 23:45:28 -08 2017
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-94"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+9
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-95"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-96"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-97"&gt;&lt;/a&gt;Mon Jan &lt;span class="m"&gt;30&lt;/span&gt; 22:45:32 -09 2017
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-98"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+10
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-99"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-100"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-101"&gt;&lt;/a&gt;Mon Jan &lt;span class="m"&gt;30&lt;/span&gt; 21:45:37 -10 2017
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-102"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+11
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-103"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-104"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-105"&gt;&lt;/a&gt;Mon Jan &lt;span class="m"&gt;30&lt;/span&gt; 20:45:53 -11 2017
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-106"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+12
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-107"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-108"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_61a24505e0c24c8391644bab9113e891-109"&gt;&lt;/a&gt;Mon Jan &lt;span class="m"&gt;30&lt;/span&gt; 19:46:00 -12 2017
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-1"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-2"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-3"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-4"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 07:39:26 GMT 2017
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-5"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-1
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-6"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-7"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-8"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 08:39:35 +01 2017
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-9"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-2
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-10"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-11"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-12"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 09:39:40 +02 2017
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-13"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-3
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-14"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-15"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-16"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 10:39:45 +03 2017
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-17"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-4
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-18"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-19"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-20"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 11:42:57 +04 2017
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-21"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-5
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-22"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-23"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-24"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 12:43:05 +05 2017
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-25"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-6
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-26"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-27"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-28"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 13:43:10 +06 2017
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-29"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-7
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-30"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-31"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-32"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 14:43:15 +07 2017
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-33"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-8
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-34"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-35"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-36"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 15:43:20 +08 2017
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-37"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-9
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-38"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-39"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-40"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 16:43:25 +09 2017
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-41"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-10
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-42"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-43"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-44"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 17:43:30 +10 2017
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-45"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-11
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-46"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-47"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-48"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 18:43:35 +11 2017
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-49"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-12
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-50"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-51"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-52"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 19:43:39 +12 2017
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-53"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-13
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-54"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-55"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-56"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 20:43:43 +13 2017
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-57"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-14
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-58"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-59"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-60"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 21:43:50 +14 2017
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-61"&gt;&lt;/a&gt;
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-62"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+1
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-63"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-64"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-65"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 06:44:57 -01 2017
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-66"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+2
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-67"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-68"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-69"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 05:45:01 -02 2017
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-70"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+3
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-71"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-72"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-73"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 04:45:05 -03 2017
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-74"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+4
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-75"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-76"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-77"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 03:45:09 -04 2017
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-78"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+5
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-79"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-80"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-81"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 02:45:13 -05 2017
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-82"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+6
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-83"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-84"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-85"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 01:45:17 -06 2017
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-86"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+7
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-87"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-88"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-89"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; 00:45:24 -07 2017
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-90"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+8
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-91"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-92"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-93"&gt;&lt;/a&gt;Mon Jan &lt;span class="m"&gt;30&lt;/span&gt; 23:45:28 -08 2017
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-94"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+9
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-95"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-96"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-97"&gt;&lt;/a&gt;Mon Jan &lt;span class="m"&gt;30&lt;/span&gt; 22:45:32 -09 2017
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-98"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+10
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-99"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-100"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-101"&gt;&lt;/a&gt;Mon Jan &lt;span class="m"&gt;30&lt;/span&gt; 21:45:37 -10 2017
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-102"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+11
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-103"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-104"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-105"&gt;&lt;/a&gt;Mon Jan &lt;span class="m"&gt;30&lt;/span&gt; 20:45:53 -11 2017
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-106"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+12
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-107"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-108"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-109"&gt;&lt;/a&gt;Mon Jan &lt;span class="m"&gt;30&lt;/span&gt; 19:46:00 -12 2017
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;p&gt;我们测试一下实际效果：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_15ce602aa0374d1dacf12809791862f0-1"&gt;&lt;/a&gt;root@d26965edacdd:/usr/development# cat test.py
-&lt;a name="rest_code_15ce602aa0374d1dacf12809791862f0-2"&gt;&lt;/a&gt;import &lt;span class="nb"&gt;time&lt;/span&gt;
-&lt;a name="rest_code_15ce602aa0374d1dacf12809791862f0-3"&gt;&lt;/a&gt;print&lt;span class="o"&gt;(&lt;/span&gt;time.strftime&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'%Y-%m-%d %H:%M:%S'&lt;/span&gt;,time.localtime&lt;span class="o"&gt;(&lt;/span&gt;time.time&lt;span class="o"&gt;())))&lt;/span&gt;
-&lt;a name="rest_code_15ce602aa0374d1dacf12809791862f0-4"&gt;&lt;/a&gt;root@d26965edacdd:/usr/development# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT
-&lt;a name="rest_code_15ce602aa0374d1dacf12809791862f0-5"&gt;&lt;/a&gt;root@d26965edacdd:/usr/development# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_15ce602aa0374d1dacf12809791862f0-6"&gt;&lt;/a&gt;root@d26965edacdd:/usr/development# python test.py
-&lt;a name="rest_code_15ce602aa0374d1dacf12809791862f0-7"&gt;&lt;/a&gt;2017-01-31 07:50:13
-&lt;a name="rest_code_15ce602aa0374d1dacf12809791862f0-8"&gt;&lt;/a&gt;root@d26965edacdd:/usr/development# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-8
-&lt;a name="rest_code_15ce602aa0374d1dacf12809791862f0-9"&gt;&lt;/a&gt;root@d26965edacdd:/usr/development# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_15ce602aa0374d1dacf12809791862f0-10"&gt;&lt;/a&gt;root@d26965edacdd:/usr/development# python test.py
-&lt;a name="rest_code_15ce602aa0374d1dacf12809791862f0-11"&gt;&lt;/a&gt;2017-01-31 15:50:19
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_ba023f1f63cc49fb8b0be9e817117b42-1"&gt;&lt;/a&gt;root@d26965edacdd:/usr/development# cat test.py
+&lt;a name="rest_code_ba023f1f63cc49fb8b0be9e817117b42-2"&gt;&lt;/a&gt;import &lt;span class="nb"&gt;time&lt;/span&gt;
+&lt;a name="rest_code_ba023f1f63cc49fb8b0be9e817117b42-3"&gt;&lt;/a&gt;print&lt;span class="o"&gt;(&lt;/span&gt;time.strftime&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'%Y-%m-%d %H:%M:%S'&lt;/span&gt;,time.localtime&lt;span class="o"&gt;(&lt;/span&gt;time.time&lt;span class="o"&gt;())))&lt;/span&gt;
+&lt;a name="rest_code_ba023f1f63cc49fb8b0be9e817117b42-4"&gt;&lt;/a&gt;root@d26965edacdd:/usr/development# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT
+&lt;a name="rest_code_ba023f1f63cc49fb8b0be9e817117b42-5"&gt;&lt;/a&gt;root@d26965edacdd:/usr/development# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_ba023f1f63cc49fb8b0be9e817117b42-6"&gt;&lt;/a&gt;root@d26965edacdd:/usr/development# python test.py
+&lt;a name="rest_code_ba023f1f63cc49fb8b0be9e817117b42-7"&gt;&lt;/a&gt;2017-01-31 07:50:13
+&lt;a name="rest_code_ba023f1f63cc49fb8b0be9e817117b42-8"&gt;&lt;/a&gt;root@d26965edacdd:/usr/development# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-8
+&lt;a name="rest_code_ba023f1f63cc49fb8b0be9e817117b42-9"&gt;&lt;/a&gt;root@d26965edacdd:/usr/development# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_ba023f1f63cc49fb8b0be9e817117b42-10"&gt;&lt;/a&gt;root@d26965edacdd:/usr/development# python test.py
+&lt;a name="rest_code_ba023f1f63cc49fb8b0be9e817117b42-11"&gt;&lt;/a&gt;2017-01-31 15:50:19
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;本方法是通过修改时区来“曲线救国”的。&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><category>Linux</category><guid>https://codinglonglong.github.io/posts/xiu-gai-dockerzhong-de-xi-tong-shi-jian/</guid><pubDate>Tue, 31 Jan 2017 07:36:34 GMT</pubDate></item><item><title>Docker中Emacs支持退格</title><link>https://codinglonglong.github.io/posts/dockerzhong-emacszhi-chi-tui-ge/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;默认在Docker中，Emacs使用退格无法删除光标前的字符，而是显示帮助信息，这让人有些费解，可以采用如下方法解决：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_e6443483b7884003a90755ac508d11e3-1"&gt;&lt;/a&gt;emacs ~/.emacs
-&lt;a name="rest_code_e6443483b7884003a90755ac508d11e3-2"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;global-set-key &lt;span class="s2"&gt;"\C-h"&lt;/span&gt; &lt;span class="s1"&gt;'backward-delete-char-untabify)&lt;/span&gt;
-&lt;a name="rest_code_e6443483b7884003a90755ac508d11e3-3"&gt;&lt;/a&gt;&lt;span class="s1"&gt;(global-set-key "\d" '&lt;/span&gt;delete-char&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_e6443483b7884003a90755ac508d11e3-4"&gt;&lt;/a&gt;C-x C-s
-&lt;a name="rest_code_e6443483b7884003a90755ac508d11e3-5"&gt;&lt;/a&gt;C-x C-c
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_ff8478bc08a74e11a54217f543f1d9b3-1"&gt;&lt;/a&gt;emacs ~/.emacs
+&lt;a name="rest_code_ff8478bc08a74e11a54217f543f1d9b3-2"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;global-set-key &lt;span class="s2"&gt;"\C-h"&lt;/span&gt; &lt;span class="s1"&gt;'backward-delete-char-untabify)&lt;/span&gt;
+&lt;a name="rest_code_ff8478bc08a74e11a54217f543f1d9b3-3"&gt;&lt;/a&gt;&lt;span class="s1"&gt;(global-set-key "\d" '&lt;/span&gt;delete-char&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_ff8478bc08a74e11a54217f543f1d9b3-4"&gt;&lt;/a&gt;C-x C-s
+&lt;a name="rest_code_ff8478bc08a74e11a54217f543f1d9b3-5"&gt;&lt;/a&gt;C-x C-c
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;p&gt;这时再用emacs命令打开文件，就可以正常使用退格键删除光标前的字符了。&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><category>Emacs</category><guid>https://codinglonglong.github.io/posts/dockerzhong-emacszhi-chi-tui-ge/</guid><pubDate>Mon, 30 Jan 2017 14:03:15 GMT</pubDate></item><item><title>Docker中配置Flask-Sqlalchemy和Mysql</title><link>https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;继文章 &lt;a class="reference external" href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/"&gt;https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/&lt;/a&gt; 之后，我们进一步配置数据库的部分。&lt;/p&gt;
 &lt;p&gt;1、Docker安装Mysql。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_5b01db8151fb40a29633525842b64897-1"&gt;&lt;/a&gt;apt install mysql-server mysql-client
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_3d2b7859eea14c81b98332faef73508e-1"&gt;&lt;/a&gt;apt install mysql-server mysql-client
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;p&gt;2、Docker下载安装mysql-connector-python。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_7545170dda2e42d9a6df386a0cdcddc5-1"&gt;&lt;/a&gt;apt install curl
-&lt;a name="rest_code_7545170dda2e42d9a6df386a0cdcddc5-2"&gt;&lt;/a&gt;curl -O https://cdn.mysql.com/Downloads/Connector-Python/mysql-connector-python-2.1.5.tar.gz
-&lt;a name="rest_code_7545170dda2e42d9a6df386a0cdcddc5-3"&gt;&lt;/a&gt;tar zxvf mysql-connector-python-2.1.5.tar.gz
-&lt;a name="rest_code_7545170dda2e42d9a6df386a0cdcddc5-4"&gt;&lt;/a&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; mysql-connector-python-2.1.5
-&lt;a name="rest_code_7545170dda2e42d9a6df386a0cdcddc5-5"&gt;&lt;/a&gt;python setup.py install
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_93c3409b24b14bfcb223d5f4448b4c14-1"&gt;&lt;/a&gt;apt install curl
+&lt;a name="rest_code_93c3409b24b14bfcb223d5f4448b4c14-2"&gt;&lt;/a&gt;curl -O https://cdn.mysql.com/Downloads/Connector-Python/mysql-connector-python-2.1.5.tar.gz
+&lt;a name="rest_code_93c3409b24b14bfcb223d5f4448b4c14-3"&gt;&lt;/a&gt;tar zxvf mysql-connector-python-2.1.5.tar.gz
+&lt;a name="rest_code_93c3409b24b14bfcb223d5f4448b4c14-4"&gt;&lt;/a&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; mysql-connector-python-2.1.5
+&lt;a name="rest_code_93c3409b24b14bfcb223d5f4448b4c14-5"&gt;&lt;/a&gt;python setup.py install
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;p&gt;3、Docker安装Flask-Sqlalchemy和Flask-Script。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_c8dc86cbef7b4d0382a98048a0e70ac8-1"&gt;&lt;/a&gt;pip install flask-sqlalchemy
-&lt;a name="rest_code_c8dc86cbef7b4d0382a98048a0e70ac8-2"&gt;&lt;/a&gt;pip install flask-script
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_35b4c6baefdd4152a57448a87e827f39-1"&gt;&lt;/a&gt;pip install flask-sqlalchemy
+&lt;a name="rest_code_35b4c6baefdd4152a57448a87e827f39-2"&gt;&lt;/a&gt;pip install flask-script
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;p&gt;4、为已有容器添加端口。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_eca092721f4f4818b82215c20935ba85-1"&gt;&lt;/a&gt;docker commit mypc newpc
-&lt;a name="rest_code_eca092721f4f4818b82215c20935ba85-2"&gt;&lt;/a&gt;docker stop mypc
-&lt;a name="rest_code_eca092721f4f4818b82215c20935ba85-3"&gt;&lt;/a&gt;docker run --name mynewpc -i -t -p 13306:3306 -p 8080:8080 -v ~/share/:/usr/development/  newpc /bin/bash
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_08841fa5252a4b238f37b51a157b2fcc-1"&gt;&lt;/a&gt;docker commit mypc newpc
+&lt;a name="rest_code_08841fa5252a4b238f37b51a157b2fcc-2"&gt;&lt;/a&gt;docker stop mypc
+&lt;a name="rest_code_08841fa5252a4b238f37b51a157b2fcc-3"&gt;&lt;/a&gt;docker run --name mynewpc -i -t -p 13306:3306 -p 8080:8080 -v ~/share/:/usr/development/  newpc /bin/bash
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;p&gt;5、Docker登录Mysql数据库。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_811bef85ab2f4754b74ebb86a42a62dc-1"&gt;&lt;/a&gt;mysql -u root -p
-&lt;a name="rest_code_811bef85ab2f4754b74ebb86a42a62dc-2"&gt;&lt;/a&gt;create database test&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;a name="rest_code_811bef85ab2f4754b74ebb86a42a62dc-3"&gt;&lt;/a&gt;grant all privileges on *.* to root@&lt;span class="s1"&gt;'192.168.99.1'&lt;/span&gt; identified by &lt;span class="s1"&gt;'root'&lt;/span&gt; with grant option&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;a name="rest_code_811bef85ab2f4754b74ebb86a42a62dc-4"&gt;&lt;/a&gt;flush privileges&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;a name="rest_code_811bef85ab2f4754b74ebb86a42a62dc-5"&gt;&lt;/a&gt;&lt;span class="nb"&gt;exit&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_42086f3bda074f8aba902c8510148b55-1"&gt;&lt;/a&gt;mysql -u root -p
+&lt;a name="rest_code_42086f3bda074f8aba902c8510148b55-2"&gt;&lt;/a&gt;create database test&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;a name="rest_code_42086f3bda074f8aba902c8510148b55-3"&gt;&lt;/a&gt;grant all privileges on *.* to root@&lt;span class="s1"&gt;'192.168.99.1'&lt;/span&gt; identified by &lt;span class="s1"&gt;'root'&lt;/span&gt; with grant option&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;a name="rest_code_42086f3bda074f8aba902c8510148b55-4"&gt;&lt;/a&gt;flush privileges&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;a name="rest_code_42086f3bda074f8aba902c8510148b55-5"&gt;&lt;/a&gt;&lt;span class="nb"&gt;exit&lt;/span&gt;
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;p&gt;6、Docker修改配置文件，我习惯用emacs，也可以用vim。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_840f8539f13347e0bae2d58171ed3442-1"&gt;&lt;/a&gt;apt install emacs
-&lt;a name="rest_code_840f8539f13347e0bae2d58171ed3442-2"&gt;&lt;/a&gt;apt-get install -f
-&lt;a name="rest_code_840f8539f13347e0bae2d58171ed3442-3"&gt;&lt;/a&gt;emacs /etc/mysql/my.cnf
-&lt;a name="rest_code_840f8539f13347e0bae2d58171ed3442-4"&gt;&lt;/a&gt;bind-address            &lt;span class="o"&gt;=&lt;/span&gt; 0.0.0.0
-&lt;a name="rest_code_840f8539f13347e0bae2d58171ed3442-5"&gt;&lt;/a&gt;C-x C-s
-&lt;a name="rest_code_840f8539f13347e0bae2d58171ed3442-6"&gt;&lt;/a&gt;C-x C-c
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_9d755c21694640059158190c4a6037a6-1"&gt;&lt;/a&gt;apt install emacs
+&lt;a name="rest_code_9d755c21694640059158190c4a6037a6-2"&gt;&lt;/a&gt;apt-get install -f
+&lt;a name="rest_code_9d755c21694640059158190c4a6037a6-3"&gt;&lt;/a&gt;emacs /etc/mysql/my.cnf
+&lt;a name="rest_code_9d755c21694640059158190c4a6037a6-4"&gt;&lt;/a&gt;bind-address            &lt;span class="o"&gt;=&lt;/span&gt; 0.0.0.0
+&lt;a name="rest_code_9d755c21694640059158190c4a6037a6-5"&gt;&lt;/a&gt;C-x C-s
+&lt;a name="rest_code_9d755c21694640059158190c4a6037a6-6"&gt;&lt;/a&gt;C-x C-c
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;p&gt;7、重启mysql服务。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_a1dc64c501804022a16f5ad08fdf1bd5-1"&gt;&lt;/a&gt;sudo service mysql stop
-&lt;a name="rest_code_a1dc64c501804022a16f5ad08fdf1bd5-2"&gt;&lt;/a&gt;mysqld
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_02fea6a2a7d64ad3be47f72d57c32de3-1"&gt;&lt;/a&gt;sudo service mysql stop
+&lt;a name="rest_code_02fea6a2a7d64ad3be47f72d57c32de3-2"&gt;&lt;/a&gt;mysqld
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;p&gt;8、主系统编辑测试网站main.py。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-1"&gt; 1&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-2"&gt; 2&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-3"&gt; 3&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-4"&gt; 4&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-5"&gt; 5&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-6"&gt; 6&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-7"&gt; 7&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-8"&gt; 8&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-9"&gt; 9&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-10"&gt;10&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-11"&gt;11&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-12"&gt;12&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-13"&gt;13&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-14"&gt;14&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-15"&gt;15&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-16"&gt;16&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-17"&gt;17&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-18"&gt;18&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-19"&gt;19&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_aeccc56666ec4a6a87af533dfa55a5c6-20"&gt;20&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;
-&lt;a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-2"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask.ext.script&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Manager&lt;/span&gt;
-&lt;a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-3"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask.ext.sqlalchemy&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;SQLAlchemy&lt;/span&gt;
-&lt;a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-4"&gt;&lt;/a&gt;
-&lt;a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-5"&gt;&lt;/a&gt;&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-6"&gt;&lt;/a&gt;&lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'SQLALCHEMY_DATABASE_URI'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'mysql+mysqlconnector://root:root@127.0.0.1:3306/test?charset=utf8'&lt;/span&gt;
-&lt;a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-7"&gt;&lt;/a&gt;
-&lt;a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-8"&gt;&lt;/a&gt;&lt;span class="n"&gt;db&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;SQLAlchemy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-9"&gt;&lt;/a&gt;&lt;span class="n"&gt;manager&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Manager&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-10"&gt;&lt;/a&gt;
-&lt;a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-11"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;User&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-12"&gt;&lt;/a&gt;    &lt;span class="n"&gt;__tablename__&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'users'&lt;/span&gt;
-&lt;a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-13"&gt;&lt;/a&gt;    &lt;span class="nb"&gt;id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Integer&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;primary_key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-14"&gt;&lt;/a&gt;    &lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;unique&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-15"&gt;&lt;/a&gt;    &lt;span class="n"&gt;email&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;320&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;unique&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-16"&gt;&lt;/a&gt;    &lt;span class="n"&gt;password&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;32&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;nullable&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-17"&gt;&lt;/a&gt;
-&lt;a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-18"&gt;&lt;/a&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;'__main__'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-19"&gt;&lt;/a&gt;    &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create_all&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;a name="rest_code_aeccc56666ec4a6a87af533dfa55a5c6-20"&gt;&lt;/a&gt;    &lt;span class="n"&gt;manager&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-1"&gt; 1&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-2"&gt; 2&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-3"&gt; 3&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-4"&gt; 4&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-5"&gt; 5&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-6"&gt; 6&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-7"&gt; 7&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-8"&gt; 8&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-9"&gt; 9&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-10"&gt;10&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-11"&gt;11&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-12"&gt;12&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-13"&gt;13&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-14"&gt;14&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-15"&gt;15&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-16"&gt;16&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-17"&gt;17&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-18"&gt;18&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-19"&gt;19&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-20"&gt;20&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;
+&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-2"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask.ext.script&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Manager&lt;/span&gt;
+&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-3"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask.ext.sqlalchemy&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;SQLAlchemy&lt;/span&gt;
+&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-5"&gt;&lt;/a&gt;&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-6"&gt;&lt;/a&gt;&lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'SQLALCHEMY_DATABASE_URI'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'mysql+mysqlconnector://root:root@127.0.0.1:3306/test?charset=utf8'&lt;/span&gt;
+&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-7"&gt;&lt;/a&gt;
+&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-8"&gt;&lt;/a&gt;&lt;span class="n"&gt;db&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;SQLAlchemy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-9"&gt;&lt;/a&gt;&lt;span class="n"&gt;manager&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Manager&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-10"&gt;&lt;/a&gt;
+&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-11"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;User&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-12"&gt;&lt;/a&gt;    &lt;span class="n"&gt;__tablename__&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'users'&lt;/span&gt;
+&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-13"&gt;&lt;/a&gt;    &lt;span class="nb"&gt;id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Integer&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;primary_key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-14"&gt;&lt;/a&gt;    &lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;unique&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-15"&gt;&lt;/a&gt;    &lt;span class="n"&gt;email&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;320&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;unique&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-16"&gt;&lt;/a&gt;    &lt;span class="n"&gt;password&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;32&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;nullable&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-17"&gt;&lt;/a&gt;
+&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-18"&gt;&lt;/a&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;'__main__'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-19"&gt;&lt;/a&gt;    &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create_all&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-20"&gt;&lt;/a&gt;    &lt;span class="n"&gt;manager&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;
 &lt;p&gt;9、开一个新的Docker terminal，启动测试网站。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_dbc364ccf87e4e85b5ab275a7b69d452-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /usr/development
-&lt;a name="rest_code_dbc364ccf87e4e85b5ab275a7b69d452-2"&gt;&lt;/a&gt;python main.py runserver
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_505b16f17656441ca66decbfbd7c33aa-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /usr/development
+&lt;a name="rest_code_505b16f17656441ca66decbfbd7c33aa-2"&gt;&lt;/a&gt;python main.py runserver
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;p&gt;10、主系统上打开MySQL Workbench，访问数据库。Hostname：192.168.99.100，Port：13306，Password：root。&lt;/p&gt;
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/mysqlworkbench.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/mysqlworkbench.PNG"&gt;
@@ -234,54 +234,54 @@
 &lt;ol class="arabic"&gt;
 &lt;li&gt;&lt;p class="first"&gt;新建容器。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_1e1e030dd27e4226891c26f3e9635097-1"&gt;&lt;/a&gt;docker run --name mypc -i -t -p 8080:8080 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_115f9722e63d4d36b537cc2337201be1-1"&gt;&lt;/a&gt;docker run --name mypc -i -t -p 8080:8080 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;Docker中修改Ubuntu软件源。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_7a2f050461d048a7afb85cda8726f19e-1"&gt;&lt;/a&gt;vi /etc/apt/sources.list
-&lt;a name="rest_code_7a2f050461d048a7afb85cda8726f19e-2"&gt;&lt;/a&gt;:%s/archive.ubuntu/cn.archive.ubuntu/g
-&lt;a name="rest_code_7a2f050461d048a7afb85cda8726f19e-3"&gt;&lt;/a&gt;:wq
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_84a5a757343442f598314a332b2ea7ae-1"&gt;&lt;/a&gt;vi /etc/apt/sources.list
+&lt;a name="rest_code_84a5a757343442f598314a332b2ea7ae-2"&gt;&lt;/a&gt;:%s/archive.ubuntu/cn.archive.ubuntu/g
+&lt;a name="rest_code_84a5a757343442f598314a332b2ea7ae-3"&gt;&lt;/a&gt;:wq
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;Docker中更新软件源。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_d82ea0a376df4c34aa70a66f21730622-1"&gt;&lt;/a&gt;apt update
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_b793de7db4ac48e9bbcac77c3efbcae2-1"&gt;&lt;/a&gt;apt update
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;Docker中安装Python和Flask。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_38c5960ad2324a4b8bfd1702806e4f7b-1"&gt;&lt;/a&gt;apt install python
-&lt;a name="rest_code_38c5960ad2324a4b8bfd1702806e4f7b-2"&gt;&lt;/a&gt;apt install python-pip
-&lt;a name="rest_code_38c5960ad2324a4b8bfd1702806e4f7b-3"&gt;&lt;/a&gt;apt install python-dev
-&lt;a name="rest_code_38c5960ad2324a4b8bfd1702806e4f7b-4"&gt;&lt;/a&gt;pip install flask
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_474b79afa88d45cc86be87bb5dedb977-1"&gt;&lt;/a&gt;apt install python
+&lt;a name="rest_code_474b79afa88d45cc86be87bb5dedb977-2"&gt;&lt;/a&gt;apt install python-pip
+&lt;a name="rest_code_474b79afa88d45cc86be87bb5dedb977-3"&gt;&lt;/a&gt;apt install python-dev
+&lt;a name="rest_code_474b79afa88d45cc86be87bb5dedb977-4"&gt;&lt;/a&gt;pip install flask
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;在主系统目录 &lt;strong&gt;~/share/&lt;/strong&gt; 下编写测试网站main.py。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-1"&gt;1&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-2"&gt;2&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-3"&gt;3&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-4"&gt;4&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-5"&gt;5&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-6"&gt;6&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-7"&gt;7&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-8"&gt;8&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-9"&gt;9&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;
-&lt;a name="rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-2"&gt;&lt;/a&gt;&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-3"&gt;&lt;/a&gt;
-&lt;a name="rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-4"&gt;&lt;/a&gt;&lt;span class="nd"&gt;@app.route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'/'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-5"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;hello_world&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
-&lt;a name="rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-6"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s1"&gt;'Hello World!'&lt;/span&gt;
-&lt;a name="rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-7"&gt;&lt;/a&gt;
-&lt;a name="rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-8"&gt;&lt;/a&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;'__main__'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a name="rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-9"&gt;&lt;/a&gt;    &lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;host&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"0.0.0.0"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"8080"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_98a556377c9d430eb2d1e045e62b9875-1"&gt;1&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_98a556377c9d430eb2d1e045e62b9875-2"&gt;2&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_98a556377c9d430eb2d1e045e62b9875-3"&gt;3&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_98a556377c9d430eb2d1e045e62b9875-4"&gt;4&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_98a556377c9d430eb2d1e045e62b9875-5"&gt;5&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_98a556377c9d430eb2d1e045e62b9875-6"&gt;6&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_98a556377c9d430eb2d1e045e62b9875-7"&gt;7&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_98a556377c9d430eb2d1e045e62b9875-8"&gt;8&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_98a556377c9d430eb2d1e045e62b9875-9"&gt;9&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_98a556377c9d430eb2d1e045e62b9875-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;
+&lt;a name="rest_code_98a556377c9d430eb2d1e045e62b9875-2"&gt;&lt;/a&gt;&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_98a556377c9d430eb2d1e045e62b9875-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_98a556377c9d430eb2d1e045e62b9875-4"&gt;&lt;/a&gt;&lt;span class="nd"&gt;@app.route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'/'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_98a556377c9d430eb2d1e045e62b9875-5"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;hello_world&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+&lt;a name="rest_code_98a556377c9d430eb2d1e045e62b9875-6"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s1"&gt;'Hello World!'&lt;/span&gt;
+&lt;a name="rest_code_98a556377c9d430eb2d1e045e62b9875-7"&gt;&lt;/a&gt;
+&lt;a name="rest_code_98a556377c9d430eb2d1e045e62b9875-8"&gt;&lt;/a&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;'__main__'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_98a556377c9d430eb2d1e045e62b9875-9"&gt;&lt;/a&gt;    &lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;host&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"0.0.0.0"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"8080"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;Docker中运行网站。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_2d0aa7bb1bc24f90a0c6e60e68ec2f7e-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /usr/development/
-&lt;a name="rest_code_2d0aa7bb1bc24f90a0c6e60e68ec2f7e-2"&gt;&lt;/a&gt;python main.py
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_b4502098316a442885bf221de8c147a4-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /usr/development/
+&lt;a name="rest_code_b4502098316a442885bf221de8c147a4-2"&gt;&lt;/a&gt;python main.py
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;主系统上查看效果。&lt;/p&gt;
@@ -295,7 +295,7 @@
 &lt;/ol&gt;&lt;/div&gt;</description><category>Docker</category><category>flask</category><category>Python</category><guid>https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/</guid><pubDate>Mon, 23 Jan 2017 15:08:02 GMT</pubDate></item><item><title>Docker常用命令</title><link>https://codinglonglong.github.io/posts/dockerchang-yong-ming-ling/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;ol class="arabic"&gt;
 &lt;li&gt;&lt;p class="first"&gt;创建容器。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_c9c75d1ba1b64febba1c8636aaac0223-1"&gt;&lt;/a&gt;docker run --name mypc -it ubuntu:16.04 /bin/bash
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_a4a21ac8554d4ae7851c574315f8142b-1"&gt;&lt;/a&gt;docker run --name mypc -it ubuntu:16.04 /bin/bash
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -303,27 +303,27 @@
 &lt;ol class="arabic" start="2"&gt;
 &lt;li&gt;&lt;p class="first"&gt;查看已有容器及其状态。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_e44b02e7ac8a423094f35c1c8b3d85f1-1"&gt;&lt;/a&gt;docker ps -a
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_059db7ca389d4d09a6afdba6866805c8-1"&gt;&lt;/a&gt;docker ps -a
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;启动已有容器。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_43ea6714979d4d9091494382a6ab1f95-1"&gt;&lt;/a&gt;docker start mypc
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_f7f69431537749c587f92e3a37786fb5-1"&gt;&lt;/a&gt;docker start mypc
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;登陆正在运行的容器。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_4d2acfaaad9f492b8339434098a489fd-1"&gt;&lt;/a&gt;docker &lt;span class="nb"&gt;exec&lt;/span&gt; -it mypc /bin/bash
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_17d47f4813bb4a378d1dccf2b1803142-1"&gt;&lt;/a&gt;docker &lt;span class="nb"&gt;exec&lt;/span&gt; -it mypc /bin/bash
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;关闭正在运行的容器。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_e7c96fcc4db84aee89978be333c6fa5a-1"&gt;&lt;/a&gt;docker stop mypc
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_5002d40f23ea45cea92c599e2f9be665-1"&gt;&lt;/a&gt;docker stop mypc
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;删除容器。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_ed0bda4a943c473e900d8c19ae6e9c5e-1"&gt;&lt;/a&gt;docker rm mypc
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_bad9c55620e34a77b48bc6e5aee65380-1"&gt;&lt;/a&gt;docker rm mypc
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -334,19 +334,19 @@
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;在开始菜单双击运行Docker Quickstart Terminal，等待……………………直到出现&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_2685df9ff9f04993999f5b183ce7174a-1"&gt;1&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_2685df9ff9f04993999f5b183ce7174a-2"&gt;2&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_2685df9ff9f04993999f5b183ce7174a-3"&gt;3&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_2685df9ff9f04993999f5b183ce7174a-4"&gt;4&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_2685df9ff9f04993999f5b183ce7174a-5"&gt;5&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_2685df9ff9f04993999f5b183ce7174a-6"&gt;6&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_2685df9ff9f04993999f5b183ce7174a-7"&gt;7&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code bash"&gt;&lt;a name="rest_code_2685df9ff9f04993999f5b183ce7174a-1"&gt;&lt;/a&gt;docker is configured to use the default machine with IP 192.168.99.100
-&lt;a name="rest_code_2685df9ff9f04993999f5b183ce7174a-2"&gt;&lt;/a&gt;For &lt;span class="nb"&gt;help&lt;/span&gt; getting started, check out the docs at https://docs.docker.com
-&lt;a name="rest_code_2685df9ff9f04993999f5b183ce7174a-3"&gt;&lt;/a&gt;
-&lt;a name="rest_code_2685df9ff9f04993999f5b183ce7174a-4"&gt;&lt;/a&gt;Start interactive shell
-&lt;a name="rest_code_2685df9ff9f04993999f5b183ce7174a-5"&gt;&lt;/a&gt;
-&lt;a name="rest_code_2685df9ff9f04993999f5b183ce7174a-6"&gt;&lt;/a&gt;long@DESKTOP-N79DL8P MINGW64 ~
-&lt;a name="rest_code_2685df9ff9f04993999f5b183ce7174a-7"&gt;&lt;/a&gt;$
+&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_c3343742c08e418a861bcac4907b862c-1"&gt;1&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_c3343742c08e418a861bcac4907b862c-2"&gt;2&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_c3343742c08e418a861bcac4907b862c-3"&gt;3&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_c3343742c08e418a861bcac4907b862c-4"&gt;4&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_c3343742c08e418a861bcac4907b862c-5"&gt;5&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_c3343742c08e418a861bcac4907b862c-6"&gt;6&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_c3343742c08e418a861bcac4907b862c-7"&gt;7&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code bash"&gt;&lt;a name="rest_code_c3343742c08e418a861bcac4907b862c-1"&gt;&lt;/a&gt;docker is configured to use the default machine with IP 192.168.99.100
+&lt;a name="rest_code_c3343742c08e418a861bcac4907b862c-2"&gt;&lt;/a&gt;For &lt;span class="nb"&gt;help&lt;/span&gt; getting started, check out the docs at https://docs.docker.com
+&lt;a name="rest_code_c3343742c08e418a861bcac4907b862c-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_c3343742c08e418a861bcac4907b862c-4"&gt;&lt;/a&gt;Start interactive shell
+&lt;a name="rest_code_c3343742c08e418a861bcac4907b862c-5"&gt;&lt;/a&gt;
+&lt;a name="rest_code_c3343742c08e418a861bcac4907b862c-6"&gt;&lt;/a&gt;long@DESKTOP-N79DL8P MINGW64 ~
+&lt;a name="rest_code_c3343742c08e418a861bcac4907b862c-7"&gt;&lt;/a&gt;$
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;运行 &lt;strong&gt;docker pull ubuntu:16.04&lt;/strong&gt; 。&lt;/p&gt;

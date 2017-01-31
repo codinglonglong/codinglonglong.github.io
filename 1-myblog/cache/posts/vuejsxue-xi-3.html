@@ -1,111 +1,111 @@
 <p>本文初步学习一下vuejs提供的组件。我们做了一个列表的例子。</p>
 <p><strong>main.js</strong></p>
 <blockquote>
-<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_cb50873306d94458ade803318ec0a550-1">1</a>
-<a href="#rest_code_cb50873306d94458ade803318ec0a550-2">2</a>
-<a href="#rest_code_cb50873306d94458ade803318ec0a550-3">3</a>
-<a href="#rest_code_cb50873306d94458ade803318ec0a550-4">4</a>
-<a href="#rest_code_cb50873306d94458ade803318ec0a550-5">5</a>
-<a href="#rest_code_cb50873306d94458ade803318ec0a550-6">6</a>
-<a href="#rest_code_cb50873306d94458ade803318ec0a550-7">7</a>
-<a href="#rest_code_cb50873306d94458ade803318ec0a550-8">8</a></pre></div></td><td class="code"><pre class="code js"><a name="rest_code_cb50873306d94458ade803318ec0a550-1"></a><span class="kr">import</span> <span class="nx">Vue</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span>
-<a name="rest_code_cb50873306d94458ade803318ec0a550-2"></a><span class="kr">import</span> <span class="nx">TodoList</span> <span class="nx">from</span> <span class="s1">&#39;./TodoList&#39;</span>
-<a name="rest_code_cb50873306d94458ade803318ec0a550-3"></a>
-<a name="rest_code_cb50873306d94458ade803318ec0a550-4"></a><span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
-<a name="rest_code_cb50873306d94458ade803318ec0a550-5"></a>    <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#app&#39;</span><span class="p">,</span>
-<a name="rest_code_cb50873306d94458ade803318ec0a550-6"></a>    <span class="nx">template</span><span class="o">:</span> <span class="s1">&#39;&lt;TodoList/&gt;&#39;</span><span class="p">,</span>
-<a name="rest_code_cb50873306d94458ade803318ec0a550-7"></a>    <span class="nx">components</span><span class="o">:</span> <span class="p">{</span> <span class="nx">TodoList</span> <span class="p">}</span>
-<a name="rest_code_cb50873306d94458ade803318ec0a550-8"></a><span class="p">});</span>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_1f416eebb92e49b4a5d567e114df94e4-1">1</a>
+<a href="#rest_code_1f416eebb92e49b4a5d567e114df94e4-2">2</a>
+<a href="#rest_code_1f416eebb92e49b4a5d567e114df94e4-3">3</a>
+<a href="#rest_code_1f416eebb92e49b4a5d567e114df94e4-4">4</a>
+<a href="#rest_code_1f416eebb92e49b4a5d567e114df94e4-5">5</a>
+<a href="#rest_code_1f416eebb92e49b4a5d567e114df94e4-6">6</a>
+<a href="#rest_code_1f416eebb92e49b4a5d567e114df94e4-7">7</a>
+<a href="#rest_code_1f416eebb92e49b4a5d567e114df94e4-8">8</a></pre></div></td><td class="code"><pre class="code js"><a name="rest_code_1f416eebb92e49b4a5d567e114df94e4-1"></a><span class="kr">import</span> <span class="nx">Vue</span> <span class="nx">from</span> <span class="s1">&#39;vue&#39;</span>
+<a name="rest_code_1f416eebb92e49b4a5d567e114df94e4-2"></a><span class="kr">import</span> <span class="nx">TodoList</span> <span class="nx">from</span> <span class="s1">&#39;./TodoList&#39;</span>
+<a name="rest_code_1f416eebb92e49b4a5d567e114df94e4-3"></a>
+<a name="rest_code_1f416eebb92e49b4a5d567e114df94e4-4"></a><span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+<a name="rest_code_1f416eebb92e49b4a5d567e114df94e4-5"></a>    <span class="nx">el</span><span class="o">:</span> <span class="s1">&#39;#app&#39;</span><span class="p">,</span>
+<a name="rest_code_1f416eebb92e49b4a5d567e114df94e4-6"></a>    <span class="nx">template</span><span class="o">:</span> <span class="s1">&#39;&lt;TodoList/&gt;&#39;</span><span class="p">,</span>
+<a name="rest_code_1f416eebb92e49b4a5d567e114df94e4-7"></a>    <span class="nx">components</span><span class="o">:</span> <span class="p">{</span> <span class="nx">TodoList</span> <span class="p">}</span>
+<a name="rest_code_1f416eebb92e49b4a5d567e114df94e4-8"></a><span class="p">});</span>
 </pre></td></tr></table></blockquote>
 <p><strong>TodoList.vue</strong></p>
 <blockquote>
-<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_20a56a054e8d4aa78cc7b48e94505040-1"> 1</a>
-<a href="#rest_code_20a56a054e8d4aa78cc7b48e94505040-2"> 2</a>
-<a href="#rest_code_20a56a054e8d4aa78cc7b48e94505040-3"> 3</a>
-<a href="#rest_code_20a56a054e8d4aa78cc7b48e94505040-4"> 4</a>
-<a href="#rest_code_20a56a054e8d4aa78cc7b48e94505040-5"> 5</a>
-<a href="#rest_code_20a56a054e8d4aa78cc7b48e94505040-6"> 6</a>
-<a href="#rest_code_20a56a054e8d4aa78cc7b48e94505040-7"> 7</a>
-<a href="#rest_code_20a56a054e8d4aa78cc7b48e94505040-8"> 8</a>
-<a href="#rest_code_20a56a054e8d4aa78cc7b48e94505040-9"> 9</a>
-<a href="#rest_code_20a56a054e8d4aa78cc7b48e94505040-10">10</a>
-<a href="#rest_code_20a56a054e8d4aa78cc7b48e94505040-11">11</a>
-<a href="#rest_code_20a56a054e8d4aa78cc7b48e94505040-12">12</a>
-<a href="#rest_code_20a56a054e8d4aa78cc7b48e94505040-13">13</a>
-<a href="#rest_code_20a56a054e8d4aa78cc7b48e94505040-14">14</a>
-<a href="#rest_code_20a56a054e8d4aa78cc7b48e94505040-15">15</a>
-<a href="#rest_code_20a56a054e8d4aa78cc7b48e94505040-16">16</a>
-<a href="#rest_code_20a56a054e8d4aa78cc7b48e94505040-17">17</a>
-<a href="#rest_code_20a56a054e8d4aa78cc7b48e94505040-18">18</a>
-<a href="#rest_code_20a56a054e8d4aa78cc7b48e94505040-19">19</a>
-<a href="#rest_code_20a56a054e8d4aa78cc7b48e94505040-20">20</a>
-<a href="#rest_code_20a56a054e8d4aa78cc7b48e94505040-21">21</a>
-<a href="#rest_code_20a56a054e8d4aa78cc7b48e94505040-22">22</a>
-<a href="#rest_code_20a56a054e8d4aa78cc7b48e94505040-23">23</a>
-<a href="#rest_code_20a56a054e8d4aa78cc7b48e94505040-24">24</a>
-<a href="#rest_code_20a56a054e8d4aa78cc7b48e94505040-25">25</a>
-<a href="#rest_code_20a56a054e8d4aa78cc7b48e94505040-26">26</a>
-<a href="#rest_code_20a56a054e8d4aa78cc7b48e94505040-27">27</a>
-<a href="#rest_code_20a56a054e8d4aa78cc7b48e94505040-28">28</a></pre></div></td><td class="code"><pre class="code html"><a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-2"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;todolist&quot;</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-3"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-4"></a>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>父容器1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-5"></a>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>父容器2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-6"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-7"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-8"></a>        <span class="p">&lt;</span><span class="nt">TodoItem</span> <span class="na">todomessage</span><span class="o">=</span><span class="s">&quot;子容器1&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">TodoItem</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-9"></a>        <span class="p">&lt;</span><span class="nt">TodoItem</span> <span class="na">todomessage</span><span class="o">=</span><span class="s">&quot;子容器2&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">TodoItem</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-10"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-11"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-12"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-13"></a>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-14"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-15"></a><span class="kr">import</span> <span class="nx">TodoItem</span> <span class="nx">from</span> <span class="s1">&#39;./components/TodoItem&#39;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-16"></a>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-17"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-18"></a>    <span class="nx">components</span><span class="o">:</span> <span class="p">{</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-19"></a>        <span class="nx">TodoItem</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-20"></a>    <span class="p">}</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-21"></a><span class="p">}</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-22"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-23"></a>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-24"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-25"></a><span class="nt">li</span><span class="p">{</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-26"></a>    <span class="nb">color</span><span class="o">:</span> <span class="nb">blue</span><span class="p">;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-27"></a><span class="p">}</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-28"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_daa43297420b4c4893a6213840bf159e-1"> 1</a>
+<a href="#rest_code_daa43297420b4c4893a6213840bf159e-2"> 2</a>
+<a href="#rest_code_daa43297420b4c4893a6213840bf159e-3"> 3</a>
+<a href="#rest_code_daa43297420b4c4893a6213840bf159e-4"> 4</a>
+<a href="#rest_code_daa43297420b4c4893a6213840bf159e-5"> 5</a>
+<a href="#rest_code_daa43297420b4c4893a6213840bf159e-6"> 6</a>
+<a href="#rest_code_daa43297420b4c4893a6213840bf159e-7"> 7</a>
+<a href="#rest_code_daa43297420b4c4893a6213840bf159e-8"> 8</a>
+<a href="#rest_code_daa43297420b4c4893a6213840bf159e-9"> 9</a>
+<a href="#rest_code_daa43297420b4c4893a6213840bf159e-10">10</a>
+<a href="#rest_code_daa43297420b4c4893a6213840bf159e-11">11</a>
+<a href="#rest_code_daa43297420b4c4893a6213840bf159e-12">12</a>
+<a href="#rest_code_daa43297420b4c4893a6213840bf159e-13">13</a>
+<a href="#rest_code_daa43297420b4c4893a6213840bf159e-14">14</a>
+<a href="#rest_code_daa43297420b4c4893a6213840bf159e-15">15</a>
+<a href="#rest_code_daa43297420b4c4893a6213840bf159e-16">16</a>
+<a href="#rest_code_daa43297420b4c4893a6213840bf159e-17">17</a>
+<a href="#rest_code_daa43297420b4c4893a6213840bf159e-18">18</a>
+<a href="#rest_code_daa43297420b4c4893a6213840bf159e-19">19</a>
+<a href="#rest_code_daa43297420b4c4893a6213840bf159e-20">20</a>
+<a href="#rest_code_daa43297420b4c4893a6213840bf159e-21">21</a>
+<a href="#rest_code_daa43297420b4c4893a6213840bf159e-22">22</a>
+<a href="#rest_code_daa43297420b4c4893a6213840bf159e-23">23</a>
+<a href="#rest_code_daa43297420b4c4893a6213840bf159e-24">24</a>
+<a href="#rest_code_daa43297420b4c4893a6213840bf159e-25">25</a>
+<a href="#rest_code_daa43297420b4c4893a6213840bf159e-26">26</a>
+<a href="#rest_code_daa43297420b4c4893a6213840bf159e-27">27</a>
+<a href="#rest_code_daa43297420b4c4893a6213840bf159e-28">28</a></pre></div></td><td class="code"><pre class="code html"><a name="rest_code_daa43297420b4c4893a6213840bf159e-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-2"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;todolist&quot;</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-3"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-4"></a>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>父容器1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-5"></a>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>父容器2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-6"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-7"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-8"></a>        <span class="p">&lt;</span><span class="nt">TodoItem</span> <span class="na">todomessage</span><span class="o">=</span><span class="s">&quot;子容器1&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">TodoItem</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-9"></a>        <span class="p">&lt;</span><span class="nt">TodoItem</span> <span class="na">todomessage</span><span class="o">=</span><span class="s">&quot;子容器2&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">TodoItem</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-10"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-11"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-12"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-13"></a>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-14"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-15"></a><span class="kr">import</span> <span class="nx">TodoItem</span> <span class="nx">from</span> <span class="s1">&#39;./components/TodoItem&#39;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-16"></a>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-17"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-18"></a>    <span class="nx">components</span><span class="o">:</span> <span class="p">{</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-19"></a>        <span class="nx">TodoItem</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-20"></a>    <span class="p">}</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-21"></a><span class="p">}</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-22"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-23"></a>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-24"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-25"></a><span class="nt">li</span><span class="p">{</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-26"></a>    <span class="nb">color</span><span class="o">:</span> <span class="nb">blue</span><span class="p">;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-27"></a><span class="p">}</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-28"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
 </pre></td></tr></table></blockquote>
 <p><strong>components/TodoItem.vue</strong></p>
 <blockquote>
-<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_bd207a4209384949bf37623db89810e1-1"> 1</a>
-<a href="#rest_code_bd207a4209384949bf37623db89810e1-2"> 2</a>
-<a href="#rest_code_bd207a4209384949bf37623db89810e1-3"> 3</a>
-<a href="#rest_code_bd207a4209384949bf37623db89810e1-4"> 4</a>
-<a href="#rest_code_bd207a4209384949bf37623db89810e1-5"> 5</a>
-<a href="#rest_code_bd207a4209384949bf37623db89810e1-6"> 6</a>
-<a href="#rest_code_bd207a4209384949bf37623db89810e1-7"> 7</a>
-<a href="#rest_code_bd207a4209384949bf37623db89810e1-8"> 8</a>
-<a href="#rest_code_bd207a4209384949bf37623db89810e1-9"> 9</a>
-<a href="#rest_code_bd207a4209384949bf37623db89810e1-10">10</a>
-<a href="#rest_code_bd207a4209384949bf37623db89810e1-11">11</a>
-<a href="#rest_code_bd207a4209384949bf37623db89810e1-12">12</a>
-<a href="#rest_code_bd207a4209384949bf37623db89810e1-13">13</a>
-<a href="#rest_code_bd207a4209384949bf37623db89810e1-14">14</a>
-<a href="#rest_code_bd207a4209384949bf37623db89810e1-15">15</a></pre></div></td><td class="code"><pre class="code html"><a name="rest_code_bd207a4209384949bf37623db89810e1-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-2"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{todomessage}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-3"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-4"></a>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-5"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-6"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-7"></a>    <span class="nx">props</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;todomessage&#39;</span><span class="p">],</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-8"></a><span class="p">}</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-9"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-10"></a>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-11"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-12"></a><span class="nt">li</span><span class="p">{</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-13"></a>    <span class="nb">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-14"></a><span class="p">}</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-15"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-1"> 1</a>
+<a href="#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-2"> 2</a>
+<a href="#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-3"> 3</a>
+<a href="#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-4"> 4</a>
+<a href="#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-5"> 5</a>
+<a href="#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-6"> 6</a>
+<a href="#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-7"> 7</a>
+<a href="#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-8"> 8</a>
+<a href="#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-9"> 9</a>
+<a href="#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-10">10</a>
+<a href="#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-11">11</a>
+<a href="#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-12">12</a>
+<a href="#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-13">13</a>
+<a href="#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-14">14</a>
+<a href="#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-15">15</a></pre></div></td><td class="code"><pre class="code html"><a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-2"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{todomessage}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-3"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-4"></a>
+<a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-5"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-6"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-7"></a>    <span class="nx">props</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;todomessage&#39;</span><span class="p">],</span>
+<a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-8"></a><span class="p">}</span>
+<a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-9"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-10"></a>
+<a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-11"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
+<a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-12"></a><span class="nt">li</span><span class="p">{</span>
+<a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-13"></a>    <span class="nb">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+<a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-14"></a><span class="p">}</span>
+<a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-15"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
 </pre></td></tr></table></blockquote>
 <p>在上述的代码中，我们需要学到以下几个问题：</p>
 <ol class="arabic simple">

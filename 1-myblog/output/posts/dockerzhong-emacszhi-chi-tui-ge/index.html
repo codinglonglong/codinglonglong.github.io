@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_cn">
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,7 +43,7 @@ C-x C-c
 <meta property="article:tag" content="Emacs">
 </head>
 <body>
-<a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
 <!-- Menubar -->
 
@@ -84,7 +84,7 @@ C-x C-c
 </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-    <a href="index.rst" id="sourcelink">源代码</a>
+    <a href="index.rst" id="sourcelink">Source</a>
     </li>
 
                 
@@ -107,7 +107,7 @@ C-x C-c
             </span></p>
             <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2017-01-30T22:03:15+08:00" itemprop="datePublished" title="2017-01-30 22:03">2017-01-30 22:03</time></a></p>
             
-        <p class="sourceline"><a href="index.rst" id="sourcelink">源代码</a></p>
+        <p class="sourceline"><a href="index.rst" id="sourcelink">Source</a></p>
 
         </div>
         
@@ -116,11 +116,11 @@ C-x C-c
     <div>
 <p>默认在Docker中，Emacs使用退格无法删除光标前的字符，而是显示帮助信息，这让人有些费解，可以采用如下方法解决：</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_e6443483b7884003a90755ac508d11e3-1"></a>emacs ~/.emacs
-<a name="rest_code_e6443483b7884003a90755ac508d11e3-2"></a><span class="o">(</span>global-set-key <span class="s2">"\C-h"</span> <span class="s1">'backward-delete-char-untabify)</span>
-<a name="rest_code_e6443483b7884003a90755ac508d11e3-3"></a><span class="s1">(global-set-key "\d" '</span>delete-char<span class="o">)</span>
-<a name="rest_code_e6443483b7884003a90755ac508d11e3-4"></a>C-x C-s
-<a name="rest_code_e6443483b7884003a90755ac508d11e3-5"></a>C-x C-c
+<pre class="code bash"><a name="rest_code_ff8478bc08a74e11a54217f543f1d9b3-1"></a>emacs ~/.emacs
+<a name="rest_code_ff8478bc08a74e11a54217f543f1d9b3-2"></a><span class="o">(</span>global-set-key <span class="s2">"\C-h"</span> <span class="s1">'backward-delete-char-untabify)</span>
+<a name="rest_code_ff8478bc08a74e11a54217f543f1d9b3-3"></a><span class="s1">(global-set-key "\d" '</span>delete-char<span class="o">)</span>
+<a name="rest_code_ff8478bc08a74e11a54217f543f1d9b3-4"></a>C-x C-s
+<a name="rest_code_ff8478bc08a74e11a54217f543f1d9b3-5"></a>C-x C-c
 </pre>
 </blockquote>
 <p>这时再用emacs命令打开文件，就可以正常使用退格键删除光标前的字符了。</p>
@@ -132,10 +132,10 @@ C-x C-c
         </ul>
 <ul class="pager hidden-print">
 <li class="previous">
-                <a href="../flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/" rel="prev" title="Flask-Sqlalchemy连接Mysql并支持中文">前一篇</a>
+                <a href="../flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/" rel="prev" title="Flask-Sqlalchemy连接Mysql并支持中文">Previous post</a>
             </li>
             <li class="next">
-                <a href="../xiu-gai-dockerzhong-de-xi-tong-shi-jian/" rel="next" title="修改Docker中的系统时间">后一篇</a>
+                <a href="../xiu-gai-dockerzhong-de-xi-tong-shi-jian/" rel="next" title="修改Docker中的系统时间">Next post</a>
             </li>
         </ul></nav></aside></article>
 </div>
@@ -149,8 +149,8 @@ C-x C-c
 </div>
 
 
-            <script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/colorbox-i18n/jquery.colorbox-zh-CN.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
-    moment.locale("zh-cn");
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
     fancydates(0, "YYYY-MM-DD HH:mm");
     </script><!-- end fancy dates -->
 </body>

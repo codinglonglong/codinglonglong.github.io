@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_cn">
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -56,7 +56,7 @@ body{
 <meta property="article:tag" content="swagger ui">
 </head>
 <body>
-<a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
 <!-- Menubar -->
 
@@ -97,7 +97,7 @@ body{
 </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-    <a href="index.rst" id="sourcelink">源代码</a>
+    <a href="index.rst" id="sourcelink">Source</a>
     </li>
 
                 
@@ -120,7 +120,7 @@ body{
             </span></p>
             <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2017-01-24T17:13:27+08:00" itemprop="datePublished" title="2017-01-24 17:13">2017-01-24 17:13</time></a></p>
             
-        <p class="sourceline"><a href="index.rst" id="sourcelink">源代码</a></p>
+        <p class="sourceline"><a href="index.rst" id="sourcelink">Source</a></p>
 
         </div>
         
@@ -130,180 +130,180 @@ body{
 <p>继文章 <a class="reference external" href="https://codinglonglong.github.io/posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/">https://codinglonglong.github.io/posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/</a> 之后，我们参考文档实现了一个最小化增删改查的案例。</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-1"> 1</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-2"> 2</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-3"> 3</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-4"> 4</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-5"> 5</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-6"> 6</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-7"> 7</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-8"> 8</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-9"> 9</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-10">10</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-11">11</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-12">12</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-13">13</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-14">14</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-15">15</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-16">16</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-17">17</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-18">18</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-19">19</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-20">20</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-21">21</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-22">22</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-23">23</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-24">24</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-25">25</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-26">26</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-27">27</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-28">28</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-29">29</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-30">30</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-31">31</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-32">32</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-33">33</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-34">34</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-35">35</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-36">36</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-37">37</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-38">38</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-39">39</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-40">40</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-41">41</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-42">42</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-43">43</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-44">44</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-45">45</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-46">46</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-47">47</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-48">48</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-49">49</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-50">50</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-51">51</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-52">52</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-53">53</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-54">54</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-55">55</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-56">56</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-57">57</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-58">58</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-59">59</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-60">60</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-61">61</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-62">62</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-63">63</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-64">64</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-65">65</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-66">66</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-67">67</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-68">68</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-69">69</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-70">70</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-71">71</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-72">72</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-73">73</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-74">74</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-75">75</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-76">76</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-77">77</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-78">78</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-79">79</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-80">80</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-81">81</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-82">82</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-83">83</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-84">84</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-85">85</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-86">86</a>
-<a href="#rest_code_fccd7f286e7f4d178e9db0c227378365-87">87</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_fccd7f286e7f4d178e9db0c227378365-1"></a><span class="c1">#-*-coding:utf-8-*-</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-2"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-3"></a><span class="kn">from</span> <span class="nn">flask.ext.restplus</span> <span class="kn">import</span> <span class="n">Api</span><span class="p">,</span> <span class="n">Resource</span><span class="p">,</span> <span class="n">fields</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-4"></a>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-5"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-6"></a><span class="n">api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">'1.0'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'TodoMVC API'</span><span class="p">,</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-7"></a>        <span class="n">description</span><span class="o">=</span><span class="s1">'A simple TodoMVC API'</span><span class="p">,</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-8"></a>        <span class="p">)</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-9"></a>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-10"></a><span class="n">ns</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">namespace</span><span class="p">(</span><span class="s1">'todos'</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">'TODO operations'</span><span class="p">)</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-11"></a>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-12"></a><span class="n">todo</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="s1">'Todo'</span><span class="p">,</span> <span class="p">{</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-13"></a>    <span class="s1">'id'</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="n">readOnly</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">'The task unique identifier'</span><span class="p">),</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-14"></a>    <span class="s1">'task'</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">'The task details'</span><span class="p">)</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-15"></a><span class="p">})</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-16"></a>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-17"></a>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-18"></a><span class="k">class</span> <span class="nc">TodoDAO</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-19"></a>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-20"></a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-21"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-22"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">todos</span> <span class="o">=</span> <span class="p">[]</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-23"></a>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-24"></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-25"></a>        <span class="k">for</span> <span class="n">todo</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">todos</span><span class="p">:</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-26"></a>            <span class="k">if</span> <span class="n">todo</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span> <span class="o">==</span> <span class="nb">id</span><span class="p">:</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-27"></a>                <span class="k">return</span> <span class="n">todo</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-28"></a>        <span class="n">api</span><span class="o">.</span><span class="n">abort</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s2">"Todo {} doesn't exist"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">))</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-29"></a>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-30"></a>    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-31"></a>        <span class="n">todo</span> <span class="o">=</span> <span class="n">data</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-32"></a>        <span class="n">todo</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">counter</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">counter</span> <span class="o">+</span> <span class="mi">1</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-33"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">todos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">todo</span><span class="p">)</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-34"></a>        <span class="k">return</span> <span class="n">todo</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-35"></a>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-36"></a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-37"></a>        <span class="n">todo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-38"></a>        <span class="n">todo</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-39"></a>        <span class="k">return</span> <span class="n">todo</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-40"></a>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-41"></a>    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-42"></a>        <span class="n">todo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-43"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">todos</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">todo</span><span class="p">)</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-44"></a>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-45"></a>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-46"></a><span class="n">DAO</span> <span class="o">=</span> <span class="n">TodoDAO</span><span class="p">()</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-47"></a><span class="n">DAO</span><span class="o">.</span><span class="n">create</span><span class="p">({</span><span class="s1">'task'</span><span class="p">:</span> <span class="s1">'Build an API'</span><span class="p">})</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-48"></a><span class="n">DAO</span><span class="o">.</span><span class="n">create</span><span class="p">({</span><span class="s1">'task'</span><span class="p">:</span> <span class="s1">'你好'</span><span class="p">})</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-49"></a>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-50"></a>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-51"></a><span class="nd">@ns.route</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-52"></a><span class="k">class</span> <span class="nc">TodoList</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-53"></a>    <span class="sd">'''Shows a list of all todos, and lets you POST to add new tasks'''</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-54"></a>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-55"></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-56"></a>        <span class="sd">'''List all tasks'''</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-57"></a>        <span class="k">return</span> <span class="n">DAO</span><span class="o">.</span><span class="n">todos</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-58"></a>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-59"></a>    <span class="nd">@ns.expect</span><span class="p">(</span><span class="n">todo</span><span class="p">)</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-60"></a>    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-61"></a>        <span class="sd">'''Create a new task'''</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-62"></a>        <span class="k">return</span> <span class="n">DAO</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">payload</span><span class="p">),</span> <span class="mi">201</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-63"></a>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-64"></a>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-65"></a><span class="nd">@ns.route</span><span class="p">(</span><span class="s1">'/&lt;int:id&gt;'</span><span class="p">)</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-66"></a><span class="nd">@ns.response</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s1">'Todo not found'</span><span class="p">)</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-67"></a><span class="nd">@ns.param</span><span class="p">(</span><span class="s1">'id'</span><span class="p">,</span> <span class="s1">'任务标识'</span><span class="p">)</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-68"></a><span class="k">class</span> <span class="nc">Todo</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-69"></a>    <span class="sd">'''Show a single todo item and lets you delete them'''</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-70"></a>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-71"></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-72"></a>        <span class="sd">'''Fetch a given resource'''</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-73"></a>        <span class="k">return</span> <span class="n">DAO</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-74"></a>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-75"></a>    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-76"></a>        <span class="sd">'''Delete a task given its identifier'''</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-77"></a>        <span class="n">DAO</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-78"></a>        <span class="k">return</span> <span class="s1">''</span><span class="p">,</span> <span class="mi">204</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-79"></a>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-80"></a>    <span class="nd">@ns.expect</span><span class="p">(</span><span class="n">todo</span><span class="p">)</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-81"></a>    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-82"></a>        <span class="sd">'''Update a task given its identifier'''</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-83"></a>        <span class="k">return</span> <span class="n">DAO</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">api</span><span class="o">.</span><span class="n">payload</span><span class="p">)</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-84"></a>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-85"></a>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-86"></a><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
-<a name="rest_code_fccd7f286e7f4d178e9db0c227378365-87"></a>    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">"0.0.0.0"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8080</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-1"> 1</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-2"> 2</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-3"> 3</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-4"> 4</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-5"> 5</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-6"> 6</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-7"> 7</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-8"> 8</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-9"> 9</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-10">10</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-11">11</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-12">12</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-13">13</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-14">14</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-15">15</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-16">16</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-17">17</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-18">18</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-19">19</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-20">20</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-21">21</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-22">22</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-23">23</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-24">24</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-25">25</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-26">26</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-27">27</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-28">28</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-29">29</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-30">30</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-31">31</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-32">32</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-33">33</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-34">34</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-35">35</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-36">36</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-37">37</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-38">38</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-39">39</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-40">40</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-41">41</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-42">42</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-43">43</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-44">44</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-45">45</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-46">46</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-47">47</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-48">48</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-49">49</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-50">50</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-51">51</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-52">52</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-53">53</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-54">54</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-55">55</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-56">56</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-57">57</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-58">58</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-59">59</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-60">60</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-61">61</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-62">62</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-63">63</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-64">64</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-65">65</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-66">66</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-67">67</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-68">68</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-69">69</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-70">70</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-71">71</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-72">72</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-73">73</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-74">74</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-75">75</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-76">76</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-77">77</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-78">78</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-79">79</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-80">80</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-81">81</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-82">82</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-83">83</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-84">84</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-85">85</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-86">86</a>
+<a href="#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-87">87</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-1"></a><span class="c1">#-*-coding:utf-8-*-</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-2"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-3"></a><span class="kn">from</span> <span class="nn">flask.ext.restplus</span> <span class="kn">import</span> <span class="n">Api</span><span class="p">,</span> <span class="n">Resource</span><span class="p">,</span> <span class="n">fields</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-4"></a>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-5"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-6"></a><span class="n">api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">'1.0'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'TodoMVC API'</span><span class="p">,</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-7"></a>        <span class="n">description</span><span class="o">=</span><span class="s1">'A simple TodoMVC API'</span><span class="p">,</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-8"></a>        <span class="p">)</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-9"></a>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-10"></a><span class="n">ns</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">namespace</span><span class="p">(</span><span class="s1">'todos'</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">'TODO operations'</span><span class="p">)</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-11"></a>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-12"></a><span class="n">todo</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="s1">'Todo'</span><span class="p">,</span> <span class="p">{</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-13"></a>    <span class="s1">'id'</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="n">readOnly</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">'The task unique identifier'</span><span class="p">),</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-14"></a>    <span class="s1">'task'</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">'The task details'</span><span class="p">)</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-15"></a><span class="p">})</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-16"></a>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-17"></a>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-18"></a><span class="k">class</span> <span class="nc">TodoDAO</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-19"></a>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-20"></a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-21"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-22"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">todos</span> <span class="o">=</span> <span class="p">[]</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-23"></a>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-24"></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-25"></a>        <span class="k">for</span> <span class="n">todo</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">todos</span><span class="p">:</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-26"></a>            <span class="k">if</span> <span class="n">todo</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span> <span class="o">==</span> <span class="nb">id</span><span class="p">:</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-27"></a>                <span class="k">return</span> <span class="n">todo</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-28"></a>        <span class="n">api</span><span class="o">.</span><span class="n">abort</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s2">"Todo {} doesn't exist"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">))</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-29"></a>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-30"></a>    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-31"></a>        <span class="n">todo</span> <span class="o">=</span> <span class="n">data</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-32"></a>        <span class="n">todo</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">counter</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">counter</span> <span class="o">+</span> <span class="mi">1</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-33"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">todos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">todo</span><span class="p">)</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-34"></a>        <span class="k">return</span> <span class="n">todo</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-35"></a>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-36"></a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-37"></a>        <span class="n">todo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-38"></a>        <span class="n">todo</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-39"></a>        <span class="k">return</span> <span class="n">todo</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-40"></a>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-41"></a>    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-42"></a>        <span class="n">todo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-43"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">todos</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">todo</span><span class="p">)</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-44"></a>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-45"></a>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-46"></a><span class="n">DAO</span> <span class="o">=</span> <span class="n">TodoDAO</span><span class="p">()</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-47"></a><span class="n">DAO</span><span class="o">.</span><span class="n">create</span><span class="p">({</span><span class="s1">'task'</span><span class="p">:</span> <span class="s1">'Build an API'</span><span class="p">})</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-48"></a><span class="n">DAO</span><span class="o">.</span><span class="n">create</span><span class="p">({</span><span class="s1">'task'</span><span class="p">:</span> <span class="s1">'你好'</span><span class="p">})</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-49"></a>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-50"></a>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-51"></a><span class="nd">@ns.route</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-52"></a><span class="k">class</span> <span class="nc">TodoList</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-53"></a>    <span class="sd">'''Shows a list of all todos, and lets you POST to add new tasks'''</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-54"></a>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-55"></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-56"></a>        <span class="sd">'''List all tasks'''</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-57"></a>        <span class="k">return</span> <span class="n">DAO</span><span class="o">.</span><span class="n">todos</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-58"></a>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-59"></a>    <span class="nd">@ns.expect</span><span class="p">(</span><span class="n">todo</span><span class="p">)</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-60"></a>    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-61"></a>        <span class="sd">'''Create a new task'''</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-62"></a>        <span class="k">return</span> <span class="n">DAO</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">payload</span><span class="p">),</span> <span class="mi">201</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-63"></a>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-64"></a>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-65"></a><span class="nd">@ns.route</span><span class="p">(</span><span class="s1">'/&lt;int:id&gt;'</span><span class="p">)</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-66"></a><span class="nd">@ns.response</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s1">'Todo not found'</span><span class="p">)</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-67"></a><span class="nd">@ns.param</span><span class="p">(</span><span class="s1">'id'</span><span class="p">,</span> <span class="s1">'任务标识'</span><span class="p">)</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-68"></a><span class="k">class</span> <span class="nc">Todo</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-69"></a>    <span class="sd">'''Show a single todo item and lets you delete them'''</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-70"></a>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-71"></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-72"></a>        <span class="sd">'''Fetch a given resource'''</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-73"></a>        <span class="k">return</span> <span class="n">DAO</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-74"></a>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-75"></a>    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-76"></a>        <span class="sd">'''Delete a task given its identifier'''</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-77"></a>        <span class="n">DAO</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-78"></a>        <span class="k">return</span> <span class="s1">''</span><span class="p">,</span> <span class="mi">204</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-79"></a>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-80"></a>    <span class="nd">@ns.expect</span><span class="p">(</span><span class="n">todo</span><span class="p">)</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-81"></a>    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-82"></a>        <span class="sd">'''Update a task given its identifier'''</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-83"></a>        <span class="k">return</span> <span class="n">DAO</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">api</span><span class="o">.</span><span class="n">payload</span><span class="p">)</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-84"></a>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-85"></a>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-86"></a><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-87"></a>    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">"0.0.0.0"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8080</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 </blockquote>
@@ -326,10 +326,10 @@ body{
         </ul>
 <ul class="pager hidden-print">
 <li class="previous">
-                <a href="../pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/" rel="prev" title="配置Flask-Restplus和Swagger UI实现API测试文档自动化">前一篇</a>
+                <a href="../pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/" rel="prev" title="配置Flask-Restplus和Swagger UI实现API测试文档自动化">Previous post</a>
             </li>
             <li class="next">
-                <a href="../dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/" rel="next" title="Docker中配置Flask-Sqlalchemy和Mysql">后一篇</a>
+                <a href="../dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/" rel="next" title="Docker中配置Flask-Sqlalchemy和Mysql">Next post</a>
             </li>
         </ul></nav></aside></article>
 </div>
@@ -343,8 +343,8 @@ body{
 </div>
 
 
-            <script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/colorbox-i18n/jquery.colorbox-zh-CN.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
-    moment.locale("zh-cn");
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
     fancydates(0, "YYYY-MM-DD HH:mm");
     </script><!-- end fancy dates -->
 </body>

@@ -2,54 +2,54 @@
 <ol class="arabic">
 <li><p class="first">新建容器。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_1e1e030dd27e4226891c26f3e9635097-1"></a>docker run --name mypc -i -t -p 8080:8080 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
+<pre class="code bash"><a name="rest_code_115f9722e63d4d36b537cc2337201be1-1"></a>docker run --name mypc -i -t -p 8080:8080 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
 </pre></blockquote>
 </li>
 <li><p class="first">Docker中修改Ubuntu软件源。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_7a2f050461d048a7afb85cda8726f19e-1"></a>vi /etc/apt/sources.list
-<a name="rest_code_7a2f050461d048a7afb85cda8726f19e-2"></a>:%s/archive.ubuntu/cn.archive.ubuntu/g
-<a name="rest_code_7a2f050461d048a7afb85cda8726f19e-3"></a>:wq
+<pre class="code bash"><a name="rest_code_84a5a757343442f598314a332b2ea7ae-1"></a>vi /etc/apt/sources.list
+<a name="rest_code_84a5a757343442f598314a332b2ea7ae-2"></a>:%s/archive.ubuntu/cn.archive.ubuntu/g
+<a name="rest_code_84a5a757343442f598314a332b2ea7ae-3"></a>:wq
 </pre></blockquote>
 </li>
 <li><p class="first">Docker中更新软件源。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_d82ea0a376df4c34aa70a66f21730622-1"></a>apt update
+<pre class="code bash"><a name="rest_code_b793de7db4ac48e9bbcac77c3efbcae2-1"></a>apt update
 </pre></blockquote>
 </li>
 <li><p class="first">Docker中安装Python和Flask。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_38c5960ad2324a4b8bfd1702806e4f7b-1"></a>apt install python
-<a name="rest_code_38c5960ad2324a4b8bfd1702806e4f7b-2"></a>apt install python-pip
-<a name="rest_code_38c5960ad2324a4b8bfd1702806e4f7b-3"></a>apt install python-dev
-<a name="rest_code_38c5960ad2324a4b8bfd1702806e4f7b-4"></a>pip install flask
+<pre class="code bash"><a name="rest_code_474b79afa88d45cc86be87bb5dedb977-1"></a>apt install python
+<a name="rest_code_474b79afa88d45cc86be87bb5dedb977-2"></a>apt install python-pip
+<a name="rest_code_474b79afa88d45cc86be87bb5dedb977-3"></a>apt install python-dev
+<a name="rest_code_474b79afa88d45cc86be87bb5dedb977-4"></a>pip install flask
 </pre></blockquote>
 </li>
 <li><p class="first">在主系统目录 <strong>~/share/</strong> 下编写测试网站main.py。</p>
 <blockquote>
-<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-1">1</a>
-<a href="#rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-2">2</a>
-<a href="#rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-3">3</a>
-<a href="#rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-4">4</a>
-<a href="#rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-5">5</a>
-<a href="#rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-6">6</a>
-<a href="#rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-7">7</a>
-<a href="#rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-8">8</a>
-<a href="#rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-9">9</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-1"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
-<a name="rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-2"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
-<a name="rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-3"></a>
-<a name="rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-4"></a><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
-<a name="rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-5"></a><span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
-<a name="rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-6"></a>    <span class="k">return</span> <span class="s1">&#39;Hello World!&#39;</span>
-<a name="rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-7"></a>
-<a name="rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-8"></a><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<a name="rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-9"></a>    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&quot;0.0.0.0&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="s2">&quot;8080&quot;</span><span class="p">)</span>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_98a556377c9d430eb2d1e045e62b9875-1">1</a>
+<a href="#rest_code_98a556377c9d430eb2d1e045e62b9875-2">2</a>
+<a href="#rest_code_98a556377c9d430eb2d1e045e62b9875-3">3</a>
+<a href="#rest_code_98a556377c9d430eb2d1e045e62b9875-4">4</a>
+<a href="#rest_code_98a556377c9d430eb2d1e045e62b9875-5">5</a>
+<a href="#rest_code_98a556377c9d430eb2d1e045e62b9875-6">6</a>
+<a href="#rest_code_98a556377c9d430eb2d1e045e62b9875-7">7</a>
+<a href="#rest_code_98a556377c9d430eb2d1e045e62b9875-8">8</a>
+<a href="#rest_code_98a556377c9d430eb2d1e045e62b9875-9">9</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_98a556377c9d430eb2d1e045e62b9875-1"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<a name="rest_code_98a556377c9d430eb2d1e045e62b9875-2"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<a name="rest_code_98a556377c9d430eb2d1e045e62b9875-3"></a>
+<a name="rest_code_98a556377c9d430eb2d1e045e62b9875-4"></a><span class="nd">@app.route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<a name="rest_code_98a556377c9d430eb2d1e045e62b9875-5"></a><span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
+<a name="rest_code_98a556377c9d430eb2d1e045e62b9875-6"></a>    <span class="k">return</span> <span class="s1">&#39;Hello World!&#39;</span>
+<a name="rest_code_98a556377c9d430eb2d1e045e62b9875-7"></a>
+<a name="rest_code_98a556377c9d430eb2d1e045e62b9875-8"></a><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<a name="rest_code_98a556377c9d430eb2d1e045e62b9875-9"></a>    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&quot;0.0.0.0&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="s2">&quot;8080&quot;</span><span class="p">)</span>
 </pre></td></tr></table></blockquote>
 </li>
 <li><p class="first">Docker中运行网站。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_2d0aa7bb1bc24f90a0c6e60e68ec2f7e-1"></a><span class="nb">cd</span> /usr/development/
-<a name="rest_code_2d0aa7bb1bc24f90a0c6e60e68ec2f7e-2"></a>python main.py
+<pre class="code bash"><a name="rest_code_b4502098316a442885bf221de8c147a4-1"></a><span class="nb">cd</span> /usr/development/
+<a name="rest_code_b4502098316a442885bf221de8c147a4-2"></a>python main.py
 </pre></blockquote>
 </li>
 <li><p class="first">主系统上查看效果。</p>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_cn">
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,7 +38,7 @@ Starting JS server...
 <meta property="article:tag" content="react-native">
 </head>
 <body>
-<a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
 <!-- Menubar -->
 
@@ -79,7 +79,7 @@ Starting JS server...
 </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-    <a href="index.rst" id="sourcelink">源代码</a>
+    <a href="index.rst" id="sourcelink">Source</a>
     </li>
 
                 
@@ -102,7 +102,7 @@ Starting JS server...
             </span></p>
             <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2017-01-10T22:59:06+08:00" itemprop="datePublished" title="2017-01-10 22:59">2017-01-10 22:59</time></a></p>
             
-        <p class="sourceline"><a href="index.rst" id="sourcelink">源代码</a></p>
+        <p class="sourceline"><a href="index.rst" id="sourcelink">Source</a></p>
 
         </div>
         
@@ -110,26 +110,26 @@ Starting JS server...
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <p>在参考 <a class="reference external" href="https://reactnative.cn/docs/0.40/getting-started.html">https://reactnative.cn/docs/0.40/getting-started.html</a> 配置react-native的过程中，发生了如下错误：</p>
-<pre class="code bash"><a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-1"></a>Starting JS server...
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-2"></a>    Building and installing the app on the device <span class="o">(</span><span class="nb">cd</span> android <span class="o">&amp;&amp;</span> ./gradlew installDebug<span class="o">)</span>...
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-3"></a>    Unzipping /home/long/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4-all.zip to /home/long/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-4"></a>    Exception in thread <span class="s2">"main"</span> java.util.zip.ZipException: error in opening zip file
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-5"></a>        at java.util.zip.ZipFile.open<span class="o">(</span>Native Method<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-6"></a>        at java.util.zip.ZipFile.&lt;init&gt;<span class="o">(</span>ZipFile.java:219<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-7"></a>        at java.util.zip.ZipFile.&lt;init&gt;<span class="o">(</span>ZipFile.java:149<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-8"></a>        at java.util.zip.ZipFile.&lt;init&gt;<span class="o">(</span>ZipFile.java:163<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-9"></a>        at org.gradle.wrapper.Install.unzip<span class="o">(</span>Install.java:159<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-10"></a>        at org.gradle.wrapper.Install.access<span class="nv">$500</span><span class="o">(</span>Install.java:26<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-11"></a>        at org.gradle.wrapper.Install<span class="nv">$1</span>.call<span class="o">(</span>Install.java:69<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-12"></a>        at org.gradle.wrapper.Install<span class="nv">$1</span>.call<span class="o">(</span>Install.java:46<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-13"></a>        at org.gradle.wrapper.ExclusiveFileAccessManager.access<span class="o">(</span>ExclusiveFileAccessManager.java:65<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-14"></a>        at org.gradle.wrapper.Install.createDist<span class="o">(</span>Install.java:46<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-15"></a>        at org.gradle.wrapper.WrapperExecutor.execute<span class="o">(</span>WrapperExecutor.java:126<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-16"></a>        at org.gradle.wrapper.GradleWrapperMain.main<span class="o">(</span>GradleWrapperMain.java:61<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-17"></a>Could not install the app on the device, <span class="nb">read</span> the error above <span class="k">for</span> details.
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-18"></a>Make sure you have an Android emulator running or a device connected and have
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-19"></a><span class="nb">set</span> up your Android development environment:
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-20"></a>https://facebook.github.io/react-native/docs/android-setup.html
+<pre class="code bash"><a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-1"></a>Starting JS server...
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-2"></a>    Building and installing the app on the device <span class="o">(</span><span class="nb">cd</span> android <span class="o">&amp;&amp;</span> ./gradlew installDebug<span class="o">)</span>...
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-3"></a>    Unzipping /home/long/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4-all.zip to /home/long/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-4"></a>    Exception in thread <span class="s2">"main"</span> java.util.zip.ZipException: error in opening zip file
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-5"></a>        at java.util.zip.ZipFile.open<span class="o">(</span>Native Method<span class="o">)</span>
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-6"></a>        at java.util.zip.ZipFile.&lt;init&gt;<span class="o">(</span>ZipFile.java:219<span class="o">)</span>
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-7"></a>        at java.util.zip.ZipFile.&lt;init&gt;<span class="o">(</span>ZipFile.java:149<span class="o">)</span>
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-8"></a>        at java.util.zip.ZipFile.&lt;init&gt;<span class="o">(</span>ZipFile.java:163<span class="o">)</span>
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-9"></a>        at org.gradle.wrapper.Install.unzip<span class="o">(</span>Install.java:159<span class="o">)</span>
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-10"></a>        at org.gradle.wrapper.Install.access<span class="nv">$500</span><span class="o">(</span>Install.java:26<span class="o">)</span>
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-11"></a>        at org.gradle.wrapper.Install<span class="nv">$1</span>.call<span class="o">(</span>Install.java:69<span class="o">)</span>
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-12"></a>        at org.gradle.wrapper.Install<span class="nv">$1</span>.call<span class="o">(</span>Install.java:46<span class="o">)</span>
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-13"></a>        at org.gradle.wrapper.ExclusiveFileAccessManager.access<span class="o">(</span>ExclusiveFileAccessManager.java:65<span class="o">)</span>
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-14"></a>        at org.gradle.wrapper.Install.createDist<span class="o">(</span>Install.java:46<span class="o">)</span>
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-15"></a>        at org.gradle.wrapper.WrapperExecutor.execute<span class="o">(</span>WrapperExecutor.java:126<span class="o">)</span>
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-16"></a>        at org.gradle.wrapper.GradleWrapperMain.main<span class="o">(</span>GradleWrapperMain.java:61<span class="o">)</span>
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-17"></a>Could not install the app on the device, <span class="nb">read</span> the error above <span class="k">for</span> details.
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-18"></a>Make sure you have an Android emulator running or a device connected and have
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-19"></a><span class="nb">set</span> up your Android development environment:
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-20"></a>https://facebook.github.io/react-native/docs/android-setup.html
 </pre>
 <p>解决方法：</p>
 <p>从 <a class="reference external" href="https://services.gradle.org/distributions">https://services.gradle.org/distributions</a> 下载完整的gradle-2.4-all.zip文件，放到 C:\Users\long\.gradle\wrapper\dists\gradle-2.4-all\6r4uqcc6ovnq6ac6s0txzcpc0 目录中即可正常运行 react-native run-android。</p>
@@ -143,10 +143,10 @@ Starting JS server...
         </ul>
 <ul class="pager hidden-print">
 <li class="previous">
-                <a href="../vuejsxue-xi-1/" rel="prev" title="vuejs学习(1)">前一篇</a>
+                <a href="../vuejsxue-xi-1/" rel="prev" title="vuejs学习(1)">Previous post</a>
             </li>
             <li class="next">
-                <a href="../vuejsxue-xi-2/" rel="next" title="vuejs学习(2)">后一篇</a>
+                <a href="../vuejsxue-xi-2/" rel="next" title="vuejs学习(2)">Next post</a>
             </li>
         </ul></nav></aside></article>
 </div>
@@ -160,8 +160,8 @@ Starting JS server...
 </div>
 
 
-            <script src="../../assets/js/all-nocdn.js"></script><script src="../../assets/js/colorbox-i18n/jquery.colorbox-zh-CN.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
-    moment.locale("zh-cn");
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
     fancydates(0, "YYYY-MM-DD HH:mm");
     </script><!-- end fancy dates -->
 </body>

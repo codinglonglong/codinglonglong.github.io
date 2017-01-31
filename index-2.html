@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_cn">
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="description" content="龙龙的技术博客">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>写程序的龙龙 (旧文章页 2) | 写程序的龙龙</title>
+<title>写程序的龙龙 (old posts, page 2) | 写程序的龙龙</title>
 <link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <meta name="theme-color" content="#5670d4">
 <meta name="generator" content="Nikola (getnikola.com)">
@@ -27,7 +27,7 @@ body{
 </style>
 </head>
 <body>
-<a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
 
 <!-- Menubar -->
 
@@ -110,70 +110,70 @@ body{
 <p>我们修改 TodoList.vue 文件，代码如下：</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-1"> 1</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-2"> 2</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-3"> 3</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-4"> 4</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-5"> 5</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-6"> 6</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-7"> 7</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-8"> 8</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-9"> 9</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-10">10</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-11">11</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-12">12</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-13">13</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-14">14</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-15">15</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-16">16</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-17">17</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-18">18</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-19">19</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-20">20</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-21">21</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-22">22</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-23">23</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-24">24</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-25">25</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-26">26</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-27">27</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-28">28</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-29">29</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-30">30</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-31">31</a>
-<a href="posts/vuejsxue-xi-4/#rest_code_8eb76cf2b8ff445b81c8486c051e2d34-32">32</a></pre></div></td>
-<td class="code"><pre class="code html"><a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-2"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"todolist"</span><span class="p">&gt;</span>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-3"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-4"></a>        <span class="p">&lt;</span><span class="nt">TodoItem</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in getrange(1, 10, 2)"</span> <span class="na">v-bind:todomessage</span><span class="o">=</span><span class="s">"addhead(item)"</span><span class="p">&gt;&lt;/</span><span class="nt">TodoItem</span><span class="p">&gt;</span>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-5"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-6"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-7"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-8"></a>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-9"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-10"></a><span class="kr">import</span> <span class="nx">TodoItem</span> <span class="nx">from</span> <span class="s1">'./components/TodoItem'</span>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-11"></a><span class="kr">import</span> <span class="nx">_</span> <span class="nx">from</span> <span class="s1">'lodash'</span>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-12"></a>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-13"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-14"></a>    <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-15"></a>        <span class="nx">getrange</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">,</span> <span class="nx">step</span><span class="p">)</span> <span class="p">{</span>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-16"></a>            <span class="k">return</span> <span class="nx">_</span><span class="p">.</span><span class="nx">range</span><span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">,</span> <span class="nx">step</span><span class="p">);</span>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-17"></a>        <span class="p">},</span>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-18"></a>        <span class="nx">addhead</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">tempstr</span><span class="p">)</span> <span class="p">{</span>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-19"></a>            <span class="k">return</span> <span class="s2">"容器"</span> <span class="o">+</span> <span class="nx">tempstr</span><span class="p">;</span>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-20"></a>        <span class="p">}</span>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-21"></a>    <span class="p">},</span>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-22"></a>    <span class="nx">components</span><span class="o">:</span> <span class="p">{</span>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-23"></a>        <span class="nx">TodoItem</span>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-24"></a>    <span class="p">}</span>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-25"></a><span class="p">}</span>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-26"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-27"></a>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-28"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-29"></a><span class="nt">li</span><span class="p">{</span>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-30"></a>    <span class="nb">color</span><span class="o">:</span> <span class="nb">blue</span><span class="p">;</span>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-31"></a><span class="p">}</span>
-<a name="rest_code_8eb76cf2b8ff445b81c8486c051e2d34-32"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-1"> 1</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-2"> 2</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-3"> 3</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-4"> 4</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-5"> 5</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-6"> 6</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-7"> 7</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-8"> 8</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-9"> 9</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-10">10</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-11">11</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-12">12</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-13">13</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-14">14</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-15">15</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-16">16</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-17">17</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-18">18</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-19">19</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-20">20</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-21">21</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-22">22</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-23">23</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-24">24</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-25">25</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-26">26</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-27">27</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-28">28</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-29">29</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-30">30</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-31">31</a>
+<a href="posts/vuejsxue-xi-4/#rest_code_e7ef33c9df824b7c8ff12689d8a8e377-32">32</a></pre></div></td>
+<td class="code"><pre class="code html"><a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-2"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"todolist"</span><span class="p">&gt;</span>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-3"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-4"></a>        <span class="p">&lt;</span><span class="nt">TodoItem</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in getrange(1, 10, 2)"</span> <span class="na">v-bind:todomessage</span><span class="o">=</span><span class="s">"addhead(item)"</span><span class="p">&gt;&lt;/</span><span class="nt">TodoItem</span><span class="p">&gt;</span>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-5"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-6"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-7"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-8"></a>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-9"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-10"></a><span class="kr">import</span> <span class="nx">TodoItem</span> <span class="nx">from</span> <span class="s1">'./components/TodoItem'</span>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-11"></a><span class="kr">import</span> <span class="nx">_</span> <span class="nx">from</span> <span class="s1">'lodash'</span>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-12"></a>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-13"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-14"></a>    <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-15"></a>        <span class="nx">getrange</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">,</span> <span class="nx">step</span><span class="p">)</span> <span class="p">{</span>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-16"></a>            <span class="k">return</span> <span class="nx">_</span><span class="p">.</span><span class="nx">range</span><span class="p">(</span><span class="nx">start</span><span class="p">,</span> <span class="nx">end</span><span class="p">,</span> <span class="nx">step</span><span class="p">);</span>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-17"></a>        <span class="p">},</span>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-18"></a>        <span class="nx">addhead</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">tempstr</span><span class="p">)</span> <span class="p">{</span>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-19"></a>            <span class="k">return</span> <span class="s2">"容器"</span> <span class="o">+</span> <span class="nx">tempstr</span><span class="p">;</span>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-20"></a>        <span class="p">}</span>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-21"></a>    <span class="p">},</span>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-22"></a>    <span class="nx">components</span><span class="o">:</span> <span class="p">{</span>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-23"></a>        <span class="nx">TodoItem</span>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-24"></a>    <span class="p">}</span>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-25"></a><span class="p">}</span>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-26"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-27"></a>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-28"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-29"></a><span class="nt">li</span><span class="p">{</span>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-30"></a>    <span class="nb">color</span><span class="o">:</span> <span class="nb">blue</span><span class="p">;</span>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-31"></a><span class="p">}</span>
+<a name="rest_code_e7ef33c9df824b7c8ff12689d8a8e377-32"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
 </pre></td>
 </tr></table>
 </blockquote>
@@ -200,120 +200,120 @@ body{
 <p><strong>main.js</strong></p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-3/#rest_code_cb50873306d94458ade803318ec0a550-1">1</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_cb50873306d94458ade803318ec0a550-2">2</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_cb50873306d94458ade803318ec0a550-3">3</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_cb50873306d94458ade803318ec0a550-4">4</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_cb50873306d94458ade803318ec0a550-5">5</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_cb50873306d94458ade803318ec0a550-6">6</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_cb50873306d94458ade803318ec0a550-7">7</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_cb50873306d94458ade803318ec0a550-8">8</a></pre></div></td>
-<td class="code"><pre class="code js"><a name="rest_code_cb50873306d94458ade803318ec0a550-1"></a><span class="kr">import</span> <span class="nx">Vue</span> <span class="nx">from</span> <span class="s1">'vue'</span>
-<a name="rest_code_cb50873306d94458ade803318ec0a550-2"></a><span class="kr">import</span> <span class="nx">TodoList</span> <span class="nx">from</span> <span class="s1">'./TodoList'</span>
-<a name="rest_code_cb50873306d94458ade803318ec0a550-3"></a>
-<a name="rest_code_cb50873306d94458ade803318ec0a550-4"></a><span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
-<a name="rest_code_cb50873306d94458ade803318ec0a550-5"></a>    <span class="nx">el</span><span class="o">:</span> <span class="s1">'#app'</span><span class="p">,</span>
-<a name="rest_code_cb50873306d94458ade803318ec0a550-6"></a>    <span class="nx">template</span><span class="o">:</span> <span class="s1">'&lt;TodoList/&gt;'</span><span class="p">,</span>
-<a name="rest_code_cb50873306d94458ade803318ec0a550-7"></a>    <span class="nx">components</span><span class="o">:</span> <span class="p">{</span> <span class="nx">TodoList</span> <span class="p">}</span>
-<a name="rest_code_cb50873306d94458ade803318ec0a550-8"></a><span class="p">});</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-3/#rest_code_1f416eebb92e49b4a5d567e114df94e4-1">1</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_1f416eebb92e49b4a5d567e114df94e4-2">2</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_1f416eebb92e49b4a5d567e114df94e4-3">3</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_1f416eebb92e49b4a5d567e114df94e4-4">4</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_1f416eebb92e49b4a5d567e114df94e4-5">5</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_1f416eebb92e49b4a5d567e114df94e4-6">6</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_1f416eebb92e49b4a5d567e114df94e4-7">7</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_1f416eebb92e49b4a5d567e114df94e4-8">8</a></pre></div></td>
+<td class="code"><pre class="code js"><a name="rest_code_1f416eebb92e49b4a5d567e114df94e4-1"></a><span class="kr">import</span> <span class="nx">Vue</span> <span class="nx">from</span> <span class="s1">'vue'</span>
+<a name="rest_code_1f416eebb92e49b4a5d567e114df94e4-2"></a><span class="kr">import</span> <span class="nx">TodoList</span> <span class="nx">from</span> <span class="s1">'./TodoList'</span>
+<a name="rest_code_1f416eebb92e49b4a5d567e114df94e4-3"></a>
+<a name="rest_code_1f416eebb92e49b4a5d567e114df94e4-4"></a><span class="k">new</span> <span class="nx">Vue</span><span class="p">({</span>
+<a name="rest_code_1f416eebb92e49b4a5d567e114df94e4-5"></a>    <span class="nx">el</span><span class="o">:</span> <span class="s1">'#app'</span><span class="p">,</span>
+<a name="rest_code_1f416eebb92e49b4a5d567e114df94e4-6"></a>    <span class="nx">template</span><span class="o">:</span> <span class="s1">'&lt;TodoList/&gt;'</span><span class="p">,</span>
+<a name="rest_code_1f416eebb92e49b4a5d567e114df94e4-7"></a>    <span class="nx">components</span><span class="o">:</span> <span class="p">{</span> <span class="nx">TodoList</span> <span class="p">}</span>
+<a name="rest_code_1f416eebb92e49b4a5d567e114df94e4-8"></a><span class="p">});</span>
 </pre></td>
 </tr></table>
 </blockquote>
 <p><strong>TodoList.vue</strong></p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-1"> 1</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-2"> 2</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-3"> 3</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-4"> 4</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-5"> 5</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-6"> 6</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-7"> 7</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-8"> 8</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-9"> 9</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-10">10</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-11">11</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-12">12</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-13">13</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-14">14</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-15">15</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-16">16</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-17">17</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-18">18</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-19">19</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-20">20</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-21">21</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-22">22</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-23">23</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-24">24</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-25">25</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-26">26</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-27">27</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_20a56a054e8d4aa78cc7b48e94505040-28">28</a></pre></div></td>
-<td class="code"><pre class="code html"><a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-2"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"todolist"</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-3"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-4"></a>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>父容器1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-5"></a>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>父容器2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-6"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-7"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-8"></a>        <span class="p">&lt;</span><span class="nt">TodoItem</span> <span class="na">todomessage</span><span class="o">=</span><span class="s">"子容器1"</span><span class="p">&gt;&lt;/</span><span class="nt">TodoItem</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-9"></a>        <span class="p">&lt;</span><span class="nt">TodoItem</span> <span class="na">todomessage</span><span class="o">=</span><span class="s">"子容器2"</span><span class="p">&gt;&lt;/</span><span class="nt">TodoItem</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-10"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-11"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-12"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-13"></a>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-14"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-15"></a><span class="kr">import</span> <span class="nx">TodoItem</span> <span class="nx">from</span> <span class="s1">'./components/TodoItem'</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-16"></a>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-17"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-18"></a>    <span class="nx">components</span><span class="o">:</span> <span class="p">{</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-19"></a>        <span class="nx">TodoItem</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-20"></a>    <span class="p">}</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-21"></a><span class="p">}</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-22"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-23"></a>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-24"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-25"></a><span class="nt">li</span><span class="p">{</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-26"></a>    <span class="nb">color</span><span class="o">:</span> <span class="nb">blue</span><span class="p">;</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-27"></a><span class="p">}</span>
-<a name="rest_code_20a56a054e8d4aa78cc7b48e94505040-28"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-3/#rest_code_daa43297420b4c4893a6213840bf159e-1"> 1</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_daa43297420b4c4893a6213840bf159e-2"> 2</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_daa43297420b4c4893a6213840bf159e-3"> 3</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_daa43297420b4c4893a6213840bf159e-4"> 4</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_daa43297420b4c4893a6213840bf159e-5"> 5</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_daa43297420b4c4893a6213840bf159e-6"> 6</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_daa43297420b4c4893a6213840bf159e-7"> 7</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_daa43297420b4c4893a6213840bf159e-8"> 8</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_daa43297420b4c4893a6213840bf159e-9"> 9</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_daa43297420b4c4893a6213840bf159e-10">10</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_daa43297420b4c4893a6213840bf159e-11">11</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_daa43297420b4c4893a6213840bf159e-12">12</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_daa43297420b4c4893a6213840bf159e-13">13</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_daa43297420b4c4893a6213840bf159e-14">14</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_daa43297420b4c4893a6213840bf159e-15">15</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_daa43297420b4c4893a6213840bf159e-16">16</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_daa43297420b4c4893a6213840bf159e-17">17</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_daa43297420b4c4893a6213840bf159e-18">18</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_daa43297420b4c4893a6213840bf159e-19">19</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_daa43297420b4c4893a6213840bf159e-20">20</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_daa43297420b4c4893a6213840bf159e-21">21</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_daa43297420b4c4893a6213840bf159e-22">22</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_daa43297420b4c4893a6213840bf159e-23">23</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_daa43297420b4c4893a6213840bf159e-24">24</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_daa43297420b4c4893a6213840bf159e-25">25</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_daa43297420b4c4893a6213840bf159e-26">26</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_daa43297420b4c4893a6213840bf159e-27">27</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_daa43297420b4c4893a6213840bf159e-28">28</a></pre></div></td>
+<td class="code"><pre class="code html"><a name="rest_code_daa43297420b4c4893a6213840bf159e-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-2"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"todolist"</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-3"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-4"></a>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>父容器1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-5"></a>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>父容器2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-6"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-7"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-8"></a>        <span class="p">&lt;</span><span class="nt">TodoItem</span> <span class="na">todomessage</span><span class="o">=</span><span class="s">"子容器1"</span><span class="p">&gt;&lt;/</span><span class="nt">TodoItem</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-9"></a>        <span class="p">&lt;</span><span class="nt">TodoItem</span> <span class="na">todomessage</span><span class="o">=</span><span class="s">"子容器2"</span><span class="p">&gt;&lt;/</span><span class="nt">TodoItem</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-10"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-11"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-12"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-13"></a>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-14"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-15"></a><span class="kr">import</span> <span class="nx">TodoItem</span> <span class="nx">from</span> <span class="s1">'./components/TodoItem'</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-16"></a>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-17"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-18"></a>    <span class="nx">components</span><span class="o">:</span> <span class="p">{</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-19"></a>        <span class="nx">TodoItem</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-20"></a>    <span class="p">}</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-21"></a><span class="p">}</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-22"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-23"></a>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-24"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-25"></a><span class="nt">li</span><span class="p">{</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-26"></a>    <span class="nb">color</span><span class="o">:</span> <span class="nb">blue</span><span class="p">;</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-27"></a><span class="p">}</span>
+<a name="rest_code_daa43297420b4c4893a6213840bf159e-28"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
 </pre></td>
 </tr></table>
 </blockquote>
 <p><strong>components/TodoItem.vue</strong></p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-1"> 1</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-2"> 2</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-3"> 3</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-4"> 4</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-5"> 5</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-6"> 6</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-7"> 7</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-8"> 8</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-9"> 9</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-10">10</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-11">11</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-12">12</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-13">13</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-14">14</a>
-<a href="posts/vuejsxue-xi-3/#rest_code_bd207a4209384949bf37623db89810e1-15">15</a></pre></div></td>
-<td class="code"><pre class="code html"><a name="rest_code_bd207a4209384949bf37623db89810e1-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-2"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{todomessage}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-3"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-4"></a>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-5"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-6"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-7"></a>    <span class="nx">props</span><span class="o">:</span> <span class="p">[</span><span class="s1">'todomessage'</span><span class="p">],</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-8"></a><span class="p">}</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-9"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-10"></a>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-11"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-12"></a><span class="nt">li</span><span class="p">{</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-13"></a>    <span class="nb">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-14"></a><span class="p">}</span>
-<a name="rest_code_bd207a4209384949bf37623db89810e1-15"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-3/#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-1"> 1</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-2"> 2</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-3"> 3</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-4"> 4</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-5"> 5</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-6"> 6</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-7"> 7</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-8"> 8</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-9"> 9</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-10">10</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-11">11</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-12">12</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-13">13</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-14">14</a>
+<a href="posts/vuejsxue-xi-3/#rest_code_1a3f6238a78040138e3a6ee1e6e1e139-15">15</a></pre></div></td>
+<td class="code"><pre class="code html"><a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-2"></a>    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{todomessage}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-3"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-4"></a>
+<a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-5"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-6"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-7"></a>    <span class="nx">props</span><span class="o">:</span> <span class="p">[</span><span class="s1">'todomessage'</span><span class="p">],</span>
+<a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-8"></a><span class="p">}</span>
+<a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-9"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-10"></a>
+<a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-11"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
+<a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-12"></a><span class="nt">li</span><span class="p">{</span>
+<a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-13"></a>    <span class="nb">color</span><span class="o">:</span> <span class="nb">red</span><span class="p">;</span>
+<a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-14"></a><span class="p">}</span>
+<a name="rest_code_1a3f6238a78040138e3a6ee1e6e1e139-15"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
 </pre></td>
 </tr></table>
 </blockquote>
@@ -341,114 +341,114 @@ body{
 <p>在文章 <a class="reference external" href="https://codinglonglong.github.io/posts/vuejsxue-xi-1/">https://codinglonglong.github.io/posts/vuejsxue-xi-1/</a> 的基础上，我们修改了App.vue，代码如下。</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-1"> 1</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-2"> 2</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-3"> 3</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-4"> 4</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-5"> 5</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-6"> 6</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-7"> 7</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-8"> 8</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-9"> 9</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-10">10</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-11">11</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-12">12</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-13">13</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-14">14</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-15">15</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-16">16</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-17">17</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-18">18</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-19">19</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-20">20</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-21">21</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-22">22</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-23">23</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-24">24</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-25">25</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-26">26</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-27">27</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-28">28</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-29">29</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-30">30</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-31">31</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-32">32</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-33">33</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-34">34</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-35">35</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-36">36</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-37">37</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-38">38</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-39">39</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-40">40</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-41">41</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-42">42</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-43">43</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-44">44</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-45">45</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-46">46</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-47">47</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-48">48</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-49">49</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-50">50</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-51">51</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-52">52</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-53">53</a>
-<a href="posts/vuejsxue-xi-2/#rest_code_59c6284b28d64aa084309b8a7e037b74-54">54</a></pre></div></td>
-<td class="code"><pre class="code html"><a name="rest_code_59c6284b28d64aa084309b8a7e037b74-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-2"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"myapp"</span><span class="p">&gt;</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-3"></a>    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">v-model</span><span class="o">=</span><span class="s">"name"</span><span class="p">&gt;</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-4"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hello, {{name}}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-5"></a>    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">v-on:click</span><span class="o">=</span><span class="s">"sayhello"</span> <span class="na">v-bind:title</span><span class="o">=</span><span class="s">"tooltip"</span><span class="p">&gt;</span>sayhello<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-6"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"message"</span><span class="p">&gt;</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-7"></a>        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">v-on:click</span><span class="o">=</span><span class="s">"toggleshow"</span><span class="p">&gt;</span>切换显示<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-8"></a>        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"content"</span> <span class="na">v-if</span><span class="o">=</span><span class="s">"flag"</span><span class="p">&gt;</span>一条消息<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-9"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-10"></a>    <span class="p">&lt;</span><span class="nt">select</span><span class="p">&gt;</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-11"></a>        <span class="p">&lt;</span><span class="nt">option</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"week in weeks"</span><span class="p">&gt;</span>{{week}}<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-12"></a>    <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-13"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-14"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-15"></a>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-16"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-17"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-18"></a>    <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-19"></a>        <span class="k">return</span> <span class="p">{</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-20"></a>            <span class="nx">name</span><span class="o">:</span> <span class="s2">"龙龙龙"</span><span class="p">,</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-21"></a>            <span class="nx">tooltip</span><span class="o">:</span> <span class="s2">"点击我问好..."</span><span class="p">,</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-22"></a>            <span class="nx">flag</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-23"></a>            <span class="nx">weeks</span><span class="o">:</span> <span class="p">[</span><span class="s2">"星期一"</span><span class="p">,</span> <span class="s2">"星期二"</span><span class="p">,</span> <span class="s2">"星期三"</span><span class="p">,</span> <span class="s2">"星期四"</span><span class="p">,</span> <span class="s2">"星期五"</span><span class="p">,</span> <span class="s2">"星期六"</span><span class="p">,</span> <span class="s2">"星期日"</span><span class="p">],</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-24"></a>        <span class="p">}</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-25"></a>    <span class="p">},</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-26"></a>    <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-27"></a>        <span class="nx">sayhello</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-28"></a>            <span class="nx">alert</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-29"></a>        <span class="p">},</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-30"></a>        <span class="nx">toggleshow</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-31"></a>            <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">flag</span><span class="p">){</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-32"></a>                <span class="k">this</span><span class="p">.</span><span class="nx">flag</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-33"></a>            <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-34"></a>                <span class="k">this</span><span class="p">.</span><span class="nx">flag</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-35"></a>            <span class="p">}</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-36"></a>        <span class="p">}</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-37"></a>    <span class="p">}</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-38"></a><span class="p">}</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-39"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-40"></a>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-41"></a><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-42"></a><span class="nt">p</span> <span class="p">{</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-43"></a>    <span class="nb">font-size</span><span class="o">:</span> <span class="m">30px</span><span class="p">;</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-44"></a>    <span class="nb">color</span><span class="o">:</span> <span class="nb">blue</span><span class="p">;</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-45"></a><span class="p">}</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-46"></a><span class="nc">.message</span> <span class="p">{</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-47"></a>    <span class="nb">display</span><span class="o">:</span> <span class="nb">block</span><span class="p">;</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-48"></a>    <span class="nb">width</span><span class="o">:</span> <span class="m">100px</span><span class="p">;</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-49"></a>    <span class="nb">margin-top</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-50"></a><span class="p">}</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-51"></a><span class="nc">.content</span><span class="p">{</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-52"></a>    <span class="nb">color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-53"></a><span class="p">}</span>
-<a name="rest_code_59c6284b28d64aa084309b8a7e037b74-54"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-1"> 1</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-2"> 2</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-3"> 3</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-4"> 4</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-5"> 5</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-6"> 6</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-7"> 7</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-8"> 8</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-9"> 9</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-10">10</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-11">11</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-12">12</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-13">13</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-14">14</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-15">15</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-16">16</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-17">17</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-18">18</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-19">19</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-20">20</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-21">21</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-22">22</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-23">23</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-24">24</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-25">25</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-26">26</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-27">27</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-28">28</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-29">29</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-30">30</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-31">31</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-32">32</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-33">33</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-34">34</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-35">35</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-36">36</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-37">37</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-38">38</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-39">39</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-40">40</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-41">41</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-42">42</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-43">43</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-44">44</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-45">45</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-46">46</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-47">47</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-48">48</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-49">49</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-50">50</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-51">51</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-52">52</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-53">53</a>
+<a href="posts/vuejsxue-xi-2/#rest_code_7cf95e98e1ac4ba8bef508ac7af73467-54">54</a></pre></div></td>
+<td class="code"><pre class="code html"><a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-2"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"myapp"</span><span class="p">&gt;</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-3"></a>    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">v-model</span><span class="o">=</span><span class="s">"name"</span><span class="p">&gt;</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-4"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hello, {{name}}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-5"></a>    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">v-on:click</span><span class="o">=</span><span class="s">"sayhello"</span> <span class="na">v-bind:title</span><span class="o">=</span><span class="s">"tooltip"</span><span class="p">&gt;</span>sayhello<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-6"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">"message"</span><span class="p">&gt;</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-7"></a>        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">v-on:click</span><span class="o">=</span><span class="s">"toggleshow"</span><span class="p">&gt;</span>切换显示<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-8"></a>        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">"content"</span> <span class="na">v-if</span><span class="o">=</span><span class="s">"flag"</span><span class="p">&gt;</span>一条消息<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-9"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-10"></a>    <span class="p">&lt;</span><span class="nt">select</span><span class="p">&gt;</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-11"></a>        <span class="p">&lt;</span><span class="nt">option</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"week in weeks"</span><span class="p">&gt;</span>{{week}}<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-12"></a>    <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-13"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-14"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-15"></a>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-16"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-17"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-18"></a>    <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-19"></a>        <span class="k">return</span> <span class="p">{</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-20"></a>            <span class="nx">name</span><span class="o">:</span> <span class="s2">"龙龙龙"</span><span class="p">,</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-21"></a>            <span class="nx">tooltip</span><span class="o">:</span> <span class="s2">"点击我问好..."</span><span class="p">,</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-22"></a>            <span class="nx">flag</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-23"></a>            <span class="nx">weeks</span><span class="o">:</span> <span class="p">[</span><span class="s2">"星期一"</span><span class="p">,</span> <span class="s2">"星期二"</span><span class="p">,</span> <span class="s2">"星期三"</span><span class="p">,</span> <span class="s2">"星期四"</span><span class="p">,</span> <span class="s2">"星期五"</span><span class="p">,</span> <span class="s2">"星期六"</span><span class="p">,</span> <span class="s2">"星期日"</span><span class="p">],</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-24"></a>        <span class="p">}</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-25"></a>    <span class="p">},</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-26"></a>    <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-27"></a>        <span class="nx">sayhello</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-28"></a>            <span class="nx">alert</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-29"></a>        <span class="p">},</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-30"></a>        <span class="nx">toggleshow</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-31"></a>            <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">flag</span><span class="p">){</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-32"></a>                <span class="k">this</span><span class="p">.</span><span class="nx">flag</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-33"></a>            <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-34"></a>                <span class="k">this</span><span class="p">.</span><span class="nx">flag</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-35"></a>            <span class="p">}</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-36"></a>        <span class="p">}</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-37"></a>    <span class="p">}</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-38"></a><span class="p">}</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-39"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-40"></a>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-41"></a><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-42"></a><span class="nt">p</span> <span class="p">{</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-43"></a>    <span class="nb">font-size</span><span class="o">:</span> <span class="m">30px</span><span class="p">;</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-44"></a>    <span class="nb">color</span><span class="o">:</span> <span class="nb">blue</span><span class="p">;</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-45"></a><span class="p">}</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-46"></a><span class="nc">.message</span> <span class="p">{</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-47"></a>    <span class="nb">display</span><span class="o">:</span> <span class="nb">block</span><span class="p">;</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-48"></a>    <span class="nb">width</span><span class="o">:</span> <span class="m">100px</span><span class="p">;</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-49"></a>    <span class="nb">margin-top</span><span class="o">:</span> <span class="m">50px</span><span class="p">;</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-50"></a><span class="p">}</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-51"></a><span class="nc">.content</span><span class="p">{</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-52"></a>    <span class="nb">color</span><span class="o">:</span> <span class="nb">green</span><span class="p">;</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-53"></a><span class="p">}</span>
+<a name="rest_code_7cf95e98e1ac4ba8bef508ac7af73467-54"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
 </pre></td>
 </tr></table>
 </blockquote>
@@ -473,26 +473,26 @@ body{
     </header><div class="p-summary entry-summary">
     <div>
 <p>在参考 <a class="reference external" href="https://reactnative.cn/docs/0.40/getting-started.html">https://reactnative.cn/docs/0.40/getting-started.html</a> 配置react-native的过程中，发生了如下错误：</p>
-<pre class="code bash"><a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-1"></a>Starting JS server...
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-2"></a>    Building and installing the app on the device <span class="o">(</span><span class="nb">cd</span> android <span class="o">&amp;&amp;</span> ./gradlew installDebug<span class="o">)</span>...
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-3"></a>    Unzipping /home/long/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4-all.zip to /home/long/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-4"></a>    Exception in thread <span class="s2">"main"</span> java.util.zip.ZipException: error in opening zip file
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-5"></a>        at java.util.zip.ZipFile.open<span class="o">(</span>Native Method<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-6"></a>        at java.util.zip.ZipFile.&lt;init&gt;<span class="o">(</span>ZipFile.java:219<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-7"></a>        at java.util.zip.ZipFile.&lt;init&gt;<span class="o">(</span>ZipFile.java:149<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-8"></a>        at java.util.zip.ZipFile.&lt;init&gt;<span class="o">(</span>ZipFile.java:163<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-9"></a>        at org.gradle.wrapper.Install.unzip<span class="o">(</span>Install.java:159<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-10"></a>        at org.gradle.wrapper.Install.access<span class="nv">$500</span><span class="o">(</span>Install.java:26<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-11"></a>        at org.gradle.wrapper.Install<span class="nv">$1</span>.call<span class="o">(</span>Install.java:69<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-12"></a>        at org.gradle.wrapper.Install<span class="nv">$1</span>.call<span class="o">(</span>Install.java:46<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-13"></a>        at org.gradle.wrapper.ExclusiveFileAccessManager.access<span class="o">(</span>ExclusiveFileAccessManager.java:65<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-14"></a>        at org.gradle.wrapper.Install.createDist<span class="o">(</span>Install.java:46<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-15"></a>        at org.gradle.wrapper.WrapperExecutor.execute<span class="o">(</span>WrapperExecutor.java:126<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-16"></a>        at org.gradle.wrapper.GradleWrapperMain.main<span class="o">(</span>GradleWrapperMain.java:61<span class="o">)</span>
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-17"></a>Could not install the app on the device, <span class="nb">read</span> the error above <span class="k">for</span> details.
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-18"></a>Make sure you have an Android emulator running or a device connected and have
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-19"></a><span class="nb">set</span> up your Android development environment:
-<a name="rest_code_b875bafd7ba64ef08d59fd4b4e602406-20"></a>https://facebook.github.io/react-native/docs/android-setup.html
+<pre class="code bash"><a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-1"></a>Starting JS server...
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-2"></a>    Building and installing the app on the device <span class="o">(</span><span class="nb">cd</span> android <span class="o">&amp;&amp;</span> ./gradlew installDebug<span class="o">)</span>...
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-3"></a>    Unzipping /home/long/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4-all.zip to /home/long/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-4"></a>    Exception in thread <span class="s2">"main"</span> java.util.zip.ZipException: error in opening zip file
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-5"></a>        at java.util.zip.ZipFile.open<span class="o">(</span>Native Method<span class="o">)</span>
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-6"></a>        at java.util.zip.ZipFile.&lt;init&gt;<span class="o">(</span>ZipFile.java:219<span class="o">)</span>
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-7"></a>        at java.util.zip.ZipFile.&lt;init&gt;<span class="o">(</span>ZipFile.java:149<span class="o">)</span>
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-8"></a>        at java.util.zip.ZipFile.&lt;init&gt;<span class="o">(</span>ZipFile.java:163<span class="o">)</span>
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-9"></a>        at org.gradle.wrapper.Install.unzip<span class="o">(</span>Install.java:159<span class="o">)</span>
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-10"></a>        at org.gradle.wrapper.Install.access<span class="nv">$500</span><span class="o">(</span>Install.java:26<span class="o">)</span>
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-11"></a>        at org.gradle.wrapper.Install<span class="nv">$1</span>.call<span class="o">(</span>Install.java:69<span class="o">)</span>
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-12"></a>        at org.gradle.wrapper.Install<span class="nv">$1</span>.call<span class="o">(</span>Install.java:46<span class="o">)</span>
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-13"></a>        at org.gradle.wrapper.ExclusiveFileAccessManager.access<span class="o">(</span>ExclusiveFileAccessManager.java:65<span class="o">)</span>
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-14"></a>        at org.gradle.wrapper.Install.createDist<span class="o">(</span>Install.java:46<span class="o">)</span>
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-15"></a>        at org.gradle.wrapper.WrapperExecutor.execute<span class="o">(</span>WrapperExecutor.java:126<span class="o">)</span>
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-16"></a>        at org.gradle.wrapper.GradleWrapperMain.main<span class="o">(</span>GradleWrapperMain.java:61<span class="o">)</span>
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-17"></a>Could not install the app on the device, <span class="nb">read</span> the error above <span class="k">for</span> details.
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-18"></a>Make sure you have an Android emulator running or a device connected and have
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-19"></a><span class="nb">set</span> up your Android development environment:
+<a name="rest_code_f3a778809a8042928c7e7cc9b2f89bc4-20"></a>https://facebook.github.io/react-native/docs/android-setup.html
 </pre>
 <p>解决方法：</p>
 <p>从 <a class="reference external" href="https://services.gradle.org/distributions">https://services.gradle.org/distributions</a> 下载完整的gradle-2.4-all.zip文件，放到 C:\Users\long\.gradle\wrapper\dists\gradle-2.4-all\6r4uqcc6ovnq6ac6s0txzcpc0 目录中即可正常运行 react-native run-android。</p>
@@ -521,28 +521,28 @@ body{
 <p class="first">找到index.html如下，不用改动。</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-1/#rest_code_803f97e20ba745af9b837d5ce99ef239-1"> 1</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_803f97e20ba745af9b837d5ce99ef239-2"> 2</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_803f97e20ba745af9b837d5ce99ef239-3"> 3</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_803f97e20ba745af9b837d5ce99ef239-4"> 4</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_803f97e20ba745af9b837d5ce99ef239-5"> 5</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_803f97e20ba745af9b837d5ce99ef239-6"> 6</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_803f97e20ba745af9b837d5ce99ef239-7"> 7</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_803f97e20ba745af9b837d5ce99ef239-8"> 8</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_803f97e20ba745af9b837d5ce99ef239-9"> 9</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_803f97e20ba745af9b837d5ce99ef239-10">10</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_803f97e20ba745af9b837d5ce99ef239-11">11</a></pre></div></td>
-<td class="code"><pre class="code html"><a name="rest_code_803f97e20ba745af9b837d5ce99ef239-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<a name="rest_code_803f97e20ba745af9b837d5ce99ef239-2"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-<a name="rest_code_803f97e20ba745af9b837d5ce99ef239-3"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-<a name="rest_code_803f97e20ba745af9b837d5ce99ef239-4"></a>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span><span class="p">&gt;</span>
-<a name="rest_code_803f97e20ba745af9b837d5ce99ef239-5"></a>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>test<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-<a name="rest_code_803f97e20ba745af9b837d5ce99ef239-6"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<a name="rest_code_803f97e20ba745af9b837d5ce99ef239-7"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<a name="rest_code_803f97e20ba745af9b837d5ce99ef239-8"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"app"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_803f97e20ba745af9b837d5ce99ef239-9"></a>    <span class="c">&lt;!-- built files will be auto injected --&gt;</span>
-<a name="rest_code_803f97e20ba745af9b837d5ce99ef239-10"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<a name="rest_code_803f97e20ba745af9b837d5ce99ef239-11"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-1/#rest_code_7c184a7d41e54461a3ae0e10d7014063-1"> 1</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_7c184a7d41e54461a3ae0e10d7014063-2"> 2</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_7c184a7d41e54461a3ae0e10d7014063-3"> 3</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_7c184a7d41e54461a3ae0e10d7014063-4"> 4</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_7c184a7d41e54461a3ae0e10d7014063-5"> 5</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_7c184a7d41e54461a3ae0e10d7014063-6"> 6</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_7c184a7d41e54461a3ae0e10d7014063-7"> 7</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_7c184a7d41e54461a3ae0e10d7014063-8"> 8</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_7c184a7d41e54461a3ae0e10d7014063-9"> 9</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_7c184a7d41e54461a3ae0e10d7014063-10">10</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_7c184a7d41e54461a3ae0e10d7014063-11">11</a></pre></div></td>
+<td class="code"><pre class="code html"><a name="rest_code_7c184a7d41e54461a3ae0e10d7014063-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<a name="rest_code_7c184a7d41e54461a3ae0e10d7014063-2"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<a name="rest_code_7c184a7d41e54461a3ae0e10d7014063-3"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a name="rest_code_7c184a7d41e54461a3ae0e10d7014063-4"></a>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span><span class="p">&gt;</span>
+<a name="rest_code_7c184a7d41e54461a3ae0e10d7014063-5"></a>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>test<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<a name="rest_code_7c184a7d41e54461a3ae0e10d7014063-6"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a name="rest_code_7c184a7d41e54461a3ae0e10d7014063-7"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a name="rest_code_7c184a7d41e54461a3ae0e10d7014063-8"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"app"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_7c184a7d41e54461a3ae0e10d7014063-9"></a>    <span class="c">&lt;!-- built files will be auto injected --&gt;</span>
+<a name="rest_code_7c184a7d41e54461a3ae0e10d7014063-10"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a name="rest_code_7c184a7d41e54461a3ae0e10d7014063-11"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></td>
 </tr></table>
 </blockquote>
@@ -552,22 +552,22 @@ body{
 <p class="first">在src目录下新建main.js，这是整个网站代码的入口，如下。</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-1/#rest_code_1abae2af26f74e51918ea860aa3e5d43-1">1</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_1abae2af26f74e51918ea860aa3e5d43-2">2</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_1abae2af26f74e51918ea860aa3e5d43-3">3</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_1abae2af26f74e51918ea860aa3e5d43-4">4</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_1abae2af26f74e51918ea860aa3e5d43-5">5</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_1abae2af26f74e51918ea860aa3e5d43-6">6</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_1abae2af26f74e51918ea860aa3e5d43-7">7</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_1abae2af26f74e51918ea860aa3e5d43-8">8</a></pre></div></td>
-<td class="code"><pre class="code html"><a name="rest_code_1abae2af26f74e51918ea860aa3e5d43-1"></a>import Vue from 'vue'
-<a name="rest_code_1abae2af26f74e51918ea860aa3e5d43-2"></a>import App from './App'
-<a name="rest_code_1abae2af26f74e51918ea860aa3e5d43-3"></a>
-<a name="rest_code_1abae2af26f74e51918ea860aa3e5d43-4"></a>new Vue({
-<a name="rest_code_1abae2af26f74e51918ea860aa3e5d43-5"></a>    el: '#app',
-<a name="rest_code_1abae2af26f74e51918ea860aa3e5d43-6"></a>    template: '<span class="p">&lt;</span><span class="nt">App</span><span class="p">/&gt;</span>',
-<a name="rest_code_1abae2af26f74e51918ea860aa3e5d43-7"></a>    components: { App }
-<a name="rest_code_1abae2af26f74e51918ea860aa3e5d43-8"></a>})
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-1/#rest_code_39264c0a448f48899889628bcdb2ba6b-1">1</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_39264c0a448f48899889628bcdb2ba6b-2">2</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_39264c0a448f48899889628bcdb2ba6b-3">3</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_39264c0a448f48899889628bcdb2ba6b-4">4</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_39264c0a448f48899889628bcdb2ba6b-5">5</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_39264c0a448f48899889628bcdb2ba6b-6">6</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_39264c0a448f48899889628bcdb2ba6b-7">7</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_39264c0a448f48899889628bcdb2ba6b-8">8</a></pre></div></td>
+<td class="code"><pre class="code html"><a name="rest_code_39264c0a448f48899889628bcdb2ba6b-1"></a>import Vue from 'vue'
+<a name="rest_code_39264c0a448f48899889628bcdb2ba6b-2"></a>import App from './App'
+<a name="rest_code_39264c0a448f48899889628bcdb2ba6b-3"></a>
+<a name="rest_code_39264c0a448f48899889628bcdb2ba6b-4"></a>new Vue({
+<a name="rest_code_39264c0a448f48899889628bcdb2ba6b-5"></a>    el: '#app',
+<a name="rest_code_39264c0a448f48899889628bcdb2ba6b-6"></a>    template: '<span class="p">&lt;</span><span class="nt">App</span><span class="p">/&gt;</span>',
+<a name="rest_code_39264c0a448f48899889628bcdb2ba6b-7"></a>    components: { App }
+<a name="rest_code_39264c0a448f48899889628bcdb2ba6b-8"></a>})
 </pre></td>
 </tr></table>
 </blockquote>
@@ -577,62 +577,62 @@ body{
 <p class="first">在src目录下新建App.vue，这是网站的一个组件，可以多次反复使用，代码如下。</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-1"> 1</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-2"> 2</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-3"> 3</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-4"> 4</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-5"> 5</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-6"> 6</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-7"> 7</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-8"> 8</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-9"> 9</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-10">10</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-11">11</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-12">12</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-13">13</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-14">14</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-15">15</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-16">16</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-17">17</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-18">18</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-19">19</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-20">20</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-21">21</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-22">22</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-23">23</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-24">24</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-25">25</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-26">26</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-27">27</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3f6e23c3d6664c3598be256bc4fa7061-28">28</a></pre></div></td>
-<td class="code"><pre class="code html"><a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-2"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"myapp"</span><span class="p">&gt;</span>
-<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-3"></a>        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hello, {{Name}}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-4"></a>        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">v-on:click</span><span class="o">=</span><span class="s">"sayhello"</span><span class="p">&gt;</span>sayhello<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-5"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-6"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-7"></a>
-<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-8"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-9"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
-<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-10"></a>    <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-11"></a>        <span class="k">return</span> <span class="p">{</span>
-<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-12"></a>            <span class="nx">Name</span><span class="o">:</span> <span class="s2">"龙龙龙"</span>
-<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-13"></a>        <span class="p">}</span>
-<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-14"></a>    <span class="p">},</span>
-<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-15"></a>    <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
-<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-16"></a>        <span class="nx">sayhello</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-17"></a>            <span class="nx">alert</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">Name</span><span class="p">);</span>
-<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-18"></a>        <span class="p">}</span>
-<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-19"></a>    <span class="p">}</span>
-<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-20"></a><span class="p">}</span>
-<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-21"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-22"></a>
-<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-23"></a><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
-<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-24"></a><span class="nt">p</span> <span class="p">{</span>
-<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-25"></a>    <span class="nb">font-size</span><span class="o">:</span> <span class="m">30px</span><span class="p">;</span>
-<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-26"></a>    <span class="nb">color</span><span class="o">:</span> <span class="nb">blue</span><span class="p">;</span>
-<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-27"></a><span class="p">}</span>
-<a name="rest_code_3f6e23c3d6664c3598be256bc4fa7061-28"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-1/#rest_code_fba90a07f018467393419451b55c533d-1"> 1</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_fba90a07f018467393419451b55c533d-2"> 2</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_fba90a07f018467393419451b55c533d-3"> 3</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_fba90a07f018467393419451b55c533d-4"> 4</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_fba90a07f018467393419451b55c533d-5"> 5</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_fba90a07f018467393419451b55c533d-6"> 6</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_fba90a07f018467393419451b55c533d-7"> 7</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_fba90a07f018467393419451b55c533d-8"> 8</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_fba90a07f018467393419451b55c533d-9"> 9</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_fba90a07f018467393419451b55c533d-10">10</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_fba90a07f018467393419451b55c533d-11">11</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_fba90a07f018467393419451b55c533d-12">12</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_fba90a07f018467393419451b55c533d-13">13</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_fba90a07f018467393419451b55c533d-14">14</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_fba90a07f018467393419451b55c533d-15">15</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_fba90a07f018467393419451b55c533d-16">16</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_fba90a07f018467393419451b55c533d-17">17</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_fba90a07f018467393419451b55c533d-18">18</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_fba90a07f018467393419451b55c533d-19">19</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_fba90a07f018467393419451b55c533d-20">20</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_fba90a07f018467393419451b55c533d-21">21</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_fba90a07f018467393419451b55c533d-22">22</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_fba90a07f018467393419451b55c533d-23">23</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_fba90a07f018467393419451b55c533d-24">24</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_fba90a07f018467393419451b55c533d-25">25</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_fba90a07f018467393419451b55c533d-26">26</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_fba90a07f018467393419451b55c533d-27">27</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_fba90a07f018467393419451b55c533d-28">28</a></pre></div></td>
+<td class="code"><pre class="code html"><a name="rest_code_fba90a07f018467393419451b55c533d-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_fba90a07f018467393419451b55c533d-2"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"myapp"</span><span class="p">&gt;</span>
+<a name="rest_code_fba90a07f018467393419451b55c533d-3"></a>        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hello, {{Name}}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a name="rest_code_fba90a07f018467393419451b55c533d-4"></a>        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">v-on:click</span><span class="o">=</span><span class="s">"sayhello"</span><span class="p">&gt;</span>sayhello<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<a name="rest_code_fba90a07f018467393419451b55c533d-5"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_fba90a07f018467393419451b55c533d-6"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_fba90a07f018467393419451b55c533d-7"></a>
+<a name="rest_code_fba90a07f018467393419451b55c533d-8"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_fba90a07f018467393419451b55c533d-9"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<a name="rest_code_fba90a07f018467393419451b55c533d-10"></a>    <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_fba90a07f018467393419451b55c533d-11"></a>        <span class="k">return</span> <span class="p">{</span>
+<a name="rest_code_fba90a07f018467393419451b55c533d-12"></a>            <span class="nx">Name</span><span class="o">:</span> <span class="s2">"龙龙龙"</span>
+<a name="rest_code_fba90a07f018467393419451b55c533d-13"></a>        <span class="p">}</span>
+<a name="rest_code_fba90a07f018467393419451b55c533d-14"></a>    <span class="p">},</span>
+<a name="rest_code_fba90a07f018467393419451b55c533d-15"></a>    <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+<a name="rest_code_fba90a07f018467393419451b55c533d-16"></a>        <span class="nx">sayhello</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_fba90a07f018467393419451b55c533d-17"></a>            <span class="nx">alert</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">Name</span><span class="p">);</span>
+<a name="rest_code_fba90a07f018467393419451b55c533d-18"></a>        <span class="p">}</span>
+<a name="rest_code_fba90a07f018467393419451b55c533d-19"></a>    <span class="p">}</span>
+<a name="rest_code_fba90a07f018467393419451b55c533d-20"></a><span class="p">}</span>
+<a name="rest_code_fba90a07f018467393419451b55c533d-21"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_fba90a07f018467393419451b55c533d-22"></a>
+<a name="rest_code_fba90a07f018467393419451b55c533d-23"></a><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<a name="rest_code_fba90a07f018467393419451b55c533d-24"></a><span class="nt">p</span> <span class="p">{</span>
+<a name="rest_code_fba90a07f018467393419451b55c533d-25"></a>    <span class="nb">font-size</span><span class="o">:</span> <span class="m">30px</span><span class="p">;</span>
+<a name="rest_code_fba90a07f018467393419451b55c533d-26"></a>    <span class="nb">color</span><span class="o">:</span> <span class="nb">blue</span><span class="p">;</span>
+<a name="rest_code_fba90a07f018467393419451b55c533d-27"></a><span class="p">}</span>
+<a name="rest_code_fba90a07f018467393419451b55c533d-28"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
 </pre></td>
 </tr></table>
 </blockquote>
@@ -663,10 +663,10 @@ body{
 
         <nav class="postindexpager"><ul class="pager">
 <li class="previous">
-                <a href="index-3.html" rel="prev">新一篇</a>
+                <a href="index-3.html" rel="prev">Newer posts</a>
             </li>
             <li class="next">
-                <a href="index-1.html" rel="next">旧一篇</a>
+                <a href="index-1.html" rel="next">Older posts</a>
             </li>
         </ul></nav>
 </div>
@@ -680,8 +680,8 @@ body{
 </div>
 
 
-            <script src="assets/js/all-nocdn.js"></script><script src="assets/js/colorbox-i18n/jquery.colorbox-zh-CN.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
-    moment.locale("zh-cn");
+            <script src="assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
     fancydates(0, "YYYY-MM-DD HH:mm");
     </script><!-- end fancy dates -->
 </body>
