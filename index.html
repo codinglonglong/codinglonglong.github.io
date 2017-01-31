@@ -24,7 +24,7 @@ body{
     font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
 }
 </style>
-<link rel="prefetch" href="posts/dockerzhong-emacszhi-chi-tui-ge/" type="text/html">
+<link rel="prefetch" href="posts/xiu-gai-dockerzhong-de-xi-tong-shi-jian/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
@@ -80,7 +80,148 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerzhong-emacszhi-chi-tui-ge/" class="u-url">Docker中Emacs支持退格</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/xiu-gai-dockerzhong-de-xi-tong-shi-jian/" class="u-url">修改Docker中的系统时间</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/xiu-gai-dockerzhong-de-xi-tong-shi-jian/" rel="bookmark"><time class="published dt-published" datetime="2017-01-31T15:36:34+08:00" title="2017-01-31 15:36">2017-01-31 15:36</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>默认在Docker中无法使用常见的命令修改系统时间，会显示没有权限，但测试程序往往需要修改系统时间，可以通过如下方法解决该问题：</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_61a24505e0c24c8391644bab9113e891-1"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-2"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-3"></a>root@d26965edacdd:/# date
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-4"></a>Tue Jan <span class="m">31</span> 07:39:26 GMT 2017
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-5"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-1
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-6"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-7"></a>root@d26965edacdd:/# date
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-8"></a>Tue Jan <span class="m">31</span> 08:39:35 +01 2017
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-9"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-2
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-10"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-11"></a>root@d26965edacdd:/# date
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-12"></a>Tue Jan <span class="m">31</span> 09:39:40 +02 2017
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-13"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-3
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-14"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-15"></a>root@d26965edacdd:/# date
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-16"></a>Tue Jan <span class="m">31</span> 10:39:45 +03 2017
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-17"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-4
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-18"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-19"></a>root@d26965edacdd:/# date
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-20"></a>Tue Jan <span class="m">31</span> 11:42:57 +04 2017
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-21"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-5
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-22"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-23"></a>root@d26965edacdd:/# date
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-24"></a>Tue Jan <span class="m">31</span> 12:43:05 +05 2017
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-25"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-6
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-26"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-27"></a>root@d26965edacdd:/# date
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-28"></a>Tue Jan <span class="m">31</span> 13:43:10 +06 2017
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-29"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-7
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-30"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-31"></a>root@d26965edacdd:/# date
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-32"></a>Tue Jan <span class="m">31</span> 14:43:15 +07 2017
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-33"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-8
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-34"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-35"></a>root@d26965edacdd:/# date
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-36"></a>Tue Jan <span class="m">31</span> 15:43:20 +08 2017
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-37"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-9
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-38"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-39"></a>root@d26965edacdd:/# date
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-40"></a>Tue Jan <span class="m">31</span> 16:43:25 +09 2017
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-41"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-10
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-42"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-43"></a>root@d26965edacdd:/# date
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-44"></a>Tue Jan <span class="m">31</span> 17:43:30 +10 2017
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-45"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-11
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-46"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-47"></a>root@d26965edacdd:/# date
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-48"></a>Tue Jan <span class="m">31</span> 18:43:35 +11 2017
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-49"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-12
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-50"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-51"></a>root@d26965edacdd:/# date
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-52"></a>Tue Jan <span class="m">31</span> 19:43:39 +12 2017
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-53"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-13
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-54"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-55"></a>root@d26965edacdd:/# date
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-56"></a>Tue Jan <span class="m">31</span> 20:43:43 +13 2017
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-57"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-14
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-58"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-59"></a>root@d26965edacdd:/# date
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-60"></a>Tue Jan <span class="m">31</span> 21:43:50 +14 2017
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-61"></a>
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-62"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+1
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-63"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-64"></a>root@d26965edacdd:/# date
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-65"></a>Tue Jan <span class="m">31</span> 06:44:57 -01 2017
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-66"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+2
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-67"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-68"></a>root@d26965edacdd:/# date
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-69"></a>Tue Jan <span class="m">31</span> 05:45:01 -02 2017
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-70"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+3
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-71"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-72"></a>root@d26965edacdd:/# date
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-73"></a>Tue Jan <span class="m">31</span> 04:45:05 -03 2017
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-74"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+4
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-75"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-76"></a>root@d26965edacdd:/# date
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-77"></a>Tue Jan <span class="m">31</span> 03:45:09 -04 2017
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-78"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+5
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-79"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-80"></a>root@d26965edacdd:/# date
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-81"></a>Tue Jan <span class="m">31</span> 02:45:13 -05 2017
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-82"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+6
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-83"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-84"></a>root@d26965edacdd:/# date
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-85"></a>Tue Jan <span class="m">31</span> 01:45:17 -06 2017
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-86"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+7
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-87"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-88"></a>root@d26965edacdd:/# date
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-89"></a>Tue Jan <span class="m">31</span> 00:45:24 -07 2017
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-90"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+8
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-91"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-92"></a>root@d26965edacdd:/# date
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-93"></a>Mon Jan <span class="m">30</span> 23:45:28 -08 2017
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-94"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+9
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-95"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-96"></a>root@d26965edacdd:/# date
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-97"></a>Mon Jan <span class="m">30</span> 22:45:32 -09 2017
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-98"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+10
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-99"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-100"></a>root@d26965edacdd:/# date
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-101"></a>Mon Jan <span class="m">30</span> 21:45:37 -10 2017
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-102"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+11
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-103"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-104"></a>root@d26965edacdd:/# date
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-105"></a>Mon Jan <span class="m">30</span> 20:45:53 -11 2017
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-106"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+12
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-107"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-108"></a>root@d26965edacdd:/# date
+<a name="rest_code_61a24505e0c24c8391644bab9113e891-109"></a>Mon Jan <span class="m">30</span> 19:46:00 -12 2017
+</pre>
+</blockquote>
+<p>我们测试一下实际效果：</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_15ce602aa0374d1dacf12809791862f0-1"></a>root@d26965edacdd:/usr/development# cat test.py
+<a name="rest_code_15ce602aa0374d1dacf12809791862f0-2"></a>import <span class="nb">time</span>
+<a name="rest_code_15ce602aa0374d1dacf12809791862f0-3"></a>print<span class="o">(</span>time.strftime<span class="o">(</span><span class="s1">'%Y-%m-%d %H:%M:%S'</span>,time.localtime<span class="o">(</span>time.time<span class="o">())))</span>
+<a name="rest_code_15ce602aa0374d1dacf12809791862f0-4"></a>root@d26965edacdd:/usr/development# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT
+<a name="rest_code_15ce602aa0374d1dacf12809791862f0-5"></a>root@d26965edacdd:/usr/development# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_15ce602aa0374d1dacf12809791862f0-6"></a>root@d26965edacdd:/usr/development# python test.py
+<a name="rest_code_15ce602aa0374d1dacf12809791862f0-7"></a>2017-01-31 07:50:13
+<a name="rest_code_15ce602aa0374d1dacf12809791862f0-8"></a>root@d26965edacdd:/usr/development# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-8
+<a name="rest_code_15ce602aa0374d1dacf12809791862f0-9"></a>root@d26965edacdd:/usr/development# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_15ce602aa0374d1dacf12809791862f0-10"></a>root@d26965edacdd:/usr/development# python test.py
+<a name="rest_code_15ce602aa0374d1dacf12809791862f0-11"></a>2017-01-31 15:50:19
+</pre>
+</blockquote>
+<p><strong>注意</strong></p>
+<p>本方法是通过修改时区来“曲线救国”的。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerzhong-emacszhi-chi-tui-ge/" class="u-url">Docker中Emacs支持退格</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
@@ -591,95 +732,6 @@ body{
 </blockquote>
 <p>4、主系统查看测试结果。</p>
 <img alt="https://github.com/longlongpicture/myblogpicture/raw/master/flaskswaggerui.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/flaskswaggerui.PNG"><p>可以看到通过Swagger UI，我们能够很方便地在浏览器上测试API的可用性。</p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerpei-zhi-kai-fa-jing-xiang/" class="u-url">Docker配置开发镜像</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/dockerpei-zhi-kai-fa-jing-xiang/" rel="bookmark"><time class="published dt-published" datetime="2017-01-23T23:08:02+08:00" title="2017-01-23 23:08">2017-01-23 23:08</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>在主系统上开发，在Docker中部署，在主系统上测试……不需要一手一台电脑，也不需要担心虚拟机占用资源太高，而且不管主系统是Linux、Windows还是MacOS，开发都是一样的……感觉很不错……</p>
-<ol class="arabic">
-<li>
-<p class="first">新建容器。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_1e1e030dd27e4226891c26f3e9635097-1"></a>docker run --name mypc -i -t -p 8080:8080 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">Docker中修改Ubuntu软件源。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_7a2f050461d048a7afb85cda8726f19e-1"></a>vi /etc/apt/sources.list
-<a name="rest_code_7a2f050461d048a7afb85cda8726f19e-2"></a>:%s/archive.ubuntu/cn.archive.ubuntu/g
-<a name="rest_code_7a2f050461d048a7afb85cda8726f19e-3"></a>:wq
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">Docker中更新软件源。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_d82ea0a376df4c34aa70a66f21730622-1"></a>apt update
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">Docker中安装Python和Flask。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_38c5960ad2324a4b8bfd1702806e4f7b-1"></a>apt install python
-<a name="rest_code_38c5960ad2324a4b8bfd1702806e4f7b-2"></a>apt install python-pip
-<a name="rest_code_38c5960ad2324a4b8bfd1702806e4f7b-3"></a>apt install python-dev
-<a name="rest_code_38c5960ad2324a4b8bfd1702806e4f7b-4"></a>pip install flask
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">在主系统目录 <strong>~/share/</strong> 下编写测试网站main.py。</p>
-<blockquote>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-1">1</a>
-<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-2">2</a>
-<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-3">3</a>
-<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-4">4</a>
-<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-5">5</a>
-<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-6">6</a>
-<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-7">7</a>
-<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-8">8</a>
-<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-9">9</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-1"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
-<a name="rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-2"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
-<a name="rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-3"></a>
-<a name="rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-4"></a><span class="nd">@app.route</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
-<a name="rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-5"></a><span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
-<a name="rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-6"></a>    <span class="k">return</span> <span class="s1">'Hello World!'</span>
-<a name="rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-7"></a>
-<a name="rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-8"></a><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
-<a name="rest_code_fc2c7d5adb7d425bae6fcb9d1eadb2cb-9"></a>    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">"0.0.0.0"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="s2">"8080"</span><span class="p">)</span>
-</pre></td>
-</tr></table>
-</blockquote>
-</li>
-<li>
-<p class="first">Docker中运行网站。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_2d0aa7bb1bc24f90a0c6e60e68ec2f7e-1"></a><span class="nb">cd</span> /usr/development/
-<a name="rest_code_2d0aa7bb1bc24f90a0c6e60e68ec2f7e-2"></a>python main.py
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">主系统上查看效果。</p>
-</li>
-</ol>
-<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/flaskhelloworld.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/flaskhelloworld.PNG"><p><strong>注意</strong></p>
-<ol class="arabic simple">
-<li>docker run --name mypc -i -t -p 8080:8080 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash 中的 <strong>/usr/development/</strong> 不可以是系统已有目录，否则会有权限问题，影响后续的安装。</li>
-<li>如果不喜欢使用vim，第二步中可以先安装emacs，再修改/etc/apt/sources.list。</li>
-</ol>
 </div>
     </div>
     </article>

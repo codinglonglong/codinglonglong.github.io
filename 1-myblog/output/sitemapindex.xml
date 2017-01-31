@@ -34,6 +34,10 @@
   <lastmod>2017-01-23T14:41:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://codinglonglong.github.io/categories/cat_linux.xml</loc>
+  <lastmod>2017-01-31T07:51:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_python.xml</loc>
   <lastmod>2017-01-30T13:53:00Z</lastmod>
  </sitemap>
@@ -55,7 +59,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/docker.xml</loc>
-  <lastmod>2017-01-30T14:06:00Z</lastmod>
+  <lastmod>2017-01-31T07:51:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/droid4x.xml</loc>
@@ -92,6 +96,10 @@
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/javascript.xml</loc>
   <lastmod>2017-01-23T14:41:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://codinglonglong.github.io/categories/linux.xml</loc>
+  <lastmod>2017-01-31T07:51:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/mysql.xml</loc>
@@ -139,10 +147,10 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/rss.xml</loc>
-  <lastmod>2017-01-30T14:06:00Z</lastmod>
+  <lastmod>2017-01-31T07:51:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/sitemap.xml</loc>
-  <lastmod>2017-01-30T14:06:00Z</lastmod>
+  <lastmod>2017-01-31T07:51:00Z</lastmod>
  </sitemap>
 </sitemapindex>
