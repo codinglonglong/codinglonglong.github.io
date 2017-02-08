@@ -23,11 +23,15 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/archive.html</loc>
-  <lastmod>2017-02-01T11:43:00Z</lastmod>
+  <lastmod>2017-02-08T05:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/</loc>
-  <lastmod>2017-02-01T11:43:00Z</lastmod>
+  <lastmod>2017-02-08T05:05:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/ajax/</loc>
+  <lastmod>2017-02-08T05:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/android/</loc>
@@ -96,6 +100,10 @@
  <url>
   <loc>https://codinglonglong.github.io/categories/emacs/</loc>
   <lastmod>2017-01-31T09:05:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/flask-cors/</loc>
+  <lastmod>2017-02-08T05:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/flask-restplus/</loc>
@@ -195,7 +203,7 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-4.html</loc>
-  <lastmod>2017-02-01T11:43:00Z</lastmod>
+  <lastmod>2017-02-08T05:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/android-studiolian-jie-droid4xdiao-shi-app/</loc>
@@ -224,6 +232,10 @@
  <url>
   <loc>https://codinglonglong.github.io/posts/exception-in-thread-main-javautilzipzipexception-error-in-opening-zip-file/</loc>
   <lastmod>2017-01-31T09:05:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/</loc>
+  <lastmod>2017-02-08T05:05:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/</loc>
