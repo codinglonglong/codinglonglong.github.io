@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/ajax.xml</loc>
-  <lastmod>2017-02-08T05:05:00Z</lastmod>
+  <lastmod>2017-02-08T05:07:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/android.xml</loc>
@@ -30,6 +30,10 @@
   <lastmod>2017-01-31T09:05:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://codinglonglong.github.io/categories/cat_ge-ren-zuo-pin.xml</loc>
+  <lastmod>2017-02-25T07:51:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_git.xml</loc>
   <lastmod>2017-01-31T09:05:00Z</lastmod>
  </sitemap>
@@ -43,7 +47,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_python.xml</loc>
-  <lastmod>2017-02-08T05:05:00Z</lastmod>
+  <lastmod>2017-02-08T05:07:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_react.xml</loc>
@@ -67,7 +71,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/docker.xml</loc>
-  <lastmod>2017-01-31T09:05:00Z</lastmod>
+  <lastmod>2017-02-25T07:51:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/droid4x.xml</loc>
@@ -79,11 +83,11 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/flask-cors.xml</loc>
-  <lastmod>2017-02-08T05:05:00Z</lastmod>
+  <lastmod>2017-02-08T05:07:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/flask-restplus.xml</loc>
-  <lastmod>2017-01-31T09:05:00Z</lastmod>
+  <lastmod>2017-02-25T07:51:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/flask-sqlalchemy.xml</loc>
@@ -91,7 +95,11 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/flask.xml</loc>
-  <lastmod>2017-02-01T05:31:00Z</lastmod>
+  <lastmod>2017-02-25T07:51:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://codinglonglong.github.io/categories/ge-ren-zuo-pin.xml</loc>
+  <lastmod>2017-02-25T07:51:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/git.xml</loc>
@@ -107,7 +115,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/javascript.xml</loc>
-  <lastmod>2017-01-31T09:05:00Z</lastmod>
+  <lastmod>2017-02-25T07:51:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/jsonify.xml</loc>
@@ -123,7 +131,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/python.xml</loc>
-  <lastmod>2017-02-01T11:53:00Z</lastmod>
+  <lastmod>2017-02-25T07:51:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/react-native.xml</loc>
@@ -147,7 +155,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/vuejs.xml</loc>
-  <lastmod>2017-01-31T09:05:00Z</lastmod>
+  <lastmod>2017-02-25T07:51:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/win10.xml</loc>
@@ -167,10 +175,10 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/rss.xml</loc>
-  <lastmod>2017-02-08T05:05:00Z</lastmod>
+  <lastmod>2017-02-25T07:51:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/sitemap.xml</loc>
-  <lastmod>2017-02-08T05:05:00Z</lastmod>
+  <lastmod>2017-02-25T07:51:00Z</lastmod>
  </sitemap>
 </sitemapindex>
