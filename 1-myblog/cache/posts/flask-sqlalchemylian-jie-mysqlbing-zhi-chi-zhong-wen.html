@@ -3,76 +3,76 @@
 <p>2、 .py文件开头加上 <strong># -*-coding:utf-8-*-</strong>。</p>
 <p>3、 连接字符串采用如下格式，注意最后的部分：</p>
 <blockquote>
-<pre class="code python"><a name="rest_code_fa6f2ac40a0a4390b1bf1037526408e5-1"></a><span class="n">dbconnection</span> <span class="o">=</span> <span class="s1">&#39;mysql+mysqlconnector://username:password@host:port/dbname?charset=utf8&#39;</span>
+<pre class="code python"><a name="rest_code_b7575c01bbf14147ac0f2379c274b2d2-1"></a><span class="n">dbconnection</span> <span class="o">=</span> <span class="s1">&#39;mysql+mysqlconnector://username:password@host:port/dbname?charset=utf8&#39;</span>
 </pre></blockquote>
 <p>4、 默认Mysql是latin-1的编码，如下：</p>
 <blockquote>
-<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-1"> 1</a>
-<a href="#rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-2"> 2</a>
-<a href="#rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-3"> 3</a>
-<a href="#rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-4"> 4</a>
-<a href="#rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-5"> 5</a>
-<a href="#rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-6"> 6</a>
-<a href="#rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-7"> 7</a>
-<a href="#rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-8"> 8</a>
-<a href="#rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-9"> 9</a>
-<a href="#rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-10">10</a>
-<a href="#rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-11">11</a>
-<a href="#rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-12">12</a>
-<a href="#rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-13">13</a></pre></div></td><td class="code"><pre class="code bash"><a name="rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-1"></a>mysql&gt; status           12
-<a name="rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-2"></a>Current database:
-<a name="rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-3"></a>Current user:.14 Distribroot@localhostebian-linux-gnu <span class="o">(</span>x86_64<span class="o">)</span> using readline 6.3
-<a name="rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-4"></a>SSL:                    Not in use
-<a name="rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-5"></a>Current pager:          <span class="s1">&#39;&#39;</span>dout
-<a name="rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-6"></a>Using delimiter:        5.5.54-0ubuntu0.14.04.1 <span class="o">(</span>Ubuntu<span class="o">)</span>
-<a name="rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-7"></a>Protocol version:       Localhost via UNIX socket
-<a name="rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-8"></a>Server characterset:    latin1
-<a name="rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-9"></a>Client characterset:    latin1
-<a name="rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-10"></a>UNIX socket:cterset:    <span class="m">3</span> min <span class="m">58</span> secqld/mysqld.sock
-<a name="rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-11"></a>Uptime:
-<a name="rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-12"></a>Threads: <span class="m">3</span>  Questions: <span class="m">324</span>  Slow queries: <span class="m">0</span>  Opens: <span class="m">45</span>  Flush tables: <span class="m">1</span>  Open tables: <span class="m">31</span>  Queries per second avg: 1.361
-<a name="rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-13"></a>--------------
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_e024ebcbc98e41d3805f40a8234fdc2a-1"> 1</a>
+<a href="#rest_code_e024ebcbc98e41d3805f40a8234fdc2a-2"> 2</a>
+<a href="#rest_code_e024ebcbc98e41d3805f40a8234fdc2a-3"> 3</a>
+<a href="#rest_code_e024ebcbc98e41d3805f40a8234fdc2a-4"> 4</a>
+<a href="#rest_code_e024ebcbc98e41d3805f40a8234fdc2a-5"> 5</a>
+<a href="#rest_code_e024ebcbc98e41d3805f40a8234fdc2a-6"> 6</a>
+<a href="#rest_code_e024ebcbc98e41d3805f40a8234fdc2a-7"> 7</a>
+<a href="#rest_code_e024ebcbc98e41d3805f40a8234fdc2a-8"> 8</a>
+<a href="#rest_code_e024ebcbc98e41d3805f40a8234fdc2a-9"> 9</a>
+<a href="#rest_code_e024ebcbc98e41d3805f40a8234fdc2a-10">10</a>
+<a href="#rest_code_e024ebcbc98e41d3805f40a8234fdc2a-11">11</a>
+<a href="#rest_code_e024ebcbc98e41d3805f40a8234fdc2a-12">12</a>
+<a href="#rest_code_e024ebcbc98e41d3805f40a8234fdc2a-13">13</a></pre></div></td><td class="code"><pre class="code bash"><a name="rest_code_e024ebcbc98e41d3805f40a8234fdc2a-1"></a>mysql&gt; status           12
+<a name="rest_code_e024ebcbc98e41d3805f40a8234fdc2a-2"></a>Current database:
+<a name="rest_code_e024ebcbc98e41d3805f40a8234fdc2a-3"></a>Current user:.14 Distribroot@localhostebian-linux-gnu <span class="o">(</span>x86_64<span class="o">)</span> using readline 6.3
+<a name="rest_code_e024ebcbc98e41d3805f40a8234fdc2a-4"></a>SSL:                    Not in use
+<a name="rest_code_e024ebcbc98e41d3805f40a8234fdc2a-5"></a>Current pager:          <span class="s1">&#39;&#39;</span>dout
+<a name="rest_code_e024ebcbc98e41d3805f40a8234fdc2a-6"></a>Using delimiter:        5.5.54-0ubuntu0.14.04.1 <span class="o">(</span>Ubuntu<span class="o">)</span>
+<a name="rest_code_e024ebcbc98e41d3805f40a8234fdc2a-7"></a>Protocol version:       Localhost via UNIX socket
+<a name="rest_code_e024ebcbc98e41d3805f40a8234fdc2a-8"></a>Server characterset:    latin1
+<a name="rest_code_e024ebcbc98e41d3805f40a8234fdc2a-9"></a>Client characterset:    latin1
+<a name="rest_code_e024ebcbc98e41d3805f40a8234fdc2a-10"></a>UNIX socket:cterset:    <span class="m">3</span> min <span class="m">58</span> secqld/mysqld.sock
+<a name="rest_code_e024ebcbc98e41d3805f40a8234fdc2a-11"></a>Uptime:
+<a name="rest_code_e024ebcbc98e41d3805f40a8234fdc2a-12"></a>Threads: <span class="m">3</span>  Questions: <span class="m">324</span>  Slow queries: <span class="m">0</span>  Opens: <span class="m">45</span>  Flush tables: <span class="m">1</span>  Open tables: <span class="m">31</span>  Queries per second avg: 1.361
+<a name="rest_code_e024ebcbc98e41d3805f40a8234fdc2a-13"></a>--------------
 </pre></td></tr></table></blockquote>
 <p>要通过修改配置文件，改成utf-8编码。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_0bab54a583d748a094f03877bbb6daa8-1"></a>emacs /etc/mysql/my.cnf
-<a name="rest_code_0bab54a583d748a094f03877bbb6daa8-2"></a><span class="o">[</span>mysqld<span class="o">]</span>
-<a name="rest_code_0bab54a583d748a094f03877bbb6daa8-3"></a><span class="nv">character_set_server</span> <span class="o">=</span> utf8
-<a name="rest_code_0bab54a583d748a094f03877bbb6daa8-4"></a><span class="o">[</span>client<span class="o">]</span>
-<a name="rest_code_0bab54a583d748a094f03877bbb6daa8-5"></a>default-character-set <span class="o">=</span> utf8
-<a name="rest_code_0bab54a583d748a094f03877bbb6daa8-6"></a><span class="o">[</span>mysql<span class="o">]</span>
-<a name="rest_code_0bab54a583d748a094f03877bbb6daa8-7"></a>default-character-set <span class="o">=</span> utf8
-<a name="rest_code_0bab54a583d748a094f03877bbb6daa8-8"></a>
-<a name="rest_code_0bab54a583d748a094f03877bbb6daa8-9"></a>service mysqld stop
-<a name="rest_code_0bab54a583d748a094f03877bbb6daa8-10"></a>mysqld
+<pre class="code bash"><a name="rest_code_54e5517b70a0412d981a5313ba4c1eb4-1"></a>emacs /etc/mysql/my.cnf
+<a name="rest_code_54e5517b70a0412d981a5313ba4c1eb4-2"></a><span class="o">[</span>mysqld<span class="o">]</span>
+<a name="rest_code_54e5517b70a0412d981a5313ba4c1eb4-3"></a><span class="nv">character_set_server</span> <span class="o">=</span> utf8
+<a name="rest_code_54e5517b70a0412d981a5313ba4c1eb4-4"></a><span class="o">[</span>client<span class="o">]</span>
+<a name="rest_code_54e5517b70a0412d981a5313ba4c1eb4-5"></a>default-character-set <span class="o">=</span> utf8
+<a name="rest_code_54e5517b70a0412d981a5313ba4c1eb4-6"></a><span class="o">[</span>mysql<span class="o">]</span>
+<a name="rest_code_54e5517b70a0412d981a5313ba4c1eb4-7"></a>default-character-set <span class="o">=</span> utf8
+<a name="rest_code_54e5517b70a0412d981a5313ba4c1eb4-8"></a>
+<a name="rest_code_54e5517b70a0412d981a5313ba4c1eb4-9"></a>service mysql stop
+<a name="rest_code_54e5517b70a0412d981a5313ba4c1eb4-10"></a>mysqld
 </pre></blockquote>
 <p>重启服务之后，可以看到：</p>
 <blockquote>
-<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-1"> 1</a>
-<a href="#rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-2"> 2</a>
-<a href="#rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-3"> 3</a>
-<a href="#rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-4"> 4</a>
-<a href="#rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-5"> 5</a>
-<a href="#rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-6"> 6</a>
-<a href="#rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-7"> 7</a>
-<a href="#rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-8"> 8</a>
-<a href="#rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-9"> 9</a>
-<a href="#rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-10">10</a>
-<a href="#rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-11">11</a>
-<a href="#rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-12">12</a>
-<a href="#rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-13">13</a></pre></div></td><td class="code"><pre class="code bash"><a name="rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-1"></a>mysql&gt; status           1
-<a name="rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-2"></a>Current database:
-<a name="rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-3"></a>Current user:.14 Distribroot@localhostebian-linux-gnu <span class="o">(</span>x86_64<span class="o">)</span> using readline 6.3
-<a name="rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-4"></a>SSL:                    Not in use
-<a name="rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-5"></a>Current pager:          <span class="s1">&#39;&#39;</span>dout
-<a name="rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-6"></a>Using delimiter:        5.5.54-0ubuntu0.14.04.1 <span class="o">(</span>Ubuntu<span class="o">)</span>
-<a name="rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-7"></a>Protocol version:       Localhost via UNIX socket
-<a name="rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-8"></a>Server characterset:    utf8
-<a name="rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-9"></a>Client characterset:    utf8
-<a name="rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-10"></a>UNIX socket:cterset:    <span class="m">6</span> secrun/mysqld/mysqld.sock
-<a name="rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-11"></a>Uptime:
-<a name="rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-12"></a>Threads: <span class="m">1</span>  Questions: <span class="m">5</span>  Slow queries: <span class="m">0</span>  Opens: <span class="m">33</span>  Flush tables: <span class="m">1</span>  Open tables: <span class="m">26</span>  Queries per second avg: 0.833
-<a name="rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-13"></a>--------------
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_0e910e24410342f2ab93553cc2160e38-1"> 1</a>
+<a href="#rest_code_0e910e24410342f2ab93553cc2160e38-2"> 2</a>
+<a href="#rest_code_0e910e24410342f2ab93553cc2160e38-3"> 3</a>
+<a href="#rest_code_0e910e24410342f2ab93553cc2160e38-4"> 4</a>
+<a href="#rest_code_0e910e24410342f2ab93553cc2160e38-5"> 5</a>
+<a href="#rest_code_0e910e24410342f2ab93553cc2160e38-6"> 6</a>
+<a href="#rest_code_0e910e24410342f2ab93553cc2160e38-7"> 7</a>
+<a href="#rest_code_0e910e24410342f2ab93553cc2160e38-8"> 8</a>
+<a href="#rest_code_0e910e24410342f2ab93553cc2160e38-9"> 9</a>
+<a href="#rest_code_0e910e24410342f2ab93553cc2160e38-10">10</a>
+<a href="#rest_code_0e910e24410342f2ab93553cc2160e38-11">11</a>
+<a href="#rest_code_0e910e24410342f2ab93553cc2160e38-12">12</a>
+<a href="#rest_code_0e910e24410342f2ab93553cc2160e38-13">13</a></pre></div></td><td class="code"><pre class="code bash"><a name="rest_code_0e910e24410342f2ab93553cc2160e38-1"></a>mysql&gt; status           1
+<a name="rest_code_0e910e24410342f2ab93553cc2160e38-2"></a>Current database:
+<a name="rest_code_0e910e24410342f2ab93553cc2160e38-3"></a>Current user:.14 Distribroot@localhostebian-linux-gnu <span class="o">(</span>x86_64<span class="o">)</span> using readline 6.3
+<a name="rest_code_0e910e24410342f2ab93553cc2160e38-4"></a>SSL:                    Not in use
+<a name="rest_code_0e910e24410342f2ab93553cc2160e38-5"></a>Current pager:          <span class="s1">&#39;&#39;</span>dout
+<a name="rest_code_0e910e24410342f2ab93553cc2160e38-6"></a>Using delimiter:        5.5.54-0ubuntu0.14.04.1 <span class="o">(</span>Ubuntu<span class="o">)</span>
+<a name="rest_code_0e910e24410342f2ab93553cc2160e38-7"></a>Protocol version:       Localhost via UNIX socket
+<a name="rest_code_0e910e24410342f2ab93553cc2160e38-8"></a>Server characterset:    utf8
+<a name="rest_code_0e910e24410342f2ab93553cc2160e38-9"></a>Client characterset:    utf8
+<a name="rest_code_0e910e24410342f2ab93553cc2160e38-10"></a>UNIX socket:cterset:    <span class="m">6</span> secrun/mysqld/mysqld.sock
+<a name="rest_code_0e910e24410342f2ab93553cc2160e38-11"></a>Uptime:
+<a name="rest_code_0e910e24410342f2ab93553cc2160e38-12"></a>Threads: <span class="m">1</span>  Questions: <span class="m">5</span>  Slow queries: <span class="m">0</span>  Opens: <span class="m">33</span>  Flush tables: <span class="m">1</span>  Open tables: <span class="m">26</span>  Queries per second avg: 0.833
+<a name="rest_code_0e910e24410342f2ab93553cc2160e38-13"></a>--------------
 </pre></td></tr></table></blockquote>
 <p>满足上述四点之后，删除掉原来包含问号的数据库，然后重新创建数据库，运行程序，可以看到中文被正常处理了。</p>
 <img alt="https://github.com/longlongpicture/myblogpicture/raw/master/mysqlchinese.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/mysqlchinese.PNG" />

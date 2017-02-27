@@ -1,0 +1,13 @@
+<p>1、编辑网络配置文件。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo vi /etc/network/interfaces
+iface eth0 inet static
+address 192.168.1.254
+netmask 255.255.255.0
+gateway 192.168.1.1
+&gt;&gt; sudo service networking restart
+</pre>
+</blockquote>
+<p>2、重启系统和路由器。</p>
+<p><strong>如果不行的话，试试把路由器也设置成静态地址绑定……</strong></p>

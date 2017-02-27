@@ -1,5 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sat, 25 Feb 2017 07:58:47 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>小家手帐网页版基本完成</title><link>https://codinglonglong.github.io/posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;利用不到一个月的周末业余时间，使用刚刚接触不久的vuejs，基本完成了小家手帐的网页版。&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Mon, 27 Feb 2017 18:18:00 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Supervisor实现Python脚本自启动</title><link>https://codinglonglong.github.io/posts/supervisorshi-xian-pythonjiao-ben-zi-qi-dong/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;经过若干小时的反复试验，终于在树莓派上成功部署了homebank[&lt;a class="reference external" href="https://codinglonglong.github.io/posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/"&gt;https://codinglonglong.github.io/posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/&lt;/a&gt;]，最困难的地方就是配置Supervisor，配置过程中出现了各种错误……&lt;/p&gt;
+&lt;p&gt;1、安装supervisor。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo pip install supervisor
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2、建立网站启动命令。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; cd /usr/local/bin
+&amp;gt;&amp;gt; sudo emacs homebank
+cd /home/pi/websites/homebank/
+python main.py
+&amp;gt;&amp;gt; sudo chmod 777 homebank
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;3、编辑配置文件。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; cd /home/pi/websites/
+&amp;gt;&amp;gt; echo_supervisord_conf &amp;gt; supervisord.conf
+&amp;gt;&amp;gt; sudo supervisord -c supervisord.conf
+&amp;gt;&amp;gt; emacs supervisord.conf
+[inet_http_server]         ; inet (TCP) server disabled by default
+port=0.0.0.0:9999        ; (ip_address:port specifier, *:port for all iface)
+username=user              ; (default is no username (open server))
+password=123               ; (default is no password (open server))
+
+[program:homebank]
+command=python main.py
+directory=/home/pi/websites/homebank
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;4、启动服务。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo supervisorctl reload
+&amp;gt;&amp;gt; sudo supervisorctl status homebank
+homebank                         RUNNING   pid 2212, uptime 0:02:07
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;5、设置开机启动。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo systemctl enable supervisor.service
+&lt;/pre&gt;
+&lt;/blockquote&gt;&lt;/div&gt;</description><category>supervisor</category><guid>https://codinglonglong.github.io/posts/supervisorshi-xian-pythonjiao-ben-zi-qi-dong/</guid><pubDate>Mon, 27 Feb 2017 18:06:10 GMT</pubDate></item><item><title>Raspberry配置nginx</title><link>https://codinglonglong.github.io/posts/raspberrypei-zhi-nginx/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、安装nginx。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo apt install nginx
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2、修改主配置文件。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo emacs /etc/nginx/nginx.conf
+user pi;
+C-x C-s
+C-x C-c
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;3、修改网站配置文件。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo emacs /etc/nginx/sites-available/default
+##
+# You should look at the following URL's in order to grasp a solid understanding
+# of Nginx configuration files in order to fully unleash the power of Nginx.
+# http://wiki.nginx.org/Pitfalls
+# http://wiki.nginx.org/QuickStart
+# http://wiki.nginx.org/Configuration
+#
+# Generally, you will want to move this file somewhere, and start with a clean
+# file but keep this around for reference. Or just disable in sites-enabled.
+#
+# Please see /usr/share/doc/nginx-doc/examples/ for more detailed examples.
+##
+
+# Default server configuration
+#
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        # SSL configuration
+        #
+        # listen 443 ssl default_server;
+        # listen [::]:443 ssl default_server;
+        #
+        # Self signed certs generated by the ssl-cert package
+        # Don't use them in a production server!
+        #
+        # include snippets/snakeoil.conf;
+
+        root /home/pi/websites/homebankweb/homebank/dist;
+
+        # Add index.php to the list if you are using PHP
+        index index.html index.htm index.nginx-debian.html;
+
+        server_name 192.168.1.254;
+
+        location / {
+                root /home/pi/websites/homebankweb/homebank/dist;
+                index index.html;
+                # First attempt to serve request as file, then
+                # as directory, then fall back to displaying a 404.
+                try_files $uri $uri/ =404;
+        }
+
+        location ~ .*\.(gif|jpg|jpeg|bmp|png|ico|txt|js|css)$
+        {
+            root /home/pi/websites/homebankweb/homebank/dist;
+            expires      7d;
+        }
+
+        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+        #
+        #location ~ \.php$ {
+        #       include snippets/fastcgi-php.conf;
+        #
+        #       # With php5-cgi alone:
+        #       fastcgi_pass 127.0.0.1:9000;
+        #       # With php5-fpm:
+        #       fastcgi_pass unix:/var/run/php5-fpm.sock;
+        #}
+
+        # deny access to .htaccess files, if Apache's document root
+        # concurs with nginx's one
+        #
+        #location ~ /\.ht {
+        #       deny all;
+        #}
+}
+
+
+# Virtual Host configuration for example.com
+#
+# You can move that to a different file under sites-available/ and symlink that
+# to sites-enabled/ to enable it.
+#
+#server {
+#       listen 80;
+#       listen [::]:80;
+#
+#       server_name example.com;
+#
+#       root /var/www/example.com;
+#       index index.html;
+#
+#       location / {
+#               try_files $uri $uri/ =404;
+#       }
+#}
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;4、让网站配置文件生效。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+&amp;gt;&amp;gt; sudo service nginx restart
+&lt;/pre&gt;
+&lt;/blockquote&gt;&lt;/div&gt;</description><category>nginx</category><guid>https://codinglonglong.github.io/posts/raspberrypei-zhi-nginx/</guid><pubDate>Mon, 27 Feb 2017 13:51:39 GMT</pubDate></item><item><title>Python启动简易Web服务器</title><link>https://codinglonglong.github.io/posts/pythonqi-dong-jian-yi-webfu-wu-qi/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、切换到Web服务器根路径对应的本地目录，执行以下命令。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; python -m SimpleHTTPServer 8080
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2、浏览器访问 &lt;a class="reference external" href="http://localhost:8080"&gt;http://localhost:8080&lt;/a&gt; 。&lt;/p&gt;&lt;/div&gt;</description><category>Python</category><guid>https://codinglonglong.github.io/posts/pythonqi-dong-jian-yi-webfu-wu-qi/</guid><pubDate>Mon, 27 Feb 2017 13:09:32 GMT</pubDate></item><item><title>Raspberry设置静态IP</title><link>https://codinglonglong.github.io/posts/raspberryshe-zhi-jing-tai-ip/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、编辑网络配置文件。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo vi /etc/network/interfaces
+iface eth0 inet static
+address 192.168.1.254
+netmask 255.255.255.0
+gateway 192.168.1.1
+&amp;gt;&amp;gt; sudo service networking restart
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2、重启系统和路由器。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;如果不行的话，试试把路由器也设置成静态地址绑定……&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</description><category>Linux</category><category>Raspberry</category><guid>https://codinglonglong.github.io/posts/raspberryshe-zhi-jing-tai-ip/</guid><pubDate>Mon, 27 Feb 2017 11:45:07 GMT</pubDate></item><item><title>小家手帐网页版基本完成</title><link>https://codinglonglong.github.io/posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;利用不到一个月的周末业余时间，使用刚刚接触不久的vuejs，基本完成了小家手帐的网页版。&lt;/p&gt;
 &lt;p&gt;代码发布到了 &lt;a class="reference external" href="https://github.com/codinglonglong/homebankservice"&gt;https://github.com/codinglonglong/homebankservice&lt;/a&gt; 和 &lt;a class="reference external" href="https://github.com/codinglonglong/homebankweb"&gt;https://github.com/codinglonglong/homebankweb&lt;/a&gt; 这两个代码仓库。&lt;/p&gt;
 &lt;p&gt;服务端主要涉及的相关技术点包括：&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
@@ -488,371 +668,4 @@
 &lt;a name="rest_code_ba023f1f63cc49fb8b0be9e817117b42-11"&gt;&lt;/a&gt;2017-01-31 15:50:19
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;本方法是通过修改时区来“曲线救国”的。&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><category>Linux</category><guid>https://codinglonglong.github.io/posts/xiu-gai-dockerzhong-de-xi-tong-shi-jian/</guid><pubDate>Tue, 31 Jan 2017 07:36:34 GMT</pubDate></item><item><title>Docker中Emacs支持退格</title><link>https://codinglonglong.github.io/posts/dockerzhong-emacszhi-chi-tui-ge/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;默认在Docker中，Emacs使用退格无法删除光标前的字符，而是显示帮助信息，这让人有些费解，可以采用如下方法解决：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_ff8478bc08a74e11a54217f543f1d9b3-1"&gt;&lt;/a&gt;emacs ~/.emacs
-&lt;a name="rest_code_ff8478bc08a74e11a54217f543f1d9b3-2"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;global-set-key &lt;span class="s2"&gt;"\C-h"&lt;/span&gt; &lt;span class="s1"&gt;'backward-delete-char-untabify)&lt;/span&gt;
-&lt;a name="rest_code_ff8478bc08a74e11a54217f543f1d9b3-3"&gt;&lt;/a&gt;&lt;span class="s1"&gt;(global-set-key "\d" '&lt;/span&gt;delete-char&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_ff8478bc08a74e11a54217f543f1d9b3-4"&gt;&lt;/a&gt;C-x C-s
-&lt;a name="rest_code_ff8478bc08a74e11a54217f543f1d9b3-5"&gt;&lt;/a&gt;C-x C-c
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;这时再用emacs命令打开文件，就可以正常使用退格键删除光标前的字符了。&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><category>Emacs</category><guid>https://codinglonglong.github.io/posts/dockerzhong-emacszhi-chi-tui-ge/</guid><pubDate>Mon, 30 Jan 2017 14:03:15 GMT</pubDate></item><item><title>Flask-Sqlalchemy连接Mysql并支持中文</title><link>https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;按照文章 &lt;a class="reference external" href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/"&gt;https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/&lt;/a&gt; 配置好数据库，在默认使用Flask-Sqlalchemy连接Mysql时，如果插入的数据是中文，会保存成问号。如果要正常保存中文，需要注意以下四点：&lt;/p&gt;
-&lt;p&gt;1、 .py文件本身是UTF-8的编码，这可以在开发工具的“文件编码”功能中进行查看。&lt;/p&gt;
-&lt;p&gt;2、 .py文件开头加上 &lt;strong&gt;# -*-coding:utf-8-*-&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;3、 连接字符串采用如下格式，注意最后的部分：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code python"&gt;&lt;a name="rest_code_fa6f2ac40a0a4390b1bf1037526408e5-1"&gt;&lt;/a&gt;&lt;span class="n"&gt;dbconnection&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'mysql+mysqlconnector://username:password@host:port/dbname?charset=utf8'&lt;/span&gt;
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;4、 默认Mysql是latin-1的编码，如下：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-1"&gt; 1&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-2"&gt; 2&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-3"&gt; 3&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-4"&gt; 4&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-5"&gt; 5&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-6"&gt; 6&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-7"&gt; 7&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-8"&gt; 8&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-9"&gt; 9&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-10"&gt;10&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-11"&gt;11&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-12"&gt;12&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-13"&gt;13&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code bash"&gt;&lt;a name="rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-1"&gt;&lt;/a&gt;mysql&amp;gt; status           12
-&lt;a name="rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-2"&gt;&lt;/a&gt;Current database:
-&lt;a name="rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-3"&gt;&lt;/a&gt;Current user:.14 Distribroot@localhostebian-linux-gnu &lt;span class="o"&gt;(&lt;/span&gt;x86_64&lt;span class="o"&gt;)&lt;/span&gt; using readline 6.3
-&lt;a name="rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-4"&gt;&lt;/a&gt;SSL:                    Not in use
-&lt;a name="rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-5"&gt;&lt;/a&gt;Current pager:          &lt;span class="s1"&gt;''&lt;/span&gt;dout
-&lt;a name="rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-6"&gt;&lt;/a&gt;Using delimiter:        5.5.54-0ubuntu0.14.04.1 &lt;span class="o"&gt;(&lt;/span&gt;Ubuntu&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-7"&gt;&lt;/a&gt;Protocol version:       Localhost via UNIX socket
-&lt;a name="rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-8"&gt;&lt;/a&gt;Server characterset:    latin1
-&lt;a name="rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-9"&gt;&lt;/a&gt;Client characterset:    latin1
-&lt;a name="rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-10"&gt;&lt;/a&gt;UNIX socket:cterset:    &lt;span class="m"&gt;3&lt;/span&gt; min &lt;span class="m"&gt;58&lt;/span&gt; secqld/mysqld.sock
-&lt;a name="rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-11"&gt;&lt;/a&gt;Uptime:
-&lt;a name="rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-12"&gt;&lt;/a&gt;Threads: &lt;span class="m"&gt;3&lt;/span&gt;  Questions: &lt;span class="m"&gt;324&lt;/span&gt;  Slow queries: &lt;span class="m"&gt;0&lt;/span&gt;  Opens: &lt;span class="m"&gt;45&lt;/span&gt;  Flush tables: &lt;span class="m"&gt;1&lt;/span&gt;  Open tables: &lt;span class="m"&gt;31&lt;/span&gt;  Queries per second avg: 1.361
-&lt;a name="rest_code_ad1a7e0d1e6e409cb6bab20f06cd1599-13"&gt;&lt;/a&gt;--------------
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;
-&lt;p&gt;要通过修改配置文件，改成utf-8编码。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_0bab54a583d748a094f03877bbb6daa8-1"&gt;&lt;/a&gt;emacs /etc/mysql/my.cnf
-&lt;a name="rest_code_0bab54a583d748a094f03877bbb6daa8-2"&gt;&lt;/a&gt;&lt;span class="o"&gt;[&lt;/span&gt;mysqld&lt;span class="o"&gt;]&lt;/span&gt;
-&lt;a name="rest_code_0bab54a583d748a094f03877bbb6daa8-3"&gt;&lt;/a&gt;&lt;span class="nv"&gt;character_set_server&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; utf8
-&lt;a name="rest_code_0bab54a583d748a094f03877bbb6daa8-4"&gt;&lt;/a&gt;&lt;span class="o"&gt;[&lt;/span&gt;client&lt;span class="o"&gt;]&lt;/span&gt;
-&lt;a name="rest_code_0bab54a583d748a094f03877bbb6daa8-5"&gt;&lt;/a&gt;default-character-set &lt;span class="o"&gt;=&lt;/span&gt; utf8
-&lt;a name="rest_code_0bab54a583d748a094f03877bbb6daa8-6"&gt;&lt;/a&gt;&lt;span class="o"&gt;[&lt;/span&gt;mysql&lt;span class="o"&gt;]&lt;/span&gt;
-&lt;a name="rest_code_0bab54a583d748a094f03877bbb6daa8-7"&gt;&lt;/a&gt;default-character-set &lt;span class="o"&gt;=&lt;/span&gt; utf8
-&lt;a name="rest_code_0bab54a583d748a094f03877bbb6daa8-8"&gt;&lt;/a&gt;
-&lt;a name="rest_code_0bab54a583d748a094f03877bbb6daa8-9"&gt;&lt;/a&gt;service mysqld stop
-&lt;a name="rest_code_0bab54a583d748a094f03877bbb6daa8-10"&gt;&lt;/a&gt;mysqld
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;重启服务之后，可以看到：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-1"&gt; 1&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-2"&gt; 2&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-3"&gt; 3&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-4"&gt; 4&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-5"&gt; 5&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-6"&gt; 6&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-7"&gt; 7&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-8"&gt; 8&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-9"&gt; 9&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-10"&gt;10&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-11"&gt;11&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-12"&gt;12&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-13"&gt;13&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code bash"&gt;&lt;a name="rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-1"&gt;&lt;/a&gt;mysql&amp;gt; status           1
-&lt;a name="rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-2"&gt;&lt;/a&gt;Current database:
-&lt;a name="rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-3"&gt;&lt;/a&gt;Current user:.14 Distribroot@localhostebian-linux-gnu &lt;span class="o"&gt;(&lt;/span&gt;x86_64&lt;span class="o"&gt;)&lt;/span&gt; using readline 6.3
-&lt;a name="rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-4"&gt;&lt;/a&gt;SSL:                    Not in use
-&lt;a name="rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-5"&gt;&lt;/a&gt;Current pager:          &lt;span class="s1"&gt;''&lt;/span&gt;dout
-&lt;a name="rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-6"&gt;&lt;/a&gt;Using delimiter:        5.5.54-0ubuntu0.14.04.1 &lt;span class="o"&gt;(&lt;/span&gt;Ubuntu&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-7"&gt;&lt;/a&gt;Protocol version:       Localhost via UNIX socket
-&lt;a name="rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-8"&gt;&lt;/a&gt;Server characterset:    utf8
-&lt;a name="rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-9"&gt;&lt;/a&gt;Client characterset:    utf8
-&lt;a name="rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-10"&gt;&lt;/a&gt;UNIX socket:cterset:    &lt;span class="m"&gt;6&lt;/span&gt; secrun/mysqld/mysqld.sock
-&lt;a name="rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-11"&gt;&lt;/a&gt;Uptime:
-&lt;a name="rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-12"&gt;&lt;/a&gt;Threads: &lt;span class="m"&gt;1&lt;/span&gt;  Questions: &lt;span class="m"&gt;5&lt;/span&gt;  Slow queries: &lt;span class="m"&gt;0&lt;/span&gt;  Opens: &lt;span class="m"&gt;33&lt;/span&gt;  Flush tables: &lt;span class="m"&gt;1&lt;/span&gt;  Open tables: &lt;span class="m"&gt;26&lt;/span&gt;  Queries per second avg: 0.833
-&lt;a name="rest_code_2dc3cf03225b4f8dbb1d2e18ae287a31-13"&gt;&lt;/a&gt;--------------
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;
-&lt;p&gt;满足上述四点之后，删除掉原来包含问号的数据库，然后重新创建数据库，运行程序，可以看到中文被正常处理了。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/mysqlchinese.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/mysqlchinese.PNG"&gt;&lt;/div&gt;</description><category>Flask-Sqlalchemy</category><category>Mysql</category><guid>https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/</guid><pubDate>Mon, 30 Jan 2017 13:36:46 GMT</pubDate></item><item><title>Docker中配置Flask-Sqlalchemy和Mysql</title><link>https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;继文章 &lt;a class="reference external" href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/"&gt;https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/&lt;/a&gt; 之后，我们进一步配置数据库的部分。&lt;/p&gt;
-&lt;p&gt;1、Docker安装Mysql。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_3d2b7859eea14c81b98332faef73508e-1"&gt;&lt;/a&gt;apt install mysql-server mysql-client
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;2、Docker下载安装mysql-connector-python。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_93c3409b24b14bfcb223d5f4448b4c14-1"&gt;&lt;/a&gt;apt install curl
-&lt;a name="rest_code_93c3409b24b14bfcb223d5f4448b4c14-2"&gt;&lt;/a&gt;curl -O https://cdn.mysql.com/Downloads/Connector-Python/mysql-connector-python-2.1.5.tar.gz
-&lt;a name="rest_code_93c3409b24b14bfcb223d5f4448b4c14-3"&gt;&lt;/a&gt;tar zxvf mysql-connector-python-2.1.5.tar.gz
-&lt;a name="rest_code_93c3409b24b14bfcb223d5f4448b4c14-4"&gt;&lt;/a&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; mysql-connector-python-2.1.5
-&lt;a name="rest_code_93c3409b24b14bfcb223d5f4448b4c14-5"&gt;&lt;/a&gt;python setup.py install
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;3、Docker安装Flask-Sqlalchemy和Flask-Script。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_35b4c6baefdd4152a57448a87e827f39-1"&gt;&lt;/a&gt;pip install flask-sqlalchemy
-&lt;a name="rest_code_35b4c6baefdd4152a57448a87e827f39-2"&gt;&lt;/a&gt;pip install flask-script
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;4、为已有容器添加端口。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_08841fa5252a4b238f37b51a157b2fcc-1"&gt;&lt;/a&gt;docker commit mypc newpc
-&lt;a name="rest_code_08841fa5252a4b238f37b51a157b2fcc-2"&gt;&lt;/a&gt;docker stop mypc
-&lt;a name="rest_code_08841fa5252a4b238f37b51a157b2fcc-3"&gt;&lt;/a&gt;docker run --name mynewpc -i -t -p 13306:3306 -p 8080:8080 -v ~/share/:/usr/development/  newpc /bin/bash
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;5、Docker登录Mysql数据库。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_42086f3bda074f8aba902c8510148b55-1"&gt;&lt;/a&gt;mysql -u root -p
-&lt;a name="rest_code_42086f3bda074f8aba902c8510148b55-2"&gt;&lt;/a&gt;create database test&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;a name="rest_code_42086f3bda074f8aba902c8510148b55-3"&gt;&lt;/a&gt;grant all privileges on *.* to root@&lt;span class="s1"&gt;'192.168.99.1'&lt;/span&gt; identified by &lt;span class="s1"&gt;'root'&lt;/span&gt; with grant option&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;a name="rest_code_42086f3bda074f8aba902c8510148b55-4"&gt;&lt;/a&gt;flush privileges&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;a name="rest_code_42086f3bda074f8aba902c8510148b55-5"&gt;&lt;/a&gt;&lt;span class="nb"&gt;exit&lt;/span&gt;
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;6、Docker修改配置文件，我习惯用emacs，也可以用vim。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_9d755c21694640059158190c4a6037a6-1"&gt;&lt;/a&gt;apt install emacs
-&lt;a name="rest_code_9d755c21694640059158190c4a6037a6-2"&gt;&lt;/a&gt;apt-get install -f
-&lt;a name="rest_code_9d755c21694640059158190c4a6037a6-3"&gt;&lt;/a&gt;emacs /etc/mysql/my.cnf
-&lt;a name="rest_code_9d755c21694640059158190c4a6037a6-4"&gt;&lt;/a&gt;bind-address            &lt;span class="o"&gt;=&lt;/span&gt; 0.0.0.0
-&lt;a name="rest_code_9d755c21694640059158190c4a6037a6-5"&gt;&lt;/a&gt;C-x C-s
-&lt;a name="rest_code_9d755c21694640059158190c4a6037a6-6"&gt;&lt;/a&gt;C-x C-c
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;7、重启mysql服务。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_02fea6a2a7d64ad3be47f72d57c32de3-1"&gt;&lt;/a&gt;sudo service mysql stop
-&lt;a name="rest_code_02fea6a2a7d64ad3be47f72d57c32de3-2"&gt;&lt;/a&gt;mysqld
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;8、主系统编辑测试网站main.py。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-1"&gt; 1&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-2"&gt; 2&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-3"&gt; 3&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-4"&gt; 4&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-5"&gt; 5&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-6"&gt; 6&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-7"&gt; 7&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-8"&gt; 8&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-9"&gt; 9&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-10"&gt;10&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-11"&gt;11&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-12"&gt;12&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-13"&gt;13&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-14"&gt;14&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-15"&gt;15&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-16"&gt;16&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-17"&gt;17&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-18"&gt;18&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-19"&gt;19&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-20"&gt;20&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-2"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask.ext.script&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Manager&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-3"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask.ext.sqlalchemy&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;SQLAlchemy&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-4"&gt;&lt;/a&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-5"&gt;&lt;/a&gt;&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-6"&gt;&lt;/a&gt;&lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'SQLALCHEMY_DATABASE_URI'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'mysql+mysqlconnector://root:root@127.0.0.1:3306/test?charset=utf8'&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-7"&gt;&lt;/a&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-8"&gt;&lt;/a&gt;&lt;span class="n"&gt;db&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;SQLAlchemy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-9"&gt;&lt;/a&gt;&lt;span class="n"&gt;manager&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Manager&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-10"&gt;&lt;/a&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-11"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;User&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-12"&gt;&lt;/a&gt;    &lt;span class="n"&gt;__tablename__&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'users'&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-13"&gt;&lt;/a&gt;    &lt;span class="nb"&gt;id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Integer&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;primary_key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-14"&gt;&lt;/a&gt;    &lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;unique&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-15"&gt;&lt;/a&gt;    &lt;span class="n"&gt;email&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;320&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;unique&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-16"&gt;&lt;/a&gt;    &lt;span class="n"&gt;password&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;32&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;nullable&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-17"&gt;&lt;/a&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-18"&gt;&lt;/a&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;'__main__'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-19"&gt;&lt;/a&gt;    &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create_all&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-20"&gt;&lt;/a&gt;    &lt;span class="n"&gt;manager&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;
-&lt;p&gt;9、开一个新的Docker terminal，启动测试网站。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_505b16f17656441ca66decbfbd7c33aa-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /usr/development
-&lt;a name="rest_code_505b16f17656441ca66decbfbd7c33aa-2"&gt;&lt;/a&gt;python main.py runserver
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;10、主系统上打开MySQL Workbench，访问数据库。Hostname：192.168.99.100，Port：13306，Password：root。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/mysqlworkbench.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/mysqlworkbench.PNG"&gt;
-&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;修改bind-address = 0.0.0.0非常重要，否则主系统访问不到Docker中的数据库。&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><category>Flask-Sqlalchemy</category><category>Mysql</category><category>Python</category><guid>https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/</guid><pubDate>Wed, 25 Jan 2017 05:37:42 GMT</pubDate></item><item><title>使用Flask-Restplus和Swagger UI最小化实现增删改查</title><link>https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;继文章 &lt;a class="reference external" href="https://codinglonglong.github.io/posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/"&gt;https://codinglonglong.github.io/posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/&lt;/a&gt; 之后，我们参考文档实现了一个最小化增删改查的案例。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-1"&gt; 1&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-2"&gt; 2&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-3"&gt; 3&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-4"&gt; 4&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-5"&gt; 5&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-6"&gt; 6&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-7"&gt; 7&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-8"&gt; 8&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-9"&gt; 9&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-10"&gt;10&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-11"&gt;11&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-12"&gt;12&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-13"&gt;13&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-14"&gt;14&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-15"&gt;15&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-16"&gt;16&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-17"&gt;17&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-18"&gt;18&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-19"&gt;19&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-20"&gt;20&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-21"&gt;21&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-22"&gt;22&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-23"&gt;23&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-24"&gt;24&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-25"&gt;25&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-26"&gt;26&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-27"&gt;27&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-28"&gt;28&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-29"&gt;29&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-30"&gt;30&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-31"&gt;31&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-32"&gt;32&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-33"&gt;33&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-34"&gt;34&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-35"&gt;35&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-36"&gt;36&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-37"&gt;37&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-38"&gt;38&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-39"&gt;39&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-40"&gt;40&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-41"&gt;41&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-42"&gt;42&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-43"&gt;43&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-44"&gt;44&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-45"&gt;45&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-46"&gt;46&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-47"&gt;47&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-48"&gt;48&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-49"&gt;49&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-50"&gt;50&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-51"&gt;51&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-52"&gt;52&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-53"&gt;53&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-54"&gt;54&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-55"&gt;55&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-56"&gt;56&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-57"&gt;57&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-58"&gt;58&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-59"&gt;59&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-60"&gt;60&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-61"&gt;61&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-62"&gt;62&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-63"&gt;63&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-64"&gt;64&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-65"&gt;65&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-66"&gt;66&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-67"&gt;67&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-68"&gt;68&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-69"&gt;69&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-70"&gt;70&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-71"&gt;71&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-72"&gt;72&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-73"&gt;73&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-74"&gt;74&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-75"&gt;75&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-76"&gt;76&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-77"&gt;77&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-78"&gt;78&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-79"&gt;79&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-80"&gt;80&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-81"&gt;81&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-82"&gt;82&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-83"&gt;83&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-84"&gt;84&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-85"&gt;85&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-86"&gt;86&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_af94bcfffc2544c5aa9fd76737dcc33b-87"&gt;87&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;#-*-coding:utf-8-*-&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-2"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-3"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask.ext.restplus&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Api&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;Resource&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;fields&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-4"&gt;&lt;/a&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-5"&gt;&lt;/a&gt;&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-6"&gt;&lt;/a&gt;&lt;span class="n"&gt;api&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Api&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;version&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'1.0'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'TodoMVC API'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-7"&gt;&lt;/a&gt;        &lt;span class="n"&gt;description&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'A simple TodoMVC API'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-8"&gt;&lt;/a&gt;        &lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-9"&gt;&lt;/a&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-10"&gt;&lt;/a&gt;&lt;span class="n"&gt;ns&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;api&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;namespace&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'todos'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;description&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'TODO operations'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-11"&gt;&lt;/a&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-12"&gt;&lt;/a&gt;&lt;span class="n"&gt;todo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;api&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;model&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'Todo'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-13"&gt;&lt;/a&gt;    &lt;span class="s1"&gt;'id'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;fields&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Integer&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;readOnly&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;description&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'The task unique identifier'&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-14"&gt;&lt;/a&gt;    &lt;span class="s1"&gt;'task'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;fields&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;required&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;description&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'The task details'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-15"&gt;&lt;/a&gt;&lt;span class="p"&gt;})&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-16"&gt;&lt;/a&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-17"&gt;&lt;/a&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-18"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;TodoDAO&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;object&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-19"&gt;&lt;/a&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-20"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-21"&gt;&lt;/a&gt;        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;counter&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-22"&gt;&lt;/a&gt;        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;todos&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[]&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-23"&gt;&lt;/a&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-24"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;id&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-25"&gt;&lt;/a&gt;        &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;todo&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;todos&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-26"&gt;&lt;/a&gt;            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;todo&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'id'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="nb"&gt;id&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-27"&gt;&lt;/a&gt;                &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;todo&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-28"&gt;&lt;/a&gt;        &lt;span class="n"&gt;api&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;abort&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;404&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"Todo {} doesn't exist"&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;id&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-29"&gt;&lt;/a&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-30"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;create&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-31"&gt;&lt;/a&gt;        &lt;span class="n"&gt;todo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-32"&gt;&lt;/a&gt;        &lt;span class="n"&gt;todo&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'id'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;counter&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;counter&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-33"&gt;&lt;/a&gt;        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;todos&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;append&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;todo&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-34"&gt;&lt;/a&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;todo&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-35"&gt;&lt;/a&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-36"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;update&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-37"&gt;&lt;/a&gt;        &lt;span class="n"&gt;todo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-38"&gt;&lt;/a&gt;        &lt;span class="n"&gt;todo&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;update&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-39"&gt;&lt;/a&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;todo&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-40"&gt;&lt;/a&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-41"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;delete&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;id&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-42"&gt;&lt;/a&gt;        &lt;span class="n"&gt;todo&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-43"&gt;&lt;/a&gt;        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;todos&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;remove&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;todo&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-44"&gt;&lt;/a&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-45"&gt;&lt;/a&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-46"&gt;&lt;/a&gt;&lt;span class="n"&gt;DAO&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;TodoDAO&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-47"&gt;&lt;/a&gt;&lt;span class="n"&gt;DAO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;&lt;span class="s1"&gt;'task'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'Build an API'&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-48"&gt;&lt;/a&gt;&lt;span class="n"&gt;DAO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;&lt;span class="s1"&gt;'task'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s1"&gt;'你好'&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-49"&gt;&lt;/a&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-50"&gt;&lt;/a&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-51"&gt;&lt;/a&gt;&lt;span class="nd"&gt;@ns.route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'/'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-52"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;TodoList&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Resource&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-53"&gt;&lt;/a&gt;    &lt;span class="sd"&gt;'''Shows a list of all todos, and lets you POST to add new tasks'''&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-54"&gt;&lt;/a&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-55"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-56"&gt;&lt;/a&gt;        &lt;span class="sd"&gt;'''List all tasks'''&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-57"&gt;&lt;/a&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;DAO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;todos&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-58"&gt;&lt;/a&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-59"&gt;&lt;/a&gt;    &lt;span class="nd"&gt;@ns.expect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;todo&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-60"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;post&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-61"&gt;&lt;/a&gt;        &lt;span class="sd"&gt;'''Create a new task'''&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-62"&gt;&lt;/a&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;DAO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;api&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;payload&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="mi"&gt;201&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-63"&gt;&lt;/a&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-64"&gt;&lt;/a&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-65"&gt;&lt;/a&gt;&lt;span class="nd"&gt;@ns.route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'/&amp;lt;int:id&amp;gt;'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-66"&gt;&lt;/a&gt;&lt;span class="nd"&gt;@ns.response&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;404&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'Todo not found'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-67"&gt;&lt;/a&gt;&lt;span class="nd"&gt;@ns.param&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'id'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;'任务标识'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-68"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Todo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Resource&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-69"&gt;&lt;/a&gt;    &lt;span class="sd"&gt;'''Show a single todo item and lets you delete them'''&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-70"&gt;&lt;/a&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-71"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;id&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-72"&gt;&lt;/a&gt;        &lt;span class="sd"&gt;'''Fetch a given resource'''&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-73"&gt;&lt;/a&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;DAO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-74"&gt;&lt;/a&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-75"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;delete&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;id&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-76"&gt;&lt;/a&gt;        &lt;span class="sd"&gt;'''Delete a task given its identifier'''&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-77"&gt;&lt;/a&gt;        &lt;span class="n"&gt;DAO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;delete&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;id&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-78"&gt;&lt;/a&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s1"&gt;''&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;204&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-79"&gt;&lt;/a&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-80"&gt;&lt;/a&gt;    &lt;span class="nd"&gt;@ns.expect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;todo&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-81"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;put&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;id&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-82"&gt;&lt;/a&gt;        &lt;span class="sd"&gt;'''Update a task given its identifier'''&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-83"&gt;&lt;/a&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;DAO&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;update&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;id&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;api&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;payload&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-84"&gt;&lt;/a&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-85"&gt;&lt;/a&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-86"&gt;&lt;/a&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;'__main__'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a name="rest_code_af94bcfffc2544c5aa9fd76737dcc33b-87"&gt;&lt;/a&gt;    &lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;debug&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;host&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"0.0.0.0"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;8080&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;
-&lt;p&gt;运行结果：&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/flaskswageruifull.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/flaskswageruifull.PNG"&gt;
-&lt;p&gt;在这个例子中，我们实现了五种最基本的API：&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;查询全部todo&lt;/li&gt;
-&lt;li&gt;添加todo&lt;/li&gt;
-&lt;li&gt;查询某一个todo&lt;/li&gt;
-&lt;li&gt;删除某一个todo&lt;/li&gt;
-&lt;li&gt;更新某一个todo&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;而更复杂的项目都是基于这五种API展开的，从这里我们也可以看出RESTful Web Services的技术美感， &lt;strong&gt;simple is better&lt;/strong&gt; 。&lt;/p&gt;&lt;/div&gt;</description><category>flask-restplus</category><category>Python</category><category>swagger ui</category><guid>https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/</guid><pubDate>Tue, 24 Jan 2017 09:13:27 GMT</pubDate></item></channel></rss>
+&lt;p&gt;本方法是通过修改时区来“曲线救国”的。&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><category>Linux</category><guid>https://codinglonglong.github.io/posts/xiu-gai-dockerzhong-de-xi-tong-shi-jian/</guid><pubDate>Tue, 31 Jan 2017 07:36:34 GMT</pubDate></item></channel></rss>

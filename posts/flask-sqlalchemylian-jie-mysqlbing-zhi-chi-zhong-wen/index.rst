@@ -50,7 +50,7 @@
             [mysql]
             default-character-set = utf8
 
-            service mysqld stop
+            service mysql stop
             mysqld
 
 重启服务之后，可以看到：

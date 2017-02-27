@@ -23,11 +23,11 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/archive.html</loc>
-  <lastmod>2017-02-25T07:51:00Z</lastmod>
+  <lastmod>2017-02-27T18:10:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/</loc>
-  <lastmod>2017-02-25T07:51:00Z</lastmod>
+  <lastmod>2017-02-27T18:10:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/ajax/</loc>
@@ -72,6 +72,10 @@
  <url>
   <loc>https://codinglonglong.github.io/categories/cat_python/</loc>
   <lastmod>2017-01-31T09:05:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/cat_raspberry/</loc>
+  <lastmod>2017-02-27T18:10:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/cat_react/</loc>
@@ -154,8 +158,16 @@
   <lastmod>2017-01-31T09:05:00Z</lastmod>
  </url>
  <url>
+  <loc>https://codinglonglong.github.io/categories/nginx/</loc>
+  <lastmod>2017-02-27T18:10:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://codinglonglong.github.io/categories/python/</loc>
   <lastmod>2017-01-31T09:05:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/raspberry/</loc>
+  <lastmod>2017-02-27T18:10:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/react-native/</loc>
@@ -168,6 +180,10 @@
  <url>
   <loc>https://codinglonglong.github.io/categories/sqlalchemy/</loc>
   <lastmod>2017-02-01T05:31:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/supervisor/</loc>
+  <lastmod>2017-02-27T18:10:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/swagger-ui/</loc>
@@ -211,11 +227,11 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-4.html</loc>
-  <lastmod>2017-02-25T07:51:00Z</lastmod>
+  <lastmod>2017-02-27T18:10:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-5.html</loc>
-  <lastmod>2017-02-25T07:51:00Z</lastmod>
+  <lastmod>2017-02-27T18:10:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/android-studiolian-jie-droid4xdiao-shi-app/</loc>
@@ -270,12 +286,28 @@
   <lastmod>2017-01-31T09:05:00Z</lastmod>
  </url>
  <url>
+  <loc>https://codinglonglong.github.io/posts/pythonqi-dong-jian-yi-webfu-wu-qi/</loc>
+  <lastmod>2017-02-27T18:10:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://codinglonglong.github.io/posts/pythonzhuang-shi-qi-tan-suo/</loc>
   <lastmod>2017-02-01T11:43:00Z</lastmod>
  </url>
  <url>
+  <loc>https://codinglonglong.github.io/posts/raspberrypei-zhi-nginx/</loc>
+  <lastmod>2017-02-27T18:10:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/posts/raspberryshe-zhi-jing-tai-ip/</loc>
+  <lastmod>2017-02-27T18:10:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/</loc>
   <lastmod>2017-01-31T09:05:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/posts/supervisorshi-xian-pythonjiao-ben-zi-qi-dong/</loc>
+  <lastmod>2017-02-27T18:10:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/typeerror-decimal5-is-not-json-serializable/</loc>

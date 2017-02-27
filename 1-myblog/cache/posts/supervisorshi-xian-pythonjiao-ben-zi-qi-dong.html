@@ -1,0 +1,48 @@
+<p>经过若干小时的反复试验，终于在树莓派上成功部署了homebank[<a class="reference external" href="https://codinglonglong.github.io/posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/">https://codinglonglong.github.io/posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/</a>]，最困难的地方就是配置Supervisor，配置过程中出现了各种错误……</p>
+<p>1、安装supervisor。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo pip install supervisor
+</pre>
+</blockquote>
+<p>2、建立网站启动命令。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; cd /usr/local/bin
+&gt;&gt; sudo emacs homebank
+cd /home/pi/websites/homebank/
+python main.py
+&gt;&gt; sudo chmod 777 homebank
+</pre>
+</blockquote>
+<p>3、编辑配置文件。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; cd /home/pi/websites/
+&gt;&gt; echo_supervisord_conf &gt; supervisord.conf
+&gt;&gt; sudo supervisord -c supervisord.conf
+&gt;&gt; emacs supervisord.conf
+[inet_http_server]         ; inet (TCP) server disabled by default
+port=0.0.0.0:9999        ; (ip_address:port specifier, *:port for all iface)
+username=user              ; (default is no username (open server))
+password=123               ; (default is no password (open server))
+
+[program:homebank]
+command=python main.py
+directory=/home/pi/websites/homebank
+</pre>
+</blockquote>
+<p>4、启动服务。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo supervisorctl reload
+&gt;&gt; sudo supervisorctl status homebank
+homebank                         RUNNING   pid 2212, uptime 0:02:07
+</pre>
+</blockquote>
+<p>5、设置开机启动。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo systemctl enable supervisor.service
+</pre>
+</blockquote>
