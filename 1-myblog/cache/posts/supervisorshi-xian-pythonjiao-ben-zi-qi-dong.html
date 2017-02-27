@@ -5,17 +5,7 @@
 &gt;&gt; sudo pip install supervisor
 </pre>
 </blockquote>
-<p>2、建立网站启动命令。</p>
-<blockquote>
-<pre class="literal-block">
-&gt;&gt; cd /usr/local/bin
-&gt;&gt; sudo emacs homebank
-cd /home/pi/websites/homebank/
-python main.py
-&gt;&gt; sudo chmod 777 homebank
-</pre>
-</blockquote>
-<p>3、编辑配置文件。</p>
+<p>2、编辑配置文件。</p>
 <blockquote>
 <pre class="literal-block">
 &gt;&gt; cd /home/pi/websites/
@@ -32,7 +22,7 @@ command=python main.py
 directory=/home/pi/websites/homebank
 </pre>
 </blockquote>
-<p>4、启动服务。</p>
+<p>3、启动服务。</p>
 <blockquote>
 <pre class="literal-block">
 &gt;&gt; sudo supervisorctl reload
@@ -40,9 +30,23 @@ directory=/home/pi/websites/homebank
 homebank                         RUNNING   pid 2212, uptime 0:02:07
 </pre>
 </blockquote>
-<p>5、设置开机启动。</p>
+<p>4、设置开机启动。</p>
 <blockquote>
 <pre class="literal-block">
-&gt;&gt; sudo systemctl enable supervisor.service
+&gt;&gt; sudo emacs /etc/rc.local
+sudo /usr/local/bin/supervisord -c /home/pi/websites/supervisord.conf
+</pre>
+</blockquote>
+<p>5、设置sudo免密。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo visudo
+pi ALL = (ALL)NOPASSWD:ALL
+</pre>
+</blockquote>
+<p>6、重启。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo reboot
 </pre>
 </blockquote>

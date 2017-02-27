@@ -17,17 +17,7 @@
 
         >> sudo pip install supervisor
 
-2、建立网站启动命令。
-
-    ::
-
-        >> cd /usr/local/bin
-        >> sudo emacs homebank
-        cd /home/pi/websites/homebank/
-        python main.py
-        >> sudo chmod 777 homebank
-
-3、编辑配置文件。
+2、编辑配置文件。
 
     ::
 
@@ -45,7 +35,7 @@
         directory=/home/pi/websites/homebank
         
 
-4、启动服务。
+3、启动服务。
 
     ::
 
@@ -53,12 +43,25 @@
         >> sudo supervisorctl status homebank
         homebank                         RUNNING   pid 2212, uptime 0:02:07
 
-5、设置开机启动。
+4、设置开机启动。
 
     ::
 
-        >> sudo systemctl enable supervisor.service
+        >> sudo emacs /etc/rc.local
+        sudo /usr/local/bin/supervisord -c /home/pi/websites/supervisord.conf
 
+5、设置sudo免密。
+
+    ::
+
+        >> sudo visudo
+        pi ALL = (ALL)NOPASSWD:ALL
+
+6、重启。
+
+    :: 
+    
+        >> sudo reboot
 
 
 
