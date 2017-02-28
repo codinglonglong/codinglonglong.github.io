@@ -47,7 +47,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_python.xml</loc>
-  <lastmod>2017-02-27T18:44:00Z</lastmod>
+  <lastmod>2017-02-28T15:07:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_raspberry.xml</loc>
@@ -75,7 +75,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/docker.xml</loc>
-  <lastmod>2017-02-27T18:44:00Z</lastmod>
+  <lastmod>2017-02-28T15:07:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/droid4x.xml</loc>
@@ -139,7 +139,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/python.xml</loc>
-  <lastmod>2017-02-27T18:44:00Z</lastmod>
+  <lastmod>2017-02-28T15:07:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/raspberry.xml</loc>
@@ -174,6 +174,10 @@
   <lastmod>2017-02-27T18:44:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://codinglonglong.github.io/categories/webcrawler.xml</loc>
+  <lastmod>2017-02-28T15:07:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://codinglonglong.github.io/categories/win10.xml</loc>
   <lastmod>2017-02-27T18:44:00Z</lastmod>
  </sitemap>
@@ -191,10 +195,10 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/rss.xml</loc>
-  <lastmod>2017-02-27T18:44:00Z</lastmod>
+  <lastmod>2017-02-28T15:07:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/sitemap.xml</loc>
-  <lastmod>2017-02-27T18:44:00Z</lastmod>
+  <lastmod>2017-02-28T15:07:00Z</lastmod>
  </sitemap>
 </sitemapindex>

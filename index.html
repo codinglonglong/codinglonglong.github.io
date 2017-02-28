@@ -24,7 +24,7 @@ body{
     font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
 }
 </style>
-<link rel="prefetch" href="posts/supervisorshi-xian-pythonjiao-ben-zi-qi-dong/" type="text/html">
+<link rel="prefetch" href="posts/dockerpei-zhi-pythonpa-chong-huan-jing/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -80,7 +80,66 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/supervisorshi-xian-pythonjiao-ben-zi-qi-dong/" class="u-url">Supervisor实现Python脚本自启动</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerpei-zhi-pythonpa-chong-huan-jing/" class="u-url">Docker配置Python爬虫环境</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/dockerpei-zhi-pythonpa-chong-huan-jing/" rel="bookmark"><time class="published dt-published" datetime="2017-02-28T22:29:02+08:00" title="2017-02-28 22:29">2017-02-28 22:29</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>1、新建容器。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; docker run --name webcrawler -i -t -p 8080:8080 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
+</pre>
+</blockquote>
+<p>2、修改软件源。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; vi /etc/apt/sources.list
+:%s/archive.ubuntu/cn.archive.ubuntu/g
+:wq
+</pre>
+</blockquote>
+<p>3、更新软件。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; apt update
+</pre>
+</blockquote>
+<p>4、安装必要的软件和第三方库。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; apt install python
+&gt;&gt; apt install python-pip
+&gt;&gt; apt install python-dev
+&gt;&gt; pip install beautifulsoup4
+&gt;&gt; apt install libdecodeqr-dev libopencv-dev
+&gt;&gt; pip install pydecodeqr
+&gt;&gt; apt install libcurl4-openssl-dev
+&gt;&gt; pip install -U setuptools pip
+&gt;&gt; apt install libxml2-dev libxslt-dev
+&gt;&gt; pip install grab
+&gt;&gt; pip install robobrowser
+&gt;&gt; pip install pycurl
+&gt;&gt; pip install splinter
+&gt;&gt; pip install qrcode
+</pre>
+</blockquote>
+<p><strong>参考</strong></p>
+<p><a class="reference external" href="http://www.python-requests.org/en/master/">http://www.python-requests.org/en/master/</a></p>
+<p><a class="reference external" href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/index">https://www.crummy.com/software/BeautifulSoup/bs4/doc/index</a>.html#</p>
+<p><a class="reference external" href="https://github.com/six519/pydecodeqr">https://github.com/six519/pydecodeqr</a></p>
+<p><a class="reference external" href="https://github.com/lincolnloop/python-qrcode">https://github.com/lincolnloop/python-qrcode</a></p>
+<p><a class="reference external" href="http://pycurl.io/docs/latest/index.html">http://pycurl.io/docs/latest/index.html</a></p>
+<p><a class="reference external" href="http://docs.grablib.org/en/latest/">http://docs.grablib.org/en/latest/</a></p>
+<p><a class="reference external" href="http://robobrowser.readthedocs.io/en/latest/">http://robobrowser.readthedocs.io/en/latest/</a></p>
+<p><a class="reference external" href="http://splinter.readthedocs.io/en/latest/index.html">http://splinter.readthedocs.io/en/latest/index.html</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/supervisorshi-xian-pythonjiao-ben-zi-qi-dong/" class="u-url">Supervisor实现Python脚本自启动</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
@@ -340,38 +399,6 @@ gateway 192.168.1.1
 <li>基于vue-cookie的cookie操作；</li>
 <li>vuejs中多组件的通信。</li>
 </ol>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/" class="u-url">Flask-CORS解决Ajax跨域请求问题</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/" rel="bookmark"><time class="published dt-published" datetime="2017-02-08T12:59:14+08:00" title="2017-02-08 12:59">2017-02-08 12:59</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>在本地开发网站的过程中，js访问后端服务会出现</p>
-<pre class="code bash"><a name="rest_code_a0a5d404d287402e8ddc1654b09255fd-1"></a>已拦截跨源请求：同源策略禁止读取位于 http://192.168.99.100:8080/signup/ 的远程资源。（原因：CORS 头缺少 <span class="s1">'Access-Control-Allow-Origin'</span>）。
-</pre>
-<p>这时可以通过Flask-CORS解决问题。</p>
-<p>1、安装。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_7f58ecec28cc497e9aacf897195a7740-1"></a>pip install flask-cors
-</pre>
-</blockquote>
-<p>2、使用。</p>
-<blockquote>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/#rest_code_1c801a647c2a459787ffcaa5e61b9302-1">1</a>
-<a href="posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/#rest_code_1c801a647c2a459787ffcaa5e61b9302-2">2</a>
-<a href="posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/#rest_code_1c801a647c2a459787ffcaa5e61b9302-3">3</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_1c801a647c2a459787ffcaa5e61b9302-1"></a><span class="kn">from</span> <span class="nn">flask_cors</span> <span class="kn">import</span> <span class="n">CORS</span>
-<a name="rest_code_1c801a647c2a459787ffcaa5e61b9302-2"></a><span class="n">global_app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
-<a name="rest_code_1c801a647c2a459787ffcaa5e61b9302-3"></a><span class="n">CORS</span><span class="p">(</span><span class="n">global_app</span><span class="p">)</span>
-</pre></td>
-</tr></table>
-</blockquote>
 </div>
     </div>
     </article>
