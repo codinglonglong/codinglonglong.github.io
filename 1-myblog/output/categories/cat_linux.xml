@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Linux)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_linux.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Mon, 27 Feb 2017 18:44:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>修改Docker中的系统时间</title><link>https://codinglonglong.github.io/posts/xiu-gai-dockerzhong-de-xi-tong-shi-jian/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;默认在Docker中无法使用常见的命令修改系统时间，会显示没有权限，但测试程序往往需要修改系统时间，可以通过如下方法解决该问题：&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Linux)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_linux.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 03 Mar 2017 11:26:29 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>libdc1394 error: Failed to initialize libdc1394</title><link>https://codinglonglong.github.io/posts/libdc1394-error-failed-to-initialize-libdc1394/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;在使用pydecodeqr时，出现了如下错误信息：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+libdc1394 error: Failed to initialize libdc1394
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;可以通过如下方法解决：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo ln /dev/null /dev/raw1394
+&lt;/pre&gt;
+&lt;/blockquote&gt;&lt;/div&gt;</description><category>Linux</category><guid>https://codinglonglong.github.io/posts/libdc1394-error-failed-to-initialize-libdc1394/</guid><pubDate>Fri, 03 Mar 2017 11:22:25 GMT</pubDate></item><item><title>修改Docker中的系统时间</title><link>https://codinglonglong.github.io/posts/xiu-gai-dockerzhong-de-xi-tong-shi-jian/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;默认在Docker中无法使用常见的命令修改系统时间，会显示没有权限，但测试程序往往需要修改系统时间，可以通过如下方法解决该问题：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;pre class="code bash"&gt;&lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-1"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT
 &lt;a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-2"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone

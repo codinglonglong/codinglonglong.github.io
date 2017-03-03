@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Linux)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/linux.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 03 Mar 2017 11:17:34 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Raspberry设置静态IP</title><link>https://codinglonglong.github.io/posts/raspberryshe-zhi-jing-tai-ip/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、编辑网络配置文件。&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Linux)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/linux.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 03 Mar 2017 11:26:29 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>libdc1394 error: Failed to initialize libdc1394</title><link>https://codinglonglong.github.io/posts/libdc1394-error-failed-to-initialize-libdc1394/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;在使用pydecodeqr时，出现了如下错误信息：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+libdc1394 error: Failed to initialize libdc1394
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;可以通过如下方法解决：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo ln /dev/null /dev/raw1394
+&lt;/pre&gt;
+&lt;/blockquote&gt;&lt;/div&gt;</description><category>Linux</category><guid>https://codinglonglong.github.io/posts/libdc1394-error-failed-to-initialize-libdc1394/</guid><pubDate>Fri, 03 Mar 2017 11:22:25 GMT</pubDate></item><item><title>Raspberry设置静态IP</title><link>https://codinglonglong.github.io/posts/raspberryshe-zhi-jing-tai-ip/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、编辑网络配置文件。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;pre class="literal-block"&gt;
 &amp;gt;&amp;gt; sudo vi /etc/network/interfaces

@@ -1,0 +1,12 @@
+<p>在使用pydecodeqr时，出现了如下错误信息：</p>
+<blockquote>
+<pre class="literal-block">
+libdc1394 error: Failed to initialize libdc1394
+</pre>
+</blockquote>
+<p>可以通过如下方法解决：</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo ln /dev/null /dev/raw1394
+</pre>
+</blockquote>

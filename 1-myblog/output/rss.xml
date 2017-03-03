@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 03 Mar 2017 11:17:34 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Docker配置Python爬虫环境</title><link>https://codinglonglong.github.io/posts/dockerpei-zhi-pythonpa-chong-huan-jing/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、新建容器。&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 03 Mar 2017 11:26:29 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>libdc1394 error: Failed to initialize libdc1394</title><link>https://codinglonglong.github.io/posts/libdc1394-error-failed-to-initialize-libdc1394/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;在使用pydecodeqr时，出现了如下错误信息：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+libdc1394 error: Failed to initialize libdc1394
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;可以通过如下方法解决：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo ln /dev/null /dev/raw1394
+&lt;/pre&gt;
+&lt;/blockquote&gt;&lt;/div&gt;</description><category>Linux</category><guid>https://codinglonglong.github.io/posts/libdc1394-error-failed-to-initialize-libdc1394/</guid><pubDate>Fri, 03 Mar 2017 11:22:25 GMT</pubDate></item><item><title>Docker配置Python爬虫环境</title><link>https://codinglonglong.github.io/posts/dockerpei-zhi-pythonpa-chong-huan-jing/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、新建容器。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;pre class="literal-block"&gt;
 &amp;gt;&amp;gt; docker run --name webcrawler -i -t -p 8080:8080 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
@@ -591,7 +602,4 @@ dns-nameservers 114.114.114.114
 &lt;a name="rest_code_e28d2249ff434644bc5841d3a785e4da-8"&gt;&lt;/a&gt;    Account.account_date.desc&lt;span class="o"&gt;())&lt;/span&gt;.offset&lt;span class="o"&gt;((&lt;/span&gt;page-1&lt;span class="o"&gt;)&lt;/span&gt;*perpage&lt;span class="o"&gt;)&lt;/span&gt;.limit&lt;span class="o"&gt;(&lt;/span&gt;perpage&lt;span class="o"&gt;)&lt;/span&gt;.all&lt;span class="o"&gt;()&lt;/span&gt;
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;p&gt;在这个例子中，我们查询的是：&lt;/p&gt;
-&lt;p&gt;按日期降序排列，每页perpage条记录，返回第page页的账目数据，将账目数据中的账目类型编号替换成类型名称，将账目数据中的用户编号替换成用户邮箱。&lt;/p&gt;&lt;/div&gt;</description><category>flask</category><category>sqlalchemy</category><guid>https://codinglonglong.github.io/posts/yi-ge-zhi-de-can-kao-de-flask-sqlalchemycha-xun-an-li/</guid><pubDate>Wed, 01 Feb 2017 05:27:19 GMT</pubDate></item><item><title>TypeError: Decimal('5') is not JSON serializable</title><link>https://codinglonglong.github.io/posts/typeerror-decimal5-is-not-json-serializable/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;在使用Flask的jsonify时，返回Decimal对象会出现标题中的错误。通过如下方法可以解决：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_aa4003b0e3a549319875fc619489b778-1"&gt;&lt;/a&gt;pip install simplejson
-&lt;/pre&gt;&lt;/blockquote&gt;&lt;/div&gt;</description><category>flask</category><category>jsonify</category><guid>https://codinglonglong.github.io/posts/typeerror-decimal5-is-not-json-serializable/</guid><pubDate>Wed, 01 Feb 2017 05:18:57 GMT</pubDate></item></channel></rss>
+&lt;p&gt;按日期降序排列，每页perpage条记录，返回第page页的账目数据，将账目数据中的账目类型编号替换成类型名称，将账目数据中的用户编号替换成用户邮箱。&lt;/p&gt;&lt;/div&gt;</description><category>flask</category><category>sqlalchemy</category><guid>https://codinglonglong.github.io/posts/yi-ge-zhi-de-can-kao-de-flask-sqlalchemycha-xun-an-li/</guid><pubDate>Wed, 01 Feb 2017 05:27:19 GMT</pubDate></item></channel></rss>
