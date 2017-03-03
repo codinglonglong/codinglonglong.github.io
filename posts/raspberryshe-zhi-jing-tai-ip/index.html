@@ -36,11 +36,8 @@ iface eth0 inet static
 address 192.168.1.254
 netmask 255.255.255.0
 gateway 192.168.1.1
-&gt;&gt; sudo service networking restart
-
-
-2、重启系统和路由器。
-如果不行的话，试试把路由器也设">
+dns-nameservers 114.114.114.114
+&gt;&gt; sudo service networking resta">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="2017-02-27T19:45:07+08:00">
 <meta property="article:tag" content="Linux">
@@ -126,6 +123,7 @@ iface eth0 inet static
 address 192.168.1.254
 netmask 255.255.255.0
 gateway 192.168.1.1
+dns-nameservers 114.114.114.114
 &gt;&gt; sudo service networking restart
 </pre>
 </blockquote>

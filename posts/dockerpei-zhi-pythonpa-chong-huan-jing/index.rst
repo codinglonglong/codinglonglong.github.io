@@ -45,6 +45,7 @@
         >> pip install pycurl
         >> pip install splinter
         >> pip install qrcode
+        >> pip install requests
 
 **参考**
 
