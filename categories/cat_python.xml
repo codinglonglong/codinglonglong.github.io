@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Python)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_python.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 03 Mar 2017 11:17:34 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Docker配置Python爬虫环境</title><link>https://codinglonglong.github.io/posts/dockerpei-zhi-pythonpa-chong-huan-jing/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、新建容器。&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Python)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_python.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 03 Mar 2017 11:50:15 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Docker配置Python爬虫环境</title><link>https://codinglonglong.github.io/posts/dockerpei-zhi-pythonpa-chong-huan-jing/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、新建容器。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;pre class="literal-block"&gt;
 &amp;gt;&amp;gt; docker run --name webcrawler -i -t -p 8080:8080 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
@@ -30,7 +30,7 @@
 &amp;gt;&amp;gt; pip install pydecodeqr
 &amp;gt;&amp;gt; apt install libcurl4-openssl-dev
 &amp;gt;&amp;gt; pip install -U setuptools pip
-&amp;gt;&amp;gt; apt install libxml2-dev libxslt-dev
+&amp;gt;&amp;gt; apt install libxml2-dev libxslt-dev libssl-dev
 &amp;gt;&amp;gt; pip install grab
 &amp;gt;&amp;gt; pip install robobrowser
 &amp;gt;&amp;gt; pip install pycurl

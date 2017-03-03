@@ -39,7 +39,7 @@
         >> pip install pydecodeqr
         >> apt install libcurl4-openssl-dev
         >> pip install -U setuptools pip
-        >> apt install libxml2-dev libxslt-dev
+        >> apt install libxml2-dev libxslt-dev libssl-dev
         >> pip install grab
         >> pip install robobrowser
         >> pip install pycurl
