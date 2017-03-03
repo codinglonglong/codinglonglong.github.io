@@ -24,7 +24,7 @@ body{
     font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
 }
 </style>
-<link rel="prefetch" href="posts/tong-guo-privoxyshi-xian-httphe-httpsdai-li/" type="text/html">
+<link rel="prefetch" href="posts/tong-guo-poliposhi-xian-httphe-httpsdai-li/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -80,7 +80,43 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/tong-guo-privoxyshi-xian-httphe-httpsdai-li/" class="u-url">通过privoxy实现http和https代理</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/tong-guo-poliposhi-xian-httphe-httpsdai-li/" class="u-url">通过polipo实现http和https代理</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/tong-guo-poliposhi-xian-httphe-httpsdai-li/" rel="bookmark"><time class="published dt-published" datetime="2017-03-04T03:50:32+08:00" title="2017-03-04 03:50">2017-03-04 03:50</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>反复试验也没能让privoxy在树莓派上自启动，只好换一个软件来试验了……</p>
+<p>1、安装polipo。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo apt install polipo
+</pre>
+</blockquote>
+<p>2、编辑配置文件。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo emacs /etc/polipo/config
+proxyAddress="0.0.0.0"
+proxyPort=8228
+socksParentProxy="127.0.0.1:2080"
+socksProxyType=socks5
+</pre>
+</blockquote>
+<p>3、重启服务。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo service polipo restart
+&gt;&gt; sudo reboot
+</pre>
+</blockquote>
+<p>结果显示，polipo在树莓派上不需要任何进一步的配置就可以自动启动服务。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/tong-guo-privoxyshi-xian-httphe-httpsdai-li/" class="u-url">通过privoxy实现http和https代理</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
@@ -384,24 +420,6 @@ server {
 &gt;&gt; sudo service nginx restart
 </pre>
 </blockquote>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pythonqi-dong-jian-yi-webfu-wu-qi/" class="u-url">Python启动简易Web服务器</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/pythonqi-dong-jian-yi-webfu-wu-qi/" rel="bookmark"><time class="published dt-published" datetime="2017-02-27T21:09:32+08:00" title="2017-02-27 21:09">2017-02-27 21:09</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>1、切换到Web服务器根路径对应的本地目录，执行以下命令。</p>
-<blockquote>
-<pre class="literal-block">
-&gt;&gt; python -m SimpleHTTPServer 8080
-</pre>
-</blockquote>
-<p>2、浏览器访问 <a class="reference external" href="http://localhost:8080">http://localhost:8080</a> 。</p>
 </div>
     </div>
     </article>

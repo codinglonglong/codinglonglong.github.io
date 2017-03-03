@@ -43,7 +43,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_linux.xml</loc>
-  <lastmod>2017-03-03T12:23:00Z</lastmod>
+  <lastmod>2017-03-03T19:55:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_python.xml</loc>
@@ -138,12 +138,16 @@
   <lastmod>2017-02-27T18:44:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://codinglonglong.github.io/categories/polipo.xml</loc>
+  <lastmod>2017-03-03T19:55:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://codinglonglong.github.io/categories/privoxy.xml</loc>
   <lastmod>2017-03-03T12:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/proxy.xml</loc>
-  <lastmod>2017-03-03T12:23:00Z</lastmod>
+  <lastmod>2017-03-03T19:55:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/python.xml</loc>
@@ -203,10 +207,10 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/rss.xml</loc>
-  <lastmod>2017-03-03T12:23:00Z</lastmod>
+  <lastmod>2017-03-03T19:55:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/sitemap.xml</loc>
-  <lastmod>2017-03-03T12:23:00Z</lastmod>
+  <lastmod>2017-03-03T19:55:00Z</lastmod>
  </sitemap>
 </sitemapindex>

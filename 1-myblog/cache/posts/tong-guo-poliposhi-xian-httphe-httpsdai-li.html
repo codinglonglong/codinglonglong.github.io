@@ -1,0 +1,25 @@
+<p>反复试验也没能让privoxy在树莓派上自启动，只好换一个软件来试验了……</p>
+<p>1、安装polipo。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo apt install polipo
+</pre>
+</blockquote>
+<p>2、编辑配置文件。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo emacs /etc/polipo/config
+proxyAddress=&quot;0.0.0.0&quot;
+proxyPort=8228
+socksParentProxy=&quot;127.0.0.1:2080&quot;
+socksProxyType=socks5
+</pre>
+</blockquote>
+<p>3、重启服务。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo service polipo restart
+&gt;&gt; sudo reboot
+</pre>
+</blockquote>
+<p>结果显示，polipo在树莓派上不需要任何进一步的配置就可以自动启动服务。</p>
