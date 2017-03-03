@@ -24,7 +24,7 @@ body{
     font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
 }
 </style>
-<link rel="prefetch" href="posts/libdc1394-error-failed-to-initialize-libdc1394/" type="text/html">
+<link rel="prefetch" href="posts/tong-guo-privoxyshi-xian-httphe-httpsdai-li/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -80,7 +80,40 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/libdc1394-error-failed-to-initialize-libdc1394/" class="u-url">libdc1394 error: Failed to initialize libdc1394</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/tong-guo-privoxyshi-xian-httphe-httpsdai-li/" class="u-url">通过privoxy实现http和https代理</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/tong-guo-privoxyshi-xian-httphe-httpsdai-li/" rel="bookmark"><time class="published dt-published" datetime="2017-03-03T20:14:40+08:00" title="2017-03-03 20:14">2017-03-03 20:14</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>有的时候为了完成某些测试，我们需要用到代理来更换IP地址，以下是可选的一种方法。</p>
+<p>1、安装privoxy。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo apt install privoxy
+</pre>
+</blockquote>
+<p>2、编辑配置文件。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo emacs /etc/privoxy/config
+listen-address localhost:8118
+forward-socks5 / 127.0.0.1:1080 .
+</pre>
+</blockquote>
+<p>3、重启服务。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo service privoxy restart
+&gt;&gt; sudo reboot
+</pre>
+</blockquote>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/libdc1394-error-failed-to-initialize-libdc1394/" class="u-url">libdc1394 error: Failed to initialize libdc1394</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
@@ -369,31 +402,6 @@ server {
 </pre>
 </blockquote>
 <p>2、浏览器访问 <a class="reference external" href="http://localhost:8080">http://localhost:8080</a> 。</p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/raspberryshe-zhi-jing-tai-ip/" class="u-url">Raspberry设置静态IP</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/raspberryshe-zhi-jing-tai-ip/" rel="bookmark"><time class="published dt-published" datetime="2017-02-27T19:45:07+08:00" title="2017-02-27 19:45">2017-02-27 19:45</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>1、编辑网络配置文件。</p>
-<blockquote>
-<pre class="literal-block">
-&gt;&gt; sudo vi /etc/network/interfaces
-iface eth0 inet static
-address 192.168.1.254
-netmask 255.255.255.0
-gateway 192.168.1.1
-dns-nameservers 114.114.114.114
-&gt;&gt; sudo service networking restart
-</pre>
-</blockquote>
-<p>2、重启系统和路由器。</p>
-<p><strong>如果不行的话，试试把路由器也设置成静态地址绑定……</strong></p>
 </div>
     </div>
     </article>

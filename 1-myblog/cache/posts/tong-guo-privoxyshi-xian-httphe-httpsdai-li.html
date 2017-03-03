@@ -1,0 +1,22 @@
+<p>有的时候为了完成某些测试，我们需要用到代理来更换IP地址，以下是可选的一种方法。</p>
+<p>1、安装privoxy。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo apt install privoxy
+</pre>
+</blockquote>
+<p>2、编辑配置文件。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo emacs /etc/privoxy/config
+listen-address localhost:8118
+forward-socks5 / 127.0.0.1:1080 .
+</pre>
+</blockquote>
+<p>3、重启服务。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo service privoxy restart
+&gt;&gt; sudo reboot
+</pre>
+</blockquote>

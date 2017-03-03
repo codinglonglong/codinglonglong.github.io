@@ -43,11 +43,11 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_linux.xml</loc>
-  <lastmod>2017-03-03T11:26:00Z</lastmod>
+  <lastmod>2017-03-03T12:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_python.xml</loc>
-  <lastmod>2017-03-03T11:17:00Z</lastmod>
+  <lastmod>2017-03-03T11:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_raspberry.xml</loc>
@@ -75,7 +75,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/docker.xml</loc>
-  <lastmod>2017-03-03T11:17:00Z</lastmod>
+  <lastmod>2017-03-03T11:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/droid4x.xml</loc>
@@ -138,8 +138,16 @@
   <lastmod>2017-02-27T18:44:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://codinglonglong.github.io/categories/privoxy.xml</loc>
+  <lastmod>2017-03-03T12:23:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://codinglonglong.github.io/categories/proxy.xml</loc>
+  <lastmod>2017-03-03T12:23:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://codinglonglong.github.io/categories/python.xml</loc>
-  <lastmod>2017-03-03T11:17:00Z</lastmod>
+  <lastmod>2017-03-03T11:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/raspberry.xml</loc>
@@ -175,7 +183,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/webcrawler.xml</loc>
-  <lastmod>2017-03-03T11:17:00Z</lastmod>
+  <lastmod>2017-03-03T11:50:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/win10.xml</loc>
@@ -195,10 +203,10 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/rss.xml</loc>
-  <lastmod>2017-03-03T11:26:00Z</lastmod>
+  <lastmod>2017-03-03T12:23:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/sitemap.xml</loc>
-  <lastmod>2017-03-03T11:26:00Z</lastmod>
+  <lastmod>2017-03-03T12:23:00Z</lastmod>
  </sitemap>
 </sitemapindex>

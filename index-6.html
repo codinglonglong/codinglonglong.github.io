@@ -80,7 +80,32 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/" class="u-url">小家手帐网页版基本完成</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/raspberryshe-zhi-jing-tai-ip/" class="u-url">Raspberry设置静态IP</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/raspberryshe-zhi-jing-tai-ip/" rel="bookmark"><time class="published dt-published" datetime="2017-02-27T19:45:07+08:00" title="2017-02-27 19:45">2017-02-27 19:45</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>1、编辑网络配置文件。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo vi /etc/network/interfaces
+iface eth0 inet static
+address 192.168.1.254
+netmask 255.255.255.0
+gateway 192.168.1.1
+dns-nameservers 114.114.114.114
+&gt;&gt; sudo service networking restart
+</pre>
+</blockquote>
+<p>2、重启系统和路由器。</p>
+<p><strong>如果不行的话，试试把路由器也设置成静态地址绑定……</strong></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/" class="u-url">小家手帐网页版基本完成</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙

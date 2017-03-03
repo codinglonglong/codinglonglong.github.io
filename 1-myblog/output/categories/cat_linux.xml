@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Linux)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_linux.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 03 Mar 2017 11:26:29 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>libdc1394 error: Failed to initialize libdc1394</title><link>https://codinglonglong.github.io/posts/libdc1394-error-failed-to-initialize-libdc1394/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;在使用pydecodeqr时，出现了如下错误信息：&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Linux)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_linux.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 03 Mar 2017 12:23:06 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>通过privoxy实现http和https代理</title><link>https://codinglonglong.github.io/posts/tong-guo-privoxyshi-xian-httphe-httpsdai-li/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;有的时候为了完成某些测试，我们需要用到代理来更换IP地址，以下是可选的一种方法。&lt;/p&gt;
+&lt;p&gt;1、安装privoxy。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo apt install privoxy
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2、编辑配置文件。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo emacs /etc/privoxy/config
+listen-address localhost:8118
+forward-socks5 / 127.0.0.1:1080 .
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;3、重启服务。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo service privoxy restart
+&amp;gt;&amp;gt; sudo reboot
+&lt;/pre&gt;
+&lt;/blockquote&gt;&lt;/div&gt;</description><category>privoxy</category><category>proxy</category><guid>https://codinglonglong.github.io/posts/tong-guo-privoxyshi-xian-httphe-httpsdai-li/</guid><pubDate>Fri, 03 Mar 2017 12:14:40 GMT</pubDate></item><item><title>libdc1394 error: Failed to initialize libdc1394</title><link>https://codinglonglong.github.io/posts/libdc1394-error-failed-to-initialize-libdc1394/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;在使用pydecodeqr时，出现了如下错误信息：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;pre class="literal-block"&gt;
 libdc1394 error: Failed to initialize libdc1394
