@@ -80,7 +80,70 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/raspberrypei-zhi-nginx/" class="u-url">Raspberry配置nginx</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/supervisorshi-xian-pythonjiao-ben-zi-qi-dong/" class="u-url">Supervisor实现Python脚本自启动</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/supervisorshi-xian-pythonjiao-ben-zi-qi-dong/" rel="bookmark"><time class="published dt-published" datetime="2017-02-28T02:06:10+08:00" title="2017-02-28 02:06">2017-02-28 02:06</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>经过若干小时的反复试验，终于在树莓派上成功部署了homebank[<a class="reference external" href="https://codinglonglong.github.io/posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/">https://codinglonglong.github.io/posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/</a>]，最困难的地方就是配置Supervisor，配置过程中出现了各种错误……</p>
+<p>1、安装supervisor。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo pip install supervisor
+</pre>
+</blockquote>
+<p>2、编辑配置文件。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; cd /home/pi/websites/
+&gt;&gt; echo_supervisord_conf &gt; supervisord.conf
+&gt;&gt; sudo supervisord -c supervisord.conf
+&gt;&gt; emacs supervisord.conf
+[inet_http_server]         ; inet (TCP) server disabled by default
+port=0.0.0.0:9999        ; (ip_address:port specifier, *:port for all iface)
+username=user              ; (default is no username (open server))
+password=123               ; (default is no password (open server))
+
+[program:homebank]
+command=python main.py
+directory=/home/pi/websites/homebank
+</pre>
+</blockquote>
+<p>3、启动服务。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo supervisorctl reload
+&gt;&gt; sudo supervisorctl status homebank
+homebank                         RUNNING   pid 2212, uptime 0:02:07
+</pre>
+</blockquote>
+<p>4、设置开机启动。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo emacs /etc/rc.local
+sudo /usr/local/bin/supervisord -c /home/pi/websites/supervisord.conf
+</pre>
+</blockquote>
+<p>5、设置sudo免密。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo visudo
+pi ALL = (ALL)NOPASSWD:ALL
+</pre>
+</blockquote>
+<p>6、重启。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo reboot
+</pre>
+</blockquote>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/raspberrypei-zhi-nginx/" class="u-url">Raspberry配置nginx</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙

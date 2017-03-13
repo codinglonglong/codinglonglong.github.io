@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about weex)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/weex.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Mon, 13 Mar 2017 14:55:06 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Docker配置weex开发环境</title><link>https://codinglonglong.github.io/posts/dockerpei-zhi-weexkai-fa-huan-jing/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、安装weex。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; npm install -g cnpm --registry=https://registry.npm.taobao.org
+&amp;gt;&amp;gt; cnpm install -g weex-toolkit
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2、初始化weex项目。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; weex init testapp
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;3、构建并测试项目。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; cd testapp
+&amp;gt;&amp;gt; npm install
+&amp;gt;&amp;gt; npm run dev
+&amp;gt;&amp;gt; npm run serve
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;4、主系统访问 &lt;a class="reference external" href="http://192.168.99.100:8080/"&gt;http://192.168.99.100:8080/&lt;/a&gt; 即可，这里只是实现浏览器预览，后面我们再进一步研究打包apk。&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><category>vuejs</category><category>weex</category><guid>https://codinglonglong.github.io/posts/dockerpei-zhi-weexkai-fa-huan-jing/</guid><pubDate>Mon, 13 Mar 2017 14:30:01 GMT</pubDate></item></channel></rss>
