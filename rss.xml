@@ -1,5 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 03 Mar 2017 19:55:59 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>通过polipo实现http和https代理</title><link>https://codinglonglong.github.io/posts/tong-guo-poliposhi-xian-httphe-httpsdai-li/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;反复试验也没能让privoxy在树莓派上自启动，只好换一个软件来试验了……&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Mon, 13 Mar 2017 13:01:26 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Docker配置vuejs开发环境</title><link>https://codinglonglong.github.io/posts/dockerpei-zhi-vuejskai-fa-huan-jing/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、安装wget，下载最新版nodejs。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; apt udpate
+&amp;gt;&amp;gt; apt install wget
+&amp;gt;&amp;gt; cd ~
+&amp;gt;&amp;gt; wget https://nodejs.org/dist/v7.7.2/node-v7.7.2-linux-x64.tar.xz
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2、安装nodejs。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; apt install xz-utils
+&amp;gt;&amp;gt; xz -d node-v7.7.2-linux-x64.tar.xz
+&amp;gt;&amp;gt; tar -xvf node-v7.7.2-linux-x64.tar
+&amp;gt;&amp;gt; apt install emacs
+&amp;gt;&amp;gt; emacs ~/.bashrc
+export PATH=$PATH:/root/node-v7.7.2-linux-x64/bin/
+&amp;gt;&amp;gt; source ~/.bashrc
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;3、安装vue和vue-cli。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; npm install --global vue vue-cli
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;4、创建新项目。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; cd ~
+&amp;gt;&amp;gt; mkdir development
+&amp;gt;&amp;gt; cd development
+&amp;gt;&amp;gt; apt install git
+&amp;gt;&amp;gt; vue init webpack test
+&amp;gt;&amp;gt; cd test
+&amp;gt;&amp;gt; npm install
+&amp;gt;&amp;gt; npm run dev
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;5、主系统访问 &lt;a class="reference external" href="http://192.168.99.100:8080"&gt;http://192.168.99.100:8080&lt;/a&gt; 即可。&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><category>vuejs</category><guid>https://codinglonglong.github.io/posts/dockerpei-zhi-vuejskai-fa-huan-jing/</guid><pubDate>Mon, 13 Mar 2017 12:36:24 GMT</pubDate></item><item><title>通过polipo实现http和https代理</title><link>https://codinglonglong.github.io/posts/tong-guo-poliposhi-xian-httphe-httpsdai-li/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;反复试验也没能让privoxy在树莓派上自启动，只好换一个软件来试验了……&lt;/p&gt;
 &lt;p&gt;1、安装polipo。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;pre class="literal-block"&gt;
@@ -306,18 +346,4 @@ dns-nameservers 114.114.114.114
 &lt;li&gt;基于element-ui的页面交互；&lt;/li&gt;
 &lt;li&gt;基于vue-cookie的cookie操作；&lt;/li&gt;
 &lt;li&gt;vuejs中多组件的通信。&lt;/li&gt;
-&lt;/ol&gt;&lt;/div&gt;</description><category>Docker</category><category>flask</category><category>flask-restplus</category><category>javascript</category><category>Python</category><category>vuejs</category><category>个人作品</category><guid>https://codinglonglong.github.io/posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/</guid><pubDate>Sat, 25 Feb 2017 07:34:06 GMT</pubDate></item><item><title>Flask-CORS解决Ajax跨域请求问题</title><link>https://codinglonglong.github.io/posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;在本地开发网站的过程中，js访问后端服务会出现&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_a0a5d404d287402e8ddc1654b09255fd-1"&gt;&lt;/a&gt;已拦截跨源请求：同源策略禁止读取位于 http://192.168.99.100:8080/signup/ 的远程资源。（原因：CORS 头缺少 &lt;span class="s1"&gt;'Access-Control-Allow-Origin'&lt;/span&gt;）。
-&lt;/pre&gt;&lt;p&gt;这时可以通过Flask-CORS解决问题。&lt;/p&gt;
-&lt;p&gt;1、安装。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_7f58ecec28cc497e9aacf897195a7740-1"&gt;&lt;/a&gt;pip install flask-cors
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;2、使用。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/#rest_code_1c801a647c2a459787ffcaa5e61b9302-1"&gt;1&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/#rest_code_1c801a647c2a459787ffcaa5e61b9302-2"&gt;2&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/#rest_code_1c801a647c2a459787ffcaa5e61b9302-3"&gt;3&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_1c801a647c2a459787ffcaa5e61b9302-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask_cors&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;CORS&lt;/span&gt;
-&lt;a name="rest_code_1c801a647c2a459787ffcaa5e61b9302-2"&gt;&lt;/a&gt;&lt;span class="n"&gt;global_app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_1c801a647c2a459787ffcaa5e61b9302-3"&gt;&lt;/a&gt;&lt;span class="n"&gt;CORS&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;global_app&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;/div&gt;</description><category>Ajax</category><category>Flask-CORS</category><guid>https://codinglonglong.github.io/posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/</guid><pubDate>Wed, 08 Feb 2017 04:59:14 GMT</pubDate></item></channel></rss>
+&lt;/ol&gt;&lt;/div&gt;</description><category>Docker</category><category>flask</category><category>flask-restplus</category><category>javascript</category><category>Python</category><category>vuejs</category><category>个人作品</category><guid>https://codinglonglong.github.io/posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/</guid><pubDate>Sat, 25 Feb 2017 07:34:06 GMT</pubDate></item></channel></rss>

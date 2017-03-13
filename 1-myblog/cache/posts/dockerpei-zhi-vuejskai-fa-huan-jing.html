@@ -1,0 +1,41 @@
+<p>1、安装wget，下载最新版nodejs。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; apt udpate
+&gt;&gt; apt install wget
+&gt;&gt; cd ~
+&gt;&gt; wget https://nodejs.org/dist/v7.7.2/node-v7.7.2-linux-x64.tar.xz
+</pre>
+</blockquote>
+<p>2、安装nodejs。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; apt install xz-utils
+&gt;&gt; xz -d node-v7.7.2-linux-x64.tar.xz
+&gt;&gt; tar -xvf node-v7.7.2-linux-x64.tar
+&gt;&gt; apt install emacs
+&gt;&gt; emacs ~/.bashrc
+export PATH=$PATH:/root/node-v7.7.2-linux-x64/bin/
+&gt;&gt; source ~/.bashrc
+</pre>
+</blockquote>
+<p>3、安装vue和vue-cli。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; npm install --global vue vue-cli
+</pre>
+</blockquote>
+<p>4、创建新项目。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; cd ~
+&gt;&gt; mkdir development
+&gt;&gt; cd development
+&gt;&gt; apt install git
+&gt;&gt; vue init webpack test
+&gt;&gt; cd test
+&gt;&gt; npm install
+&gt;&gt; npm run dev
+</pre>
+</blockquote>
+<p>5、主系统访问 <a class="reference external" href="http://192.168.99.100:8080">http://192.168.99.100:8080</a> 即可。</p>
