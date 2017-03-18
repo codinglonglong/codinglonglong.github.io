@@ -138,6 +138,7 @@ NAVIGATION_LINKS = {
         ("/categories/", "标签"),
         ("/posts/you-qing-lian-jie/", "友情链接"),
         ("/posts/hui-dao-zui-chu-de-qi-dian/", "回到最初的起点"),
+        ("https://github.com/codinglonglong/", "Github"),
         ("/rss.xml", "RSS 源"),
     ),
 }
