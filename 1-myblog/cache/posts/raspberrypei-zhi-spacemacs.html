@@ -1,0 +1,230 @@
+<p>1、安装Emacs。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; wget http://mirrors.ustc.edu.cn/gnu/emacs/emacs-25.1.tar.gz
+&gt;&gt; tar zxvf emacs-25.1.tar.gz
+&gt;&gt; cd emacs-25.1
+&gt;&gt; sudo apt install libxpm-dev libgif-dev
+&gt;&gt; sudo apt install libtinfo-dev
+&gt;&gt; ./configure
+&gt;&gt; sudo make
+&gt;&gt; sudo make install
+</pre>
+</blockquote>
+<p>2、安装Spacemacs。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+&gt;&gt; vi .emacs.d/core/core-configuration-layer.el
+    (defvar configuration-layer--elpa-archives
+    '((&quot;melpa&quot; . &quot;https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/&quot;)
+        (&quot;org&quot;   . &quot;https://mirrors.tuna.tsinghua.edu.cn/elpa/org/&quot;)
+        (&quot;gnu&quot;   . &quot;https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/&quot;)
+        (&quot;marmalade&quot; . &quot;https://mirrors.tuna.tsinghua.edu.cn/elpa/marmalade/&quot;))
+    &quot;List of ELPA archives required by Spacemacs.&quot;)
+&gt;&gt; emacs
+</pre>
+</blockquote>
+<p>3、配置Spacemacs。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo apt install python-jedi python3-jedi python-virtualenv python-autopep8
+&gt;&gt; emacs
+&gt;&gt; M-x configuration-layer/create-layer
+    myconf
+&gt;&gt; C-x C-c
+&gt;&gt; emacs ~/.emacs.d/private/myconf/config.el
+    ;; 切换输入法
+    (global-unset-key (kbd &quot;C-SPC&quot;))
+    (global-set-key (kbd &quot;M-SPC&quot;) 'set-mark-command)
+
+    ;; 中文字体
+    (set-fontset-font &quot;fontset-default&quot; 'unicode '(&quot;WenQuanYi Zen Hei&quot;))
+
+    ;; Code Review
+    (defun add-code-review-note ()
+    &quot;Add note for current file and line number&quot;
+    (interactive)
+    (let ((file-name (buffer-file-name))
+            (file-line (line-number-at-pos)))
+        (switch-to-buffer-other-window (get-buffer-create &quot;NOTES&quot;))
+        (goto-char (point-min))
+        (when (not (search-forward &quot;-*- mode:compilation-shell-minor&quot;
+                                    nil t))
+        (compilation-shell-minor-mode 1)
+        (insert &quot;-*- mode:compilation-shell-minor -*-\n\n&quot;))
+        (goto-char (point-max))
+        (if (/= (current-column) 0)
+            (newline))
+        (insert file-name &quot;:&quot; (number-to-string file-line) &quot;: &quot;)))
+
+    (global-set-key (kbd &quot;C-c r&quot;) 'add-code-review-note)
+
+    ;; Copy region or whole line
+    (global-set-key &quot;\M-w&quot;
+    (lambda ()
+    (interactive)
+    (if mark-active
+        (kill-ring-save (region-beginning)
+        (region-end))
+        (progn
+        (kill-ring-save (line-beginning-position)
+        (line-end-position))
+        (message &quot;copied line&quot;)))))
+
+
+    ;; Kill region or whole line
+    (global-set-key &quot;\C-w&quot;
+    (lambda ()
+    (interactive)
+    (if mark-active
+        (kill-region (region-beginning)
+    (region-end))
+        (progn
+        (kill-region (line-beginning-position)
+    (line-end-position))
+        (message &quot;killed line&quot;)))))
+
+    ;; 切换最大化
+    (global-set-key [f12] 'my-maximized)
+    (defun my-maximized ()
+    (interactive)
+    (x-send-client-message nil 0 nil &quot;_NET_WM_STATE&quot; 32
+                            '(2 &quot;_NET_WM_STATE_MAXIMIZED_HORZ&quot; 0))
+    (x-send-client-message nil 0 nil &quot;_NET_WM_STATE&quot; 32
+                            '(2 &quot;_NET_WM_STATE_MAXIMIZED_VERT&quot; 0)))
+
+    ;; 切换半透明
+    (global-set-key [f8] 'loop-alpha)
+    (setq alpha-list '((100 100) (85 85) (35 35)))
+    (defun loop-alpha ()
+    (interactive)
+    (let ((h (car alpha-list)))
+        ((lambda (a ab)
+        (set-frame-parameter (selected-frame) 'alpha (list a ab))
+        (add-to-list 'default-frame-alist (cons 'alpha (list a ab)))
+        ) (car h) (car (cdr h)))
+        (setq alpha-list (cdr (append alpha-list (list h))))
+        )
+    )
+    (loop-alpha)
+
+    ;; 优化注释
+    (defun qiang-comment-dwim-line (&amp;optional arg)
+    (interactive &quot;*P&quot;)
+    (comment-normalize-vars)
+    (if (and (not (region-active-p)) (not (looking-at &quot;[ \t]*$&quot;)))
+        (comment-or-uncomment-region (line-beginning-position)
+        (line-end-position))
+        (comment-dwim arg)))
+    (global-set-key &quot;\M-;&quot; 'qiang-comment-dwim-line)
+
+    ;; Y or N
+    (fset 'yes-or-no-p 'y-or-n-p)
+
+    ;; Neotree
+    (global-set-key [f9] 'neotree-toggle)
+
+    ;; Line number
+    (global-linum-mode 1)
+
+    ;; Python mode
+    (add-to-list 'auto-mode-alist '(&quot;\\.py?\\'&quot; . python-mode))
+
+    ;; autopep8
+    (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
+
+    ;; Fold
+    (add-hook 'python-mode-hook 'hideshowvis-enable)
+
+    ;; Mic-paren
+    (add-hook 'python-mode-hook 'paren-activate)
+
+    ;; Jedi
+    (autoload 'jedi:setup &quot;jedi&quot; nil t)
+    (add-hook 'python-mode-hook 'jedi:setup)
+    (setq jedi:setup-keys t)
+    (setq jedi:complete-on-dot t)
+
+    ;; Python mode
+    (setq py-python-command &quot;ipython3&quot;)
+    (global-set-key [f5]  'run-python)
+    (add-hook 'python-mode-hook 'yas-global-mode)
+
+    ;; Web mode
+    (add-to-list 'auto-mode-alist '(&quot;\\.tpl\\'&quot; . html-mode))
+    (add-to-list 'auto-mode-alist '(&quot;\\.html\\'&quot; . html-mode))
+    (add-to-list 'auto-mode-alist '(&quot;\\.xml\\'&quot; . html-mode))
+    (add-to-list 'auto-mode-alist '(&quot;\\.css\\'&quot; . css-mode))
+    (add-to-list 'auto-mode-alist '(&quot;\\.js\\'&quot; . js-mode))
+    (add-hook 'html-mode-hook 'web-mode)
+    (add-hook 'css-mode-hook 'web-mode)
+    (add-hook 'js-mode-hook 'web-mode)
+    (add-hook 'web-mode-hook 'global-auto-complete-mode)
+    (add-hook 'web-mode-hook 'rainbow-mode)
+    (add-hook 'web-mode-hook 'emmet-mode)
+    (add-hook 'web-mode-hook 'hideshowvis-enable)
+
+
+    ;; Auto complete
+    (add-hook 'c-mode-hook 'auto-complete-mode)
+    (add-hook 'c-mode-hook 'yas-global-mode)
+    (setq ac-quick-help-prefer-pos-tip t)
+    (setq ac-use-quick-help t)
+    (setq ac-quick-help-delay 1.0)
+    (setq ac-fuzzy-enable t)
+    (setq ac-auto-start 1)
+    (setq ac-quick-help-delay 0.5)
+
+    ;; Yas
+    (global-set-key (kbd &quot;C-c C-x 3&quot;) 'yas/expand)
+    (global-set-key (kbd &quot;C-c C-x 4&quot;) 'yas/next-field)
+&gt;&gt; C-x C-s
+&gt;&gt; C-x C-c
+&gt;&gt; emacs ~/.spacemacs
+    dotspacemacs-configuration-layers
+    '(
+        python
+        ;; ----------------------------------------------------------------
+        ;; Example of useful layers you may want to use right away.
+        ;; Uncomment some layer names and press &lt;SPC f e R&gt; (Vim style) or
+        ;; &lt;M-m f e R&gt; (Emacs style) to install them.
+        ;; ----------------------------------------------------------------
+        helm
+        auto-completion
+        better-defaults
+        emacs-lisp
+        ;; git
+        markdown
+        org
+        myconf
+        ;; (shell :variables
+        ;;        shell-default-height 30
+        ;;        shell-default-position 'bottom)
+        ;; spell-checking
+        ;; syntax-checking
+        ;; version-control
+        )
+
+    dotspacemacs-additional-packages '(
+                                minimap
+                                py-autopep8
+                                jedi
+                                mic-paren
+                                hideshowvis
+                                emmet-mode
+                                python
+                                python-mode
+                                web-mode
+                                auto-complete
+                                pos-tip
+                                fuzzy
+                                popup
+                                rainbow-mode
+                                yasnippet)
+&gt;&gt; C-x C-s
+&gt;&gt; C-x C-c
+&gt;&gt; emacs
+&gt;&gt; M-x jedi:install-server
+</pre>
+</blockquote>

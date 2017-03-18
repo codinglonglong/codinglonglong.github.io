@@ -27,7 +27,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_emacs.xml</loc>
-  <lastmod>2017-02-27T18:44:00Z</lastmod>
+  <lastmod>2017-03-18T08:44:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_ge-ren-zuo-pin.xml</loc>
@@ -155,7 +155,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/raspberry.xml</loc>
-  <lastmod>2017-03-03T11:17:00Z</lastmod>
+  <lastmod>2017-03-18T08:44:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/react-native.xml</loc>
@@ -164,6 +164,10 @@
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/react.xml</loc>
   <lastmod>2017-02-27T18:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://codinglonglong.github.io/categories/spacemacs.xml</loc>
+  <lastmod>2017-03-18T08:44:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/sqlalchemy.xml</loc>
@@ -211,10 +215,10 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/rss.xml</loc>
-  <lastmod>2017-03-13T14:55:00Z</lastmod>
+  <lastmod>2017-03-18T08:44:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/sitemap.xml</loc>
-  <lastmod>2017-03-13T14:55:00Z</lastmod>
+  <lastmod>2017-03-18T08:44:00Z</lastmod>
  </sitemap>
 </sitemapindex>
