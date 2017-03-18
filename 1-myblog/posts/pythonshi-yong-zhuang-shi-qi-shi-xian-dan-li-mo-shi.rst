@@ -10,9 +10,9 @@
     .. code-block:: python
         :number-lines:
 
-        def singleton(cls, *args, **kw):
+        def singleton(cls):
             instances = {}
-            def _():
+            def _(*args, **kw):
                 if cls not in instances:
                     instances[cls] = cls(*args, **kw)
                 return instances[cls]
