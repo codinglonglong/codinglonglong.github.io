@@ -27,7 +27,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_emacs.xml</loc>
-  <lastmod>2017-03-18T08:44:00Z</lastmod>
+  <lastmod>2017-03-18T08:46:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_ge-ren-zuo-pin.xml</loc>
@@ -47,7 +47,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_python.xml</loc>
-  <lastmod>2017-03-03T11:50:00Z</lastmod>
+  <lastmod>2017-03-18T10:39:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_raspberry.xml</loc>
@@ -68,6 +68,10 @@
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_za-wen.xml</loc>
   <lastmod>2017-02-27T18:44:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://codinglonglong.github.io/categories/dan-li-mo-shi.xml</loc>
+  <lastmod>2017-03-18T10:39:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/decorator.xml</loc>
@@ -151,11 +155,11 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/python.xml</loc>
-  <lastmod>2017-03-03T11:50:00Z</lastmod>
+  <lastmod>2017-03-18T10:39:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/raspberry.xml</loc>
-  <lastmod>2017-03-18T08:44:00Z</lastmod>
+  <lastmod>2017-03-18T08:46:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/react-native.xml</loc>
@@ -166,8 +170,12 @@
   <lastmod>2017-02-27T18:44:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://codinglonglong.github.io/categories/she-ji-mo-shi.xml</loc>
+  <lastmod>2017-03-18T10:39:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://codinglonglong.github.io/categories/spacemacs.xml</loc>
-  <lastmod>2017-03-18T08:44:00Z</lastmod>
+  <lastmod>2017-03-18T08:46:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/sqlalchemy.xml</loc>
@@ -215,10 +223,10 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/rss.xml</loc>
-  <lastmod>2017-03-18T08:44:00Z</lastmod>
+  <lastmod>2017-03-18T10:39:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/sitemap.xml</loc>
-  <lastmod>2017-03-18T08:44:00Z</lastmod>
+  <lastmod>2017-03-18T10:39:00Z</lastmod>
  </sitemap>
 </sitemapindex>

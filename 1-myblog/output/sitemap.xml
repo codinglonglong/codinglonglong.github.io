@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://codinglonglong.github.io/</loc>
-  <lastmod>2017-03-03T11:26:00Z</lastmod>
+  <lastmod>2017-03-18T10:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/2017/</loc>
@@ -27,11 +27,11 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/archive.html</loc>
-  <lastmod>2017-03-18T08:44:00Z</lastmod>
+  <lastmod>2017-03-18T10:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/</loc>
-  <lastmod>2017-03-18T08:44:00Z</lastmod>
+  <lastmod>2017-03-18T10:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/ajax/</loc>
@@ -96,6 +96,10 @@
  <url>
   <loc>https://codinglonglong.github.io/categories/cat_za-wen/</loc>
   <lastmod>2017-02-27T18:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/dan-li-mo-shi/</loc>
+  <lastmod>2017-03-18T10:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/decorator/</loc>
@@ -194,6 +198,10 @@
   <lastmod>2017-02-27T18:44:00Z</lastmod>
  </url>
  <url>
+  <loc>https://codinglonglong.github.io/categories/she-ji-mo-shi/</loc>
+  <lastmod>2017-03-18T10:39:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://codinglonglong.github.io/categories/spacemacs/</loc>
   <lastmod>2017-03-18T08:44:00Z</lastmod>
  </url>
@@ -263,7 +271,11 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-6.html</loc>
-  <lastmod>2017-03-18T08:44:00Z</lastmod>
+  <lastmod>2017-03-18T10:39:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/index-7.html</loc>
+  <lastmod>2017-03-18T10:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/android-studiolian-jie-droid4xdiao-shi-app/</loc>
@@ -336,6 +348,10 @@
  <url>
   <loc>https://codinglonglong.github.io/posts/pythonqi-dong-jian-yi-webfu-wu-qi/</loc>
   <lastmod>2017-02-27T18:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/</loc>
+  <lastmod>2017-03-18T10:39:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/pythonzhuang-shi-qi-tan-suo/</loc>
