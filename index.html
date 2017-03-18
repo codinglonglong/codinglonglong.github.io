@@ -24,7 +24,7 @@ body{
     font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
 }
 </style>
-<link rel="prefetch" href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/" type="text/html">
+<link rel="prefetch" href="posts/python2he-python3gong-cun-shi-ru-he-shi-yong-pip/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -80,7 +80,20 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/" class="u-url">Python使用装饰器实现单例模式</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/python2he-python3gong-cun-shi-ru-he-shi-yong-pip/" class="u-url">Python2和Python3共存时如何使用pip</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/python2he-python3gong-cun-shi-ru-he-shi-yong-pip/" rel="bookmark"><time class="published dt-published" datetime="2017-03-19T00:02:11+08:00" title="2017-03-19 00:02">2017-03-19 00:02</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <pre class="literal-block">
+&gt;&gt; py -3 -m pip install tornado
+&gt;&gt; py -2 -m pip install tornado
+</pre>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/" class="u-url">Python使用装饰器实现单例模式</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
@@ -514,39 +527,6 @@ socksProxyType=socks5
 </pre>
 </blockquote>
 <p>结果显示，polipo在树莓派上不需要任何进一步的配置就可以自动启动服务。</p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/tong-guo-privoxyshi-xian-httphe-httpsdai-li/" class="u-url">通过privoxy实现http和https代理</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/tong-guo-privoxyshi-xian-httphe-httpsdai-li/" rel="bookmark"><time class="published dt-published" datetime="2017-03-03T20:14:40+08:00" title="2017-03-03 20:14">2017-03-03 20:14</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>有的时候为了完成某些测试，我们需要用到代理来更换IP地址，以下是可选的一种方法。</p>
-<p>1、安装privoxy。</p>
-<blockquote>
-<pre class="literal-block">
-&gt;&gt; sudo apt install privoxy
-</pre>
-</blockquote>
-<p>2、编辑配置文件。</p>
-<blockquote>
-<pre class="literal-block">
-&gt;&gt; sudo emacs /etc/privoxy/config
-listen-address localhost:8118
-forward-socks5 / 127.0.0.1:1080 .
-</pre>
-</blockquote>
-<p>3、重启服务。</p>
-<blockquote>
-<pre class="literal-block">
-&gt;&gt; sudo service privoxy restart
-&gt;&gt; sudo reboot
-</pre>
-</blockquote>
 </div>
     </div>
     </article>

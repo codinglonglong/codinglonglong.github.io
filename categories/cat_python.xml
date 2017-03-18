@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Python)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_python.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sat, 18 Mar 2017 10:50:22 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Python使用装饰器实现单例模式</title><link>https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;blockquote&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Python)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_python.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sat, 18 Mar 2017 16:03:26 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Python2和Python3共存时如何使用pip</title><link>https://codinglonglong.github.io/posts/python2he-python3gong-cun-shi-ru-he-shi-yong-pip/</link><dc:creator>龙龙</dc:creator><description>&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; py -3 -m pip install tornado
+&amp;gt;&amp;gt; py -2 -m pip install tornado
+&lt;/pre&gt;</description><category>pip</category><category>Python</category><guid>https://codinglonglong.github.io/posts/python2he-python3gong-cun-shi-ru-he-shi-yong-pip/</guid><pubDate>Sat, 18 Mar 2017 16:02:11 GMT</pubDate></item><item><title>Python使用装饰器实现单例模式</title><link>https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;blockquote&gt;
 &lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_58d0bf668e914624a30752478dd55648-1"&gt; 1&lt;/a&gt;
 &lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_58d0bf668e914624a30752478dd55648-2"&gt; 2&lt;/a&gt;
 &lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_58d0bf668e914624a30752478dd55648-3"&gt; 3&lt;/a&gt;
@@ -582,100 +585,4 @@ pi ALL = (ALL)NOPASSWD:ALL
 &lt;a name="rest_code_0e910e24410342f2ab93553cc2160e38-13"&gt;&lt;/a&gt;--------------
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;
 &lt;p&gt;满足上述四点之后，删除掉原来包含问号的数据库，然后重新创建数据库，运行程序，可以看到中文被正常处理了。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/mysqlchinese.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/mysqlchinese.PNG"&gt;&lt;/div&gt;</description><category>Flask-Sqlalchemy</category><category>Mysql</category><guid>https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/</guid><pubDate>Mon, 30 Jan 2017 13:36:46 GMT</pubDate></item><item><title>Docker中配置Flask-Sqlalchemy和Mysql</title><link>https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;继文章 &lt;a class="reference external" href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/"&gt;https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/&lt;/a&gt; 之后，我们进一步配置数据库的部分。&lt;/p&gt;
-&lt;p&gt;1、Docker安装Mysql。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_3d2b7859eea14c81b98332faef73508e-1"&gt;&lt;/a&gt;apt install mysql-server mysql-client
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;2、Docker下载安装mysql-connector-python。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_93c3409b24b14bfcb223d5f4448b4c14-1"&gt;&lt;/a&gt;apt install curl
-&lt;a name="rest_code_93c3409b24b14bfcb223d5f4448b4c14-2"&gt;&lt;/a&gt;curl -O https://cdn.mysql.com/Downloads/Connector-Python/mysql-connector-python-2.1.5.tar.gz
-&lt;a name="rest_code_93c3409b24b14bfcb223d5f4448b4c14-3"&gt;&lt;/a&gt;tar zxvf mysql-connector-python-2.1.5.tar.gz
-&lt;a name="rest_code_93c3409b24b14bfcb223d5f4448b4c14-4"&gt;&lt;/a&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; mysql-connector-python-2.1.5
-&lt;a name="rest_code_93c3409b24b14bfcb223d5f4448b4c14-5"&gt;&lt;/a&gt;python setup.py install
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;3、Docker安装Flask-Sqlalchemy和Flask-Script。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_35b4c6baefdd4152a57448a87e827f39-1"&gt;&lt;/a&gt;pip install flask-sqlalchemy
-&lt;a name="rest_code_35b4c6baefdd4152a57448a87e827f39-2"&gt;&lt;/a&gt;pip install flask-script
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;4、为已有容器添加端口。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_08841fa5252a4b238f37b51a157b2fcc-1"&gt;&lt;/a&gt;docker commit mypc newpc
-&lt;a name="rest_code_08841fa5252a4b238f37b51a157b2fcc-2"&gt;&lt;/a&gt;docker stop mypc
-&lt;a name="rest_code_08841fa5252a4b238f37b51a157b2fcc-3"&gt;&lt;/a&gt;docker run --name mynewpc -i -t -p 13306:3306 -p 8080:8080 -v ~/share/:/usr/development/  newpc /bin/bash
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;5、Docker登录Mysql数据库。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_42086f3bda074f8aba902c8510148b55-1"&gt;&lt;/a&gt;mysql -u root -p
-&lt;a name="rest_code_42086f3bda074f8aba902c8510148b55-2"&gt;&lt;/a&gt;create database test&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;a name="rest_code_42086f3bda074f8aba902c8510148b55-3"&gt;&lt;/a&gt;grant all privileges on *.* to root@&lt;span class="s1"&gt;'192.168.99.1'&lt;/span&gt; identified by &lt;span class="s1"&gt;'root'&lt;/span&gt; with grant option&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;a name="rest_code_42086f3bda074f8aba902c8510148b55-4"&gt;&lt;/a&gt;flush privileges&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;a name="rest_code_42086f3bda074f8aba902c8510148b55-5"&gt;&lt;/a&gt;&lt;span class="nb"&gt;exit&lt;/span&gt;
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;6、Docker修改配置文件，我习惯用emacs，也可以用vim。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_9d755c21694640059158190c4a6037a6-1"&gt;&lt;/a&gt;apt install emacs
-&lt;a name="rest_code_9d755c21694640059158190c4a6037a6-2"&gt;&lt;/a&gt;apt-get install -f
-&lt;a name="rest_code_9d755c21694640059158190c4a6037a6-3"&gt;&lt;/a&gt;emacs /etc/mysql/my.cnf
-&lt;a name="rest_code_9d755c21694640059158190c4a6037a6-4"&gt;&lt;/a&gt;bind-address            &lt;span class="o"&gt;=&lt;/span&gt; 0.0.0.0
-&lt;a name="rest_code_9d755c21694640059158190c4a6037a6-5"&gt;&lt;/a&gt;C-x C-s
-&lt;a name="rest_code_9d755c21694640059158190c4a6037a6-6"&gt;&lt;/a&gt;C-x C-c
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;7、重启mysql服务。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_02fea6a2a7d64ad3be47f72d57c32de3-1"&gt;&lt;/a&gt;sudo service mysql stop
-&lt;a name="rest_code_02fea6a2a7d64ad3be47f72d57c32de3-2"&gt;&lt;/a&gt;mysqld
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;8、主系统编辑测试网站main.py。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-1"&gt; 1&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-2"&gt; 2&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-3"&gt; 3&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-4"&gt; 4&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-5"&gt; 5&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-6"&gt; 6&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-7"&gt; 7&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-8"&gt; 8&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-9"&gt; 9&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-10"&gt;10&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-11"&gt;11&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-12"&gt;12&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-13"&gt;13&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-14"&gt;14&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-15"&gt;15&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-16"&gt;16&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-17"&gt;17&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-18"&gt;18&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-19"&gt;19&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-20"&gt;20&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-2"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask.ext.script&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Manager&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-3"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask.ext.sqlalchemy&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;SQLAlchemy&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-4"&gt;&lt;/a&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-5"&gt;&lt;/a&gt;&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-6"&gt;&lt;/a&gt;&lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;'SQLALCHEMY_DATABASE_URI'&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'mysql+mysqlconnector://root:root@127.0.0.1:3306/test?charset=utf8'&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-7"&gt;&lt;/a&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-8"&gt;&lt;/a&gt;&lt;span class="n"&gt;db&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;SQLAlchemy&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-9"&gt;&lt;/a&gt;&lt;span class="n"&gt;manager&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Manager&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-10"&gt;&lt;/a&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-11"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;User&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-12"&gt;&lt;/a&gt;    &lt;span class="n"&gt;__tablename__&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'users'&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-13"&gt;&lt;/a&gt;    &lt;span class="nb"&gt;id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Integer&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;primary_key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-14"&gt;&lt;/a&gt;    &lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;unique&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-15"&gt;&lt;/a&gt;    &lt;span class="n"&gt;email&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;320&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;unique&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-16"&gt;&lt;/a&gt;    &lt;span class="n"&gt;password&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;32&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;nullable&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;False&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-17"&gt;&lt;/a&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-18"&gt;&lt;/a&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;'__main__'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-19"&gt;&lt;/a&gt;    &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;create_all&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;a name="rest_code_1f5e0f5ce531416bad10b69ffcb0bd65-20"&gt;&lt;/a&gt;    &lt;span class="n"&gt;manager&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;
-&lt;p&gt;9、开一个新的Docker terminal，启动测试网站。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_505b16f17656441ca66decbfbd7c33aa-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /usr/development
-&lt;a name="rest_code_505b16f17656441ca66decbfbd7c33aa-2"&gt;&lt;/a&gt;python main.py runserver
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;10、主系统上打开MySQL Workbench，访问数据库。Hostname：192.168.99.100，Port：13306，Password：root。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/mysqlworkbench.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/mysqlworkbench.PNG"&gt;
-&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;修改bind-address = 0.0.0.0非常重要，否则主系统访问不到Docker中的数据库。&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><category>Flask-Sqlalchemy</category><category>Mysql</category><category>Python</category><guid>https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/</guid><pubDate>Wed, 25 Jan 2017 05:37:42 GMT</pubDate></item></channel></rss>
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/mysqlchinese.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/mysqlchinese.PNG"&gt;&lt;/div&gt;</description><category>Flask-Sqlalchemy</category><category>Mysql</category><guid>https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/</guid><pubDate>Mon, 30 Jan 2017 13:36:46 GMT</pubDate></item></channel></rss>

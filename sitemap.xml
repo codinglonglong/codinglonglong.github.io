@@ -27,11 +27,11 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/archive.html</loc>
-  <lastmod>2017-03-18T10:39:00Z</lastmod>
+  <lastmod>2017-03-18T16:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/</loc>
-  <lastmod>2017-03-18T10:39:00Z</lastmod>
+  <lastmod>2017-03-18T16:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/ajax/</loc>
@@ -170,6 +170,10 @@
   <lastmod>2017-02-27T18:44:00Z</lastmod>
  </url>
  <url>
+  <loc>https://codinglonglong.github.io/categories/pip/</loc>
+  <lastmod>2017-03-18T16:03:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://codinglonglong.github.io/categories/polipo/</loc>
   <lastmod>2017-03-03T19:55:00Z</lastmod>
  </url>
@@ -275,7 +279,7 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-7.html</loc>
-  <lastmod>2017-03-18T10:39:00Z</lastmod>
+  <lastmod>2017-03-18T16:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/android-studiolian-jie-droid4xdiao-shi-app/</loc>
@@ -344,6 +348,10 @@
  <url>
   <loc>https://codinglonglong.github.io/posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/</loc>
   <lastmod>2017-02-27T18:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/posts/python2he-python3gong-cun-shi-ru-he-shi-yong-pip/</loc>
+  <lastmod>2017-03-18T16:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/pythonqi-dong-jian-yi-webfu-wu-qi/</loc>

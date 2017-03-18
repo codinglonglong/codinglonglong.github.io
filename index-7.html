@@ -80,7 +80,40 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/libdc1394-error-failed-to-initialize-libdc1394/" class="u-url">libdc1394 error: Failed to initialize libdc1394</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/tong-guo-privoxyshi-xian-httphe-httpsdai-li/" class="u-url">通过privoxy实现http和https代理</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/tong-guo-privoxyshi-xian-httphe-httpsdai-li/" rel="bookmark"><time class="published dt-published" datetime="2017-03-03T20:14:40+08:00" title="2017-03-03 20:14">2017-03-03 20:14</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>有的时候为了完成某些测试，我们需要用到代理来更换IP地址，以下是可选的一种方法。</p>
+<p>1、安装privoxy。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo apt install privoxy
+</pre>
+</blockquote>
+<p>2、编辑配置文件。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo emacs /etc/privoxy/config
+listen-address localhost:8118
+forward-socks5 / 127.0.0.1:1080 .
+</pre>
+</blockquote>
+<p>3、重启服务。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo service privoxy restart
+&gt;&gt; sudo reboot
+</pre>
+</blockquote>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/libdc1394-error-failed-to-initialize-libdc1394/" class="u-url">libdc1394 error: Failed to initialize libdc1394</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
