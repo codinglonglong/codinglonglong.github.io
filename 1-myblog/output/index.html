@@ -24,7 +24,7 @@ body{
     font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
 }
 </style>
-<link rel="prefetch" href="posts/python2he-python3gong-cun-shi-ru-he-shi-yong-pip/" type="text/html">
+<link rel="prefetch" href="posts/dao-bie-wai-zu-mu/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -61,6 +61,9 @@ body{
 <a href="posts/hui-dao-zui-chu-de-qi-dian/">回到最初的起点</a>
                 </li>
 <li>
+<a href="categories/wo-de-shi-ci/">我的诗词</a>
+                </li>
+<li>
 <a href="https://github.com/codinglonglong/">Github</a>
                 </li>
 <li>
@@ -83,7 +86,22 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/python2he-python3gong-cun-shi-ru-he-shi-yong-pip/" class="u-url">Python2和Python3共存时如何使用pip</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dao-bie-wai-zu-mu/" class="u-url">悼别外祖母</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/dao-bie-wai-zu-mu/" rel="bookmark"><time class="published dt-published" datetime="2017-03-22T12:12:21+08:00" title="2017-03-22 12:12">2017-03-22 12:12</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>寒风送柳泛轻尘，清明未至别故人。</p>
+<p>心向往昔花失宠，情到痛时雨亦真。</p>
+<p>云中哀乐声声起，梦里忧思处处闻。</p>
+<p>黑纱有泪归碧海，白发无心守空门。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/python2he-python3gong-cun-shi-ru-he-shi-yong-pip/" class="u-url">Python2和Python3共存时如何使用pip</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
@@ -494,42 +512,6 @@ export PATH=$PATH:/root/node-v7.7.2-linux-x64/bin/
 </pre>
 </blockquote>
 <p>5、主系统访问 <a class="reference external" href="http://192.168.99.100:8080">http://192.168.99.100:8080</a> 即可。</p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/tong-guo-poliposhi-xian-httphe-httpsdai-li/" class="u-url">通过polipo实现http和https代理</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/tong-guo-poliposhi-xian-httphe-httpsdai-li/" rel="bookmark"><time class="published dt-published" datetime="2017-03-04T03:50:32+08:00" title="2017-03-04 03:50">2017-03-04 03:50</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>反复试验也没能让privoxy在树莓派上自启动，只好换一个软件来试验了……</p>
-<p>1、安装polipo。</p>
-<blockquote>
-<pre class="literal-block">
-&gt;&gt; sudo apt install polipo
-</pre>
-</blockquote>
-<p>2、编辑配置文件。</p>
-<blockquote>
-<pre class="literal-block">
-&gt;&gt; sudo emacs /etc/polipo/config
-proxyAddress="0.0.0.0"
-proxyPort=8228
-socksParentProxy="127.0.0.1:2080"
-socksProxyType=socks5
-</pre>
-</blockquote>
-<p>3、重启服务。</p>
-<blockquote>
-<pre class="literal-block">
-&gt;&gt; sudo service polipo restart
-&gt;&gt; sudo reboot
-</pre>
-</blockquote>
-<p>结果显示，polipo在树莓派上不需要任何进一步的配置就可以自动启动服务。</p>
 </div>
     </div>
     </article>

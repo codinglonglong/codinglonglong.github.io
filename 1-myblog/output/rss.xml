@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sat, 18 Mar 2017 16:03:26 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Python2和Python3共存时如何使用pip</title><link>https://codinglonglong.github.io/posts/python2he-python3gong-cun-shi-ru-he-shi-yong-pip/</link><dc:creator>龙龙</dc:creator><description>&lt;pre class="literal-block"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 22 Mar 2017 04:19:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>悼别外祖母</title><link>https://codinglonglong.github.io/posts/dao-bie-wai-zu-mu/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;寒风送柳泛轻尘，清明未至别故人。&lt;/p&gt;
+&lt;p&gt;心向往昔花失宠，情到痛时雨亦真。&lt;/p&gt;
+&lt;p&gt;云中哀乐声声起，梦里忧思处处闻。&lt;/p&gt;
+&lt;p&gt;黑纱有泪归碧海，白发无心守空门。&lt;/p&gt;&lt;/div&gt;</description><category>我的诗词</category><guid>https://codinglonglong.github.io/posts/dao-bie-wai-zu-mu/</guid><pubDate>Wed, 22 Mar 2017 04:12:21 GMT</pubDate></item><item><title>Python2和Python3共存时如何使用pip</title><link>https://codinglonglong.github.io/posts/python2he-python3gong-cun-shi-ru-he-shi-yong-pip/</link><dc:creator>龙龙</dc:creator><description>&lt;pre class="literal-block"&gt;
 &amp;gt;&amp;gt; py -3 -m pip install tornado
 &amp;gt;&amp;gt; py -2 -m pip install tornado
 &lt;/pre&gt;</description><category>pip</category><category>Python</category><guid>https://codinglonglong.github.io/posts/python2he-python3gong-cun-shi-ru-he-shi-yong-pip/</guid><pubDate>Sat, 18 Mar 2017 16:02:11 GMT</pubDate></item><item><title>Python使用装饰器实现单例模式</title><link>https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;blockquote&gt;
@@ -454,55 +457,4 @@ libdc1394 error: Failed to initialize libdc1394
 &lt;p&gt;&lt;a class="reference external" href="http://pycurl.io/docs/latest/index.html"&gt;http://pycurl.io/docs/latest/index.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://docs.grablib.org/en/latest/"&gt;http://docs.grablib.org/en/latest/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://robobrowser.readthedocs.io/en/latest/"&gt;http://robobrowser.readthedocs.io/en/latest/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://splinter.readthedocs.io/en/latest/index.html"&gt;http://splinter.readthedocs.io/en/latest/index.html&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><category>Python</category><category>WebCrawler</category><guid>https://codinglonglong.github.io/posts/dockerpei-zhi-pythonpa-chong-huan-jing/</guid><pubDate>Tue, 28 Feb 2017 14:29:02 GMT</pubDate></item><item><title>Supervisor实现Python脚本自启动</title><link>https://codinglonglong.github.io/posts/supervisorshi-xian-pythonjiao-ben-zi-qi-dong/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;经过若干小时的反复试验，终于在树莓派上成功部署了homebank[&lt;a class="reference external" href="https://codinglonglong.github.io/posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/"&gt;https://codinglonglong.github.io/posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/&lt;/a&gt;]，最困难的地方就是配置Supervisor，配置过程中出现了各种错误……&lt;/p&gt;
-&lt;p&gt;1、安装supervisor。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="literal-block"&gt;
-&amp;gt;&amp;gt; sudo pip install supervisor
-&lt;/pre&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;2、编辑配置文件。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="literal-block"&gt;
-&amp;gt;&amp;gt; cd /home/pi/websites/
-&amp;gt;&amp;gt; echo_supervisord_conf &amp;gt; supervisord.conf
-&amp;gt;&amp;gt; sudo supervisord -c supervisord.conf
-&amp;gt;&amp;gt; emacs supervisord.conf
-[inet_http_server]         ; inet (TCP) server disabled by default
-port=0.0.0.0:9999        ; (ip_address:port specifier, *:port for all iface)
-username=user              ; (default is no username (open server))
-password=123               ; (default is no password (open server))
-
-[program:homebank]
-command=python main.py
-directory=/home/pi/websites/homebank
-&lt;/pre&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;3、启动服务。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="literal-block"&gt;
-&amp;gt;&amp;gt; sudo supervisorctl reload
-&amp;gt;&amp;gt; sudo supervisorctl status homebank
-homebank                         RUNNING   pid 2212, uptime 0:02:07
-&lt;/pre&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;4、设置开机启动。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="literal-block"&gt;
-&amp;gt;&amp;gt; sudo emacs /etc/rc.local
-sudo /usr/local/bin/supervisord -c /home/pi/websites/supervisord.conf
-&lt;/pre&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;5、设置sudo免密。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="literal-block"&gt;
-&amp;gt;&amp;gt; sudo visudo
-pi ALL = (ALL)NOPASSWD:ALL
-&lt;/pre&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;6、重启。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="literal-block"&gt;
-&amp;gt;&amp;gt; sudo reboot
-&lt;/pre&gt;
-&lt;/blockquote&gt;&lt;/div&gt;</description><category>supervisor</category><guid>https://codinglonglong.github.io/posts/supervisorshi-xian-pythonjiao-ben-zi-qi-dong/</guid><pubDate>Mon, 27 Feb 2017 18:06:10 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a class="reference external" href="http://splinter.readthedocs.io/en/latest/index.html"&gt;http://splinter.readthedocs.io/en/latest/index.html&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><category>Python</category><category>WebCrawler</category><guid>https://codinglonglong.github.io/posts/dockerpei-zhi-pythonpa-chong-huan-jing/</guid><pubDate>Tue, 28 Feb 2017 14:29:02 GMT</pubDate></item></channel></rss>
