@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Android)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/android.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Mon, 27 Feb 2017 18:44:49 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Win10 home版关闭hyper-v</title><link>https://codinglonglong.github.io/posts/win10-homeban-guan-bi-hyper-v/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;在win10的home版中，安装Android Studio提供的haxm，会出现死机的现象，这是由于haxm与hyper-v冲突。而home版无法通过“启用或关闭Windows功能”来关闭hyper-v。这时可以通过如下方法关闭hyper-v。&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Android)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/android.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 28 Mar 2017 01:04:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Win10 home版关闭hyper-v</title><link>https://codinglonglong.github.io/posts/win10-homeban-guan-bi-hyper-v/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;在win10的home版中，安装Android Studio提供的haxm，会出现死机的现象，这是由于haxm与hyper-v冲突。而home版无法通过“启用或关闭Windows功能”来关闭hyper-v。这时可以通过如下方法关闭hyper-v。&lt;/p&gt;
 &lt;ol class="arabic"&gt;
 &lt;li&gt;&lt;p class="first"&gt;管理员身份运行命令提示符cmd&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_4edbd00e55fb439a888f5f6982371ac5-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; bcdedit /copy &lt;span class="o"&gt;{&lt;/span&gt;current&lt;span class="o"&gt;}&lt;/span&gt; /d &lt;span class="s2"&gt;"Windows10 no Hyper-V&lt;/span&gt;
-&lt;a name="rest_code_4edbd00e55fb439a888f5f6982371ac5-2"&gt;&lt;/a&gt;&lt;span class="s2"&gt;&amp;gt;&amp;gt; bcdedit /set {XXX} hypervisorlaunchtype OFF&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_f9c44dc8ed004e579b37508bc7a69598-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; bcdedit /copy &lt;span class="o"&gt;{&lt;/span&gt;current&lt;span class="o"&gt;}&lt;/span&gt; /d &lt;span class="s2"&gt;"Windows10 no Hyper-V&lt;/span&gt;
+&lt;a name="rest_code_f9c44dc8ed004e579b37508bc7a69598-2"&gt;&lt;/a&gt;&lt;span class="s2"&gt;&amp;gt;&amp;gt; bcdedit /set {XXX} hypervisorlaunchtype OFF&lt;/span&gt;
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;p&gt;注意XXX的部分是上一步的输出结果。&lt;/p&gt;
 &lt;/li&gt;
@@ -24,16 +24,16 @@
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;添加adb到系统路径，我的在&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_e9cd81cf40204401b40eada1701eb399-1"&gt;&lt;/a&gt;C:&lt;span class="se"&gt;\U&lt;/span&gt;sers&lt;span class="se"&gt;\l&lt;/span&gt;ong&lt;span class="se"&gt;\A&lt;/span&gt;ppData&lt;span class="se"&gt;\L&lt;/span&gt;ocal&lt;span class="se"&gt;\A&lt;/span&gt;ndroid&lt;span class="se"&gt;\s&lt;/span&gt;dk&lt;span class="se"&gt;\p&lt;/span&gt;latform-tools
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_bddc186e8f64409ca618182d5ec74897-1"&gt;&lt;/a&gt;C:&lt;span class="se"&gt;\U&lt;/span&gt;sers&lt;span class="se"&gt;\l&lt;/span&gt;ong&lt;span class="se"&gt;\A&lt;/span&gt;ppData&lt;span class="se"&gt;\L&lt;/span&gt;ocal&lt;span class="se"&gt;\A&lt;/span&gt;ndroid&lt;span class="se"&gt;\s&lt;/span&gt;dk&lt;span class="se"&gt;\p&lt;/span&gt;latform-tools
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;连接adb到Droid4X。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_e33a52b26e3e47a6802ae8a8655f2c21-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; adb connect 127.0.0.1:26944
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_bdda6fb653d3431e93787c88e0f0ed04-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; adb connect &lt;span class="m"&gt;127&lt;/span&gt;.0.0.1:26944
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;p&gt;出现&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_90e1544cd277436ba0d0be1b9145bd4b-1"&gt;&lt;/a&gt;* daemon started successfully *
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_179924f2c9374d18948139931cb9b13f-1"&gt;&lt;/a&gt;* daemon started successfully *
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;启动调试即可。&lt;/p&gt;

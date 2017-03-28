@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about git)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/git.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Mon, 27 Feb 2017 18:44:47 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Could not open a connection to your authentication agent</title><link>https://codinglonglong.github.io/posts/could-not-open-a-connection-to-your-authentication-agent/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;在执行ssh-add时，如果出现“Could not open a connection to your authentication agent”这一错误信息，可以通过如下方法解决：&lt;/p&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_03b556a6ce5b419b97399741cd6f0568-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; &lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="sb"&gt;`&lt;/span&gt;ssh-agent&lt;span class="sb"&gt;`&lt;/span&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about git)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/git.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 28 Mar 2017 01:04:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Could not open a connection to your authentication agent</title><link>https://codinglonglong.github.io/posts/could-not-open-a-connection-to-your-authentication-agent/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;在执行ssh-add时，如果出现“Could not open a connection to your authentication agent”这一错误信息，可以通过如下方法解决：&lt;/p&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_588ee019ed0b42d7ae031cc5f3f0b727-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; &lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="sb"&gt;`&lt;/span&gt;ssh-agent&lt;span class="sb"&gt;`&lt;/span&gt;
 &lt;/pre&gt;&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt; 是 &lt;strong&gt;`&lt;/strong&gt; 而不是 &lt;strong&gt;'&lt;/strong&gt; 。&lt;/p&gt;&lt;/div&gt;</description><category>git</category><guid>https://codinglonglong.github.io/posts/could-not-open-a-connection-to-your-authentication-agent/</guid><pubDate>Mon, 09 Jan 2017 14:11:08 GMT</pubDate></item><item><title>管理多个git账户</title><link>https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;因为博客用了两个github账户，一个放文章，一个放图片，所以出现了两个git账户同时存在的问题。这时可以通过如下的方法解决冲突：&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;生成两个ssh key.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_2c6263042c4743e6bb8f101f05fe7646-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh-keygen -t rsa -C &lt;span class="s2"&gt;"email address 1"&lt;/span&gt;
-&lt;a name="rest_code_2c6263042c4743e6bb8f101f05fe7646-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh-keygen -t rsa -C &lt;span class="s2"&gt;"email address 2"&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_8212c938bc39415abe793f53ffb60536-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh-keygen -t rsa -C &lt;span class="s2"&gt;"email address 1"&lt;/span&gt;
+&lt;a name="rest_code_8212c938bc39415abe793f53ffb60536-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh-keygen -t rsa -C &lt;span class="s2"&gt;"email address 2"&lt;/span&gt;
 &lt;/pre&gt;&lt;ol class="arabic simple" start="2"&gt;
 &lt;li&gt;添加上一步生成的两个ssh key.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_80d9b9bacfcf4363a9d659df01cfe013-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh-add ~/.ssh/id_rsa1
-&lt;a name="rest_code_80d9b9bacfcf4363a9d659df01cfe013-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh-add ~/.ssh/id_rsa2
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_f1a29d9b47e9443ab2e6e114f83ff504-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh-add ~/.ssh/id_rsa1
+&lt;a name="rest_code_f1a29d9b47e9443ab2e6e114f83ff504-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh-add ~/.ssh/id_rsa2
 &lt;/pre&gt;&lt;ol class="arabic simple" start="3"&gt;
 &lt;li&gt;创建配置文件.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_acde6a773d5a4505b239ee142e5b83f8-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; touch config
-&lt;/pre&gt;&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_798d7b5010644086bed00488ed3783dd-1"&gt; 1&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_798d7b5010644086bed00488ed3783dd-2"&gt; 2&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_798d7b5010644086bed00488ed3783dd-3"&gt; 3&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_798d7b5010644086bed00488ed3783dd-4"&gt; 4&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_798d7b5010644086bed00488ed3783dd-5"&gt; 5&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_798d7b5010644086bed00488ed3783dd-6"&gt; 6&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_798d7b5010644086bed00488ed3783dd-7"&gt; 7&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_798d7b5010644086bed00488ed3783dd-8"&gt; 8&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_798d7b5010644086bed00488ed3783dd-9"&gt; 9&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_798d7b5010644086bed00488ed3783dd-10"&gt;10&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code bash"&gt;&lt;a name="rest_code_798d7b5010644086bed00488ed3783dd-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# github1&lt;/span&gt;
-&lt;a name="rest_code_798d7b5010644086bed00488ed3783dd-2"&gt;&lt;/a&gt;Host github1
-&lt;a name="rest_code_798d7b5010644086bed00488ed3783dd-3"&gt;&lt;/a&gt;     HostName github.com
-&lt;a name="rest_code_798d7b5010644086bed00488ed3783dd-4"&gt;&lt;/a&gt;     PreferredAuthentications publickey
-&lt;a name="rest_code_798d7b5010644086bed00488ed3783dd-5"&gt;&lt;/a&gt;     IdentityFile ~/.ssh/id_rsa1
-&lt;a name="rest_code_798d7b5010644086bed00488ed3783dd-6"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# github2&lt;/span&gt;
-&lt;a name="rest_code_798d7b5010644086bed00488ed3783dd-7"&gt;&lt;/a&gt;Host github2
-&lt;a name="rest_code_798d7b5010644086bed00488ed3783dd-8"&gt;&lt;/a&gt;     HostName github.com
-&lt;a name="rest_code_798d7b5010644086bed00488ed3783dd-9"&gt;&lt;/a&gt;     PreferredAuthentications publickey
-&lt;a name="rest_code_798d7b5010644086bed00488ed3783dd-10"&gt;&lt;/a&gt;     IdentityFile ~/.ssh/id_rsa2
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_cd8962c701be4071afe9f2d7e01a9967-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; touch config
+&lt;/pre&gt;&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_fd9455cc6afc485aa83286ef241c50bf-1"&gt; 1&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_fd9455cc6afc485aa83286ef241c50bf-2"&gt; 2&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_fd9455cc6afc485aa83286ef241c50bf-3"&gt; 3&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_fd9455cc6afc485aa83286ef241c50bf-4"&gt; 4&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_fd9455cc6afc485aa83286ef241c50bf-5"&gt; 5&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_fd9455cc6afc485aa83286ef241c50bf-6"&gt; 6&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_fd9455cc6afc485aa83286ef241c50bf-7"&gt; 7&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_fd9455cc6afc485aa83286ef241c50bf-8"&gt; 8&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_fd9455cc6afc485aa83286ef241c50bf-9"&gt; 9&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_fd9455cc6afc485aa83286ef241c50bf-10"&gt;10&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code bash"&gt;&lt;a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# github1&lt;/span&gt;
+&lt;a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-2"&gt;&lt;/a&gt;Host github1
+&lt;a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-3"&gt;&lt;/a&gt;     HostName github.com
+&lt;a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-4"&gt;&lt;/a&gt;     PreferredAuthentications publickey
+&lt;a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-5"&gt;&lt;/a&gt;     IdentityFile ~/.ssh/id_rsa1
+&lt;a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-6"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# github2&lt;/span&gt;
+&lt;a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-7"&gt;&lt;/a&gt;Host github2
+&lt;a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-8"&gt;&lt;/a&gt;     HostName github.com
+&lt;a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-9"&gt;&lt;/a&gt;     PreferredAuthentications publickey
+&lt;a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-10"&gt;&lt;/a&gt;     IdentityFile ~/.ssh/id_rsa2
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;ol class="arabic simple" start="4"&gt;
 &lt;li&gt;测试.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_f9231f4291664ca5947f1cdb7c0210b9-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh -T git@github1
-&lt;a name="rest_code_f9231f4291664ca5947f1cdb7c0210b9-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh -T git@github2
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_9ca4b622d4e840eca938c47629dfbde3-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh -T git@github1
+&lt;a name="rest_code_9ca4b622d4e840eca938c47629dfbde3-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh -T git@github2
 &lt;/pre&gt;&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;过程之中遇到yes或者no，都输入yes。&lt;/li&gt;

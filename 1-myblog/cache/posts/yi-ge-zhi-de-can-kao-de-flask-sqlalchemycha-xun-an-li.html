@@ -1,12 +1,12 @@
 <blockquote>
-<pre class="code bash"><a name="rest_code_e28d2249ff434644bc5841d3a785e4da-1"></a><span class="nv">account</span> <span class="o">=</span> db.session.query<span class="o">(</span>
-<a name="rest_code_e28d2249ff434644bc5841d3a785e4da-2"></a>    Account.account_id, Account.account_item,
-<a name="rest_code_e28d2249ff434644bc5841d3a785e4da-3"></a>    Account.account_money, AccountType.type_text,
-<a name="rest_code_e28d2249ff434644bc5841d3a785e4da-4"></a>    Account.account_date, Account.account_addition,
-<a name="rest_code_e28d2249ff434644bc5841d3a785e4da-5"></a>    User.user_email<span class="o">)</span>.outerjoin<span class="o">(</span>
-<a name="rest_code_e28d2249ff434644bc5841d3a785e4da-6"></a>    AccountType, Account.account_type <span class="o">==</span> AccountType.type_id<span class="o">)</span>.outerjoin<span class="o">(</span>
-<a name="rest_code_e28d2249ff434644bc5841d3a785e4da-7"></a>    User, Account.account_user <span class="o">==</span> User.user_id<span class="o">)</span>.order_by<span class="o">(</span>
-<a name="rest_code_e28d2249ff434644bc5841d3a785e4da-8"></a>    Account.account_date.desc<span class="o">())</span>.offset<span class="o">((</span>page-1<span class="o">)</span>*perpage<span class="o">)</span>.limit<span class="o">(</span>perpage<span class="o">)</span>.all<span class="o">()</span>
+<pre class="code bash"><a name="rest_code_b2a6d06304f24a41bbec2f1d49e8e58a-1"></a><span class="nv">account</span> <span class="o">=</span> db.session.query<span class="o">(</span>
+<a name="rest_code_b2a6d06304f24a41bbec2f1d49e8e58a-2"></a>    Account.account_id, Account.account_item,
+<a name="rest_code_b2a6d06304f24a41bbec2f1d49e8e58a-3"></a>    Account.account_money, AccountType.type_text,
+<a name="rest_code_b2a6d06304f24a41bbec2f1d49e8e58a-4"></a>    Account.account_date, Account.account_addition,
+<a name="rest_code_b2a6d06304f24a41bbec2f1d49e8e58a-5"></a>    User.user_email<span class="o">)</span>.outerjoin<span class="o">(</span>
+<a name="rest_code_b2a6d06304f24a41bbec2f1d49e8e58a-6"></a>    AccountType, Account.account_type <span class="o">==</span> AccountType.type_id<span class="o">)</span>.outerjoin<span class="o">(</span>
+<a name="rest_code_b2a6d06304f24a41bbec2f1d49e8e58a-7"></a>    User, Account.account_user <span class="o">==</span> User.user_id<span class="o">)</span>.order_by<span class="o">(</span>
+<a name="rest_code_b2a6d06304f24a41bbec2f1d49e8e58a-8"></a>    Account.account_date.desc<span class="o">())</span>.offset<span class="o">((</span>page-1<span class="o">)</span>*perpage<span class="o">)</span>.limit<span class="o">(</span>perpage<span class="o">)</span>.all<span class="o">()</span>
 </pre></blockquote>
 <p>在这个例子中，我们查询的是：</p>
 <p>按日期降序排列，每页perpage条记录，返回第page页的账目数据，将账目数据中的账目类型编号替换成类型名称，将账目数据中的用户编号替换成用户邮箱。</p>

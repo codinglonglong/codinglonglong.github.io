@@ -1,56 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Docker)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_docker.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Mon, 27 Feb 2017 18:44:49 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Docker配置开发镜像</title><link>https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;在主系统上开发，在Docker中部署，在主系统上测试……不需要一手一台电脑，也不需要担心虚拟机占用资源太高，而且不管主系统是Linux、Windows还是MacOS，开发都是一样的……感觉很不错……&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Docker)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_docker.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 28 Mar 2017 01:04:30 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Docker配置开发镜像</title><link>https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;在主系统上开发，在Docker中部署，在主系统上测试……不需要一手一台电脑，也不需要担心虚拟机占用资源太高，而且不管主系统是Linux、Windows还是MacOS，开发都是一样的……感觉很不错……&lt;/p&gt;
 &lt;ol class="arabic"&gt;
 &lt;li&gt;&lt;p class="first"&gt;新建容器。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_115f9722e63d4d36b537cc2337201be1-1"&gt;&lt;/a&gt;docker run --name mypc -i -t -p 8080:8080 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_c199089aa105478bb04b987cfd289c78-1"&gt;&lt;/a&gt;docker run --name mypc -i -t -p &lt;span class="m"&gt;8080&lt;/span&gt;:8080 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;Docker中修改Ubuntu软件源。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_84a5a757343442f598314a332b2ea7ae-1"&gt;&lt;/a&gt;vi /etc/apt/sources.list
-&lt;a name="rest_code_84a5a757343442f598314a332b2ea7ae-2"&gt;&lt;/a&gt;:%s/archive.ubuntu/cn.archive.ubuntu/g
-&lt;a name="rest_code_84a5a757343442f598314a332b2ea7ae-3"&gt;&lt;/a&gt;:wq
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_b3603a6195ad46bba754123969f6cd80-1"&gt;&lt;/a&gt;vi /etc/apt/sources.list
+&lt;a name="rest_code_b3603a6195ad46bba754123969f6cd80-2"&gt;&lt;/a&gt;:%s/archive.ubuntu/cn.archive.ubuntu/g
+&lt;a name="rest_code_b3603a6195ad46bba754123969f6cd80-3"&gt;&lt;/a&gt;:wq
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;Docker中更新软件源。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_b793de7db4ac48e9bbcac77c3efbcae2-1"&gt;&lt;/a&gt;apt update
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_b92f883eb8ba4357b222e3828bdc83d8-1"&gt;&lt;/a&gt;apt update
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;Docker中安装Python和Flask。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_474b79afa88d45cc86be87bb5dedb977-1"&gt;&lt;/a&gt;apt install python
-&lt;a name="rest_code_474b79afa88d45cc86be87bb5dedb977-2"&gt;&lt;/a&gt;apt install python-pip
-&lt;a name="rest_code_474b79afa88d45cc86be87bb5dedb977-3"&gt;&lt;/a&gt;apt install python-dev
-&lt;a name="rest_code_474b79afa88d45cc86be87bb5dedb977-4"&gt;&lt;/a&gt;pip install flask
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_bf7d1dc224254d6aad649808a2940cb5-1"&gt;&lt;/a&gt;apt install python
+&lt;a name="rest_code_bf7d1dc224254d6aad649808a2940cb5-2"&gt;&lt;/a&gt;apt install python-pip
+&lt;a name="rest_code_bf7d1dc224254d6aad649808a2940cb5-3"&gt;&lt;/a&gt;apt install python-dev
+&lt;a name="rest_code_bf7d1dc224254d6aad649808a2940cb5-4"&gt;&lt;/a&gt;pip install flask
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;在主系统目录 &lt;strong&gt;~/share/&lt;/strong&gt; 下编写测试网站main.py。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_98a556377c9d430eb2d1e045e62b9875-1"&gt;1&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_98a556377c9d430eb2d1e045e62b9875-2"&gt;2&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_98a556377c9d430eb2d1e045e62b9875-3"&gt;3&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_98a556377c9d430eb2d1e045e62b9875-4"&gt;4&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_98a556377c9d430eb2d1e045e62b9875-5"&gt;5&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_98a556377c9d430eb2d1e045e62b9875-6"&gt;6&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_98a556377c9d430eb2d1e045e62b9875-7"&gt;7&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_98a556377c9d430eb2d1e045e62b9875-8"&gt;8&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_98a556377c9d430eb2d1e045e62b9875-9"&gt;9&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_98a556377c9d430eb2d1e045e62b9875-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;
-&lt;a name="rest_code_98a556377c9d430eb2d1e045e62b9875-2"&gt;&lt;/a&gt;&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_98a556377c9d430eb2d1e045e62b9875-3"&gt;&lt;/a&gt;
-&lt;a name="rest_code_98a556377c9d430eb2d1e045e62b9875-4"&gt;&lt;/a&gt;&lt;span class="nd"&gt;@app.route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'/'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_98a556377c9d430eb2d1e045e62b9875-5"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;hello_world&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
-&lt;a name="rest_code_98a556377c9d430eb2d1e045e62b9875-6"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s1"&gt;'Hello World!'&lt;/span&gt;
-&lt;a name="rest_code_98a556377c9d430eb2d1e045e62b9875-7"&gt;&lt;/a&gt;
-&lt;a name="rest_code_98a556377c9d430eb2d1e045e62b9875-8"&gt;&lt;/a&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;'__main__'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a name="rest_code_98a556377c9d430eb2d1e045e62b9875-9"&gt;&lt;/a&gt;    &lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;host&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"0.0.0.0"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"8080"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_d42bbcdb174449a8ab16aefd0c8d7438-1"&gt;1&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_d42bbcdb174449a8ab16aefd0c8d7438-2"&gt;2&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_d42bbcdb174449a8ab16aefd0c8d7438-3"&gt;3&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_d42bbcdb174449a8ab16aefd0c8d7438-4"&gt;4&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_d42bbcdb174449a8ab16aefd0c8d7438-5"&gt;5&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_d42bbcdb174449a8ab16aefd0c8d7438-6"&gt;6&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_d42bbcdb174449a8ab16aefd0c8d7438-7"&gt;7&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_d42bbcdb174449a8ab16aefd0c8d7438-8"&gt;8&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_d42bbcdb174449a8ab16aefd0c8d7438-9"&gt;9&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_d42bbcdb174449a8ab16aefd0c8d7438-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;
+&lt;a name="rest_code_d42bbcdb174449a8ab16aefd0c8d7438-2"&gt;&lt;/a&gt;&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="vm"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_d42bbcdb174449a8ab16aefd0c8d7438-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_d42bbcdb174449a8ab16aefd0c8d7438-4"&gt;&lt;/a&gt;&lt;span class="nd"&gt;@app.route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'/'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_d42bbcdb174449a8ab16aefd0c8d7438-5"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;hello_world&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+&lt;a name="rest_code_d42bbcdb174449a8ab16aefd0c8d7438-6"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s1"&gt;'Hello World!'&lt;/span&gt;
+&lt;a name="rest_code_d42bbcdb174449a8ab16aefd0c8d7438-7"&gt;&lt;/a&gt;
+&lt;a name="rest_code_d42bbcdb174449a8ab16aefd0c8d7438-8"&gt;&lt;/a&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;'__main__'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_d42bbcdb174449a8ab16aefd0c8d7438-9"&gt;&lt;/a&gt;    &lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;host&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"0.0.0.0"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"8080"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;Docker中运行网站。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_b4502098316a442885bf221de8c147a4-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /usr/development/
-&lt;a name="rest_code_b4502098316a442885bf221de8c147a4-2"&gt;&lt;/a&gt;python main.py
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_1f445cac988e4d51928e193271612ef6-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /usr/development/
+&lt;a name="rest_code_1f445cac988e4d51928e193271612ef6-2"&gt;&lt;/a&gt;python main.py
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;主系统上查看效果。&lt;/p&gt;
@@ -64,7 +64,7 @@
 &lt;/ol&gt;&lt;/div&gt;</description><category>Docker</category><category>flask</category><category>Python</category><guid>https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/</guid><pubDate>Mon, 23 Jan 2017 15:08:02 GMT</pubDate></item><item><title>Docker常用命令</title><link>https://codinglonglong.github.io/posts/dockerchang-yong-ming-ling/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;ol class="arabic"&gt;
 &lt;li&gt;&lt;p class="first"&gt;创建容器。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_a4a21ac8554d4ae7851c574315f8142b-1"&gt;&lt;/a&gt;docker run --name mypc -it ubuntu:16.04 /bin/bash
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_06bdacecca11474d9b2a0779095a5e3e-1"&gt;&lt;/a&gt;docker run --name mypc -it ubuntu:16.04 /bin/bash
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -72,27 +72,27 @@
 &lt;ol class="arabic" start="2"&gt;
 &lt;li&gt;&lt;p class="first"&gt;查看已有容器及其状态。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_059db7ca389d4d09a6afdba6866805c8-1"&gt;&lt;/a&gt;docker ps -a
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_586ba9754efa4478a1fca716f15b8330-1"&gt;&lt;/a&gt;docker ps -a
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;启动已有容器。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_f7f69431537749c587f92e3a37786fb5-1"&gt;&lt;/a&gt;docker start mypc
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_0c5867e80e82486e99621ccf9accc117-1"&gt;&lt;/a&gt;docker start mypc
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;登陆正在运行的容器。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_17d47f4813bb4a378d1dccf2b1803142-1"&gt;&lt;/a&gt;docker &lt;span class="nb"&gt;exec&lt;/span&gt; -it mypc /bin/bash
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_2b90fd9e38a047a38fe2e61698613d4e-1"&gt;&lt;/a&gt;docker &lt;span class="nb"&gt;exec&lt;/span&gt; -it mypc /bin/bash
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;关闭正在运行的容器。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_5002d40f23ea45cea92c599e2f9be665-1"&gt;&lt;/a&gt;docker stop mypc
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_fd6a7c6944844628a0a6af65b7db047b-1"&gt;&lt;/a&gt;docker stop mypc
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;删除容器。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_bad9c55620e34a77b48bc6e5aee65380-1"&gt;&lt;/a&gt;docker rm mypc
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_c6c2d2a8972d4a2da89b69e9227dc59d-1"&gt;&lt;/a&gt;docker rm mypc
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -103,19 +103,19 @@
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;在开始菜单双击运行Docker Quickstart Terminal，等待……………………直到出现&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_c3343742c08e418a861bcac4907b862c-1"&gt;1&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_c3343742c08e418a861bcac4907b862c-2"&gt;2&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_c3343742c08e418a861bcac4907b862c-3"&gt;3&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_c3343742c08e418a861bcac4907b862c-4"&gt;4&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_c3343742c08e418a861bcac4907b862c-5"&gt;5&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_c3343742c08e418a861bcac4907b862c-6"&gt;6&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_c3343742c08e418a861bcac4907b862c-7"&gt;7&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code bash"&gt;&lt;a name="rest_code_c3343742c08e418a861bcac4907b862c-1"&gt;&lt;/a&gt;docker is configured to use the default machine with IP 192.168.99.100
-&lt;a name="rest_code_c3343742c08e418a861bcac4907b862c-2"&gt;&lt;/a&gt;For &lt;span class="nb"&gt;help&lt;/span&gt; getting started, check out the docs at https://docs.docker.com
-&lt;a name="rest_code_c3343742c08e418a861bcac4907b862c-3"&gt;&lt;/a&gt;
-&lt;a name="rest_code_c3343742c08e418a861bcac4907b862c-4"&gt;&lt;/a&gt;Start interactive shell
-&lt;a name="rest_code_c3343742c08e418a861bcac4907b862c-5"&gt;&lt;/a&gt;
-&lt;a name="rest_code_c3343742c08e418a861bcac4907b862c-6"&gt;&lt;/a&gt;long@DESKTOP-N79DL8P MINGW64 ~
-&lt;a name="rest_code_c3343742c08e418a861bcac4907b862c-7"&gt;&lt;/a&gt;$
+&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_85707f48391946049ed19f513c6a4a50-1"&gt;1&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_85707f48391946049ed19f513c6a4a50-2"&gt;2&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_85707f48391946049ed19f513c6a4a50-3"&gt;3&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_85707f48391946049ed19f513c6a4a50-4"&gt;4&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_85707f48391946049ed19f513c6a4a50-5"&gt;5&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_85707f48391946049ed19f513c6a4a50-6"&gt;6&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_85707f48391946049ed19f513c6a4a50-7"&gt;7&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code bash"&gt;&lt;a name="rest_code_85707f48391946049ed19f513c6a4a50-1"&gt;&lt;/a&gt;docker is configured to use the default machine with IP &lt;span class="m"&gt;192&lt;/span&gt;.168.99.100
+&lt;a name="rest_code_85707f48391946049ed19f513c6a4a50-2"&gt;&lt;/a&gt;For &lt;span class="nb"&gt;help&lt;/span&gt; getting started, check out the docs at https://docs.docker.com
+&lt;a name="rest_code_85707f48391946049ed19f513c6a4a50-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_85707f48391946049ed19f513c6a4a50-4"&gt;&lt;/a&gt;Start interactive shell
+&lt;a name="rest_code_85707f48391946049ed19f513c6a4a50-5"&gt;&lt;/a&gt;
+&lt;a name="rest_code_85707f48391946049ed19f513c6a4a50-6"&gt;&lt;/a&gt;long@DESKTOP-N79DL8P MINGW64 ~
+&lt;a name="rest_code_85707f48391946049ed19f513c6a4a50-7"&gt;&lt;/a&gt;$
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;运行 &lt;strong&gt;docker pull ubuntu:16.04&lt;/strong&gt; 。&lt;/p&gt;

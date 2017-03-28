@@ -1,54 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 22 Mar 2017 04:19:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>悼别外祖母</title><link>https://codinglonglong.github.io/posts/dao-bie-wai-zu-mu/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;寒风送柳泛轻尘，清明未至别故人。&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 28 Mar 2017 01:04:30 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>openSUSE安装nodejs</title><link>https://codinglonglong.github.io/posts/opensusean-zhuang-nodejs/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、下载源码。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; wget https://nodejs.org/dist/v6.10.1/node-v6.10.1-linux-x64.tar.gz
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2、解压。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; tar zxvf node-v6.10.1-linux-x64.tar.gz
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;3、链接命令。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo ln -s /home/long/software/node/bin/node /usr/local/bin/node
+&amp;gt;&amp;gt; sudo ln -s /home/long/software/node/bin/npm /usr/local/bin/npm
+&amp;gt;&amp;gt; long@linux-iyb2:~&amp;gt; node -v
+v6.10.1
+&amp;gt;&amp;gt; long@linux-iyb2:~&amp;gt; npm -v
+3.10.10
+&lt;/pre&gt;
+&lt;/blockquote&gt;&lt;/div&gt;</description><category>nodejs</category><category>openSUSE</category><guid>https://codinglonglong.github.io/posts/opensusean-zhuang-nodejs/</guid><pubDate>Tue, 28 Mar 2017 00:58:42 GMT</pubDate></item><item><title>悼别外祖母</title><link>https://codinglonglong.github.io/posts/dao-bie-wai-zu-mu/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;寒风送柳泛轻尘，清明未至别故人。&lt;/p&gt;
 &lt;p&gt;心向往昔花失宠，情到痛时雨亦真。&lt;/p&gt;
 &lt;p&gt;云中哀乐声声起，梦里忧思处处闻。&lt;/p&gt;
 &lt;p&gt;黑纱有泪归碧海，白发无心守空门。&lt;/p&gt;&lt;/div&gt;</description><category>我的诗词</category><guid>https://codinglonglong.github.io/posts/dao-bie-wai-zu-mu/</guid><pubDate>Wed, 22 Mar 2017 04:12:21 GMT</pubDate></item><item><title>Python2和Python3共存时如何使用pip</title><link>https://codinglonglong.github.io/posts/python2he-python3gong-cun-shi-ru-he-shi-yong-pip/</link><dc:creator>龙龙</dc:creator><description>&lt;pre class="literal-block"&gt;
 &amp;gt;&amp;gt; py -3 -m pip install tornado
 &amp;gt;&amp;gt; py -2 -m pip install tornado
 &lt;/pre&gt;</description><category>pip</category><category>Python</category><guid>https://codinglonglong.github.io/posts/python2he-python3gong-cun-shi-ru-he-shi-yong-pip/</guid><pubDate>Sat, 18 Mar 2017 16:02:11 GMT</pubDate></item><item><title>Python使用装饰器实现单例模式</title><link>https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;blockquote&gt;
-&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_58d0bf668e914624a30752478dd55648-1"&gt; 1&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_58d0bf668e914624a30752478dd55648-2"&gt; 2&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_58d0bf668e914624a30752478dd55648-3"&gt; 3&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_58d0bf668e914624a30752478dd55648-4"&gt; 4&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_58d0bf668e914624a30752478dd55648-5"&gt; 5&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_58d0bf668e914624a30752478dd55648-6"&gt; 6&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_58d0bf668e914624a30752478dd55648-7"&gt; 7&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_58d0bf668e914624a30752478dd55648-8"&gt; 8&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_58d0bf668e914624a30752478dd55648-9"&gt; 9&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_58d0bf668e914624a30752478dd55648-10"&gt;10&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_58d0bf668e914624a30752478dd55648-11"&gt;11&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_58d0bf668e914624a30752478dd55648-12"&gt;12&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_58d0bf668e914624a30752478dd55648-13"&gt;13&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_58d0bf668e914624a30752478dd55648-14"&gt;14&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_58d0bf668e914624a30752478dd55648-15"&gt;15&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_58d0bf668e914624a30752478dd55648-16"&gt;16&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_58d0bf668e914624a30752478dd55648-17"&gt;17&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_58d0bf668e914624a30752478dd55648-18"&gt;18&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_58d0bf668e914624a30752478dd55648-19"&gt;19&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_58d0bf668e914624a30752478dd55648-20"&gt;20&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_58d0bf668e914624a30752478dd55648-21"&gt;21&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_58d0bf668e914624a30752478dd55648-22"&gt;22&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_58d0bf668e914624a30752478dd55648-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;singleton&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cls&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_58d0bf668e914624a30752478dd55648-2"&gt;&lt;/a&gt;    &lt;span class="n"&gt;instances&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
-&lt;a name="rest_code_58d0bf668e914624a30752478dd55648-3"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;_&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kw&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_58d0bf668e914624a30752478dd55648-4"&gt;&lt;/a&gt;        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;cls&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;instances&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a name="rest_code_58d0bf668e914624a30752478dd55648-5"&gt;&lt;/a&gt;            &lt;span class="n"&gt;instances&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;cls&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;cls&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kw&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_58d0bf668e914624a30752478dd55648-6"&gt;&lt;/a&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;instances&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;cls&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;a name="rest_code_58d0bf668e914624a30752478dd55648-7"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;_&lt;/span&gt;
-&lt;a name="rest_code_58d0bf668e914624a30752478dd55648-8"&gt;&lt;/a&gt;
-&lt;a name="rest_code_58d0bf668e914624a30752478dd55648-9"&gt;&lt;/a&gt;&lt;span class="nd"&gt;@singleton&lt;/span&gt;
-&lt;a name="rest_code_58d0bf668e914624a30752478dd55648-10"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Test&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
-&lt;a name="rest_code_58d0bf668e914624a30752478dd55648-11"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_58d0bf668e914624a30752478dd55648-12"&gt;&lt;/a&gt;        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
-&lt;a name="rest_code_58d0bf668e914624a30752478dd55648-13"&gt;&lt;/a&gt;
-&lt;a name="rest_code_58d0bf668e914624a30752478dd55648-14"&gt;&lt;/a&gt;&lt;span class="n"&gt;t1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Test&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;a name="rest_code_58d0bf668e914624a30752478dd55648-15"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_58d0bf668e914624a30752478dd55648-16"&gt;&lt;/a&gt;&lt;span class="n"&gt;t2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Test&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;a name="rest_code_58d0bf668e914624a30752478dd55648-17"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_58d0bf668e914624a30752478dd55648-18"&gt;&lt;/a&gt;&lt;span class="n"&gt;t1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
-&lt;a name="rest_code_58d0bf668e914624a30752478dd55648-19"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_58d0bf668e914624a30752478dd55648-20"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_58d0bf668e914624a30752478dd55648-21"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;id&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;a name="rest_code_58d0bf668e914624a30752478dd55648-22"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;id&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-1"&gt; 1&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-2"&gt; 2&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-3"&gt; 3&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-4"&gt; 4&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-5"&gt; 5&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-6"&gt; 6&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-7"&gt; 7&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-8"&gt; 8&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-9"&gt; 9&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-10"&gt;10&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-11"&gt;11&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-12"&gt;12&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-13"&gt;13&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-14"&gt;14&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-15"&gt;15&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-16"&gt;16&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-17"&gt;17&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-18"&gt;18&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-19"&gt;19&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-20"&gt;20&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-21"&gt;21&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-22"&gt;22&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;singleton&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;cls&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-2"&gt;&lt;/a&gt;    &lt;span class="n"&gt;instances&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-3"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;_&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kw&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-4"&gt;&lt;/a&gt;        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="bp"&gt;cls&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;instances&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-5"&gt;&lt;/a&gt;            &lt;span class="n"&gt;instances&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="bp"&gt;cls&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;cls&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kw&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-6"&gt;&lt;/a&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;instances&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="bp"&gt;cls&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-7"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;_&lt;/span&gt;
+&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-8"&gt;&lt;/a&gt;
+&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-9"&gt;&lt;/a&gt;&lt;span class="nd"&gt;@singleton&lt;/span&gt;
+&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-10"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Test&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-11"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-12"&gt;&lt;/a&gt;        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-13"&gt;&lt;/a&gt;
+&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-14"&gt;&lt;/a&gt;&lt;span class="n"&gt;t1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Test&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-15"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-16"&gt;&lt;/a&gt;&lt;span class="n"&gt;t2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Test&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-17"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-18"&gt;&lt;/a&gt;&lt;span class="n"&gt;t1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-19"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-20"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-21"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;id&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-22"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;id&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;
 &lt;p&gt;运行结果：&lt;/p&gt;
 &lt;blockquote&gt;
@@ -409,52 +431,4 @@ libdc1394 error: Failed to initialize libdc1394
 &lt;pre class="literal-block"&gt;
 &amp;gt;&amp;gt; sudo ln /dev/null /dev/raw1394
 &lt;/pre&gt;
-&lt;/blockquote&gt;&lt;/div&gt;</description><category>Linux</category><guid>https://codinglonglong.github.io/posts/libdc1394-error-failed-to-initialize-libdc1394/</guid><pubDate>Fri, 03 Mar 2017 11:22:25 GMT</pubDate></item><item><title>Docker配置Python爬虫环境</title><link>https://codinglonglong.github.io/posts/dockerpei-zhi-pythonpa-chong-huan-jing/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、新建容器。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="literal-block"&gt;
-&amp;gt;&amp;gt; docker run --name webcrawler -i -t -p 8080:8080 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
-&lt;/pre&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;2、修改软件源。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="literal-block"&gt;
-&amp;gt;&amp;gt; vi /etc/apt/sources.list
-:%s/archive.ubuntu/cn.archive.ubuntu/g
-:wq
-&lt;/pre&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;3、更新软件。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="literal-block"&gt;
-&amp;gt;&amp;gt; apt update
-&lt;/pre&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;4、安装必要的软件和第三方库。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="literal-block"&gt;
-&amp;gt;&amp;gt; apt install python
-&amp;gt;&amp;gt; apt install python-pip
-&amp;gt;&amp;gt; apt install python-dev
-&amp;gt;&amp;gt; pip install beautifulsoup4
-&amp;gt;&amp;gt; apt install libdecodeqr-dev libopencv-dev
-&amp;gt;&amp;gt; pip install pydecodeqr
-&amp;gt;&amp;gt; apt install libcurl4-openssl-dev
-&amp;gt;&amp;gt; pip install -U setuptools pip
-&amp;gt;&amp;gt; apt install libxml2-dev libxslt-dev libssl-dev
-&amp;gt;&amp;gt; pip install grab
-&amp;gt;&amp;gt; pip install robobrowser
-&amp;gt;&amp;gt; pip install pycurl
-&amp;gt;&amp;gt; pip install splinter
-&amp;gt;&amp;gt; pip install qrcode
-&amp;gt;&amp;gt; pip install requests
-&lt;/pre&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;参考&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://www.python-requests.org/en/master/"&gt;http://www.python-requests.org/en/master/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/index"&gt;https://www.crummy.com/software/BeautifulSoup/bs4/doc/index&lt;/a&gt;.html#&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://github.com/six519/pydecodeqr"&gt;https://github.com/six519/pydecodeqr&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://github.com/lincolnloop/python-qrcode"&gt;https://github.com/lincolnloop/python-qrcode&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://pycurl.io/docs/latest/index.html"&gt;http://pycurl.io/docs/latest/index.html&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://docs.grablib.org/en/latest/"&gt;http://docs.grablib.org/en/latest/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://robobrowser.readthedocs.io/en/latest/"&gt;http://robobrowser.readthedocs.io/en/latest/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://splinter.readthedocs.io/en/latest/index.html"&gt;http://splinter.readthedocs.io/en/latest/index.html&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><category>Python</category><category>WebCrawler</category><guid>https://codinglonglong.github.io/posts/dockerpei-zhi-pythonpa-chong-huan-jing/</guid><pubDate>Tue, 28 Feb 2017 14:29:02 GMT</pubDate></item></channel></rss>
+&lt;/blockquote&gt;&lt;/div&gt;</description><category>Linux</category><guid>https://codinglonglong.github.io/posts/libdc1394-error-failed-to-initialize-libdc1394/</guid><pubDate>Fri, 03 Mar 2017 11:22:25 GMT</pubDate></item></channel></rss>

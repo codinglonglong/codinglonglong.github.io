@@ -86,9 +86,61 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/tong-guo-poliposhi-xian-httphe-httpsdai-li/" class="u-url">通过polipo实现http和https代理</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerpei-zhi-vuejskai-fa-huan-jing/" class="u-url">Docker配置vuejs开发环境</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/dockerpei-zhi-vuejskai-fa-huan-jing/" rel="bookmark"><time class="published dt-published" datetime="2017-03-13T20:36:24+08:00" title="2017-03-13 20:36">2017-03-13 20:36</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>1、安装wget，下载最新版nodejs。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; apt udpate
+&gt;&gt; apt install wget
+&gt;&gt; cd ~
+&gt;&gt; wget https://nodejs.org/dist/v7.7.2/node-v7.7.2-linux-x64.tar.xz
+</pre>
+</blockquote>
+<p>2、安装nodejs。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; apt install xz-utils
+&gt;&gt; xz -d node-v7.7.2-linux-x64.tar.xz
+&gt;&gt; tar -xvf node-v7.7.2-linux-x64.tar
+&gt;&gt; apt install emacs
+&gt;&gt; emacs ~/.bashrc
+export PATH=$PATH:/root/node-v7.7.2-linux-x64/bin/
+&gt;&gt; source ~/.bashrc
+</pre>
+</blockquote>
+<p>3、安装vue和vue-cli。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; npm install --global vue vue-cli
+</pre>
+</blockquote>
+<p>4、创建新项目。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; cd ~
+&gt;&gt; mkdir development
+&gt;&gt; cd development
+&gt;&gt; apt install git
+&gt;&gt; vue init webpack test
+&gt;&gt; cd test
+&gt;&gt; npm install
+&gt;&gt; npm run dev
+</pre>
+</blockquote>
+<p>5、主系统访问 <a class="reference external" href="http://192.168.99.100:8080">http://192.168.99.100:8080</a> 即可。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/tong-guo-poliposhi-xian-httphe-httpsdai-li/" class="u-url">通过polipo实现http和https代理</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 龙龙
             </span></p>
             <p class="dateline"><a href="posts/tong-guo-poliposhi-xian-httphe-httpsdai-li/" rel="bookmark"><time class="published dt-published" datetime="2017-03-04T03:50:32+08:00" title="2017-03-04 03:50">2017-03-04 03:50</time></a></p>
@@ -124,7 +176,7 @@ socksProxyType=socks5
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/tong-guo-privoxyshi-xian-httphe-httpsdai-li/" class="u-url">通过privoxy实现http和https代理</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 龙龙
             </span></p>
             <p class="dateline"><a href="posts/tong-guo-privoxyshi-xian-httphe-httpsdai-li/" rel="bookmark"><time class="published dt-published" datetime="2017-03-03T20:14:40+08:00" title="2017-03-03 20:14">2017-03-03 20:14</time></a></p>
@@ -157,7 +209,7 @@ forward-socks5 / 127.0.0.1:1080 .
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/libdc1394-error-failed-to-initialize-libdc1394/" class="u-url">libdc1394 error: Failed to initialize libdc1394</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 龙龙
             </span></p>
             <p class="dateline"><a href="posts/libdc1394-error-failed-to-initialize-libdc1394/" rel="bookmark"><time class="published dt-published" datetime="2017-03-03T19:22:25+08:00" title="2017-03-03 19:22">2017-03-03 19:22</time></a></p>

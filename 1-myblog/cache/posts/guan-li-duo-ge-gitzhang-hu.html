@@ -2,41 +2,41 @@
 <ol class="arabic simple">
 <li>生成两个ssh key.</li>
 </ol>
-<pre class="code bash"><a name="rest_code_2c6263042c4743e6bb8f101f05fe7646-1"></a>&gt;&gt; ssh-keygen -t rsa -C <span class="s2">&quot;email address 1&quot;</span>
-<a name="rest_code_2c6263042c4743e6bb8f101f05fe7646-2"></a>&gt;&gt; ssh-keygen -t rsa -C <span class="s2">&quot;email address 2&quot;</span>
+<pre class="code bash"><a name="rest_code_8212c938bc39415abe793f53ffb60536-1"></a>&gt;&gt; ssh-keygen -t rsa -C <span class="s2">&quot;email address 1&quot;</span>
+<a name="rest_code_8212c938bc39415abe793f53ffb60536-2"></a>&gt;&gt; ssh-keygen -t rsa -C <span class="s2">&quot;email address 2&quot;</span>
 </pre><ol class="arabic simple" start="2">
 <li>添加上一步生成的两个ssh key.</li>
 </ol>
-<pre class="code bash"><a name="rest_code_80d9b9bacfcf4363a9d659df01cfe013-1"></a>&gt;&gt; ssh-add ~/.ssh/id_rsa1
-<a name="rest_code_80d9b9bacfcf4363a9d659df01cfe013-2"></a>&gt;&gt; ssh-add ~/.ssh/id_rsa2
+<pre class="code bash"><a name="rest_code_f1a29d9b47e9443ab2e6e114f83ff504-1"></a>&gt;&gt; ssh-add ~/.ssh/id_rsa1
+<a name="rest_code_f1a29d9b47e9443ab2e6e114f83ff504-2"></a>&gt;&gt; ssh-add ~/.ssh/id_rsa2
 </pre><ol class="arabic simple" start="3">
 <li>创建配置文件.</li>
 </ol>
-<pre class="code bash"><a name="rest_code_acde6a773d5a4505b239ee142e5b83f8-1"></a>&gt;&gt; touch config
-</pre><table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_798d7b5010644086bed00488ed3783dd-1"> 1</a>
-<a href="#rest_code_798d7b5010644086bed00488ed3783dd-2"> 2</a>
-<a href="#rest_code_798d7b5010644086bed00488ed3783dd-3"> 3</a>
-<a href="#rest_code_798d7b5010644086bed00488ed3783dd-4"> 4</a>
-<a href="#rest_code_798d7b5010644086bed00488ed3783dd-5"> 5</a>
-<a href="#rest_code_798d7b5010644086bed00488ed3783dd-6"> 6</a>
-<a href="#rest_code_798d7b5010644086bed00488ed3783dd-7"> 7</a>
-<a href="#rest_code_798d7b5010644086bed00488ed3783dd-8"> 8</a>
-<a href="#rest_code_798d7b5010644086bed00488ed3783dd-9"> 9</a>
-<a href="#rest_code_798d7b5010644086bed00488ed3783dd-10">10</a></pre></div></td><td class="code"><pre class="code bash"><a name="rest_code_798d7b5010644086bed00488ed3783dd-1"></a><span class="c1"># github1</span>
-<a name="rest_code_798d7b5010644086bed00488ed3783dd-2"></a>Host github1
-<a name="rest_code_798d7b5010644086bed00488ed3783dd-3"></a>     HostName github.com
-<a name="rest_code_798d7b5010644086bed00488ed3783dd-4"></a>     PreferredAuthentications publickey
-<a name="rest_code_798d7b5010644086bed00488ed3783dd-5"></a>     IdentityFile ~/.ssh/id_rsa1
-<a name="rest_code_798d7b5010644086bed00488ed3783dd-6"></a><span class="c1"># github2</span>
-<a name="rest_code_798d7b5010644086bed00488ed3783dd-7"></a>Host github2
-<a name="rest_code_798d7b5010644086bed00488ed3783dd-8"></a>     HostName github.com
-<a name="rest_code_798d7b5010644086bed00488ed3783dd-9"></a>     PreferredAuthentications publickey
-<a name="rest_code_798d7b5010644086bed00488ed3783dd-10"></a>     IdentityFile ~/.ssh/id_rsa2
+<pre class="code bash"><a name="rest_code_cd8962c701be4071afe9f2d7e01a9967-1"></a>&gt;&gt; touch config
+</pre><table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_fd9455cc6afc485aa83286ef241c50bf-1"> 1</a>
+<a href="#rest_code_fd9455cc6afc485aa83286ef241c50bf-2"> 2</a>
+<a href="#rest_code_fd9455cc6afc485aa83286ef241c50bf-3"> 3</a>
+<a href="#rest_code_fd9455cc6afc485aa83286ef241c50bf-4"> 4</a>
+<a href="#rest_code_fd9455cc6afc485aa83286ef241c50bf-5"> 5</a>
+<a href="#rest_code_fd9455cc6afc485aa83286ef241c50bf-6"> 6</a>
+<a href="#rest_code_fd9455cc6afc485aa83286ef241c50bf-7"> 7</a>
+<a href="#rest_code_fd9455cc6afc485aa83286ef241c50bf-8"> 8</a>
+<a href="#rest_code_fd9455cc6afc485aa83286ef241c50bf-9"> 9</a>
+<a href="#rest_code_fd9455cc6afc485aa83286ef241c50bf-10">10</a></pre></div></td><td class="code"><pre class="code bash"><a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-1"></a><span class="c1"># github1</span>
+<a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-2"></a>Host github1
+<a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-3"></a>     HostName github.com
+<a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-4"></a>     PreferredAuthentications publickey
+<a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-5"></a>     IdentityFile ~/.ssh/id_rsa1
+<a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-6"></a><span class="c1"># github2</span>
+<a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-7"></a>Host github2
+<a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-8"></a>     HostName github.com
+<a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-9"></a>     PreferredAuthentications publickey
+<a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-10"></a>     IdentityFile ~/.ssh/id_rsa2
 </pre></td></tr></table><ol class="arabic simple" start="4">
 <li>测试.</li>
 </ol>
-<pre class="code bash"><a name="rest_code_f9231f4291664ca5947f1cdb7c0210b9-1"></a>&gt;&gt; ssh -T git@github1
-<a name="rest_code_f9231f4291664ca5947f1cdb7c0210b9-2"></a>&gt;&gt; ssh -T git@github2
+<pre class="code bash"><a name="rest_code_9ca4b622d4e840eca938c47629dfbde3-1"></a>&gt;&gt; ssh -T git@github1
+<a name="rest_code_9ca4b622d4e840eca938c47629dfbde3-2"></a>&gt;&gt; ssh -T git@github2
 </pre><p><strong>注意</strong></p>
 <ol class="arabic simple">
 <li>过程之中遇到yes或者no，都输入yes。</li>

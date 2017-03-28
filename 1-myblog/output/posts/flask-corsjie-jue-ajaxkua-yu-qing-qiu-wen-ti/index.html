@@ -111,7 +111,7 @@ pip install flask-cors
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Flask-CORS解决Ajax跨域请求问题</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     龙龙
             </span></p>
             <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2017-02-08T12:59:14+08:00" itemprop="datePublished" title="2017-02-08 12:59">2017-02-08 12:59</time></a></p>
@@ -124,23 +124,23 @@ pip install flask-cors
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <p>在本地开发网站的过程中，js访问后端服务会出现</p>
-<pre class="code bash"><a name="rest_code_a0a5d404d287402e8ddc1654b09255fd-1"></a>已拦截跨源请求：同源策略禁止读取位于 http://192.168.99.100:8080/signup/ 的远程资源。（原因：CORS 头缺少 <span class="s1">'Access-Control-Allow-Origin'</span>）。
+<pre class="code bash"><a name="rest_code_2596c53d93c348d6b1f1bae6bbb8e76d-1"></a>已拦截跨源请求：同源策略禁止读取位于 http://192.168.99.100:8080/signup/ 的远程资源。（原因：CORS 头缺少 <span class="s1">'Access-Control-Allow-Origin'</span>）。
 </pre>
 <p>这时可以通过Flask-CORS解决问题。</p>
 <p>1、安装。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_7f58ecec28cc497e9aacf897195a7740-1"></a>pip install flask-cors
+<pre class="code bash"><a name="rest_code_b76dd97da12e4e31849fe4673ca46cd7-1"></a>pip install flask-cors
 </pre>
 </blockquote>
 <p>2、使用。</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_1c801a647c2a459787ffcaa5e61b9302-1">1</a>
-<a href="#rest_code_1c801a647c2a459787ffcaa5e61b9302-2">2</a>
-<a href="#rest_code_1c801a647c2a459787ffcaa5e61b9302-3">3</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_1c801a647c2a459787ffcaa5e61b9302-1"></a><span class="kn">from</span> <span class="nn">flask_cors</span> <span class="kn">import</span> <span class="n">CORS</span>
-<a name="rest_code_1c801a647c2a459787ffcaa5e61b9302-2"></a><span class="n">global_app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
-<a name="rest_code_1c801a647c2a459787ffcaa5e61b9302-3"></a><span class="n">CORS</span><span class="p">(</span><span class="n">global_app</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_bde4964412e541d8a7e606b528cb2cb5-1">1</a>
+<a href="#rest_code_bde4964412e541d8a7e606b528cb2cb5-2">2</a>
+<a href="#rest_code_bde4964412e541d8a7e606b528cb2cb5-3">3</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_bde4964412e541d8a7e606b528cb2cb5-1"></a><span class="kn">from</span> <span class="nn">flask_cors</span> <span class="kn">import</span> <span class="n">CORS</span>
+<a name="rest_code_bde4964412e541d8a7e606b528cb2cb5-2"></a><span class="n">global_app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<a name="rest_code_bde4964412e541d8a7e606b528cb2cb5-3"></a><span class="n">CORS</span><span class="p">(</span><span class="n">global_app</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 </blockquote>

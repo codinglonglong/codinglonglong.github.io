@@ -1,56 +1,56 @@
 <p>继文章 <a class="reference external" href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/">https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/</a> 之后，我们继续实验。</p>
 <p>1、Docker中安装Flask-Restplus。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_08bc7ea94880419dbbeef7fb88acc8ec-1"></a>pip install flask-restplus
+<pre class="code bash"><a name="rest_code_72f8660235f54edeafbf6f36a25c6154-1"></a>pip install flask-restplus
 </pre></blockquote>
 <p>2、主系统编写测试程序main.py。</p>
 <blockquote>
-<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_2d4e37ea0f9142349884e0540e179c1a-1"> 1</a>
-<a href="#rest_code_2d4e37ea0f9142349884e0540e179c1a-2"> 2</a>
-<a href="#rest_code_2d4e37ea0f9142349884e0540e179c1a-3"> 3</a>
-<a href="#rest_code_2d4e37ea0f9142349884e0540e179c1a-4"> 4</a>
-<a href="#rest_code_2d4e37ea0f9142349884e0540e179c1a-5"> 5</a>
-<a href="#rest_code_2d4e37ea0f9142349884e0540e179c1a-6"> 6</a>
-<a href="#rest_code_2d4e37ea0f9142349884e0540e179c1a-7"> 7</a>
-<a href="#rest_code_2d4e37ea0f9142349884e0540e179c1a-8"> 8</a>
-<a href="#rest_code_2d4e37ea0f9142349884e0540e179c1a-9"> 9</a>
-<a href="#rest_code_2d4e37ea0f9142349884e0540e179c1a-10">10</a>
-<a href="#rest_code_2d4e37ea0f9142349884e0540e179c1a-11">11</a>
-<a href="#rest_code_2d4e37ea0f9142349884e0540e179c1a-12">12</a>
-<a href="#rest_code_2d4e37ea0f9142349884e0540e179c1a-13">13</a>
-<a href="#rest_code_2d4e37ea0f9142349884e0540e179c1a-14">14</a>
-<a href="#rest_code_2d4e37ea0f9142349884e0540e179c1a-15">15</a>
-<a href="#rest_code_2d4e37ea0f9142349884e0540e179c1a-16">16</a>
-<a href="#rest_code_2d4e37ea0f9142349884e0540e179c1a-17">17</a>
-<a href="#rest_code_2d4e37ea0f9142349884e0540e179c1a-18">18</a>
-<a href="#rest_code_2d4e37ea0f9142349884e0540e179c1a-19">19</a>
-<a href="#rest_code_2d4e37ea0f9142349884e0540e179c1a-20">20</a>
-<a href="#rest_code_2d4e37ea0f9142349884e0540e179c1a-21">21</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_2d4e37ea0f9142349884e0540e179c1a-1"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
-<a name="rest_code_2d4e37ea0f9142349884e0540e179c1a-2"></a><span class="kn">from</span> <span class="nn">flask_restplus</span> <span class="kn">import</span> <span class="n">Api</span><span class="p">,</span> <span class="n">Resource</span><span class="p">,</span> <span class="n">fields</span>
-<a name="rest_code_2d4e37ea0f9142349884e0540e179c1a-3"></a>
-<a name="rest_code_2d4e37ea0f9142349884e0540e179c1a-4"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
-<a name="rest_code_2d4e37ea0f9142349884e0540e179c1a-5"></a><span class="n">api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;1.0&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Sample API&#39;</span><span class="p">,</span>
-<a name="rest_code_2d4e37ea0f9142349884e0540e179c1a-6"></a>    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;A sample API&#39;</span><span class="p">,</span>
-<a name="rest_code_2d4e37ea0f9142349884e0540e179c1a-7"></a><span class="p">)</span>
-<a name="rest_code_2d4e37ea0f9142349884e0540e179c1a-8"></a>
-<a name="rest_code_2d4e37ea0f9142349884e0540e179c1a-9"></a><span class="nd">@api.route</span><span class="p">(</span><span class="s1">&#39;/my-resource/&lt;id&gt;&#39;</span><span class="p">)</span>
-<a name="rest_code_2d4e37ea0f9142349884e0540e179c1a-10"></a><span class="nd">@api.doc</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;An ID&#39;</span><span class="p">})</span>
-<a name="rest_code_2d4e37ea0f9142349884e0540e179c1a-11"></a><span class="k">class</span> <span class="nc">MyResource</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
-<a name="rest_code_2d4e37ea0f9142349884e0540e179c1a-12"></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
-<a name="rest_code_2d4e37ea0f9142349884e0540e179c1a-13"></a>        <span class="k">return</span> <span class="p">{}</span>
-<a name="rest_code_2d4e37ea0f9142349884e0540e179c1a-14"></a>
-<a name="rest_code_2d4e37ea0f9142349884e0540e179c1a-15"></a>    <span class="nd">@api.response</span><span class="p">(</span><span class="mi">403</span><span class="p">,</span> <span class="s1">&#39;Not Authorized&#39;</span><span class="p">)</span>
-<a name="rest_code_2d4e37ea0f9142349884e0540e179c1a-16"></a>    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
-<a name="rest_code_2d4e37ea0f9142349884e0540e179c1a-17"></a>        <span class="n">api</span><span class="o">.</span><span class="n">abort</span><span class="p">(</span><span class="mi">403</span><span class="p">)</span>
-<a name="rest_code_2d4e37ea0f9142349884e0540e179c1a-18"></a>
-<a name="rest_code_2d4e37ea0f9142349884e0540e179c1a-19"></a>
-<a name="rest_code_2d4e37ea0f9142349884e0540e179c1a-20"></a><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<a name="rest_code_2d4e37ea0f9142349884e0540e179c1a-21"></a>    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">&quot;0.0.0.0&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8080</span><span class="p">)</span>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_8140c2ca690347afa61f383b9896dee5-1"> 1</a>
+<a href="#rest_code_8140c2ca690347afa61f383b9896dee5-2"> 2</a>
+<a href="#rest_code_8140c2ca690347afa61f383b9896dee5-3"> 3</a>
+<a href="#rest_code_8140c2ca690347afa61f383b9896dee5-4"> 4</a>
+<a href="#rest_code_8140c2ca690347afa61f383b9896dee5-5"> 5</a>
+<a href="#rest_code_8140c2ca690347afa61f383b9896dee5-6"> 6</a>
+<a href="#rest_code_8140c2ca690347afa61f383b9896dee5-7"> 7</a>
+<a href="#rest_code_8140c2ca690347afa61f383b9896dee5-8"> 8</a>
+<a href="#rest_code_8140c2ca690347afa61f383b9896dee5-9"> 9</a>
+<a href="#rest_code_8140c2ca690347afa61f383b9896dee5-10">10</a>
+<a href="#rest_code_8140c2ca690347afa61f383b9896dee5-11">11</a>
+<a href="#rest_code_8140c2ca690347afa61f383b9896dee5-12">12</a>
+<a href="#rest_code_8140c2ca690347afa61f383b9896dee5-13">13</a>
+<a href="#rest_code_8140c2ca690347afa61f383b9896dee5-14">14</a>
+<a href="#rest_code_8140c2ca690347afa61f383b9896dee5-15">15</a>
+<a href="#rest_code_8140c2ca690347afa61f383b9896dee5-16">16</a>
+<a href="#rest_code_8140c2ca690347afa61f383b9896dee5-17">17</a>
+<a href="#rest_code_8140c2ca690347afa61f383b9896dee5-18">18</a>
+<a href="#rest_code_8140c2ca690347afa61f383b9896dee5-19">19</a>
+<a href="#rest_code_8140c2ca690347afa61f383b9896dee5-20">20</a>
+<a href="#rest_code_8140c2ca690347afa61f383b9896dee5-21">21</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_8140c2ca690347afa61f383b9896dee5-1"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<a name="rest_code_8140c2ca690347afa61f383b9896dee5-2"></a><span class="kn">from</span> <span class="nn">flask_restplus</span> <span class="kn">import</span> <span class="n">Api</span><span class="p">,</span> <span class="n">Resource</span><span class="p">,</span> <span class="n">fields</span>
+<a name="rest_code_8140c2ca690347afa61f383b9896dee5-3"></a>
+<a name="rest_code_8140c2ca690347afa61f383b9896dee5-4"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<a name="rest_code_8140c2ca690347afa61f383b9896dee5-5"></a><span class="n">api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">&#39;1.0&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Sample API&#39;</span><span class="p">,</span>
+<a name="rest_code_8140c2ca690347afa61f383b9896dee5-6"></a>    <span class="n">description</span><span class="o">=</span><span class="s1">&#39;A sample API&#39;</span><span class="p">,</span>
+<a name="rest_code_8140c2ca690347afa61f383b9896dee5-7"></a><span class="p">)</span>
+<a name="rest_code_8140c2ca690347afa61f383b9896dee5-8"></a>
+<a name="rest_code_8140c2ca690347afa61f383b9896dee5-9"></a><span class="nd">@api.route</span><span class="p">(</span><span class="s1">&#39;/my-resource/&lt;id&gt;&#39;</span><span class="p">)</span>
+<a name="rest_code_8140c2ca690347afa61f383b9896dee5-10"></a><span class="nd">@api.doc</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;An ID&#39;</span><span class="p">})</span>
+<a name="rest_code_8140c2ca690347afa61f383b9896dee5-11"></a><span class="k">class</span> <span class="nc">MyResource</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+<a name="rest_code_8140c2ca690347afa61f383b9896dee5-12"></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+<a name="rest_code_8140c2ca690347afa61f383b9896dee5-13"></a>        <span class="k">return</span> <span class="p">{}</span>
+<a name="rest_code_8140c2ca690347afa61f383b9896dee5-14"></a>
+<a name="rest_code_8140c2ca690347afa61f383b9896dee5-15"></a>    <span class="nd">@api.response</span><span class="p">(</span><span class="mi">403</span><span class="p">,</span> <span class="s1">&#39;Not Authorized&#39;</span><span class="p">)</span>
+<a name="rest_code_8140c2ca690347afa61f383b9896dee5-16"></a>    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+<a name="rest_code_8140c2ca690347afa61f383b9896dee5-17"></a>        <span class="n">api</span><span class="o">.</span><span class="n">abort</span><span class="p">(</span><span class="mi">403</span><span class="p">)</span>
+<a name="rest_code_8140c2ca690347afa61f383b9896dee5-18"></a>
+<a name="rest_code_8140c2ca690347afa61f383b9896dee5-19"></a>
+<a name="rest_code_8140c2ca690347afa61f383b9896dee5-20"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<a name="rest_code_8140c2ca690347afa61f383b9896dee5-21"></a>    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">&quot;0.0.0.0&quot;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8080</span><span class="p">)</span>
 </pre></td></tr></table></blockquote>
 <p>3、Docker中运行程序。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_9afcc573212549e8b3ed6c137f588c89-1"></a><span class="nb">cd</span> /usr/development/
-<a name="rest_code_9afcc573212549e8b3ed6c137f588c89-2"></a>python main.py
+<pre class="code bash"><a name="rest_code_2174d0911bbb43fa83614c7431a99e2b-1"></a><span class="nb">cd</span> /usr/development/
+<a name="rest_code_2174d0911bbb43fa83614c7431a99e2b-2"></a>python main.py
 </pre></blockquote>
 <p>4、主系统查看测试结果。</p>
 <img alt="https://github.com/longlongpicture/myblogpicture/raw/master/flaskswaggerui.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/flaskswaggerui.PNG" />

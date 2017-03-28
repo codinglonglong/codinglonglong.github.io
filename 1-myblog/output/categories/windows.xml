@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Windows)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/windows.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Mon, 27 Feb 2017 18:44:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Windows配置Docker</title><link>https://codinglonglong.github.io/posts/windowspei-zhi-docker/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;因为新笔记本的无线网卡和声卡比较新，目前的Linux发行版都无法很好地支持，所以只好先用Windows来进行开发了……&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Windows)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/windows.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 28 Mar 2017 01:04:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Windows配置Docker</title><link>https://codinglonglong.github.io/posts/windowspei-zhi-docker/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;因为新笔记本的无线网卡和声卡比较新，目前的Linux发行版都无法很好地支持，所以只好先用Windows来进行开发了……&lt;/p&gt;
 &lt;p&gt;第一步，在Windows上部署Linux开发环境，首先考虑到的是用Docker。&lt;/p&gt;
 &lt;ol class="arabic"&gt;
 &lt;li&gt;&lt;p class="first"&gt;安装docker-toolbox。访问下载安装： &lt;a class="reference external" href="https://www.docker.com/products/docker-toolbox"&gt;https://www.docker.com/products/docker-toolbox&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;在开始菜单双击运行Docker Quickstart Terminal，等待……………………直到出现&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_c3343742c08e418a861bcac4907b862c-1"&gt;1&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_c3343742c08e418a861bcac4907b862c-2"&gt;2&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_c3343742c08e418a861bcac4907b862c-3"&gt;3&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_c3343742c08e418a861bcac4907b862c-4"&gt;4&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_c3343742c08e418a861bcac4907b862c-5"&gt;5&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_c3343742c08e418a861bcac4907b862c-6"&gt;6&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_c3343742c08e418a861bcac4907b862c-7"&gt;7&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code bash"&gt;&lt;a name="rest_code_c3343742c08e418a861bcac4907b862c-1"&gt;&lt;/a&gt;docker is configured to use the default machine with IP 192.168.99.100
-&lt;a name="rest_code_c3343742c08e418a861bcac4907b862c-2"&gt;&lt;/a&gt;For &lt;span class="nb"&gt;help&lt;/span&gt; getting started, check out the docs at https://docs.docker.com
-&lt;a name="rest_code_c3343742c08e418a861bcac4907b862c-3"&gt;&lt;/a&gt;
-&lt;a name="rest_code_c3343742c08e418a861bcac4907b862c-4"&gt;&lt;/a&gt;Start interactive shell
-&lt;a name="rest_code_c3343742c08e418a861bcac4907b862c-5"&gt;&lt;/a&gt;
-&lt;a name="rest_code_c3343742c08e418a861bcac4907b862c-6"&gt;&lt;/a&gt;long@DESKTOP-N79DL8P MINGW64 ~
-&lt;a name="rest_code_c3343742c08e418a861bcac4907b862c-7"&gt;&lt;/a&gt;$
+&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_85707f48391946049ed19f513c6a4a50-1"&gt;1&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_85707f48391946049ed19f513c6a4a50-2"&gt;2&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_85707f48391946049ed19f513c6a4a50-3"&gt;3&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_85707f48391946049ed19f513c6a4a50-4"&gt;4&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_85707f48391946049ed19f513c6a4a50-5"&gt;5&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_85707f48391946049ed19f513c6a4a50-6"&gt;6&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_85707f48391946049ed19f513c6a4a50-7"&gt;7&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code bash"&gt;&lt;a name="rest_code_85707f48391946049ed19f513c6a4a50-1"&gt;&lt;/a&gt;docker is configured to use the default machine with IP &lt;span class="m"&gt;192&lt;/span&gt;.168.99.100
+&lt;a name="rest_code_85707f48391946049ed19f513c6a4a50-2"&gt;&lt;/a&gt;For &lt;span class="nb"&gt;help&lt;/span&gt; getting started, check out the docs at https://docs.docker.com
+&lt;a name="rest_code_85707f48391946049ed19f513c6a4a50-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_85707f48391946049ed19f513c6a4a50-4"&gt;&lt;/a&gt;Start interactive shell
+&lt;a name="rest_code_85707f48391946049ed19f513c6a4a50-5"&gt;&lt;/a&gt;
+&lt;a name="rest_code_85707f48391946049ed19f513c6a4a50-6"&gt;&lt;/a&gt;long@DESKTOP-N79DL8P MINGW64 ~
+&lt;a name="rest_code_85707f48391946049ed19f513c6a4a50-7"&gt;&lt;/a&gt;$
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;运行 &lt;strong&gt;docker pull ubuntu:16.04&lt;/strong&gt; 。&lt;/p&gt;

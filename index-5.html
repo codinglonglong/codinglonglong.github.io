@@ -88,7 +88,7 @@ body{
 <div class="postindex">
     <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/" class="u-url">Flask-CORS解决Ajax跨域请求问题</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 龙龙
             </span></p>
             <p class="dateline"><a href="posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/" rel="bookmark"><time class="published dt-published" datetime="2017-02-08T12:59:14+08:00" title="2017-02-08 12:59">2017-02-08 12:59</time></a></p>
@@ -96,23 +96,23 @@ body{
     </header><div class="p-summary entry-summary">
     <div>
 <p>在本地开发网站的过程中，js访问后端服务会出现</p>
-<pre class="code bash"><a name="rest_code_a0a5d404d287402e8ddc1654b09255fd-1"></a>已拦截跨源请求：同源策略禁止读取位于 http://192.168.99.100:8080/signup/ 的远程资源。（原因：CORS 头缺少 <span class="s1">'Access-Control-Allow-Origin'</span>）。
+<pre class="code bash"><a name="rest_code_2596c53d93c348d6b1f1bae6bbb8e76d-1"></a>已拦截跨源请求：同源策略禁止读取位于 http://192.168.99.100:8080/signup/ 的远程资源。（原因：CORS 头缺少 <span class="s1">'Access-Control-Allow-Origin'</span>）。
 </pre>
 <p>这时可以通过Flask-CORS解决问题。</p>
 <p>1、安装。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_7f58ecec28cc497e9aacf897195a7740-1"></a>pip install flask-cors
+<pre class="code bash"><a name="rest_code_b76dd97da12e4e31849fe4673ca46cd7-1"></a>pip install flask-cors
 </pre>
 </blockquote>
 <p>2、使用。</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/#rest_code_1c801a647c2a459787ffcaa5e61b9302-1">1</a>
-<a href="posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/#rest_code_1c801a647c2a459787ffcaa5e61b9302-2">2</a>
-<a href="posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/#rest_code_1c801a647c2a459787ffcaa5e61b9302-3">3</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_1c801a647c2a459787ffcaa5e61b9302-1"></a><span class="kn">from</span> <span class="nn">flask_cors</span> <span class="kn">import</span> <span class="n">CORS</span>
-<a name="rest_code_1c801a647c2a459787ffcaa5e61b9302-2"></a><span class="n">global_app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
-<a name="rest_code_1c801a647c2a459787ffcaa5e61b9302-3"></a><span class="n">CORS</span><span class="p">(</span><span class="n">global_app</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/#rest_code_bde4964412e541d8a7e606b528cb2cb5-1">1</a>
+<a href="posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/#rest_code_bde4964412e541d8a7e606b528cb2cb5-2">2</a>
+<a href="posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/#rest_code_bde4964412e541d8a7e606b528cb2cb5-3">3</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_bde4964412e541d8a7e606b528cb2cb5-1"></a><span class="kn">from</span> <span class="nn">flask_cors</span> <span class="kn">import</span> <span class="n">CORS</span>
+<a name="rest_code_bde4964412e541d8a7e606b528cb2cb5-2"></a><span class="n">global_app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<a name="rest_code_bde4964412e541d8a7e606b528cb2cb5-3"></a><span class="n">CORS</span><span class="p">(</span><span class="n">global_app</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 </blockquote>
@@ -120,7 +120,7 @@ body{
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pythonzhuang-shi-qi-tan-suo/" class="u-url">Python装饰器探索</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 龙龙
             </span></p>
             <p class="dateline"><a href="posts/pythonzhuang-shi-qi-tan-suo/" rel="bookmark"><time class="published dt-published" datetime="2017-02-01T19:31:17+08:00" title="2017-02-01 19:31">2017-02-01 19:31</time></a></p>
@@ -131,349 +131,349 @@ body{
 <p>1、带参数函数、无参数装饰器</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_dc94490dc67540d195519f2ee9a3f1f8-1"> 1</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_dc94490dc67540d195519f2ee9a3f1f8-2"> 2</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_dc94490dc67540d195519f2ee9a3f1f8-3"> 3</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_dc94490dc67540d195519f2ee9a3f1f8-4"> 4</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_dc94490dc67540d195519f2ee9a3f1f8-5"> 5</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_dc94490dc67540d195519f2ee9a3f1f8-6"> 6</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_dc94490dc67540d195519f2ee9a3f1f8-7"> 7</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_dc94490dc67540d195519f2ee9a3f1f8-8"> 8</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_dc94490dc67540d195519f2ee9a3f1f8-9"> 9</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_dc94490dc67540d195519f2ee9a3f1f8-10">10</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_dc94490dc67540d195519f2ee9a3f1f8-11">11</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_dc94490dc67540d195519f2ee9a3f1f8-12">12</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_dc94490dc67540d195519f2ee9a3f1f8-13">13</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_dc94490dc67540d195519f2ee9a3f1f8-14">14</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_dc94490dc67540d195519f2ee9a3f1f8-15">15</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_dc94490dc67540d195519f2ee9a3f1f8-16">16</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_dc94490dc67540d195519f2ee9a3f1f8-17">17</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_dc94490dc67540d195519f2ee9a3f1f8-18">18</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_dc94490dc67540d195519f2ee9a3f1f8-19">19</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_dc94490dc67540d195519f2ee9a3f1f8-20">20</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_dc94490dc67540d195519f2ee9a3f1f8-21">21</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_dc94490dc67540d195519f2ee9a3f1f8-22">22</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_dc94490dc67540d195519f2ee9a3f1f8-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
-<a name="rest_code_dc94490dc67540d195519f2ee9a3f1f8-2"></a><span class="c1"># 带参数函数、无参数装饰器</span>
-<a name="rest_code_dc94490dc67540d195519f2ee9a3f1f8-3"></a>
-<a name="rest_code_dc94490dc67540d195519f2ee9a3f1f8-4"></a>
-<a name="rest_code_dc94490dc67540d195519f2ee9a3f1f8-5"></a><span class="k">def</span> <span class="nf">checklogin</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-<a name="rest_code_dc94490dc67540d195519f2ee9a3f1f8-6"></a>    <span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
-<a name="rest_code_dc94490dc67540d195519f2ee9a3f1f8-7"></a>        <span class="n">validusers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"long"</span><span class="p">,</span> <span class="s2">"jack"</span><span class="p">]</span>
-<a name="rest_code_dc94490dc67540d195519f2ee9a3f1f8-8"></a>        <span class="k">if</span> <span class="n">username</span> <span class="ow">in</span> <span class="n">validusers</span><span class="p">:</span>
-<a name="rest_code_dc94490dc67540d195519f2ee9a3f1f8-9"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
-<a name="rest_code_dc94490dc67540d195519f2ee9a3f1f8-10"></a>        <span class="k">else</span><span class="p">:</span>
-<a name="rest_code_dc94490dc67540d195519f2ee9a3f1f8-11"></a>            <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">username</span><span class="p">)</span> <span class="o">+</span> <span class="s2">", 你没有操作权限"</span>
-<a name="rest_code_dc94490dc67540d195519f2ee9a3f1f8-12"></a>    <span class="k">return</span> <span class="n">_</span>
-<a name="rest_code_dc94490dc67540d195519f2ee9a3f1f8-13"></a>
-<a name="rest_code_dc94490dc67540d195519f2ee9a3f1f8-14"></a>
-<a name="rest_code_dc94490dc67540d195519f2ee9a3f1f8-15"></a><span class="nd">@checklogin</span>
-<a name="rest_code_dc94490dc67540d195519f2ee9a3f1f8-16"></a><span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
-<a name="rest_code_dc94490dc67540d195519f2ee9a3f1f8-17"></a>    <span class="k">return</span> <span class="s2">"欢迎你, "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
-<a name="rest_code_dc94490dc67540d195519f2ee9a3f1f8-18"></a>
-<a name="rest_code_dc94490dc67540d195519f2ee9a3f1f8-19"></a>
-<a name="rest_code_dc94490dc67540d195519f2ee9a3f1f8-20"></a><span class="k">print</span><span class="p">(</span><span class="n">login</span><span class="p">(</span><span class="s2">"long"</span><span class="p">))</span>
-<a name="rest_code_dc94490dc67540d195519f2ee9a3f1f8-21"></a><span class="k">print</span><span class="p">(</span><span class="n">login</span><span class="p">(</span><span class="s2">"tom"</span><span class="p">))</span>
-<a name="rest_code_dc94490dc67540d195519f2ee9a3f1f8-22"></a><span class="k">print</span><span class="p">(</span><span class="n">login</span><span class="p">(</span><span class="s2">"jack"</span><span class="p">))</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-1"> 1</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-2"> 2</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-3"> 3</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-4"> 4</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-5"> 5</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-6"> 6</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-7"> 7</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-8"> 8</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-9"> 9</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-10">10</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-11">11</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-12">12</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-13">13</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-14">14</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-15">15</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-16">16</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-17">17</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-18">18</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-19">19</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-20">20</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-21">21</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-22">22</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
+<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-2"></a><span class="c1"># 带参数函数、无参数装饰器</span>
+<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-3"></a>
+<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-4"></a>
+<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-5"></a><span class="k">def</span> <span class="nf">checklogin</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-6"></a>    <span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
+<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-7"></a>        <span class="n">validusers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"long"</span><span class="p">,</span> <span class="s2">"jack"</span><span class="p">]</span>
+<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-8"></a>        <span class="k">if</span> <span class="n">username</span> <span class="ow">in</span> <span class="n">validusers</span><span class="p">:</span>
+<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-9"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-10"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-11"></a>            <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">username</span><span class="p">)</span> <span class="o">+</span> <span class="s2">", 你没有操作权限"</span>
+<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-12"></a>    <span class="k">return</span> <span class="n">_</span>
+<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-13"></a>
+<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-14"></a>
+<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-15"></a><span class="nd">@checklogin</span>
+<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-16"></a><span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
+<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-17"></a>    <span class="k">return</span> <span class="s2">"欢迎你, "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-18"></a>
+<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-19"></a>
+<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-20"></a><span class="k">print</span><span class="p">(</span><span class="n">login</span><span class="p">(</span><span class="s2">"long"</span><span class="p">))</span>
+<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-21"></a><span class="k">print</span><span class="p">(</span><span class="n">login</span><span class="p">(</span><span class="s2">"tom"</span><span class="p">))</span>
+<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-22"></a><span class="k">print</span><span class="p">(</span><span class="n">login</span><span class="p">(</span><span class="s2">"jack"</span><span class="p">))</span>
 </pre></td>
 </tr></table>
 </blockquote>
 <p>运行结果：</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_d15117472e884f639f09d5569d21fbb6-1"></a>欢迎你, long
-<a name="rest_code_d15117472e884f639f09d5569d21fbb6-2"></a>tom, 你没有操作权限
-<a name="rest_code_d15117472e884f639f09d5569d21fbb6-3"></a>欢迎你, jack
+<pre class="code bash"><a name="rest_code_f9bdbaa8ea2c4bb6b697972728af81a1-1"></a>欢迎你, long
+<a name="rest_code_f9bdbaa8ea2c4bb6b697972728af81a1-2"></a>tom, 你没有操作权限
+<a name="rest_code_f9bdbaa8ea2c4bb6b697972728af81a1-3"></a>欢迎你, jack
 </pre>
 </blockquote>
 <p>2、可变参数函数、无参数装饰器</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-1"> 1</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-2"> 2</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-3"> 3</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-4"> 4</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-5"> 5</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-6"> 6</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-7"> 7</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-8"> 8</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-9"> 9</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-10">10</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-11">11</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-12">12</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-13">13</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-14">14</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-15">15</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-16">16</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-17">17</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-18">18</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-19">19</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-20">20</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-21">21</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-22">22</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-23">23</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-24">24</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-25">25</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-26">26</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-27">27</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-28">28</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-29">29</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-30">30</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-31">31</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-32">32</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-33">33</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-34">34</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-35">35</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-36">36</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-37">37</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-38">38</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-39">39</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-40">40</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-41">41</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_ce42949fd7de408aa13e6025999c2abf-42">42</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_ce42949fd7de408aa13e6025999c2abf-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-2"></a><span class="c1"># 可变参数函数、无参数装饰器</span>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-3"></a>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-4"></a>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-5"></a><span class="k">def</span> <span class="nf">logger</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-6"></a>    <span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-7"></a>        <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">__name__</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'被调用，参数包括：'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">kwargs</span><span class="p">))</span>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-8"></a>        <span class="k">if</span> <span class="n">args</span> <span class="ow">and</span> <span class="n">kwargs</span><span class="p">:</span>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-9"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-10"></a>        <span class="k">elif</span> <span class="n">args</span><span class="p">:</span>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-11"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-12"></a>        <span class="k">elif</span> <span class="n">kwargs</span><span class="p">:</span>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-13"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-14"></a>        <span class="k">else</span><span class="p">:</span>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-15"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">()</span>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-16"></a>    <span class="k">return</span> <span class="n">_</span>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-17"></a>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-18"></a>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-19"></a><span class="nd">@logger</span>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-20"></a><span class="k">def</span> <span class="nf">test1</span><span class="p">():</span>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-21"></a>    <span class="k">pass</span>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-22"></a>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-23"></a>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-24"></a><span class="nd">@logger</span>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-25"></a><span class="k">def</span> <span class="nf">test2</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-26"></a>    <span class="k">pass</span>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-27"></a>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-28"></a>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-29"></a><span class="nd">@logger</span>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-30"></a><span class="k">def</span> <span class="nf">test3</span><span class="p">(</span><span class="n">kwargs</span><span class="p">):</span>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-31"></a>    <span class="k">pass</span>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-32"></a>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-33"></a>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-34"></a><span class="nd">@logger</span>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-35"></a><span class="k">def</span> <span class="nf">test4</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">):</span>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-36"></a>    <span class="k">pass</span>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-37"></a>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-38"></a>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-39"></a><span class="n">test1</span><span class="p">()</span>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-40"></a><span class="n">test2</span><span class="p">(</span><span class="s2">"long"</span><span class="p">)</span>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-41"></a><span class="n">test3</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<a name="rest_code_ce42949fd7de408aa13e6025999c2abf-42"></a><span class="n">test4</span><span class="p">(</span><span class="s2">"long"</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-1"> 1</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-2"> 2</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-3"> 3</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-4"> 4</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-5"> 5</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-6"> 6</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-7"> 7</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-8"> 8</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-9"> 9</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-10">10</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-11">11</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-12">12</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-13">13</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-14">14</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-15">15</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-16">16</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-17">17</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-18">18</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-19">19</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-20">20</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-21">21</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-22">22</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-23">23</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-24">24</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-25">25</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-26">26</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-27">27</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-28">28</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-29">29</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-30">30</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-31">31</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-32">32</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-33">33</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-34">34</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-35">35</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-36">36</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-37">37</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-38">38</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-39">39</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-40">40</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-41">41</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_48a3a4f3e5ee43dda831cceecb7da497-42">42</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-2"></a><span class="c1"># 可变参数函数、无参数装饰器</span>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-3"></a>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-4"></a>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-5"></a><span class="k">def</span> <span class="nf">logger</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-6"></a>    <span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-7"></a>        <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'被调用，参数包括：'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">kwargs</span><span class="p">))</span>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-8"></a>        <span class="k">if</span> <span class="n">args</span> <span class="ow">and</span> <span class="n">kwargs</span><span class="p">:</span>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-9"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-10"></a>        <span class="k">elif</span> <span class="n">args</span><span class="p">:</span>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-11"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-12"></a>        <span class="k">elif</span> <span class="n">kwargs</span><span class="p">:</span>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-13"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-14"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-15"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">()</span>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-16"></a>    <span class="k">return</span> <span class="n">_</span>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-17"></a>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-18"></a>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-19"></a><span class="nd">@logger</span>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-20"></a><span class="k">def</span> <span class="nf">test1</span><span class="p">():</span>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-21"></a>    <span class="k">pass</span>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-22"></a>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-23"></a>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-24"></a><span class="nd">@logger</span>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-25"></a><span class="k">def</span> <span class="nf">test2</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-26"></a>    <span class="k">pass</span>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-27"></a>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-28"></a>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-29"></a><span class="nd">@logger</span>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-30"></a><span class="k">def</span> <span class="nf">test3</span><span class="p">(</span><span class="n">kwargs</span><span class="p">):</span>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-31"></a>    <span class="k">pass</span>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-32"></a>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-33"></a>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-34"></a><span class="nd">@logger</span>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-35"></a><span class="k">def</span> <span class="nf">test4</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">):</span>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-36"></a>    <span class="k">pass</span>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-37"></a>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-38"></a>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-39"></a><span class="n">test1</span><span class="p">()</span>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-40"></a><span class="n">test2</span><span class="p">(</span><span class="s2">"long"</span><span class="p">)</span>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-41"></a><span class="n">test3</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-42"></a><span class="n">test4</span><span class="p">(</span><span class="s2">"long"</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 </blockquote>
 <p>运行结果：</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_bd452194353346e188ecd21b7b21996e-1"></a>test1被调用，参数包括：<span class="o">(){}</span>
-<a name="rest_code_bd452194353346e188ecd21b7b21996e-2"></a>test2被调用，参数包括：<span class="o">(</span><span class="s1">'long'</span>,<span class="o">){}</span>
-<a name="rest_code_bd452194353346e188ecd21b7b21996e-3"></a>test3被调用，参数包括：<span class="o">(){</span><span class="s1">'a'</span>: 1, <span class="s1">'b'</span>: 2<span class="o">}</span>
-<a name="rest_code_bd452194353346e188ecd21b7b21996e-4"></a>test4被调用，参数包括：<span class="o">(</span><span class="s1">'long'</span>,<span class="o">){</span><span class="s1">'a'</span>: 1, <span class="s1">'b'</span>: 2<span class="o">}</span>
+<pre class="code bash"><a name="rest_code_5641b5e972264ab692c324f097d4c385-1"></a>test1被调用，参数包括：<span class="o">(){}</span>
+<a name="rest_code_5641b5e972264ab692c324f097d4c385-2"></a>test2被调用，参数包括：<span class="o">(</span><span class="s1">'long'</span>,<span class="o">){}</span>
+<a name="rest_code_5641b5e972264ab692c324f097d4c385-3"></a>test3被调用，参数包括：<span class="o">(){</span><span class="s1">'a'</span>: <span class="m">1</span>, <span class="s1">'b'</span>: <span class="m">2</span><span class="o">}</span>
+<a name="rest_code_5641b5e972264ab692c324f097d4c385-4"></a>test4被调用，参数包括：<span class="o">(</span><span class="s1">'long'</span>,<span class="o">){</span><span class="s1">'a'</span>: <span class="m">1</span>, <span class="s1">'b'</span>: <span class="m">2</span><span class="o">}</span>
 </pre>
 </blockquote>
 <p>3、带参数函数、带参数装饰器</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-1"> 1</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-2"> 2</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-3"> 3</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-4"> 4</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-5"> 5</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-6"> 6</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-7"> 7</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-8"> 8</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-9"> 9</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-10">10</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-11">11</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-12">12</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-13">13</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-14">14</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-15">15</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-16">16</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-17">17</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-18">18</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-19">19</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-20">20</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-21">21</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-22">22</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-23">23</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-24">24</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-25">25</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
-<a name="rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-2"></a><span class="c1"># 带参数函数、带参数装饰器</span>
-<a name="rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-3"></a>
-<a name="rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-4"></a>
-<a name="rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-5"></a><span class="k">def</span> <span class="nf">typechecker</span><span class="p">(</span><span class="n">paramtype</span><span class="p">):</span>
-<a name="rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-6"></a>    <span class="k">def</span> <span class="nf">_outer</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-<a name="rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-7"></a>        <span class="k">def</span> <span class="nf">_inner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-<a name="rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-8"></a>            <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
-<a name="rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-9"></a>                <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">paramtype</span><span class="p">:</span>
-<a name="rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-10"></a>                    <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">args</span><span class="p">]</span>
-<a name="rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-11"></a>                    <span class="k">return</span> <span class="s2">"+"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" 类型错误"</span>
-<a name="rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-12"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
-<a name="rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-13"></a>        <span class="k">return</span> <span class="n">_inner</span>
-<a name="rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-14"></a>    <span class="k">return</span> <span class="n">_outer</span>
-<a name="rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-15"></a>
-<a name="rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-16"></a>
-<a name="rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-17"></a><span class="nd">@typechecker</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-<a name="rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-18"></a><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
-<a name="rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-19"></a>    <span class="n">result</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-<a name="rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-20"></a>    <span class="n">value</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">value</span><span class="p">]</span>
-<a name="rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-21"></a>    <span class="k">return</span> <span class="s2">"+"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'='</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<a name="rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-22"></a>
-<a name="rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-23"></a>
-<a name="rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-24"></a><span class="k">print</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<a name="rest_code_522b50ea75cf42a2beeba7d9f38d9c3e-25"></a><span class="k">print</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_acd433e6551d4f7eac8a72bfefee99d5-1"> 1</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_acd433e6551d4f7eac8a72bfefee99d5-2"> 2</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_acd433e6551d4f7eac8a72bfefee99d5-3"> 3</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_acd433e6551d4f7eac8a72bfefee99d5-4"> 4</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_acd433e6551d4f7eac8a72bfefee99d5-5"> 5</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_acd433e6551d4f7eac8a72bfefee99d5-6"> 6</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_acd433e6551d4f7eac8a72bfefee99d5-7"> 7</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_acd433e6551d4f7eac8a72bfefee99d5-8"> 8</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_acd433e6551d4f7eac8a72bfefee99d5-9"> 9</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_acd433e6551d4f7eac8a72bfefee99d5-10">10</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_acd433e6551d4f7eac8a72bfefee99d5-11">11</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_acd433e6551d4f7eac8a72bfefee99d5-12">12</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_acd433e6551d4f7eac8a72bfefee99d5-13">13</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_acd433e6551d4f7eac8a72bfefee99d5-14">14</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_acd433e6551d4f7eac8a72bfefee99d5-15">15</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_acd433e6551d4f7eac8a72bfefee99d5-16">16</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_acd433e6551d4f7eac8a72bfefee99d5-17">17</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_acd433e6551d4f7eac8a72bfefee99d5-18">18</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_acd433e6551d4f7eac8a72bfefee99d5-19">19</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_acd433e6551d4f7eac8a72bfefee99d5-20">20</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_acd433e6551d4f7eac8a72bfefee99d5-21">21</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_acd433e6551d4f7eac8a72bfefee99d5-22">22</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_acd433e6551d4f7eac8a72bfefee99d5-23">23</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_acd433e6551d4f7eac8a72bfefee99d5-24">24</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_acd433e6551d4f7eac8a72bfefee99d5-25">25</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
+<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-2"></a><span class="c1"># 带参数函数、带参数装饰器</span>
+<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-3"></a>
+<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-4"></a>
+<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-5"></a><span class="k">def</span> <span class="nf">typechecker</span><span class="p">(</span><span class="n">paramtype</span><span class="p">):</span>
+<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-6"></a>    <span class="k">def</span> <span class="nf">_outer</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-7"></a>        <span class="k">def</span> <span class="nf">_inner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-8"></a>            <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-9"></a>                <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">paramtype</span><span class="p">:</span>
+<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-10"></a>                    <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">args</span><span class="p">]</span>
+<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-11"></a>                    <span class="k">return</span> <span class="s2">"+"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" 类型错误"</span>
+<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-12"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-13"></a>        <span class="k">return</span> <span class="n">_inner</span>
+<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-14"></a>    <span class="k">return</span> <span class="n">_outer</span>
+<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-15"></a>
+<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-16"></a>
+<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-17"></a><span class="nd">@typechecker</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-18"></a><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-19"></a>    <span class="n">result</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-20"></a>    <span class="n">value</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">value</span><span class="p">]</span>
+<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-21"></a>    <span class="k">return</span> <span class="s2">"+"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'='</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-22"></a>
+<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-23"></a>
+<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-24"></a><span class="k">print</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-25"></a><span class="k">print</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 </pre></td>
 </tr></table>
 </blockquote>
 <p>运行结果:</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_6245863449a54db7a83aeff8441c2631-1"></a>1+2+3+4+5<span class="o">=</span>15
-<a name="rest_code_6245863449a54db7a83aeff8441c2631-2"></a>1+2+3+a+5 类型错误
+<pre class="code bash"><a name="rest_code_50156e79572d43af9673418352818d8c-1"></a><span class="m">1</span>+2+3+4+5<span class="o">=</span><span class="m">15</span>
+<a name="rest_code_50156e79572d43af9673418352818d8c-2"></a><span class="m">1</span>+2+3+a+5 类型错误
 </pre>
 </blockquote>
 <p>4、带参数函数、可变参数装饰器</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_a7a66f80c82b4527b745e12acc4b4e2d-1"> 1</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_a7a66f80c82b4527b745e12acc4b4e2d-2"> 2</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_a7a66f80c82b4527b745e12acc4b4e2d-3"> 3</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_a7a66f80c82b4527b745e12acc4b4e2d-4"> 4</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_a7a66f80c82b4527b745e12acc4b4e2d-5"> 5</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_a7a66f80c82b4527b745e12acc4b4e2d-6"> 6</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_a7a66f80c82b4527b745e12acc4b4e2d-7"> 7</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_a7a66f80c82b4527b745e12acc4b4e2d-8"> 8</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_a7a66f80c82b4527b745e12acc4b4e2d-9"> 9</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_a7a66f80c82b4527b745e12acc4b4e2d-10">10</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_a7a66f80c82b4527b745e12acc4b4e2d-11">11</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_a7a66f80c82b4527b745e12acc4b4e2d-12">12</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_a7a66f80c82b4527b745e12acc4b4e2d-13">13</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_a7a66f80c82b4527b745e12acc4b4e2d-14">14</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_a7a66f80c82b4527b745e12acc4b4e2d-15">15</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_a7a66f80c82b4527b745e12acc4b4e2d-16">16</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_a7a66f80c82b4527b745e12acc4b4e2d-17">17</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_a7a66f80c82b4527b745e12acc4b4e2d-18">18</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_a7a66f80c82b4527b745e12acc4b4e2d-19">19</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_a7a66f80c82b4527b745e12acc4b4e2d-20">20</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_a7a66f80c82b4527b745e12acc4b4e2d-21">21</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_a7a66f80c82b4527b745e12acc4b4e2d-22">22</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_a7a66f80c82b4527b745e12acc4b4e2d-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
-<a name="rest_code_a7a66f80c82b4527b745e12acc4b4e2d-2"></a><span class="c1"># 带参数函数、可变参数装饰器</span>
-<a name="rest_code_a7a66f80c82b4527b745e12acc4b4e2d-3"></a>
-<a name="rest_code_a7a66f80c82b4527b745e12acc4b4e2d-4"></a>
-<a name="rest_code_a7a66f80c82b4527b745e12acc4b4e2d-5"></a><span class="k">def</span> <span class="nf">typechecker</span><span class="p">(</span><span class="o">*</span><span class="n">paramtype</span><span class="p">):</span>
-<a name="rest_code_a7a66f80c82b4527b745e12acc4b4e2d-6"></a>    <span class="k">def</span> <span class="nf">_outer</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-<a name="rest_code_a7a66f80c82b4527b745e12acc4b4e2d-7"></a>        <span class="k">def</span> <span class="nf">_inner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-<a name="rest_code_a7a66f80c82b4527b745e12acc4b4e2d-8"></a>            <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
-<a name="rest_code_a7a66f80c82b4527b745e12acc4b4e2d-9"></a>                <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">paramtype</span><span class="p">:</span>
-<a name="rest_code_a7a66f80c82b4527b745e12acc4b4e2d-10"></a>                    <span class="k">return</span> <span class="s2">"参数不是有效的类型"</span>
-<a name="rest_code_a7a66f80c82b4527b745e12acc4b4e2d-11"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
-<a name="rest_code_a7a66f80c82b4527b745e12acc4b4e2d-12"></a>        <span class="k">return</span> <span class="n">_inner</span>
-<a name="rest_code_a7a66f80c82b4527b745e12acc4b4e2d-13"></a>    <span class="k">return</span> <span class="n">_outer</span>
-<a name="rest_code_a7a66f80c82b4527b745e12acc4b4e2d-14"></a>
-<a name="rest_code_a7a66f80c82b4527b745e12acc4b4e2d-15"></a>
-<a name="rest_code_a7a66f80c82b4527b745e12acc4b4e2d-16"></a><span class="nd">@typechecker</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
-<a name="rest_code_a7a66f80c82b4527b745e12acc4b4e2d-17"></a><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
-<a name="rest_code_a7a66f80c82b4527b745e12acc4b4e2d-18"></a>    <span class="k">return</span> <span class="s2">"参数有效"</span>
-<a name="rest_code_a7a66f80c82b4527b745e12acc4b4e2d-19"></a>
-<a name="rest_code_a7a66f80c82b4527b745e12acc4b4e2d-20"></a>
-<a name="rest_code_a7a66f80c82b4527b745e12acc4b4e2d-21"></a><span class="k">print</span><span class="p">(</span><span class="n">test</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">))</span>
-<a name="rest_code_a7a66f80c82b4527b745e12acc4b4e2d-22"></a><span class="k">print</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">5.2</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_e14c04f434464de8b07e51afdea94a09-1"> 1</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_e14c04f434464de8b07e51afdea94a09-2"> 2</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_e14c04f434464de8b07e51afdea94a09-3"> 3</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_e14c04f434464de8b07e51afdea94a09-4"> 4</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_e14c04f434464de8b07e51afdea94a09-5"> 5</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_e14c04f434464de8b07e51afdea94a09-6"> 6</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_e14c04f434464de8b07e51afdea94a09-7"> 7</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_e14c04f434464de8b07e51afdea94a09-8"> 8</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_e14c04f434464de8b07e51afdea94a09-9"> 9</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_e14c04f434464de8b07e51afdea94a09-10">10</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_e14c04f434464de8b07e51afdea94a09-11">11</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_e14c04f434464de8b07e51afdea94a09-12">12</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_e14c04f434464de8b07e51afdea94a09-13">13</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_e14c04f434464de8b07e51afdea94a09-14">14</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_e14c04f434464de8b07e51afdea94a09-15">15</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_e14c04f434464de8b07e51afdea94a09-16">16</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_e14c04f434464de8b07e51afdea94a09-17">17</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_e14c04f434464de8b07e51afdea94a09-18">18</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_e14c04f434464de8b07e51afdea94a09-19">19</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_e14c04f434464de8b07e51afdea94a09-20">20</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_e14c04f434464de8b07e51afdea94a09-21">21</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_e14c04f434464de8b07e51afdea94a09-22">22</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_e14c04f434464de8b07e51afdea94a09-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
+<a name="rest_code_e14c04f434464de8b07e51afdea94a09-2"></a><span class="c1"># 带参数函数、可变参数装饰器</span>
+<a name="rest_code_e14c04f434464de8b07e51afdea94a09-3"></a>
+<a name="rest_code_e14c04f434464de8b07e51afdea94a09-4"></a>
+<a name="rest_code_e14c04f434464de8b07e51afdea94a09-5"></a><span class="k">def</span> <span class="nf">typechecker</span><span class="p">(</span><span class="o">*</span><span class="n">paramtype</span><span class="p">):</span>
+<a name="rest_code_e14c04f434464de8b07e51afdea94a09-6"></a>    <span class="k">def</span> <span class="nf">_outer</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<a name="rest_code_e14c04f434464de8b07e51afdea94a09-7"></a>        <span class="k">def</span> <span class="nf">_inner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<a name="rest_code_e14c04f434464de8b07e51afdea94a09-8"></a>            <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+<a name="rest_code_e14c04f434464de8b07e51afdea94a09-9"></a>                <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">paramtype</span><span class="p">:</span>
+<a name="rest_code_e14c04f434464de8b07e51afdea94a09-10"></a>                    <span class="k">return</span> <span class="s2">"参数不是有效的类型"</span>
+<a name="rest_code_e14c04f434464de8b07e51afdea94a09-11"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+<a name="rest_code_e14c04f434464de8b07e51afdea94a09-12"></a>        <span class="k">return</span> <span class="n">_inner</span>
+<a name="rest_code_e14c04f434464de8b07e51afdea94a09-13"></a>    <span class="k">return</span> <span class="n">_outer</span>
+<a name="rest_code_e14c04f434464de8b07e51afdea94a09-14"></a>
+<a name="rest_code_e14c04f434464de8b07e51afdea94a09-15"></a>
+<a name="rest_code_e14c04f434464de8b07e51afdea94a09-16"></a><span class="nd">@typechecker</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+<a name="rest_code_e14c04f434464de8b07e51afdea94a09-17"></a><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<a name="rest_code_e14c04f434464de8b07e51afdea94a09-18"></a>    <span class="k">return</span> <span class="s2">"参数有效"</span>
+<a name="rest_code_e14c04f434464de8b07e51afdea94a09-19"></a>
+<a name="rest_code_e14c04f434464de8b07e51afdea94a09-20"></a>
+<a name="rest_code_e14c04f434464de8b07e51afdea94a09-21"></a><span class="k">print</span><span class="p">(</span><span class="n">test</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">))</span>
+<a name="rest_code_e14c04f434464de8b07e51afdea94a09-22"></a><span class="k">print</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">5.2</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 </pre></td>
 </tr></table>
 </blockquote>
 <p>运行结果:</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_9c431b47ad314600ba1e20cd34f8182f-1"></a>参数不是有效的类型
-<a name="rest_code_9c431b47ad314600ba1e20cd34f8182f-2"></a>参数有效
+<pre class="code bash"><a name="rest_code_f90ef42a4cdf4622a6789b2444809613-1"></a>参数不是有效的类型
+<a name="rest_code_f90ef42a4cdf4622a6789b2444809613-2"></a>参数有效
 </pre>
 </blockquote>
 <p>5、多个装饰器的调用顺序</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-1"> 1</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-2"> 2</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-3"> 3</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-4"> 4</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-5"> 5</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-6"> 6</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-7"> 7</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-8"> 8</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-9"> 9</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-10">10</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-11">11</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-12">12</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-13">13</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-14">14</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-15">15</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-16">16</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-17">17</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-18">18</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-19">19</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-20">20</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-21">21</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-22">22</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-23">23</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-24">24</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-25">25</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-26">26</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
-<a name="rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-2"></a><span class="c1"># 多个装饰器的调用顺序</span>
-<a name="rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-3"></a>
-<a name="rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-4"></a>
-<a name="rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-5"></a><span class="k">def</span> <span class="nf">deco1</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-<a name="rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-6"></a>    <span class="k">def</span> <span class="nf">_</span><span class="p">():</span>
-<a name="rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-7"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">"deco1() is called."</span><span class="p">)</span>
-<a name="rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-8"></a>        <span class="k">return</span> <span class="n">func</span><span class="p">()</span>
-<a name="rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-9"></a>    <span class="k">return</span> <span class="n">_</span>
-<a name="rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-10"></a>
-<a name="rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-11"></a>
-<a name="rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-12"></a><span class="k">def</span> <span class="nf">deco2</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-<a name="rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-13"></a>    <span class="k">def</span> <span class="nf">_</span><span class="p">():</span>
-<a name="rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-14"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">"deco2() is called."</span><span class="p">)</span>
-<a name="rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-15"></a>        <span class="k">return</span> <span class="n">func</span><span class="p">()</span>
-<a name="rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-16"></a>    <span class="k">return</span> <span class="n">_</span>
-<a name="rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-17"></a>
-<a name="rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-18"></a>
-<a name="rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-19"></a><span class="nd">@deco1</span>
-<a name="rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-20"></a><span class="nd">@deco2</span>
-<a name="rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-21"></a><span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
-<a name="rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-22"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"test() is called."</span><span class="p">)</span>
-<a name="rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-23"></a>
-<a name="rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-24"></a>
-<a name="rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-25"></a><span class="n">test</span><span class="p">()</span>
-<a name="rest_code_8b1f1afed1eb4397b39a9396f0c43ddd-26"></a><span class="n">test</span><span class="p">()</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9fee8764c20f4330985258fc270161fe-1"> 1</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9fee8764c20f4330985258fc270161fe-2"> 2</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9fee8764c20f4330985258fc270161fe-3"> 3</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9fee8764c20f4330985258fc270161fe-4"> 4</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9fee8764c20f4330985258fc270161fe-5"> 5</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9fee8764c20f4330985258fc270161fe-6"> 6</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9fee8764c20f4330985258fc270161fe-7"> 7</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9fee8764c20f4330985258fc270161fe-8"> 8</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9fee8764c20f4330985258fc270161fe-9"> 9</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9fee8764c20f4330985258fc270161fe-10">10</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9fee8764c20f4330985258fc270161fe-11">11</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9fee8764c20f4330985258fc270161fe-12">12</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9fee8764c20f4330985258fc270161fe-13">13</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9fee8764c20f4330985258fc270161fe-14">14</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9fee8764c20f4330985258fc270161fe-15">15</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9fee8764c20f4330985258fc270161fe-16">16</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9fee8764c20f4330985258fc270161fe-17">17</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9fee8764c20f4330985258fc270161fe-18">18</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9fee8764c20f4330985258fc270161fe-19">19</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9fee8764c20f4330985258fc270161fe-20">20</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9fee8764c20f4330985258fc270161fe-21">21</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9fee8764c20f4330985258fc270161fe-22">22</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9fee8764c20f4330985258fc270161fe-23">23</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9fee8764c20f4330985258fc270161fe-24">24</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9fee8764c20f4330985258fc270161fe-25">25</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9fee8764c20f4330985258fc270161fe-26">26</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_9fee8764c20f4330985258fc270161fe-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
+<a name="rest_code_9fee8764c20f4330985258fc270161fe-2"></a><span class="c1"># 多个装饰器的调用顺序</span>
+<a name="rest_code_9fee8764c20f4330985258fc270161fe-3"></a>
+<a name="rest_code_9fee8764c20f4330985258fc270161fe-4"></a>
+<a name="rest_code_9fee8764c20f4330985258fc270161fe-5"></a><span class="k">def</span> <span class="nf">deco1</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<a name="rest_code_9fee8764c20f4330985258fc270161fe-6"></a>    <span class="k">def</span> <span class="nf">_</span><span class="p">():</span>
+<a name="rest_code_9fee8764c20f4330985258fc270161fe-7"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">"deco1() is called."</span><span class="p">)</span>
+<a name="rest_code_9fee8764c20f4330985258fc270161fe-8"></a>        <span class="k">return</span> <span class="n">func</span><span class="p">()</span>
+<a name="rest_code_9fee8764c20f4330985258fc270161fe-9"></a>    <span class="k">return</span> <span class="n">_</span>
+<a name="rest_code_9fee8764c20f4330985258fc270161fe-10"></a>
+<a name="rest_code_9fee8764c20f4330985258fc270161fe-11"></a>
+<a name="rest_code_9fee8764c20f4330985258fc270161fe-12"></a><span class="k">def</span> <span class="nf">deco2</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<a name="rest_code_9fee8764c20f4330985258fc270161fe-13"></a>    <span class="k">def</span> <span class="nf">_</span><span class="p">():</span>
+<a name="rest_code_9fee8764c20f4330985258fc270161fe-14"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">"deco2() is called."</span><span class="p">)</span>
+<a name="rest_code_9fee8764c20f4330985258fc270161fe-15"></a>        <span class="k">return</span> <span class="n">func</span><span class="p">()</span>
+<a name="rest_code_9fee8764c20f4330985258fc270161fe-16"></a>    <span class="k">return</span> <span class="n">_</span>
+<a name="rest_code_9fee8764c20f4330985258fc270161fe-17"></a>
+<a name="rest_code_9fee8764c20f4330985258fc270161fe-18"></a>
+<a name="rest_code_9fee8764c20f4330985258fc270161fe-19"></a><span class="nd">@deco1</span>
+<a name="rest_code_9fee8764c20f4330985258fc270161fe-20"></a><span class="nd">@deco2</span>
+<a name="rest_code_9fee8764c20f4330985258fc270161fe-21"></a><span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
+<a name="rest_code_9fee8764c20f4330985258fc270161fe-22"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"test() is called."</span><span class="p">)</span>
+<a name="rest_code_9fee8764c20f4330985258fc270161fe-23"></a>
+<a name="rest_code_9fee8764c20f4330985258fc270161fe-24"></a>
+<a name="rest_code_9fee8764c20f4330985258fc270161fe-25"></a><span class="n">test</span><span class="p">()</span>
+<a name="rest_code_9fee8764c20f4330985258fc270161fe-26"></a><span class="n">test</span><span class="p">()</span>
 </pre></td>
 </tr></table>
 </blockquote>
 <p>运行结果:</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_3c68b9e912c74ea4a08f3d121f5f3790-1"></a>deco1<span class="o">()</span> is called.
-<a name="rest_code_3c68b9e912c74ea4a08f3d121f5f3790-2"></a>deco2<span class="o">()</span> is called.
-<a name="rest_code_3c68b9e912c74ea4a08f3d121f5f3790-3"></a>test<span class="o">()</span> is called.
-<a name="rest_code_3c68b9e912c74ea4a08f3d121f5f3790-4"></a>deco1<span class="o">()</span> is called.
-<a name="rest_code_3c68b9e912c74ea4a08f3d121f5f3790-5"></a>deco2<span class="o">()</span> is called.
-<a name="rest_code_3c68b9e912c74ea4a08f3d121f5f3790-6"></a>test<span class="o">()</span> is called.
+<pre class="code bash"><a name="rest_code_c4e7c9816f7a4eb19de52f1754378293-1"></a>deco1<span class="o">()</span> is called.
+<a name="rest_code_c4e7c9816f7a4eb19de52f1754378293-2"></a>deco2<span class="o">()</span> is called.
+<a name="rest_code_c4e7c9816f7a4eb19de52f1754378293-3"></a>test<span class="o">()</span> is called.
+<a name="rest_code_c4e7c9816f7a4eb19de52f1754378293-4"></a>deco1<span class="o">()</span> is called.
+<a name="rest_code_c4e7c9816f7a4eb19de52f1754378293-5"></a>deco2<span class="o">()</span> is called.
+<a name="rest_code_c4e7c9816f7a4eb19de52f1754378293-6"></a>test<span class="o">()</span> is called.
 </pre>
 </blockquote>
 </div>
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/yi-ge-zhi-de-can-kao-de-flask-sqlalchemycha-xun-an-li/" class="u-url">一个值得参考的Flask-SQLAlchemy查询案例</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 龙龙
             </span></p>
             <p class="dateline"><a href="posts/yi-ge-zhi-de-can-kao-de-flask-sqlalchemycha-xun-an-li/" rel="bookmark"><time class="published dt-published" datetime="2017-02-01T13:27:19+08:00" title="2017-02-01 13:27">2017-02-01 13:27</time></a></p>
@@ -481,14 +481,14 @@ body{
     </header><div class="p-summary entry-summary">
     <div>
 <blockquote>
-<pre class="code bash"><a name="rest_code_e28d2249ff434644bc5841d3a785e4da-1"></a><span class="nv">account</span> <span class="o">=</span> db.session.query<span class="o">(</span>
-<a name="rest_code_e28d2249ff434644bc5841d3a785e4da-2"></a>    Account.account_id, Account.account_item,
-<a name="rest_code_e28d2249ff434644bc5841d3a785e4da-3"></a>    Account.account_money, AccountType.type_text,
-<a name="rest_code_e28d2249ff434644bc5841d3a785e4da-4"></a>    Account.account_date, Account.account_addition,
-<a name="rest_code_e28d2249ff434644bc5841d3a785e4da-5"></a>    User.user_email<span class="o">)</span>.outerjoin<span class="o">(</span>
-<a name="rest_code_e28d2249ff434644bc5841d3a785e4da-6"></a>    AccountType, Account.account_type <span class="o">==</span> AccountType.type_id<span class="o">)</span>.outerjoin<span class="o">(</span>
-<a name="rest_code_e28d2249ff434644bc5841d3a785e4da-7"></a>    User, Account.account_user <span class="o">==</span> User.user_id<span class="o">)</span>.order_by<span class="o">(</span>
-<a name="rest_code_e28d2249ff434644bc5841d3a785e4da-8"></a>    Account.account_date.desc<span class="o">())</span>.offset<span class="o">((</span>page-1<span class="o">)</span>*perpage<span class="o">)</span>.limit<span class="o">(</span>perpage<span class="o">)</span>.all<span class="o">()</span>
+<pre class="code bash"><a name="rest_code_b2a6d06304f24a41bbec2f1d49e8e58a-1"></a><span class="nv">account</span> <span class="o">=</span> db.session.query<span class="o">(</span>
+<a name="rest_code_b2a6d06304f24a41bbec2f1d49e8e58a-2"></a>    Account.account_id, Account.account_item,
+<a name="rest_code_b2a6d06304f24a41bbec2f1d49e8e58a-3"></a>    Account.account_money, AccountType.type_text,
+<a name="rest_code_b2a6d06304f24a41bbec2f1d49e8e58a-4"></a>    Account.account_date, Account.account_addition,
+<a name="rest_code_b2a6d06304f24a41bbec2f1d49e8e58a-5"></a>    User.user_email<span class="o">)</span>.outerjoin<span class="o">(</span>
+<a name="rest_code_b2a6d06304f24a41bbec2f1d49e8e58a-6"></a>    AccountType, Account.account_type <span class="o">==</span> AccountType.type_id<span class="o">)</span>.outerjoin<span class="o">(</span>
+<a name="rest_code_b2a6d06304f24a41bbec2f1d49e8e58a-7"></a>    User, Account.account_user <span class="o">==</span> User.user_id<span class="o">)</span>.order_by<span class="o">(</span>
+<a name="rest_code_b2a6d06304f24a41bbec2f1d49e8e58a-8"></a>    Account.account_date.desc<span class="o">())</span>.offset<span class="o">((</span>page-1<span class="o">)</span>*perpage<span class="o">)</span>.limit<span class="o">(</span>perpage<span class="o">)</span>.all<span class="o">()</span>
 </pre>
 </blockquote>
 <p>在这个例子中，我们查询的是：</p>
@@ -497,7 +497,7 @@ body{
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/typeerror-decimal5-is-not-json-serializable/" class="u-url">TypeError: Decimal('5') is not JSON serializable</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 龙龙
             </span></p>
             <p class="dateline"><a href="posts/typeerror-decimal5-is-not-json-serializable/" rel="bookmark"><time class="published dt-published" datetime="2017-02-01T13:18:57+08:00" title="2017-02-01 13:18">2017-02-01 13:18</time></a></p>
@@ -506,14 +506,14 @@ body{
     <div>
 <p>在使用Flask的jsonify时，返回Decimal对象会出现标题中的错误。通过如下方法可以解决：</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_aa4003b0e3a549319875fc619489b778-1"></a>pip install simplejson
+<pre class="code bash"><a name="rest_code_928ecc6141ae486da8e255d13499600f-1"></a>pip install simplejson
 </pre>
 </blockquote>
 </div>
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/xiu-gai-dockerzhong-de-xi-tong-shi-jian/" class="u-url">修改Docker中的系统时间</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 龙龙
             </span></p>
             <p class="dateline"><a href="posts/xiu-gai-dockerzhong-de-xi-tong-shi-jian/" rel="bookmark"><time class="published dt-published" datetime="2017-01-31T15:36:34+08:00" title="2017-01-31 15:36">2017-01-31 15:36</time></a></p>
@@ -522,130 +522,130 @@ body{
     <div>
 <p>默认在Docker中无法使用常见的命令修改系统时间，会显示没有权限，但测试程序往往需要修改系统时间，可以通过如下方法解决该问题：</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-1"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-2"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-3"></a>root@d26965edacdd:/# date
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-4"></a>Tue Jan <span class="m">31</span> 07:39:26 GMT 2017
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-5"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-1
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-6"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-7"></a>root@d26965edacdd:/# date
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-8"></a>Tue Jan <span class="m">31</span> 08:39:35 +01 2017
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-9"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-2
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-10"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-11"></a>root@d26965edacdd:/# date
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-12"></a>Tue Jan <span class="m">31</span> 09:39:40 +02 2017
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-13"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-3
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-14"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-15"></a>root@d26965edacdd:/# date
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-16"></a>Tue Jan <span class="m">31</span> 10:39:45 +03 2017
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-17"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-4
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-18"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-19"></a>root@d26965edacdd:/# date
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-20"></a>Tue Jan <span class="m">31</span> 11:42:57 +04 2017
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-21"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-5
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-22"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-23"></a>root@d26965edacdd:/# date
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-24"></a>Tue Jan <span class="m">31</span> 12:43:05 +05 2017
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-25"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-6
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-26"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-27"></a>root@d26965edacdd:/# date
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-28"></a>Tue Jan <span class="m">31</span> 13:43:10 +06 2017
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-29"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-7
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-30"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-31"></a>root@d26965edacdd:/# date
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-32"></a>Tue Jan <span class="m">31</span> 14:43:15 +07 2017
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-33"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-8
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-34"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-35"></a>root@d26965edacdd:/# date
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-36"></a>Tue Jan <span class="m">31</span> 15:43:20 +08 2017
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-37"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-9
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-38"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-39"></a>root@d26965edacdd:/# date
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-40"></a>Tue Jan <span class="m">31</span> 16:43:25 +09 2017
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-41"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-10
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-42"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-43"></a>root@d26965edacdd:/# date
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-44"></a>Tue Jan <span class="m">31</span> 17:43:30 +10 2017
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-45"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-11
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-46"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-47"></a>root@d26965edacdd:/# date
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-48"></a>Tue Jan <span class="m">31</span> 18:43:35 +11 2017
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-49"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-12
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-50"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-51"></a>root@d26965edacdd:/# date
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-52"></a>Tue Jan <span class="m">31</span> 19:43:39 +12 2017
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-53"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-13
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-54"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-55"></a>root@d26965edacdd:/# date
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-56"></a>Tue Jan <span class="m">31</span> 20:43:43 +13 2017
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-57"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-14
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-58"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-59"></a>root@d26965edacdd:/# date
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-60"></a>Tue Jan <span class="m">31</span> 21:43:50 +14 2017
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-61"></a>
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-62"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+1
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-63"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-64"></a>root@d26965edacdd:/# date
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-65"></a>Tue Jan <span class="m">31</span> 06:44:57 -01 2017
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-66"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+2
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-67"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-68"></a>root@d26965edacdd:/# date
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-69"></a>Tue Jan <span class="m">31</span> 05:45:01 -02 2017
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-70"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+3
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-71"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-72"></a>root@d26965edacdd:/# date
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-73"></a>Tue Jan <span class="m">31</span> 04:45:05 -03 2017
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-74"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+4
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-75"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-76"></a>root@d26965edacdd:/# date
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-77"></a>Tue Jan <span class="m">31</span> 03:45:09 -04 2017
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-78"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+5
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-79"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-80"></a>root@d26965edacdd:/# date
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-81"></a>Tue Jan <span class="m">31</span> 02:45:13 -05 2017
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-82"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+6
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-83"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-84"></a>root@d26965edacdd:/# date
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-85"></a>Tue Jan <span class="m">31</span> 01:45:17 -06 2017
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-86"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+7
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-87"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-88"></a>root@d26965edacdd:/# date
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-89"></a>Tue Jan <span class="m">31</span> 00:45:24 -07 2017
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-90"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+8
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-91"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-92"></a>root@d26965edacdd:/# date
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-93"></a>Mon Jan <span class="m">30</span> 23:45:28 -08 2017
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-94"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+9
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-95"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-96"></a>root@d26965edacdd:/# date
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-97"></a>Mon Jan <span class="m">30</span> 22:45:32 -09 2017
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-98"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+10
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-99"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-100"></a>root@d26965edacdd:/# date
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-101"></a>Mon Jan <span class="m">30</span> 21:45:37 -10 2017
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-102"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+11
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-103"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-104"></a>root@d26965edacdd:/# date
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-105"></a>Mon Jan <span class="m">30</span> 20:45:53 -11 2017
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-106"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+12
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-107"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-108"></a>root@d26965edacdd:/# date
-<a name="rest_code_837b6a17334647c5bf2b9310709a0b0b-109"></a>Mon Jan <span class="m">30</span> 19:46:00 -12 2017
+<pre class="code bash"><a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-1"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-2"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-3"></a>root@d26965edacdd:/# date
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-4"></a>Tue Jan <span class="m">31</span> <span class="m">07</span>:39:26 GMT <span class="m">2017</span>
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-5"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-1
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-6"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-7"></a>root@d26965edacdd:/# date
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-8"></a>Tue Jan <span class="m">31</span> <span class="m">08</span>:39:35 +01 <span class="m">2017</span>
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-9"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-2
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-10"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-11"></a>root@d26965edacdd:/# date
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-12"></a>Tue Jan <span class="m">31</span> <span class="m">09</span>:39:40 +02 <span class="m">2017</span>
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-13"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-3
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-14"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-15"></a>root@d26965edacdd:/# date
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-16"></a>Tue Jan <span class="m">31</span> <span class="m">10</span>:39:45 +03 <span class="m">2017</span>
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-17"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-4
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-18"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-19"></a>root@d26965edacdd:/# date
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-20"></a>Tue Jan <span class="m">31</span> <span class="m">11</span>:42:57 +04 <span class="m">2017</span>
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-21"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-5
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-22"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-23"></a>root@d26965edacdd:/# date
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-24"></a>Tue Jan <span class="m">31</span> <span class="m">12</span>:43:05 +05 <span class="m">2017</span>
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-25"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-6
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-26"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-27"></a>root@d26965edacdd:/# date
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-28"></a>Tue Jan <span class="m">31</span> <span class="m">13</span>:43:10 +06 <span class="m">2017</span>
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-29"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-7
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-30"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-31"></a>root@d26965edacdd:/# date
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-32"></a>Tue Jan <span class="m">31</span> <span class="m">14</span>:43:15 +07 <span class="m">2017</span>
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-33"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-8
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-34"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-35"></a>root@d26965edacdd:/# date
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-36"></a>Tue Jan <span class="m">31</span> <span class="m">15</span>:43:20 +08 <span class="m">2017</span>
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-37"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-9
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-38"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-39"></a>root@d26965edacdd:/# date
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-40"></a>Tue Jan <span class="m">31</span> <span class="m">16</span>:43:25 +09 <span class="m">2017</span>
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-41"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-10
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-42"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-43"></a>root@d26965edacdd:/# date
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-44"></a>Tue Jan <span class="m">31</span> <span class="m">17</span>:43:30 +10 <span class="m">2017</span>
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-45"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-11
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-46"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-47"></a>root@d26965edacdd:/# date
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-48"></a>Tue Jan <span class="m">31</span> <span class="m">18</span>:43:35 +11 <span class="m">2017</span>
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-49"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-12
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-50"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-51"></a>root@d26965edacdd:/# date
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-52"></a>Tue Jan <span class="m">31</span> <span class="m">19</span>:43:39 +12 <span class="m">2017</span>
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-53"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-13
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-54"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-55"></a>root@d26965edacdd:/# date
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-56"></a>Tue Jan <span class="m">31</span> <span class="m">20</span>:43:43 +13 <span class="m">2017</span>
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-57"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-14
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-58"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-59"></a>root@d26965edacdd:/# date
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-60"></a>Tue Jan <span class="m">31</span> <span class="m">21</span>:43:50 +14 <span class="m">2017</span>
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-61"></a>
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-62"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+1
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-63"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-64"></a>root@d26965edacdd:/# date
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-65"></a>Tue Jan <span class="m">31</span> <span class="m">06</span>:44:57 -01 <span class="m">2017</span>
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-66"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+2
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-67"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-68"></a>root@d26965edacdd:/# date
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-69"></a>Tue Jan <span class="m">31</span> <span class="m">05</span>:45:01 -02 <span class="m">2017</span>
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-70"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+3
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-71"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-72"></a>root@d26965edacdd:/# date
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-73"></a>Tue Jan <span class="m">31</span> <span class="m">04</span>:45:05 -03 <span class="m">2017</span>
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-74"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+4
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-75"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-76"></a>root@d26965edacdd:/# date
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-77"></a>Tue Jan <span class="m">31</span> <span class="m">03</span>:45:09 -04 <span class="m">2017</span>
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-78"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+5
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-79"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-80"></a>root@d26965edacdd:/# date
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-81"></a>Tue Jan <span class="m">31</span> <span class="m">02</span>:45:13 -05 <span class="m">2017</span>
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-82"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+6
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-83"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-84"></a>root@d26965edacdd:/# date
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-85"></a>Tue Jan <span class="m">31</span> <span class="m">01</span>:45:17 -06 <span class="m">2017</span>
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-86"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+7
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-87"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-88"></a>root@d26965edacdd:/# date
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-89"></a>Tue Jan <span class="m">31</span> <span class="m">00</span>:45:24 -07 <span class="m">2017</span>
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-90"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+8
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-91"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-92"></a>root@d26965edacdd:/# date
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-93"></a>Mon Jan <span class="m">30</span> <span class="m">23</span>:45:28 -08 <span class="m">2017</span>
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-94"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+9
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-95"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-96"></a>root@d26965edacdd:/# date
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-97"></a>Mon Jan <span class="m">30</span> <span class="m">22</span>:45:32 -09 <span class="m">2017</span>
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-98"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+10
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-99"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-100"></a>root@d26965edacdd:/# date
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-101"></a>Mon Jan <span class="m">30</span> <span class="m">21</span>:45:37 -10 <span class="m">2017</span>
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-102"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+11
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-103"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-104"></a>root@d26965edacdd:/# date
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-105"></a>Mon Jan <span class="m">30</span> <span class="m">20</span>:45:53 -11 <span class="m">2017</span>
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-106"></a>root@d26965edacdd:/# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT+12
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-107"></a>root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-108"></a>root@d26965edacdd:/# date
+<a name="rest_code_3ba6fc345bee491f9f40799e192d6f65-109"></a>Mon Jan <span class="m">30</span> <span class="m">19</span>:46:00 -12 <span class="m">2017</span>
 </pre>
 </blockquote>
 <p>我们测试一下实际效果：</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_ba023f1f63cc49fb8b0be9e817117b42-1"></a>root@d26965edacdd:/usr/development# cat test.py
-<a name="rest_code_ba023f1f63cc49fb8b0be9e817117b42-2"></a>import <span class="nb">time</span>
-<a name="rest_code_ba023f1f63cc49fb8b0be9e817117b42-3"></a>print<span class="o">(</span>time.strftime<span class="o">(</span><span class="s1">'%Y-%m-%d %H:%M:%S'</span>,time.localtime<span class="o">(</span>time.time<span class="o">())))</span>
-<a name="rest_code_ba023f1f63cc49fb8b0be9e817117b42-4"></a>root@d26965edacdd:/usr/development# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT
-<a name="rest_code_ba023f1f63cc49fb8b0be9e817117b42-5"></a>root@d26965edacdd:/usr/development# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
-<a name="rest_code_ba023f1f63cc49fb8b0be9e817117b42-6"></a>root@d26965edacdd:/usr/development# python test.py
-<a name="rest_code_ba023f1f63cc49fb8b0be9e817117b42-7"></a>2017-01-31 07:50:13
-<a name="rest_code_ba023f1f63cc49fb8b0be9e817117b42-8"></a>root@d26965edacdd:/usr/development# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-8
-<a name="rest_code_ba023f1f63cc49fb8b0be9e817117b42-9"></a>root@d26965edacdd:/usr/development# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
-<a name="rest_code_ba023f1f63cc49fb8b0be9e817117b42-10"></a>root@d26965edacdd:/usr/development# python test.py
-<a name="rest_code_ba023f1f63cc49fb8b0be9e817117b42-11"></a>2017-01-31 15:50:19
+<pre class="code bash"><a name="rest_code_9d99370f53414e4aa834b4f56694179e-1"></a>root@d26965edacdd:/usr/development# cat test.py
+<a name="rest_code_9d99370f53414e4aa834b4f56694179e-2"></a>import <span class="nb">time</span>
+<a name="rest_code_9d99370f53414e4aa834b4f56694179e-3"></a>print<span class="o">(</span>time.strftime<span class="o">(</span><span class="s1">'%Y-%m-%d %H:%M:%S'</span>,time.localtime<span class="o">(</span>time.time<span class="o">())))</span>
+<a name="rest_code_9d99370f53414e4aa834b4f56694179e-4"></a>root@d26965edacdd:/usr/development# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT
+<a name="rest_code_9d99370f53414e4aa834b4f56694179e-5"></a>root@d26965edacdd:/usr/development# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_9d99370f53414e4aa834b4f56694179e-6"></a>root@d26965edacdd:/usr/development# python test.py
+<a name="rest_code_9d99370f53414e4aa834b4f56694179e-7"></a><span class="m">2017</span>-01-31 <span class="m">07</span>:50:13
+<a name="rest_code_9d99370f53414e4aa834b4f56694179e-8"></a>root@d26965edacdd:/usr/development# <span class="nv">TZ</span><span class="o">=</span>Etc/GMT-8
+<a name="rest_code_9d99370f53414e4aa834b4f56694179e-9"></a>root@d26965edacdd:/usr/development# ln -snf /usr/share/zoneinfo/<span class="nv">$TZ</span> /etc/localtime  <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="nv">$TZ</span> &gt; /etc/timezone
+<a name="rest_code_9d99370f53414e4aa834b4f56694179e-10"></a>root@d26965edacdd:/usr/development# python test.py
+<a name="rest_code_9d99370f53414e4aa834b4f56694179e-11"></a><span class="m">2017</span>-01-31 <span class="m">15</span>:50:19
 </pre>
 </blockquote>
 <p><strong>注意</strong></p>
@@ -654,7 +654,7 @@ body{
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerzhong-emacszhi-chi-tui-ge/" class="u-url">Docker中Emacs支持退格</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 龙龙
             </span></p>
             <p class="dateline"><a href="posts/dockerzhong-emacszhi-chi-tui-ge/" rel="bookmark"><time class="published dt-published" datetime="2017-01-30T22:03:15+08:00" title="2017-01-30 22:03">2017-01-30 22:03</time></a></p>
@@ -663,11 +663,11 @@ body{
     <div>
 <p>默认在Docker中，Emacs使用退格无法删除光标前的字符，而是显示帮助信息，这让人有些费解，可以采用如下方法解决：</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_ff8478bc08a74e11a54217f543f1d9b3-1"></a>emacs ~/.emacs
-<a name="rest_code_ff8478bc08a74e11a54217f543f1d9b3-2"></a><span class="o">(</span>global-set-key <span class="s2">"\C-h"</span> <span class="s1">'backward-delete-char-untabify)</span>
-<a name="rest_code_ff8478bc08a74e11a54217f543f1d9b3-3"></a><span class="s1">(global-set-key "\d" '</span>delete-char<span class="o">)</span>
-<a name="rest_code_ff8478bc08a74e11a54217f543f1d9b3-4"></a>C-x C-s
-<a name="rest_code_ff8478bc08a74e11a54217f543f1d9b3-5"></a>C-x C-c
+<pre class="code bash"><a name="rest_code_b233c752b95e4461b10f8a1238bf066e-1"></a>emacs ~/.emacs
+<a name="rest_code_b233c752b95e4461b10f8a1238bf066e-2"></a><span class="o">(</span>global-set-key <span class="s2">"\C-h"</span> <span class="s1">'backward-delete-char-untabify)</span>
+<a name="rest_code_b233c752b95e4461b10f8a1238bf066e-3"></a><span class="s1">(global-set-key "\d" '</span>delete-char<span class="o">)</span>
+<a name="rest_code_b233c752b95e4461b10f8a1238bf066e-4"></a>C-x C-s
+<a name="rest_code_b233c752b95e4461b10f8a1238bf066e-5"></a>C-x C-c
 </pre>
 </blockquote>
 <p>这时再用emacs命令打开文件，就可以正常使用退格键删除光标前的字符了。</p>

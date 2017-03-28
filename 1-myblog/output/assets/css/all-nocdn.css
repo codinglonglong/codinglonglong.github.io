@@ -7114,8 +7114,10 @@ pre.code .ne { font-weight: bold } /* Name.Exception */
 pre.code .nn { font-weight: bold } /* Name.Namespace */
 pre.code .nt { font-weight: bold } /* Name.Tag */
 pre.code .ow { font-weight: bold } /* Operator.Word */
+pre.code .sa { font-style: italic } /* Literal.String.Affix */
 pre.code .sb { font-style: italic } /* Literal.String.Backtick */
 pre.code .sc { font-style: italic } /* Literal.String.Char */
+pre.code .dl { font-style: italic } /* Literal.String.Delimiter */
 pre.code .sd { font-style: italic } /* Literal.String.Doc */
 pre.code .s2 { font-style: italic } /* Literal.String.Double */
 pre.code .se { font-weight: bold; font-style: italic } /* Literal.String.Escape */
