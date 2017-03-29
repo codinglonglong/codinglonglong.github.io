@@ -86,7 +86,41 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerpei-zhi-vuejskai-fa-huan-jing/" class="u-url">Docker配置vuejs开发环境</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerpei-zhi-weexkai-fa-huan-jing/" class="u-url">Docker配置weex开发环境</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/dockerpei-zhi-weexkai-fa-huan-jing/" rel="bookmark"><time class="published dt-published" datetime="2017-03-13T22:30:01+08:00" title="2017-03-13 22:30">2017-03-13 22:30</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>1、安装weex。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; npm install -g cnpm --registry=https://registry.npm.taobao.org
+&gt;&gt; cnpm install -g weex-toolkit
+</pre>
+</blockquote>
+<p>2、初始化weex项目。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; weex init testapp
+</pre>
+</blockquote>
+<p>3、构建并测试项目。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; cd testapp
+&gt;&gt; npm install
+&gt;&gt; npm run dev
+&gt;&gt; npm run serve
+</pre>
+</blockquote>
+<p>4、主系统访问 <a class="reference external" href="http://192.168.99.100:8080/">http://192.168.99.100:8080/</a> 即可，这里只是实现浏览器预览，后面我们再进一步研究打包apk。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerpei-zhi-vuejskai-fa-huan-jing/" class="u-url">Docker配置vuejs开发环境</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 龙龙

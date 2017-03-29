@@ -27,11 +27,11 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/archive.html</loc>
-  <lastmod>2017-03-28T01:04:00Z</lastmod>
+  <lastmod>2017-03-29T08:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/</loc>
-  <lastmod>2017-03-28T01:04:00Z</lastmod>
+  <lastmod>2017-03-29T08:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/ajax/</loc>
@@ -84,6 +84,10 @@
  <url>
   <loc>https://codinglonglong.github.io/categories/cat_react/</loc>
   <lastmod>2017-03-28T00:51:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/cat_ri-yu/</loc>
+  <lastmod>2017-03-29T08:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/cat_win10/</loc>
@@ -162,6 +166,10 @@
   <lastmod>2017-03-28T00:51:00Z</lastmod>
  </url>
  <url>
+  <loc>https://codinglonglong.github.io/categories/ke-nan/</loc>
+  <lastmod>2017-03-29T08:56:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://codinglonglong.github.io/categories/linux/</loc>
   <lastmod>2017-03-28T00:51:00Z</lastmod>
  </url>
@@ -212,6 +220,10 @@
  <url>
   <loc>https://codinglonglong.github.io/categories/react/</loc>
   <lastmod>2017-03-28T00:51:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/ri-yu/</loc>
+  <lastmod>2017-03-29T08:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/she-ji-mo-shi/</loc>
@@ -295,7 +307,7 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-7.html</loc>
-  <lastmod>2017-03-28T01:04:00Z</lastmod>
+  <lastmod>2017-03-29T08:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/android-studiolian-jie-droid4xdiao-shi-app/</loc>
@@ -364,6 +376,10 @@
  <url>
   <loc>https://codinglonglong.github.io/posts/libdc1394-error-failed-to-initialize-libdc1394/</loc>
   <lastmod>2017-03-28T00:51:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/posts/long-long-kan-ke-nan-1/</loc>
+  <lastmod>2017-03-29T08:56:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/opensusean-zhuang-nodejs/</loc>
