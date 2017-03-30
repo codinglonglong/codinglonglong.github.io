@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://codinglonglong.github.io/</loc>
-  <lastmod>2017-03-28T00:51:00Z</lastmod>
+  <lastmod>2017-03-30T10:47:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/2017/</loc>
@@ -27,7 +27,7 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/archive.html</loc>
-  <lastmod>2017-03-30T06:32:00Z</lastmod>
+  <lastmod>2017-03-30T10:47:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/</loc>
@@ -307,7 +307,11 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-7.html</loc>
-  <lastmod>2017-03-30T06:32:00Z</lastmod>
+  <lastmod>2017-03-30T10:47:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/index-8.html</loc>
+  <lastmod>2017-03-30T10:47:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/android-studiolian-jie-droid4xdiao-shi-app/</loc>
@@ -384,6 +388,10 @@
  <url>
   <loc>https://codinglonglong.github.io/posts/long-long-kan-ke-nan-2/</loc>
   <lastmod>2017-03-30T06:32:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/posts/long-long-kan-ke-nan-3/</loc>
+  <lastmod>2017-03-30T10:47:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/opensusean-zhuang-nodejs/</loc>
