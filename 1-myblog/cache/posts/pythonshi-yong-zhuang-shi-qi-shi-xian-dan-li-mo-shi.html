@@ -1,47 +1,47 @@
 <blockquote>
-<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_d62a4cd065dc4aae93f8524039fd77ef-1"> 1</a>
-<a href="#rest_code_d62a4cd065dc4aae93f8524039fd77ef-2"> 2</a>
-<a href="#rest_code_d62a4cd065dc4aae93f8524039fd77ef-3"> 3</a>
-<a href="#rest_code_d62a4cd065dc4aae93f8524039fd77ef-4"> 4</a>
-<a href="#rest_code_d62a4cd065dc4aae93f8524039fd77ef-5"> 5</a>
-<a href="#rest_code_d62a4cd065dc4aae93f8524039fd77ef-6"> 6</a>
-<a href="#rest_code_d62a4cd065dc4aae93f8524039fd77ef-7"> 7</a>
-<a href="#rest_code_d62a4cd065dc4aae93f8524039fd77ef-8"> 8</a>
-<a href="#rest_code_d62a4cd065dc4aae93f8524039fd77ef-9"> 9</a>
-<a href="#rest_code_d62a4cd065dc4aae93f8524039fd77ef-10">10</a>
-<a href="#rest_code_d62a4cd065dc4aae93f8524039fd77ef-11">11</a>
-<a href="#rest_code_d62a4cd065dc4aae93f8524039fd77ef-12">12</a>
-<a href="#rest_code_d62a4cd065dc4aae93f8524039fd77ef-13">13</a>
-<a href="#rest_code_d62a4cd065dc4aae93f8524039fd77ef-14">14</a>
-<a href="#rest_code_d62a4cd065dc4aae93f8524039fd77ef-15">15</a>
-<a href="#rest_code_d62a4cd065dc4aae93f8524039fd77ef-16">16</a>
-<a href="#rest_code_d62a4cd065dc4aae93f8524039fd77ef-17">17</a>
-<a href="#rest_code_d62a4cd065dc4aae93f8524039fd77ef-18">18</a>
-<a href="#rest_code_d62a4cd065dc4aae93f8524039fd77ef-19">19</a>
-<a href="#rest_code_d62a4cd065dc4aae93f8524039fd77ef-20">20</a>
-<a href="#rest_code_d62a4cd065dc4aae93f8524039fd77ef-21">21</a>
-<a href="#rest_code_d62a4cd065dc4aae93f8524039fd77ef-22">22</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-1"></a><span class="k">def</span> <span class="nf">singleton</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-<a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-2"></a>    <span class="n">instances</span> <span class="o">=</span> <span class="p">{}</span>
-<a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-3"></a>    <span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
-<a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-4"></a>        <span class="k">if</span> <span class="bp">cls</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">instances</span><span class="p">:</span>
-<a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-5"></a>            <span class="n">instances</span><span class="p">[</span><span class="bp">cls</span><span class="p">]</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
-<a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-6"></a>        <span class="k">return</span> <span class="n">instances</span><span class="p">[</span><span class="bp">cls</span><span class="p">]</span>
-<a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-7"></a>    <span class="k">return</span> <span class="n">_</span>
-<a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-8"></a>
-<a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-9"></a><span class="nd">@singleton</span>
-<a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-10"></a><span class="k">class</span> <span class="nc">Test</span><span class="p">():</span>
-<a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-11"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-12"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
-<a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-13"></a>
-<a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-14"></a><span class="n">t1</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
-<a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-15"></a><span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
-<a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-16"></a><span class="n">t2</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
-<a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-17"></a><span class="k">print</span><span class="p">(</span><span class="n">t2</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
-<a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-18"></a><span class="n">t1</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-<a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-19"></a><span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
-<a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-20"></a><span class="k">print</span><span class="p">(</span><span class="n">t2</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
-<a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-21"></a><span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">t1</span><span class="p">))</span>
-<a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-22"></a><span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">t2</span><span class="p">))</span>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_ff7b422d9f214ac085cc4ff3743ab976-1"> 1</a>
+<a href="#rest_code_ff7b422d9f214ac085cc4ff3743ab976-2"> 2</a>
+<a href="#rest_code_ff7b422d9f214ac085cc4ff3743ab976-3"> 3</a>
+<a href="#rest_code_ff7b422d9f214ac085cc4ff3743ab976-4"> 4</a>
+<a href="#rest_code_ff7b422d9f214ac085cc4ff3743ab976-5"> 5</a>
+<a href="#rest_code_ff7b422d9f214ac085cc4ff3743ab976-6"> 6</a>
+<a href="#rest_code_ff7b422d9f214ac085cc4ff3743ab976-7"> 7</a>
+<a href="#rest_code_ff7b422d9f214ac085cc4ff3743ab976-8"> 8</a>
+<a href="#rest_code_ff7b422d9f214ac085cc4ff3743ab976-9"> 9</a>
+<a href="#rest_code_ff7b422d9f214ac085cc4ff3743ab976-10">10</a>
+<a href="#rest_code_ff7b422d9f214ac085cc4ff3743ab976-11">11</a>
+<a href="#rest_code_ff7b422d9f214ac085cc4ff3743ab976-12">12</a>
+<a href="#rest_code_ff7b422d9f214ac085cc4ff3743ab976-13">13</a>
+<a href="#rest_code_ff7b422d9f214ac085cc4ff3743ab976-14">14</a>
+<a href="#rest_code_ff7b422d9f214ac085cc4ff3743ab976-15">15</a>
+<a href="#rest_code_ff7b422d9f214ac085cc4ff3743ab976-16">16</a>
+<a href="#rest_code_ff7b422d9f214ac085cc4ff3743ab976-17">17</a>
+<a href="#rest_code_ff7b422d9f214ac085cc4ff3743ab976-18">18</a>
+<a href="#rest_code_ff7b422d9f214ac085cc4ff3743ab976-19">19</a>
+<a href="#rest_code_ff7b422d9f214ac085cc4ff3743ab976-20">20</a>
+<a href="#rest_code_ff7b422d9f214ac085cc4ff3743ab976-21">21</a>
+<a href="#rest_code_ff7b422d9f214ac085cc4ff3743ab976-22">22</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-1"></a><span class="k">def</span> <span class="nf">singleton</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
+<a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-2"></a>    <span class="n">instances</span> <span class="o">=</span> <span class="p">{}</span>
+<a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-3"></a>    <span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+<a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-4"></a>        <span class="k">if</span> <span class="n">cls</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">instances</span><span class="p">:</span>
+<a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-5"></a>            <span class="n">instances</span><span class="p">[</span><span class="n">cls</span><span class="p">]</span> <span class="o">=</span> <span class="n">cls</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+<a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-6"></a>        <span class="k">return</span> <span class="n">instances</span><span class="p">[</span><span class="n">cls</span><span class="p">]</span>
+<a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-7"></a>    <span class="k">return</span> <span class="n">_</span>
+<a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-8"></a>
+<a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-9"></a><span class="nd">@singleton</span>
+<a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-10"></a><span class="k">class</span> <span class="nc">Test</span><span class="p">():</span>
+<a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-11"></a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-12"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-13"></a>
+<a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-14"></a><span class="n">t1</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
+<a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-15"></a><span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-16"></a><span class="n">t2</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
+<a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-17"></a><span class="k">print</span><span class="p">(</span><span class="n">t2</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-18"></a><span class="n">t1</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-19"></a><span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-20"></a><span class="k">print</span><span class="p">(</span><span class="n">t2</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-21"></a><span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">t1</span><span class="p">))</span>
+<a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-22"></a><span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">t2</span><span class="p">))</span>
 </pre></td></tr></table></blockquote>
 <p>运行结果：</p>
 <blockquote>

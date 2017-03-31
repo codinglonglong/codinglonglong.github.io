@@ -1,53 +1,53 @@
 <p>本文进一步学习条件渲染。</p>
 <p>我们修改了TodoItem.vue文件，代码如下：</p>
 <blockquote>
-<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-1"> 1</a>
-<a href="#rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-2"> 2</a>
-<a href="#rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-3"> 3</a>
-<a href="#rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-4"> 4</a>
-<a href="#rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-5"> 5</a>
-<a href="#rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-6"> 6</a>
-<a href="#rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-7"> 7</a>
-<a href="#rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-8"> 8</a>
-<a href="#rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-9"> 9</a>
-<a href="#rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-10">10</a>
-<a href="#rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-11">11</a>
-<a href="#rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-12">12</a>
-<a href="#rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-13">13</a>
-<a href="#rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-14">14</a>
-<a href="#rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-15">15</a>
-<a href="#rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-16">16</a>
-<a href="#rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-17">17</a>
-<a href="#rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-18">18</a>
-<a href="#rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-19">19</a>
-<a href="#rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-20">20</a>
-<a href="#rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-21">21</a>
-<a href="#rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-22">22</a>
-<a href="#rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-23">23</a>
-<a href="#rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-24">24</a></pre></div></td><td class="code"><pre class="code html"><a name="rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-2"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;todoitem&quot;</span><span class="p">&gt;</span>
-<a name="rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-3"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&quot;flag===1&quot;</span><span class="p">&gt;</span>星期一<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-4"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">&quot;flag===2&quot;</span><span class="p">&gt;</span>星期二<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-5"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">&quot;flag===3&quot;</span><span class="p">&gt;</span>星期三<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-6"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">&quot;flag===4&quot;</span><span class="p">&gt;</span>星期四<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-7"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">&quot;flag===5&quot;</span><span class="p">&gt;</span>星期五<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-8"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">&quot;flag===6&quot;</span><span class="p">&gt;</span>星期六<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-9"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">&quot;flag===7&quot;</span><span class="p">&gt;</span>星期日<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-10"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else</span><span class="p">&gt;</span>参数错误<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-11"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-12"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-13"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-14"></a>    <span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
-<a name="rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-15"></a>        <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-<a name="rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-16"></a>            <span class="k">return</span> <span class="p">{</span>
-<a name="rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-17"></a>                <span class="nx">flag</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
-<a name="rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-18"></a>            <span class="p">}</span>
-<a name="rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-19"></a>        <span class="p">},</span>
-<a name="rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-20"></a>    <span class="p">}</span>
-<a name="rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-21"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-22"></a>
-<a name="rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-23"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
-<a name="rest_code_a4f06a2670c64e1ea1ccc2eb658eefe9-24"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_a8cf99b2208547e0931d7569dfbf8faa-1"> 1</a>
+<a href="#rest_code_a8cf99b2208547e0931d7569dfbf8faa-2"> 2</a>
+<a href="#rest_code_a8cf99b2208547e0931d7569dfbf8faa-3"> 3</a>
+<a href="#rest_code_a8cf99b2208547e0931d7569dfbf8faa-4"> 4</a>
+<a href="#rest_code_a8cf99b2208547e0931d7569dfbf8faa-5"> 5</a>
+<a href="#rest_code_a8cf99b2208547e0931d7569dfbf8faa-6"> 6</a>
+<a href="#rest_code_a8cf99b2208547e0931d7569dfbf8faa-7"> 7</a>
+<a href="#rest_code_a8cf99b2208547e0931d7569dfbf8faa-8"> 8</a>
+<a href="#rest_code_a8cf99b2208547e0931d7569dfbf8faa-9"> 9</a>
+<a href="#rest_code_a8cf99b2208547e0931d7569dfbf8faa-10">10</a>
+<a href="#rest_code_a8cf99b2208547e0931d7569dfbf8faa-11">11</a>
+<a href="#rest_code_a8cf99b2208547e0931d7569dfbf8faa-12">12</a>
+<a href="#rest_code_a8cf99b2208547e0931d7569dfbf8faa-13">13</a>
+<a href="#rest_code_a8cf99b2208547e0931d7569dfbf8faa-14">14</a>
+<a href="#rest_code_a8cf99b2208547e0931d7569dfbf8faa-15">15</a>
+<a href="#rest_code_a8cf99b2208547e0931d7569dfbf8faa-16">16</a>
+<a href="#rest_code_a8cf99b2208547e0931d7569dfbf8faa-17">17</a>
+<a href="#rest_code_a8cf99b2208547e0931d7569dfbf8faa-18">18</a>
+<a href="#rest_code_a8cf99b2208547e0931d7569dfbf8faa-19">19</a>
+<a href="#rest_code_a8cf99b2208547e0931d7569dfbf8faa-20">20</a>
+<a href="#rest_code_a8cf99b2208547e0931d7569dfbf8faa-21">21</a>
+<a href="#rest_code_a8cf99b2208547e0931d7569dfbf8faa-22">22</a>
+<a href="#rest_code_a8cf99b2208547e0931d7569dfbf8faa-23">23</a>
+<a href="#rest_code_a8cf99b2208547e0931d7569dfbf8faa-24">24</a></pre></div></td><td class="code"><pre class="code html"><a name="rest_code_a8cf99b2208547e0931d7569dfbf8faa-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_a8cf99b2208547e0931d7569dfbf8faa-2"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;todoitem&quot;</span><span class="p">&gt;</span>
+<a name="rest_code_a8cf99b2208547e0931d7569dfbf8faa-3"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&quot;flag===1&quot;</span><span class="p">&gt;</span>星期一<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_a8cf99b2208547e0931d7569dfbf8faa-4"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">&quot;flag===2&quot;</span><span class="p">&gt;</span>星期二<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_a8cf99b2208547e0931d7569dfbf8faa-5"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">&quot;flag===3&quot;</span><span class="p">&gt;</span>星期三<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_a8cf99b2208547e0931d7569dfbf8faa-6"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">&quot;flag===4&quot;</span><span class="p">&gt;</span>星期四<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_a8cf99b2208547e0931d7569dfbf8faa-7"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">&quot;flag===5&quot;</span><span class="p">&gt;</span>星期五<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_a8cf99b2208547e0931d7569dfbf8faa-8"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">&quot;flag===6&quot;</span><span class="p">&gt;</span>星期六<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_a8cf99b2208547e0931d7569dfbf8faa-9"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else-if</span><span class="o">=</span><span class="s">&quot;flag===7&quot;</span><span class="p">&gt;</span>星期日<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_a8cf99b2208547e0931d7569dfbf8faa-10"></a>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-else</span><span class="p">&gt;</span>参数错误<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_a8cf99b2208547e0931d7569dfbf8faa-11"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_a8cf99b2208547e0931d7569dfbf8faa-12"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_a8cf99b2208547e0931d7569dfbf8faa-13"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_a8cf99b2208547e0931d7569dfbf8faa-14"></a>    <span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<a name="rest_code_a8cf99b2208547e0931d7569dfbf8faa-15"></a>        <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_a8cf99b2208547e0931d7569dfbf8faa-16"></a>            <span class="k">return</span> <span class="p">{</span>
+<a name="rest_code_a8cf99b2208547e0931d7569dfbf8faa-17"></a>                <span class="nx">flag</span><span class="o">:</span> <span class="mi">6</span><span class="p">,</span>
+<a name="rest_code_a8cf99b2208547e0931d7569dfbf8faa-18"></a>            <span class="p">}</span>
+<a name="rest_code_a8cf99b2208547e0931d7569dfbf8faa-19"></a>        <span class="p">},</span>
+<a name="rest_code_a8cf99b2208547e0931d7569dfbf8faa-20"></a>    <span class="p">}</span>
+<a name="rest_code_a8cf99b2208547e0931d7569dfbf8faa-21"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_a8cf99b2208547e0931d7569dfbf8faa-22"></a>
+<a name="rest_code_a8cf99b2208547e0931d7569dfbf8faa-23"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
+<a name="rest_code_a8cf99b2208547e0931d7569dfbf8faa-24"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
 </pre></td></tr></table></blockquote>
 <p>在上述的代码中，我们需要学到以下几个问题：</p>
 <ol class="arabic simple">

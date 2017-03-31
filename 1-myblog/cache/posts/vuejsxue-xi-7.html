@@ -1,49 +1,49 @@
 <p>本文对比两种条件渲染， <strong>v-if</strong> 和 <strong>v-show</strong> 。</p>
 <p>测试代码TodoItem.vue如下：</p>
 <blockquote>
-<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_be0c10708af34b34b15b1cc288bf6aa7-1"> 1</a>
-<a href="#rest_code_be0c10708af34b34b15b1cc288bf6aa7-2"> 2</a>
-<a href="#rest_code_be0c10708af34b34b15b1cc288bf6aa7-3"> 3</a>
-<a href="#rest_code_be0c10708af34b34b15b1cc288bf6aa7-4"> 4</a>
-<a href="#rest_code_be0c10708af34b34b15b1cc288bf6aa7-5"> 5</a>
-<a href="#rest_code_be0c10708af34b34b15b1cc288bf6aa7-6"> 6</a>
-<a href="#rest_code_be0c10708af34b34b15b1cc288bf6aa7-7"> 7</a>
-<a href="#rest_code_be0c10708af34b34b15b1cc288bf6aa7-8"> 8</a>
-<a href="#rest_code_be0c10708af34b34b15b1cc288bf6aa7-9"> 9</a>
-<a href="#rest_code_be0c10708af34b34b15b1cc288bf6aa7-10">10</a>
-<a href="#rest_code_be0c10708af34b34b15b1cc288bf6aa7-11">11</a>
-<a href="#rest_code_be0c10708af34b34b15b1cc288bf6aa7-12">12</a>
-<a href="#rest_code_be0c10708af34b34b15b1cc288bf6aa7-13">13</a>
-<a href="#rest_code_be0c10708af34b34b15b1cc288bf6aa7-14">14</a>
-<a href="#rest_code_be0c10708af34b34b15b1cc288bf6aa7-15">15</a>
-<a href="#rest_code_be0c10708af34b34b15b1cc288bf6aa7-16">16</a>
-<a href="#rest_code_be0c10708af34b34b15b1cc288bf6aa7-17">17</a>
-<a href="#rest_code_be0c10708af34b34b15b1cc288bf6aa7-18">18</a>
-<a href="#rest_code_be0c10708af34b34b15b1cc288bf6aa7-19">19</a>
-<a href="#rest_code_be0c10708af34b34b15b1cc288bf6aa7-20">20</a>
-<a href="#rest_code_be0c10708af34b34b15b1cc288bf6aa7-21">21</a>
-<a href="#rest_code_be0c10708af34b34b15b1cc288bf6aa7-22">22</a></pre></div></td><td class="code"><pre class="code html"><a name="rest_code_be0c10708af34b34b15b1cc288bf6aa7-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_be0c10708af34b34b15b1cc288bf6aa7-2"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;todoitem&quot;</span><span class="p">&gt;</span>
-<a name="rest_code_be0c10708af34b34b15b1cc288bf6aa7-3"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&quot;flag&quot;</span><span class="p">&gt;</span>你好<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_be0c10708af34b34b15b1cc288bf6aa7-4"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-show</span><span class="o">=</span><span class="s">&quot;flag&quot;</span><span class="p">&gt;</span>你好<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_be0c10708af34b34b15b1cc288bf6aa7-5"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&quot;flag1&quot;</span><span class="p">&gt;</span>你好<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_be0c10708af34b34b15b1cc288bf6aa7-6"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-show</span><span class="o">=</span><span class="s">&quot;flag1&quot;</span><span class="p">&gt;</span>你好<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_be0c10708af34b34b15b1cc288bf6aa7-7"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_be0c10708af34b34b15b1cc288bf6aa7-8"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_be0c10708af34b34b15b1cc288bf6aa7-9"></a>
-<a name="rest_code_be0c10708af34b34b15b1cc288bf6aa7-10"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_be0c10708af34b34b15b1cc288bf6aa7-11"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
-<a name="rest_code_be0c10708af34b34b15b1cc288bf6aa7-12"></a>    <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-<a name="rest_code_be0c10708af34b34b15b1cc288bf6aa7-13"></a>        <span class="k">return</span> <span class="p">{</span>
-<a name="rest_code_be0c10708af34b34b15b1cc288bf6aa7-14"></a>            <span class="nx">flag</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-<a name="rest_code_be0c10708af34b34b15b1cc288bf6aa7-15"></a>            <span class="nx">flag1</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-<a name="rest_code_be0c10708af34b34b15b1cc288bf6aa7-16"></a>        <span class="p">}</span>
-<a name="rest_code_be0c10708af34b34b15b1cc288bf6aa7-17"></a>    <span class="p">},</span>
-<a name="rest_code_be0c10708af34b34b15b1cc288bf6aa7-18"></a><span class="p">}</span>
-<a name="rest_code_be0c10708af34b34b15b1cc288bf6aa7-19"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_be0c10708af34b34b15b1cc288bf6aa7-20"></a>
-<a name="rest_code_be0c10708af34b34b15b1cc288bf6aa7-21"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
-<a name="rest_code_be0c10708af34b34b15b1cc288bf6aa7-22"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_9f2c0b91dfe346c88ab01638337a2ed7-1"> 1</a>
+<a href="#rest_code_9f2c0b91dfe346c88ab01638337a2ed7-2"> 2</a>
+<a href="#rest_code_9f2c0b91dfe346c88ab01638337a2ed7-3"> 3</a>
+<a href="#rest_code_9f2c0b91dfe346c88ab01638337a2ed7-4"> 4</a>
+<a href="#rest_code_9f2c0b91dfe346c88ab01638337a2ed7-5"> 5</a>
+<a href="#rest_code_9f2c0b91dfe346c88ab01638337a2ed7-6"> 6</a>
+<a href="#rest_code_9f2c0b91dfe346c88ab01638337a2ed7-7"> 7</a>
+<a href="#rest_code_9f2c0b91dfe346c88ab01638337a2ed7-8"> 8</a>
+<a href="#rest_code_9f2c0b91dfe346c88ab01638337a2ed7-9"> 9</a>
+<a href="#rest_code_9f2c0b91dfe346c88ab01638337a2ed7-10">10</a>
+<a href="#rest_code_9f2c0b91dfe346c88ab01638337a2ed7-11">11</a>
+<a href="#rest_code_9f2c0b91dfe346c88ab01638337a2ed7-12">12</a>
+<a href="#rest_code_9f2c0b91dfe346c88ab01638337a2ed7-13">13</a>
+<a href="#rest_code_9f2c0b91dfe346c88ab01638337a2ed7-14">14</a>
+<a href="#rest_code_9f2c0b91dfe346c88ab01638337a2ed7-15">15</a>
+<a href="#rest_code_9f2c0b91dfe346c88ab01638337a2ed7-16">16</a>
+<a href="#rest_code_9f2c0b91dfe346c88ab01638337a2ed7-17">17</a>
+<a href="#rest_code_9f2c0b91dfe346c88ab01638337a2ed7-18">18</a>
+<a href="#rest_code_9f2c0b91dfe346c88ab01638337a2ed7-19">19</a>
+<a href="#rest_code_9f2c0b91dfe346c88ab01638337a2ed7-20">20</a>
+<a href="#rest_code_9f2c0b91dfe346c88ab01638337a2ed7-21">21</a>
+<a href="#rest_code_9f2c0b91dfe346c88ab01638337a2ed7-22">22</a></pre></div></td><td class="code"><pre class="code html"><a name="rest_code_9f2c0b91dfe346c88ab01638337a2ed7-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_9f2c0b91dfe346c88ab01638337a2ed7-2"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;todoitem&quot;</span><span class="p">&gt;</span>
+<a name="rest_code_9f2c0b91dfe346c88ab01638337a2ed7-3"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&quot;flag&quot;</span><span class="p">&gt;</span>你好<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_9f2c0b91dfe346c88ab01638337a2ed7-4"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-show</span><span class="o">=</span><span class="s">&quot;flag&quot;</span><span class="p">&gt;</span>你好<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_9f2c0b91dfe346c88ab01638337a2ed7-5"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-if</span><span class="o">=</span><span class="s">&quot;flag1&quot;</span><span class="p">&gt;</span>你好<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_9f2c0b91dfe346c88ab01638337a2ed7-6"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-show</span><span class="o">=</span><span class="s">&quot;flag1&quot;</span><span class="p">&gt;</span>你好<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_9f2c0b91dfe346c88ab01638337a2ed7-7"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_9f2c0b91dfe346c88ab01638337a2ed7-8"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_9f2c0b91dfe346c88ab01638337a2ed7-9"></a>
+<a name="rest_code_9f2c0b91dfe346c88ab01638337a2ed7-10"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_9f2c0b91dfe346c88ab01638337a2ed7-11"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<a name="rest_code_9f2c0b91dfe346c88ab01638337a2ed7-12"></a>    <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_9f2c0b91dfe346c88ab01638337a2ed7-13"></a>        <span class="k">return</span> <span class="p">{</span>
+<a name="rest_code_9f2c0b91dfe346c88ab01638337a2ed7-14"></a>            <span class="nx">flag</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+<a name="rest_code_9f2c0b91dfe346c88ab01638337a2ed7-15"></a>            <span class="nx">flag1</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+<a name="rest_code_9f2c0b91dfe346c88ab01638337a2ed7-16"></a>        <span class="p">}</span>
+<a name="rest_code_9f2c0b91dfe346c88ab01638337a2ed7-17"></a>    <span class="p">},</span>
+<a name="rest_code_9f2c0b91dfe346c88ab01638337a2ed7-18"></a><span class="p">}</span>
+<a name="rest_code_9f2c0b91dfe346c88ab01638337a2ed7-19"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_9f2c0b91dfe346c88ab01638337a2ed7-20"></a>
+<a name="rest_code_9f2c0b91dfe346c88ab01638337a2ed7-21"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
+<a name="rest_code_9f2c0b91dfe346c88ab01638337a2ed7-22"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
 </pre></td></tr></table></blockquote>
 <p>很明显，输出结果是两行“你好”。貌似v-if和v-show没什么区别，这里需要注意：</p>
 <p><strong>v-if 有更高的切换消耗而 v-show 有更高的初始渲染消耗。因此，如果需要频繁切换使用的话， v-show 较好，而如果在运行时条件不大可能发生改变，则使用 v-if 较好。</strong></p>

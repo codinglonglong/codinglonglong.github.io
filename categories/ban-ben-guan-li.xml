@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about 版本管理)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/ban-ben-guan-li.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 28 Mar 2017 01:04:28 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>管理多个git账户</title><link>https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;因为博客用了两个github账户，一个放文章，一个放图片，所以出现了两个git账户同时存在的问题。这时可以通过如下的方法解决冲突：&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about 版本管理)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/ban-ben-guan-li.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 31 Mar 2017 06:12:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>管理多个git账户</title><link>https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;因为博客用了两个github账户，一个放文章，一个放图片，所以出现了两个git账户同时存在的问题。这时可以通过如下的方法解决冲突：&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;生成两个ssh key.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_8212c938bc39415abe793f53ffb60536-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh-keygen -t rsa -C &lt;span class="s2"&gt;"email address 1"&lt;/span&gt;
-&lt;a name="rest_code_8212c938bc39415abe793f53ffb60536-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh-keygen -t rsa -C &lt;span class="s2"&gt;"email address 2"&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_b7c17709c2a742599ba663b11de3b3be-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh-keygen -t rsa -C &lt;span class="s2"&gt;"email address 1"&lt;/span&gt;
+&lt;a name="rest_code_b7c17709c2a742599ba663b11de3b3be-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh-keygen -t rsa -C &lt;span class="s2"&gt;"email address 2"&lt;/span&gt;
 &lt;/pre&gt;&lt;ol class="arabic simple" start="2"&gt;
 &lt;li&gt;添加上一步生成的两个ssh key.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_f1a29d9b47e9443ab2e6e114f83ff504-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh-add ~/.ssh/id_rsa1
-&lt;a name="rest_code_f1a29d9b47e9443ab2e6e114f83ff504-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh-add ~/.ssh/id_rsa2
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_8ac9fa83a55345cb94810e7fd0684632-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh-add ~/.ssh/id_rsa1
+&lt;a name="rest_code_8ac9fa83a55345cb94810e7fd0684632-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh-add ~/.ssh/id_rsa2
 &lt;/pre&gt;&lt;ol class="arabic simple" start="3"&gt;
 &lt;li&gt;创建配置文件.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_cd8962c701be4071afe9f2d7e01a9967-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; touch config
-&lt;/pre&gt;&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_fd9455cc6afc485aa83286ef241c50bf-1"&gt; 1&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_fd9455cc6afc485aa83286ef241c50bf-2"&gt; 2&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_fd9455cc6afc485aa83286ef241c50bf-3"&gt; 3&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_fd9455cc6afc485aa83286ef241c50bf-4"&gt; 4&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_fd9455cc6afc485aa83286ef241c50bf-5"&gt; 5&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_fd9455cc6afc485aa83286ef241c50bf-6"&gt; 6&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_fd9455cc6afc485aa83286ef241c50bf-7"&gt; 7&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_fd9455cc6afc485aa83286ef241c50bf-8"&gt; 8&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_fd9455cc6afc485aa83286ef241c50bf-9"&gt; 9&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_fd9455cc6afc485aa83286ef241c50bf-10"&gt;10&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code bash"&gt;&lt;a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# github1&lt;/span&gt;
-&lt;a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-2"&gt;&lt;/a&gt;Host github1
-&lt;a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-3"&gt;&lt;/a&gt;     HostName github.com
-&lt;a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-4"&gt;&lt;/a&gt;     PreferredAuthentications publickey
-&lt;a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-5"&gt;&lt;/a&gt;     IdentityFile ~/.ssh/id_rsa1
-&lt;a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-6"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# github2&lt;/span&gt;
-&lt;a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-7"&gt;&lt;/a&gt;Host github2
-&lt;a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-8"&gt;&lt;/a&gt;     HostName github.com
-&lt;a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-9"&gt;&lt;/a&gt;     PreferredAuthentications publickey
-&lt;a name="rest_code_fd9455cc6afc485aa83286ef241c50bf-10"&gt;&lt;/a&gt;     IdentityFile ~/.ssh/id_rsa2
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_a5bde42ac7ba45d9bc56473cea0f2e93-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; touch config
+&lt;/pre&gt;&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_4765cd812f254b78ac0899479773461f-1"&gt; 1&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_4765cd812f254b78ac0899479773461f-2"&gt; 2&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_4765cd812f254b78ac0899479773461f-3"&gt; 3&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_4765cd812f254b78ac0899479773461f-4"&gt; 4&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_4765cd812f254b78ac0899479773461f-5"&gt; 5&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_4765cd812f254b78ac0899479773461f-6"&gt; 6&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_4765cd812f254b78ac0899479773461f-7"&gt; 7&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_4765cd812f254b78ac0899479773461f-8"&gt; 8&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_4765cd812f254b78ac0899479773461f-9"&gt; 9&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/#rest_code_4765cd812f254b78ac0899479773461f-10"&gt;10&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code bash"&gt;&lt;a name="rest_code_4765cd812f254b78ac0899479773461f-1"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# github1&lt;/span&gt;
+&lt;a name="rest_code_4765cd812f254b78ac0899479773461f-2"&gt;&lt;/a&gt;Host github1
+&lt;a name="rest_code_4765cd812f254b78ac0899479773461f-3"&gt;&lt;/a&gt;     HostName github.com
+&lt;a name="rest_code_4765cd812f254b78ac0899479773461f-4"&gt;&lt;/a&gt;     PreferredAuthentications publickey
+&lt;a name="rest_code_4765cd812f254b78ac0899479773461f-5"&gt;&lt;/a&gt;     IdentityFile ~/.ssh/id_rsa1
+&lt;a name="rest_code_4765cd812f254b78ac0899479773461f-6"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# github2&lt;/span&gt;
+&lt;a name="rest_code_4765cd812f254b78ac0899479773461f-7"&gt;&lt;/a&gt;Host github2
+&lt;a name="rest_code_4765cd812f254b78ac0899479773461f-8"&gt;&lt;/a&gt;     HostName github.com
+&lt;a name="rest_code_4765cd812f254b78ac0899479773461f-9"&gt;&lt;/a&gt;     PreferredAuthentications publickey
+&lt;a name="rest_code_4765cd812f254b78ac0899479773461f-10"&gt;&lt;/a&gt;     IdentityFile ~/.ssh/id_rsa2
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;ol class="arabic simple" start="4"&gt;
 &lt;li&gt;测试.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_9ca4b622d4e840eca938c47629dfbde3-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh -T git@github1
-&lt;a name="rest_code_9ca4b622d4e840eca938c47629dfbde3-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh -T git@github2
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_8abad66a6dda4ffea88b1267bd4f4c2b-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh -T git@github1
+&lt;a name="rest_code_8abad66a6dda4ffea88b1267bd4f4c2b-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt; ssh -T git@github2
 &lt;/pre&gt;&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;过程之中遇到yes或者no，都输入yes。&lt;/li&gt;

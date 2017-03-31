@@ -107,7 +107,7 @@ body{
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Win10 home版关闭hyper-v</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+            <p class="byline author vcard"><span class="byline-name fn">
                     龙龙
             </span></p>
             <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2017-01-10T04:45:37+08:00" itemprop="datePublished" title="2017-01-10 04:45">2017-01-10 04:45</time></a></p>
@@ -124,8 +124,8 @@ body{
 <li>
 <p class="first">管理员身份运行命令提示符cmd</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_f9c44dc8ed004e579b37508bc7a69598-1"></a>&gt;&gt; bcdedit /copy <span class="o">{</span>current<span class="o">}</span> /d <span class="s2">"Windows10 no Hyper-V</span>
-<a name="rest_code_f9c44dc8ed004e579b37508bc7a69598-2"></a><span class="s2">&gt;&gt; bcdedit /set {XXX} hypervisorlaunchtype OFF</span>
+<pre class="code bash"><a name="rest_code_6b4964468be041c38b17e5f775dc4a44-1"></a>&gt;&gt; bcdedit /copy <span class="o">{</span>current<span class="o">}</span> /d <span class="s2">"Windows10 no Hyper-V</span>
+<a name="rest_code_6b4964468be041c38b17e5f775dc4a44-2"></a><span class="s2">&gt;&gt; bcdedit /set {XXX} hypervisorlaunchtype OFF</span>
 </pre>
 </blockquote>
 <p>注意XXX的部分是上一步的输出结果。</p>

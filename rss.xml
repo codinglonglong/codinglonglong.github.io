@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Thu, 30 Mar 2017 14:08:57 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>龙龙看柯南（3）</title><link>https://codinglonglong.github.io/posts/long-long-kan-ke-nan-3/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;strong&gt;句子分析&lt;/strong&gt;&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 31 Mar 2017 06:33:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Win10修改MAC地址</title><link>https://codinglonglong.github.io/posts/win10xiu-gai-macdi-zhi/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、打开注册表编辑器，“运行”-&amp;gt;“regedit”。&lt;/p&gt;
+&lt;p&gt;2、找到如下路径，得到下图：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}&lt;/strong&gt;&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/modifymac1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/modifymac1.PNG"&gt;
+&lt;p&gt;3、右击"0003"-&amp;gt;"新建"-&amp;gt;"字符串值"-&amp;gt;"NetworkAddress"。&lt;/p&gt;
+&lt;p&gt;4、双击“NetworkAddress”，输入新的MAC地址值，比如“0028F80AF812”。&lt;/p&gt;
+&lt;p&gt;5、点击“确定”，重启电脑即可。&lt;/p&gt;&lt;/div&gt;</description><category>Network</category><category>win10</category><guid>https://codinglonglong.github.io/posts/win10xiu-gai-macdi-zhi/</guid><pubDate>Fri, 31 Mar 2017 04:15:05 GMT</pubDate></item><item><title>龙龙看柯南（3）</title><link>https://codinglonglong.github.io/posts/long-long-kan-ke-nan-3/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;strong&gt;句子分析&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;は、早くいいたまえ！！&lt;/p&gt;
 &lt;p&gt;快点说吧……&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;词语分析&lt;/strong&gt;&lt;/p&gt;
@@ -297,49 +303,49 @@ v6.10.1
 &amp;gt;&amp;gt; py -3 -m pip install tornado
 &amp;gt;&amp;gt; py -2 -m pip install tornado
 &lt;/pre&gt;</description><category>pip</category><category>Python</category><guid>https://codinglonglong.github.io/posts/python2he-python3gong-cun-shi-ru-he-shi-yong-pip/</guid><pubDate>Sat, 18 Mar 2017 16:02:11 GMT</pubDate></item><item><title>Python使用装饰器实现单例模式</title><link>https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;blockquote&gt;
-&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-1"&gt; 1&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-2"&gt; 2&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-3"&gt; 3&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-4"&gt; 4&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-5"&gt; 5&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-6"&gt; 6&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-7"&gt; 7&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-8"&gt; 8&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-9"&gt; 9&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-10"&gt;10&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-11"&gt;11&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-12"&gt;12&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-13"&gt;13&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-14"&gt;14&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-15"&gt;15&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-16"&gt;16&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-17"&gt;17&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-18"&gt;18&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-19"&gt;19&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-20"&gt;20&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-21"&gt;21&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_d62a4cd065dc4aae93f8524039fd77ef-22"&gt;22&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;singleton&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;cls&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-2"&gt;&lt;/a&gt;    &lt;span class="n"&gt;instances&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
-&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-3"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;_&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kw&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-4"&gt;&lt;/a&gt;        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="bp"&gt;cls&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;instances&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-5"&gt;&lt;/a&gt;            &lt;span class="n"&gt;instances&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="bp"&gt;cls&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;cls&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kw&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-6"&gt;&lt;/a&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;instances&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="bp"&gt;cls&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
-&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-7"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;_&lt;/span&gt;
-&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-8"&gt;&lt;/a&gt;
-&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-9"&gt;&lt;/a&gt;&lt;span class="nd"&gt;@singleton&lt;/span&gt;
-&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-10"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Test&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
-&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-11"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="fm"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-12"&gt;&lt;/a&gt;        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
-&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-13"&gt;&lt;/a&gt;
-&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-14"&gt;&lt;/a&gt;&lt;span class="n"&gt;t1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Test&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-15"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-16"&gt;&lt;/a&gt;&lt;span class="n"&gt;t2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Test&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-17"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-18"&gt;&lt;/a&gt;&lt;span class="n"&gt;t1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
-&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-19"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-20"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-21"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;id&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;a name="rest_code_d62a4cd065dc4aae93f8524039fd77ef-22"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;id&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_ff7b422d9f214ac085cc4ff3743ab976-1"&gt; 1&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_ff7b422d9f214ac085cc4ff3743ab976-2"&gt; 2&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_ff7b422d9f214ac085cc4ff3743ab976-3"&gt; 3&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_ff7b422d9f214ac085cc4ff3743ab976-4"&gt; 4&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_ff7b422d9f214ac085cc4ff3743ab976-5"&gt; 5&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_ff7b422d9f214ac085cc4ff3743ab976-6"&gt; 6&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_ff7b422d9f214ac085cc4ff3743ab976-7"&gt; 7&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_ff7b422d9f214ac085cc4ff3743ab976-8"&gt; 8&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_ff7b422d9f214ac085cc4ff3743ab976-9"&gt; 9&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_ff7b422d9f214ac085cc4ff3743ab976-10"&gt;10&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_ff7b422d9f214ac085cc4ff3743ab976-11"&gt;11&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_ff7b422d9f214ac085cc4ff3743ab976-12"&gt;12&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_ff7b422d9f214ac085cc4ff3743ab976-13"&gt;13&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_ff7b422d9f214ac085cc4ff3743ab976-14"&gt;14&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_ff7b422d9f214ac085cc4ff3743ab976-15"&gt;15&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_ff7b422d9f214ac085cc4ff3743ab976-16"&gt;16&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_ff7b422d9f214ac085cc4ff3743ab976-17"&gt;17&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_ff7b422d9f214ac085cc4ff3743ab976-18"&gt;18&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_ff7b422d9f214ac085cc4ff3743ab976-19"&gt;19&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_ff7b422d9f214ac085cc4ff3743ab976-20"&gt;20&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_ff7b422d9f214ac085cc4ff3743ab976-21"&gt;21&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_ff7b422d9f214ac085cc4ff3743ab976-22"&gt;22&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;singleton&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cls&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-2"&gt;&lt;/a&gt;    &lt;span class="n"&gt;instances&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt;
+&lt;a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-3"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;_&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kw&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-4"&gt;&lt;/a&gt;        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;cls&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;instances&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-5"&gt;&lt;/a&gt;            &lt;span class="n"&gt;instances&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;cls&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;cls&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kw&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-6"&gt;&lt;/a&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;instances&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;cls&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-7"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;_&lt;/span&gt;
+&lt;a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-8"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-9"&gt;&lt;/a&gt;&lt;span class="nd"&gt;@singleton&lt;/span&gt;
+&lt;a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-10"&gt;&lt;/a&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Test&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+&lt;a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-11"&gt;&lt;/a&gt;    &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;__init__&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-12"&gt;&lt;/a&gt;        &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;
+&lt;a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-13"&gt;&lt;/a&gt;
+&lt;a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-14"&gt;&lt;/a&gt;&lt;span class="n"&gt;t1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Test&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-15"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-16"&gt;&lt;/a&gt;&lt;span class="n"&gt;t2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Test&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-17"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-18"&gt;&lt;/a&gt;&lt;span class="n"&gt;t1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+&lt;a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-19"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-20"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-21"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;id&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t1&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_ff7b422d9f214ac085cc4ff3743ab976-22"&gt;&lt;/a&gt;&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;id&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;t2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;
 &lt;p&gt;运行结果：&lt;/p&gt;
 &lt;blockquote&gt;
@@ -604,44 +610,4 @@ v6.10.1
 &amp;gt;&amp;gt; npm run serve
 &lt;/pre&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;4、主系统访问 &lt;a class="reference external" href="http://192.168.99.100:8080/"&gt;http://192.168.99.100:8080/&lt;/a&gt; 即可，这里只是实现浏览器预览，后面我们再进一步研究打包apk。&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><category>vuejs</category><category>weex</category><guid>https://codinglonglong.github.io/posts/dockerpei-zhi-weexkai-fa-huan-jing/</guid><pubDate>Mon, 13 Mar 2017 14:30:01 GMT</pubDate></item><item><title>Docker配置vuejs开发环境</title><link>https://codinglonglong.github.io/posts/dockerpei-zhi-vuejskai-fa-huan-jing/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、安装wget，下载最新版nodejs。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="literal-block"&gt;
-&amp;gt;&amp;gt; apt udpate
-&amp;gt;&amp;gt; apt install wget
-&amp;gt;&amp;gt; cd ~
-&amp;gt;&amp;gt; wget https://nodejs.org/dist/v7.7.2/node-v7.7.2-linux-x64.tar.xz
-&lt;/pre&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;2、安装nodejs。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="literal-block"&gt;
-&amp;gt;&amp;gt; apt install xz-utils
-&amp;gt;&amp;gt; xz -d node-v7.7.2-linux-x64.tar.xz
-&amp;gt;&amp;gt; tar -xvf node-v7.7.2-linux-x64.tar
-&amp;gt;&amp;gt; apt install emacs
-&amp;gt;&amp;gt; emacs ~/.bashrc
-export PATH=$PATH:/root/node-v7.7.2-linux-x64/bin/
-&amp;gt;&amp;gt; source ~/.bashrc
-&lt;/pre&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;3、安装vue和vue-cli。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="literal-block"&gt;
-&amp;gt;&amp;gt; npm install --global vue vue-cli
-&lt;/pre&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;4、创建新项目。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="literal-block"&gt;
-&amp;gt;&amp;gt; cd ~
-&amp;gt;&amp;gt; mkdir development
-&amp;gt;&amp;gt; cd development
-&amp;gt;&amp;gt; apt install git
-&amp;gt;&amp;gt; vue init webpack test
-&amp;gt;&amp;gt; cd test
-&amp;gt;&amp;gt; npm install
-&amp;gt;&amp;gt; npm run dev
-&lt;/pre&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;5、主系统访问 &lt;a class="reference external" href="http://192.168.99.100:8080"&gt;http://192.168.99.100:8080&lt;/a&gt; 即可。&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><category>vuejs</category><guid>https://codinglonglong.github.io/posts/dockerpei-zhi-vuejskai-fa-huan-jing/</guid><pubDate>Mon, 13 Mar 2017 12:36:24 GMT</pubDate></item></channel></rss>
+&lt;p&gt;4、主系统访问 &lt;a class="reference external" href="http://192.168.99.100:8080/"&gt;http://192.168.99.100:8080/&lt;/a&gt; 即可，这里只是实现浏览器预览，后面我们再进一步研究打包apk。&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><category>vuejs</category><category>weex</category><guid>https://codinglonglong.github.io/posts/dockerpei-zhi-weexkai-fa-huan-jing/</guid><pubDate>Mon, 13 Mar 2017 14:30:01 GMT</pubDate></item></channel></rss>

@@ -1,317 +1,317 @@
 <p>Python的装饰器是一个很有趣的语法糖，它可以让代码变得简洁优美，将与逻辑无关的部分分离出来，比如记录日志、验证权限、设置缓存、程序计时、配置上下文等等。</p>
 <p>1、带参数函数、无参数装饰器</p>
 <blockquote>
-<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-1"> 1</a>
-<a href="#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-2"> 2</a>
-<a href="#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-3"> 3</a>
-<a href="#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-4"> 4</a>
-<a href="#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-5"> 5</a>
-<a href="#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-6"> 6</a>
-<a href="#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-7"> 7</a>
-<a href="#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-8"> 8</a>
-<a href="#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-9"> 9</a>
-<a href="#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-10">10</a>
-<a href="#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-11">11</a>
-<a href="#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-12">12</a>
-<a href="#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-13">13</a>
-<a href="#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-14">14</a>
-<a href="#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-15">15</a>
-<a href="#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-16">16</a>
-<a href="#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-17">17</a>
-<a href="#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-18">18</a>
-<a href="#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-19">19</a>
-<a href="#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-20">20</a>
-<a href="#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-21">21</a>
-<a href="#rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-22">22</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
-<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-2"></a><span class="c1"># 带参数函数、无参数装饰器</span>
-<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-3"></a>
-<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-4"></a>
-<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-5"></a><span class="k">def</span> <span class="nf">checklogin</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-6"></a>    <span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
-<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-7"></a>        <span class="n">validusers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;long&quot;</span><span class="p">,</span> <span class="s2">&quot;jack&quot;</span><span class="p">]</span>
-<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-8"></a>        <span class="k">if</span> <span class="n">username</span> <span class="ow">in</span> <span class="n">validusers</span><span class="p">:</span>
-<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-9"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
-<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-10"></a>        <span class="k">else</span><span class="p">:</span>
-<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-11"></a>            <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">username</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, 你没有操作权限&quot;</span>
-<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-12"></a>    <span class="k">return</span> <span class="n">_</span>
-<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-13"></a>
-<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-14"></a>
-<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-15"></a><span class="nd">@checklogin</span>
-<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-16"></a><span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
-<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-17"></a>    <span class="k">return</span> <span class="s2">&quot;欢迎你, &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
-<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-18"></a>
-<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-19"></a>
-<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-20"></a><span class="k">print</span><span class="p">(</span><span class="n">login</span><span class="p">(</span><span class="s2">&quot;long&quot;</span><span class="p">))</span>
-<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-21"></a><span class="k">print</span><span class="p">(</span><span class="n">login</span><span class="p">(</span><span class="s2">&quot;tom&quot;</span><span class="p">))</span>
-<a name="rest_code_c36a5adfa3b04d6881cffb2fb0422fd3-22"></a><span class="k">print</span><span class="p">(</span><span class="n">login</span><span class="p">(</span><span class="s2">&quot;jack&quot;</span><span class="p">))</span>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_b8212a1dc82242269c9b285efa241fd6-1"> 1</a>
+<a href="#rest_code_b8212a1dc82242269c9b285efa241fd6-2"> 2</a>
+<a href="#rest_code_b8212a1dc82242269c9b285efa241fd6-3"> 3</a>
+<a href="#rest_code_b8212a1dc82242269c9b285efa241fd6-4"> 4</a>
+<a href="#rest_code_b8212a1dc82242269c9b285efa241fd6-5"> 5</a>
+<a href="#rest_code_b8212a1dc82242269c9b285efa241fd6-6"> 6</a>
+<a href="#rest_code_b8212a1dc82242269c9b285efa241fd6-7"> 7</a>
+<a href="#rest_code_b8212a1dc82242269c9b285efa241fd6-8"> 8</a>
+<a href="#rest_code_b8212a1dc82242269c9b285efa241fd6-9"> 9</a>
+<a href="#rest_code_b8212a1dc82242269c9b285efa241fd6-10">10</a>
+<a href="#rest_code_b8212a1dc82242269c9b285efa241fd6-11">11</a>
+<a href="#rest_code_b8212a1dc82242269c9b285efa241fd6-12">12</a>
+<a href="#rest_code_b8212a1dc82242269c9b285efa241fd6-13">13</a>
+<a href="#rest_code_b8212a1dc82242269c9b285efa241fd6-14">14</a>
+<a href="#rest_code_b8212a1dc82242269c9b285efa241fd6-15">15</a>
+<a href="#rest_code_b8212a1dc82242269c9b285efa241fd6-16">16</a>
+<a href="#rest_code_b8212a1dc82242269c9b285efa241fd6-17">17</a>
+<a href="#rest_code_b8212a1dc82242269c9b285efa241fd6-18">18</a>
+<a href="#rest_code_b8212a1dc82242269c9b285efa241fd6-19">19</a>
+<a href="#rest_code_b8212a1dc82242269c9b285efa241fd6-20">20</a>
+<a href="#rest_code_b8212a1dc82242269c9b285efa241fd6-21">21</a>
+<a href="#rest_code_b8212a1dc82242269c9b285efa241fd6-22">22</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_b8212a1dc82242269c9b285efa241fd6-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
+<a name="rest_code_b8212a1dc82242269c9b285efa241fd6-2"></a><span class="c1"># 带参数函数、无参数装饰器</span>
+<a name="rest_code_b8212a1dc82242269c9b285efa241fd6-3"></a>
+<a name="rest_code_b8212a1dc82242269c9b285efa241fd6-4"></a>
+<a name="rest_code_b8212a1dc82242269c9b285efa241fd6-5"></a><span class="k">def</span> <span class="nf">checklogin</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<a name="rest_code_b8212a1dc82242269c9b285efa241fd6-6"></a>    <span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
+<a name="rest_code_b8212a1dc82242269c9b285efa241fd6-7"></a>        <span class="n">validusers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;long&quot;</span><span class="p">,</span> <span class="s2">&quot;jack&quot;</span><span class="p">]</span>
+<a name="rest_code_b8212a1dc82242269c9b285efa241fd6-8"></a>        <span class="k">if</span> <span class="n">username</span> <span class="ow">in</span> <span class="n">validusers</span><span class="p">:</span>
+<a name="rest_code_b8212a1dc82242269c9b285efa241fd6-9"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+<a name="rest_code_b8212a1dc82242269c9b285efa241fd6-10"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="rest_code_b8212a1dc82242269c9b285efa241fd6-11"></a>            <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">username</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;, 你没有操作权限&quot;</span>
+<a name="rest_code_b8212a1dc82242269c9b285efa241fd6-12"></a>    <span class="k">return</span> <span class="n">_</span>
+<a name="rest_code_b8212a1dc82242269c9b285efa241fd6-13"></a>
+<a name="rest_code_b8212a1dc82242269c9b285efa241fd6-14"></a>
+<a name="rest_code_b8212a1dc82242269c9b285efa241fd6-15"></a><span class="nd">@checklogin</span>
+<a name="rest_code_b8212a1dc82242269c9b285efa241fd6-16"></a><span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
+<a name="rest_code_b8212a1dc82242269c9b285efa241fd6-17"></a>    <span class="k">return</span> <span class="s2">&quot;欢迎你, &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+<a name="rest_code_b8212a1dc82242269c9b285efa241fd6-18"></a>
+<a name="rest_code_b8212a1dc82242269c9b285efa241fd6-19"></a>
+<a name="rest_code_b8212a1dc82242269c9b285efa241fd6-20"></a><span class="k">print</span><span class="p">(</span><span class="n">login</span><span class="p">(</span><span class="s2">&quot;long&quot;</span><span class="p">))</span>
+<a name="rest_code_b8212a1dc82242269c9b285efa241fd6-21"></a><span class="k">print</span><span class="p">(</span><span class="n">login</span><span class="p">(</span><span class="s2">&quot;tom&quot;</span><span class="p">))</span>
+<a name="rest_code_b8212a1dc82242269c9b285efa241fd6-22"></a><span class="k">print</span><span class="p">(</span><span class="n">login</span><span class="p">(</span><span class="s2">&quot;jack&quot;</span><span class="p">))</span>
 </pre></td></tr></table></blockquote>
 <p>运行结果：</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_f9bdbaa8ea2c4bb6b697972728af81a1-1"></a>欢迎你, long
-<a name="rest_code_f9bdbaa8ea2c4bb6b697972728af81a1-2"></a>tom, 你没有操作权限
-<a name="rest_code_f9bdbaa8ea2c4bb6b697972728af81a1-3"></a>欢迎你, jack
+<pre class="code bash"><a name="rest_code_1c85bc812d1f44ce9f77dc0a75b3dd2a-1"></a>欢迎你, long
+<a name="rest_code_1c85bc812d1f44ce9f77dc0a75b3dd2a-2"></a>tom, 你没有操作权限
+<a name="rest_code_1c85bc812d1f44ce9f77dc0a75b3dd2a-3"></a>欢迎你, jack
 </pre></blockquote>
 <p>2、可变参数函数、无参数装饰器</p>
 <blockquote>
-<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-1"> 1</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-2"> 2</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-3"> 3</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-4"> 4</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-5"> 5</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-6"> 6</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-7"> 7</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-8"> 8</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-9"> 9</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-10">10</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-11">11</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-12">12</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-13">13</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-14">14</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-15">15</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-16">16</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-17">17</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-18">18</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-19">19</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-20">20</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-21">21</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-22">22</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-23">23</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-24">24</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-25">25</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-26">26</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-27">27</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-28">28</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-29">29</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-30">30</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-31">31</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-32">32</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-33">33</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-34">34</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-35">35</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-36">36</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-37">37</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-38">38</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-39">39</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-40">40</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-41">41</a>
-<a href="#rest_code_48a3a4f3e5ee43dda831cceecb7da497-42">42</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-2"></a><span class="c1"># 可变参数函数、无参数装饰器</span>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-3"></a>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-4"></a>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-5"></a><span class="k">def</span> <span class="nf">logger</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-6"></a>    <span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-7"></a>        <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;被调用，参数包括：&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">kwargs</span><span class="p">))</span>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-8"></a>        <span class="k">if</span> <span class="n">args</span> <span class="ow">and</span> <span class="n">kwargs</span><span class="p">:</span>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-9"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-10"></a>        <span class="k">elif</span> <span class="n">args</span><span class="p">:</span>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-11"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-12"></a>        <span class="k">elif</span> <span class="n">kwargs</span><span class="p">:</span>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-13"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-14"></a>        <span class="k">else</span><span class="p">:</span>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-15"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">()</span>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-16"></a>    <span class="k">return</span> <span class="n">_</span>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-17"></a>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-18"></a>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-19"></a><span class="nd">@logger</span>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-20"></a><span class="k">def</span> <span class="nf">test1</span><span class="p">():</span>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-21"></a>    <span class="k">pass</span>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-22"></a>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-23"></a>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-24"></a><span class="nd">@logger</span>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-25"></a><span class="k">def</span> <span class="nf">test2</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-26"></a>    <span class="k">pass</span>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-27"></a>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-28"></a>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-29"></a><span class="nd">@logger</span>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-30"></a><span class="k">def</span> <span class="nf">test3</span><span class="p">(</span><span class="n">kwargs</span><span class="p">):</span>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-31"></a>    <span class="k">pass</span>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-32"></a>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-33"></a>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-34"></a><span class="nd">@logger</span>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-35"></a><span class="k">def</span> <span class="nf">test4</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">):</span>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-36"></a>    <span class="k">pass</span>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-37"></a>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-38"></a>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-39"></a><span class="n">test1</span><span class="p">()</span>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-40"></a><span class="n">test2</span><span class="p">(</span><span class="s2">&quot;long&quot;</span><span class="p">)</span>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-41"></a><span class="n">test3</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<a name="rest_code_48a3a4f3e5ee43dda831cceecb7da497-42"></a><span class="n">test4</span><span class="p">(</span><span class="s2">&quot;long&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-1"> 1</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-2"> 2</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-3"> 3</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-4"> 4</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-5"> 5</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-6"> 6</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-7"> 7</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-8"> 8</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-9"> 9</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-10">10</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-11">11</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-12">12</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-13">13</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-14">14</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-15">15</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-16">16</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-17">17</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-18">18</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-19">19</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-20">20</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-21">21</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-22">22</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-23">23</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-24">24</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-25">25</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-26">26</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-27">27</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-28">28</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-29">29</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-30">30</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-31">31</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-32">32</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-33">33</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-34">34</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-35">35</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-36">36</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-37">37</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-38">38</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-39">39</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-40">40</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-41">41</a>
+<a href="#rest_code_9ddfac909ffb44a0a1466453c4a16aa1-42">42</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-2"></a><span class="c1"># 可变参数函数、无参数装饰器</span>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-3"></a>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-4"></a>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-5"></a><span class="k">def</span> <span class="nf">logger</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-6"></a>    <span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-7"></a>        <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="n">__name__</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;被调用，参数包括：&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">kwargs</span><span class="p">))</span>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-8"></a>        <span class="k">if</span> <span class="n">args</span> <span class="ow">and</span> <span class="n">kwargs</span><span class="p">:</span>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-9"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-10"></a>        <span class="k">elif</span> <span class="n">args</span><span class="p">:</span>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-11"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-12"></a>        <span class="k">elif</span> <span class="n">kwargs</span><span class="p">:</span>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-13"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-14"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-15"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">()</span>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-16"></a>    <span class="k">return</span> <span class="n">_</span>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-17"></a>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-18"></a>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-19"></a><span class="nd">@logger</span>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-20"></a><span class="k">def</span> <span class="nf">test1</span><span class="p">():</span>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-21"></a>    <span class="k">pass</span>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-22"></a>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-23"></a>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-24"></a><span class="nd">@logger</span>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-25"></a><span class="k">def</span> <span class="nf">test2</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-26"></a>    <span class="k">pass</span>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-27"></a>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-28"></a>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-29"></a><span class="nd">@logger</span>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-30"></a><span class="k">def</span> <span class="nf">test3</span><span class="p">(</span><span class="n">kwargs</span><span class="p">):</span>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-31"></a>    <span class="k">pass</span>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-32"></a>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-33"></a>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-34"></a><span class="nd">@logger</span>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-35"></a><span class="k">def</span> <span class="nf">test4</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">):</span>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-36"></a>    <span class="k">pass</span>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-37"></a>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-38"></a>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-39"></a><span class="n">test1</span><span class="p">()</span>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-40"></a><span class="n">test2</span><span class="p">(</span><span class="s2">&quot;long&quot;</span><span class="p">)</span>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-41"></a><span class="n">test3</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<a name="rest_code_9ddfac909ffb44a0a1466453c4a16aa1-42"></a><span class="n">test4</span><span class="p">(</span><span class="s2">&quot;long&quot;</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></td></tr></table></blockquote>
 <p>运行结果：</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_5641b5e972264ab692c324f097d4c385-1"></a>test1被调用，参数包括：<span class="o">(){}</span>
-<a name="rest_code_5641b5e972264ab692c324f097d4c385-2"></a>test2被调用，参数包括：<span class="o">(</span><span class="s1">&#39;long&#39;</span>,<span class="o">){}</span>
-<a name="rest_code_5641b5e972264ab692c324f097d4c385-3"></a>test3被调用，参数包括：<span class="o">(){</span><span class="s1">&#39;a&#39;</span>: <span class="m">1</span>, <span class="s1">&#39;b&#39;</span>: <span class="m">2</span><span class="o">}</span>
-<a name="rest_code_5641b5e972264ab692c324f097d4c385-4"></a>test4被调用，参数包括：<span class="o">(</span><span class="s1">&#39;long&#39;</span>,<span class="o">){</span><span class="s1">&#39;a&#39;</span>: <span class="m">1</span>, <span class="s1">&#39;b&#39;</span>: <span class="m">2</span><span class="o">}</span>
+<pre class="code bash"><a name="rest_code_d0e0536859c64d4db51b44eacfea72ec-1"></a>test1被调用，参数包括：<span class="o">(){}</span>
+<a name="rest_code_d0e0536859c64d4db51b44eacfea72ec-2"></a>test2被调用，参数包括：<span class="o">(</span><span class="s1">&#39;long&#39;</span>,<span class="o">){}</span>
+<a name="rest_code_d0e0536859c64d4db51b44eacfea72ec-3"></a>test3被调用，参数包括：<span class="o">(){</span><span class="s1">&#39;a&#39;</span>: 1, <span class="s1">&#39;b&#39;</span>: 2<span class="o">}</span>
+<a name="rest_code_d0e0536859c64d4db51b44eacfea72ec-4"></a>test4被调用，参数包括：<span class="o">(</span><span class="s1">&#39;long&#39;</span>,<span class="o">){</span><span class="s1">&#39;a&#39;</span>: 1, <span class="s1">&#39;b&#39;</span>: 2<span class="o">}</span>
 </pre></blockquote>
 <p>3、带参数函数、带参数装饰器</p>
 <blockquote>
-<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_acd433e6551d4f7eac8a72bfefee99d5-1"> 1</a>
-<a href="#rest_code_acd433e6551d4f7eac8a72bfefee99d5-2"> 2</a>
-<a href="#rest_code_acd433e6551d4f7eac8a72bfefee99d5-3"> 3</a>
-<a href="#rest_code_acd433e6551d4f7eac8a72bfefee99d5-4"> 4</a>
-<a href="#rest_code_acd433e6551d4f7eac8a72bfefee99d5-5"> 5</a>
-<a href="#rest_code_acd433e6551d4f7eac8a72bfefee99d5-6"> 6</a>
-<a href="#rest_code_acd433e6551d4f7eac8a72bfefee99d5-7"> 7</a>
-<a href="#rest_code_acd433e6551d4f7eac8a72bfefee99d5-8"> 8</a>
-<a href="#rest_code_acd433e6551d4f7eac8a72bfefee99d5-9"> 9</a>
-<a href="#rest_code_acd433e6551d4f7eac8a72bfefee99d5-10">10</a>
-<a href="#rest_code_acd433e6551d4f7eac8a72bfefee99d5-11">11</a>
-<a href="#rest_code_acd433e6551d4f7eac8a72bfefee99d5-12">12</a>
-<a href="#rest_code_acd433e6551d4f7eac8a72bfefee99d5-13">13</a>
-<a href="#rest_code_acd433e6551d4f7eac8a72bfefee99d5-14">14</a>
-<a href="#rest_code_acd433e6551d4f7eac8a72bfefee99d5-15">15</a>
-<a href="#rest_code_acd433e6551d4f7eac8a72bfefee99d5-16">16</a>
-<a href="#rest_code_acd433e6551d4f7eac8a72bfefee99d5-17">17</a>
-<a href="#rest_code_acd433e6551d4f7eac8a72bfefee99d5-18">18</a>
-<a href="#rest_code_acd433e6551d4f7eac8a72bfefee99d5-19">19</a>
-<a href="#rest_code_acd433e6551d4f7eac8a72bfefee99d5-20">20</a>
-<a href="#rest_code_acd433e6551d4f7eac8a72bfefee99d5-21">21</a>
-<a href="#rest_code_acd433e6551d4f7eac8a72bfefee99d5-22">22</a>
-<a href="#rest_code_acd433e6551d4f7eac8a72bfefee99d5-23">23</a>
-<a href="#rest_code_acd433e6551d4f7eac8a72bfefee99d5-24">24</a>
-<a href="#rest_code_acd433e6551d4f7eac8a72bfefee99d5-25">25</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
-<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-2"></a><span class="c1"># 带参数函数、带参数装饰器</span>
-<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-3"></a>
-<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-4"></a>
-<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-5"></a><span class="k">def</span> <span class="nf">typechecker</span><span class="p">(</span><span class="n">paramtype</span><span class="p">):</span>
-<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-6"></a>    <span class="k">def</span> <span class="nf">_outer</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-7"></a>        <span class="k">def</span> <span class="nf">_inner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-8"></a>            <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
-<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-9"></a>                <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">paramtype</span><span class="p">:</span>
-<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-10"></a>                    <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">args</span><span class="p">]</span>
-<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-11"></a>                    <span class="k">return</span> <span class="s2">&quot;+&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; 类型错误&quot;</span>
-<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-12"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
-<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-13"></a>        <span class="k">return</span> <span class="n">_inner</span>
-<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-14"></a>    <span class="k">return</span> <span class="n">_outer</span>
-<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-15"></a>
-<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-16"></a>
-<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-17"></a><span class="nd">@typechecker</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-18"></a><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
-<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-19"></a>    <span class="n">result</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-20"></a>    <span class="n">value</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">value</span><span class="p">]</span>
-<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-21"></a>    <span class="k">return</span> <span class="s2">&quot;+&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-22"></a>
-<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-23"></a>
-<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-24"></a><span class="k">print</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<a name="rest_code_acd433e6551d4f7eac8a72bfefee99d5-25"></a><span class="k">print</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_5f03fcd5370848d09201c3ec07e80640-1"> 1</a>
+<a href="#rest_code_5f03fcd5370848d09201c3ec07e80640-2"> 2</a>
+<a href="#rest_code_5f03fcd5370848d09201c3ec07e80640-3"> 3</a>
+<a href="#rest_code_5f03fcd5370848d09201c3ec07e80640-4"> 4</a>
+<a href="#rest_code_5f03fcd5370848d09201c3ec07e80640-5"> 5</a>
+<a href="#rest_code_5f03fcd5370848d09201c3ec07e80640-6"> 6</a>
+<a href="#rest_code_5f03fcd5370848d09201c3ec07e80640-7"> 7</a>
+<a href="#rest_code_5f03fcd5370848d09201c3ec07e80640-8"> 8</a>
+<a href="#rest_code_5f03fcd5370848d09201c3ec07e80640-9"> 9</a>
+<a href="#rest_code_5f03fcd5370848d09201c3ec07e80640-10">10</a>
+<a href="#rest_code_5f03fcd5370848d09201c3ec07e80640-11">11</a>
+<a href="#rest_code_5f03fcd5370848d09201c3ec07e80640-12">12</a>
+<a href="#rest_code_5f03fcd5370848d09201c3ec07e80640-13">13</a>
+<a href="#rest_code_5f03fcd5370848d09201c3ec07e80640-14">14</a>
+<a href="#rest_code_5f03fcd5370848d09201c3ec07e80640-15">15</a>
+<a href="#rest_code_5f03fcd5370848d09201c3ec07e80640-16">16</a>
+<a href="#rest_code_5f03fcd5370848d09201c3ec07e80640-17">17</a>
+<a href="#rest_code_5f03fcd5370848d09201c3ec07e80640-18">18</a>
+<a href="#rest_code_5f03fcd5370848d09201c3ec07e80640-19">19</a>
+<a href="#rest_code_5f03fcd5370848d09201c3ec07e80640-20">20</a>
+<a href="#rest_code_5f03fcd5370848d09201c3ec07e80640-21">21</a>
+<a href="#rest_code_5f03fcd5370848d09201c3ec07e80640-22">22</a>
+<a href="#rest_code_5f03fcd5370848d09201c3ec07e80640-23">23</a>
+<a href="#rest_code_5f03fcd5370848d09201c3ec07e80640-24">24</a>
+<a href="#rest_code_5f03fcd5370848d09201c3ec07e80640-25">25</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_5f03fcd5370848d09201c3ec07e80640-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
+<a name="rest_code_5f03fcd5370848d09201c3ec07e80640-2"></a><span class="c1"># 带参数函数、带参数装饰器</span>
+<a name="rest_code_5f03fcd5370848d09201c3ec07e80640-3"></a>
+<a name="rest_code_5f03fcd5370848d09201c3ec07e80640-4"></a>
+<a name="rest_code_5f03fcd5370848d09201c3ec07e80640-5"></a><span class="k">def</span> <span class="nf">typechecker</span><span class="p">(</span><span class="n">paramtype</span><span class="p">):</span>
+<a name="rest_code_5f03fcd5370848d09201c3ec07e80640-6"></a>    <span class="k">def</span> <span class="nf">_outer</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<a name="rest_code_5f03fcd5370848d09201c3ec07e80640-7"></a>        <span class="k">def</span> <span class="nf">_inner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<a name="rest_code_5f03fcd5370848d09201c3ec07e80640-8"></a>            <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+<a name="rest_code_5f03fcd5370848d09201c3ec07e80640-9"></a>                <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">paramtype</span><span class="p">:</span>
+<a name="rest_code_5f03fcd5370848d09201c3ec07e80640-10"></a>                    <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">args</span><span class="p">]</span>
+<a name="rest_code_5f03fcd5370848d09201c3ec07e80640-11"></a>                    <span class="k">return</span> <span class="s2">&quot;+&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; 类型错误&quot;</span>
+<a name="rest_code_5f03fcd5370848d09201c3ec07e80640-12"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+<a name="rest_code_5f03fcd5370848d09201c3ec07e80640-13"></a>        <span class="k">return</span> <span class="n">_inner</span>
+<a name="rest_code_5f03fcd5370848d09201c3ec07e80640-14"></a>    <span class="k">return</span> <span class="n">_outer</span>
+<a name="rest_code_5f03fcd5370848d09201c3ec07e80640-15"></a>
+<a name="rest_code_5f03fcd5370848d09201c3ec07e80640-16"></a>
+<a name="rest_code_5f03fcd5370848d09201c3ec07e80640-17"></a><span class="nd">@typechecker</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<a name="rest_code_5f03fcd5370848d09201c3ec07e80640-18"></a><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<a name="rest_code_5f03fcd5370848d09201c3ec07e80640-19"></a>    <span class="n">result</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<a name="rest_code_5f03fcd5370848d09201c3ec07e80640-20"></a>    <span class="n">value</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">value</span><span class="p">]</span>
+<a name="rest_code_5f03fcd5370848d09201c3ec07e80640-21"></a>    <span class="k">return</span> <span class="s2">&quot;+&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<a name="rest_code_5f03fcd5370848d09201c3ec07e80640-22"></a>
+<a name="rest_code_5f03fcd5370848d09201c3ec07e80640-23"></a>
+<a name="rest_code_5f03fcd5370848d09201c3ec07e80640-24"></a><span class="k">print</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<a name="rest_code_5f03fcd5370848d09201c3ec07e80640-25"></a><span class="k">print</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 </pre></td></tr></table></blockquote>
 <p>运行结果:</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_50156e79572d43af9673418352818d8c-1"></a><span class="m">1</span>+2+3+4+5<span class="o">=</span><span class="m">15</span>
-<a name="rest_code_50156e79572d43af9673418352818d8c-2"></a><span class="m">1</span>+2+3+a+5 类型错误
+<pre class="code bash"><a name="rest_code_d2cc4899cf074e61865f37ea07d3af96-1"></a>1+2+3+4+5<span class="o">=</span>15
+<a name="rest_code_d2cc4899cf074e61865f37ea07d3af96-2"></a>1+2+3+a+5 类型错误
 </pre></blockquote>
 <p>4、带参数函数、可变参数装饰器</p>
 <blockquote>
-<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_e14c04f434464de8b07e51afdea94a09-1"> 1</a>
-<a href="#rest_code_e14c04f434464de8b07e51afdea94a09-2"> 2</a>
-<a href="#rest_code_e14c04f434464de8b07e51afdea94a09-3"> 3</a>
-<a href="#rest_code_e14c04f434464de8b07e51afdea94a09-4"> 4</a>
-<a href="#rest_code_e14c04f434464de8b07e51afdea94a09-5"> 5</a>
-<a href="#rest_code_e14c04f434464de8b07e51afdea94a09-6"> 6</a>
-<a href="#rest_code_e14c04f434464de8b07e51afdea94a09-7"> 7</a>
-<a href="#rest_code_e14c04f434464de8b07e51afdea94a09-8"> 8</a>
-<a href="#rest_code_e14c04f434464de8b07e51afdea94a09-9"> 9</a>
-<a href="#rest_code_e14c04f434464de8b07e51afdea94a09-10">10</a>
-<a href="#rest_code_e14c04f434464de8b07e51afdea94a09-11">11</a>
-<a href="#rest_code_e14c04f434464de8b07e51afdea94a09-12">12</a>
-<a href="#rest_code_e14c04f434464de8b07e51afdea94a09-13">13</a>
-<a href="#rest_code_e14c04f434464de8b07e51afdea94a09-14">14</a>
-<a href="#rest_code_e14c04f434464de8b07e51afdea94a09-15">15</a>
-<a href="#rest_code_e14c04f434464de8b07e51afdea94a09-16">16</a>
-<a href="#rest_code_e14c04f434464de8b07e51afdea94a09-17">17</a>
-<a href="#rest_code_e14c04f434464de8b07e51afdea94a09-18">18</a>
-<a href="#rest_code_e14c04f434464de8b07e51afdea94a09-19">19</a>
-<a href="#rest_code_e14c04f434464de8b07e51afdea94a09-20">20</a>
-<a href="#rest_code_e14c04f434464de8b07e51afdea94a09-21">21</a>
-<a href="#rest_code_e14c04f434464de8b07e51afdea94a09-22">22</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_e14c04f434464de8b07e51afdea94a09-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
-<a name="rest_code_e14c04f434464de8b07e51afdea94a09-2"></a><span class="c1"># 带参数函数、可变参数装饰器</span>
-<a name="rest_code_e14c04f434464de8b07e51afdea94a09-3"></a>
-<a name="rest_code_e14c04f434464de8b07e51afdea94a09-4"></a>
-<a name="rest_code_e14c04f434464de8b07e51afdea94a09-5"></a><span class="k">def</span> <span class="nf">typechecker</span><span class="p">(</span><span class="o">*</span><span class="n">paramtype</span><span class="p">):</span>
-<a name="rest_code_e14c04f434464de8b07e51afdea94a09-6"></a>    <span class="k">def</span> <span class="nf">_outer</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-<a name="rest_code_e14c04f434464de8b07e51afdea94a09-7"></a>        <span class="k">def</span> <span class="nf">_inner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-<a name="rest_code_e14c04f434464de8b07e51afdea94a09-8"></a>            <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
-<a name="rest_code_e14c04f434464de8b07e51afdea94a09-9"></a>                <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">paramtype</span><span class="p">:</span>
-<a name="rest_code_e14c04f434464de8b07e51afdea94a09-10"></a>                    <span class="k">return</span> <span class="s2">&quot;参数不是有效的类型&quot;</span>
-<a name="rest_code_e14c04f434464de8b07e51afdea94a09-11"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
-<a name="rest_code_e14c04f434464de8b07e51afdea94a09-12"></a>        <span class="k">return</span> <span class="n">_inner</span>
-<a name="rest_code_e14c04f434464de8b07e51afdea94a09-13"></a>    <span class="k">return</span> <span class="n">_outer</span>
-<a name="rest_code_e14c04f434464de8b07e51afdea94a09-14"></a>
-<a name="rest_code_e14c04f434464de8b07e51afdea94a09-15"></a>
-<a name="rest_code_e14c04f434464de8b07e51afdea94a09-16"></a><span class="nd">@typechecker</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
-<a name="rest_code_e14c04f434464de8b07e51afdea94a09-17"></a><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
-<a name="rest_code_e14c04f434464de8b07e51afdea94a09-18"></a>    <span class="k">return</span> <span class="s2">&quot;参数有效&quot;</span>
-<a name="rest_code_e14c04f434464de8b07e51afdea94a09-19"></a>
-<a name="rest_code_e14c04f434464de8b07e51afdea94a09-20"></a>
-<a name="rest_code_e14c04f434464de8b07e51afdea94a09-21"></a><span class="k">print</span><span class="p">(</span><span class="n">test</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">))</span>
-<a name="rest_code_e14c04f434464de8b07e51afdea94a09-22"></a><span class="k">print</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">5.2</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-1"> 1</a>
+<a href="#rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-2"> 2</a>
+<a href="#rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-3"> 3</a>
+<a href="#rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-4"> 4</a>
+<a href="#rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-5"> 5</a>
+<a href="#rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-6"> 6</a>
+<a href="#rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-7"> 7</a>
+<a href="#rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-8"> 8</a>
+<a href="#rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-9"> 9</a>
+<a href="#rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-10">10</a>
+<a href="#rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-11">11</a>
+<a href="#rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-12">12</a>
+<a href="#rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-13">13</a>
+<a href="#rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-14">14</a>
+<a href="#rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-15">15</a>
+<a href="#rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-16">16</a>
+<a href="#rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-17">17</a>
+<a href="#rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-18">18</a>
+<a href="#rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-19">19</a>
+<a href="#rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-20">20</a>
+<a href="#rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-21">21</a>
+<a href="#rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-22">22</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
+<a name="rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-2"></a><span class="c1"># 带参数函数、可变参数装饰器</span>
+<a name="rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-3"></a>
+<a name="rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-4"></a>
+<a name="rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-5"></a><span class="k">def</span> <span class="nf">typechecker</span><span class="p">(</span><span class="o">*</span><span class="n">paramtype</span><span class="p">):</span>
+<a name="rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-6"></a>    <span class="k">def</span> <span class="nf">_outer</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<a name="rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-7"></a>        <span class="k">def</span> <span class="nf">_inner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<a name="rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-8"></a>            <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+<a name="rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-9"></a>                <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">paramtype</span><span class="p">:</span>
+<a name="rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-10"></a>                    <span class="k">return</span> <span class="s2">&quot;参数不是有效的类型&quot;</span>
+<a name="rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-11"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+<a name="rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-12"></a>        <span class="k">return</span> <span class="n">_inner</span>
+<a name="rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-13"></a>    <span class="k">return</span> <span class="n">_outer</span>
+<a name="rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-14"></a>
+<a name="rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-15"></a>
+<a name="rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-16"></a><span class="nd">@typechecker</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+<a name="rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-17"></a><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<a name="rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-18"></a>    <span class="k">return</span> <span class="s2">&quot;参数有效&quot;</span>
+<a name="rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-19"></a>
+<a name="rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-20"></a>
+<a name="rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-21"></a><span class="k">print</span><span class="p">(</span><span class="n">test</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">))</span>
+<a name="rest_code_d0dc4d08a2a64ef08d4dd9dbbac8244f-22"></a><span class="k">print</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">5.2</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
 </pre></td></tr></table></blockquote>
 <p>运行结果:</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_f90ef42a4cdf4622a6789b2444809613-1"></a>参数不是有效的类型
-<a name="rest_code_f90ef42a4cdf4622a6789b2444809613-2"></a>参数有效
+<pre class="code bash"><a name="rest_code_303fcb8e08f64d4694620f27f348dd95-1"></a>参数不是有效的类型
+<a name="rest_code_303fcb8e08f64d4694620f27f348dd95-2"></a>参数有效
 </pre></blockquote>
 <p>5、多个装饰器的调用顺序</p>
 <blockquote>
-<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_9fee8764c20f4330985258fc270161fe-1"> 1</a>
-<a href="#rest_code_9fee8764c20f4330985258fc270161fe-2"> 2</a>
-<a href="#rest_code_9fee8764c20f4330985258fc270161fe-3"> 3</a>
-<a href="#rest_code_9fee8764c20f4330985258fc270161fe-4"> 4</a>
-<a href="#rest_code_9fee8764c20f4330985258fc270161fe-5"> 5</a>
-<a href="#rest_code_9fee8764c20f4330985258fc270161fe-6"> 6</a>
-<a href="#rest_code_9fee8764c20f4330985258fc270161fe-7"> 7</a>
-<a href="#rest_code_9fee8764c20f4330985258fc270161fe-8"> 8</a>
-<a href="#rest_code_9fee8764c20f4330985258fc270161fe-9"> 9</a>
-<a href="#rest_code_9fee8764c20f4330985258fc270161fe-10">10</a>
-<a href="#rest_code_9fee8764c20f4330985258fc270161fe-11">11</a>
-<a href="#rest_code_9fee8764c20f4330985258fc270161fe-12">12</a>
-<a href="#rest_code_9fee8764c20f4330985258fc270161fe-13">13</a>
-<a href="#rest_code_9fee8764c20f4330985258fc270161fe-14">14</a>
-<a href="#rest_code_9fee8764c20f4330985258fc270161fe-15">15</a>
-<a href="#rest_code_9fee8764c20f4330985258fc270161fe-16">16</a>
-<a href="#rest_code_9fee8764c20f4330985258fc270161fe-17">17</a>
-<a href="#rest_code_9fee8764c20f4330985258fc270161fe-18">18</a>
-<a href="#rest_code_9fee8764c20f4330985258fc270161fe-19">19</a>
-<a href="#rest_code_9fee8764c20f4330985258fc270161fe-20">20</a>
-<a href="#rest_code_9fee8764c20f4330985258fc270161fe-21">21</a>
-<a href="#rest_code_9fee8764c20f4330985258fc270161fe-22">22</a>
-<a href="#rest_code_9fee8764c20f4330985258fc270161fe-23">23</a>
-<a href="#rest_code_9fee8764c20f4330985258fc270161fe-24">24</a>
-<a href="#rest_code_9fee8764c20f4330985258fc270161fe-25">25</a>
-<a href="#rest_code_9fee8764c20f4330985258fc270161fe-26">26</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_9fee8764c20f4330985258fc270161fe-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
-<a name="rest_code_9fee8764c20f4330985258fc270161fe-2"></a><span class="c1"># 多个装饰器的调用顺序</span>
-<a name="rest_code_9fee8764c20f4330985258fc270161fe-3"></a>
-<a name="rest_code_9fee8764c20f4330985258fc270161fe-4"></a>
-<a name="rest_code_9fee8764c20f4330985258fc270161fe-5"></a><span class="k">def</span> <span class="nf">deco1</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-<a name="rest_code_9fee8764c20f4330985258fc270161fe-6"></a>    <span class="k">def</span> <span class="nf">_</span><span class="p">():</span>
-<a name="rest_code_9fee8764c20f4330985258fc270161fe-7"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;deco1() is called.&quot;</span><span class="p">)</span>
-<a name="rest_code_9fee8764c20f4330985258fc270161fe-8"></a>        <span class="k">return</span> <span class="n">func</span><span class="p">()</span>
-<a name="rest_code_9fee8764c20f4330985258fc270161fe-9"></a>    <span class="k">return</span> <span class="n">_</span>
-<a name="rest_code_9fee8764c20f4330985258fc270161fe-10"></a>
-<a name="rest_code_9fee8764c20f4330985258fc270161fe-11"></a>
-<a name="rest_code_9fee8764c20f4330985258fc270161fe-12"></a><span class="k">def</span> <span class="nf">deco2</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-<a name="rest_code_9fee8764c20f4330985258fc270161fe-13"></a>    <span class="k">def</span> <span class="nf">_</span><span class="p">():</span>
-<a name="rest_code_9fee8764c20f4330985258fc270161fe-14"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;deco2() is called.&quot;</span><span class="p">)</span>
-<a name="rest_code_9fee8764c20f4330985258fc270161fe-15"></a>        <span class="k">return</span> <span class="n">func</span><span class="p">()</span>
-<a name="rest_code_9fee8764c20f4330985258fc270161fe-16"></a>    <span class="k">return</span> <span class="n">_</span>
-<a name="rest_code_9fee8764c20f4330985258fc270161fe-17"></a>
-<a name="rest_code_9fee8764c20f4330985258fc270161fe-18"></a>
-<a name="rest_code_9fee8764c20f4330985258fc270161fe-19"></a><span class="nd">@deco1</span>
-<a name="rest_code_9fee8764c20f4330985258fc270161fe-20"></a><span class="nd">@deco2</span>
-<a name="rest_code_9fee8764c20f4330985258fc270161fe-21"></a><span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
-<a name="rest_code_9fee8764c20f4330985258fc270161fe-22"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;test() is called.&quot;</span><span class="p">)</span>
-<a name="rest_code_9fee8764c20f4330985258fc270161fe-23"></a>
-<a name="rest_code_9fee8764c20f4330985258fc270161fe-24"></a>
-<a name="rest_code_9fee8764c20f4330985258fc270161fe-25"></a><span class="n">test</span><span class="p">()</span>
-<a name="rest_code_9fee8764c20f4330985258fc270161fe-26"></a><span class="n">test</span><span class="p">()</span>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_08ade096f0ab400bb49ca24f88433775-1"> 1</a>
+<a href="#rest_code_08ade096f0ab400bb49ca24f88433775-2"> 2</a>
+<a href="#rest_code_08ade096f0ab400bb49ca24f88433775-3"> 3</a>
+<a href="#rest_code_08ade096f0ab400bb49ca24f88433775-4"> 4</a>
+<a href="#rest_code_08ade096f0ab400bb49ca24f88433775-5"> 5</a>
+<a href="#rest_code_08ade096f0ab400bb49ca24f88433775-6"> 6</a>
+<a href="#rest_code_08ade096f0ab400bb49ca24f88433775-7"> 7</a>
+<a href="#rest_code_08ade096f0ab400bb49ca24f88433775-8"> 8</a>
+<a href="#rest_code_08ade096f0ab400bb49ca24f88433775-9"> 9</a>
+<a href="#rest_code_08ade096f0ab400bb49ca24f88433775-10">10</a>
+<a href="#rest_code_08ade096f0ab400bb49ca24f88433775-11">11</a>
+<a href="#rest_code_08ade096f0ab400bb49ca24f88433775-12">12</a>
+<a href="#rest_code_08ade096f0ab400bb49ca24f88433775-13">13</a>
+<a href="#rest_code_08ade096f0ab400bb49ca24f88433775-14">14</a>
+<a href="#rest_code_08ade096f0ab400bb49ca24f88433775-15">15</a>
+<a href="#rest_code_08ade096f0ab400bb49ca24f88433775-16">16</a>
+<a href="#rest_code_08ade096f0ab400bb49ca24f88433775-17">17</a>
+<a href="#rest_code_08ade096f0ab400bb49ca24f88433775-18">18</a>
+<a href="#rest_code_08ade096f0ab400bb49ca24f88433775-19">19</a>
+<a href="#rest_code_08ade096f0ab400bb49ca24f88433775-20">20</a>
+<a href="#rest_code_08ade096f0ab400bb49ca24f88433775-21">21</a>
+<a href="#rest_code_08ade096f0ab400bb49ca24f88433775-22">22</a>
+<a href="#rest_code_08ade096f0ab400bb49ca24f88433775-23">23</a>
+<a href="#rest_code_08ade096f0ab400bb49ca24f88433775-24">24</a>
+<a href="#rest_code_08ade096f0ab400bb49ca24f88433775-25">25</a>
+<a href="#rest_code_08ade096f0ab400bb49ca24f88433775-26">26</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_08ade096f0ab400bb49ca24f88433775-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
+<a name="rest_code_08ade096f0ab400bb49ca24f88433775-2"></a><span class="c1"># 多个装饰器的调用顺序</span>
+<a name="rest_code_08ade096f0ab400bb49ca24f88433775-3"></a>
+<a name="rest_code_08ade096f0ab400bb49ca24f88433775-4"></a>
+<a name="rest_code_08ade096f0ab400bb49ca24f88433775-5"></a><span class="k">def</span> <span class="nf">deco1</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<a name="rest_code_08ade096f0ab400bb49ca24f88433775-6"></a>    <span class="k">def</span> <span class="nf">_</span><span class="p">():</span>
+<a name="rest_code_08ade096f0ab400bb49ca24f88433775-7"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;deco1() is called.&quot;</span><span class="p">)</span>
+<a name="rest_code_08ade096f0ab400bb49ca24f88433775-8"></a>        <span class="k">return</span> <span class="n">func</span><span class="p">()</span>
+<a name="rest_code_08ade096f0ab400bb49ca24f88433775-9"></a>    <span class="k">return</span> <span class="n">_</span>
+<a name="rest_code_08ade096f0ab400bb49ca24f88433775-10"></a>
+<a name="rest_code_08ade096f0ab400bb49ca24f88433775-11"></a>
+<a name="rest_code_08ade096f0ab400bb49ca24f88433775-12"></a><span class="k">def</span> <span class="nf">deco2</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<a name="rest_code_08ade096f0ab400bb49ca24f88433775-13"></a>    <span class="k">def</span> <span class="nf">_</span><span class="p">():</span>
+<a name="rest_code_08ade096f0ab400bb49ca24f88433775-14"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;deco2() is called.&quot;</span><span class="p">)</span>
+<a name="rest_code_08ade096f0ab400bb49ca24f88433775-15"></a>        <span class="k">return</span> <span class="n">func</span><span class="p">()</span>
+<a name="rest_code_08ade096f0ab400bb49ca24f88433775-16"></a>    <span class="k">return</span> <span class="n">_</span>
+<a name="rest_code_08ade096f0ab400bb49ca24f88433775-17"></a>
+<a name="rest_code_08ade096f0ab400bb49ca24f88433775-18"></a>
+<a name="rest_code_08ade096f0ab400bb49ca24f88433775-19"></a><span class="nd">@deco1</span>
+<a name="rest_code_08ade096f0ab400bb49ca24f88433775-20"></a><span class="nd">@deco2</span>
+<a name="rest_code_08ade096f0ab400bb49ca24f88433775-21"></a><span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
+<a name="rest_code_08ade096f0ab400bb49ca24f88433775-22"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;test() is called.&quot;</span><span class="p">)</span>
+<a name="rest_code_08ade096f0ab400bb49ca24f88433775-23"></a>
+<a name="rest_code_08ade096f0ab400bb49ca24f88433775-24"></a>
+<a name="rest_code_08ade096f0ab400bb49ca24f88433775-25"></a><span class="n">test</span><span class="p">()</span>
+<a name="rest_code_08ade096f0ab400bb49ca24f88433775-26"></a><span class="n">test</span><span class="p">()</span>
 </pre></td></tr></table></blockquote>
 <p>运行结果:</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_c4e7c9816f7a4eb19de52f1754378293-1"></a>deco1<span class="o">()</span> is called.
-<a name="rest_code_c4e7c9816f7a4eb19de52f1754378293-2"></a>deco2<span class="o">()</span> is called.
-<a name="rest_code_c4e7c9816f7a4eb19de52f1754378293-3"></a>test<span class="o">()</span> is called.
-<a name="rest_code_c4e7c9816f7a4eb19de52f1754378293-4"></a>deco1<span class="o">()</span> is called.
-<a name="rest_code_c4e7c9816f7a4eb19de52f1754378293-5"></a>deco2<span class="o">()</span> is called.
-<a name="rest_code_c4e7c9816f7a4eb19de52f1754378293-6"></a>test<span class="o">()</span> is called.
+<pre class="code bash"><a name="rest_code_1935bda4ceb14eec9766e4eb8a6c4e4d-1"></a>deco1<span class="o">()</span> is called.
+<a name="rest_code_1935bda4ceb14eec9766e4eb8a6c4e4d-2"></a>deco2<span class="o">()</span> is called.
+<a name="rest_code_1935bda4ceb14eec9766e4eb8a6c4e4d-3"></a>test<span class="o">()</span> is called.
+<a name="rest_code_1935bda4ceb14eec9766e4eb8a6c4e4d-4"></a>deco1<span class="o">()</span> is called.
+<a name="rest_code_1935bda4ceb14eec9766e4eb8a6c4e4d-5"></a>deco2<span class="o">()</span> is called.
+<a name="rest_code_1935bda4ceb14eec9766e4eb8a6c4e4d-6"></a>test<span class="o">()</span> is called.
 </pre></blockquote>

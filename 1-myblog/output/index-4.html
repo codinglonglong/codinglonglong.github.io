@@ -88,7 +88,7 @@ body{
 <div class="postindex">
     <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/" class="u-url">Flask-Sqlalchemy连接Mysql并支持中文</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+            <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
             </span></p>
             <p class="dateline"><a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/" rel="bookmark"><time class="published dt-published" datetime="2017-01-30T21:36:46+08:00" title="2017-01-30 21:36">2017-01-30 21:36</time></a></p>
@@ -100,84 +100,84 @@ body{
 <p>2、 .py文件开头加上 <strong># -*-coding:utf-8-*-</strong>。</p>
 <p>3、 连接字符串采用如下格式，注意最后的部分：</p>
 <blockquote>
-<pre class="code python"><a name="rest_code_de672fe8ad1041abb13cddbfcf7a8dec-1"></a><span class="n">dbconnection</span> <span class="o">=</span> <span class="s1">'mysql+mysqlconnector://username:password@host:port/dbname?charset=utf8'</span>
+<pre class="code python"><a name="rest_code_dc161fe0a3e44674b37121c083f927a6-1"></a><span class="n">dbconnection</span> <span class="o">=</span> <span class="s1">'mysql+mysqlconnector://username:password@host:port/dbname?charset=utf8'</span>
 </pre>
 </blockquote>
 <p>4、 默认Mysql是latin-1的编码，如下：</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_774e04a818f748358a7a846d2bf0ae52-1"> 1</a>
-<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_774e04a818f748358a7a846d2bf0ae52-2"> 2</a>
-<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_774e04a818f748358a7a846d2bf0ae52-3"> 3</a>
-<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_774e04a818f748358a7a846d2bf0ae52-4"> 4</a>
-<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_774e04a818f748358a7a846d2bf0ae52-5"> 5</a>
-<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_774e04a818f748358a7a846d2bf0ae52-6"> 6</a>
-<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_774e04a818f748358a7a846d2bf0ae52-7"> 7</a>
-<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_774e04a818f748358a7a846d2bf0ae52-8"> 8</a>
-<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_774e04a818f748358a7a846d2bf0ae52-9"> 9</a>
-<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_774e04a818f748358a7a846d2bf0ae52-10">10</a>
-<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_774e04a818f748358a7a846d2bf0ae52-11">11</a>
-<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_774e04a818f748358a7a846d2bf0ae52-12">12</a>
-<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_774e04a818f748358a7a846d2bf0ae52-13">13</a></pre></div></td>
-<td class="code"><pre class="code bash"><a name="rest_code_774e04a818f748358a7a846d2bf0ae52-1"></a>mysql&gt; status           <span class="m">12</span>
-<a name="rest_code_774e04a818f748358a7a846d2bf0ae52-2"></a>Current database:
-<a name="rest_code_774e04a818f748358a7a846d2bf0ae52-3"></a>Current user:.14 Distribroot@localhostebian-linux-gnu <span class="o">(</span>x86_64<span class="o">)</span> using readline <span class="m">6</span>.3
-<a name="rest_code_774e04a818f748358a7a846d2bf0ae52-4"></a>SSL:                    Not in use
-<a name="rest_code_774e04a818f748358a7a846d2bf0ae52-5"></a>Current pager:          <span class="s1">''</span>dout
-<a name="rest_code_774e04a818f748358a7a846d2bf0ae52-6"></a>Using delimiter:        <span class="m">5</span>.5.54-0ubuntu0.14.04.1 <span class="o">(</span>Ubuntu<span class="o">)</span>
-<a name="rest_code_774e04a818f748358a7a846d2bf0ae52-7"></a>Protocol version:       Localhost via UNIX socket
-<a name="rest_code_774e04a818f748358a7a846d2bf0ae52-8"></a>Server characterset:    latin1
-<a name="rest_code_774e04a818f748358a7a846d2bf0ae52-9"></a>Client characterset:    latin1
-<a name="rest_code_774e04a818f748358a7a846d2bf0ae52-10"></a>UNIX socket:cterset:    <span class="m">3</span> min <span class="m">58</span> secqld/mysqld.sock
-<a name="rest_code_774e04a818f748358a7a846d2bf0ae52-11"></a>Uptime:
-<a name="rest_code_774e04a818f748358a7a846d2bf0ae52-12"></a>Threads: <span class="m">3</span>  Questions: <span class="m">324</span>  Slow queries: <span class="m">0</span>  Opens: <span class="m">45</span>  Flush tables: <span class="m">1</span>  Open tables: <span class="m">31</span>  Queries per second avg: <span class="m">1</span>.361
-<a name="rest_code_774e04a818f748358a7a846d2bf0ae52-13"></a>--------------
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_faedd53c936746329c41acde83e287eb-1"> 1</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_faedd53c936746329c41acde83e287eb-2"> 2</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_faedd53c936746329c41acde83e287eb-3"> 3</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_faedd53c936746329c41acde83e287eb-4"> 4</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_faedd53c936746329c41acde83e287eb-5"> 5</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_faedd53c936746329c41acde83e287eb-6"> 6</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_faedd53c936746329c41acde83e287eb-7"> 7</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_faedd53c936746329c41acde83e287eb-8"> 8</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_faedd53c936746329c41acde83e287eb-9"> 9</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_faedd53c936746329c41acde83e287eb-10">10</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_faedd53c936746329c41acde83e287eb-11">11</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_faedd53c936746329c41acde83e287eb-12">12</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_faedd53c936746329c41acde83e287eb-13">13</a></pre></div></td>
+<td class="code"><pre class="code bash"><a name="rest_code_faedd53c936746329c41acde83e287eb-1"></a>mysql&gt; status           12
+<a name="rest_code_faedd53c936746329c41acde83e287eb-2"></a>Current database:
+<a name="rest_code_faedd53c936746329c41acde83e287eb-3"></a>Current user:.14 Distribroot@localhostebian-linux-gnu <span class="o">(</span>x86_64<span class="o">)</span> using readline 6.3
+<a name="rest_code_faedd53c936746329c41acde83e287eb-4"></a>SSL:                    Not in use
+<a name="rest_code_faedd53c936746329c41acde83e287eb-5"></a>Current pager:          <span class="s1">''</span>dout
+<a name="rest_code_faedd53c936746329c41acde83e287eb-6"></a>Using delimiter:        5.5.54-0ubuntu0.14.04.1 <span class="o">(</span>Ubuntu<span class="o">)</span>
+<a name="rest_code_faedd53c936746329c41acde83e287eb-7"></a>Protocol version:       Localhost via UNIX socket
+<a name="rest_code_faedd53c936746329c41acde83e287eb-8"></a>Server characterset:    latin1
+<a name="rest_code_faedd53c936746329c41acde83e287eb-9"></a>Client characterset:    latin1
+<a name="rest_code_faedd53c936746329c41acde83e287eb-10"></a>UNIX socket:cterset:    <span class="m">3</span> min <span class="m">58</span> secqld/mysqld.sock
+<a name="rest_code_faedd53c936746329c41acde83e287eb-11"></a>Uptime:
+<a name="rest_code_faedd53c936746329c41acde83e287eb-12"></a>Threads: <span class="m">3</span>  Questions: <span class="m">324</span>  Slow queries: <span class="m">0</span>  Opens: <span class="m">45</span>  Flush tables: <span class="m">1</span>  Open tables: <span class="m">31</span>  Queries per second avg: 1.361
+<a name="rest_code_faedd53c936746329c41acde83e287eb-13"></a>--------------
 </pre></td>
 </tr></table>
 </blockquote>
 <p>要通过修改配置文件，改成utf-8编码。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_25a2b6f4bc6043a4a93c68360c830271-1"></a>emacs /etc/mysql/my.cnf
-<a name="rest_code_25a2b6f4bc6043a4a93c68360c830271-2"></a><span class="o">[</span>mysqld<span class="o">]</span>
-<a name="rest_code_25a2b6f4bc6043a4a93c68360c830271-3"></a><span class="nv">character_set_server</span> <span class="o">=</span> utf8
-<a name="rest_code_25a2b6f4bc6043a4a93c68360c830271-4"></a><span class="o">[</span>client<span class="o">]</span>
-<a name="rest_code_25a2b6f4bc6043a4a93c68360c830271-5"></a>default-character-set <span class="o">=</span> utf8
-<a name="rest_code_25a2b6f4bc6043a4a93c68360c830271-6"></a><span class="o">[</span>mysql<span class="o">]</span>
-<a name="rest_code_25a2b6f4bc6043a4a93c68360c830271-7"></a>default-character-set <span class="o">=</span> utf8
-<a name="rest_code_25a2b6f4bc6043a4a93c68360c830271-8"></a>
-<a name="rest_code_25a2b6f4bc6043a4a93c68360c830271-9"></a>service mysql stop
-<a name="rest_code_25a2b6f4bc6043a4a93c68360c830271-10"></a>mysqld
+<pre class="code bash"><a name="rest_code_30381fcce378424d89a931ebde49e893-1"></a>emacs /etc/mysql/my.cnf
+<a name="rest_code_30381fcce378424d89a931ebde49e893-2"></a><span class="o">[</span>mysqld<span class="o">]</span>
+<a name="rest_code_30381fcce378424d89a931ebde49e893-3"></a><span class="nv">character_set_server</span> <span class="o">=</span> utf8
+<a name="rest_code_30381fcce378424d89a931ebde49e893-4"></a><span class="o">[</span>client<span class="o">]</span>
+<a name="rest_code_30381fcce378424d89a931ebde49e893-5"></a>default-character-set <span class="o">=</span> utf8
+<a name="rest_code_30381fcce378424d89a931ebde49e893-6"></a><span class="o">[</span>mysql<span class="o">]</span>
+<a name="rest_code_30381fcce378424d89a931ebde49e893-7"></a>default-character-set <span class="o">=</span> utf8
+<a name="rest_code_30381fcce378424d89a931ebde49e893-8"></a>
+<a name="rest_code_30381fcce378424d89a931ebde49e893-9"></a>service mysql stop
+<a name="rest_code_30381fcce378424d89a931ebde49e893-10"></a>mysqld
 </pre>
 </blockquote>
 <p>重启服务之后，可以看到：</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_634fb2e7b36048cc9bc12f1df3771282-1"> 1</a>
-<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_634fb2e7b36048cc9bc12f1df3771282-2"> 2</a>
-<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_634fb2e7b36048cc9bc12f1df3771282-3"> 3</a>
-<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_634fb2e7b36048cc9bc12f1df3771282-4"> 4</a>
-<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_634fb2e7b36048cc9bc12f1df3771282-5"> 5</a>
-<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_634fb2e7b36048cc9bc12f1df3771282-6"> 6</a>
-<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_634fb2e7b36048cc9bc12f1df3771282-7"> 7</a>
-<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_634fb2e7b36048cc9bc12f1df3771282-8"> 8</a>
-<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_634fb2e7b36048cc9bc12f1df3771282-9"> 9</a>
-<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_634fb2e7b36048cc9bc12f1df3771282-10">10</a>
-<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_634fb2e7b36048cc9bc12f1df3771282-11">11</a>
-<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_634fb2e7b36048cc9bc12f1df3771282-12">12</a>
-<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_634fb2e7b36048cc9bc12f1df3771282-13">13</a></pre></div></td>
-<td class="code"><pre class="code bash"><a name="rest_code_634fb2e7b36048cc9bc12f1df3771282-1"></a>mysql&gt; status           <span class="m">1</span>
-<a name="rest_code_634fb2e7b36048cc9bc12f1df3771282-2"></a>Current database:
-<a name="rest_code_634fb2e7b36048cc9bc12f1df3771282-3"></a>Current user:.14 Distribroot@localhostebian-linux-gnu <span class="o">(</span>x86_64<span class="o">)</span> using readline <span class="m">6</span>.3
-<a name="rest_code_634fb2e7b36048cc9bc12f1df3771282-4"></a>SSL:                    Not in use
-<a name="rest_code_634fb2e7b36048cc9bc12f1df3771282-5"></a>Current pager:          <span class="s1">''</span>dout
-<a name="rest_code_634fb2e7b36048cc9bc12f1df3771282-6"></a>Using delimiter:        <span class="m">5</span>.5.54-0ubuntu0.14.04.1 <span class="o">(</span>Ubuntu<span class="o">)</span>
-<a name="rest_code_634fb2e7b36048cc9bc12f1df3771282-7"></a>Protocol version:       Localhost via UNIX socket
-<a name="rest_code_634fb2e7b36048cc9bc12f1df3771282-8"></a>Server characterset:    utf8
-<a name="rest_code_634fb2e7b36048cc9bc12f1df3771282-9"></a>Client characterset:    utf8
-<a name="rest_code_634fb2e7b36048cc9bc12f1df3771282-10"></a>UNIX socket:cterset:    <span class="m">6</span> secrun/mysqld/mysqld.sock
-<a name="rest_code_634fb2e7b36048cc9bc12f1df3771282-11"></a>Uptime:
-<a name="rest_code_634fb2e7b36048cc9bc12f1df3771282-12"></a>Threads: <span class="m">1</span>  Questions: <span class="m">5</span>  Slow queries: <span class="m">0</span>  Opens: <span class="m">33</span>  Flush tables: <span class="m">1</span>  Open tables: <span class="m">26</span>  Queries per second avg: <span class="m">0</span>.833
-<a name="rest_code_634fb2e7b36048cc9bc12f1df3771282-13"></a>--------------
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ea39d7155260416d807ea5092515a11a-1"> 1</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ea39d7155260416d807ea5092515a11a-2"> 2</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ea39d7155260416d807ea5092515a11a-3"> 3</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ea39d7155260416d807ea5092515a11a-4"> 4</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ea39d7155260416d807ea5092515a11a-5"> 5</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ea39d7155260416d807ea5092515a11a-6"> 6</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ea39d7155260416d807ea5092515a11a-7"> 7</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ea39d7155260416d807ea5092515a11a-8"> 8</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ea39d7155260416d807ea5092515a11a-9"> 9</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ea39d7155260416d807ea5092515a11a-10">10</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ea39d7155260416d807ea5092515a11a-11">11</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ea39d7155260416d807ea5092515a11a-12">12</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ea39d7155260416d807ea5092515a11a-13">13</a></pre></div></td>
+<td class="code"><pre class="code bash"><a name="rest_code_ea39d7155260416d807ea5092515a11a-1"></a>mysql&gt; status           1
+<a name="rest_code_ea39d7155260416d807ea5092515a11a-2"></a>Current database:
+<a name="rest_code_ea39d7155260416d807ea5092515a11a-3"></a>Current user:.14 Distribroot@localhostebian-linux-gnu <span class="o">(</span>x86_64<span class="o">)</span> using readline 6.3
+<a name="rest_code_ea39d7155260416d807ea5092515a11a-4"></a>SSL:                    Not in use
+<a name="rest_code_ea39d7155260416d807ea5092515a11a-5"></a>Current pager:          <span class="s1">''</span>dout
+<a name="rest_code_ea39d7155260416d807ea5092515a11a-6"></a>Using delimiter:        5.5.54-0ubuntu0.14.04.1 <span class="o">(</span>Ubuntu<span class="o">)</span>
+<a name="rest_code_ea39d7155260416d807ea5092515a11a-7"></a>Protocol version:       Localhost via UNIX socket
+<a name="rest_code_ea39d7155260416d807ea5092515a11a-8"></a>Server characterset:    utf8
+<a name="rest_code_ea39d7155260416d807ea5092515a11a-9"></a>Client characterset:    utf8
+<a name="rest_code_ea39d7155260416d807ea5092515a11a-10"></a>UNIX socket:cterset:    <span class="m">6</span> secrun/mysqld/mysqld.sock
+<a name="rest_code_ea39d7155260416d807ea5092515a11a-11"></a>Uptime:
+<a name="rest_code_ea39d7155260416d807ea5092515a11a-12"></a>Threads: <span class="m">1</span>  Questions: <span class="m">5</span>  Slow queries: <span class="m">0</span>  Opens: <span class="m">33</span>  Flush tables: <span class="m">1</span>  Open tables: <span class="m">26</span>  Queries per second avg: 0.833
+<a name="rest_code_ea39d7155260416d807ea5092515a11a-13"></a>--------------
 </pre></td>
 </tr></table>
 </blockquote>
@@ -187,7 +187,7 @@ body{
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/" class="u-url">Docker中配置Flask-Sqlalchemy和Mysql</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+            <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
             </span></p>
             <p class="dateline"><a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/" rel="bookmark"><time class="published dt-published" datetime="2017-01-25T13:37:42+08:00" title="2017-01-25 13:37">2017-01-25 13:37</time></a></p>
@@ -197,106 +197,106 @@ body{
 <p>继文章 <a class="reference external" href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/">https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/</a> 之后，我们进一步配置数据库的部分。</p>
 <p>1、Docker安装Mysql。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_03b649e570194aed9b9e1e34b4836da1-1"></a>apt install mysql-server mysql-client
+<pre class="code bash"><a name="rest_code_c69cd17febfc44a7822b8b4d7a11c9bf-1"></a>apt install mysql-server mysql-client
 </pre>
 </blockquote>
 <p>2、Docker下载安装mysql-connector-python。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_1ac3c2043b1b478e98d7fd0cbf556242-1"></a>apt install curl
-<a name="rest_code_1ac3c2043b1b478e98d7fd0cbf556242-2"></a>curl -O https://cdn.mysql.com/Downloads/Connector-Python/mysql-connector-python-2.1.5.tar.gz
-<a name="rest_code_1ac3c2043b1b478e98d7fd0cbf556242-3"></a>tar zxvf mysql-connector-python-2.1.5.tar.gz
-<a name="rest_code_1ac3c2043b1b478e98d7fd0cbf556242-4"></a><span class="nb">cd</span> mysql-connector-python-2.1.5
-<a name="rest_code_1ac3c2043b1b478e98d7fd0cbf556242-5"></a>python setup.py install
+<pre class="code bash"><a name="rest_code_f75c958f98a0481bb89bb149f8dcbbc1-1"></a>apt install curl
+<a name="rest_code_f75c958f98a0481bb89bb149f8dcbbc1-2"></a>curl -O https://cdn.mysql.com/Downloads/Connector-Python/mysql-connector-python-2.1.5.tar.gz
+<a name="rest_code_f75c958f98a0481bb89bb149f8dcbbc1-3"></a>tar zxvf mysql-connector-python-2.1.5.tar.gz
+<a name="rest_code_f75c958f98a0481bb89bb149f8dcbbc1-4"></a><span class="nb">cd</span> mysql-connector-python-2.1.5
+<a name="rest_code_f75c958f98a0481bb89bb149f8dcbbc1-5"></a>python setup.py install
 </pre>
 </blockquote>
 <p>3、Docker安装Flask-Sqlalchemy和Flask-Script。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_b4dcba28cdc842779410446c198fddc6-1"></a>pip install flask-sqlalchemy
-<a name="rest_code_b4dcba28cdc842779410446c198fddc6-2"></a>pip install flask-script
+<pre class="code bash"><a name="rest_code_368e3cb1c70e4fbc8205198a08de81bb-1"></a>pip install flask-sqlalchemy
+<a name="rest_code_368e3cb1c70e4fbc8205198a08de81bb-2"></a>pip install flask-script
 </pre>
 </blockquote>
 <p>4、为已有容器添加端口。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_7850c06d5d084f6abb41de648d7b4116-1"></a>docker commit mypc newpc
-<a name="rest_code_7850c06d5d084f6abb41de648d7b4116-2"></a>docker stop mypc
-<a name="rest_code_7850c06d5d084f6abb41de648d7b4116-3"></a>docker run --name mynewpc -i -t -p <span class="m">13306</span>:3306 -p <span class="m">8080</span>:8080 -v ~/share/:/usr/development/  newpc /bin/bash
+<pre class="code bash"><a name="rest_code_dcec400f4b48438bb291f8170d799305-1"></a>docker commit mypc newpc
+<a name="rest_code_dcec400f4b48438bb291f8170d799305-2"></a>docker stop mypc
+<a name="rest_code_dcec400f4b48438bb291f8170d799305-3"></a>docker run --name mynewpc -i -t -p 13306:3306 -p 8080:8080 -v ~/share/:/usr/development/  newpc /bin/bash
 </pre>
 </blockquote>
 <p>5、Docker登录Mysql数据库。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_709170334dd145a08ecf57fcf7961463-1"></a>mysql -u root -p
-<a name="rest_code_709170334dd145a08ecf57fcf7961463-2"></a>create database test<span class="p">;</span>
-<a name="rest_code_709170334dd145a08ecf57fcf7961463-3"></a>grant all privileges on *.* to root@<span class="s1">'192.168.99.1'</span> identified by <span class="s1">'root'</span> with grant option<span class="p">;</span>
-<a name="rest_code_709170334dd145a08ecf57fcf7961463-4"></a>flush privileges<span class="p">;</span>
-<a name="rest_code_709170334dd145a08ecf57fcf7961463-5"></a><span class="nb">exit</span>
+<pre class="code bash"><a name="rest_code_2b4d16996f2e4ee9bbb9bc2b0874231f-1"></a>mysql -u root -p
+<a name="rest_code_2b4d16996f2e4ee9bbb9bc2b0874231f-2"></a>create database test<span class="p">;</span>
+<a name="rest_code_2b4d16996f2e4ee9bbb9bc2b0874231f-3"></a>grant all privileges on *.* to root@<span class="s1">'192.168.99.1'</span> identified by <span class="s1">'root'</span> with grant option<span class="p">;</span>
+<a name="rest_code_2b4d16996f2e4ee9bbb9bc2b0874231f-4"></a>flush privileges<span class="p">;</span>
+<a name="rest_code_2b4d16996f2e4ee9bbb9bc2b0874231f-5"></a><span class="nb">exit</span>
 </pre>
 </blockquote>
 <p>6、Docker修改配置文件，我习惯用emacs，也可以用vim。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_0ac038b37a544632b96a16be50ed92e6-1"></a>apt install emacs
-<a name="rest_code_0ac038b37a544632b96a16be50ed92e6-2"></a>apt-get install -f
-<a name="rest_code_0ac038b37a544632b96a16be50ed92e6-3"></a>emacs /etc/mysql/my.cnf
-<a name="rest_code_0ac038b37a544632b96a16be50ed92e6-4"></a>bind-address            <span class="o">=</span> <span class="m">0</span>.0.0.0
-<a name="rest_code_0ac038b37a544632b96a16be50ed92e6-5"></a>C-x C-s
-<a name="rest_code_0ac038b37a544632b96a16be50ed92e6-6"></a>C-x C-c
+<pre class="code bash"><a name="rest_code_6efab799167d4f8ab4bd942daa81363a-1"></a>apt install emacs
+<a name="rest_code_6efab799167d4f8ab4bd942daa81363a-2"></a>apt-get install -f
+<a name="rest_code_6efab799167d4f8ab4bd942daa81363a-3"></a>emacs /etc/mysql/my.cnf
+<a name="rest_code_6efab799167d4f8ab4bd942daa81363a-4"></a>bind-address            <span class="o">=</span> 0.0.0.0
+<a name="rest_code_6efab799167d4f8ab4bd942daa81363a-5"></a>C-x C-s
+<a name="rest_code_6efab799167d4f8ab4bd942daa81363a-6"></a>C-x C-c
 </pre>
 </blockquote>
 <p>7、重启mysql服务。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_04b575bafe1544668f65f222d0e5dce2-1"></a>sudo service mysql stop
-<a name="rest_code_04b575bafe1544668f65f222d0e5dce2-2"></a>mysqld
+<pre class="code bash"><a name="rest_code_2f4183b0d2804ee2a5f63f85c36d7502-1"></a>sudo service mysql stop
+<a name="rest_code_2f4183b0d2804ee2a5f63f85c36d7502-2"></a>mysqld
 </pre>
 </blockquote>
 <p>8、主系统编辑测试网站main.py。</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_a94930422df742de8e04b1d78785616a-1"> 1</a>
-<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_a94930422df742de8e04b1d78785616a-2"> 2</a>
-<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_a94930422df742de8e04b1d78785616a-3"> 3</a>
-<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_a94930422df742de8e04b1d78785616a-4"> 4</a>
-<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_a94930422df742de8e04b1d78785616a-5"> 5</a>
-<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_a94930422df742de8e04b1d78785616a-6"> 6</a>
-<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_a94930422df742de8e04b1d78785616a-7"> 7</a>
-<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_a94930422df742de8e04b1d78785616a-8"> 8</a>
-<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_a94930422df742de8e04b1d78785616a-9"> 9</a>
-<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_a94930422df742de8e04b1d78785616a-10">10</a>
-<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_a94930422df742de8e04b1d78785616a-11">11</a>
-<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_a94930422df742de8e04b1d78785616a-12">12</a>
-<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_a94930422df742de8e04b1d78785616a-13">13</a>
-<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_a94930422df742de8e04b1d78785616a-14">14</a>
-<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_a94930422df742de8e04b1d78785616a-15">15</a>
-<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_a94930422df742de8e04b1d78785616a-16">16</a>
-<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_a94930422df742de8e04b1d78785616a-17">17</a>
-<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_a94930422df742de8e04b1d78785616a-18">18</a>
-<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_a94930422df742de8e04b1d78785616a-19">19</a>
-<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_a94930422df742de8e04b1d78785616a-20">20</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_a94930422df742de8e04b1d78785616a-1"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
-<a name="rest_code_a94930422df742de8e04b1d78785616a-2"></a><span class="kn">from</span> <span class="nn">flask.ext.script</span> <span class="kn">import</span> <span class="n">Manager</span>
-<a name="rest_code_a94930422df742de8e04b1d78785616a-3"></a><span class="kn">from</span> <span class="nn">flask.ext.sqlalchemy</span> <span class="kn">import</span> <span class="n">SQLAlchemy</span>
-<a name="rest_code_a94930422df742de8e04b1d78785616a-4"></a>
-<a name="rest_code_a94930422df742de8e04b1d78785616a-5"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-<a name="rest_code_a94930422df742de8e04b1d78785616a-6"></a><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'SQLALCHEMY_DATABASE_URI'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'mysql+mysqlconnector://root:root@127.0.0.1:3306/test?charset=utf8'</span>
-<a name="rest_code_a94930422df742de8e04b1d78785616a-7"></a>
-<a name="rest_code_a94930422df742de8e04b1d78785616a-8"></a><span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-<a name="rest_code_a94930422df742de8e04b1d78785616a-9"></a><span class="n">manager</span> <span class="o">=</span> <span class="n">Manager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-<a name="rest_code_a94930422df742de8e04b1d78785616a-10"></a>
-<a name="rest_code_a94930422df742de8e04b1d78785616a-11"></a><span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-<a name="rest_code_a94930422df742de8e04b1d78785616a-12"></a>    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s1">'users'</span>
-<a name="rest_code_a94930422df742de8e04b1d78785616a-13"></a>    <span class="nb">id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<a name="rest_code_a94930422df742de8e04b1d78785616a-14"></a>    <span class="n">username</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">80</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<a name="rest_code_a94930422df742de8e04b1d78785616a-15"></a>    <span class="n">email</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">320</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<a name="rest_code_a94930422df742de8e04b1d78785616a-16"></a>    <span class="n">password</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-<a name="rest_code_a94930422df742de8e04b1d78785616a-17"></a>
-<a name="rest_code_a94930422df742de8e04b1d78785616a-18"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
-<a name="rest_code_a94930422df742de8e04b1d78785616a-19"></a>    <span class="n">db</span><span class="o">.</span><span class="n">create_all</span><span class="p">()</span>
-<a name="rest_code_a94930422df742de8e04b1d78785616a-20"></a>    <span class="n">manager</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-1"> 1</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-2"> 2</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-3"> 3</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-4"> 4</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-5"> 5</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-6"> 6</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-7"> 7</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-8"> 8</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-9"> 9</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-10">10</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-11">11</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-12">12</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-13">13</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-14">14</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-15">15</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-16">16</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-17">17</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-18">18</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-19">19</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-20">20</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-1"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-2"></a><span class="kn">from</span> <span class="nn">flask.ext.script</span> <span class="kn">import</span> <span class="n">Manager</span>
+<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-3"></a><span class="kn">from</span> <span class="nn">flask.ext.sqlalchemy</span> <span class="kn">import</span> <span class="n">SQLAlchemy</span>
+<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-4"></a>
+<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-5"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-6"></a><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'SQLALCHEMY_DATABASE_URI'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'mysql+mysqlconnector://root:root@127.0.0.1:3306/test?charset=utf8'</span>
+<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-7"></a>
+<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-8"></a><span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-9"></a><span class="n">manager</span> <span class="o">=</span> <span class="n">Manager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-10"></a>
+<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-11"></a><span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-12"></a>    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s1">'users'</span>
+<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-13"></a>    <span class="nb">id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-14"></a>    <span class="n">username</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">80</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-15"></a>    <span class="n">email</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">320</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-16"></a>    <span class="n">password</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-17"></a>
+<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-18"></a><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-19"></a>    <span class="n">db</span><span class="o">.</span><span class="n">create_all</span><span class="p">()</span>
+<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-20"></a>    <span class="n">manager</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></td>
 </tr></table>
 </blockquote>
 <p>9、开一个新的Docker terminal，启动测试网站。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_acec5b27b6d64020b200b30ab30263e2-1"></a><span class="nb">cd</span> /usr/development
-<a name="rest_code_acec5b27b6d64020b200b30ab30263e2-2"></a>python main.py runserver
+<pre class="code bash"><a name="rest_code_214e622d3fe2414c850986dd791251d7-1"></a><span class="nb">cd</span> /usr/development
+<a name="rest_code_214e622d3fe2414c850986dd791251d7-2"></a>python main.py runserver
 </pre>
 </blockquote>
 <p>10、主系统上打开MySQL Workbench，访问数据库。Hostname：192.168.99.100，Port：13306，Password：root。</p>
@@ -306,7 +306,7 @@ body{
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/" class="u-url">使用Flask-Restplus和Swagger UI最小化实现增删改查</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+            <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
             </span></p>
             <p class="dateline"><a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/" rel="bookmark"><time class="published dt-published" datetime="2017-01-24T17:13:27+08:00" title="2017-01-24 17:13">2017-01-24 17:13</time></a></p>
@@ -316,180 +316,180 @@ body{
 <p>继文章 <a class="reference external" href="https://codinglonglong.github.io/posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/">https://codinglonglong.github.io/posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/</a> 之后，我们参考文档实现了一个最小化增删改查的案例。</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-1"> 1</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-2"> 2</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-3"> 3</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-4"> 4</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-5"> 5</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-6"> 6</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-7"> 7</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-8"> 8</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-9"> 9</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-10">10</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-11">11</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-12">12</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-13">13</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-14">14</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-15">15</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-16">16</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-17">17</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-18">18</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-19">19</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-20">20</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-21">21</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-22">22</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-23">23</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-24">24</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-25">25</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-26">26</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-27">27</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-28">28</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-29">29</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-30">30</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-31">31</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-32">32</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-33">33</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-34">34</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-35">35</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-36">36</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-37">37</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-38">38</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-39">39</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-40">40</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-41">41</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-42">42</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-43">43</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-44">44</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-45">45</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-46">46</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-47">47</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-48">48</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-49">49</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-50">50</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-51">51</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-52">52</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-53">53</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-54">54</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-55">55</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-56">56</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-57">57</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-58">58</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-59">59</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-60">60</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-61">61</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-62">62</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-63">63</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-64">64</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-65">65</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-66">66</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-67">67</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-68">68</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-69">69</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-70">70</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-71">71</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-72">72</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-73">73</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-74">74</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-75">75</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-76">76</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-77">77</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-78">78</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-79">79</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-80">80</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-81">81</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-82">82</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-83">83</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-84">84</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-85">85</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-86">86</a>
-<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_067e286714e74065bdc2ad58c408c341-87">87</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_067e286714e74065bdc2ad58c408c341-1"></a><span class="c1">#-*-coding:utf-8-*-</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-2"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-3"></a><span class="kn">from</span> <span class="nn">flask.ext.restplus</span> <span class="kn">import</span> <span class="n">Api</span><span class="p">,</span> <span class="n">Resource</span><span class="p">,</span> <span class="n">fields</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-4"></a>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-5"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-6"></a><span class="n">api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">'1.0'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'TodoMVC API'</span><span class="p">,</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-7"></a>        <span class="n">description</span><span class="o">=</span><span class="s1">'A simple TodoMVC API'</span><span class="p">,</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-8"></a>        <span class="p">)</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-9"></a>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-10"></a><span class="n">ns</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">namespace</span><span class="p">(</span><span class="s1">'todos'</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">'TODO operations'</span><span class="p">)</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-11"></a>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-12"></a><span class="n">todo</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="s1">'Todo'</span><span class="p">,</span> <span class="p">{</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-13"></a>    <span class="s1">'id'</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="n">readOnly</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">'The task unique identifier'</span><span class="p">),</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-14"></a>    <span class="s1">'task'</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">'The task details'</span><span class="p">)</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-15"></a><span class="p">})</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-16"></a>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-17"></a>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-18"></a><span class="k">class</span> <span class="nc">TodoDAO</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-19"></a>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-20"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-21"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-22"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">todos</span> <span class="o">=</span> <span class="p">[]</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-23"></a>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-24"></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-25"></a>        <span class="k">for</span> <span class="n">todo</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">todos</span><span class="p">:</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-26"></a>            <span class="k">if</span> <span class="n">todo</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span> <span class="o">==</span> <span class="nb">id</span><span class="p">:</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-27"></a>                <span class="k">return</span> <span class="n">todo</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-28"></a>        <span class="n">api</span><span class="o">.</span><span class="n">abort</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s2">"Todo {} doesn't exist"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">))</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-29"></a>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-30"></a>    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-31"></a>        <span class="n">todo</span> <span class="o">=</span> <span class="n">data</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-32"></a>        <span class="n">todo</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">counter</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">counter</span> <span class="o">+</span> <span class="mi">1</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-33"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">todos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">todo</span><span class="p">)</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-34"></a>        <span class="k">return</span> <span class="n">todo</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-35"></a>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-36"></a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-37"></a>        <span class="n">todo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-38"></a>        <span class="n">todo</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-39"></a>        <span class="k">return</span> <span class="n">todo</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-40"></a>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-41"></a>    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-42"></a>        <span class="n">todo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-43"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">todos</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">todo</span><span class="p">)</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-44"></a>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-45"></a>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-46"></a><span class="n">DAO</span> <span class="o">=</span> <span class="n">TodoDAO</span><span class="p">()</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-47"></a><span class="n">DAO</span><span class="o">.</span><span class="n">create</span><span class="p">({</span><span class="s1">'task'</span><span class="p">:</span> <span class="s1">'Build an API'</span><span class="p">})</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-48"></a><span class="n">DAO</span><span class="o">.</span><span class="n">create</span><span class="p">({</span><span class="s1">'task'</span><span class="p">:</span> <span class="s1">'你好'</span><span class="p">})</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-49"></a>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-50"></a>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-51"></a><span class="nd">@ns.route</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-52"></a><span class="k">class</span> <span class="nc">TodoList</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-53"></a>    <span class="sd">'''Shows a list of all todos, and lets you POST to add new tasks'''</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-54"></a>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-55"></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-56"></a>        <span class="sd">'''List all tasks'''</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-57"></a>        <span class="k">return</span> <span class="n">DAO</span><span class="o">.</span><span class="n">todos</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-58"></a>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-59"></a>    <span class="nd">@ns.expect</span><span class="p">(</span><span class="n">todo</span><span class="p">)</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-60"></a>    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-61"></a>        <span class="sd">'''Create a new task'''</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-62"></a>        <span class="k">return</span> <span class="n">DAO</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">payload</span><span class="p">),</span> <span class="mi">201</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-63"></a>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-64"></a>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-65"></a><span class="nd">@ns.route</span><span class="p">(</span><span class="s1">'/&lt;int:id&gt;'</span><span class="p">)</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-66"></a><span class="nd">@ns.response</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s1">'Todo not found'</span><span class="p">)</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-67"></a><span class="nd">@ns.param</span><span class="p">(</span><span class="s1">'id'</span><span class="p">,</span> <span class="s1">'任务标识'</span><span class="p">)</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-68"></a><span class="k">class</span> <span class="nc">Todo</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-69"></a>    <span class="sd">'''Show a single todo item and lets you delete them'''</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-70"></a>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-71"></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-72"></a>        <span class="sd">'''Fetch a given resource'''</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-73"></a>        <span class="k">return</span> <span class="n">DAO</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-74"></a>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-75"></a>    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-76"></a>        <span class="sd">'''Delete a task given its identifier'''</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-77"></a>        <span class="n">DAO</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-78"></a>        <span class="k">return</span> <span class="s1">''</span><span class="p">,</span> <span class="mi">204</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-79"></a>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-80"></a>    <span class="nd">@ns.expect</span><span class="p">(</span><span class="n">todo</span><span class="p">)</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-81"></a>    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-82"></a>        <span class="sd">'''Update a task given its identifier'''</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-83"></a>        <span class="k">return</span> <span class="n">DAO</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">api</span><span class="o">.</span><span class="n">payload</span><span class="p">)</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-84"></a>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-85"></a>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-86"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
-<a name="rest_code_067e286714e74065bdc2ad58c408c341-87"></a>    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">"0.0.0.0"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8080</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-1"> 1</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-2"> 2</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-3"> 3</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-4"> 4</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-5"> 5</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-6"> 6</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-7"> 7</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-8"> 8</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-9"> 9</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-10">10</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-11">11</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-12">12</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-13">13</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-14">14</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-15">15</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-16">16</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-17">17</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-18">18</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-19">19</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-20">20</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-21">21</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-22">22</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-23">23</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-24">24</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-25">25</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-26">26</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-27">27</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-28">28</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-29">29</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-30">30</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-31">31</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-32">32</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-33">33</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-34">34</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-35">35</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-36">36</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-37">37</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-38">38</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-39">39</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-40">40</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-41">41</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-42">42</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-43">43</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-44">44</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-45">45</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-46">46</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-47">47</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-48">48</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-49">49</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-50">50</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-51">51</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-52">52</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-53">53</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-54">54</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-55">55</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-56">56</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-57">57</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-58">58</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-59">59</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-60">60</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-61">61</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-62">62</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-63">63</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-64">64</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-65">65</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-66">66</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-67">67</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-68">68</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-69">69</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-70">70</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-71">71</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-72">72</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-73">73</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-74">74</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-75">75</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-76">76</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-77">77</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-78">78</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-79">79</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-80">80</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-81">81</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-82">82</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-83">83</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-84">84</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-85">85</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-86">86</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_d723acfc8ab441b3b72519aa0f5353ed-87">87</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-1"></a><span class="c1">#-*-coding:utf-8-*-</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-2"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-3"></a><span class="kn">from</span> <span class="nn">flask.ext.restplus</span> <span class="kn">import</span> <span class="n">Api</span><span class="p">,</span> <span class="n">Resource</span><span class="p">,</span> <span class="n">fields</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-4"></a>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-5"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-6"></a><span class="n">api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">'1.0'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'TodoMVC API'</span><span class="p">,</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-7"></a>        <span class="n">description</span><span class="o">=</span><span class="s1">'A simple TodoMVC API'</span><span class="p">,</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-8"></a>        <span class="p">)</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-9"></a>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-10"></a><span class="n">ns</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">namespace</span><span class="p">(</span><span class="s1">'todos'</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">'TODO operations'</span><span class="p">)</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-11"></a>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-12"></a><span class="n">todo</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="s1">'Todo'</span><span class="p">,</span> <span class="p">{</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-13"></a>    <span class="s1">'id'</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="n">readOnly</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">'The task unique identifier'</span><span class="p">),</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-14"></a>    <span class="s1">'task'</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">'The task details'</span><span class="p">)</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-15"></a><span class="p">})</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-16"></a>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-17"></a>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-18"></a><span class="k">class</span> <span class="nc">TodoDAO</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-19"></a>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-20"></a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-21"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-22"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">todos</span> <span class="o">=</span> <span class="p">[]</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-23"></a>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-24"></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-25"></a>        <span class="k">for</span> <span class="n">todo</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">todos</span><span class="p">:</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-26"></a>            <span class="k">if</span> <span class="n">todo</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span> <span class="o">==</span> <span class="nb">id</span><span class="p">:</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-27"></a>                <span class="k">return</span> <span class="n">todo</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-28"></a>        <span class="n">api</span><span class="o">.</span><span class="n">abort</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s2">"Todo {} doesn't exist"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">))</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-29"></a>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-30"></a>    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-31"></a>        <span class="n">todo</span> <span class="o">=</span> <span class="n">data</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-32"></a>        <span class="n">todo</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">counter</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">counter</span> <span class="o">+</span> <span class="mi">1</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-33"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">todos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">todo</span><span class="p">)</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-34"></a>        <span class="k">return</span> <span class="n">todo</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-35"></a>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-36"></a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-37"></a>        <span class="n">todo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-38"></a>        <span class="n">todo</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-39"></a>        <span class="k">return</span> <span class="n">todo</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-40"></a>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-41"></a>    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-42"></a>        <span class="n">todo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-43"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">todos</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">todo</span><span class="p">)</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-44"></a>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-45"></a>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-46"></a><span class="n">DAO</span> <span class="o">=</span> <span class="n">TodoDAO</span><span class="p">()</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-47"></a><span class="n">DAO</span><span class="o">.</span><span class="n">create</span><span class="p">({</span><span class="s1">'task'</span><span class="p">:</span> <span class="s1">'Build an API'</span><span class="p">})</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-48"></a><span class="n">DAO</span><span class="o">.</span><span class="n">create</span><span class="p">({</span><span class="s1">'task'</span><span class="p">:</span> <span class="s1">'你好'</span><span class="p">})</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-49"></a>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-50"></a>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-51"></a><span class="nd">@ns.route</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-52"></a><span class="k">class</span> <span class="nc">TodoList</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-53"></a>    <span class="sd">'''Shows a list of all todos, and lets you POST to add new tasks'''</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-54"></a>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-55"></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-56"></a>        <span class="sd">'''List all tasks'''</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-57"></a>        <span class="k">return</span> <span class="n">DAO</span><span class="o">.</span><span class="n">todos</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-58"></a>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-59"></a>    <span class="nd">@ns.expect</span><span class="p">(</span><span class="n">todo</span><span class="p">)</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-60"></a>    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-61"></a>        <span class="sd">'''Create a new task'''</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-62"></a>        <span class="k">return</span> <span class="n">DAO</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">payload</span><span class="p">),</span> <span class="mi">201</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-63"></a>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-64"></a>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-65"></a><span class="nd">@ns.route</span><span class="p">(</span><span class="s1">'/&lt;int:id&gt;'</span><span class="p">)</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-66"></a><span class="nd">@ns.response</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s1">'Todo not found'</span><span class="p">)</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-67"></a><span class="nd">@ns.param</span><span class="p">(</span><span class="s1">'id'</span><span class="p">,</span> <span class="s1">'任务标识'</span><span class="p">)</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-68"></a><span class="k">class</span> <span class="nc">Todo</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-69"></a>    <span class="sd">'''Show a single todo item and lets you delete them'''</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-70"></a>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-71"></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-72"></a>        <span class="sd">'''Fetch a given resource'''</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-73"></a>        <span class="k">return</span> <span class="n">DAO</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-74"></a>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-75"></a>    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-76"></a>        <span class="sd">'''Delete a task given its identifier'''</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-77"></a>        <span class="n">DAO</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-78"></a>        <span class="k">return</span> <span class="s1">''</span><span class="p">,</span> <span class="mi">204</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-79"></a>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-80"></a>    <span class="nd">@ns.expect</span><span class="p">(</span><span class="n">todo</span><span class="p">)</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-81"></a>    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-82"></a>        <span class="sd">'''Update a task given its identifier'''</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-83"></a>        <span class="k">return</span> <span class="n">DAO</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">api</span><span class="o">.</span><span class="n">payload</span><span class="p">)</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-84"></a>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-85"></a>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-86"></a><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<a name="rest_code_d723acfc8ab441b3b72519aa0f5353ed-87"></a>    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">"0.0.0.0"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8080</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 </blockquote>
@@ -507,7 +507,7 @@ body{
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/" class="u-url">配置Flask-Restplus和Swagger UI实现API测试文档自动化</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+            <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
             </span></p>
             <p class="dateline"><a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/" rel="bookmark"><time class="published dt-published" datetime="2017-01-24T13:21:42+08:00" title="2017-01-24 13:21">2017-01-24 13:21</time></a></p>
@@ -517,61 +517,61 @@ body{
 <p>继文章 <a class="reference external" href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/">https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/</a> 之后，我们继续实验。</p>
 <p>1、Docker中安装Flask-Restplus。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_72f8660235f54edeafbf6f36a25c6154-1"></a>pip install flask-restplus
+<pre class="code bash"><a name="rest_code_3c744ecc991a4c8e8c4faa300322e9c8-1"></a>pip install flask-restplus
 </pre>
 </blockquote>
 <p>2、主系统编写测试程序main.py。</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_8140c2ca690347afa61f383b9896dee5-1"> 1</a>
-<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_8140c2ca690347afa61f383b9896dee5-2"> 2</a>
-<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_8140c2ca690347afa61f383b9896dee5-3"> 3</a>
-<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_8140c2ca690347afa61f383b9896dee5-4"> 4</a>
-<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_8140c2ca690347afa61f383b9896dee5-5"> 5</a>
-<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_8140c2ca690347afa61f383b9896dee5-6"> 6</a>
-<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_8140c2ca690347afa61f383b9896dee5-7"> 7</a>
-<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_8140c2ca690347afa61f383b9896dee5-8"> 8</a>
-<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_8140c2ca690347afa61f383b9896dee5-9"> 9</a>
-<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_8140c2ca690347afa61f383b9896dee5-10">10</a>
-<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_8140c2ca690347afa61f383b9896dee5-11">11</a>
-<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_8140c2ca690347afa61f383b9896dee5-12">12</a>
-<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_8140c2ca690347afa61f383b9896dee5-13">13</a>
-<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_8140c2ca690347afa61f383b9896dee5-14">14</a>
-<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_8140c2ca690347afa61f383b9896dee5-15">15</a>
-<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_8140c2ca690347afa61f383b9896dee5-16">16</a>
-<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_8140c2ca690347afa61f383b9896dee5-17">17</a>
-<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_8140c2ca690347afa61f383b9896dee5-18">18</a>
-<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_8140c2ca690347afa61f383b9896dee5-19">19</a>
-<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_8140c2ca690347afa61f383b9896dee5-20">20</a>
-<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_8140c2ca690347afa61f383b9896dee5-21">21</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_8140c2ca690347afa61f383b9896dee5-1"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
-<a name="rest_code_8140c2ca690347afa61f383b9896dee5-2"></a><span class="kn">from</span> <span class="nn">flask_restplus</span> <span class="kn">import</span> <span class="n">Api</span><span class="p">,</span> <span class="n">Resource</span><span class="p">,</span> <span class="n">fields</span>
-<a name="rest_code_8140c2ca690347afa61f383b9896dee5-3"></a>
-<a name="rest_code_8140c2ca690347afa61f383b9896dee5-4"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-<a name="rest_code_8140c2ca690347afa61f383b9896dee5-5"></a><span class="n">api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">'1.0'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Sample API'</span><span class="p">,</span>
-<a name="rest_code_8140c2ca690347afa61f383b9896dee5-6"></a>    <span class="n">description</span><span class="o">=</span><span class="s1">'A sample API'</span><span class="p">,</span>
-<a name="rest_code_8140c2ca690347afa61f383b9896dee5-7"></a><span class="p">)</span>
-<a name="rest_code_8140c2ca690347afa61f383b9896dee5-8"></a>
-<a name="rest_code_8140c2ca690347afa61f383b9896dee5-9"></a><span class="nd">@api.route</span><span class="p">(</span><span class="s1">'/my-resource/&lt;id&gt;'</span><span class="p">)</span>
-<a name="rest_code_8140c2ca690347afa61f383b9896dee5-10"></a><span class="nd">@api.doc</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s1">'id'</span><span class="p">:</span> <span class="s1">'An ID'</span><span class="p">})</span>
-<a name="rest_code_8140c2ca690347afa61f383b9896dee5-11"></a><span class="k">class</span> <span class="nc">MyResource</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
-<a name="rest_code_8140c2ca690347afa61f383b9896dee5-12"></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
-<a name="rest_code_8140c2ca690347afa61f383b9896dee5-13"></a>        <span class="k">return</span> <span class="p">{}</span>
-<a name="rest_code_8140c2ca690347afa61f383b9896dee5-14"></a>
-<a name="rest_code_8140c2ca690347afa61f383b9896dee5-15"></a>    <span class="nd">@api.response</span><span class="p">(</span><span class="mi">403</span><span class="p">,</span> <span class="s1">'Not Authorized'</span><span class="p">)</span>
-<a name="rest_code_8140c2ca690347afa61f383b9896dee5-16"></a>    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
-<a name="rest_code_8140c2ca690347afa61f383b9896dee5-17"></a>        <span class="n">api</span><span class="o">.</span><span class="n">abort</span><span class="p">(</span><span class="mi">403</span><span class="p">)</span>
-<a name="rest_code_8140c2ca690347afa61f383b9896dee5-18"></a>
-<a name="rest_code_8140c2ca690347afa61f383b9896dee5-19"></a>
-<a name="rest_code_8140c2ca690347afa61f383b9896dee5-20"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
-<a name="rest_code_8140c2ca690347afa61f383b9896dee5-21"></a>    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">"0.0.0.0"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8080</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_d1aeaafc26fa42b09b64ed7a724df243-1"> 1</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_d1aeaafc26fa42b09b64ed7a724df243-2"> 2</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_d1aeaafc26fa42b09b64ed7a724df243-3"> 3</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_d1aeaafc26fa42b09b64ed7a724df243-4"> 4</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_d1aeaafc26fa42b09b64ed7a724df243-5"> 5</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_d1aeaafc26fa42b09b64ed7a724df243-6"> 6</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_d1aeaafc26fa42b09b64ed7a724df243-7"> 7</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_d1aeaafc26fa42b09b64ed7a724df243-8"> 8</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_d1aeaafc26fa42b09b64ed7a724df243-9"> 9</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_d1aeaafc26fa42b09b64ed7a724df243-10">10</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_d1aeaafc26fa42b09b64ed7a724df243-11">11</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_d1aeaafc26fa42b09b64ed7a724df243-12">12</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_d1aeaafc26fa42b09b64ed7a724df243-13">13</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_d1aeaafc26fa42b09b64ed7a724df243-14">14</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_d1aeaafc26fa42b09b64ed7a724df243-15">15</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_d1aeaafc26fa42b09b64ed7a724df243-16">16</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_d1aeaafc26fa42b09b64ed7a724df243-17">17</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_d1aeaafc26fa42b09b64ed7a724df243-18">18</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_d1aeaafc26fa42b09b64ed7a724df243-19">19</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_d1aeaafc26fa42b09b64ed7a724df243-20">20</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_d1aeaafc26fa42b09b64ed7a724df243-21">21</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_d1aeaafc26fa42b09b64ed7a724df243-1"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<a name="rest_code_d1aeaafc26fa42b09b64ed7a724df243-2"></a><span class="kn">from</span> <span class="nn">flask_restplus</span> <span class="kn">import</span> <span class="n">Api</span><span class="p">,</span> <span class="n">Resource</span><span class="p">,</span> <span class="n">fields</span>
+<a name="rest_code_d1aeaafc26fa42b09b64ed7a724df243-3"></a>
+<a name="rest_code_d1aeaafc26fa42b09b64ed7a724df243-4"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<a name="rest_code_d1aeaafc26fa42b09b64ed7a724df243-5"></a><span class="n">api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">'1.0'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Sample API'</span><span class="p">,</span>
+<a name="rest_code_d1aeaafc26fa42b09b64ed7a724df243-6"></a>    <span class="n">description</span><span class="o">=</span><span class="s1">'A sample API'</span><span class="p">,</span>
+<a name="rest_code_d1aeaafc26fa42b09b64ed7a724df243-7"></a><span class="p">)</span>
+<a name="rest_code_d1aeaafc26fa42b09b64ed7a724df243-8"></a>
+<a name="rest_code_d1aeaafc26fa42b09b64ed7a724df243-9"></a><span class="nd">@api.route</span><span class="p">(</span><span class="s1">'/my-resource/&lt;id&gt;'</span><span class="p">)</span>
+<a name="rest_code_d1aeaafc26fa42b09b64ed7a724df243-10"></a><span class="nd">@api.doc</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s1">'id'</span><span class="p">:</span> <span class="s1">'An ID'</span><span class="p">})</span>
+<a name="rest_code_d1aeaafc26fa42b09b64ed7a724df243-11"></a><span class="k">class</span> <span class="nc">MyResource</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+<a name="rest_code_d1aeaafc26fa42b09b64ed7a724df243-12"></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+<a name="rest_code_d1aeaafc26fa42b09b64ed7a724df243-13"></a>        <span class="k">return</span> <span class="p">{}</span>
+<a name="rest_code_d1aeaafc26fa42b09b64ed7a724df243-14"></a>
+<a name="rest_code_d1aeaafc26fa42b09b64ed7a724df243-15"></a>    <span class="nd">@api.response</span><span class="p">(</span><span class="mi">403</span><span class="p">,</span> <span class="s1">'Not Authorized'</span><span class="p">)</span>
+<a name="rest_code_d1aeaafc26fa42b09b64ed7a724df243-16"></a>    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+<a name="rest_code_d1aeaafc26fa42b09b64ed7a724df243-17"></a>        <span class="n">api</span><span class="o">.</span><span class="n">abort</span><span class="p">(</span><span class="mi">403</span><span class="p">)</span>
+<a name="rest_code_d1aeaafc26fa42b09b64ed7a724df243-18"></a>
+<a name="rest_code_d1aeaafc26fa42b09b64ed7a724df243-19"></a>
+<a name="rest_code_d1aeaafc26fa42b09b64ed7a724df243-20"></a><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<a name="rest_code_d1aeaafc26fa42b09b64ed7a724df243-21"></a>    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">"0.0.0.0"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8080</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 </blockquote>
 <p>3、Docker中运行程序。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_2174d0911bbb43fa83614c7431a99e2b-1"></a><span class="nb">cd</span> /usr/development/
-<a name="rest_code_2174d0911bbb43fa83614c7431a99e2b-2"></a>python main.py
+<pre class="code bash"><a name="rest_code_6221097fefd342979634effc6b7f70e9-1"></a><span class="nb">cd</span> /usr/development/
+<a name="rest_code_6221097fefd342979634effc6b7f70e9-2"></a>python main.py
 </pre>
 </blockquote>
 <p>4、主系统查看测试结果。</p>
@@ -580,7 +580,7 @@ body{
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerpei-zhi-kai-fa-jing-xiang/" class="u-url">Docker配置开发镜像</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+            <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
             </span></p>
             <p class="dateline"><a href="posts/dockerpei-zhi-kai-fa-jing-xiang/" rel="bookmark"><time class="published dt-published" datetime="2017-01-23T23:08:02+08:00" title="2017-01-23 23:08">2017-01-23 23:08</time></a></p>
@@ -592,33 +592,33 @@ body{
 <li>
 <p class="first">新建容器。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_c199089aa105478bb04b987cfd289c78-1"></a>docker run --name mypc -i -t -p <span class="m">8080</span>:8080 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
+<pre class="code bash"><a name="rest_code_252faa3a4212460c8387412bb0b319f8-1"></a>docker run --name mypc -i -t -p 8080:8080 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
 </pre>
 </blockquote>
 </li>
 <li>
 <p class="first">Docker中修改Ubuntu软件源。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_b3603a6195ad46bba754123969f6cd80-1"></a>vi /etc/apt/sources.list
-<a name="rest_code_b3603a6195ad46bba754123969f6cd80-2"></a>:%s/archive.ubuntu/cn.archive.ubuntu/g
-<a name="rest_code_b3603a6195ad46bba754123969f6cd80-3"></a>:wq
+<pre class="code bash"><a name="rest_code_c21398ffd62e4e5dbe317bdd1465caba-1"></a>vi /etc/apt/sources.list
+<a name="rest_code_c21398ffd62e4e5dbe317bdd1465caba-2"></a>:%s/archive.ubuntu/cn.archive.ubuntu/g
+<a name="rest_code_c21398ffd62e4e5dbe317bdd1465caba-3"></a>:wq
 </pre>
 </blockquote>
 </li>
 <li>
 <p class="first">Docker中更新软件源。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_b92f883eb8ba4357b222e3828bdc83d8-1"></a>apt update
+<pre class="code bash"><a name="rest_code_102f37bbf06b457eb88794c3b21b8ed7-1"></a>apt update
 </pre>
 </blockquote>
 </li>
 <li>
 <p class="first">Docker中安装Python和Flask。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_bf7d1dc224254d6aad649808a2940cb5-1"></a>apt install python
-<a name="rest_code_bf7d1dc224254d6aad649808a2940cb5-2"></a>apt install python-pip
-<a name="rest_code_bf7d1dc224254d6aad649808a2940cb5-3"></a>apt install python-dev
-<a name="rest_code_bf7d1dc224254d6aad649808a2940cb5-4"></a>pip install flask
+<pre class="code bash"><a name="rest_code_81465a7e1d2e4eb396adf1a51490d4df-1"></a>apt install python
+<a name="rest_code_81465a7e1d2e4eb396adf1a51490d4df-2"></a>apt install python-pip
+<a name="rest_code_81465a7e1d2e4eb396adf1a51490d4df-3"></a>apt install python-dev
+<a name="rest_code_81465a7e1d2e4eb396adf1a51490d4df-4"></a>pip install flask
 </pre>
 </blockquote>
 </li>
@@ -626,24 +626,24 @@ body{
 <p class="first">在主系统目录 <strong>~/share/</strong> 下编写测试网站main.py。</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_d42bbcdb174449a8ab16aefd0c8d7438-1">1</a>
-<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_d42bbcdb174449a8ab16aefd0c8d7438-2">2</a>
-<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_d42bbcdb174449a8ab16aefd0c8d7438-3">3</a>
-<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_d42bbcdb174449a8ab16aefd0c8d7438-4">4</a>
-<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_d42bbcdb174449a8ab16aefd0c8d7438-5">5</a>
-<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_d42bbcdb174449a8ab16aefd0c8d7438-6">6</a>
-<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_d42bbcdb174449a8ab16aefd0c8d7438-7">7</a>
-<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_d42bbcdb174449a8ab16aefd0c8d7438-8">8</a>
-<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_d42bbcdb174449a8ab16aefd0c8d7438-9">9</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_d42bbcdb174449a8ab16aefd0c8d7438-1"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
-<a name="rest_code_d42bbcdb174449a8ab16aefd0c8d7438-2"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-<a name="rest_code_d42bbcdb174449a8ab16aefd0c8d7438-3"></a>
-<a name="rest_code_d42bbcdb174449a8ab16aefd0c8d7438-4"></a><span class="nd">@app.route</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
-<a name="rest_code_d42bbcdb174449a8ab16aefd0c8d7438-5"></a><span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
-<a name="rest_code_d42bbcdb174449a8ab16aefd0c8d7438-6"></a>    <span class="k">return</span> <span class="s1">'Hello World!'</span>
-<a name="rest_code_d42bbcdb174449a8ab16aefd0c8d7438-7"></a>
-<a name="rest_code_d42bbcdb174449a8ab16aefd0c8d7438-8"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
-<a name="rest_code_d42bbcdb174449a8ab16aefd0c8d7438-9"></a>    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">"0.0.0.0"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="s2">"8080"</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_80b7e4c293234226a013bc27e3cc8c35-1">1</a>
+<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_80b7e4c293234226a013bc27e3cc8c35-2">2</a>
+<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_80b7e4c293234226a013bc27e3cc8c35-3">3</a>
+<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_80b7e4c293234226a013bc27e3cc8c35-4">4</a>
+<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_80b7e4c293234226a013bc27e3cc8c35-5">5</a>
+<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_80b7e4c293234226a013bc27e3cc8c35-6">6</a>
+<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_80b7e4c293234226a013bc27e3cc8c35-7">7</a>
+<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_80b7e4c293234226a013bc27e3cc8c35-8">8</a>
+<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_80b7e4c293234226a013bc27e3cc8c35-9">9</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_80b7e4c293234226a013bc27e3cc8c35-1"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<a name="rest_code_80b7e4c293234226a013bc27e3cc8c35-2"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+<a name="rest_code_80b7e4c293234226a013bc27e3cc8c35-3"></a>
+<a name="rest_code_80b7e4c293234226a013bc27e3cc8c35-4"></a><span class="nd">@app.route</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
+<a name="rest_code_80b7e4c293234226a013bc27e3cc8c35-5"></a><span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
+<a name="rest_code_80b7e4c293234226a013bc27e3cc8c35-6"></a>    <span class="k">return</span> <span class="s1">'Hello World!'</span>
+<a name="rest_code_80b7e4c293234226a013bc27e3cc8c35-7"></a>
+<a name="rest_code_80b7e4c293234226a013bc27e3cc8c35-8"></a><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<a name="rest_code_80b7e4c293234226a013bc27e3cc8c35-9"></a>    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">"0.0.0.0"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="s2">"8080"</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 </blockquote>
@@ -651,8 +651,8 @@ body{
 <li>
 <p class="first">Docker中运行网站。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_1f445cac988e4d51928e193271612ef6-1"></a><span class="nb">cd</span> /usr/development/
-<a name="rest_code_1f445cac988e4d51928e193271612ef6-2"></a>python main.py
+<pre class="code bash"><a name="rest_code_dcffbfedb7aa4bb0aae8058767de65cc-1"></a><span class="nb">cd</span> /usr/development/
+<a name="rest_code_dcffbfedb7aa4bb0aae8058767de65cc-2"></a>python main.py
 </pre>
 </blockquote>
 </li>
@@ -669,7 +669,7 @@ body{
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerchang-yong-ming-ling/" class="u-url">Docker常用命令</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+            <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
             </span></p>
             <p class="dateline"><a href="posts/dockerchang-yong-ming-ling/" rel="bookmark"><time class="published dt-published" datetime="2017-01-21T20:13:52+08:00" title="2017-01-21 20:13">2017-01-21 20:13</time></a></p>
@@ -680,7 +680,7 @@ body{
 <li>
 <p class="first">创建容器。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_06bdacecca11474d9b2a0779095a5e3e-1"></a>docker run --name mypc -it ubuntu:16.04 /bin/bash
+<pre class="code bash"><a name="rest_code_a2b50b22b2e4473e8168499ce7fc68cf-1"></a>docker run --name mypc -it ubuntu:16.04 /bin/bash
 </pre>
 </blockquote>
 </li>
@@ -690,35 +690,35 @@ body{
 <li>
 <p class="first">查看已有容器及其状态。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_586ba9754efa4478a1fca716f15b8330-1"></a>docker ps -a
+<pre class="code bash"><a name="rest_code_5d27b05976bc4070ad2192c93fcbe51a-1"></a>docker ps -a
 </pre>
 </blockquote>
 </li>
 <li>
 <p class="first">启动已有容器。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_0c5867e80e82486e99621ccf9accc117-1"></a>docker start mypc
+<pre class="code bash"><a name="rest_code_9af4625defcb459d8a720a1303bb3a93-1"></a>docker start mypc
 </pre>
 </blockquote>
 </li>
 <li>
 <p class="first">登陆正在运行的容器。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_2b90fd9e38a047a38fe2e61698613d4e-1"></a>docker <span class="nb">exec</span> -it mypc /bin/bash
+<pre class="code bash"><a name="rest_code_2db2f808d17349f3a97e65f1280cf601-1"></a>docker <span class="nb">exec</span> -it mypc /bin/bash
 </pre>
 </blockquote>
 </li>
 <li>
 <p class="first">关闭正在运行的容器。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_fd6a7c6944844628a0a6af65b7db047b-1"></a>docker stop mypc
+<pre class="code bash"><a name="rest_code_b4185a3df4f14d708336ee4fa9532ecf-1"></a>docker stop mypc
 </pre>
 </blockquote>
 </li>
 <li>
 <p class="first">删除容器。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_c6c2d2a8972d4a2da89b69e9227dc59d-1"></a>docker rm mypc
+<pre class="code bash"><a name="rest_code_fe02a4facca1407f92be9aa284bda298-1"></a>docker rm mypc
 </pre>
 </blockquote>
 </li>
