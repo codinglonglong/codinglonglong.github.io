@@ -24,7 +24,7 @@ body{
     font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
 }
 </style>
-<link rel="prefetch" href="posts/pipshi-yong-guo-nei-yuan/" type="text/html">
+<link rel="prefetch" href="posts/windowspei-zhi-seleniumce-shi-huan-jing/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -86,7 +86,72 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pipshi-yong-guo-nei-yuan/" class="u-url">pip使用国内源</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/" class="u-url">Windows配置Selenium测试环境</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/" rel="bookmark"><time class="published dt-published" datetime="2017-04-06T13:22:14+08:00" title="2017-04-06 13:22">2017-04-06 13:22</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>1、安装Selenium，参考： <a class="reference external" href="https://codinglonglong.github.io/posts/pipshi-yong-guo-nei-yuan/">https://codinglonglong.github.io/posts/pipshi-yong-guo-nei-yuan/</a></p>
+<p>2、下载浏览器驱动。</p>
+<blockquote>
+<ol class="arabic simple">
+<li>IE浏览器： <a class="reference external" href="http://selenium-release.storage.googleapis.com/index.html?path=IE.Driver.Beta/">http://selenium-release.storage.googleapis.com/index.html?path=IE.Driver.Beta/</a>
+</li>
+<li>Firefox浏览器： <a class="reference external" href="https://github.com/mozilla/geckodriver/releases">https://github.com/mozilla/geckodriver/releases</a>
+</li>
+<li>Chrome浏览器： <a class="reference external" href="https://sites.google.com/a/chromium.org/chromedriver/downloads">https://sites.google.com/a/chromium.org/chromedriver/downloads</a>
+</li>
+<li>Edge浏览器： <a class="reference external" href="https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/">https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/</a>
+</li>
+</ol>
+</blockquote>
+<p>3、把上一步中的驱动放到系统可执行目录，或者将该驱动的目录加入系统环境变量。</p>
+<p>4、编写代码：</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-1"> 1</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-2"> 2</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-3"> 3</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-4"> 4</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-5"> 5</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-6"> 6</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-7"> 7</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-8"> 8</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-9"> 9</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-10">10</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-11">11</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-12">12</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-13">13</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-14">14</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-15">15</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-16">16</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_65768b7a9ce04efea860f696d9069e6d-1"></a><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-2"></a>
+<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-3"></a><span class="n">browser1</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Firefox</span><span class="p">()</span>
+<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-4"></a><span class="n">browser1</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://codinglonglong.github.io/"</span><span class="p">)</span>
+<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-5"></a>
+<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-6"></a>
+<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-7"></a><span class="n">browser2</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>
+<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-8"></a><span class="n">browser2</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://codinglonglong.github.io/"</span><span class="p">)</span>
+<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-9"></a>
+<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-10"></a>
+<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-11"></a><span class="n">browser3</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Edge</span><span class="p">()</span>
+<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-12"></a><span class="n">browser3</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://codinglonglong.github.io/"</span><span class="p">)</span>
+<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-13"></a>
+<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-14"></a>
+<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-15"></a><span class="n">browser4</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Ie</span><span class="p">()</span>
+<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-16"></a><span class="n">browser4</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://codinglonglong.github.io/"</span><span class="p">)</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p>5、运行代码即可自动打开浏览器。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pipshi-yong-guo-nei-yuan/" class="u-url">pip使用国内源</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
@@ -243,23 +308,6 @@ body{
 </pre></td>
 </tr></table>
 </blockquote>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/win10xiu-gai-macdi-zhi/" class="u-url">Win10修改MAC地址</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/win10xiu-gai-macdi-zhi/" rel="bookmark"><time class="published dt-published" datetime="2017-03-31T12:15:05+08:00" title="2017-03-31 12:15">2017-03-31 12:15</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>1、打开注册表编辑器，“运行”-&gt;“regedit”。</p>
-<p>2、找到如下路径，得到下图：</p>
-<p><strong>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}</strong></p>
-<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/modifymac1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/modifymac1.PNG"><p>3、右击"0003"-&gt;"新建"-&gt;"字符串值"-&gt;"NetworkAddress"。</p>
-<p>4、双击“NetworkAddress”，输入新的MAC地址值，比如“0028F80AF812”。</p>
-<p>5、点击“确定”，重启电脑即可。</p>
 </div>
     </div>
     </article>

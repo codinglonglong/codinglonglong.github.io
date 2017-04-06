@@ -1,5 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Thu, 06 Apr 2017 05:57:01 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>pip使用国内源</title><link>https://codinglonglong.github.io/posts/pipshi-yong-guo-nei-yuan/</link><dc:creator>龙龙</dc:creator><description>&lt;pre class="literal-block"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Thu, 06 Apr 2017 06:31:49 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Windows配置Selenium测试环境</title><link>https://codinglonglong.github.io/posts/windowspei-zhi-seleniumce-shi-huan-jing/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、安装Selenium，参考： &lt;a class="reference external" href="https://codinglonglong.github.io/posts/pipshi-yong-guo-nei-yuan/"&gt;https://codinglonglong.github.io/posts/pipshi-yong-guo-nei-yuan/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2、下载浏览器驱动。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;IE浏览器： &lt;a class="reference external" href="http://selenium-release.storage.googleapis.com/index.html?path=IE.Driver.Beta/"&gt;http://selenium-release.storage.googleapis.com/index.html?path=IE.Driver.Beta/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Firefox浏览器： &lt;a class="reference external" href="https://github.com/mozilla/geckodriver/releases"&gt;https://github.com/mozilla/geckodriver/releases&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Chrome浏览器： &lt;a class="reference external" href="https://sites.google.com/a/chromium.org/chromedriver/downloads"&gt;https://sites.google.com/a/chromium.org/chromedriver/downloads&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Edge浏览器： &lt;a class="reference external" href="https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/"&gt;https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;3、把上一步中的驱动放到系统可执行目录，或者将该驱动的目录加入系统环境变量。&lt;/p&gt;
+&lt;p&gt;4、编写代码：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-1"&gt; 1&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-2"&gt; 2&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-3"&gt; 3&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-4"&gt; 4&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-5"&gt; 5&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-6"&gt; 6&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-7"&gt; 7&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-8"&gt; 8&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-9"&gt; 9&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-10"&gt;10&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-11"&gt;11&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-12"&gt;12&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-13"&gt;13&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-14"&gt;14&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-15"&gt;15&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_65768b7a9ce04efea860f696d9069e6d-16"&gt;16&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_65768b7a9ce04efea860f696d9069e6d-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;selenium&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;webdriver&lt;/span&gt;
+&lt;a name="rest_code_65768b7a9ce04efea860f696d9069e6d-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_65768b7a9ce04efea860f696d9069e6d-3"&gt;&lt;/a&gt;&lt;span class="n"&gt;browser1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;webdriver&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Firefox&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_65768b7a9ce04efea860f696d9069e6d-4"&gt;&lt;/a&gt;&lt;span class="n"&gt;browser1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"https://codinglonglong.github.io/"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_65768b7a9ce04efea860f696d9069e6d-5"&gt;&lt;/a&gt;
+&lt;a name="rest_code_65768b7a9ce04efea860f696d9069e6d-6"&gt;&lt;/a&gt;
+&lt;a name="rest_code_65768b7a9ce04efea860f696d9069e6d-7"&gt;&lt;/a&gt;&lt;span class="n"&gt;browser2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;webdriver&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Chrome&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_65768b7a9ce04efea860f696d9069e6d-8"&gt;&lt;/a&gt;&lt;span class="n"&gt;browser2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"https://codinglonglong.github.io/"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_65768b7a9ce04efea860f696d9069e6d-9"&gt;&lt;/a&gt;
+&lt;a name="rest_code_65768b7a9ce04efea860f696d9069e6d-10"&gt;&lt;/a&gt;
+&lt;a name="rest_code_65768b7a9ce04efea860f696d9069e6d-11"&gt;&lt;/a&gt;&lt;span class="n"&gt;browser3&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;webdriver&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Edge&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_65768b7a9ce04efea860f696d9069e6d-12"&gt;&lt;/a&gt;&lt;span class="n"&gt;browser3&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"https://codinglonglong.github.io/"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_65768b7a9ce04efea860f696d9069e6d-13"&gt;&lt;/a&gt;
+&lt;a name="rest_code_65768b7a9ce04efea860f696d9069e6d-14"&gt;&lt;/a&gt;
+&lt;a name="rest_code_65768b7a9ce04efea860f696d9069e6d-15"&gt;&lt;/a&gt;&lt;span class="n"&gt;browser4&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;webdriver&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Ie&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_65768b7a9ce04efea860f696d9069e6d-16"&gt;&lt;/a&gt;&lt;span class="n"&gt;browser4&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"https://codinglonglong.github.io/"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;
+&lt;p&gt;5、运行代码即可自动打开浏览器。&lt;/p&gt;&lt;/div&gt;</description><category>Python</category><category>Selenium</category><guid>https://codinglonglong.github.io/posts/windowspei-zhi-seleniumce-shi-huan-jing/</guid><pubDate>Thu, 06 Apr 2017 05:22:14 GMT</pubDate></item><item><title>pip使用国内源</title><link>https://codinglonglong.github.io/posts/pipshi-yong-guo-nei-yuan/</link><dc:creator>龙龙</dc:creator><description>&lt;pre class="literal-block"&gt;
 &amp;gt;&amp;gt; py -3 -m pip install selenium -i http://pypi.doubanio.com/simple/ --trusted-host pypi.doubanio.com
 &lt;/pre&gt;</description><category>pip</category><category>Python</category><guid>https://codinglonglong.github.io/posts/pipshi-yong-guo-nei-yuan/</guid><pubDate>Thu, 06 Apr 2017 04:55:09 GMT</pubDate></item><item><title>龙龙看柯南（5）</title><link>https://codinglonglong.github.io/posts/long-long-kan-ke-nan-5/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;strong&gt;句子分析&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;だいいち、ワシのあしはまだ．．．&lt;/p&gt;
@@ -370,26 +415,4 @@
 &lt;p&gt;&lt;strong&gt;サ变动词&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;する——＞しない&lt;/p&gt;
 &lt;p&gt;=== &lt;strong&gt;ば形（否定条件）&lt;/strong&gt; ===&lt;/p&gt;
-&lt;p&gt;动词的ない形去掉い，加上ければ。&lt;/p&gt;&lt;/div&gt;</description><category>日语</category><category>柯南</category><guid>https://codinglonglong.github.io/posts/long-long-kan-ke-nan-1/</guid><pubDate>Wed, 29 Mar 2017 13:46:40 GMT</pubDate></item><item><title>openSUSE安装nodejs</title><link>https://codinglonglong.github.io/posts/opensusean-zhuang-nodejs/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、下载源码。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="literal-block"&gt;
-&amp;gt;&amp;gt; wget https://nodejs.org/dist/v6.10.1/node-v6.10.1-linux-x64.tar.gz
-&lt;/pre&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;2、解压。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="literal-block"&gt;
-&amp;gt;&amp;gt; tar zxvf node-v6.10.1-linux-x64.tar.gz
-&lt;/pre&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;3、链接命令。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="literal-block"&gt;
-&amp;gt;&amp;gt; sudo ln -s /home/long/software/node/bin/node /usr/local/bin/node
-&amp;gt;&amp;gt; sudo ln -s /home/long/software/node/bin/npm /usr/local/bin/npm
-&amp;gt;&amp;gt; long@linux-iyb2:~&amp;gt; node -v
-v6.10.1
-&amp;gt;&amp;gt; long@linux-iyb2:~&amp;gt; npm -v
-3.10.10
-&lt;/pre&gt;
-&lt;/blockquote&gt;&lt;/div&gt;</description><category>nodejs</category><category>openSUSE</category><guid>https://codinglonglong.github.io/posts/opensusean-zhuang-nodejs/</guid><pubDate>Tue, 28 Mar 2017 00:58:42 GMT</pubDate></item></channel></rss>
+&lt;p&gt;动词的ない形去掉い，加上ければ。&lt;/p&gt;&lt;/div&gt;</description><category>日语</category><category>柯南</category><guid>https://codinglonglong.github.io/posts/long-long-kan-ke-nan-1/</guid><pubDate>Wed, 29 Mar 2017 13:46:40 GMT</pubDate></item></channel></rss>
