@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 05 Apr 2017 06:18:14 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>龙龙看柯南（5）</title><link>https://codinglonglong.github.io/posts/long-long-kan-ke-nan-5/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;strong&gt;句子分析&lt;/strong&gt;&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Thu, 06 Apr 2017 05:57:01 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>pip使用国内源</title><link>https://codinglonglong.github.io/posts/pipshi-yong-guo-nei-yuan/</link><dc:creator>龙龙</dc:creator><description>&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; py -3 -m pip install selenium -i http://pypi.doubanio.com/simple/ --trusted-host pypi.doubanio.com
+&lt;/pre&gt;</description><category>pip</category><category>Python</category><guid>https://codinglonglong.github.io/posts/pipshi-yong-guo-nei-yuan/</guid><pubDate>Thu, 06 Apr 2017 04:55:09 GMT</pubDate></item><item><title>龙龙看柯南（5）</title><link>https://codinglonglong.github.io/posts/long-long-kan-ke-nan-5/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;strong&gt;句子分析&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;だいいち、ワシのあしはまだ．．．&lt;/p&gt;
 &lt;p&gt;首先，我的脚还……&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;词语分析&lt;/strong&gt;&lt;/p&gt;
@@ -390,7 +392,4 @@ v6.10.1
 &amp;gt;&amp;gt; long@linux-iyb2:~&amp;gt; npm -v
 3.10.10
 &lt;/pre&gt;
-&lt;/blockquote&gt;&lt;/div&gt;</description><category>nodejs</category><category>openSUSE</category><guid>https://codinglonglong.github.io/posts/opensusean-zhuang-nodejs/</guid><pubDate>Tue, 28 Mar 2017 00:58:42 GMT</pubDate></item><item><title>悼别外祖母</title><link>https://codinglonglong.github.io/posts/dao-bie-wai-zu-mu/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;寒风送柳泛轻尘，清明未至别故人。&lt;/p&gt;
-&lt;p&gt;心向往昔花失宠，情到痛时雨亦真。&lt;/p&gt;
-&lt;p&gt;云中哀乐声声起，梦里忧思处处闻。&lt;/p&gt;
-&lt;p&gt;黑纱有泪归碧海，白发无心守空门。&lt;/p&gt;&lt;/div&gt;</description><category>我的诗词</category><guid>https://codinglonglong.github.io/posts/dao-bie-wai-zu-mu/</guid><pubDate>Wed, 22 Mar 2017 04:12:21 GMT</pubDate></item></channel></rss>
+&lt;/blockquote&gt;&lt;/div&gt;</description><category>nodejs</category><category>openSUSE</category><guid>https://codinglonglong.github.io/posts/opensusean-zhuang-nodejs/</guid><pubDate>Tue, 28 Mar 2017 00:58:42 GMT</pubDate></item></channel></rss>
