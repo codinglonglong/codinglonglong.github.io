@@ -11,36 +11,37 @@
 <p>3、把上一步中的驱动放到系统可执行目录，或者将该驱动的目录加入系统环境变量。</p>
 <p>4、编写代码：</p>
 <blockquote>
-<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_65768b7a9ce04efea860f696d9069e6d-1"> 1</a>
-<a href="#rest_code_65768b7a9ce04efea860f696d9069e6d-2"> 2</a>
-<a href="#rest_code_65768b7a9ce04efea860f696d9069e6d-3"> 3</a>
-<a href="#rest_code_65768b7a9ce04efea860f696d9069e6d-4"> 4</a>
-<a href="#rest_code_65768b7a9ce04efea860f696d9069e6d-5"> 5</a>
-<a href="#rest_code_65768b7a9ce04efea860f696d9069e6d-6"> 6</a>
-<a href="#rest_code_65768b7a9ce04efea860f696d9069e6d-7"> 7</a>
-<a href="#rest_code_65768b7a9ce04efea860f696d9069e6d-8"> 8</a>
-<a href="#rest_code_65768b7a9ce04efea860f696d9069e6d-9"> 9</a>
-<a href="#rest_code_65768b7a9ce04efea860f696d9069e6d-10">10</a>
-<a href="#rest_code_65768b7a9ce04efea860f696d9069e6d-11">11</a>
-<a href="#rest_code_65768b7a9ce04efea860f696d9069e6d-12">12</a>
-<a href="#rest_code_65768b7a9ce04efea860f696d9069e6d-13">13</a>
-<a href="#rest_code_65768b7a9ce04efea860f696d9069e6d-14">14</a>
-<a href="#rest_code_65768b7a9ce04efea860f696d9069e6d-15">15</a>
-<a href="#rest_code_65768b7a9ce04efea860f696d9069e6d-16">16</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_65768b7a9ce04efea860f696d9069e6d-1"></a><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
-<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-2"></a>
-<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-3"></a><span class="n">browser1</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Firefox</span><span class="p">()</span>
-<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-4"></a><span class="n">browser1</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://codinglonglong.github.io/&quot;</span><span class="p">)</span>
-<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-5"></a>
-<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-6"></a>
-<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-7"></a><span class="n">browser2</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>
-<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-8"></a><span class="n">browser2</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://codinglonglong.github.io/&quot;</span><span class="p">)</span>
-<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-9"></a>
-<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-10"></a>
-<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-11"></a><span class="n">browser3</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Edge</span><span class="p">()</span>
-<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-12"></a><span class="n">browser3</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://codinglonglong.github.io/&quot;</span><span class="p">)</span>
-<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-13"></a>
-<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-14"></a>
-<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-15"></a><span class="n">browser4</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Ie</span><span class="p">()</span>
-<a name="rest_code_65768b7a9ce04efea860f696d9069e6d-16"></a><span class="n">browser4</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://codinglonglong.github.io/&quot;</span><span class="p">)</span>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-1"> 1</a>
+<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-2"> 2</a>
+<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-3"> 3</a>
+<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-4"> 4</a>
+<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-5"> 5</a>
+<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-6"> 6</a>
+<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-7"> 7</a>
+<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-8"> 8</a>
+<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-9"> 9</a>
+<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-10">10</a>
+<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-11">11</a>
+<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-12">12</a>
+<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-13">13</a>
+<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-14">14</a>
+<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-15">15</a>
+<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-16">16</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-1"></a><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-2"></a>
+<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-3"></a><span class="n">browser1</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Firefox</span><span class="p">()</span>
+<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-4"></a><span class="n">browser1</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://codinglonglong.github.io/&quot;</span><span class="p">)</span>
+<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-5"></a>
+<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-6"></a>
+<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-7"></a><span class="n">browser2</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>
+<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-8"></a><span class="n">browser2</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://codinglonglong.github.io/&quot;</span><span class="p">)</span>
+<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-9"></a>
+<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-10"></a>
+<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-11"></a><span class="n">browser3</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Edge</span><span class="p">()</span>
+<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-12"></a><span class="n">browser3</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://codinglonglong.github.io/&quot;</span><span class="p">)</span>
+<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-13"></a>
+<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-14"></a>
+<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-15"></a><span class="n">browser4</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Ie</span><span class="p">()</span>
+<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-16"></a><span class="n">browser4</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://codinglonglong.github.io/&quot;</span><span class="p">)</span>
 </pre></td></tr></table></blockquote>
 <p>5、运行代码即可自动打开浏览器。</p>
+<p><strong>Selenium文档</strong>: <a class="reference external" href="https://seleniumhq.github.io/selenium/docs/api/py/api.html">https://seleniumhq.github.io/selenium/docs/api/py/api.html</a></p>

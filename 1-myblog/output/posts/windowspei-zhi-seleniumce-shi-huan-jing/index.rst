@@ -45,3 +45,5 @@
 
 5、运行代码即可自动打开浏览器。
 
+**Selenium文档**: https://seleniumhq.github.io/selenium/docs/api/py/api.html
+
