@@ -86,7 +86,30 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/win10xiu-gai-macdi-zhi/" class="u-url">Win10修改MAC地址</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/windowsming-ling-xing-yun-xing-pythonde-printhan-shu-wu-fa-shu-chu-zhong-wen/" class="u-url">Windows命令行运行Python的print函数无法输出中文</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/windowsming-ling-xing-yun-xing-pythonde-printhan-shu-wu-fa-shu-chu-zhong-wen/" rel="bookmark"><time class="published dt-published" datetime="2017-04-02T21:54:15+08:00" title="2017-04-02 21:54">2017-04-02 21:54</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>代码中加入如下内容：</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/windowsming-ling-xing-yun-xing-pythonde-printhan-shu-wu-fa-shu-chu-zhong-wen/#rest_code_0a455998252d431ab8eda30e79bd28ac-1">1</a>
+<a href="posts/windowsming-ling-xing-yun-xing-pythonde-printhan-shu-wu-fa-shu-chu-zhong-wen/#rest_code_0a455998252d431ab8eda30e79bd28ac-2">2</a>
+<a href="posts/windowsming-ling-xing-yun-xing-pythonde-printhan-shu-wu-fa-shu-chu-zhong-wen/#rest_code_0a455998252d431ab8eda30e79bd28ac-3">3</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_0a455998252d431ab8eda30e79bd28ac-1"></a><span class="kn">import</span> <span class="nn">io</span>
+<a name="rest_code_0a455998252d431ab8eda30e79bd28ac-2"></a><span class="kn">import</span> <span class="nn">sys</span>
+<a name="rest_code_0a455998252d431ab8eda30e79bd28ac-3"></a><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">TextIOWrapper</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">buffer</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span>
+</pre></td>
+</tr></table>
+</blockquote>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/win10xiu-gai-macdi-zhi/" class="u-url">Win10修改MAC地址</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
