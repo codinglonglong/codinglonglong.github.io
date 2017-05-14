@@ -11,7 +11,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/android.xml</loc>
-  <lastmod>2017-04-10T04:03:00Z</lastmod>
+  <lastmod>2017-05-14T06:45:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/ban-ben-guan-li.xml</loc>
@@ -19,7 +19,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_android.xml</loc>
-  <lastmod>2017-04-10T04:03:00Z</lastmod>
+  <lastmod>2017-05-14T06:45:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_docker.xml</loc>
@@ -258,6 +258,10 @@
   <lastmod>2017-04-10T04:03:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://codinglonglong.github.io/categories/ye-shen-mo-ni-qi.xml</loc>
+  <lastmod>2017-05-14T06:45:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://codinglonglong.github.io/categories/you-qing-lian-jie.xml</loc>
   <lastmod>2017-04-10T04:03:00Z</lastmod>
  </sitemap>
@@ -271,10 +275,10 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/rss.xml</loc>
-  <lastmod>2017-05-14T05:40:00Z</lastmod>
+  <lastmod>2017-05-14T06:45:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/sitemap.xml</loc>
-  <lastmod>2017-05-14T05:40:00Z</lastmod>
+  <lastmod>2017-05-14T06:45:00Z</lastmod>
  </sitemap>
 </sitemapindex>
