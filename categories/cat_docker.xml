@@ -1,5 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Docker)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_docker.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Thu, 06 Apr 2017 06:47:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Docker配置开发镜像</title><link>https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;在主系统上开发，在Docker中部署，在主系统上测试……不需要一手一台电脑，也不需要担心虚拟机占用资源太高，而且不管主系统是Linux、Windows还是MacOS，开发都是一样的……感觉很不错……&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Docker)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_docker.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sun, 14 May 2017 08:22:00 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Docker设定固定IP</title><link>https://codinglonglong.github.io/posts/dockershe-ding-gu-ding-ip/</link><dc:creator>龙龙</dc:creator><description>&lt;ol class="arabic"&gt;
+&lt;li&gt;&lt;p class="first"&gt;新建自定义网络。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_54d120655a6e410891d59576b4754433-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; docker network create --subnet&lt;span class="o"&gt;=&lt;/span&gt;172.16.0.0/16 testnet
+&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;创建虚拟机。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_24bd559ee25047a3a4339fc42c4ef9a3-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt;  docker run --name t1 -i -t --net&lt;span class="o"&gt;=&lt;/span&gt;testnet --ip&lt;span class="o"&gt;=&lt;/span&gt;172.16.0.111 -p 8080:8080 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
+&lt;a name="rest_code_24bd559ee25047a3a4339fc42c4ef9a3-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt;  docker run --name t2 -i -t --net&lt;span class="o"&gt;=&lt;/span&gt;testnet --ip&lt;span class="o"&gt;=&lt;/span&gt;172.16.0.112 -p 8081:8081 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
+&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;进入虚拟机，查看当前IP。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; docker &lt;span class="nb"&gt;exec&lt;/span&gt; -it t1 /bin/bash
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt; root@2ef31a06d8f8:/# ifconfig
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-3"&gt;&lt;/a&gt;eth0      Link encap:Ethernet  HWaddr 02:42:ac:10:00:6f
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-4"&gt;&lt;/a&gt;        inet addr:172.16.0.111  Bcast:0.0.0.0  Mask:255.255.0.0
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-5"&gt;&lt;/a&gt;        inet6 addr: fe80::42:acff:fe10:6f/64 Scope:Link
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-6"&gt;&lt;/a&gt;        UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-7"&gt;&lt;/a&gt;        RX packets:22 errors:0 dropped:0 overruns:0 frame:0
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-8"&gt;&lt;/a&gt;        TX packets:13 errors:0 dropped:0 overruns:0 carrier:0
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-9"&gt;&lt;/a&gt;        collisions:0 txqueuelen:0
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-10"&gt;&lt;/a&gt;        RX bytes:1716 &lt;span class="o"&gt;(&lt;/span&gt;1.7 KB&lt;span class="o"&gt;)&lt;/span&gt;  TX bytes:1026 &lt;span class="o"&gt;(&lt;/span&gt;1.0 KB&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-11"&gt;&lt;/a&gt;
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-12"&gt;&lt;/a&gt;lo        Link encap:Local Loopback
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-13"&gt;&lt;/a&gt;        inet addr:127.0.0.1  Mask:255.0.0.0
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-14"&gt;&lt;/a&gt;        inet6 addr: ::1/128 Scope:Host
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-15"&gt;&lt;/a&gt;        UP LOOPBACK RUNNING  MTU:65536  Metric:1
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-16"&gt;&lt;/a&gt;        RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-17"&gt;&lt;/a&gt;        TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-18"&gt;&lt;/a&gt;        collisions:0 txqueuelen:1
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-19"&gt;&lt;/a&gt;        RX bytes:0 &lt;span class="o"&gt;(&lt;/span&gt;0.0 B&lt;span class="o"&gt;)&lt;/span&gt;  TX bytes:0 &lt;span class="o"&gt;(&lt;/span&gt;0.0 B&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-20"&gt;&lt;/a&gt;&amp;gt;&amp;gt; docker &lt;span class="nb"&gt;exec&lt;/span&gt; -it t2 /bin/bash
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-21"&gt;&lt;/a&gt;&amp;gt;&amp;gt; root@a9cd9a699b05:/# ifconfig
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-22"&gt;&lt;/a&gt;eth0      Link encap:Ethernet  HWaddr 02:42:ac:10:00:70
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-23"&gt;&lt;/a&gt;        inet addr:172.16.0.112  Bcast:0.0.0.0  Mask:255.255.0.0
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-24"&gt;&lt;/a&gt;        inet6 addr: fe80::42:acff:fe10:70/64 Scope:Link
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-25"&gt;&lt;/a&gt;        UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-26"&gt;&lt;/a&gt;        RX packets:14 errors:0 dropped:0 overruns:0 frame:0
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-27"&gt;&lt;/a&gt;        TX packets:15 errors:0 dropped:0 overruns:0 carrier:0
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-28"&gt;&lt;/a&gt;        collisions:0 txqueuelen:0
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-29"&gt;&lt;/a&gt;        RX bytes:1068 &lt;span class="o"&gt;(&lt;/span&gt;1.0 KB&lt;span class="o"&gt;)&lt;/span&gt;  TX bytes:1166 &lt;span class="o"&gt;(&lt;/span&gt;1.1 KB&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-30"&gt;&lt;/a&gt;
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-31"&gt;&lt;/a&gt;lo        Link encap:Local Loopback
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-32"&gt;&lt;/a&gt;        inet addr:127.0.0.1  Mask:255.0.0.0
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-33"&gt;&lt;/a&gt;        inet6 addr: ::1/128 Scope:Host
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-34"&gt;&lt;/a&gt;        UP LOOPBACK RUNNING  MTU:65536  Metric:1
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-35"&gt;&lt;/a&gt;        RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-36"&gt;&lt;/a&gt;        TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-37"&gt;&lt;/a&gt;        collisions:0 txqueuelen:1
+&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-38"&gt;&lt;/a&gt;        RX bytes:0 &lt;span class="o"&gt;(&lt;/span&gt;0.0 B&lt;span class="o"&gt;)&lt;/span&gt;  TX bytes:0 &lt;span class="o"&gt;(&lt;/span&gt;0.0 B&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p class="first"&gt;重启之后，IP地址依然保持之前的设置，并且可以相互ping通。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</description><category>Docker</category><guid>https://codinglonglong.github.io/posts/dockershe-ding-gu-ding-ip/</guid><pubDate>Sun, 14 May 2017 06:55:30 GMT</pubDate></item><item><title>Docker配置开发镜像</title><link>https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;在主系统上开发，在Docker中部署，在主系统上测试……不需要一手一台电脑，也不需要担心虚拟机占用资源太高，而且不管主系统是Linux、Windows还是MacOS，开发都是一样的……感觉很不错……&lt;/p&gt;
 &lt;ol class="arabic"&gt;
 &lt;li&gt;&lt;p class="first"&gt;新建容器。&lt;/p&gt;
 &lt;blockquote&gt;

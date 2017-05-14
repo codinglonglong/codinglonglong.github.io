@@ -1,0 +1,57 @@
+<ol class="arabic">
+<li><p class="first">新建自定义网络。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_54d120655a6e410891d59576b4754433-1"></a>&gt;&gt; docker network create --subnet<span class="o">=</span>172.16.0.0/16 testnet
+</pre></blockquote>
+</li>
+<li><p class="first">创建虚拟机。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_24bd559ee25047a3a4339fc42c4ef9a3-1"></a>&gt;&gt;  docker run --name t1 -i -t --net<span class="o">=</span>testnet --ip<span class="o">=</span>172.16.0.111 -p 8080:8080 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
+<a name="rest_code_24bd559ee25047a3a4339fc42c4ef9a3-2"></a>&gt;&gt;  docker run --name t2 -i -t --net<span class="o">=</span>testnet --ip<span class="o">=</span>172.16.0.112 -p 8081:8081 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
+</pre></blockquote>
+</li>
+<li><p class="first">进入虚拟机，查看当前IP。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_41daea016a904ed98b9b0440da7394cb-1"></a>&gt;&gt; docker <span class="nb">exec</span> -it t1 /bin/bash
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-2"></a>&gt;&gt; root@2ef31a06d8f8:/# ifconfig
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-3"></a>eth0      Link encap:Ethernet  HWaddr 02:42:ac:10:00:6f
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-4"></a>        inet addr:172.16.0.111  Bcast:0.0.0.0  Mask:255.255.0.0
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-5"></a>        inet6 addr: fe80::42:acff:fe10:6f/64 Scope:Link
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-6"></a>        UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-7"></a>        RX packets:22 errors:0 dropped:0 overruns:0 frame:0
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-8"></a>        TX packets:13 errors:0 dropped:0 overruns:0 carrier:0
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-9"></a>        collisions:0 txqueuelen:0
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-10"></a>        RX bytes:1716 <span class="o">(</span>1.7 KB<span class="o">)</span>  TX bytes:1026 <span class="o">(</span>1.0 KB<span class="o">)</span>
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-11"></a>
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-12"></a>lo        Link encap:Local Loopback
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-13"></a>        inet addr:127.0.0.1  Mask:255.0.0.0
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-14"></a>        inet6 addr: ::1/128 Scope:Host
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-15"></a>        UP LOOPBACK RUNNING  MTU:65536  Metric:1
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-16"></a>        RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-17"></a>        TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-18"></a>        collisions:0 txqueuelen:1
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-19"></a>        RX bytes:0 <span class="o">(</span>0.0 B<span class="o">)</span>  TX bytes:0 <span class="o">(</span>0.0 B<span class="o">)</span>
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-20"></a>&gt;&gt; docker <span class="nb">exec</span> -it t2 /bin/bash
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-21"></a>&gt;&gt; root@a9cd9a699b05:/# ifconfig
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-22"></a>eth0      Link encap:Ethernet  HWaddr 02:42:ac:10:00:70
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-23"></a>        inet addr:172.16.0.112  Bcast:0.0.0.0  Mask:255.255.0.0
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-24"></a>        inet6 addr: fe80::42:acff:fe10:70/64 Scope:Link
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-25"></a>        UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-26"></a>        RX packets:14 errors:0 dropped:0 overruns:0 frame:0
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-27"></a>        TX packets:15 errors:0 dropped:0 overruns:0 carrier:0
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-28"></a>        collisions:0 txqueuelen:0
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-29"></a>        RX bytes:1068 <span class="o">(</span>1.0 KB<span class="o">)</span>  TX bytes:1166 <span class="o">(</span>1.1 KB<span class="o">)</span>
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-30"></a>
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-31"></a>lo        Link encap:Local Loopback
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-32"></a>        inet addr:127.0.0.1  Mask:255.0.0.0
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-33"></a>        inet6 addr: ::1/128 Scope:Host
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-34"></a>        UP LOOPBACK RUNNING  MTU:65536  Metric:1
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-35"></a>        RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-36"></a>        TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-37"></a>        collisions:0 txqueuelen:1
+<a name="rest_code_41daea016a904ed98b9b0440da7394cb-38"></a>        RX bytes:0 <span class="o">(</span>0.0 B<span class="o">)</span>  TX bytes:0 <span class="o">(</span>0.0 B<span class="o">)</span>
+</pre></blockquote>
+</li>
+<li><p class="first">重启之后，IP地址依然保持之前的设置，并且可以相互ping通。</p>
+</li>
+</ol>
