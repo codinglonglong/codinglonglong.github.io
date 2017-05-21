@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about mqtt)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/mqtt.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sun, 21 May 2017 10:12:35 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>基于mqtt的消息推送</title><link>https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;strong&gt;t1上&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1、安装mosquitto服务器。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_1df5e0e3d8344d9aaa27236072fb8a9f-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; apt install wget
+&lt;a name="rest_code_1df5e0e3d8344d9aaa27236072fb8a9f-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt; wget http://mosquitto.org/files/source/mosquitto-1.4.11.tar.gz
+&lt;a name="rest_code_1df5e0e3d8344d9aaa27236072fb8a9f-3"&gt;&lt;/a&gt;&amp;gt;&amp;gt; tar zxvf mosquitto-1.4.11.tar.gz
+&lt;a name="rest_code_1df5e0e3d8344d9aaa27236072fb8a9f-4"&gt;&lt;/a&gt;&amp;gt;&amp;gt; &lt;span class="nb"&gt;cd&lt;/span&gt; mosquitto-1.4.11
+&lt;a name="rest_code_1df5e0e3d8344d9aaa27236072fb8a9f-5"&gt;&lt;/a&gt;&amp;gt;&amp;gt; apt install libc-ares-dev uuid-dev libwebsockets-dev libssl-dev
+&lt;a name="rest_code_1df5e0e3d8344d9aaa27236072fb8a9f-6"&gt;&lt;/a&gt;&amp;gt;&amp;gt; make binary
+&lt;a name="rest_code_1df5e0e3d8344d9aaa27236072fb8a9f-7"&gt;&lt;/a&gt;&amp;gt;&amp;gt; make install
+&lt;a name="rest_code_1df5e0e3d8344d9aaa27236072fb8a9f-8"&gt;&lt;/a&gt;&amp;gt;&amp;gt; vi /etc/profile
+&lt;a name="rest_code_1df5e0e3d8344d9aaa27236072fb8a9f-9"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/usr/local/bin:&lt;span class="nv"&gt;$PATH&lt;/span&gt;
+&lt;a name="rest_code_1df5e0e3d8344d9aaa27236072fb8a9f-10"&gt;&lt;/a&gt;&amp;gt;&amp;gt; &lt;span class="nb"&gt;source&lt;/span&gt; /etc/profile
+&lt;a name="rest_code_1df5e0e3d8344d9aaa27236072fb8a9f-11"&gt;&lt;/a&gt;&amp;gt;&amp;gt; useradd -m mosquitto
+&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;2、启动mosquitto服务。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_18197893670f41498d57ada982a356e2-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; mosquitto
+&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;t2上&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1、安装mosquitto的Python客户端。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_0350ae5a561e4777bae3b40420491b9c-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; pip3 install paho-mqtt
+&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;2、编写并启动消息接收端。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-1"&gt; 1&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-2"&gt; 2&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-3"&gt; 3&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-4"&gt; 4&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-5"&gt; 5&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-6"&gt; 6&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-7"&gt; 7&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-8"&gt; 8&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-9"&gt; 9&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-10"&gt;10&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-11"&gt;11&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-12"&gt;12&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-13"&gt;13&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-14"&gt;14&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-15"&gt;15&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-16"&gt;16&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-17"&gt;17&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;paho.mqtt.client&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;mqtt&lt;/span&gt;
+&lt;a name="rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-2"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;json&lt;/span&gt;
+&lt;a name="rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-4"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;on_connect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;userdata&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;flags&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;rc&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-5"&gt;&lt;/a&gt;    &lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;subscribe&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"test"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-6"&gt;&lt;/a&gt;
+&lt;a name="rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;on_message&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;userdata&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-8"&gt;&lt;/a&gt;    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;topic&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;" "&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;payload&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-9"&gt;&lt;/a&gt;
+&lt;a name="rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-10"&gt;&lt;/a&gt;&lt;span class="n"&gt;client&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;mqtt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Client&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-11"&gt;&lt;/a&gt;&lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;on_connect&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;on_connect&lt;/span&gt;
+&lt;a name="rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-12"&gt;&lt;/a&gt;&lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;on_message&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;on_message&lt;/span&gt;
+&lt;a name="rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-13"&gt;&lt;/a&gt;&lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-14"&gt;&lt;/a&gt;    &lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"172.16.0.111"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1883&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-15"&gt;&lt;/a&gt;    &lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loop_forever&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-16"&gt;&lt;/a&gt;&lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="ne"&gt;KeyboardInterrupt&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_3a12d86f5f6e4b6486c85072deaeb1fc-17"&gt;&lt;/a&gt;    &lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;disconnect&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;t3上&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1、安装mosquitto的Python客户端。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_2773fc34c83344468e40b6427a6a5e2d-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; pip3 install paho-mqtt
+&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;2、编写并启动消息发送端。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_3d68d47d574144cbb05f7d77dba423eb-1"&gt;1&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_3d68d47d574144cbb05f7d77dba423eb-2"&gt;2&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_3d68d47d574144cbb05f7d77dba423eb-3"&gt;3&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_3d68d47d574144cbb05f7d77dba423eb-4"&gt;4&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_3d68d47d574144cbb05f7d77dba423eb-5"&gt;5&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_3d68d47d574144cbb05f7d77dba423eb-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;paho.mqtt.publish&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;publish&lt;/span&gt;
+&lt;a name="rest_code_3d68d47d574144cbb05f7d77dba423eb-2"&gt;&lt;/a&gt;&lt;span class="n"&gt;host&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"172.16.0.111"&lt;/span&gt;
+&lt;a name="rest_code_3d68d47d574144cbb05f7d77dba423eb-3"&gt;&lt;/a&gt;&lt;span class="n"&gt;topic&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"test"&lt;/span&gt;
+&lt;a name="rest_code_3d68d47d574144cbb05f7d77dba423eb-4"&gt;&lt;/a&gt;&lt;span class="n"&gt;payload&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"hi"&lt;/span&gt;
+&lt;a name="rest_code_3d68d47d574144cbb05f7d77dba423eb-5"&gt;&lt;/a&gt;&lt;span class="n"&gt;publish&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;single&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;topic&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;payload&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;qos&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;hostname&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;host&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;
+&lt;p&gt;还可以这样写&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_d9be6e61187149c19273d9b4878dbc84-1"&gt;1&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_d9be6e61187149c19273d9b4878dbc84-2"&gt;2&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_d9be6e61187149c19273d9b4878dbc84-3"&gt;3&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_d9be6e61187149c19273d9b4878dbc84-4"&gt;4&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_d9be6e61187149c19273d9b4878dbc84-5"&gt;5&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_d9be6e61187149c19273d9b4878dbc84-6"&gt;6&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_d9be6e61187149c19273d9b4878dbc84-7"&gt;7&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_d9be6e61187149c19273d9b4878dbc84-8"&gt;8&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_d9be6e61187149c19273d9b4878dbc84-9"&gt;9&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_d9be6e61187149c19273d9b4878dbc84-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;paho.mqtt.client&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;mqtt&lt;/span&gt;
+&lt;a name="rest_code_d9be6e61187149c19273d9b4878dbc84-2"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;
+&lt;a name="rest_code_d9be6e61187149c19273d9b4878dbc84-3"&gt;&lt;/a&gt;&lt;span class="n"&gt;client&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;mqtt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Client&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_d9be6e61187149c19273d9b4878dbc84-4"&gt;&lt;/a&gt;&lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"172.16.0.111"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_d9be6e61187149c19273d9b4878dbc84-5"&gt;&lt;/a&gt;&lt;span class="n"&gt;topic&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"test"&lt;/span&gt;
+&lt;a name="rest_code_d9be6e61187149c19273d9b4878dbc84-6"&gt;&lt;/a&gt;&lt;span class="n"&gt;payload&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"hi"&lt;/span&gt;
+&lt;a name="rest_code_d9be6e61187149c19273d9b4878dbc84-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_d9be6e61187149c19273d9b4878dbc84-8"&gt;&lt;/a&gt;    &lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;publish&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;topic&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;payload&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_d9be6e61187149c19273d9b4878dbc84-9"&gt;&lt;/a&gt;    &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;要先启动消息接收端，再启动消息发送端。如果分别在两个主机上启动消息接收端和消息发送端，那么就可以实现即时通讯了。&lt;/p&gt;&lt;/div&gt;</description><category>Android</category><category>Linux</category><category>mosquitto</category><category>mqtt</category><category>Python</category><guid>https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/</guid><pubDate>Sun, 21 May 2017 06:59:56 GMT</pubDate></item></channel></rss>

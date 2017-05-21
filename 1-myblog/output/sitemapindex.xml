@@ -11,7 +11,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/android.xml</loc>
-  <lastmod>2017-05-14T06:45:00Z</lastmod>
+  <lastmod>2017-05-21T10:08:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/ban-ben-guan-li.xml</loc>
@@ -43,7 +43,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_linux.xml</loc>
-  <lastmod>2017-05-21T06:00:00Z</lastmod>
+  <lastmod>2017-05-21T10:08:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_python.xml</loc>
@@ -87,7 +87,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/deepin.xml</loc>
-  <lastmod>2017-05-21T06:00:00Z</lastmod>
+  <lastmod>2017-05-21T06:26:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/docker.xml</loc>
@@ -147,7 +147,15 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/linux.xml</loc>
-  <lastmod>2017-04-10T04:03:00Z</lastmod>
+  <lastmod>2017-05-21T10:08:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://codinglonglong.github.io/categories/mosquitto.xml</loc>
+  <lastmod>2017-05-21T10:08:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://codinglonglong.github.io/categories/mqtt.xml</loc>
+  <lastmod>2017-05-21T10:08:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/mysql.xml</loc>
@@ -191,7 +199,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/python.xml</loc>
-  <lastmod>2017-05-17T15:00:00Z</lastmod>
+  <lastmod>2017-05-21T10:08:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/raspberry.xml</loc>
@@ -207,7 +215,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/remixos.xml</loc>
-  <lastmod>2017-05-21T06:00:00Z</lastmod>
+  <lastmod>2017-05-21T06:26:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/ri-yu.xml</loc>
@@ -287,10 +295,10 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/rss.xml</loc>
-  <lastmod>2017-05-21T06:14:00Z</lastmod>
+  <lastmod>2017-05-21T10:08:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/sitemap.xml</loc>
-  <lastmod>2017-05-21T06:16:00Z</lastmod>
+  <lastmod>2017-05-21T10:08:00Z</lastmod>
  </sitemap>
 </sitemapindex>
