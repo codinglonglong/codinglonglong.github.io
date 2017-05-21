@@ -140,6 +140,7 @@ NAVIGATION_LINKS = {
         ("/categories/wo-de-shi-ci/", "我的诗词"),
         ("https://github.com/codinglonglong/", "Github"),
         ("/posts/you-qing-lian-jie/", "友情链接"),
+        ("/posts/lian-xi-wo/", "联系我"),
         ("/rss.xml", "RSS 源"),
     ),
 }

@@ -1,5 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Linux)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_linux.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Thu, 06 Apr 2017 06:47:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>openSUSE安装nodejs</title><link>https://codinglonglong.github.io/posts/opensusean-zhuang-nodejs/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、下载源码。&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Linux)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_linux.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sun, 21 May 2017 06:19:03 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>安装Deepin和RemixOS双系统</title><link>https://codinglonglong.github.io/posts/an-zhuang-deepinhe-remixosshuang-xi-tong/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;RemixOS是PC版的Android，可以运行一部分Android应用。&lt;/p&gt;
+&lt;p&gt;RemixOS下载地址： &lt;a class="reference external" href="https://sourceforge.net/projects/remix-os/"&gt;https://sourceforge.net/projects/remix-os/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;1、在Windows上，下载RemixOS安装包，解压缩，用Remix_OS_for_PC_Installation_Tool制作RemixOS安装U盘。&lt;/p&gt;
+&lt;p&gt;2、将安装U盘插入Deepin所在的笔记本（基于Ubuntu的发行版同理）。&lt;/p&gt;
+&lt;p&gt;3、启动Deepin，在根目录下创建文件夹Remix（这里需要管理员权限）。&lt;/p&gt;
+&lt;p&gt;4、在Remix中创建目录DATA（用来存放数据）。&lt;/p&gt;
+&lt;p&gt;5、把U盘上的内容全部拷贝到Remix目录中。&lt;/p&gt;
+&lt;p&gt;6、修改引导文件。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_120ad6fcccc945d4aae990140e142e53-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; sudo gedit /etc/grub.d/40_custom
+&lt;a name="rest_code_120ad6fcccc945d4aae990140e142e53-2"&gt;&lt;/a&gt;&lt;span class="c1"&gt;#!/bin/sh&lt;/span&gt;
+&lt;a name="rest_code_120ad6fcccc945d4aae990140e142e53-3"&gt;&lt;/a&gt;&lt;span class="nb"&gt;exec&lt;/span&gt; tail -n +3 &lt;span class="nv"&gt;$0&lt;/span&gt;
+&lt;a name="rest_code_120ad6fcccc945d4aae990140e142e53-4"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# This file provides an easy way to add custom menu entries.  Simply type the&lt;/span&gt;
+&lt;a name="rest_code_120ad6fcccc945d4aae990140e142e53-5"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# menu entries you want to add after this comment.  Be careful not to change&lt;/span&gt;
+&lt;a name="rest_code_120ad6fcccc945d4aae990140e142e53-6"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# the 'exec tail' line above.&lt;/span&gt;
+&lt;a name="rest_code_120ad6fcccc945d4aae990140e142e53-7"&gt;&lt;/a&gt;menuentry &lt;span class="s1"&gt;'Remix OS For PC'&lt;/span&gt; --class android-x86&lt;span class="o"&gt;{&lt;/span&gt;
+&lt;a name="rest_code_120ad6fcccc945d4aae990140e142e53-8"&gt;&lt;/a&gt;    &lt;span class="nb"&gt;set&lt;/span&gt; &lt;span class="nv"&gt;root&lt;/span&gt;&lt;span class="o"&gt;=(&lt;/span&gt;hd0,3&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_120ad6fcccc945d4aae990140e142e53-9"&gt;&lt;/a&gt;    linux /Remix/kernel &lt;span class="nv"&gt;root&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/sda3/Remix androidboot.hardware&lt;span class="o"&gt;=&lt;/span&gt;remix_cn_x86_64 androidboot.selinux&lt;span class="o"&gt;=&lt;/span&gt;permissive quiet &lt;span class="nv"&gt;DATA&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/Remix/DATA &lt;span class="nv"&gt;SRC&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/Remix nomodeset
+&lt;a name="rest_code_120ad6fcccc945d4aae990140e142e53-10"&gt;&lt;/a&gt;    initrd /Remix/initrd.img
+&lt;a name="rest_code_120ad6fcccc945d4aae990140e142e53-11"&gt;&lt;/a&gt;&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;a name="rest_code_120ad6fcccc945d4aae990140e142e53-12"&gt;&lt;/a&gt;&amp;gt;&amp;gt; sudo grub-install 40_custom
+&lt;a name="rest_code_120ad6fcccc945d4aae990140e142e53-13"&gt;&lt;/a&gt;&amp;gt;&amp;gt; sudo update-grub
+&lt;a name="rest_code_120ad6fcccc945d4aae990140e142e53-14"&gt;&lt;/a&gt;&amp;gt;&amp;gt; sudo reboot
+&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;经过反复试验，RemixOS总是卡在开机的Logo画面上，2年前，我在同一个笔记本上安装RemixOS时是正常进入系统的。这次放了两个小时都没有进去，也没有任何提示信息……目前估计是系统镜像的问题，网上提到同样问题的人也很多……当前系统的版本是B2016112101。&lt;/p&gt;
+&lt;p&gt;如果有哪位大神解决了这个问题，可以顺便告诉我一下，联系方式在“联系我” &lt;a class="reference external" href="https://codinglonglong.github.io/posts/lian-xi-wo/"&gt;https://codinglonglong.github.io/posts/lian-xi-wo/&lt;/a&gt; 页面中。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1、(hd0,3)指的是第0号硬盘的第3号分区。&lt;/p&gt;
+&lt;p&gt;2、引导文件不要轻易加空格。&lt;/p&gt;&lt;/div&gt;</description><category>Deepin</category><category>RemixOS</category><guid>https://codinglonglong.github.io/posts/an-zhuang-deepinhe-remixosshuang-xi-tong/</guid><pubDate>Sun, 21 May 2017 04:08:11 GMT</pubDate></item><item><title>openSUSE安装nodejs</title><link>https://codinglonglong.github.io/posts/opensusean-zhuang-nodejs/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、下载源码。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;pre class="literal-block"&gt;
 &amp;gt;&amp;gt; wget https://nodejs.org/dist/v6.10.1/node-v6.10.1-linux-x64.tar.gz

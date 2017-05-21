@@ -43,11 +43,11 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_linux.xml</loc>
-  <lastmod>2017-04-10T04:03:00Z</lastmod>
+  <lastmod>2017-05-21T06:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_python.xml</loc>
-  <lastmod>2017-05-17T08:59:00Z</lastmod>
+  <lastmod>2017-05-17T15:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_raspberry.xml</loc>
@@ -75,7 +75,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_za-wen.xml</loc>
-  <lastmod>2017-05-14T05:40:00Z</lastmod>
+  <lastmod>2017-05-21T06:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/dan-li-mo-shi.xml</loc>
@@ -84,6 +84,10 @@
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/decorator.xml</loc>
   <lastmod>2017-04-10T04:03:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://codinglonglong.github.io/categories/deepin.xml</loc>
+  <lastmod>2017-05-21T06:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/docker.xml</loc>
@@ -187,7 +191,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/python.xml</loc>
-  <lastmod>2017-05-17T08:59:00Z</lastmod>
+  <lastmod>2017-05-17T15:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/raspberry.xml</loc>
@@ -200,6 +204,10 @@
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/react.xml</loc>
   <lastmod>2017-04-10T04:03:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://codinglonglong.github.io/categories/remixos.xml</loc>
+  <lastmod>2017-05-21T06:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/ri-yu.xml</loc>
@@ -267,11 +275,11 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/za-wen.xml</loc>
-  <lastmod>2017-05-14T05:40:00Z</lastmod>
+  <lastmod>2017-05-21T06:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/zeromq.xml</loc>
-  <lastmod>2017-05-17T08:59:00Z</lastmod>
+  <lastmod>2017-05-17T15:00:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/galleries/rss.xml</loc>
@@ -279,10 +287,10 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/rss.xml</loc>
-  <lastmod>2017-05-17T08:59:00Z</lastmod>
+  <lastmod>2017-05-21T06:14:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/sitemap.xml</loc>
-  <lastmod>2017-05-17T08:59:00Z</lastmod>
+  <lastmod>2017-05-21T06:16:00Z</lastmod>
  </sitemap>
 </sitemapindex>

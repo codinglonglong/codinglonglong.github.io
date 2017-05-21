@@ -24,7 +24,7 @@ body{
     font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
 }
 </style>
-<link rel="prefetch" href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/" type="text/html">
+<link rel="prefetch" href="posts/an-zhuang-deepinhe-remixosshuang-xi-tong/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -67,6 +67,9 @@ body{
 <a href="posts/you-qing-lian-jie/">友情链接</a>
                 </li>
 <li>
+<a href="posts/lian-xi-wo/">联系我</a>
+                </li>
+<li>
 <a href="rss.xml">RSS 源</a>
 
                 
@@ -86,7 +89,66 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/" class="u-url">ZeroMQ的三种基本通信模型</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/an-zhuang-deepinhe-remixosshuang-xi-tong/" class="u-url">安装Deepin和RemixOS双系统</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/an-zhuang-deepinhe-remixosshuang-xi-tong/" rel="bookmark"><time class="published dt-published" datetime="2017-05-21T12:08:11+08:00" title="2017-05-21 12:08">2017-05-21 12:08</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>RemixOS是PC版的Android，可以运行一部分Android应用。</p>
+<p>RemixOS下载地址： <a class="reference external" href="https://sourceforge.net/projects/remix-os/">https://sourceforge.net/projects/remix-os/</a></p>
+<p>1、在Windows上，下载RemixOS安装包，解压缩，用Remix_OS_for_PC_Installation_Tool制作RemixOS安装U盘。</p>
+<p>2、将安装U盘插入Deepin所在的笔记本（基于Ubuntu的发行版同理）。</p>
+<p>3、启动Deepin，在根目录下创建文件夹Remix（这里需要管理员权限）。</p>
+<p>4、在Remix中创建目录DATA（用来存放数据）。</p>
+<p>5、把U盘上的内容全部拷贝到Remix目录中。</p>
+<p>6、修改引导文件。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_120ad6fcccc945d4aae990140e142e53-1"></a>&gt;&gt; sudo gedit /etc/grub.d/40_custom
+<a name="rest_code_120ad6fcccc945d4aae990140e142e53-2"></a><span class="c1">#!/bin/sh</span>
+<a name="rest_code_120ad6fcccc945d4aae990140e142e53-3"></a><span class="nb">exec</span> tail -n +3 <span class="nv">$0</span>
+<a name="rest_code_120ad6fcccc945d4aae990140e142e53-4"></a><span class="c1"># This file provides an easy way to add custom menu entries.  Simply type the</span>
+<a name="rest_code_120ad6fcccc945d4aae990140e142e53-5"></a><span class="c1"># menu entries you want to add after this comment.  Be careful not to change</span>
+<a name="rest_code_120ad6fcccc945d4aae990140e142e53-6"></a><span class="c1"># the 'exec tail' line above.</span>
+<a name="rest_code_120ad6fcccc945d4aae990140e142e53-7"></a>menuentry <span class="s1">'Remix OS For PC'</span> --class android-x86<span class="o">{</span>
+<a name="rest_code_120ad6fcccc945d4aae990140e142e53-8"></a>    <span class="nb">set</span> <span class="nv">root</span><span class="o">=(</span>hd0,3<span class="o">)</span>
+<a name="rest_code_120ad6fcccc945d4aae990140e142e53-9"></a>    linux /Remix/kernel <span class="nv">root</span><span class="o">=</span>/dev/sda3/Remix androidboot.hardware<span class="o">=</span>remix_cn_x86_64 androidboot.selinux<span class="o">=</span>permissive quiet <span class="nv">DATA</span><span class="o">=</span>/Remix/DATA <span class="nv">SRC</span><span class="o">=</span>/Remix nomodeset
+<a name="rest_code_120ad6fcccc945d4aae990140e142e53-10"></a>    initrd /Remix/initrd.img
+<a name="rest_code_120ad6fcccc945d4aae990140e142e53-11"></a><span class="o">}</span>
+<a name="rest_code_120ad6fcccc945d4aae990140e142e53-12"></a>&gt;&gt; sudo grub-install 40_custom
+<a name="rest_code_120ad6fcccc945d4aae990140e142e53-13"></a>&gt;&gt; sudo update-grub
+<a name="rest_code_120ad6fcccc945d4aae990140e142e53-14"></a>&gt;&gt; sudo reboot
+</pre>
+</blockquote>
+<p>经过反复试验，RemixOS总是卡在开机的Logo画面上，2年前，我在同一个笔记本上安装RemixOS时是正常进入系统的。这次放了两个小时都没有进去，也没有任何提示信息……目前估计是系统镜像的问题，网上提到同样问题的人也很多……当前系统的版本是B2016112101。</p>
+<p>如果有哪位大神解决了这个问题，可以顺便告诉我一下，联系方式在“联系我” <a class="reference external" href="https://codinglonglong.github.io/posts/lian-xi-wo/">https://codinglonglong.github.io/posts/lian-xi-wo/</a> 页面中。</p>
+<p><strong>注意</strong></p>
+<p>1、(hd0,3)指的是第0号硬盘的第3号分区。</p>
+<p>2、引导文件不要轻易加空格。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/lian-xi-wo/" class="u-url">联系我</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/lian-xi-wo/" rel="bookmark"><time class="published dt-published" datetime="2017-05-21T11:00:33+08:00" title="2017-05-21 11:00">2017-05-21 11:00</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p><strong>我是谁不重要，重要的是我活过……</strong></p>
+<p>我是 <strong>写程序的龙龙</strong> ，邮箱地址： <strong>codinglonglong@126.com</strong> 。</p>
+<p>喜欢编程，做过网站，用过爬虫，研究过大数据，在个性化推荐上发过Paper……</p>
+<p>喜欢外语，很少交流，做开发不能不看英文，看动漫不能不学日语……</p>
+<p>喜欢音乐，学习钢琴，一只手很流畅，两只手正在练……</p>
+<p>喜欢围棋，入门十年，现在依然很菜……</p>
+<p>喜欢的事情还很多， <strong>就像孩子一样，充满着对这个世界的未知和好奇，并且很享受这种状态，因为总可以找到下一步的路</strong> ……</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/" class="u-url">ZeroMQ的三种基本通信模型</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
@@ -455,162 +517,6 @@ body{
 <p>一个月的业余时间，终于把标日初级上册复习完了……学了好几年的日语，还在标日初级上册打转……真是无语……这次争取花几年业余时间把N2考下来，学外语总得有个目标，否则很难进步，总是在基本对话上来回反复……</p>
 <p>钢琴也刚刚学完小汤的前两册……少儿水平……不过终于从一只手上升为两只手了……</p>
 <p>放了一个月的各种开发环境都不是最新的了，今天升级了一下各个开发工具，再次回到平淡的技术学习中……Linux、Python、JavaScript、数据分析、个性化推荐……“别跟我提精通，技术是个永远都填不满的大坑”……</p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/long-long-kan-ke-nan-6/" class="u-url">龙龙看柯南（6）</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/long-long-kan-ke-nan-6/" rel="bookmark"><time class="published dt-published" datetime="2017-04-10T12:03:30+08:00" title="2017-04-10 12:03">2017-04-10 12:03</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p><strong>句子分析</strong></p>
-<p>あんたの足は、三か月前にもう治ってんだよ！！</p>
-<p>你的脚早在三个月之前就痊愈了！！</p>
-<p><strong>词语分析</strong></p>
-<ol class="arabic simple">
-<li>あんた：(あなた的转音，多对晚辈)你。</li>
-<li>治す（なおす）：[五段动词]医治。</li>
-</ol>
-<hr class="docutils">
-<p><strong>句子分析</strong></p>
-<p>そうですよね？目暮警部．．．</p>
-<p>对吧？目暮警官……</p>
-<p><strong>词语分析</strong></p>
-<ol class="arabic simple">
-<li>目暮警部（めぐれけいぶ）：目暮警官。</li>
-</ol>
-<hr class="docutils">
-<p><strong>句子分析</strong></p>
-<p>観念しろ！！おまえの主治医が、すべて吐いたぞ．．．</p>
-<p>死心吧！！你之前的主治医生早已全坦白了……</p>
-<p><strong>词语分析</strong></p>
-<ol class="arabic simple">
-<li>観念（かんねん）：[三类动词]断念，死心。</li>
-<li>主治医（しゅじい）：主治医师。</li>
-<li>全て（すべて）：全部。</li>
-<li>吐く（はく）：[五段动词]坦白。</li>
-</ol>
-<p><strong>语法分析</strong></p>
-<ol class="arabic simple">
-<li>ぞ结尾，表示叮嘱和提醒对方，和ぜ结尾一样，但语气比ぜ重。</li>
-<li>动词た形表示过去发生的动作。</li>
-</ol>
-<hr class="docutils">
-<p><strong>句子分析</strong></p>
-<p>さあ、さっさと歩け！！トホホ．．．</p>
-<p>快走！！</p>
-<p><strong>词语分析</strong></p>
-<ol class="arabic simple">
-<li>さあ：表示劝诱或催促。</li>
-<li>さっさと：迅速地。</li>
-<li>歩く（あるく）：[五段动词]行走。</li>
-<li>トホホ：难为情、或是感到悲痛的时候所说的话。</li>
-</ol>
-<hr class="docutils">
-<p><strong>句子分析</strong></p>
-<p>いやー、また君の力を借りてしまったな、工藤君！！</p>
-<p>唉呀，又让你帮了忙，工藤新一！！</p>
-<p><strong>词语分析</strong></p>
-<ol class="arabic simple">
-<li>また：又。</li>
-<li>君（きみ）：（男性）你。</li>
-<li>力（ちから）：力量，能力。</li>
-<li>借る（かる）：[五段动词]借。</li>
-<li>仕舞う（しまう）：[五段动词]完成，结束。</li>
-</ol>
-<p><strong>语法分析</strong></p>
-<ol class="arabic simple">
-<li>てしまう表示动作完成、结束。</li>
-</ol>
-<hr class="docutils">
-<p><strong>句子分析</strong></p>
-<p>いつもいつもすまんのー．．．</p>
-<p>总是麻烦你……</p>
-<p><strong>词语分析</strong></p>
-<ol class="arabic simple">
-<li>いつも：总是。</li>
-<li>すまん：对不起，麻烦了。</li>
-</ol>
-<hr class="docutils">
-<p><strong>句子分析</strong></p>
-<p>また難事件があれば、この名探偵工藤新一にご依頼を！！</p>
-<p>如果还有难以解决的案件，就尽管委托我名侦探工藤新一好了！！</p>
-<p><strong>词语分析</strong></p>
-<ol class="arabic simple">
-<li>難事件（なんじけん）：困难的案件。</li>
-<li>ある：[五段动词]存在。</li>
-<li>名探偵（めいたんてい）：名侦探。</li>
-<li>依頼（いらい）：[三类动词]委托。</li>
-</ol>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/" class="u-url">Windows配置Selenium测试环境</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/" rel="bookmark"><time class="published dt-published" datetime="2017-04-06T13:22:14+08:00" title="2017-04-06 13:22">2017-04-06 13:22</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>1、安装Selenium，参考： <a class="reference external" href="https://codinglonglong.github.io/posts/pipshi-yong-guo-nei-yuan/">https://codinglonglong.github.io/posts/pipshi-yong-guo-nei-yuan/</a></p>
-<p>2、下载浏览器驱动。</p>
-<blockquote>
-<ol class="arabic simple">
-<li>IE浏览器： <a class="reference external" href="http://selenium-release.storage.googleapis.com/index.html?path=IE.Driver.Beta/">http://selenium-release.storage.googleapis.com/index.html?path=IE.Driver.Beta/</a>
-</li>
-<li>Firefox浏览器： <a class="reference external" href="https://github.com/mozilla/geckodriver/releases">https://github.com/mozilla/geckodriver/releases</a>
-</li>
-<li>Chrome浏览器： <a class="reference external" href="https://sites.google.com/a/chromium.org/chromedriver/downloads">https://sites.google.com/a/chromium.org/chromedriver/downloads</a>
-</li>
-<li>Edge浏览器： <a class="reference external" href="https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/">https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/</a>
-</li>
-</ol>
-</blockquote>
-<p>3、把上一步中的驱动放到系统可执行目录，或者将该驱动的目录加入系统环境变量。</p>
-<p>4、编写代码：</p>
-<blockquote>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_ea5d0b78b868405d9cf51acd92b394d1-1"> 1</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_ea5d0b78b868405d9cf51acd92b394d1-2"> 2</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_ea5d0b78b868405d9cf51acd92b394d1-3"> 3</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_ea5d0b78b868405d9cf51acd92b394d1-4"> 4</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_ea5d0b78b868405d9cf51acd92b394d1-5"> 5</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_ea5d0b78b868405d9cf51acd92b394d1-6"> 6</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_ea5d0b78b868405d9cf51acd92b394d1-7"> 7</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_ea5d0b78b868405d9cf51acd92b394d1-8"> 8</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_ea5d0b78b868405d9cf51acd92b394d1-9"> 9</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_ea5d0b78b868405d9cf51acd92b394d1-10">10</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_ea5d0b78b868405d9cf51acd92b394d1-11">11</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_ea5d0b78b868405d9cf51acd92b394d1-12">12</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_ea5d0b78b868405d9cf51acd92b394d1-13">13</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_ea5d0b78b868405d9cf51acd92b394d1-14">14</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_ea5d0b78b868405d9cf51acd92b394d1-15">15</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_ea5d0b78b868405d9cf51acd92b394d1-16">16</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-1"></a><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-2"></a>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-3"></a><span class="n">browser1</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Firefox</span><span class="p">()</span>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-4"></a><span class="n">browser1</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://codinglonglong.github.io/"</span><span class="p">)</span>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-5"></a>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-6"></a>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-7"></a><span class="n">browser2</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-8"></a><span class="n">browser2</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://codinglonglong.github.io/"</span><span class="p">)</span>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-9"></a>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-10"></a>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-11"></a><span class="n">browser3</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Edge</span><span class="p">()</span>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-12"></a><span class="n">browser3</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://codinglonglong.github.io/"</span><span class="p">)</span>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-13"></a>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-14"></a>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-15"></a><span class="n">browser4</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Ie</span><span class="p">()</span>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-16"></a><span class="n">browser4</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://codinglonglong.github.io/"</span><span class="p">)</span>
-</pre></td>
-</tr></table>
-</blockquote>
-<p>5、运行代码即可自动打开浏览器。</p>
-<p><strong>Selenium文档</strong>: <a class="reference external" href="https://seleniumhq.github.io/selenium/docs/api/py/api.html">https://seleniumhq.github.io/selenium/docs/api/py/api.html</a></p>
 </div>
     </div>
     </article>
