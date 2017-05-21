@@ -42,9 +42,11 @@ RemixOS下载地址： https://sourceforge.net/projects/remix-os/
         >> sudo reboot
 
 
-经过反复试验，RemixOS总是卡在开机的Logo画面上，2年前，我在同一个笔记本上安装RemixOS时是正常进入系统的。这次放了两个小时都没有进去，也没有任何提示信息……目前估计是系统镜像的问题，网上提到同样问题的人也很多……当前系统的版本是B2016112101。
+经过反复试验，RemixOS总是卡在开机的Logo画面上，两年前，我在同一个笔记本上安装RemixOS时是正常进入系统的。这次放了两个小时都没有进去，也没有任何提示信息……目前估计是系统镜像的问题，网上提到同样问题的人也很多……当前系统的版本是B2016112101。
 
-如果有哪位大神解决了这个问题，可以顺便告诉我一下，联系方式在“联系我” https://codinglonglong.github.io/posts/lian-xi-wo/ 页面中。
+如果有哪位大神解决了这个问题，可以顺便告诉我一下，非常感谢。
+
+联系方式在“联系我” https://codinglonglong.github.io/posts/lian-xi-wo/ 页面中。
 
 
 **注意**

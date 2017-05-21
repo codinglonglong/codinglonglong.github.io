@@ -7,23 +7,24 @@
 <p>5、把U盘上的内容全部拷贝到Remix目录中。</p>
 <p>6、修改引导文件。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_120ad6fcccc945d4aae990140e142e53-1"></a>&gt;&gt; sudo gedit /etc/grub.d/40_custom
-<a name="rest_code_120ad6fcccc945d4aae990140e142e53-2"></a><span class="c1">#!/bin/sh</span>
-<a name="rest_code_120ad6fcccc945d4aae990140e142e53-3"></a><span class="nb">exec</span> tail -n +3 <span class="nv">$0</span>
-<a name="rest_code_120ad6fcccc945d4aae990140e142e53-4"></a><span class="c1"># This file provides an easy way to add custom menu entries.  Simply type the</span>
-<a name="rest_code_120ad6fcccc945d4aae990140e142e53-5"></a><span class="c1"># menu entries you want to add after this comment.  Be careful not to change</span>
-<a name="rest_code_120ad6fcccc945d4aae990140e142e53-6"></a><span class="c1"># the &#39;exec tail&#39; line above.</span>
-<a name="rest_code_120ad6fcccc945d4aae990140e142e53-7"></a>menuentry <span class="s1">&#39;Remix OS For PC&#39;</span> --class android-x86<span class="o">{</span>
-<a name="rest_code_120ad6fcccc945d4aae990140e142e53-8"></a>    <span class="nb">set</span> <span class="nv">root</span><span class="o">=(</span>hd0,3<span class="o">)</span>
-<a name="rest_code_120ad6fcccc945d4aae990140e142e53-9"></a>    linux /Remix/kernel <span class="nv">root</span><span class="o">=</span>/dev/sda3/Remix androidboot.hardware<span class="o">=</span>remix_cn_x86_64 androidboot.selinux<span class="o">=</span>permissive quiet <span class="nv">DATA</span><span class="o">=</span>/Remix/DATA <span class="nv">SRC</span><span class="o">=</span>/Remix nomodeset
-<a name="rest_code_120ad6fcccc945d4aae990140e142e53-10"></a>    initrd /Remix/initrd.img
-<a name="rest_code_120ad6fcccc945d4aae990140e142e53-11"></a><span class="o">}</span>
-<a name="rest_code_120ad6fcccc945d4aae990140e142e53-12"></a>&gt;&gt; sudo grub-install 40_custom
-<a name="rest_code_120ad6fcccc945d4aae990140e142e53-13"></a>&gt;&gt; sudo update-grub
-<a name="rest_code_120ad6fcccc945d4aae990140e142e53-14"></a>&gt;&gt; sudo reboot
+<pre class="code bash"><a name="rest_code_6f3cea91715f458783c02aa70d9e6ead-1"></a>&gt;&gt; sudo gedit /etc/grub.d/40_custom
+<a name="rest_code_6f3cea91715f458783c02aa70d9e6ead-2"></a><span class="c1">#!/bin/sh</span>
+<a name="rest_code_6f3cea91715f458783c02aa70d9e6ead-3"></a><span class="nb">exec</span> tail -n +3 <span class="nv">$0</span>
+<a name="rest_code_6f3cea91715f458783c02aa70d9e6ead-4"></a><span class="c1"># This file provides an easy way to add custom menu entries.  Simply type the</span>
+<a name="rest_code_6f3cea91715f458783c02aa70d9e6ead-5"></a><span class="c1"># menu entries you want to add after this comment.  Be careful not to change</span>
+<a name="rest_code_6f3cea91715f458783c02aa70d9e6ead-6"></a><span class="c1"># the &#39;exec tail&#39; line above.</span>
+<a name="rest_code_6f3cea91715f458783c02aa70d9e6ead-7"></a>menuentry <span class="s1">&#39;Remix OS For PC&#39;</span> --class android-x86<span class="o">{</span>
+<a name="rest_code_6f3cea91715f458783c02aa70d9e6ead-8"></a>    <span class="nb">set</span> <span class="nv">root</span><span class="o">=(</span>hd0,3<span class="o">)</span>
+<a name="rest_code_6f3cea91715f458783c02aa70d9e6ead-9"></a>    linux /Remix/kernel <span class="nv">root</span><span class="o">=</span>/dev/sda3/Remix androidboot.hardware<span class="o">=</span>remix_cn_x86_64 androidboot.selinux<span class="o">=</span>permissive quiet <span class="nv">DATA</span><span class="o">=</span>/Remix/DATA <span class="nv">SRC</span><span class="o">=</span>/Remix nomodeset
+<a name="rest_code_6f3cea91715f458783c02aa70d9e6ead-10"></a>    initrd /Remix/initrd.img
+<a name="rest_code_6f3cea91715f458783c02aa70d9e6ead-11"></a><span class="o">}</span>
+<a name="rest_code_6f3cea91715f458783c02aa70d9e6ead-12"></a>&gt;&gt; sudo grub-install 40_custom
+<a name="rest_code_6f3cea91715f458783c02aa70d9e6ead-13"></a>&gt;&gt; sudo update-grub
+<a name="rest_code_6f3cea91715f458783c02aa70d9e6ead-14"></a>&gt;&gt; sudo reboot
 </pre></blockquote>
-<p>经过反复试验，RemixOS总是卡在开机的Logo画面上，2年前，我在同一个笔记本上安装RemixOS时是正常进入系统的。这次放了两个小时都没有进去，也没有任何提示信息……目前估计是系统镜像的问题，网上提到同样问题的人也很多……当前系统的版本是B2016112101。</p>
-<p>如果有哪位大神解决了这个问题，可以顺便告诉我一下，联系方式在“联系我” <a class="reference external" href="https://codinglonglong.github.io/posts/lian-xi-wo/">https://codinglonglong.github.io/posts/lian-xi-wo/</a> 页面中。</p>
+<p>经过反复试验，RemixOS总是卡在开机的Logo画面上，两年前，我在同一个笔记本上安装RemixOS时是正常进入系统的。这次放了两个小时都没有进去，也没有任何提示信息……目前估计是系统镜像的问题，网上提到同样问题的人也很多……当前系统的版本是B2016112101。</p>
+<p>如果有哪位大神解决了这个问题，可以顺便告诉我一下，非常感谢。</p>
+<p>联系方式在“联系我” <a class="reference external" href="https://codinglonglong.github.io/posts/lian-xi-wo/">https://codinglonglong.github.io/posts/lian-xi-wo/</a> 页面中。</p>
 <p><strong>注意</strong></p>
 <p>1、(hd0,3)指的是第0号硬盘的第3号分区。</p>
 <p>2、引导文件不要轻易加空格。</p>
