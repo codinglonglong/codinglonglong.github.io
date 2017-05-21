@@ -24,7 +24,7 @@ body{
     font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
 }
 </style>
-<link rel="prefetch" href="posts/ji-yu-mqttde-xiao-xi-tui-song/" type="text/html">
+<link rel="prefetch" href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -89,7 +89,93 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/ji-yu-mqttde-xiao-xi-tui-song/" class="u-url">基于mqtt的消息推送</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/" class="u-url">基于mqtt的json格式消息推送</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/" rel="bookmark"><time class="published dt-published" datetime="2017-05-21T18:47:55+08:00" title="2017-05-21 18:47">2017-05-21 18:47</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>基于文章 <a class="reference external" href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/">https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/</a> ，我们进一步改进测试程序。</p>
+<p><strong>t2上</strong></p>
+<p>编写并启动消息接收端。</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_8af2de0583974f4db87202d5ca37e997-1"> 1</a>
+<a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_8af2de0583974f4db87202d5ca37e997-2"> 2</a>
+<a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_8af2de0583974f4db87202d5ca37e997-3"> 3</a>
+<a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_8af2de0583974f4db87202d5ca37e997-4"> 4</a>
+<a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_8af2de0583974f4db87202d5ca37e997-5"> 5</a>
+<a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_8af2de0583974f4db87202d5ca37e997-6"> 6</a>
+<a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_8af2de0583974f4db87202d5ca37e997-7"> 7</a>
+<a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_8af2de0583974f4db87202d5ca37e997-8"> 8</a>
+<a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_8af2de0583974f4db87202d5ca37e997-9"> 9</a>
+<a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_8af2de0583974f4db87202d5ca37e997-10">10</a>
+<a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_8af2de0583974f4db87202d5ca37e997-11">11</a>
+<a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_8af2de0583974f4db87202d5ca37e997-12">12</a>
+<a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_8af2de0583974f4db87202d5ca37e997-13">13</a>
+<a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_8af2de0583974f4db87202d5ca37e997-14">14</a>
+<a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_8af2de0583974f4db87202d5ca37e997-15">15</a>
+<a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_8af2de0583974f4db87202d5ca37e997-16">16</a>
+<a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_8af2de0583974f4db87202d5ca37e997-17">17</a>
+<a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_8af2de0583974f4db87202d5ca37e997-18">18</a>
+<a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_8af2de0583974f4db87202d5ca37e997-19">19</a>
+<a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_8af2de0583974f4db87202d5ca37e997-20">20</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_8af2de0583974f4db87202d5ca37e997-1"></a><span class="kn">import</span> <span class="nn">paho.mqtt.client</span> <span class="kn">as</span> <span class="nn">mqtt</span>
+<a name="rest_code_8af2de0583974f4db87202d5ca37e997-2"></a><span class="kn">import</span> <span class="nn">json</span>
+<a name="rest_code_8af2de0583974f4db87202d5ca37e997-3"></a>
+<a name="rest_code_8af2de0583974f4db87202d5ca37e997-4"></a><span class="k">def</span> <span class="nf">on_connect</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">userdata</span><span class="p">,</span> <span class="n">flags</span><span class="p">,</span> <span class="n">rc</span><span class="p">):</span>
+<a name="rest_code_8af2de0583974f4db87202d5ca37e997-5"></a>    <span class="n">client</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="s2">"test"</span><span class="p">)</span>
+<a name="rest_code_8af2de0583974f4db87202d5ca37e997-6"></a>
+<a name="rest_code_8af2de0583974f4db87202d5ca37e997-7"></a><span class="k">def</span> <span class="nf">on_message</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">userdata</span><span class="p">,</span> <span class="n">msg</span><span class="p">):</span>
+<a name="rest_code_8af2de0583974f4db87202d5ca37e997-8"></a>    <span class="k">print</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">topic</span> <span class="o">+</span> <span class="s2">" "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">payload</span><span class="p">))</span>
+<a name="rest_code_8af2de0583974f4db87202d5ca37e997-9"></a>    <span class="n">message</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">msg</span><span class="o">.</span><span class="n">payload</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">"utf-8"</span><span class="p">))</span>
+<a name="rest_code_8af2de0583974f4db87202d5ca37e997-10"></a>    <span class="k">print</span><span class="p">(</span><span class="n">message</span><span class="p">[</span><span class="s2">"1"</span><span class="p">])</span>
+<a name="rest_code_8af2de0583974f4db87202d5ca37e997-11"></a>    <span class="k">print</span><span class="p">(</span><span class="n">message</span><span class="p">[</span><span class="s2">"2"</span><span class="p">])</span>
+<a name="rest_code_8af2de0583974f4db87202d5ca37e997-12"></a>
+<a name="rest_code_8af2de0583974f4db87202d5ca37e997-13"></a><span class="n">client</span> <span class="o">=</span> <span class="n">mqtt</span><span class="o">.</span><span class="n">Client</span><span class="p">()</span>
+<a name="rest_code_8af2de0583974f4db87202d5ca37e997-14"></a><span class="n">client</span><span class="o">.</span><span class="n">on_connect</span> <span class="o">=</span> <span class="n">on_connect</span>
+<a name="rest_code_8af2de0583974f4db87202d5ca37e997-15"></a><span class="n">client</span><span class="o">.</span><span class="n">on_message</span> <span class="o">=</span> <span class="n">on_message</span>
+<a name="rest_code_8af2de0583974f4db87202d5ca37e997-16"></a><span class="k">try</span><span class="p">:</span>
+<a name="rest_code_8af2de0583974f4db87202d5ca37e997-17"></a>    <span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"172.16.0.111"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">1883</span><span class="p">)</span>
+<a name="rest_code_8af2de0583974f4db87202d5ca37e997-18"></a>    <span class="n">client</span><span class="o">.</span><span class="n">loop_forever</span><span class="p">()</span>
+<a name="rest_code_8af2de0583974f4db87202d5ca37e997-19"></a><span class="k">except</span> <span class="ne">KeyboardInterrupt</span><span class="p">:</span>
+<a name="rest_code_8af2de0583974f4db87202d5ca37e997-20"></a>    <span class="n">client</span><span class="o">.</span><span class="n">disconnect</span><span class="p">()</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p><strong>t3上</strong></p>
+<p>编写并启动消息发送端。</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_fe077e0b8e2249caac9882cc1c9c7c43-1"> 1</a>
+<a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_fe077e0b8e2249caac9882cc1c9c7c43-2"> 2</a>
+<a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_fe077e0b8e2249caac9882cc1c9c7c43-3"> 3</a>
+<a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_fe077e0b8e2249caac9882cc1c9c7c43-4"> 4</a>
+<a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_fe077e0b8e2249caac9882cc1c9c7c43-5"> 5</a>
+<a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_fe077e0b8e2249caac9882cc1c9c7c43-6"> 6</a>
+<a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_fe077e0b8e2249caac9882cc1c9c7c43-7"> 7</a>
+<a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_fe077e0b8e2249caac9882cc1c9c7c43-8"> 8</a>
+<a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_fe077e0b8e2249caac9882cc1c9c7c43-9"> 9</a>
+<a href="posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_fe077e0b8e2249caac9882cc1c9c7c43-10">10</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_fe077e0b8e2249caac9882cc1c9c7c43-1"></a><span class="kn">import</span> <span class="nn">paho.mqtt.client</span> <span class="kn">as</span> <span class="nn">mqtt</span>
+<a name="rest_code_fe077e0b8e2249caac9882cc1c9c7c43-2"></a><span class="kn">import</span> <span class="nn">time</span>
+<a name="rest_code_fe077e0b8e2249caac9882cc1c9c7c43-3"></a><span class="kn">import</span> <span class="nn">json</span>
+<a name="rest_code_fe077e0b8e2249caac9882cc1c9c7c43-4"></a><span class="n">client</span> <span class="o">=</span> <span class="n">mqtt</span><span class="o">.</span><span class="n">Client</span><span class="p">()</span>
+<a name="rest_code_fe077e0b8e2249caac9882cc1c9c7c43-5"></a><span class="n">client</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"172.16.0.111"</span><span class="p">)</span>
+<a name="rest_code_fe077e0b8e2249caac9882cc1c9c7c43-6"></a><span class="n">topic</span> <span class="o">=</span> <span class="s2">"test"</span>
+<a name="rest_code_fe077e0b8e2249caac9882cc1c9c7c43-7"></a><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="s2">"hi"</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="s2">"hihi"</span><span class="p">}</span>
+<a name="rest_code_fe077e0b8e2249caac9882cc1c9c7c43-8"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+<a name="rest_code_fe077e0b8e2249caac9882cc1c9c7c43-9"></a>    <span class="n">client</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="n">topic</span><span class="p">,</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">payload</span><span class="p">))</span>
+<a name="rest_code_fe077e0b8e2249caac9882cc1c9c7c43-10"></a>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></td>
+</tr></table>
+</blockquote>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/ji-yu-mqttde-xiao-xi-tui-song/" class="u-url">基于mqtt的消息推送</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
@@ -592,46 +678,6 @@ body{
 </li>
 </ol>
 </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/android-studiolian-jie-ye-shen-mo-ni-qi-jin-xing-ce-shi/" class="u-url">Android Studio连接夜神模拟器进行测试</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/android-studiolian-jie-ye-shen-mo-ni-qi-jin-xing-ce-shi/" rel="bookmark"><time class="published dt-published" datetime="2017-05-14T14:40:57+08:00" title="2017-05-14 14:40">2017-05-14 14:40</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>在之前的文章 <a class="reference external" href="https://codinglonglong.github.io/posts/android-studiolian-jie-droid4xdiao-shi-app/">https://codinglonglong.github.io/posts/android-studiolian-jie-droid4xdiao-shi-app/</a> 中，我们已经成功使用Droid4X进行APP开发测试，这次我们使用夜神模拟器完成同样的工作。</p>
-<ol class="arabic">
-<li>
-<p class="first">安装夜神模拟器。</p>
-</li>
-<li>
-<p class="first">添加夜神模拟器的可执行路径到系统路径，我的在</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_c2db0028cfdd48a7b99e12296ea68823-1"></a>C:<span class="se">\P</span>rogram Files<span class="se">\n</span>ox<span class="se">\N</span>ox<span class="se">\b</span>in
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">启动夜神模拟器服务。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_95350a87ce724e47abeec641d5857a2f-1"></a>&gt;&gt; nox_adb.exe connect 127.0.0.1:62001
-</pre>
-</blockquote>
-<p>出现</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_4185becb3a53453882b28e0e3f3825ba-1"></a>* daemon started successfully *
-<a name="rest_code_4185becb3a53453882b28e0e3f3825ba-2"></a> connected to 127.0.0.1:62001
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">在Android Studio中启动调试即可。</p>
-</li>
-</ol>
-</div>
-    </div>
     </article>
 </div>
 

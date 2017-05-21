@@ -89,7 +89,47 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/hui-gui-ping-dan/" class="u-url">回归平淡</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/android-studiolian-jie-ye-shen-mo-ni-qi-jin-xing-ce-shi/" class="u-url">Android Studio连接夜神模拟器进行测试</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/android-studiolian-jie-ye-shen-mo-ni-qi-jin-xing-ce-shi/" rel="bookmark"><time class="published dt-published" datetime="2017-05-14T14:40:57+08:00" title="2017-05-14 14:40">2017-05-14 14:40</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>在之前的文章 <a class="reference external" href="https://codinglonglong.github.io/posts/android-studiolian-jie-droid4xdiao-shi-app/">https://codinglonglong.github.io/posts/android-studiolian-jie-droid4xdiao-shi-app/</a> 中，我们已经成功使用Droid4X进行APP开发测试，这次我们使用夜神模拟器完成同样的工作。</p>
+<ol class="arabic">
+<li>
+<p class="first">安装夜神模拟器。</p>
+</li>
+<li>
+<p class="first">添加夜神模拟器的可执行路径到系统路径，我的在</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_c2db0028cfdd48a7b99e12296ea68823-1"></a>C:<span class="se">\P</span>rogram Files<span class="se">\n</span>ox<span class="se">\N</span>ox<span class="se">\b</span>in
+</pre>
+</blockquote>
+</li>
+<li>
+<p class="first">启动夜神模拟器服务。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_95350a87ce724e47abeec641d5857a2f-1"></a>&gt;&gt; nox_adb.exe connect 127.0.0.1:62001
+</pre>
+</blockquote>
+<p>出现</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_4185becb3a53453882b28e0e3f3825ba-1"></a>* daemon started successfully *
+<a name="rest_code_4185becb3a53453882b28e0e3f3825ba-2"></a> connected to 127.0.0.1:62001
+</pre>
+</blockquote>
+</li>
+<li>
+<p class="first">在Android Studio中启动调试即可。</p>
+</li>
+</ol>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/hui-gui-ping-dan/" class="u-url">回归平淡</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
