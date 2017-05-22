@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about 游戏，贪食蛇)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/you-xi-tan-shi-she.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Mon, 22 May 2017 13:54:31 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>基于ActionScript3.0的单机版双人对战贪食蛇</title><link>https://codinglonglong.github.io/posts/ji-yu-actionscript30de-dan-ji-ban-shuang-ren-dui-zhan-tan-shi-she/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;基于ActionScript3.0的单机版双人对战贪食蛇，规则如下：&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;左侧玩家用ASDW控制方向，右侧玩家用方向键控制方向&lt;/li&gt;
+&lt;li&gt;吃到食物后，自身长度加一&lt;/li&gt;
+&lt;li&gt;撞到对方的身子，自己死；撞到对方的尾巴，对方死；撞到头忽略&lt;/li&gt;
+&lt;li&gt;撞到自己忽略&lt;/li&gt;
+&lt;li&gt;撞到墙，自己死&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;游戏源码地址： &lt;a class="reference external" href="https://github.com/codinglonglong/FightingSnake"&gt;https://github.com/codinglonglong/FightingSnake&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;游戏下载地址： &lt;a class="reference external" href="https://github.com/codinglonglong/FightingSnake/raw/master/%E8%B4%AA%E9%A3%9F%E8%9B%87%E5%AF%B9%E6%88%98.zip"&gt;https://github.com/codinglonglong/FightingSnake/raw/master/%E8%B4%AA%E9%A3%9F%E8%9B%87%E5%AF%B9%E6%88%98.zip&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</description><category>ActionScript3.0</category><category>Flash</category><category>游戏，贪食蛇</category><guid>https://codinglonglong.github.io/posts/ji-yu-actionscript30de-dan-ji-ban-shuang-ren-dui-zhan-tan-shi-she/</guid><pubDate>Mon, 22 May 2017 13:06:37 GMT</pubDate></item></channel></rss>
