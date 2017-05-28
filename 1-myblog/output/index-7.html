@@ -415,6 +415,14 @@ export PATH=$PATH:/root/node-v7.7.2-linux-x64/bin/
 </pre>
 </blockquote>
 <p>5、主系统访问 <a class="reference external" href="http://192.168.99.100:8080">http://192.168.99.100:8080</a> 即可。</p>
+<p><strong>注意</strong></p>
+<p>如果容器如下这样启动的话：</p>
+<pre class="literal-block">
+&gt;&gt; docker run --name t1 -i -t -p 10001:8080  ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
+</pre>
+<p>访问 <a class="reference external" href="http://192.168.99.100:10001">http://192.168.99.100:10001</a> 才可以看到虚拟机里的网站。</p>
+<p>虚拟机里的网站用8080端口，那么主系统需要访问192.168.99.100的10001端口。</p>
+<p>192.168.99.100是在docker终端启动时显示出来的。</p>
 </div>
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/tong-guo-poliposhi-xian-httphe-httpsdai-li/" class="u-url">通过polipo实现http和https代理</a></h1>

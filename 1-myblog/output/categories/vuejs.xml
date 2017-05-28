@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about vuejs)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/vuejs.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sun, 28 May 2017 01:52:22 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Docker配置weex开发环境</title><link>https://codinglonglong.github.io/posts/dockerpei-zhi-weexkai-fa-huan-jing/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、安装weex。&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about vuejs)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/vuejs.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sun, 28 May 2017 04:00:22 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Docker配置weex开发环境</title><link>https://codinglonglong.github.io/posts/dockerpei-zhi-weexkai-fa-huan-jing/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、安装weex。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;pre class="literal-block"&gt;
 &amp;gt;&amp;gt; npm install -g cnpm --registry=https://registry.npm.taobao.org
@@ -62,7 +62,15 @@ export PATH=$PATH:/root/node-v7.7.2-linux-x64/bin/
 &amp;gt;&amp;gt; npm run dev
 &lt;/pre&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;5、主系统访问 &lt;a class="reference external" href="http://192.168.99.100:8080"&gt;http://192.168.99.100:8080&lt;/a&gt; 即可。&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><category>vuejs</category><guid>https://codinglonglong.github.io/posts/dockerpei-zhi-vuejskai-fa-huan-jing/</guid><pubDate>Mon, 13 Mar 2017 12:36:24 GMT</pubDate></item><item><title>小家手帐网页版基本完成</title><link>https://codinglonglong.github.io/posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;利用不到一个月的周末业余时间，使用刚刚接触不久的vuejs，基本完成了小家手帐的网页版。&lt;/p&gt;
+&lt;p&gt;5、主系统访问 &lt;a class="reference external" href="http://192.168.99.100:8080"&gt;http://192.168.99.100:8080&lt;/a&gt; 即可。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果容器如下这样启动的话：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; docker run --name t1 -i -t -p 10001:8080  ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
+&lt;/pre&gt;
+&lt;p&gt;访问 &lt;a class="reference external" href="http://192.168.99.100:10001"&gt;http://192.168.99.100:10001&lt;/a&gt; 才可以看到虚拟机里的网站。&lt;/p&gt;
+&lt;p&gt;虚拟机里的网站用8080端口，那么主系统需要访问192.168.99.100的10001端口。&lt;/p&gt;
+&lt;p&gt;192.168.99.100是在docker终端启动时显示出来的。&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><category>vuejs</category><guid>https://codinglonglong.github.io/posts/dockerpei-zhi-vuejskai-fa-huan-jing/</guid><pubDate>Mon, 13 Mar 2017 12:36:24 GMT</pubDate></item><item><title>小家手帐网页版基本完成</title><link>https://codinglonglong.github.io/posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;利用不到一个月的周末业余时间，使用刚刚接触不久的vuejs，基本完成了小家手帐的网页版。&lt;/p&gt;
 &lt;p&gt;代码发布到了 &lt;a class="reference external" href="https://github.com/codinglonglong/homebankservice"&gt;https://github.com/codinglonglong/homebankservice&lt;/a&gt; 和 &lt;a class="reference external" href="https://github.com/codinglonglong/homebankweb"&gt;https://github.com/codinglonglong/homebankweb&lt;/a&gt; 这两个代码仓库。&lt;/p&gt;
 &lt;p&gt;服务端主要涉及的相关技术点包括：&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
