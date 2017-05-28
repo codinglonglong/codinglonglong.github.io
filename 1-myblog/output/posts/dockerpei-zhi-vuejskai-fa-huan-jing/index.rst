@@ -7,6 +7,10 @@
 .. description: 
 .. type: text
 
+
+**为了防止出现问题，需要先用管理员权限打开Docker终端。**
+
+
 1、安装wget，下载最新版nodejs。
 
     ::
