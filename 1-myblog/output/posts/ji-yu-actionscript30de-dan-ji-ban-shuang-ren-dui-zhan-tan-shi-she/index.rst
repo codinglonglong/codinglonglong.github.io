@@ -1,7 +1,7 @@
 .. title: 基于ActionScript3.0的单机版双人对战贪食蛇
 .. slug: ji-yu-actionscript30de-dan-ji-ban-shuang-ren-dui-zhan-tan-shi-she
 .. date: 2017-05-22 21:06:37 UTC+08:00
-.. tags: ActionScript3.0, 游戏, 贪食蛇, 个人作品， Flash
+.. tags: ActionScript3.0, 游戏, 贪食蛇, 个人作品, Flash
 .. category: 个人作品
 .. link: 
 .. description: 
