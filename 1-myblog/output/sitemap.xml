@@ -7,11 +7,11 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://codinglonglong.github.io/</loc>
-  <lastmod>2017-05-17T08:59:00Z</lastmod>
+  <lastmod>2017-06-14T18:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/2017/</loc>
-  <lastmod>2017-05-14T05:40:00Z</lastmod>
+  <lastmod>2017-06-14T18:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/2017/01/</loc>
@@ -34,12 +34,16 @@
   <lastmod>2017-05-14T05:40:00Z</lastmod>
  </url>
  <url>
+  <loc>https://codinglonglong.github.io/2017/06/</loc>
+  <lastmod>2017-06-14T18:03:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://codinglonglong.github.io/archive.html</loc>
-  <lastmod>2017-05-28T13:34:00Z</lastmod>
+  <lastmod>2017-06-14T18:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/</loc>
-  <lastmod>2017-05-28T13:30:00Z</lastmod>
+  <lastmod>2017-06-14T18:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/actionscript30/</loc>
@@ -120,6 +124,10 @@
  <url>
   <loc>https://codinglonglong.github.io/categories/cat_za-wen/</loc>
   <lastmod>2017-04-10T04:03:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/da-wen-jian-xia-zai/</loc>
+  <lastmod>2017-06-14T18:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/dan-li-mo-shi/</loc>
@@ -363,7 +371,11 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-10.html</loc>
-  <lastmod>2017-05-28T13:34:00Z</lastmod>
+  <lastmod>2017-06-14T18:03:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/index-11.html</loc>
+  <lastmod>2017-06-14T18:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-2.html</loc>
@@ -412,6 +424,10 @@
  <url>
   <loc>https://codinglonglong.github.io/posts/android-studiolian-jie-ye-shen-mo-ni-qi-jin-xing-ce-shi/</loc>
   <lastmod>2017-05-14T06:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/posts/bai-du-wang-pan-da-wen-jian-pu-tong-xia-zai/</loc>
+  <lastmod>2017-06-14T18:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/could-not-open-a-connection-to-your-authentication-agent/</loc>

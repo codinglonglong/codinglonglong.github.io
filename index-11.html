@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="龙龙的技术博客">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>写程序的龙龙 (old posts, page 11) | 写程序的龙龙</title>
+<link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+<link rel="canonical" href="https://codinglonglong.github.io/index-11.html">
+<link rel="prev" href="." type="text/html">
+<link rel="next" href="index-10.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?26f9e777606d49ebbdbe4df058bd028c";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><style>
+body{
+    font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
+}
+</style>
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://codinglonglong.github.io/">
+
+                <span id="blog-title">写程序的龙龙</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="archive.html">文章存档</a>
+                </li>
+<li>
+<a href="categories/">标签</a>
+                </li>
+<li>
+<a href="posts/hui-dao-zui-chu-de-qi-dian/">回到最初的起点</a>
+                </li>
+<li>
+<a href="categories/cat_ge-ren-zuo-pin/">个人作品</a>
+                </li>
+<li>
+<a href="https://github.com/codinglonglong/">Github</a>
+                </li>
+<li>
+<a href="categories/wo-de-shi-ci/">我的诗词</a>
+                </li>
+<li>
+<a href="posts/you-qing-lian-jie/">友情链接</a>
+                </li>
+<li>
+<a href="posts/lian-xi-wo/">联系我</a>
+                </li>
+<li>
+<a href="rss.xml">RSS 源</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+
+    
+<div class="postindex">
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/" class="u-url">ZeroMQ的三种基本通信模型</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/" rel="bookmark"><time class="published dt-published" datetime="2017-05-17T22:26:54+08:00" title="2017-05-17 22:26">2017-05-17 22:26</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p><strong>安装ZeroMQ的Python支持</strong></p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_e18b9626525c4b429ae0fed274ae7a70-1"></a>apt install python3-pip
+<a name="rest_code_e18b9626525c4b429ae0fed274ae7a70-2"></a>pip3 install pip --upgrade -i http://pypi.doubanio.com/simple/
+<a name="rest_code_e18b9626525c4b429ae0fed274ae7a70-3"></a>pip3 install pyzmq -i http://pypi.doubanio.com/simple/
+</pre>
+</blockquote>
+<p><strong>第一种模型：“请求-回复”模型</strong></p>
+<p>服务端：</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_1e93288e0a804aa9a2e027873aa4b4da-1"> 1</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_1e93288e0a804aa9a2e027873aa4b4da-2"> 2</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_1e93288e0a804aa9a2e027873aa4b4da-3"> 3</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_1e93288e0a804aa9a2e027873aa4b4da-4"> 4</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_1e93288e0a804aa9a2e027873aa4b4da-5"> 5</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_1e93288e0a804aa9a2e027873aa4b4da-6"> 6</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_1e93288e0a804aa9a2e027873aa4b4da-7"> 7</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_1e93288e0a804aa9a2e027873aa4b4da-8"> 8</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_1e93288e0a804aa9a2e027873aa4b4da-9"> 9</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_1e93288e0a804aa9a2e027873aa4b4da-10">10</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_1e93288e0a804aa9a2e027873aa4b4da-11">11</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_1e93288e0a804aa9a2e027873aa4b4da-12">12</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_1e93288e0a804aa9a2e027873aa4b4da-1"></a><span class="kn">import</span> <span class="nn">zmq</span>
+<a name="rest_code_1e93288e0a804aa9a2e027873aa4b4da-2"></a><span class="kn">import</span> <span class="nn">time</span>
+<a name="rest_code_1e93288e0a804aa9a2e027873aa4b4da-3"></a><span class="n">context</span> <span class="o">=</span> <span class="n">zmq</span><span class="o">.</span><span class="n">Context</span><span class="p">()</span>
+<a name="rest_code_1e93288e0a804aa9a2e027873aa4b4da-4"></a><span class="n">socket</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">REP</span><span class="p">)</span>
+<a name="rest_code_1e93288e0a804aa9a2e027873aa4b4da-5"></a><span class="n">socket</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">"tcp://*:5555"</span><span class="p">)</span>
+<a name="rest_code_1e93288e0a804aa9a2e027873aa4b4da-6"></a><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+<a name="rest_code_1e93288e0a804aa9a2e027873aa4b4da-7"></a>    <span class="n">message</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">recv_string</span><span class="p">()</span>
+<a name="rest_code_1e93288e0a804aa9a2e027873aa4b4da-8"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"receive request: "</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+<a name="rest_code_1e93288e0a804aa9a2e027873aa4b4da-9"></a>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="rest_code_1e93288e0a804aa9a2e027873aa4b4da-10"></a>    <span class="n">reply</span> <span class="o">=</span> <span class="s2">"World"</span>
+<a name="rest_code_1e93288e0a804aa9a2e027873aa4b4da-11"></a>    <span class="n">socket</span><span class="o">.</span><span class="n">send_string</span><span class="p">(</span><span class="n">reply</span><span class="p">)</span>
+<a name="rest_code_1e93288e0a804aa9a2e027873aa4b4da-12"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"send reply: "</span><span class="p">,</span> <span class="n">reply</span><span class="p">)</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p>客户端：</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_fd09c4c8d6e14573891e609c9e275de9-1">1</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_fd09c4c8d6e14573891e609c9e275de9-2">2</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_fd09c4c8d6e14573891e609c9e275de9-3">3</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_fd09c4c8d6e14573891e609c9e275de9-4">4</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_fd09c4c8d6e14573891e609c9e275de9-5">5</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_fd09c4c8d6e14573891e609c9e275de9-6">6</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_fd09c4c8d6e14573891e609c9e275de9-7">7</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_fd09c4c8d6e14573891e609c9e275de9-8">8</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_fd09c4c8d6e14573891e609c9e275de9-9">9</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_fd09c4c8d6e14573891e609c9e275de9-1"></a><span class="kn">import</span> <span class="nn">zmq</span>
+<a name="rest_code_fd09c4c8d6e14573891e609c9e275de9-2"></a><span class="n">context</span> <span class="o">=</span> <span class="n">zmq</span><span class="o">.</span><span class="n">Context</span><span class="p">()</span>
+<a name="rest_code_fd09c4c8d6e14573891e609c9e275de9-3"></a><span class="n">socket</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">REQ</span><span class="p">)</span>
+<a name="rest_code_fd09c4c8d6e14573891e609c9e275de9-4"></a><span class="n">socket</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"tcp://172.16.0.111:5555"</span><span class="p">)</span>
+<a name="rest_code_fd09c4c8d6e14573891e609c9e275de9-5"></a><span class="k">for</span> <span class="n">request</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+<a name="rest_code_fd09c4c8d6e14573891e609c9e275de9-6"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"send request: "</span><span class="p">,</span> <span class="n">request</span><span class="p">)</span>
+<a name="rest_code_fd09c4c8d6e14573891e609c9e275de9-7"></a>    <span class="n">socket</span><span class="o">.</span><span class="n">send_string</span><span class="p">(</span><span class="s2">"Hello"</span><span class="p">)</span>
+<a name="rest_code_fd09c4c8d6e14573891e609c9e275de9-8"></a>    <span class="n">message</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">recv_string</span><span class="p">()</span>
+<a name="rest_code_fd09c4c8d6e14573891e609c9e275de9-9"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"receive reply: "</span><span class="p">,</span>  <span class="n">message</span><span class="p">)</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p><strong>第二种模型：“发布-订阅”模型</strong></p>
+<p>服务端：</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-1"> 1</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-2"> 2</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-3"> 3</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-4"> 4</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-5"> 5</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-6"> 6</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-7"> 7</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-8"> 8</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-9"> 9</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-10">10</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-11">11</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-12">12</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-13">13</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-14">14</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-1"></a><span class="kn">import</span> <span class="nn">zmq</span>
+<a name="rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-2"></a><span class="kn">import</span> <span class="nn">time</span>
+<a name="rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-3"></a><span class="kn">from</span> <span class="nn">zmq.utils.strtypes</span> <span class="kn">import</span> <span class="n">asbytes</span>
+<a name="rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-4"></a><span class="n">context</span> <span class="o">=</span> <span class="n">zmq</span><span class="o">.</span><span class="n">Context</span><span class="p">()</span>
+<a name="rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-5"></a><span class="n">socket</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">PUB</span><span class="p">)</span>
+<a name="rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-6"></a><span class="n">socket</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">"tcp://*:5000"</span><span class="p">)</span>
+<a name="rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-7"></a><span class="n">topics</span> <span class="o">=</span> <span class="p">[</span><span class="n">b</span><span class="s2">"a"</span><span class="p">,</span> <span class="n">b</span><span class="s2">"b"</span><span class="p">]</span>
+<a name="rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-8"></a><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+<a name="rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-9"></a>    <span class="n">msg</span> <span class="o">=</span> <span class="s2">"Hello, a"</span>
+<a name="rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-10"></a>    <span class="n">socket</span><span class="o">.</span><span class="n">send_multipart</span><span class="p">([</span><span class="n">topics</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">asbytes</span><span class="p">(</span><span class="n">msg</span><span class="p">)])</span>
+<a name="rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-11"></a>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+<a name="rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-12"></a>    <span class="n">msg</span> <span class="o">=</span> <span class="s2">"Hello, b"</span>
+<a name="rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-13"></a>    <span class="n">socket</span><span class="o">.</span><span class="n">send_multipart</span><span class="p">([</span><span class="n">topics</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">asbytes</span><span class="p">(</span><span class="n">msg</span><span class="p">)])</span>
+<a name="rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-14"></a>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p>客户端：</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_92a07adf3fac41e3b6b608a162b962ae-1"> 1</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_92a07adf3fac41e3b6b608a162b962ae-2"> 2</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_92a07adf3fac41e3b6b608a162b962ae-3"> 3</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_92a07adf3fac41e3b6b608a162b962ae-4"> 4</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_92a07adf3fac41e3b6b608a162b962ae-5"> 5</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_92a07adf3fac41e3b6b608a162b962ae-6"> 6</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_92a07adf3fac41e3b6b608a162b962ae-7"> 7</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_92a07adf3fac41e3b6b608a162b962ae-8"> 8</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_92a07adf3fac41e3b6b608a162b962ae-9"> 9</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_92a07adf3fac41e3b6b608a162b962ae-10">10</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_92a07adf3fac41e3b6b608a162b962ae-1"></a><span class="kn">import</span> <span class="nn">time</span>
+<a name="rest_code_92a07adf3fac41e3b6b608a162b962ae-2"></a><span class="kn">import</span> <span class="nn">zmq</span>
+<a name="rest_code_92a07adf3fac41e3b6b608a162b962ae-3"></a><span class="n">context</span> <span class="o">=</span> <span class="n">zmq</span><span class="o">.</span><span class="n">Context</span><span class="p">()</span>
+<a name="rest_code_92a07adf3fac41e3b6b608a162b962ae-4"></a><span class="n">socket</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">SUB</span><span class="p">)</span>
+<a name="rest_code_92a07adf3fac41e3b6b608a162b962ae-5"></a><span class="n">socket</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"tcp://172.16.0.111:5000"</span><span class="p">)</span>
+<a name="rest_code_92a07adf3fac41e3b6b608a162b962ae-6"></a><span class="n">socket</span><span class="o">.</span><span class="n">setsockopt_string</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">SUBSCRIBE</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span>
+<a name="rest_code_92a07adf3fac41e3b6b608a162b962ae-7"></a><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+<a name="rest_code_92a07adf3fac41e3b6b608a162b962ae-8"></a>    <span class="n">topic</span><span class="p">,</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">recv_multipart</span><span class="p">()</span>
+<a name="rest_code_92a07adf3fac41e3b6b608a162b962ae-9"></a>    <span class="k">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>
+<a name="rest_code_92a07adf3fac41e3b6b608a162b962ae-10"></a>    <span class="k">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p><strong>第三种模型：“平行管道”模型</strong></p>
+<p>服务端：</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_125ddd8c2cef482389e2df185b59043c-1"> 1</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_125ddd8c2cef482389e2df185b59043c-2"> 2</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_125ddd8c2cef482389e2df185b59043c-3"> 3</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_125ddd8c2cef482389e2df185b59043c-4"> 4</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_125ddd8c2cef482389e2df185b59043c-5"> 5</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_125ddd8c2cef482389e2df185b59043c-6"> 6</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_125ddd8c2cef482389e2df185b59043c-7"> 7</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_125ddd8c2cef482389e2df185b59043c-8"> 8</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_125ddd8c2cef482389e2df185b59043c-9"> 9</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_125ddd8c2cef482389e2df185b59043c-10">10</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_125ddd8c2cef482389e2df185b59043c-11">11</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_125ddd8c2cef482389e2df185b59043c-12">12</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_125ddd8c2cef482389e2df185b59043c-13">13</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_125ddd8c2cef482389e2df185b59043c-14">14</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_125ddd8c2cef482389e2df185b59043c-15">15</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_125ddd8c2cef482389e2df185b59043c-16">16</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_125ddd8c2cef482389e2df185b59043c-17">17</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_125ddd8c2cef482389e2df185b59043c-1"></a><span class="kn">import</span> <span class="nn">zmq</span>
+<a name="rest_code_125ddd8c2cef482389e2df185b59043c-2"></a><span class="kn">import</span> <span class="nn">random</span>
+<a name="rest_code_125ddd8c2cef482389e2df185b59043c-3"></a><span class="kn">import</span> <span class="nn">time</span>
+<a name="rest_code_125ddd8c2cef482389e2df185b59043c-4"></a><span class="n">context</span> <span class="o">=</span> <span class="n">zmq</span><span class="o">.</span><span class="n">Context</span><span class="p">()</span>
+<a name="rest_code_125ddd8c2cef482389e2df185b59043c-5"></a><span class="n">sender</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">PUSH</span><span class="p">)</span>
+<a name="rest_code_125ddd8c2cef482389e2df185b59043c-6"></a><span class="n">sender</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">"tcp://*:5000"</span><span class="p">)</span>
+<a name="rest_code_125ddd8c2cef482389e2df185b59043c-7"></a><span class="n">sink</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">PUSH</span><span class="p">)</span>
+<a name="rest_code_125ddd8c2cef482389e2df185b59043c-8"></a><span class="n">sink</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"tcp://172.16.0.113:5001"</span><span class="p">)</span>
+<a name="rest_code_125ddd8c2cef482389e2df185b59043c-9"></a><span class="k">print</span><span class="p">(</span><span class="s2">"Press Any Key to Start"</span><span class="p">)</span>
+<a name="rest_code_125ddd8c2cef482389e2df185b59043c-10"></a><span class="n">_</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<a name="rest_code_125ddd8c2cef482389e2df185b59043c-11"></a><span class="n">sink</span><span class="o">.</span><span class="n">send_string</span><span class="p">(</span><span class="s2">"0"</span><span class="p">)</span>
+<a name="rest_code_125ddd8c2cef482389e2df185b59043c-12"></a><span class="n">totalsec</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="rest_code_125ddd8c2cef482389e2df185b59043c-13"></a><span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+<a name="rest_code_125ddd8c2cef482389e2df185b59043c-14"></a>    <span class="n">workload</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<a name="rest_code_125ddd8c2cef482389e2df185b59043c-15"></a>    <span class="n">totalsec</span> <span class="o">=</span> <span class="n">totalsec</span> <span class="o">+</span> <span class="n">workload</span>
+<a name="rest_code_125ddd8c2cef482389e2df185b59043c-16"></a>    <span class="n">sender</span><span class="o">.</span><span class="n">send_string</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">workload</span><span class="p">))</span>
+<a name="rest_code_125ddd8c2cef482389e2df185b59043c-17"></a><span class="k">print</span><span class="p">(</span><span class="s2">"Total Expected Time: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">totalsec</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"s."</span><span class="p">)</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p>执行端：</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_37439efe24874fe2b183b7fda6a1f35c-1"> 1</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_37439efe24874fe2b183b7fda6a1f35c-2"> 2</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_37439efe24874fe2b183b7fda6a1f35c-3"> 3</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_37439efe24874fe2b183b7fda6a1f35c-4"> 4</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_37439efe24874fe2b183b7fda6a1f35c-5"> 5</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_37439efe24874fe2b183b7fda6a1f35c-6"> 6</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_37439efe24874fe2b183b7fda6a1f35c-7"> 7</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_37439efe24874fe2b183b7fda6a1f35c-8"> 8</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_37439efe24874fe2b183b7fda6a1f35c-9"> 9</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_37439efe24874fe2b183b7fda6a1f35c-10">10</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_37439efe24874fe2b183b7fda6a1f35c-11">11</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_37439efe24874fe2b183b7fda6a1f35c-12">12</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_37439efe24874fe2b183b7fda6a1f35c-1"></a><span class="kn">import</span> <span class="nn">sys</span>
+<a name="rest_code_37439efe24874fe2b183b7fda6a1f35c-2"></a><span class="kn">import</span> <span class="nn">time</span>
+<a name="rest_code_37439efe24874fe2b183b7fda6a1f35c-3"></a><span class="kn">import</span> <span class="nn">zmq</span>
+<a name="rest_code_37439efe24874fe2b183b7fda6a1f35c-4"></a><span class="n">context</span> <span class="o">=</span> <span class="n">zmq</span><span class="o">.</span><span class="n">Context</span><span class="p">()</span>
+<a name="rest_code_37439efe24874fe2b183b7fda6a1f35c-5"></a><span class="n">receiver</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">PULL</span><span class="p">)</span>
+<a name="rest_code_37439efe24874fe2b183b7fda6a1f35c-6"></a><span class="n">receiver</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"tcp://172.16.0.111:5000"</span><span class="p">)</span>
+<a name="rest_code_37439efe24874fe2b183b7fda6a1f35c-7"></a><span class="n">sender</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">PUSH</span><span class="p">)</span>
+<a name="rest_code_37439efe24874fe2b183b7fda6a1f35c-8"></a><span class="n">sender</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"tcp://172.16.0.113:5001"</span><span class="p">)</span>
+<a name="rest_code_37439efe24874fe2b183b7fda6a1f35c-9"></a><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+<a name="rest_code_37439efe24874fe2b183b7fda6a1f35c-10"></a>    <span class="n">s</span> <span class="o">=</span> <span class="n">receiver</span><span class="o">.</span><span class="n">recv_string</span><span class="p">()</span>
+<a name="rest_code_37439efe24874fe2b183b7fda6a1f35c-11"></a>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">*</span><span class="mf">0.001</span><span class="p">)</span>
+<a name="rest_code_37439efe24874fe2b183b7fda6a1f35c-12"></a>    <span class="n">sender</span><span class="o">.</span><span class="n">send_string</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p>汇总端：</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_98b608edb3ce45e18141731a1baa04f0-1"> 1</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_98b608edb3ce45e18141731a1baa04f0-2"> 2</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_98b608edb3ce45e18141731a1baa04f0-3"> 3</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_98b608edb3ce45e18141731a1baa04f0-4"> 4</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_98b608edb3ce45e18141731a1baa04f0-5"> 5</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_98b608edb3ce45e18141731a1baa04f0-6"> 6</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_98b608edb3ce45e18141731a1baa04f0-7"> 7</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_98b608edb3ce45e18141731a1baa04f0-8"> 8</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_98b608edb3ce45e18141731a1baa04f0-9"> 9</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_98b608edb3ce45e18141731a1baa04f0-10">10</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_98b608edb3ce45e18141731a1baa04f0-11">11</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_98b608edb3ce45e18141731a1baa04f0-12">12</a>
+<a href="posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/#rest_code_98b608edb3ce45e18141731a1baa04f0-13">13</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_98b608edb3ce45e18141731a1baa04f0-1"></a><span class="kn">import</span> <span class="nn">sys</span>
+<a name="rest_code_98b608edb3ce45e18141731a1baa04f0-2"></a><span class="kn">import</span> <span class="nn">time</span>
+<a name="rest_code_98b608edb3ce45e18141731a1baa04f0-3"></a><span class="kn">import</span> <span class="nn">zmq</span>
+<a name="rest_code_98b608edb3ce45e18141731a1baa04f0-4"></a><span class="n">context</span> <span class="o">=</span> <span class="n">zmq</span><span class="o">.</span><span class="n">Context</span><span class="p">()</span>
+<a name="rest_code_98b608edb3ce45e18141731a1baa04f0-5"></a><span class="n">receiver</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">PULL</span><span class="p">)</span>
+<a name="rest_code_98b608edb3ce45e18141731a1baa04f0-6"></a><span class="n">receiver</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">"tcp://*:5001"</span><span class="p">)</span>
+<a name="rest_code_98b608edb3ce45e18141731a1baa04f0-7"></a><span class="n">s</span> <span class="o">=</span> <span class="n">receiver</span><span class="o">.</span><span class="n">recv_string</span><span class="p">()</span>
+<a name="rest_code_98b608edb3ce45e18141731a1baa04f0-8"></a><span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<a name="rest_code_98b608edb3ce45e18141731a1baa04f0-9"></a><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<a name="rest_code_98b608edb3ce45e18141731a1baa04f0-10"></a><span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+<a name="rest_code_98b608edb3ce45e18141731a1baa04f0-11"></a>    <span class="n">s</span> <span class="o">=</span> <span class="n">receiver</span><span class="o">.</span><span class="n">recv_string</span><span class="p">()</span>
+<a name="rest_code_98b608edb3ce45e18141731a1baa04f0-12"></a><span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<a name="rest_code_98b608edb3ce45e18141731a1baa04f0-13"></a><span class="k">print</span><span class="p">(</span><span class="s2">"Total Elapsed Time: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">((</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"s."</span><span class="p">)</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p>运行结果：</p>
+<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/zeromq_worker.png" src="https://github.com/longlongpicture/myblogpicture/raw/master/zeromq_worker.png"><p><strong>总结</strong></p>
+<ol class="arabic simple">
+<li>“请求-回复”模型就好比两个人聊天。</li>
+<li>“发布-订阅”模型就好比听FM。</li>
+<li>“平行管道”模型就好比MapReduce。</li>
+</ol>
+</div>
+    </div>
+    </article>
+</div>
+
+        <nav class="postindexpager"><ul class="pager">
+<li class="previous">
+                <a href="." rel="prev">Newer posts</a>
+            </li>
+            <li class="next">
+                <a href="index-10.html" rel="next">Older posts</a>
+            </li>
+        </ul></nav>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2017         <a href="mailto:codinglonglong@126.com">龙龙</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
+</body>
+</html>
