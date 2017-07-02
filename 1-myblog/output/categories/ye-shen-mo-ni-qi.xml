@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about 夜神模拟器)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/ye-shen-mo-ni-qi.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sun, 14 May 2017 06:45:23 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Android Studio连接夜神模拟器进行测试</title><link>https://codinglonglong.github.io/posts/android-studiolian-jie-ye-shen-mo-ni-qi-jin-xing-ce-shi/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;在之前的文章 &lt;a class="reference external" href="https://codinglonglong.github.io/posts/android-studiolian-jie-droid4xdiao-shi-app/"&gt;https://codinglonglong.github.io/posts/android-studiolian-jie-droid4xdiao-shi-app/&lt;/a&gt; 中，我们已经成功使用Droid4X进行APP开发测试，这次我们使用夜神模拟器完成同样的工作。&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about 夜神模拟器)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link rel="self" type="application/rss+xml" href="https://codinglonglong.github.io/categories/ye-shen-mo-ni-qi.xml"></atom:link><language>en</language><lastBuildDate>Sun, 02 Jul 2017 04:21:42 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Android Studio连接夜神模拟器进行测试</title><link>https://codinglonglong.github.io/posts/android-studiolian-jie-ye-shen-mo-ni-qi-jin-xing-ce-shi/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;在之前的文章 &lt;a class="reference external" href="https://codinglonglong.github.io/posts/android-studiolian-jie-droid4xdiao-shi-app/"&gt;https://codinglonglong.github.io/posts/android-studiolian-jie-droid4xdiao-shi-app/&lt;/a&gt; 中，我们已经成功使用Droid4X进行APP开发测试，这次我们使用夜神模拟器完成同样的工作。&lt;/p&gt;
 &lt;ol class="arabic"&gt;
 &lt;li&gt;&lt;p class="first"&gt;安装夜神模拟器。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;添加夜神模拟器的可执行路径到系统路径，我的在&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_c2db0028cfdd48a7b99e12296ea68823-1"&gt;&lt;/a&gt;C:&lt;span class="se"&gt;\P&lt;/span&gt;rogram Files&lt;span class="se"&gt;\n&lt;/span&gt;ox&lt;span class="se"&gt;\N&lt;/span&gt;ox&lt;span class="se"&gt;\b&lt;/span&gt;in
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_08a3dff8eeb546b085fd8cd147b1a0a7-1"&gt;&lt;/a&gt;C:&lt;span class="se"&gt;\P&lt;/span&gt;rogram Files&lt;span class="se"&gt;\n&lt;/span&gt;ox&lt;span class="se"&gt;\N&lt;/span&gt;ox&lt;span class="se"&gt;\b&lt;/span&gt;in
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;启动夜神模拟器服务。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_95350a87ce724e47abeec641d5857a2f-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; nox_adb.exe connect 127.0.0.1:62001
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_dda143f915074166947abc9d45413bfb-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; nox_adb.exe connect &lt;span class="m"&gt;127&lt;/span&gt;.0.0.1:62001
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;p&gt;出现&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_4185becb3a53453882b28e0e3f3825ba-1"&gt;&lt;/a&gt;* daemon started successfully *
-&lt;a name="rest_code_4185becb3a53453882b28e0e3f3825ba-2"&gt;&lt;/a&gt; connected to 127.0.0.1:62001
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_79a08f039cad458b88ac7c12842fceae-1"&gt;&lt;/a&gt;* daemon started successfully *
+&lt;a name="rest_code_79a08f039cad458b88ac7c12842fceae-2"&gt;&lt;/a&gt; connected to &lt;span class="m"&gt;127&lt;/span&gt;.0.0.1:62001
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;在Android Studio中启动调试即可。&lt;/p&gt;

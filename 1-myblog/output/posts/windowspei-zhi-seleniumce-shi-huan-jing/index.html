@@ -111,12 +111,12 @@ Firefox浏览器： https:/">
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Windows配置Selenium测试环境</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     龙龙
             </span></p>
             <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2017-04-06T13:22:14+08:00" itemprop="datePublished" title="2017-04-06 13:22">2017-04-06 13:22</time></a></p>
             
-        <p class="sourceline"><a href="index.rst" id="sourcelink">Source</a></p>
+        <p class="sourceline"><a href="index.rst" class="sourcelink">Source</a></p>
 
         </div>
         
@@ -141,38 +141,38 @@ Firefox浏览器： https:/">
 <p>4、编写代码：</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-1"> 1</a>
-<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-2"> 2</a>
-<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-3"> 3</a>
-<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-4"> 4</a>
-<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-5"> 5</a>
-<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-6"> 6</a>
-<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-7"> 7</a>
-<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-8"> 8</a>
-<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-9"> 9</a>
-<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-10">10</a>
-<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-11">11</a>
-<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-12">12</a>
-<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-13">13</a>
-<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-14">14</a>
-<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-15">15</a>
-<a href="#rest_code_ea5d0b78b868405d9cf51acd92b394d1-16">16</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-1"></a><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-2"></a>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-3"></a><span class="n">browser1</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Firefox</span><span class="p">()</span>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-4"></a><span class="n">browser1</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://codinglonglong.github.io/"</span><span class="p">)</span>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-5"></a>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-6"></a>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-7"></a><span class="n">browser2</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-8"></a><span class="n">browser2</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://codinglonglong.github.io/"</span><span class="p">)</span>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-9"></a>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-10"></a>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-11"></a><span class="n">browser3</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Edge</span><span class="p">()</span>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-12"></a><span class="n">browser3</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://codinglonglong.github.io/"</span><span class="p">)</span>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-13"></a>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-14"></a>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-15"></a><span class="n">browser4</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Ie</span><span class="p">()</span>
-<a name="rest_code_ea5d0b78b868405d9cf51acd92b394d1-16"></a><span class="n">browser4</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://codinglonglong.github.io/"</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_d5eba155c514452bb4d537b03e996f00-1"> 1</a>
+<a href="#rest_code_d5eba155c514452bb4d537b03e996f00-2"> 2</a>
+<a href="#rest_code_d5eba155c514452bb4d537b03e996f00-3"> 3</a>
+<a href="#rest_code_d5eba155c514452bb4d537b03e996f00-4"> 4</a>
+<a href="#rest_code_d5eba155c514452bb4d537b03e996f00-5"> 5</a>
+<a href="#rest_code_d5eba155c514452bb4d537b03e996f00-6"> 6</a>
+<a href="#rest_code_d5eba155c514452bb4d537b03e996f00-7"> 7</a>
+<a href="#rest_code_d5eba155c514452bb4d537b03e996f00-8"> 8</a>
+<a href="#rest_code_d5eba155c514452bb4d537b03e996f00-9"> 9</a>
+<a href="#rest_code_d5eba155c514452bb4d537b03e996f00-10">10</a>
+<a href="#rest_code_d5eba155c514452bb4d537b03e996f00-11">11</a>
+<a href="#rest_code_d5eba155c514452bb4d537b03e996f00-12">12</a>
+<a href="#rest_code_d5eba155c514452bb4d537b03e996f00-13">13</a>
+<a href="#rest_code_d5eba155c514452bb4d537b03e996f00-14">14</a>
+<a href="#rest_code_d5eba155c514452bb4d537b03e996f00-15">15</a>
+<a href="#rest_code_d5eba155c514452bb4d537b03e996f00-16">16</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_d5eba155c514452bb4d537b03e996f00-1"></a><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-2"></a>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-3"></a><span class="n">browser1</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Firefox</span><span class="p">()</span>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-4"></a><span class="n">browser1</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://codinglonglong.github.io/"</span><span class="p">)</span>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-5"></a>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-6"></a>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-7"></a><span class="n">browser2</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-8"></a><span class="n">browser2</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://codinglonglong.github.io/"</span><span class="p">)</span>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-9"></a>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-10"></a>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-11"></a><span class="n">browser3</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Edge</span><span class="p">()</span>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-12"></a><span class="n">browser3</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://codinglonglong.github.io/"</span><span class="p">)</span>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-13"></a>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-14"></a>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-15"></a><span class="n">browser4</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Ie</span><span class="p">()</span>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-16"></a><span class="n">browser4</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://codinglonglong.github.io/"</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 </blockquote>

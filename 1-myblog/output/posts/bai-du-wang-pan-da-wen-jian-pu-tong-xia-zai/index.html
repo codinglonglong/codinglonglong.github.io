@@ -106,12 +106,12 @@ body{
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">百度网盘大文件普通下载</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     龙龙
             </span></p>
             <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2017-06-15T02:02:22+08:00" itemprop="datePublished" title="2017-06-15 02:02">2017-06-15 02:02</time></a></p>
             
-        <p class="sourceline"><a href="index.rst" id="sourcelink">Source</a></p>
+        <p class="sourceline"><a href="index.rst" class="sourcelink">Source</a></p>
 
         </div>
         
@@ -126,7 +126,7 @@ body{
 <p>不过话说回来，当我们有着急的事情，需要临时下载一些文件时，该怎么办呢？</p>
 <p>可以使用Firefox浏览器 <a class="reference external" href="http://www.firefox.com.cn/">http://www.firefox.com.cn/</a> ，在文件下载页面右击，选择“查看元素”，选择“控制台”，在最底下“&gt;&gt;”后面输入：</p>
 <blockquote>
-<pre class="code js"><a name="rest_code_904caa587d6e436186a478c02e35f6bb-1"></a><span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">getPrototypeOf</span><span class="p">(</span><span class="nx">navigator</span><span class="p">),</span> <span class="s1">'platform'</span><span class="p">,</span> <span class="p">{</span><span class="nx">get</span><span class="o">:</span><span class="kd">function</span><span class="p">(){</span><span class="k">return</span> <span class="s1">''</span><span class="p">;}});</span>
+<pre class="code js"><a name="rest_code_f3934978f0bb436c8b0212d5c4a9cb2e-1"></a><span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">getPrototypeOf</span><span class="p">(</span><span class="nx">navigator</span><span class="p">),</span> <span class="s1">'platform'</span><span class="p">,</span> <span class="p">{</span><span class="nx">get</span><span class="o">:</span><span class="kd">function</span><span class="p">(){</span><span class="k">return</span> <span class="s1">''</span><span class="p">;}});</span>
 </pre>
 </blockquote>
 <p>再去点击“下载”按钮，安装客户端的提示就没有了。</p>

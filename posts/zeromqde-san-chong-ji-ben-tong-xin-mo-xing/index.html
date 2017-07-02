@@ -120,12 +120,12 @@ pip3 install pyzmq -i http://pypi.doubanio.com/simple/
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">ZeroMQ的三种基本通信模型</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     龙龙
             </span></p>
             <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2017-05-17T22:26:54+08:00" itemprop="datePublished" title="2017-05-17 22:26">2017-05-17 22:26</time></a></p>
             
-        <p class="sourceline"><a href="index.rst" id="sourcelink">Source</a></p>
+        <p class="sourceline"><a href="index.rst" class="sourcelink">Source</a></p>
 
         </div>
         
@@ -134,63 +134,63 @@ pip3 install pyzmq -i http://pypi.doubanio.com/simple/
     <div>
 <p><strong>安装ZeroMQ的Python支持</strong></p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_e18b9626525c4b429ae0fed274ae7a70-1"></a>apt install python3-pip
-<a name="rest_code_e18b9626525c4b429ae0fed274ae7a70-2"></a>pip3 install pip --upgrade -i http://pypi.doubanio.com/simple/
-<a name="rest_code_e18b9626525c4b429ae0fed274ae7a70-3"></a>pip3 install pyzmq -i http://pypi.doubanio.com/simple/
+<pre class="code bash"><a name="rest_code_67af28efd42e407cb3e9a3f964c6cbb3-1"></a>apt install python3-pip
+<a name="rest_code_67af28efd42e407cb3e9a3f964c6cbb3-2"></a>pip3 install pip --upgrade -i http://pypi.doubanio.com/simple/
+<a name="rest_code_67af28efd42e407cb3e9a3f964c6cbb3-3"></a>pip3 install pyzmq -i http://pypi.doubanio.com/simple/
 </pre>
 </blockquote>
 <p><strong>第一种模型：“请求-回复”模型</strong></p>
 <p>服务端：</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_1e93288e0a804aa9a2e027873aa4b4da-1"> 1</a>
-<a href="#rest_code_1e93288e0a804aa9a2e027873aa4b4da-2"> 2</a>
-<a href="#rest_code_1e93288e0a804aa9a2e027873aa4b4da-3"> 3</a>
-<a href="#rest_code_1e93288e0a804aa9a2e027873aa4b4da-4"> 4</a>
-<a href="#rest_code_1e93288e0a804aa9a2e027873aa4b4da-5"> 5</a>
-<a href="#rest_code_1e93288e0a804aa9a2e027873aa4b4da-6"> 6</a>
-<a href="#rest_code_1e93288e0a804aa9a2e027873aa4b4da-7"> 7</a>
-<a href="#rest_code_1e93288e0a804aa9a2e027873aa4b4da-8"> 8</a>
-<a href="#rest_code_1e93288e0a804aa9a2e027873aa4b4da-9"> 9</a>
-<a href="#rest_code_1e93288e0a804aa9a2e027873aa4b4da-10">10</a>
-<a href="#rest_code_1e93288e0a804aa9a2e027873aa4b4da-11">11</a>
-<a href="#rest_code_1e93288e0a804aa9a2e027873aa4b4da-12">12</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_1e93288e0a804aa9a2e027873aa4b4da-1"></a><span class="kn">import</span> <span class="nn">zmq</span>
-<a name="rest_code_1e93288e0a804aa9a2e027873aa4b4da-2"></a><span class="kn">import</span> <span class="nn">time</span>
-<a name="rest_code_1e93288e0a804aa9a2e027873aa4b4da-3"></a><span class="n">context</span> <span class="o">=</span> <span class="n">zmq</span><span class="o">.</span><span class="n">Context</span><span class="p">()</span>
-<a name="rest_code_1e93288e0a804aa9a2e027873aa4b4da-4"></a><span class="n">socket</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">REP</span><span class="p">)</span>
-<a name="rest_code_1e93288e0a804aa9a2e027873aa4b4da-5"></a><span class="n">socket</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">"tcp://*:5555"</span><span class="p">)</span>
-<a name="rest_code_1e93288e0a804aa9a2e027873aa4b4da-6"></a><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-<a name="rest_code_1e93288e0a804aa9a2e027873aa4b4da-7"></a>    <span class="n">message</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">recv_string</span><span class="p">()</span>
-<a name="rest_code_1e93288e0a804aa9a2e027873aa4b4da-8"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"receive request: "</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
-<a name="rest_code_1e93288e0a804aa9a2e027873aa4b4da-9"></a>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<a name="rest_code_1e93288e0a804aa9a2e027873aa4b4da-10"></a>    <span class="n">reply</span> <span class="o">=</span> <span class="s2">"World"</span>
-<a name="rest_code_1e93288e0a804aa9a2e027873aa4b4da-11"></a>    <span class="n">socket</span><span class="o">.</span><span class="n">send_string</span><span class="p">(</span><span class="n">reply</span><span class="p">)</span>
-<a name="rest_code_1e93288e0a804aa9a2e027873aa4b4da-12"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"send reply: "</span><span class="p">,</span> <span class="n">reply</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_055526c7d1b14787944f6b87e1c8037e-1"> 1</a>
+<a href="#rest_code_055526c7d1b14787944f6b87e1c8037e-2"> 2</a>
+<a href="#rest_code_055526c7d1b14787944f6b87e1c8037e-3"> 3</a>
+<a href="#rest_code_055526c7d1b14787944f6b87e1c8037e-4"> 4</a>
+<a href="#rest_code_055526c7d1b14787944f6b87e1c8037e-5"> 5</a>
+<a href="#rest_code_055526c7d1b14787944f6b87e1c8037e-6"> 6</a>
+<a href="#rest_code_055526c7d1b14787944f6b87e1c8037e-7"> 7</a>
+<a href="#rest_code_055526c7d1b14787944f6b87e1c8037e-8"> 8</a>
+<a href="#rest_code_055526c7d1b14787944f6b87e1c8037e-9"> 9</a>
+<a href="#rest_code_055526c7d1b14787944f6b87e1c8037e-10">10</a>
+<a href="#rest_code_055526c7d1b14787944f6b87e1c8037e-11">11</a>
+<a href="#rest_code_055526c7d1b14787944f6b87e1c8037e-12">12</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_055526c7d1b14787944f6b87e1c8037e-1"></a><span class="kn">import</span> <span class="nn">zmq</span>
+<a name="rest_code_055526c7d1b14787944f6b87e1c8037e-2"></a><span class="kn">import</span> <span class="nn">time</span>
+<a name="rest_code_055526c7d1b14787944f6b87e1c8037e-3"></a><span class="n">context</span> <span class="o">=</span> <span class="n">zmq</span><span class="o">.</span><span class="n">Context</span><span class="p">()</span>
+<a name="rest_code_055526c7d1b14787944f6b87e1c8037e-4"></a><span class="n">socket</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">REP</span><span class="p">)</span>
+<a name="rest_code_055526c7d1b14787944f6b87e1c8037e-5"></a><span class="n">socket</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">"tcp://*:5555"</span><span class="p">)</span>
+<a name="rest_code_055526c7d1b14787944f6b87e1c8037e-6"></a><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+<a name="rest_code_055526c7d1b14787944f6b87e1c8037e-7"></a>    <span class="n">message</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">recv_string</span><span class="p">()</span>
+<a name="rest_code_055526c7d1b14787944f6b87e1c8037e-8"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"receive request: "</span><span class="p">,</span> <span class="n">message</span><span class="p">)</span>
+<a name="rest_code_055526c7d1b14787944f6b87e1c8037e-9"></a>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="rest_code_055526c7d1b14787944f6b87e1c8037e-10"></a>    <span class="n">reply</span> <span class="o">=</span> <span class="s2">"World"</span>
+<a name="rest_code_055526c7d1b14787944f6b87e1c8037e-11"></a>    <span class="n">socket</span><span class="o">.</span><span class="n">send_string</span><span class="p">(</span><span class="n">reply</span><span class="p">)</span>
+<a name="rest_code_055526c7d1b14787944f6b87e1c8037e-12"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"send reply: "</span><span class="p">,</span> <span class="n">reply</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 </blockquote>
 <p>客户端：</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_fd09c4c8d6e14573891e609c9e275de9-1">1</a>
-<a href="#rest_code_fd09c4c8d6e14573891e609c9e275de9-2">2</a>
-<a href="#rest_code_fd09c4c8d6e14573891e609c9e275de9-3">3</a>
-<a href="#rest_code_fd09c4c8d6e14573891e609c9e275de9-4">4</a>
-<a href="#rest_code_fd09c4c8d6e14573891e609c9e275de9-5">5</a>
-<a href="#rest_code_fd09c4c8d6e14573891e609c9e275de9-6">6</a>
-<a href="#rest_code_fd09c4c8d6e14573891e609c9e275de9-7">7</a>
-<a href="#rest_code_fd09c4c8d6e14573891e609c9e275de9-8">8</a>
-<a href="#rest_code_fd09c4c8d6e14573891e609c9e275de9-9">9</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_fd09c4c8d6e14573891e609c9e275de9-1"></a><span class="kn">import</span> <span class="nn">zmq</span>
-<a name="rest_code_fd09c4c8d6e14573891e609c9e275de9-2"></a><span class="n">context</span> <span class="o">=</span> <span class="n">zmq</span><span class="o">.</span><span class="n">Context</span><span class="p">()</span>
-<a name="rest_code_fd09c4c8d6e14573891e609c9e275de9-3"></a><span class="n">socket</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">REQ</span><span class="p">)</span>
-<a name="rest_code_fd09c4c8d6e14573891e609c9e275de9-4"></a><span class="n">socket</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"tcp://172.16.0.111:5555"</span><span class="p">)</span>
-<a name="rest_code_fd09c4c8d6e14573891e609c9e275de9-5"></a><span class="k">for</span> <span class="n">request</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
-<a name="rest_code_fd09c4c8d6e14573891e609c9e275de9-6"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"send request: "</span><span class="p">,</span> <span class="n">request</span><span class="p">)</span>
-<a name="rest_code_fd09c4c8d6e14573891e609c9e275de9-7"></a>    <span class="n">socket</span><span class="o">.</span><span class="n">send_string</span><span class="p">(</span><span class="s2">"Hello"</span><span class="p">)</span>
-<a name="rest_code_fd09c4c8d6e14573891e609c9e275de9-8"></a>    <span class="n">message</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">recv_string</span><span class="p">()</span>
-<a name="rest_code_fd09c4c8d6e14573891e609c9e275de9-9"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"receive reply: "</span><span class="p">,</span>  <span class="n">message</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_c6411db99f1b459e8dd4c594d0e13aa6-1">1</a>
+<a href="#rest_code_c6411db99f1b459e8dd4c594d0e13aa6-2">2</a>
+<a href="#rest_code_c6411db99f1b459e8dd4c594d0e13aa6-3">3</a>
+<a href="#rest_code_c6411db99f1b459e8dd4c594d0e13aa6-4">4</a>
+<a href="#rest_code_c6411db99f1b459e8dd4c594d0e13aa6-5">5</a>
+<a href="#rest_code_c6411db99f1b459e8dd4c594d0e13aa6-6">6</a>
+<a href="#rest_code_c6411db99f1b459e8dd4c594d0e13aa6-7">7</a>
+<a href="#rest_code_c6411db99f1b459e8dd4c594d0e13aa6-8">8</a>
+<a href="#rest_code_c6411db99f1b459e8dd4c594d0e13aa6-9">9</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_c6411db99f1b459e8dd4c594d0e13aa6-1"></a><span class="kn">import</span> <span class="nn">zmq</span>
+<a name="rest_code_c6411db99f1b459e8dd4c594d0e13aa6-2"></a><span class="n">context</span> <span class="o">=</span> <span class="n">zmq</span><span class="o">.</span><span class="n">Context</span><span class="p">()</span>
+<a name="rest_code_c6411db99f1b459e8dd4c594d0e13aa6-3"></a><span class="n">socket</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">REQ</span><span class="p">)</span>
+<a name="rest_code_c6411db99f1b459e8dd4c594d0e13aa6-4"></a><span class="n">socket</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"tcp://172.16.0.111:5555"</span><span class="p">)</span>
+<a name="rest_code_c6411db99f1b459e8dd4c594d0e13aa6-5"></a><span class="k">for</span> <span class="n">request</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+<a name="rest_code_c6411db99f1b459e8dd4c594d0e13aa6-6"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"send request: "</span><span class="p">,</span> <span class="n">request</span><span class="p">)</span>
+<a name="rest_code_c6411db99f1b459e8dd4c594d0e13aa6-7"></a>    <span class="n">socket</span><span class="o">.</span><span class="n">send_string</span><span class="p">(</span><span class="s2">"Hello"</span><span class="p">)</span>
+<a name="rest_code_c6411db99f1b459e8dd4c594d0e13aa6-8"></a>    <span class="n">message</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">recv_string</span><span class="p">()</span>
+<a name="rest_code_c6411db99f1b459e8dd4c594d0e13aa6-9"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"receive reply: "</span><span class="p">,</span>  <span class="n">message</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 </blockquote>
@@ -198,60 +198,60 @@ pip3 install pyzmq -i http://pypi.doubanio.com/simple/
 <p>服务端：</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-1"> 1</a>
-<a href="#rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-2"> 2</a>
-<a href="#rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-3"> 3</a>
-<a href="#rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-4"> 4</a>
-<a href="#rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-5"> 5</a>
-<a href="#rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-6"> 6</a>
-<a href="#rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-7"> 7</a>
-<a href="#rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-8"> 8</a>
-<a href="#rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-9"> 9</a>
-<a href="#rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-10">10</a>
-<a href="#rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-11">11</a>
-<a href="#rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-12">12</a>
-<a href="#rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-13">13</a>
-<a href="#rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-14">14</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-1"></a><span class="kn">import</span> <span class="nn">zmq</span>
-<a name="rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-2"></a><span class="kn">import</span> <span class="nn">time</span>
-<a name="rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-3"></a><span class="kn">from</span> <span class="nn">zmq.utils.strtypes</span> <span class="kn">import</span> <span class="n">asbytes</span>
-<a name="rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-4"></a><span class="n">context</span> <span class="o">=</span> <span class="n">zmq</span><span class="o">.</span><span class="n">Context</span><span class="p">()</span>
-<a name="rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-5"></a><span class="n">socket</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">PUB</span><span class="p">)</span>
-<a name="rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-6"></a><span class="n">socket</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">"tcp://*:5000"</span><span class="p">)</span>
-<a name="rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-7"></a><span class="n">topics</span> <span class="o">=</span> <span class="p">[</span><span class="n">b</span><span class="s2">"a"</span><span class="p">,</span> <span class="n">b</span><span class="s2">"b"</span><span class="p">]</span>
-<a name="rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-8"></a><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-<a name="rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-9"></a>    <span class="n">msg</span> <span class="o">=</span> <span class="s2">"Hello, a"</span>
-<a name="rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-10"></a>    <span class="n">socket</span><span class="o">.</span><span class="n">send_multipart</span><span class="p">([</span><span class="n">topics</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">asbytes</span><span class="p">(</span><span class="n">msg</span><span class="p">)])</span>
-<a name="rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-11"></a>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
-<a name="rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-12"></a>    <span class="n">msg</span> <span class="o">=</span> <span class="s2">"Hello, b"</span>
-<a name="rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-13"></a>    <span class="n">socket</span><span class="o">.</span><span class="n">send_multipart</span><span class="p">([</span><span class="n">topics</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">asbytes</span><span class="p">(</span><span class="n">msg</span><span class="p">)])</span>
-<a name="rest_code_8c5a373ab60d4233a7dd3b3eb130d40d-14"></a>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_af09c2e5a662490584895ac4d3bd6d3e-1"> 1</a>
+<a href="#rest_code_af09c2e5a662490584895ac4d3bd6d3e-2"> 2</a>
+<a href="#rest_code_af09c2e5a662490584895ac4d3bd6d3e-3"> 3</a>
+<a href="#rest_code_af09c2e5a662490584895ac4d3bd6d3e-4"> 4</a>
+<a href="#rest_code_af09c2e5a662490584895ac4d3bd6d3e-5"> 5</a>
+<a href="#rest_code_af09c2e5a662490584895ac4d3bd6d3e-6"> 6</a>
+<a href="#rest_code_af09c2e5a662490584895ac4d3bd6d3e-7"> 7</a>
+<a href="#rest_code_af09c2e5a662490584895ac4d3bd6d3e-8"> 8</a>
+<a href="#rest_code_af09c2e5a662490584895ac4d3bd6d3e-9"> 9</a>
+<a href="#rest_code_af09c2e5a662490584895ac4d3bd6d3e-10">10</a>
+<a href="#rest_code_af09c2e5a662490584895ac4d3bd6d3e-11">11</a>
+<a href="#rest_code_af09c2e5a662490584895ac4d3bd6d3e-12">12</a>
+<a href="#rest_code_af09c2e5a662490584895ac4d3bd6d3e-13">13</a>
+<a href="#rest_code_af09c2e5a662490584895ac4d3bd6d3e-14">14</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_af09c2e5a662490584895ac4d3bd6d3e-1"></a><span class="kn">import</span> <span class="nn">zmq</span>
+<a name="rest_code_af09c2e5a662490584895ac4d3bd6d3e-2"></a><span class="kn">import</span> <span class="nn">time</span>
+<a name="rest_code_af09c2e5a662490584895ac4d3bd6d3e-3"></a><span class="kn">from</span> <span class="nn">zmq.utils.strtypes</span> <span class="kn">import</span> <span class="n">asbytes</span>
+<a name="rest_code_af09c2e5a662490584895ac4d3bd6d3e-4"></a><span class="n">context</span> <span class="o">=</span> <span class="n">zmq</span><span class="o">.</span><span class="n">Context</span><span class="p">()</span>
+<a name="rest_code_af09c2e5a662490584895ac4d3bd6d3e-5"></a><span class="n">socket</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">PUB</span><span class="p">)</span>
+<a name="rest_code_af09c2e5a662490584895ac4d3bd6d3e-6"></a><span class="n">socket</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">"tcp://*:5000"</span><span class="p">)</span>
+<a name="rest_code_af09c2e5a662490584895ac4d3bd6d3e-7"></a><span class="n">topics</span> <span class="o">=</span> <span class="p">[</span><span class="sa">b</span><span class="s2">"a"</span><span class="p">,</span> <span class="sa">b</span><span class="s2">"b"</span><span class="p">]</span>
+<a name="rest_code_af09c2e5a662490584895ac4d3bd6d3e-8"></a><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+<a name="rest_code_af09c2e5a662490584895ac4d3bd6d3e-9"></a>    <span class="n">msg</span> <span class="o">=</span> <span class="s2">"Hello, a"</span>
+<a name="rest_code_af09c2e5a662490584895ac4d3bd6d3e-10"></a>    <span class="n">socket</span><span class="o">.</span><span class="n">send_multipart</span><span class="p">([</span><span class="n">topics</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">asbytes</span><span class="p">(</span><span class="n">msg</span><span class="p">)])</span>
+<a name="rest_code_af09c2e5a662490584895ac4d3bd6d3e-11"></a>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+<a name="rest_code_af09c2e5a662490584895ac4d3bd6d3e-12"></a>    <span class="n">msg</span> <span class="o">=</span> <span class="s2">"Hello, b"</span>
+<a name="rest_code_af09c2e5a662490584895ac4d3bd6d3e-13"></a>    <span class="n">socket</span><span class="o">.</span><span class="n">send_multipart</span><span class="p">([</span><span class="n">topics</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">asbytes</span><span class="p">(</span><span class="n">msg</span><span class="p">)])</span>
+<a name="rest_code_af09c2e5a662490584895ac4d3bd6d3e-14"></a>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 </blockquote>
 <p>客户端：</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_92a07adf3fac41e3b6b608a162b962ae-1"> 1</a>
-<a href="#rest_code_92a07adf3fac41e3b6b608a162b962ae-2"> 2</a>
-<a href="#rest_code_92a07adf3fac41e3b6b608a162b962ae-3"> 3</a>
-<a href="#rest_code_92a07adf3fac41e3b6b608a162b962ae-4"> 4</a>
-<a href="#rest_code_92a07adf3fac41e3b6b608a162b962ae-5"> 5</a>
-<a href="#rest_code_92a07adf3fac41e3b6b608a162b962ae-6"> 6</a>
-<a href="#rest_code_92a07adf3fac41e3b6b608a162b962ae-7"> 7</a>
-<a href="#rest_code_92a07adf3fac41e3b6b608a162b962ae-8"> 8</a>
-<a href="#rest_code_92a07adf3fac41e3b6b608a162b962ae-9"> 9</a>
-<a href="#rest_code_92a07adf3fac41e3b6b608a162b962ae-10">10</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_92a07adf3fac41e3b6b608a162b962ae-1"></a><span class="kn">import</span> <span class="nn">time</span>
-<a name="rest_code_92a07adf3fac41e3b6b608a162b962ae-2"></a><span class="kn">import</span> <span class="nn">zmq</span>
-<a name="rest_code_92a07adf3fac41e3b6b608a162b962ae-3"></a><span class="n">context</span> <span class="o">=</span> <span class="n">zmq</span><span class="o">.</span><span class="n">Context</span><span class="p">()</span>
-<a name="rest_code_92a07adf3fac41e3b6b608a162b962ae-4"></a><span class="n">socket</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">SUB</span><span class="p">)</span>
-<a name="rest_code_92a07adf3fac41e3b6b608a162b962ae-5"></a><span class="n">socket</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"tcp://172.16.0.111:5000"</span><span class="p">)</span>
-<a name="rest_code_92a07adf3fac41e3b6b608a162b962ae-6"></a><span class="n">socket</span><span class="o">.</span><span class="n">setsockopt_string</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">SUBSCRIBE</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span>
-<a name="rest_code_92a07adf3fac41e3b6b608a162b962ae-7"></a><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-<a name="rest_code_92a07adf3fac41e3b6b608a162b962ae-8"></a>    <span class="n">topic</span><span class="p">,</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">recv_multipart</span><span class="p">()</span>
-<a name="rest_code_92a07adf3fac41e3b6b608a162b962ae-9"></a>    <span class="k">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>
-<a name="rest_code_92a07adf3fac41e3b6b608a162b962ae-10"></a>    <span class="k">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_bef9d279d81c4733a0fdd5b2dab1d45a-1"> 1</a>
+<a href="#rest_code_bef9d279d81c4733a0fdd5b2dab1d45a-2"> 2</a>
+<a href="#rest_code_bef9d279d81c4733a0fdd5b2dab1d45a-3"> 3</a>
+<a href="#rest_code_bef9d279d81c4733a0fdd5b2dab1d45a-4"> 4</a>
+<a href="#rest_code_bef9d279d81c4733a0fdd5b2dab1d45a-5"> 5</a>
+<a href="#rest_code_bef9d279d81c4733a0fdd5b2dab1d45a-6"> 6</a>
+<a href="#rest_code_bef9d279d81c4733a0fdd5b2dab1d45a-7"> 7</a>
+<a href="#rest_code_bef9d279d81c4733a0fdd5b2dab1d45a-8"> 8</a>
+<a href="#rest_code_bef9d279d81c4733a0fdd5b2dab1d45a-9"> 9</a>
+<a href="#rest_code_bef9d279d81c4733a0fdd5b2dab1d45a-10">10</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_bef9d279d81c4733a0fdd5b2dab1d45a-1"></a><span class="kn">import</span> <span class="nn">time</span>
+<a name="rest_code_bef9d279d81c4733a0fdd5b2dab1d45a-2"></a><span class="kn">import</span> <span class="nn">zmq</span>
+<a name="rest_code_bef9d279d81c4733a0fdd5b2dab1d45a-3"></a><span class="n">context</span> <span class="o">=</span> <span class="n">zmq</span><span class="o">.</span><span class="n">Context</span><span class="p">()</span>
+<a name="rest_code_bef9d279d81c4733a0fdd5b2dab1d45a-4"></a><span class="n">socket</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">SUB</span><span class="p">)</span>
+<a name="rest_code_bef9d279d81c4733a0fdd5b2dab1d45a-5"></a><span class="n">socket</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"tcp://172.16.0.111:5000"</span><span class="p">)</span>
+<a name="rest_code_bef9d279d81c4733a0fdd5b2dab1d45a-6"></a><span class="n">socket</span><span class="o">.</span><span class="n">setsockopt_string</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">SUBSCRIBE</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span>
+<a name="rest_code_bef9d279d81c4733a0fdd5b2dab1d45a-7"></a><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+<a name="rest_code_bef9d279d81c4733a0fdd5b2dab1d45a-8"></a>    <span class="n">topic</span><span class="p">,</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">recv_multipart</span><span class="p">()</span>
+<a name="rest_code_bef9d279d81c4733a0fdd5b2dab1d45a-9"></a>    <span class="k">print</span><span class="p">(</span><span class="n">topic</span><span class="p">)</span>
+<a name="rest_code_bef9d279d81c4733a0fdd5b2dab1d45a-10"></a>    <span class="k">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 </blockquote>
@@ -259,102 +259,102 @@ pip3 install pyzmq -i http://pypi.doubanio.com/simple/
 <p>服务端：</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_125ddd8c2cef482389e2df185b59043c-1"> 1</a>
-<a href="#rest_code_125ddd8c2cef482389e2df185b59043c-2"> 2</a>
-<a href="#rest_code_125ddd8c2cef482389e2df185b59043c-3"> 3</a>
-<a href="#rest_code_125ddd8c2cef482389e2df185b59043c-4"> 4</a>
-<a href="#rest_code_125ddd8c2cef482389e2df185b59043c-5"> 5</a>
-<a href="#rest_code_125ddd8c2cef482389e2df185b59043c-6"> 6</a>
-<a href="#rest_code_125ddd8c2cef482389e2df185b59043c-7"> 7</a>
-<a href="#rest_code_125ddd8c2cef482389e2df185b59043c-8"> 8</a>
-<a href="#rest_code_125ddd8c2cef482389e2df185b59043c-9"> 9</a>
-<a href="#rest_code_125ddd8c2cef482389e2df185b59043c-10">10</a>
-<a href="#rest_code_125ddd8c2cef482389e2df185b59043c-11">11</a>
-<a href="#rest_code_125ddd8c2cef482389e2df185b59043c-12">12</a>
-<a href="#rest_code_125ddd8c2cef482389e2df185b59043c-13">13</a>
-<a href="#rest_code_125ddd8c2cef482389e2df185b59043c-14">14</a>
-<a href="#rest_code_125ddd8c2cef482389e2df185b59043c-15">15</a>
-<a href="#rest_code_125ddd8c2cef482389e2df185b59043c-16">16</a>
-<a href="#rest_code_125ddd8c2cef482389e2df185b59043c-17">17</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_125ddd8c2cef482389e2df185b59043c-1"></a><span class="kn">import</span> <span class="nn">zmq</span>
-<a name="rest_code_125ddd8c2cef482389e2df185b59043c-2"></a><span class="kn">import</span> <span class="nn">random</span>
-<a name="rest_code_125ddd8c2cef482389e2df185b59043c-3"></a><span class="kn">import</span> <span class="nn">time</span>
-<a name="rest_code_125ddd8c2cef482389e2df185b59043c-4"></a><span class="n">context</span> <span class="o">=</span> <span class="n">zmq</span><span class="o">.</span><span class="n">Context</span><span class="p">()</span>
-<a name="rest_code_125ddd8c2cef482389e2df185b59043c-5"></a><span class="n">sender</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">PUSH</span><span class="p">)</span>
-<a name="rest_code_125ddd8c2cef482389e2df185b59043c-6"></a><span class="n">sender</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">"tcp://*:5000"</span><span class="p">)</span>
-<a name="rest_code_125ddd8c2cef482389e2df185b59043c-7"></a><span class="n">sink</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">PUSH</span><span class="p">)</span>
-<a name="rest_code_125ddd8c2cef482389e2df185b59043c-8"></a><span class="n">sink</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"tcp://172.16.0.113:5001"</span><span class="p">)</span>
-<a name="rest_code_125ddd8c2cef482389e2df185b59043c-9"></a><span class="k">print</span><span class="p">(</span><span class="s2">"Press Any Key to Start"</span><span class="p">)</span>
-<a name="rest_code_125ddd8c2cef482389e2df185b59043c-10"></a><span class="n">_</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
-<a name="rest_code_125ddd8c2cef482389e2df185b59043c-11"></a><span class="n">sink</span><span class="o">.</span><span class="n">send_string</span><span class="p">(</span><span class="s2">"0"</span><span class="p">)</span>
-<a name="rest_code_125ddd8c2cef482389e2df185b59043c-12"></a><span class="n">totalsec</span> <span class="o">=</span> <span class="mi">0</span>
-<a name="rest_code_125ddd8c2cef482389e2df185b59043c-13"></a><span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
-<a name="rest_code_125ddd8c2cef482389e2df185b59043c-14"></a>    <span class="n">workload</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<a name="rest_code_125ddd8c2cef482389e2df185b59043c-15"></a>    <span class="n">totalsec</span> <span class="o">=</span> <span class="n">totalsec</span> <span class="o">+</span> <span class="n">workload</span>
-<a name="rest_code_125ddd8c2cef482389e2df185b59043c-16"></a>    <span class="n">sender</span><span class="o">.</span><span class="n">send_string</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">workload</span><span class="p">))</span>
-<a name="rest_code_125ddd8c2cef482389e2df185b59043c-17"></a><span class="k">print</span><span class="p">(</span><span class="s2">"Total Expected Time: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">totalsec</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"s."</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_af8b1b877668462dadde310b2c7e68cf-1"> 1</a>
+<a href="#rest_code_af8b1b877668462dadde310b2c7e68cf-2"> 2</a>
+<a href="#rest_code_af8b1b877668462dadde310b2c7e68cf-3"> 3</a>
+<a href="#rest_code_af8b1b877668462dadde310b2c7e68cf-4"> 4</a>
+<a href="#rest_code_af8b1b877668462dadde310b2c7e68cf-5"> 5</a>
+<a href="#rest_code_af8b1b877668462dadde310b2c7e68cf-6"> 6</a>
+<a href="#rest_code_af8b1b877668462dadde310b2c7e68cf-7"> 7</a>
+<a href="#rest_code_af8b1b877668462dadde310b2c7e68cf-8"> 8</a>
+<a href="#rest_code_af8b1b877668462dadde310b2c7e68cf-9"> 9</a>
+<a href="#rest_code_af8b1b877668462dadde310b2c7e68cf-10">10</a>
+<a href="#rest_code_af8b1b877668462dadde310b2c7e68cf-11">11</a>
+<a href="#rest_code_af8b1b877668462dadde310b2c7e68cf-12">12</a>
+<a href="#rest_code_af8b1b877668462dadde310b2c7e68cf-13">13</a>
+<a href="#rest_code_af8b1b877668462dadde310b2c7e68cf-14">14</a>
+<a href="#rest_code_af8b1b877668462dadde310b2c7e68cf-15">15</a>
+<a href="#rest_code_af8b1b877668462dadde310b2c7e68cf-16">16</a>
+<a href="#rest_code_af8b1b877668462dadde310b2c7e68cf-17">17</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_af8b1b877668462dadde310b2c7e68cf-1"></a><span class="kn">import</span> <span class="nn">zmq</span>
+<a name="rest_code_af8b1b877668462dadde310b2c7e68cf-2"></a><span class="kn">import</span> <span class="nn">random</span>
+<a name="rest_code_af8b1b877668462dadde310b2c7e68cf-3"></a><span class="kn">import</span> <span class="nn">time</span>
+<a name="rest_code_af8b1b877668462dadde310b2c7e68cf-4"></a><span class="n">context</span> <span class="o">=</span> <span class="n">zmq</span><span class="o">.</span><span class="n">Context</span><span class="p">()</span>
+<a name="rest_code_af8b1b877668462dadde310b2c7e68cf-5"></a><span class="n">sender</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">PUSH</span><span class="p">)</span>
+<a name="rest_code_af8b1b877668462dadde310b2c7e68cf-6"></a><span class="n">sender</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">"tcp://*:5000"</span><span class="p">)</span>
+<a name="rest_code_af8b1b877668462dadde310b2c7e68cf-7"></a><span class="n">sink</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">PUSH</span><span class="p">)</span>
+<a name="rest_code_af8b1b877668462dadde310b2c7e68cf-8"></a><span class="n">sink</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"tcp://172.16.0.113:5001"</span><span class="p">)</span>
+<a name="rest_code_af8b1b877668462dadde310b2c7e68cf-9"></a><span class="k">print</span><span class="p">(</span><span class="s2">"Press Any Key to Start"</span><span class="p">)</span>
+<a name="rest_code_af8b1b877668462dadde310b2c7e68cf-10"></a><span class="n">_</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+<a name="rest_code_af8b1b877668462dadde310b2c7e68cf-11"></a><span class="n">sink</span><span class="o">.</span><span class="n">send_string</span><span class="p">(</span><span class="s2">"0"</span><span class="p">)</span>
+<a name="rest_code_af8b1b877668462dadde310b2c7e68cf-12"></a><span class="n">totalsec</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="rest_code_af8b1b877668462dadde310b2c7e68cf-13"></a><span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+<a name="rest_code_af8b1b877668462dadde310b2c7e68cf-14"></a>    <span class="n">workload</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<a name="rest_code_af8b1b877668462dadde310b2c7e68cf-15"></a>    <span class="n">totalsec</span> <span class="o">=</span> <span class="n">totalsec</span> <span class="o">+</span> <span class="n">workload</span>
+<a name="rest_code_af8b1b877668462dadde310b2c7e68cf-16"></a>    <span class="n">sender</span><span class="o">.</span><span class="n">send_string</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">workload</span><span class="p">))</span>
+<a name="rest_code_af8b1b877668462dadde310b2c7e68cf-17"></a><span class="k">print</span><span class="p">(</span><span class="s2">"Total Expected Time: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">totalsec</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"s."</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 </blockquote>
 <p>执行端：</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_37439efe24874fe2b183b7fda6a1f35c-1"> 1</a>
-<a href="#rest_code_37439efe24874fe2b183b7fda6a1f35c-2"> 2</a>
-<a href="#rest_code_37439efe24874fe2b183b7fda6a1f35c-3"> 3</a>
-<a href="#rest_code_37439efe24874fe2b183b7fda6a1f35c-4"> 4</a>
-<a href="#rest_code_37439efe24874fe2b183b7fda6a1f35c-5"> 5</a>
-<a href="#rest_code_37439efe24874fe2b183b7fda6a1f35c-6"> 6</a>
-<a href="#rest_code_37439efe24874fe2b183b7fda6a1f35c-7"> 7</a>
-<a href="#rest_code_37439efe24874fe2b183b7fda6a1f35c-8"> 8</a>
-<a href="#rest_code_37439efe24874fe2b183b7fda6a1f35c-9"> 9</a>
-<a href="#rest_code_37439efe24874fe2b183b7fda6a1f35c-10">10</a>
-<a href="#rest_code_37439efe24874fe2b183b7fda6a1f35c-11">11</a>
-<a href="#rest_code_37439efe24874fe2b183b7fda6a1f35c-12">12</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_37439efe24874fe2b183b7fda6a1f35c-1"></a><span class="kn">import</span> <span class="nn">sys</span>
-<a name="rest_code_37439efe24874fe2b183b7fda6a1f35c-2"></a><span class="kn">import</span> <span class="nn">time</span>
-<a name="rest_code_37439efe24874fe2b183b7fda6a1f35c-3"></a><span class="kn">import</span> <span class="nn">zmq</span>
-<a name="rest_code_37439efe24874fe2b183b7fda6a1f35c-4"></a><span class="n">context</span> <span class="o">=</span> <span class="n">zmq</span><span class="o">.</span><span class="n">Context</span><span class="p">()</span>
-<a name="rest_code_37439efe24874fe2b183b7fda6a1f35c-5"></a><span class="n">receiver</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">PULL</span><span class="p">)</span>
-<a name="rest_code_37439efe24874fe2b183b7fda6a1f35c-6"></a><span class="n">receiver</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"tcp://172.16.0.111:5000"</span><span class="p">)</span>
-<a name="rest_code_37439efe24874fe2b183b7fda6a1f35c-7"></a><span class="n">sender</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">PUSH</span><span class="p">)</span>
-<a name="rest_code_37439efe24874fe2b183b7fda6a1f35c-8"></a><span class="n">sender</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"tcp://172.16.0.113:5001"</span><span class="p">)</span>
-<a name="rest_code_37439efe24874fe2b183b7fda6a1f35c-9"></a><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
-<a name="rest_code_37439efe24874fe2b183b7fda6a1f35c-10"></a>    <span class="n">s</span> <span class="o">=</span> <span class="n">receiver</span><span class="o">.</span><span class="n">recv_string</span><span class="p">()</span>
-<a name="rest_code_37439efe24874fe2b183b7fda6a1f35c-11"></a>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">*</span><span class="mf">0.001</span><span class="p">)</span>
-<a name="rest_code_37439efe24874fe2b183b7fda6a1f35c-12"></a>    <span class="n">sender</span><span class="o">.</span><span class="n">send_string</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_7c64b53a985c49bf8a470751a1ddb11d-1"> 1</a>
+<a href="#rest_code_7c64b53a985c49bf8a470751a1ddb11d-2"> 2</a>
+<a href="#rest_code_7c64b53a985c49bf8a470751a1ddb11d-3"> 3</a>
+<a href="#rest_code_7c64b53a985c49bf8a470751a1ddb11d-4"> 4</a>
+<a href="#rest_code_7c64b53a985c49bf8a470751a1ddb11d-5"> 5</a>
+<a href="#rest_code_7c64b53a985c49bf8a470751a1ddb11d-6"> 6</a>
+<a href="#rest_code_7c64b53a985c49bf8a470751a1ddb11d-7"> 7</a>
+<a href="#rest_code_7c64b53a985c49bf8a470751a1ddb11d-8"> 8</a>
+<a href="#rest_code_7c64b53a985c49bf8a470751a1ddb11d-9"> 9</a>
+<a href="#rest_code_7c64b53a985c49bf8a470751a1ddb11d-10">10</a>
+<a href="#rest_code_7c64b53a985c49bf8a470751a1ddb11d-11">11</a>
+<a href="#rest_code_7c64b53a985c49bf8a470751a1ddb11d-12">12</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_7c64b53a985c49bf8a470751a1ddb11d-1"></a><span class="kn">import</span> <span class="nn">sys</span>
+<a name="rest_code_7c64b53a985c49bf8a470751a1ddb11d-2"></a><span class="kn">import</span> <span class="nn">time</span>
+<a name="rest_code_7c64b53a985c49bf8a470751a1ddb11d-3"></a><span class="kn">import</span> <span class="nn">zmq</span>
+<a name="rest_code_7c64b53a985c49bf8a470751a1ddb11d-4"></a><span class="n">context</span> <span class="o">=</span> <span class="n">zmq</span><span class="o">.</span><span class="n">Context</span><span class="p">()</span>
+<a name="rest_code_7c64b53a985c49bf8a470751a1ddb11d-5"></a><span class="n">receiver</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">PULL</span><span class="p">)</span>
+<a name="rest_code_7c64b53a985c49bf8a470751a1ddb11d-6"></a><span class="n">receiver</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"tcp://172.16.0.111:5000"</span><span class="p">)</span>
+<a name="rest_code_7c64b53a985c49bf8a470751a1ddb11d-7"></a><span class="n">sender</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">PUSH</span><span class="p">)</span>
+<a name="rest_code_7c64b53a985c49bf8a470751a1ddb11d-8"></a><span class="n">sender</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"tcp://172.16.0.113:5001"</span><span class="p">)</span>
+<a name="rest_code_7c64b53a985c49bf8a470751a1ddb11d-9"></a><span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+<a name="rest_code_7c64b53a985c49bf8a470751a1ddb11d-10"></a>    <span class="n">s</span> <span class="o">=</span> <span class="n">receiver</span><span class="o">.</span><span class="n">recv_string</span><span class="p">()</span>
+<a name="rest_code_7c64b53a985c49bf8a470751a1ddb11d-11"></a>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">*</span><span class="mf">0.001</span><span class="p">)</span>
+<a name="rest_code_7c64b53a985c49bf8a470751a1ddb11d-12"></a>    <span class="n">sender</span><span class="o">.</span><span class="n">send_string</span><span class="p">(</span><span class="s2">""</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 </blockquote>
 <p>汇总端：</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_98b608edb3ce45e18141731a1baa04f0-1"> 1</a>
-<a href="#rest_code_98b608edb3ce45e18141731a1baa04f0-2"> 2</a>
-<a href="#rest_code_98b608edb3ce45e18141731a1baa04f0-3"> 3</a>
-<a href="#rest_code_98b608edb3ce45e18141731a1baa04f0-4"> 4</a>
-<a href="#rest_code_98b608edb3ce45e18141731a1baa04f0-5"> 5</a>
-<a href="#rest_code_98b608edb3ce45e18141731a1baa04f0-6"> 6</a>
-<a href="#rest_code_98b608edb3ce45e18141731a1baa04f0-7"> 7</a>
-<a href="#rest_code_98b608edb3ce45e18141731a1baa04f0-8"> 8</a>
-<a href="#rest_code_98b608edb3ce45e18141731a1baa04f0-9"> 9</a>
-<a href="#rest_code_98b608edb3ce45e18141731a1baa04f0-10">10</a>
-<a href="#rest_code_98b608edb3ce45e18141731a1baa04f0-11">11</a>
-<a href="#rest_code_98b608edb3ce45e18141731a1baa04f0-12">12</a>
-<a href="#rest_code_98b608edb3ce45e18141731a1baa04f0-13">13</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_98b608edb3ce45e18141731a1baa04f0-1"></a><span class="kn">import</span> <span class="nn">sys</span>
-<a name="rest_code_98b608edb3ce45e18141731a1baa04f0-2"></a><span class="kn">import</span> <span class="nn">time</span>
-<a name="rest_code_98b608edb3ce45e18141731a1baa04f0-3"></a><span class="kn">import</span> <span class="nn">zmq</span>
-<a name="rest_code_98b608edb3ce45e18141731a1baa04f0-4"></a><span class="n">context</span> <span class="o">=</span> <span class="n">zmq</span><span class="o">.</span><span class="n">Context</span><span class="p">()</span>
-<a name="rest_code_98b608edb3ce45e18141731a1baa04f0-5"></a><span class="n">receiver</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">PULL</span><span class="p">)</span>
-<a name="rest_code_98b608edb3ce45e18141731a1baa04f0-6"></a><span class="n">receiver</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">"tcp://*:5001"</span><span class="p">)</span>
-<a name="rest_code_98b608edb3ce45e18141731a1baa04f0-7"></a><span class="n">s</span> <span class="o">=</span> <span class="n">receiver</span><span class="o">.</span><span class="n">recv_string</span><span class="p">()</span>
-<a name="rest_code_98b608edb3ce45e18141731a1baa04f0-8"></a><span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-<a name="rest_code_98b608edb3ce45e18141731a1baa04f0-9"></a><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<a name="rest_code_98b608edb3ce45e18141731a1baa04f0-10"></a><span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
-<a name="rest_code_98b608edb3ce45e18141731a1baa04f0-11"></a>    <span class="n">s</span> <span class="o">=</span> <span class="n">receiver</span><span class="o">.</span><span class="n">recv_string</span><span class="p">()</span>
-<a name="rest_code_98b608edb3ce45e18141731a1baa04f0-12"></a><span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
-<a name="rest_code_98b608edb3ce45e18141731a1baa04f0-13"></a><span class="k">print</span><span class="p">(</span><span class="s2">"Total Elapsed Time: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">((</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"s."</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_b13ac08781a1450aab75a2a4d70d335d-1"> 1</a>
+<a href="#rest_code_b13ac08781a1450aab75a2a4d70d335d-2"> 2</a>
+<a href="#rest_code_b13ac08781a1450aab75a2a4d70d335d-3"> 3</a>
+<a href="#rest_code_b13ac08781a1450aab75a2a4d70d335d-4"> 4</a>
+<a href="#rest_code_b13ac08781a1450aab75a2a4d70d335d-5"> 5</a>
+<a href="#rest_code_b13ac08781a1450aab75a2a4d70d335d-6"> 6</a>
+<a href="#rest_code_b13ac08781a1450aab75a2a4d70d335d-7"> 7</a>
+<a href="#rest_code_b13ac08781a1450aab75a2a4d70d335d-8"> 8</a>
+<a href="#rest_code_b13ac08781a1450aab75a2a4d70d335d-9"> 9</a>
+<a href="#rest_code_b13ac08781a1450aab75a2a4d70d335d-10">10</a>
+<a href="#rest_code_b13ac08781a1450aab75a2a4d70d335d-11">11</a>
+<a href="#rest_code_b13ac08781a1450aab75a2a4d70d335d-12">12</a>
+<a href="#rest_code_b13ac08781a1450aab75a2a4d70d335d-13">13</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_b13ac08781a1450aab75a2a4d70d335d-1"></a><span class="kn">import</span> <span class="nn">sys</span>
+<a name="rest_code_b13ac08781a1450aab75a2a4d70d335d-2"></a><span class="kn">import</span> <span class="nn">time</span>
+<a name="rest_code_b13ac08781a1450aab75a2a4d70d335d-3"></a><span class="kn">import</span> <span class="nn">zmq</span>
+<a name="rest_code_b13ac08781a1450aab75a2a4d70d335d-4"></a><span class="n">context</span> <span class="o">=</span> <span class="n">zmq</span><span class="o">.</span><span class="n">Context</span><span class="p">()</span>
+<a name="rest_code_b13ac08781a1450aab75a2a4d70d335d-5"></a><span class="n">receiver</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">zmq</span><span class="o">.</span><span class="n">PULL</span><span class="p">)</span>
+<a name="rest_code_b13ac08781a1450aab75a2a4d70d335d-6"></a><span class="n">receiver</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">"tcp://*:5001"</span><span class="p">)</span>
+<a name="rest_code_b13ac08781a1450aab75a2a4d70d335d-7"></a><span class="n">s</span> <span class="o">=</span> <span class="n">receiver</span><span class="o">.</span><span class="n">recv_string</span><span class="p">()</span>
+<a name="rest_code_b13ac08781a1450aab75a2a4d70d335d-8"></a><span class="k">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<a name="rest_code_b13ac08781a1450aab75a2a4d70d335d-9"></a><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<a name="rest_code_b13ac08781a1450aab75a2a4d70d335d-10"></a><span class="k">for</span> <span class="n">task</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+<a name="rest_code_b13ac08781a1450aab75a2a4d70d335d-11"></a>    <span class="n">s</span> <span class="o">=</span> <span class="n">receiver</span><span class="o">.</span><span class="n">recv_string</span><span class="p">()</span>
+<a name="rest_code_b13ac08781a1450aab75a2a4d70d335d-12"></a><span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<a name="rest_code_b13ac08781a1450aab75a2a4d70d335d-13"></a><span class="k">print</span><span class="p">(</span><span class="s2">"Total Elapsed Time: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">((</span><span class="n">end</span><span class="o">-</span><span class="n">start</span><span class="p">)</span><span class="o">*</span><span class="mi">1000</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"s."</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 </blockquote>

@@ -1,56 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Docker)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_docker.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sun, 14 May 2017 08:22:00 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Docker设定固定IP</title><link>https://codinglonglong.github.io/posts/dockershe-ding-gu-ding-ip/</link><dc:creator>龙龙</dc:creator><description>&lt;ol class="arabic"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Docker)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link rel="self" type="application/rss+xml" href="https://codinglonglong.github.io/categories/cat_docker.xml"></atom:link><language>en</language><lastBuildDate>Sun, 02 Jul 2017 04:21:45 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Docker设定固定IP</title><link>https://codinglonglong.github.io/posts/dockershe-ding-gu-ding-ip/</link><dc:creator>龙龙</dc:creator><description>&lt;ol class="arabic"&gt;
 &lt;li&gt;&lt;p class="first"&gt;新建自定义网络。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_54d120655a6e410891d59576b4754433-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; docker network create --subnet&lt;span class="o"&gt;=&lt;/span&gt;172.16.0.0/16 testnet
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_b3451969fae944ddbfe967638bdacc8e-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; docker network create --subnet&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;172&lt;/span&gt;.16.0.0/16 testnet
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;创建虚拟机。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_24bd559ee25047a3a4339fc42c4ef9a3-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt;  docker run --name t1 -i -t --net&lt;span class="o"&gt;=&lt;/span&gt;testnet --ip&lt;span class="o"&gt;=&lt;/span&gt;172.16.0.111 -p 8080:8080 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
-&lt;a name="rest_code_24bd559ee25047a3a4339fc42c4ef9a3-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt;  docker run --name t2 -i -t --net&lt;span class="o"&gt;=&lt;/span&gt;testnet --ip&lt;span class="o"&gt;=&lt;/span&gt;172.16.0.112 -p 8081:8081 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_1dccd73e18014262beaa2a144c4700f1-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt;  docker run --name t1 -i -t --net&lt;span class="o"&gt;=&lt;/span&gt;testnet --ip&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;172&lt;/span&gt;.16.0.111 -p &lt;span class="m"&gt;8080&lt;/span&gt;:8080 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
+&lt;a name="rest_code_1dccd73e18014262beaa2a144c4700f1-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt;  docker run --name t2 -i -t --net&lt;span class="o"&gt;=&lt;/span&gt;testnet --ip&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;172&lt;/span&gt;.16.0.112 -p &lt;span class="m"&gt;8081&lt;/span&gt;:8081 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;进入虚拟机，查看当前IP。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; docker &lt;span class="nb"&gt;exec&lt;/span&gt; -it t1 /bin/bash
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt; root@2ef31a06d8f8:/# ifconfig
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-3"&gt;&lt;/a&gt;eth0      Link encap:Ethernet  HWaddr 02:42:ac:10:00:6f
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-4"&gt;&lt;/a&gt;        inet addr:172.16.0.111  Bcast:0.0.0.0  Mask:255.255.0.0
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-5"&gt;&lt;/a&gt;        inet6 addr: fe80::42:acff:fe10:6f/64 Scope:Link
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-6"&gt;&lt;/a&gt;        UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-7"&gt;&lt;/a&gt;        RX packets:22 errors:0 dropped:0 overruns:0 frame:0
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-8"&gt;&lt;/a&gt;        TX packets:13 errors:0 dropped:0 overruns:0 carrier:0
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-9"&gt;&lt;/a&gt;        collisions:0 txqueuelen:0
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-10"&gt;&lt;/a&gt;        RX bytes:1716 &lt;span class="o"&gt;(&lt;/span&gt;1.7 KB&lt;span class="o"&gt;)&lt;/span&gt;  TX bytes:1026 &lt;span class="o"&gt;(&lt;/span&gt;1.0 KB&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-11"&gt;&lt;/a&gt;
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-12"&gt;&lt;/a&gt;lo        Link encap:Local Loopback
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-13"&gt;&lt;/a&gt;        inet addr:127.0.0.1  Mask:255.0.0.0
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-14"&gt;&lt;/a&gt;        inet6 addr: ::1/128 Scope:Host
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-15"&gt;&lt;/a&gt;        UP LOOPBACK RUNNING  MTU:65536  Metric:1
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-16"&gt;&lt;/a&gt;        RX packets:0 errors:0 dropped:0 overruns:0 frame:0
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-17"&gt;&lt;/a&gt;        TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-18"&gt;&lt;/a&gt;        collisions:0 txqueuelen:1
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-19"&gt;&lt;/a&gt;        RX bytes:0 &lt;span class="o"&gt;(&lt;/span&gt;0.0 B&lt;span class="o"&gt;)&lt;/span&gt;  TX bytes:0 &lt;span class="o"&gt;(&lt;/span&gt;0.0 B&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-20"&gt;&lt;/a&gt;&amp;gt;&amp;gt; docker &lt;span class="nb"&gt;exec&lt;/span&gt; -it t2 /bin/bash
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-21"&gt;&lt;/a&gt;&amp;gt;&amp;gt; root@a9cd9a699b05:/# ifconfig
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-22"&gt;&lt;/a&gt;eth0      Link encap:Ethernet  HWaddr 02:42:ac:10:00:70
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-23"&gt;&lt;/a&gt;        inet addr:172.16.0.112  Bcast:0.0.0.0  Mask:255.255.0.0
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-24"&gt;&lt;/a&gt;        inet6 addr: fe80::42:acff:fe10:70/64 Scope:Link
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-25"&gt;&lt;/a&gt;        UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-26"&gt;&lt;/a&gt;        RX packets:14 errors:0 dropped:0 overruns:0 frame:0
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-27"&gt;&lt;/a&gt;        TX packets:15 errors:0 dropped:0 overruns:0 carrier:0
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-28"&gt;&lt;/a&gt;        collisions:0 txqueuelen:0
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-29"&gt;&lt;/a&gt;        RX bytes:1068 &lt;span class="o"&gt;(&lt;/span&gt;1.0 KB&lt;span class="o"&gt;)&lt;/span&gt;  TX bytes:1166 &lt;span class="o"&gt;(&lt;/span&gt;1.1 KB&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-30"&gt;&lt;/a&gt;
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-31"&gt;&lt;/a&gt;lo        Link encap:Local Loopback
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-32"&gt;&lt;/a&gt;        inet addr:127.0.0.1  Mask:255.0.0.0
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-33"&gt;&lt;/a&gt;        inet6 addr: ::1/128 Scope:Host
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-34"&gt;&lt;/a&gt;        UP LOOPBACK RUNNING  MTU:65536  Metric:1
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-35"&gt;&lt;/a&gt;        RX packets:0 errors:0 dropped:0 overruns:0 frame:0
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-36"&gt;&lt;/a&gt;        TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-37"&gt;&lt;/a&gt;        collisions:0 txqueuelen:1
-&lt;a name="rest_code_41daea016a904ed98b9b0440da7394cb-38"&gt;&lt;/a&gt;        RX bytes:0 &lt;span class="o"&gt;(&lt;/span&gt;0.0 B&lt;span class="o"&gt;)&lt;/span&gt;  TX bytes:0 &lt;span class="o"&gt;(&lt;/span&gt;0.0 B&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; docker &lt;span class="nb"&gt;exec&lt;/span&gt; -it t1 /bin/bash
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt; root@2ef31a06d8f8:/# ifconfig
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-3"&gt;&lt;/a&gt;eth0      Link encap:Ethernet  HWaddr &lt;span class="m"&gt;02&lt;/span&gt;:42:ac:10:00:6f
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-4"&gt;&lt;/a&gt;        inet addr:172.16.0.111  Bcast:0.0.0.0  Mask:255.255.0.0
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-5"&gt;&lt;/a&gt;        inet6 addr: fe80::42:acff:fe10:6f/64 Scope:Link
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-6"&gt;&lt;/a&gt;        UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-7"&gt;&lt;/a&gt;        RX packets:22 errors:0 dropped:0 overruns:0 frame:0
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-8"&gt;&lt;/a&gt;        TX packets:13 errors:0 dropped:0 overruns:0 carrier:0
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-9"&gt;&lt;/a&gt;        collisions:0 txqueuelen:0
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-10"&gt;&lt;/a&gt;        RX bytes:1716 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.7 KB&lt;span class="o"&gt;)&lt;/span&gt;  TX bytes:1026 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.0 KB&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-11"&gt;&lt;/a&gt;
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-12"&gt;&lt;/a&gt;lo        Link encap:Local Loopback
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-13"&gt;&lt;/a&gt;        inet addr:127.0.0.1  Mask:255.0.0.0
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-14"&gt;&lt;/a&gt;        inet6 addr: ::1/128 Scope:Host
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-15"&gt;&lt;/a&gt;        UP LOOPBACK RUNNING  MTU:65536  Metric:1
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-16"&gt;&lt;/a&gt;        RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-17"&gt;&lt;/a&gt;        TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-18"&gt;&lt;/a&gt;        collisions:0 txqueuelen:1
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-19"&gt;&lt;/a&gt;        RX bytes:0 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.0 B&lt;span class="o"&gt;)&lt;/span&gt;  TX bytes:0 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.0 B&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-20"&gt;&lt;/a&gt;&amp;gt;&amp;gt; docker &lt;span class="nb"&gt;exec&lt;/span&gt; -it t2 /bin/bash
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-21"&gt;&lt;/a&gt;&amp;gt;&amp;gt; root@a9cd9a699b05:/# ifconfig
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-22"&gt;&lt;/a&gt;eth0      Link encap:Ethernet  HWaddr &lt;span class="m"&gt;02&lt;/span&gt;:42:ac:10:00:70
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-23"&gt;&lt;/a&gt;        inet addr:172.16.0.112  Bcast:0.0.0.0  Mask:255.255.0.0
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-24"&gt;&lt;/a&gt;        inet6 addr: fe80::42:acff:fe10:70/64 Scope:Link
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-25"&gt;&lt;/a&gt;        UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-26"&gt;&lt;/a&gt;        RX packets:14 errors:0 dropped:0 overruns:0 frame:0
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-27"&gt;&lt;/a&gt;        TX packets:15 errors:0 dropped:0 overruns:0 carrier:0
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-28"&gt;&lt;/a&gt;        collisions:0 txqueuelen:0
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-29"&gt;&lt;/a&gt;        RX bytes:1068 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.0 KB&lt;span class="o"&gt;)&lt;/span&gt;  TX bytes:1166 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;.1 KB&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-30"&gt;&lt;/a&gt;
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-31"&gt;&lt;/a&gt;lo        Link encap:Local Loopback
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-32"&gt;&lt;/a&gt;        inet addr:127.0.0.1  Mask:255.0.0.0
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-33"&gt;&lt;/a&gt;        inet6 addr: ::1/128 Scope:Host
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-34"&gt;&lt;/a&gt;        UP LOOPBACK RUNNING  MTU:65536  Metric:1
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-35"&gt;&lt;/a&gt;        RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-36"&gt;&lt;/a&gt;        TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-37"&gt;&lt;/a&gt;        collisions:0 txqueuelen:1
+&lt;a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-38"&gt;&lt;/a&gt;        RX bytes:0 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.0 B&lt;span class="o"&gt;)&lt;/span&gt;  TX bytes:0 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;.0 B&lt;span class="o"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;重启之后，IP地址依然保持之前的设置，并且可以相互ping通。&lt;/p&gt;
@@ -59,54 +59,54 @@
 &lt;ol class="arabic"&gt;
 &lt;li&gt;&lt;p class="first"&gt;新建容器。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_252faa3a4212460c8387412bb0b319f8-1"&gt;&lt;/a&gt;docker run --name mypc -i -t -p 8080:8080 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_dfcc32c5dd024e8eafb82c7f22e8e8bf-1"&gt;&lt;/a&gt;docker run --name mypc -i -t -p &lt;span class="m"&gt;8080&lt;/span&gt;:8080 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;Docker中修改Ubuntu软件源。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_c21398ffd62e4e5dbe317bdd1465caba-1"&gt;&lt;/a&gt;vi /etc/apt/sources.list
-&lt;a name="rest_code_c21398ffd62e4e5dbe317bdd1465caba-2"&gt;&lt;/a&gt;:%s/archive.ubuntu/cn.archive.ubuntu/g
-&lt;a name="rest_code_c21398ffd62e4e5dbe317bdd1465caba-3"&gt;&lt;/a&gt;:wq
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_8a71c0ba853248bd956fdddadaf52785-1"&gt;&lt;/a&gt;vi /etc/apt/sources.list
+&lt;a name="rest_code_8a71c0ba853248bd956fdddadaf52785-2"&gt;&lt;/a&gt;:%s/archive.ubuntu/cn.archive.ubuntu/g
+&lt;a name="rest_code_8a71c0ba853248bd956fdddadaf52785-3"&gt;&lt;/a&gt;:wq
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;Docker中更新软件源。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_102f37bbf06b457eb88794c3b21b8ed7-1"&gt;&lt;/a&gt;apt update
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_0b9c8dc22bcf413ba16c79e9cc4f517c-1"&gt;&lt;/a&gt;apt update
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;Docker中安装Python和Flask。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_81465a7e1d2e4eb396adf1a51490d4df-1"&gt;&lt;/a&gt;apt install python
-&lt;a name="rest_code_81465a7e1d2e4eb396adf1a51490d4df-2"&gt;&lt;/a&gt;apt install python-pip
-&lt;a name="rest_code_81465a7e1d2e4eb396adf1a51490d4df-3"&gt;&lt;/a&gt;apt install python-dev
-&lt;a name="rest_code_81465a7e1d2e4eb396adf1a51490d4df-4"&gt;&lt;/a&gt;pip install flask
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_09f1e90c0f2d4567b9f97bf254ccbe54-1"&gt;&lt;/a&gt;apt install python
+&lt;a name="rest_code_09f1e90c0f2d4567b9f97bf254ccbe54-2"&gt;&lt;/a&gt;apt install python-pip
+&lt;a name="rest_code_09f1e90c0f2d4567b9f97bf254ccbe54-3"&gt;&lt;/a&gt;apt install python-dev
+&lt;a name="rest_code_09f1e90c0f2d4567b9f97bf254ccbe54-4"&gt;&lt;/a&gt;pip install flask
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;在主系统目录 &lt;strong&gt;~/share/&lt;/strong&gt; 下编写测试网站main.py。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_80b7e4c293234226a013bc27e3cc8c35-1"&gt;1&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_80b7e4c293234226a013bc27e3cc8c35-2"&gt;2&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_80b7e4c293234226a013bc27e3cc8c35-3"&gt;3&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_80b7e4c293234226a013bc27e3cc8c35-4"&gt;4&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_80b7e4c293234226a013bc27e3cc8c35-5"&gt;5&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_80b7e4c293234226a013bc27e3cc8c35-6"&gt;6&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_80b7e4c293234226a013bc27e3cc8c35-7"&gt;7&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_80b7e4c293234226a013bc27e3cc8c35-8"&gt;8&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_80b7e4c293234226a013bc27e3cc8c35-9"&gt;9&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_80b7e4c293234226a013bc27e3cc8c35-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;
-&lt;a name="rest_code_80b7e4c293234226a013bc27e3cc8c35-2"&gt;&lt;/a&gt;&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_80b7e4c293234226a013bc27e3cc8c35-3"&gt;&lt;/a&gt;
-&lt;a name="rest_code_80b7e4c293234226a013bc27e3cc8c35-4"&gt;&lt;/a&gt;&lt;span class="nd"&gt;@app.route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'/'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_80b7e4c293234226a013bc27e3cc8c35-5"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;hello_world&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
-&lt;a name="rest_code_80b7e4c293234226a013bc27e3cc8c35-6"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s1"&gt;'Hello World!'&lt;/span&gt;
-&lt;a name="rest_code_80b7e4c293234226a013bc27e3cc8c35-7"&gt;&lt;/a&gt;
-&lt;a name="rest_code_80b7e4c293234226a013bc27e3cc8c35-8"&gt;&lt;/a&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;'__main__'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a name="rest_code_80b7e4c293234226a013bc27e3cc8c35-9"&gt;&lt;/a&gt;    &lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;host&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"0.0.0.0"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"8080"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_619a39f223f94702b445dc72474e0fb4-1"&gt;1&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_619a39f223f94702b445dc72474e0fb4-2"&gt;2&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_619a39f223f94702b445dc72474e0fb4-3"&gt;3&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_619a39f223f94702b445dc72474e0fb4-4"&gt;4&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_619a39f223f94702b445dc72474e0fb4-5"&gt;5&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_619a39f223f94702b445dc72474e0fb4-6"&gt;6&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_619a39f223f94702b445dc72474e0fb4-7"&gt;7&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_619a39f223f94702b445dc72474e0fb4-8"&gt;8&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_619a39f223f94702b445dc72474e0fb4-9"&gt;9&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_619a39f223f94702b445dc72474e0fb4-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;flask&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;
+&lt;a name="rest_code_619a39f223f94702b445dc72474e0fb4-2"&gt;&lt;/a&gt;&lt;span class="n"&gt;app&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Flask&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="vm"&gt;__name__&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_619a39f223f94702b445dc72474e0fb4-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_619a39f223f94702b445dc72474e0fb4-4"&gt;&lt;/a&gt;&lt;span class="nd"&gt;@app.route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'/'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_619a39f223f94702b445dc72474e0fb4-5"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;hello_world&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+&lt;a name="rest_code_619a39f223f94702b445dc72474e0fb4-6"&gt;&lt;/a&gt;    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s1"&gt;'Hello World!'&lt;/span&gt;
+&lt;a name="rest_code_619a39f223f94702b445dc72474e0fb4-7"&gt;&lt;/a&gt;
+&lt;a name="rest_code_619a39f223f94702b445dc72474e0fb4-8"&gt;&lt;/a&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;'__main__'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_619a39f223f94702b445dc72474e0fb4-9"&gt;&lt;/a&gt;    &lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;host&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"0.0.0.0"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"8080"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;Docker中运行网站。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_dcffbfedb7aa4bb0aae8058767de65cc-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /usr/development/
-&lt;a name="rest_code_dcffbfedb7aa4bb0aae8058767de65cc-2"&gt;&lt;/a&gt;python main.py
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_3de184267c9f444fab8256d465c1328f-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;cd&lt;/span&gt; /usr/development/
+&lt;a name="rest_code_3de184267c9f444fab8256d465c1328f-2"&gt;&lt;/a&gt;python main.py
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;主系统上查看效果。&lt;/p&gt;
@@ -120,7 +120,7 @@
 &lt;/ol&gt;&lt;/div&gt;</description><category>Docker</category><category>flask</category><category>Python</category><guid>https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/</guid><pubDate>Mon, 23 Jan 2017 15:08:02 GMT</pubDate></item><item><title>Docker常用命令</title><link>https://codinglonglong.github.io/posts/dockerchang-yong-ming-ling/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;ol class="arabic"&gt;
 &lt;li&gt;&lt;p class="first"&gt;创建容器。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_a2b50b22b2e4473e8168499ce7fc68cf-1"&gt;&lt;/a&gt;docker run --name mypc -it ubuntu:16.04 /bin/bash
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_6d4f93b2b6524ba698fa42a37ec6705b-1"&gt;&lt;/a&gt;docker run --name mypc -it ubuntu:16.04 /bin/bash
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -128,27 +128,27 @@
 &lt;ol class="arabic" start="2"&gt;
 &lt;li&gt;&lt;p class="first"&gt;查看已有容器及其状态。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_5d27b05976bc4070ad2192c93fcbe51a-1"&gt;&lt;/a&gt;docker ps -a
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_00282a2a82a84931a32b7431d7816a3e-1"&gt;&lt;/a&gt;docker ps -a
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;启动已有容器。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_9af4625defcb459d8a720a1303bb3a93-1"&gt;&lt;/a&gt;docker start mypc
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_55877fd45f85487c905b3e8ac417eb29-1"&gt;&lt;/a&gt;docker start mypc
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;登陆正在运行的容器。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_2db2f808d17349f3a97e65f1280cf601-1"&gt;&lt;/a&gt;docker &lt;span class="nb"&gt;exec&lt;/span&gt; -it mypc /bin/bash
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_9bde5643197c46d89fb4bbb846c886c0-1"&gt;&lt;/a&gt;docker &lt;span class="nb"&gt;exec&lt;/span&gt; -it mypc /bin/bash
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;关闭正在运行的容器。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_b4185a3df4f14d708336ee4fa9532ecf-1"&gt;&lt;/a&gt;docker stop mypc
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_46976fad557646a1a0b1dafdfe7e019f-1"&gt;&lt;/a&gt;docker stop mypc
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;删除容器。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_fe02a4facca1407f92be9aa284bda298-1"&gt;&lt;/a&gt;docker rm mypc
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_b4debc330fb34183b1730d815e891c3d-1"&gt;&lt;/a&gt;docker rm mypc
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -159,19 +159,19 @@
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;在开始菜单双击运行Docker Quickstart Terminal，等待……………………直到出现&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_6af57f8339bc4a4eb3adbd30748794ca-1"&gt;1&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_6af57f8339bc4a4eb3adbd30748794ca-2"&gt;2&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_6af57f8339bc4a4eb3adbd30748794ca-3"&gt;3&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_6af57f8339bc4a4eb3adbd30748794ca-4"&gt;4&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_6af57f8339bc4a4eb3adbd30748794ca-5"&gt;5&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_6af57f8339bc4a4eb3adbd30748794ca-6"&gt;6&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_6af57f8339bc4a4eb3adbd30748794ca-7"&gt;7&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code bash"&gt;&lt;a name="rest_code_6af57f8339bc4a4eb3adbd30748794ca-1"&gt;&lt;/a&gt;docker is configured to use the default machine with IP 192.168.99.100
-&lt;a name="rest_code_6af57f8339bc4a4eb3adbd30748794ca-2"&gt;&lt;/a&gt;For &lt;span class="nb"&gt;help&lt;/span&gt; getting started, check out the docs at https://docs.docker.com
-&lt;a name="rest_code_6af57f8339bc4a4eb3adbd30748794ca-3"&gt;&lt;/a&gt;
-&lt;a name="rest_code_6af57f8339bc4a4eb3adbd30748794ca-4"&gt;&lt;/a&gt;Start interactive shell
-&lt;a name="rest_code_6af57f8339bc4a4eb3adbd30748794ca-5"&gt;&lt;/a&gt;
-&lt;a name="rest_code_6af57f8339bc4a4eb3adbd30748794ca-6"&gt;&lt;/a&gt;long@DESKTOP-N79DL8P MINGW64 ~
-&lt;a name="rest_code_6af57f8339bc4a4eb3adbd30748794ca-7"&gt;&lt;/a&gt;$
+&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-1"&gt;1&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-2"&gt;2&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-3"&gt;3&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-4"&gt;4&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-5"&gt;5&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-6"&gt;6&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/windowspei-zhi-docker/#rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-7"&gt;7&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code bash"&gt;&lt;a name="rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-1"&gt;&lt;/a&gt;docker is configured to use the default machine with IP &lt;span class="m"&gt;192&lt;/span&gt;.168.99.100
+&lt;a name="rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-2"&gt;&lt;/a&gt;For &lt;span class="nb"&gt;help&lt;/span&gt; getting started, check out the docs at https://docs.docker.com
+&lt;a name="rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-4"&gt;&lt;/a&gt;Start interactive shell
+&lt;a name="rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-5"&gt;&lt;/a&gt;
+&lt;a name="rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-6"&gt;&lt;/a&gt;long@DESKTOP-N79DL8P MINGW64 ~
+&lt;a name="rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-7"&gt;&lt;/a&gt;$
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;p class="first"&gt;运行 &lt;strong&gt;docker pull ubuntu:16.04&lt;/strong&gt; 。&lt;/p&gt;

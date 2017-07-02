@@ -162,12 +162,12 @@ body{
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">vuejs学习(8)</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     龙龙
             </span></p>
             <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2017-01-14T15:07:00+08:00" itemprop="datePublished" title="2017-01-14 15:07">2017-01-14 15:07</time></a></p>
             
-        <p class="sourceline"><a href="index.rst" id="sourcelink">Source</a></p>
+        <p class="sourceline"><a href="index.rst" class="sourcelink">Source</a></p>
 
         </div>
         
@@ -177,116 +177,116 @@ body{
 <p>本文要学习的是列表渲染 v-for ，看测试代码 <strong>TodoItem.vue</strong> ：</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-1"> 1</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-2"> 2</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-3"> 3</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-4"> 4</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-5"> 5</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-6"> 6</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-7"> 7</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-8"> 8</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-9"> 9</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-10">10</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-11">11</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-12">12</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-13">13</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-14">14</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-15">15</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-16">16</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-17">17</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-18">18</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-19">19</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-20">20</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-21">21</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-22">22</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-23">23</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-24">24</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-25">25</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-26">26</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-27">27</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-28">28</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-29">29</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-30">30</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-31">31</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-32">32</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-33">33</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-34">34</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-35">35</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-36">36</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-37">37</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-38">38</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-39">39</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-40">40</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-41">41</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-42">42</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-43">43</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-44">44</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-45">45</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-46">46</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-47">47</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-48">48</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-49">49</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-50">50</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-51">51</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-52">52</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-53">53</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-54">54</a>
-<a href="#rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-55">55</a></pre></div></td>
-<td class="code"><pre class="code html"><a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-2"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"todoitem"</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-3"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-4"></a>        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in items1"</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-5"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-6"></a>    <span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">"1"</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-7"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-8"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>项1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-9"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>项2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-10"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>索引<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-11"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-12"></a>        <span class="p">&lt;</span><span class="nt">tr</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item, index in items2"</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-13"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{item[0]}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-14"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{item[1]}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-15"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{index}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-16"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-17"></a>    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-18"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-19"></a>        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"value, key, index in items3"</span><span class="p">&gt;</span>{{index}}==&gt;{{key}}==&gt;{{value}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-20"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-21"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-22"></a>        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in 3"</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-23"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-24"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-25"></a>        <span class="p">&lt;</span><span class="nt">template</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in items5"</span> <span class="na">v-if</span><span class="o">=</span><span class="s">"male"</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-26"></a>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-27"></a>        <span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-28"></a>        <span class="p">&lt;</span><span class="nt">template</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in items6"</span> <span class="na">v-if</span><span class="o">=</span><span class="s">"!male"</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-29"></a>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-30"></a>        <span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-31"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-32"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-33"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-34"></a>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-35"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-36"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-37"></a>    <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-38"></a>        <span class="k">return</span> <span class="p">{</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-39"></a>            <span class="nx">items1</span><span class="o">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-40"></a>            <span class="nx">items2</span><span class="o">:</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]],</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-41"></a>            <span class="nx">items3</span><span class="o">:</span> <span class="p">{</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-42"></a>                <span class="s1">'name'</span><span class="o">:</span> <span class="s1">'Tom'</span><span class="p">,</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-43"></a>                <span class="s1">'age'</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-44"></a>                <span class="s1">'gender'</span><span class="o">:</span> <span class="s1">'male'</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-45"></a>            <span class="p">},</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-46"></a>            <span class="nx">male</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-47"></a>            <span class="nx">items5</span><span class="o">:</span> <span class="p">[</span><span class="s2">"Boy1"</span><span class="p">,</span> <span class="s2">"Boy2"</span><span class="p">,</span> <span class="s2">"Boy3"</span><span class="p">],</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-48"></a>            <span class="nx">items6</span><span class="o">:</span> <span class="p">[</span><span class="s2">"Girl1"</span><span class="p">,</span> <span class="s2">"Girl2"</span><span class="p">,</span> <span class="s2">"Girl3"</span><span class="p">],</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-49"></a>        <span class="p">}</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-50"></a>    <span class="p">},</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-51"></a><span class="p">}</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-52"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-53"></a>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-54"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
-<a name="rest_code_f0470b0cd7eb43e1bb50bb6ff9c582a3-55"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-1"> 1</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-2"> 2</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-3"> 3</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-4"> 4</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-5"> 5</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-6"> 6</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-7"> 7</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-8"> 8</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-9"> 9</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-10">10</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-11">11</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-12">12</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-13">13</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-14">14</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-15">15</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-16">16</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-17">17</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-18">18</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-19">19</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-20">20</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-21">21</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-22">22</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-23">23</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-24">24</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-25">25</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-26">26</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-27">27</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-28">28</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-29">29</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-30">30</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-31">31</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-32">32</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-33">33</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-34">34</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-35">35</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-36">36</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-37">37</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-38">38</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-39">39</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-40">40</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-41">41</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-42">42</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-43">43</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-44">44</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-45">45</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-46">46</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-47">47</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-48">48</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-49">49</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-50">50</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-51">51</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-52">52</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-53">53</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-54">54</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-55">55</a></pre></div></td>
+<td class="code"><pre class="code html"><a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-2"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"todoitem"</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-3"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-4"></a>        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in items1"</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-5"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-6"></a>    <span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">"1"</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-7"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-8"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>项1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-9"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>项2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-10"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>索引<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-11"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-12"></a>        <span class="p">&lt;</span><span class="nt">tr</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item, index in items2"</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-13"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{item[0]}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-14"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{item[1]}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-15"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{index}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-16"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-17"></a>    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-18"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-19"></a>        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"value, key, index in items3"</span><span class="p">&gt;</span>{{index}}==&gt;{{key}}==&gt;{{value}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-20"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-21"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-22"></a>        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in 3"</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-23"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-24"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-25"></a>        <span class="p">&lt;</span><span class="nt">template</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in items5"</span> <span class="na">v-if</span><span class="o">=</span><span class="s">"male"</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-26"></a>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-27"></a>        <span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-28"></a>        <span class="p">&lt;</span><span class="nt">template</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in items6"</span> <span class="na">v-if</span><span class="o">=</span><span class="s">"!male"</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-29"></a>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-30"></a>        <span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-31"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-32"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-33"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-34"></a>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-35"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-36"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-37"></a>    <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-38"></a>        <span class="k">return</span> <span class="p">{</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-39"></a>            <span class="nx">items1</span><span class="o">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-40"></a>            <span class="nx">items2</span><span class="o">:</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]],</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-41"></a>            <span class="nx">items3</span><span class="o">:</span> <span class="p">{</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-42"></a>                <span class="s1">'name'</span><span class="o">:</span> <span class="s1">'Tom'</span><span class="p">,</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-43"></a>                <span class="s1">'age'</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-44"></a>                <span class="s1">'gender'</span><span class="o">:</span> <span class="s1">'male'</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-45"></a>            <span class="p">},</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-46"></a>            <span class="nx">male</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-47"></a>            <span class="nx">items5</span><span class="o">:</span> <span class="p">[</span><span class="s2">"Boy1"</span><span class="p">,</span> <span class="s2">"Boy2"</span><span class="p">,</span> <span class="s2">"Boy3"</span><span class="p">],</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-48"></a>            <span class="nx">items6</span><span class="o">:</span> <span class="p">[</span><span class="s2">"Girl1"</span><span class="p">,</span> <span class="s2">"Girl2"</span><span class="p">,</span> <span class="s2">"Girl3"</span><span class="p">],</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-49"></a>        <span class="p">}</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-50"></a>    <span class="p">},</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-51"></a><span class="p">}</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-52"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-53"></a>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-54"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-55"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
 </pre></td>
 </tr></table>
 </blockquote>

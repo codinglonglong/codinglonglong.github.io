@@ -1,10 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Emacs)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/emacs.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Thu, 06 Apr 2017 06:47:42 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Docker中Emacs支持退格</title><link>https://codinglonglong.github.io/posts/dockerzhong-emacszhi-chi-tui-ge/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;默认在Docker中，Emacs使用退格无法删除光标前的字符，而是显示帮助信息，这让人有些费解，可以采用如下方法解决：&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Emacs)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link rel="self" type="application/rss+xml" href="https://codinglonglong.github.io/categories/emacs.xml"></atom:link><language>en</language><lastBuildDate>Sun, 02 Jul 2017 04:21:43 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Spacemacs主题列表</title><link>https://codinglonglong.github.io/posts/spacemacszhu-ti-lie-biao/</link><dc:creator>龙龙</dc:creator><description>&lt;pre class="literal-block"&gt;
+dotspacemacs-themes '(material-light
+                      adwaita
+                      alect-black-alt
+                      alect-light
+                      ample-flat
+                      anti-zenburn
+                      badwolf
+                      bubbleberry
+                      clues
+                      cyberpunk
+                      darkmine
+                      default
+                      dorsey
+                      flatui
+                      gotham
+                      granger
+                      hc-zenburn
+                      heroku
+                      ir-black
+                      junio
+                      light-soap
+                      material
+                      minimal
+                      molokai
+                      monokai
+                      niflheim
+                      occidental
+                      organic-green
+                      phoenix-dark-pink
+                      purple-haze
+                      sanityinc-solarized-dark
+                      sanityinc-tomorrow-bright
+                      sanityinc-tomorrow-night
+                      soft-charcoal
+                      soothe
+                      stekene-light
+                      sunny-day
+                      tango-dark
+                      tao-yang
+                      tronesque
+                      twilight
+                      ujelly
+                      whiteboard
+                      zen-and-art
+                      zonokai-red
+                      zenburn
+                      wilson
+                      underwater
+                      twilight-anti-bright
+                      tsdh-dark
+                      tao-yin
+                      tango-plus
+                      tango
+                      subatomic
+                      spolsky
+                      spacegray
+                      soft-morning
+                      seti
+                      sanityinc-tomorrow-day
+                      sanityinc-solarized-light
+                      reverse
+                      planet
+                      pastels-on-dark
+                      odersky
+                      noctilux
+                      mustang
+                      monochrome
+                      minimal-light
+                      lush
+                      leuven
+                      jazz
+                      hickey
+                      hemisu-dark
+                      gruber-darker
+                      graham
+                      fogus
+                      firebelly
+                      espresso
+                      dichromacy
+                      darktooth
+                      dakrone
+                      colorsarenice-dark
+                      busybee
+                      birds-of-paradise-plus
+                      apropospriate-dark
+                      ample-light
+                      alect-light-alt
+                      alect-dark
+                      afternoon
+                      alect-black
+                      alect-dark-alt
+                      ample
+                      ample-zen
+                      apropospriate-light
+                      brin
+                      cherry-blossom
+                      colorsarenice-light
+                      darkburn
+                      deeper-blue
+                      django
+                      farmhouse-dark
+                      flatland
+                      gandalf
+                      grandshell
+                      gruvbox
+                      hemisu-light
+                      inkpot
+                      jbeans
+                      light-blue
+                      manoj-dark
+                      mccarthy
+                      misterioso
+                      monochrome-bright
+                      naquadah
+                      obsidian
+                      oldlace
+                      phoenix-dark-mono
+                      professional
+                      ritchie
+                      sanityinc-tomorrow-blue
+                      sanityinc-tomorrow-eighties
+                      smyx
+                      soft-stone
+                      stekene-dark
+                      subatomic256
+                      tango-2
+                      tangotango
+                      toxi
+                      tsdh-light
+                      twilight-bright
+                      wheatgrass
+                      wombat
+                      zonokai-blue
+                      farmhouse-light
+                      spacemacs-dark
+                      spacemacs-light)
+&lt;/pre&gt;</description><category>colortheme</category><category>Emacs</category><category>Spacemacs</category><guid>https://codinglonglong.github.io/posts/spacemacszhu-ti-lie-biao/</guid><pubDate>Sun, 02 Jul 2017 04:20:05 GMT</pubDate></item><item><title>Docker中Emacs支持退格</title><link>https://codinglonglong.github.io/posts/dockerzhong-emacszhi-chi-tui-ge/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;默认在Docker中，Emacs使用退格无法删除光标前的字符，而是显示帮助信息，这让人有些费解，可以采用如下方法解决：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_a8f94bec033c421984728557fff517a6-1"&gt;&lt;/a&gt;emacs ~/.emacs
-&lt;a name="rest_code_a8f94bec033c421984728557fff517a6-2"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;global-set-key &lt;span class="s2"&gt;"\C-h"&lt;/span&gt; &lt;span class="s1"&gt;'backward-delete-char-untabify)&lt;/span&gt;
-&lt;a name="rest_code_a8f94bec033c421984728557fff517a6-3"&gt;&lt;/a&gt;&lt;span class="s1"&gt;(global-set-key "\d" '&lt;/span&gt;delete-char&lt;span class="o"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_a8f94bec033c421984728557fff517a6-4"&gt;&lt;/a&gt;C-x C-s
-&lt;a name="rest_code_a8f94bec033c421984728557fff517a6-5"&gt;&lt;/a&gt;C-x C-c
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_760187018c38427e811b519b805c31c0-1"&gt;&lt;/a&gt;emacs ~/.emacs
+&lt;a name="rest_code_760187018c38427e811b519b805c31c0-2"&gt;&lt;/a&gt;&lt;span class="o"&gt;(&lt;/span&gt;global-set-key &lt;span class="s2"&gt;"\C-h"&lt;/span&gt; &lt;span class="s1"&gt;'backward-delete-char-untabify)&lt;/span&gt;
+&lt;a name="rest_code_760187018c38427e811b519b805c31c0-3"&gt;&lt;/a&gt;&lt;span class="s1"&gt;(global-set-key "\d" '&lt;/span&gt;delete-char&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_760187018c38427e811b519b805c31c0-4"&gt;&lt;/a&gt;C-x C-s
+&lt;a name="rest_code_760187018c38427e811b519b805c31c0-5"&gt;&lt;/a&gt;C-x C-c
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;p&gt;这时再用emacs命令打开文件，就可以正常使用退格键删除光标前的字符了。&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><category>Emacs</category><guid>https://codinglonglong.github.io/posts/dockerzhong-emacszhi-chi-tui-ge/</guid><pubDate>Mon, 30 Jan 2017 14:03:15 GMT</pubDate></item></channel></rss>

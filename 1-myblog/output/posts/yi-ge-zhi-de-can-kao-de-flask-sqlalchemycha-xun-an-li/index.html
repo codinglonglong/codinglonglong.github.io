@@ -110,12 +110,12 @@ body{
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">一个值得参考的Flask-SQLAlchemy查询案例</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     龙龙
             </span></p>
             <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2017-02-01T13:27:19+08:00" itemprop="datePublished" title="2017-02-01 13:27">2017-02-01 13:27</time></a></p>
             
-        <p class="sourceline"><a href="index.rst" id="sourcelink">Source</a></p>
+        <p class="sourceline"><a href="index.rst" class="sourcelink">Source</a></p>
 
         </div>
         
@@ -123,14 +123,14 @@ body{
     </header><div class="e-content entry-content" itemprop="articleBody text">
     <div>
 <blockquote>
-<pre class="code bash"><a name="rest_code_f9f8369c307a44b8a58bcd7fe8656430-1"></a><span class="nv">account</span> <span class="o">=</span> db.session.query<span class="o">(</span>
-<a name="rest_code_f9f8369c307a44b8a58bcd7fe8656430-2"></a>    Account.account_id, Account.account_item,
-<a name="rest_code_f9f8369c307a44b8a58bcd7fe8656430-3"></a>    Account.account_money, AccountType.type_text,
-<a name="rest_code_f9f8369c307a44b8a58bcd7fe8656430-4"></a>    Account.account_date, Account.account_addition,
-<a name="rest_code_f9f8369c307a44b8a58bcd7fe8656430-5"></a>    User.user_email<span class="o">)</span>.outerjoin<span class="o">(</span>
-<a name="rest_code_f9f8369c307a44b8a58bcd7fe8656430-6"></a>    AccountType, Account.account_type <span class="o">==</span> AccountType.type_id<span class="o">)</span>.outerjoin<span class="o">(</span>
-<a name="rest_code_f9f8369c307a44b8a58bcd7fe8656430-7"></a>    User, Account.account_user <span class="o">==</span> User.user_id<span class="o">)</span>.order_by<span class="o">(</span>
-<a name="rest_code_f9f8369c307a44b8a58bcd7fe8656430-8"></a>    Account.account_date.desc<span class="o">())</span>.offset<span class="o">((</span>page-1<span class="o">)</span>*perpage<span class="o">)</span>.limit<span class="o">(</span>perpage<span class="o">)</span>.all<span class="o">()</span>
+<pre class="code bash"><a name="rest_code_352887bfad9a4ff8ad5716b459337908-1"></a><span class="nv">account</span> <span class="o">=</span> db.session.query<span class="o">(</span>
+<a name="rest_code_352887bfad9a4ff8ad5716b459337908-2"></a>    Account.account_id, Account.account_item,
+<a name="rest_code_352887bfad9a4ff8ad5716b459337908-3"></a>    Account.account_money, AccountType.type_text,
+<a name="rest_code_352887bfad9a4ff8ad5716b459337908-4"></a>    Account.account_date, Account.account_addition,
+<a name="rest_code_352887bfad9a4ff8ad5716b459337908-5"></a>    User.user_email<span class="o">)</span>.outerjoin<span class="o">(</span>
+<a name="rest_code_352887bfad9a4ff8ad5716b459337908-6"></a>    AccountType, Account.account_type <span class="o">==</span> AccountType.type_id<span class="o">)</span>.outerjoin<span class="o">(</span>
+<a name="rest_code_352887bfad9a4ff8ad5716b459337908-7"></a>    User, Account.account_user <span class="o">==</span> User.user_id<span class="o">)</span>.order_by<span class="o">(</span>
+<a name="rest_code_352887bfad9a4ff8ad5716b459337908-8"></a>    Account.account_date.desc<span class="o">())</span>.offset<span class="o">((</span>page-1<span class="o">)</span>*perpage<span class="o">)</span>.limit<span class="o">(</span>perpage<span class="o">)</span>.all<span class="o">()</span>
 </pre>
 </blockquote>
 <p>在这个例子中，我们查询的是：</p>

@@ -1,95 +1,95 @@
 <p>继文章 <a class="reference external" href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/">https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/</a> 之后，我们进一步配置数据库的部分。</p>
 <p>1、Docker安装Mysql。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_c69cd17febfc44a7822b8b4d7a11c9bf-1"></a>apt install mysql-server mysql-client
+<pre class="code bash"><a name="rest_code_05ac7f67af954791b11c5fcf11e2069f-1"></a>apt install mysql-server mysql-client
 </pre></blockquote>
 <p>2、Docker下载安装mysql-connector-python。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_f75c958f98a0481bb89bb149f8dcbbc1-1"></a>apt install curl
-<a name="rest_code_f75c958f98a0481bb89bb149f8dcbbc1-2"></a>curl -O https://cdn.mysql.com/Downloads/Connector-Python/mysql-connector-python-2.1.5.tar.gz
-<a name="rest_code_f75c958f98a0481bb89bb149f8dcbbc1-3"></a>tar zxvf mysql-connector-python-2.1.5.tar.gz
-<a name="rest_code_f75c958f98a0481bb89bb149f8dcbbc1-4"></a><span class="nb">cd</span> mysql-connector-python-2.1.5
-<a name="rest_code_f75c958f98a0481bb89bb149f8dcbbc1-5"></a>python setup.py install
+<pre class="code bash"><a name="rest_code_ecbae3bd4ecb4a4cbd066c0ee3cd183c-1"></a>apt install curl
+<a name="rest_code_ecbae3bd4ecb4a4cbd066c0ee3cd183c-2"></a>curl -O https://cdn.mysql.com/Downloads/Connector-Python/mysql-connector-python-2.1.5.tar.gz
+<a name="rest_code_ecbae3bd4ecb4a4cbd066c0ee3cd183c-3"></a>tar zxvf mysql-connector-python-2.1.5.tar.gz
+<a name="rest_code_ecbae3bd4ecb4a4cbd066c0ee3cd183c-4"></a><span class="nb">cd</span> mysql-connector-python-2.1.5
+<a name="rest_code_ecbae3bd4ecb4a4cbd066c0ee3cd183c-5"></a>python setup.py install
 </pre></blockquote>
 <p>3、Docker安装Flask-Sqlalchemy和Flask-Script。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_368e3cb1c70e4fbc8205198a08de81bb-1"></a>pip install flask-sqlalchemy
-<a name="rest_code_368e3cb1c70e4fbc8205198a08de81bb-2"></a>pip install flask-script
+<pre class="code bash"><a name="rest_code_e16d69c9fe584e138dfad553e7d6c7ce-1"></a>pip install flask-sqlalchemy
+<a name="rest_code_e16d69c9fe584e138dfad553e7d6c7ce-2"></a>pip install flask-script
 </pre></blockquote>
 <p>4、为已有容器添加端口。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_dcec400f4b48438bb291f8170d799305-1"></a>docker commit mypc newpc
-<a name="rest_code_dcec400f4b48438bb291f8170d799305-2"></a>docker stop mypc
-<a name="rest_code_dcec400f4b48438bb291f8170d799305-3"></a>docker run --name mynewpc -i -t -p 13306:3306 -p 8080:8080 -v ~/share/:/usr/development/  newpc /bin/bash
+<pre class="code bash"><a name="rest_code_19939862bb3e4958b68a70809e76016f-1"></a>docker commit mypc newpc
+<a name="rest_code_19939862bb3e4958b68a70809e76016f-2"></a>docker stop mypc
+<a name="rest_code_19939862bb3e4958b68a70809e76016f-3"></a>docker run --name mynewpc -i -t -p <span class="m">13306</span>:3306 -p <span class="m">8080</span>:8080 -v ~/share/:/usr/development/  newpc /bin/bash
 </pre></blockquote>
 <p>5、Docker登录Mysql数据库。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_2b4d16996f2e4ee9bbb9bc2b0874231f-1"></a>mysql -u root -p
-<a name="rest_code_2b4d16996f2e4ee9bbb9bc2b0874231f-2"></a>create database test<span class="p">;</span>
-<a name="rest_code_2b4d16996f2e4ee9bbb9bc2b0874231f-3"></a>grant all privileges on *.* to root@<span class="s1">&#39;192.168.99.1&#39;</span> identified by <span class="s1">&#39;root&#39;</span> with grant option<span class="p">;</span>
-<a name="rest_code_2b4d16996f2e4ee9bbb9bc2b0874231f-4"></a>flush privileges<span class="p">;</span>
-<a name="rest_code_2b4d16996f2e4ee9bbb9bc2b0874231f-5"></a><span class="nb">exit</span>
+<pre class="code bash"><a name="rest_code_b89f2436c8504920933a5cf6bfba21d5-1"></a>mysql -u root -p
+<a name="rest_code_b89f2436c8504920933a5cf6bfba21d5-2"></a>create database test<span class="p">;</span>
+<a name="rest_code_b89f2436c8504920933a5cf6bfba21d5-3"></a>grant all privileges on *.* to root@<span class="s1">&#39;192.168.99.1&#39;</span> identified by <span class="s1">&#39;root&#39;</span> with grant option<span class="p">;</span>
+<a name="rest_code_b89f2436c8504920933a5cf6bfba21d5-4"></a>flush privileges<span class="p">;</span>
+<a name="rest_code_b89f2436c8504920933a5cf6bfba21d5-5"></a><span class="nb">exit</span>
 </pre></blockquote>
 <p>6、Docker修改配置文件，我习惯用emacs，也可以用vim。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_6efab799167d4f8ab4bd942daa81363a-1"></a>apt install emacs
-<a name="rest_code_6efab799167d4f8ab4bd942daa81363a-2"></a>apt-get install -f
-<a name="rest_code_6efab799167d4f8ab4bd942daa81363a-3"></a>emacs /etc/mysql/my.cnf
-<a name="rest_code_6efab799167d4f8ab4bd942daa81363a-4"></a>bind-address            <span class="o">=</span> 0.0.0.0
-<a name="rest_code_6efab799167d4f8ab4bd942daa81363a-5"></a>C-x C-s
-<a name="rest_code_6efab799167d4f8ab4bd942daa81363a-6"></a>C-x C-c
+<pre class="code bash"><a name="rest_code_57a74f56a71f488dbd9c1430b37e6a54-1"></a>apt install emacs
+<a name="rest_code_57a74f56a71f488dbd9c1430b37e6a54-2"></a>apt-get install -f
+<a name="rest_code_57a74f56a71f488dbd9c1430b37e6a54-3"></a>emacs /etc/mysql/my.cnf
+<a name="rest_code_57a74f56a71f488dbd9c1430b37e6a54-4"></a>bind-address            <span class="o">=</span> <span class="m">0</span>.0.0.0
+<a name="rest_code_57a74f56a71f488dbd9c1430b37e6a54-5"></a>C-x C-s
+<a name="rest_code_57a74f56a71f488dbd9c1430b37e6a54-6"></a>C-x C-c
 </pre></blockquote>
 <p>7、重启mysql服务。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_2f4183b0d2804ee2a5f63f85c36d7502-1"></a>sudo service mysql stop
-<a name="rest_code_2f4183b0d2804ee2a5f63f85c36d7502-2"></a>mysqld
+<pre class="code bash"><a name="rest_code_6c4e8e88e5e64824b731065b94c16294-1"></a>sudo service mysql stop
+<a name="rest_code_6c4e8e88e5e64824b731065b94c16294-2"></a>mysqld
 </pre></blockquote>
 <p>8、主系统编辑测试网站main.py。</p>
 <blockquote>
-<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-1"> 1</a>
-<a href="#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-2"> 2</a>
-<a href="#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-3"> 3</a>
-<a href="#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-4"> 4</a>
-<a href="#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-5"> 5</a>
-<a href="#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-6"> 6</a>
-<a href="#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-7"> 7</a>
-<a href="#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-8"> 8</a>
-<a href="#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-9"> 9</a>
-<a href="#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-10">10</a>
-<a href="#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-11">11</a>
-<a href="#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-12">12</a>
-<a href="#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-13">13</a>
-<a href="#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-14">14</a>
-<a href="#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-15">15</a>
-<a href="#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-16">16</a>
-<a href="#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-17">17</a>
-<a href="#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-18">18</a>
-<a href="#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-19">19</a>
-<a href="#rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-20">20</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-1"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
-<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-2"></a><span class="kn">from</span> <span class="nn">flask.ext.script</span> <span class="kn">import</span> <span class="n">Manager</span>
-<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-3"></a><span class="kn">from</span> <span class="nn">flask.ext.sqlalchemy</span> <span class="kn">import</span> <span class="n">SQLAlchemy</span>
-<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-4"></a>
-<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-5"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
-<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-6"></a><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;SQLALCHEMY_DATABASE_URI&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;mysql+mysqlconnector://root:root@127.0.0.1:3306/test?charset=utf8&#39;</span>
-<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-7"></a>
-<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-8"></a><span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-9"></a><span class="n">manager</span> <span class="o">=</span> <span class="n">Manager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-10"></a>
-<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-11"></a><span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-12"></a>    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s1">&#39;users&#39;</span>
-<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-13"></a>    <span class="nb">id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-14"></a>    <span class="n">username</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">80</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-15"></a>    <span class="n">email</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">320</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-16"></a>    <span class="n">password</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
-<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-17"></a>
-<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-18"></a><span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-19"></a>    <span class="n">db</span><span class="o">.</span><span class="n">create_all</span><span class="p">()</span>
-<a name="rest_code_3f6805c5a1d04b4f902ea551d9ca3a76-20"></a>    <span class="n">manager</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_8d5cb84d5b604b2683948fad6c75ba58-1"> 1</a>
+<a href="#rest_code_8d5cb84d5b604b2683948fad6c75ba58-2"> 2</a>
+<a href="#rest_code_8d5cb84d5b604b2683948fad6c75ba58-3"> 3</a>
+<a href="#rest_code_8d5cb84d5b604b2683948fad6c75ba58-4"> 4</a>
+<a href="#rest_code_8d5cb84d5b604b2683948fad6c75ba58-5"> 5</a>
+<a href="#rest_code_8d5cb84d5b604b2683948fad6c75ba58-6"> 6</a>
+<a href="#rest_code_8d5cb84d5b604b2683948fad6c75ba58-7"> 7</a>
+<a href="#rest_code_8d5cb84d5b604b2683948fad6c75ba58-8"> 8</a>
+<a href="#rest_code_8d5cb84d5b604b2683948fad6c75ba58-9"> 9</a>
+<a href="#rest_code_8d5cb84d5b604b2683948fad6c75ba58-10">10</a>
+<a href="#rest_code_8d5cb84d5b604b2683948fad6c75ba58-11">11</a>
+<a href="#rest_code_8d5cb84d5b604b2683948fad6c75ba58-12">12</a>
+<a href="#rest_code_8d5cb84d5b604b2683948fad6c75ba58-13">13</a>
+<a href="#rest_code_8d5cb84d5b604b2683948fad6c75ba58-14">14</a>
+<a href="#rest_code_8d5cb84d5b604b2683948fad6c75ba58-15">15</a>
+<a href="#rest_code_8d5cb84d5b604b2683948fad6c75ba58-16">16</a>
+<a href="#rest_code_8d5cb84d5b604b2683948fad6c75ba58-17">17</a>
+<a href="#rest_code_8d5cb84d5b604b2683948fad6c75ba58-18">18</a>
+<a href="#rest_code_8d5cb84d5b604b2683948fad6c75ba58-19">19</a>
+<a href="#rest_code_8d5cb84d5b604b2683948fad6c75ba58-20">20</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-1"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-2"></a><span class="kn">from</span> <span class="nn">flask.ext.script</span> <span class="kn">import</span> <span class="n">Manager</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-3"></a><span class="kn">from</span> <span class="nn">flask.ext.sqlalchemy</span> <span class="kn">import</span> <span class="n">SQLAlchemy</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-4"></a>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-5"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-6"></a><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;SQLALCHEMY_DATABASE_URI&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;mysql+mysqlconnector://root:root@127.0.0.1:3306/test?charset=utf8&#39;</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-7"></a>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-8"></a><span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-9"></a><span class="n">manager</span> <span class="o">=</span> <span class="n">Manager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-10"></a>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-11"></a><span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-12"></a>    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s1">&#39;users&#39;</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-13"></a>    <span class="nb">id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-14"></a>    <span class="n">username</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">80</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-15"></a>    <span class="n">email</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">320</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-16"></a>    <span class="n">password</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-17"></a>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-18"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-19"></a>    <span class="n">db</span><span class="o">.</span><span class="n">create_all</span><span class="p">()</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-20"></a>    <span class="n">manager</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></td></tr></table></blockquote>
 <p>9、开一个新的Docker terminal，启动测试网站。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_214e622d3fe2414c850986dd791251d7-1"></a><span class="nb">cd</span> /usr/development
-<a name="rest_code_214e622d3fe2414c850986dd791251d7-2"></a>python main.py runserver
+<pre class="code bash"><a name="rest_code_72ef481b588c41db95b4fd78dde08122-1"></a><span class="nb">cd</span> /usr/development
+<a name="rest_code_72ef481b588c41db95b4fd78dde08122-2"></a>python main.py runserver
 </pre></blockquote>
 <p>10、主系统上打开MySQL Workbench，访问数据库。Hostname：192.168.99.100，Port：13306，Password：root。</p>
 <img alt="https://github.com/longlongpicture/myblogpicture/raw/master/mysqlworkbench.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/mysqlworkbench.PNG" />
