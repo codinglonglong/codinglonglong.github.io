@@ -10,7 +10,7 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="https://codinglonglong.github.io/">
-<link rel="next" href="index-11.html" type="text/html">
+<link rel="next" href="index-12.html" type="text/html">
 <!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><script>
 var _hmt = _hmt || [];
 (function() {
@@ -24,7 +24,7 @@ body{
     font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
 }
 </style>
-<link rel="prefetch" href="posts/pythonhuo-qu-ipdi-zhi-suo-zai-de-guo-jia/" type="text/html">
+<link rel="prefetch" href="posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -92,7 +92,45 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pythonhuo-qu-ipdi-zhi-suo-zai-de-guo-jia/" class="u-url">Python获取IP地址所在的国家</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/" class="u-url">Python判断网络连接是否正常</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/" rel="bookmark"><time class="published dt-published" datetime="2017-07-12T21:25:51+08:00" title="2017-07-12 21:25">2017-07-12 21:25</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-1"> 1</a>
+<a href="posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-2"> 2</a>
+<a href="posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-3"> 3</a>
+<a href="posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-4"> 4</a>
+<a href="posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-5"> 5</a>
+<a href="posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-6"> 6</a>
+<a href="posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-7"> 7</a>
+<a href="posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-8"> 8</a>
+<a href="posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-9"> 9</a>
+<a href="posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-10">10</a>
+<a href="posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-11">11</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-1"></a><span class="k">def</span> <span class="nf">checkconnection</span><span class="p">():</span>
+<a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-2"></a>    <span class="n">proxies</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"http"</span><span class="p">:</span> <span class="s2">"http://192.168.1.254:8228"</span><span class="p">,</span> <span class="s2">"https"</span><span class="p">:</span> <span class="s2">"http://192.168.1.254:8228"</span><span class="p">}</span>
+<a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-3"></a>    <span class="k">try</span><span class="p">:</span>
+<a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-4"></a>        <span class="n">r1</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"http://www.facebook.com"</span><span class="p">,</span>
+<a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-5"></a>                          <span class="n">proxies</span><span class="o">=</span><span class="n">proxies</span><span class="p">,</span>
+<a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-6"></a>                          <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-7"></a>        <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">r1</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span> <span class="o">==</span> <span class="s2">"200"</span><span class="p">:</span>
+<a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-8"></a>            <span class="k">return</span> <span class="bp">True</span>
+<a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-9"></a>        <span class="k">return</span> <span class="bp">False</span>
+<a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-10"></a>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-11"></a>        <span class="k">return</span> <span class="bp">False</span>
+</pre></td>
+</tr></table>
+<p><strong>注意</strong></p>
+<p>如果不需要测试代理，去掉 <strong>proxies=proxies，</strong> 就可以了。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pythonhuo-qu-ipdi-zhi-suo-zai-de-guo-jia/" class="u-url">Python获取IP地址所在的国家</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
@@ -318,37 +356,12 @@ dotspacemacs-themes '(material-light
 <p>求学无捷径，功到自然成。</p>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/bai-du-wang-pan-da-wen-jian-pu-tong-xia-zai/" class="u-url">百度网盘大文件普通下载</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/bai-du-wang-pan-da-wen-jian-pu-tong-xia-zai/" rel="bookmark"><time class="published dt-published" datetime="2017-06-15T02:02:22+08:00" title="2017-06-15 02:02">2017-06-15 02:02</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>使用百度网盘下载大文件时，会提示安装客户端，关键是注册还需要手机号码，这对于个人隐私来说，总觉得存在隐患。因为下载文件本身和手机号码间没有必然的联系……</p>
-<p>也实在感觉到，随着互联网的发展，越来越多根本与手机号码无关的网络服务都在要求使用手机号码注册，最大的“理由”就是找回密码，这也难怪能接到各种陌生电话的骚扰……因为谁也不知道这个号码到底是谁泄露出去的……所以，到头来，一些受苦受难的普通人，只能选择不注册……因为没有你的服务，地球一样可以转……不排除，确实有人不在乎骚扰……</p>
-<p>对此，我专门进行了实验，两部手机，两个号码，一个专门用来注册日常需要使用的APP和网站，包括填写网购时的快递信息等等；另一个几乎什么都没有注册过……</p>
-<p>一年过去了，后者安静地，让我感觉到，我的手机主要功能是用来叫我起床，还有写备忘。</p>
-<p>值得一提的是，任何APP或者网站，在注册时都会告诉我们——此号码只用于找回密码……</p>
-<p>不过话说回来，当我们有着急的事情，需要临时下载一些文件时，该怎么办呢？</p>
-<p>可以使用Firefox浏览器 <a class="reference external" href="http://www.firefox.com.cn/">http://www.firefox.com.cn/</a> ，在文件下载页面右击，选择“查看元素”，选择“控制台”，在最底下“&gt;&gt;”后面输入：</p>
-<blockquote>
-<pre class="code js"><a name="rest_code_f3934978f0bb436c8b0212d5c4a9cb2e-1"></a><span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">getPrototypeOf</span><span class="p">(</span><span class="nx">navigator</span><span class="p">),</span> <span class="s1">'platform'</span><span class="p">,</span> <span class="p">{</span><span class="nx">get</span><span class="o">:</span><span class="kd">function</span><span class="p">(){</span><span class="k">return</span> <span class="s1">''</span><span class="p">;}});</span>
-</pre>
-</blockquote>
-<p>再去点击“下载”按钮，安装客户端的提示就没有了。</p>
-<p><strong>附加说明</strong></p>
-<p>本文不针对任何索要手机号码的网络服务，只表示对互联网行业现状的担忧，因为地球还是在转的。</p>
-</div>
-    </div>
     </article>
 </div>
 
         <nav class="postindexpager"><ul class="pager">
 <li class="next">
-                <a href="index-11.html" rel="next">Older posts</a>
+                <a href="index-12.html" rel="next">Older posts</a>
             </li>
         </ul></nav>
 </div>

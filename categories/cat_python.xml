@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Python)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_python.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 12 Jul 2017 11:42:23 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Python获取IP地址所在的国家</title><link>https://codinglonglong.github.io/posts/pythonhuo-qu-ipdi-zhi-suo-zai-de-guo-jia/</link><dc:creator>龙龙</dc:creator><description>&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/pythonhuo-qu-ipdi-zhi-suo-zai-de-guo-jia/#rest_code_3fe93a0173494d6ca05fb2915558d8b9-1"&gt;1&lt;/a&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Python)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_python.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 12 Jul 2017 13:31:12 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Python判断网络连接是否正常</title><link>https://codinglonglong.github.io/posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-1"&gt; 1&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-2"&gt; 2&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-3"&gt; 3&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-4"&gt; 4&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-5"&gt; 5&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-6"&gt; 6&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-7"&gt; 7&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-8"&gt; 8&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-9"&gt; 9&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-10"&gt;10&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-11"&gt;11&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-1"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;checkconnection&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+&lt;a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-2"&gt;&lt;/a&gt;    &lt;span class="n"&gt;proxies&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;"http"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"http://192.168.1.254:8228"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"https"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;"http://192.168.1.254:8228"&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-3"&gt;&lt;/a&gt;    &lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-4"&gt;&lt;/a&gt;        &lt;span class="n"&gt;r1&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;requests&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"http://www.facebook.com"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-5"&gt;&lt;/a&gt;                          &lt;span class="n"&gt;proxies&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;proxies&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-6"&gt;&lt;/a&gt;                          &lt;span class="n"&gt;timeout&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-7"&gt;&lt;/a&gt;        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;r1&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;status_code&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s2"&gt;"200"&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-8"&gt;&lt;/a&gt;            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;True&lt;/span&gt;
+&lt;a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-9"&gt;&lt;/a&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
+&lt;a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-10"&gt;&lt;/a&gt;    &lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="ne"&gt;Exception&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;e&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-11"&gt;&lt;/a&gt;        &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="bp"&gt;False&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果不需要测试代理，去掉 &lt;strong&gt;proxies=proxies，&lt;/strong&gt; 就可以了。&lt;/p&gt;&lt;/div&gt;</description><category>Python</category><guid>https://codinglonglong.github.io/posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/</guid><pubDate>Wed, 12 Jul 2017 13:25:51 GMT</pubDate></item><item><title>Python获取IP地址所在的国家</title><link>https://codinglonglong.github.io/posts/pythonhuo-qu-ipdi-zhi-suo-zai-de-guo-jia/</link><dc:creator>龙龙</dc:creator><description>&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/pythonhuo-qu-ipdi-zhi-suo-zai-de-guo-jia/#rest_code_3fe93a0173494d6ca05fb2915558d8b9-1"&gt;1&lt;/a&gt;
 &lt;a href="https://codinglonglong.github.io/posts/pythonhuo-qu-ipdi-zhi-suo-zai-de-guo-jia/#rest_code_3fe93a0173494d6ca05fb2915558d8b9-2"&gt;2&lt;/a&gt;
 &lt;a href="https://codinglonglong.github.io/posts/pythonhuo-qu-ipdi-zhi-suo-zai-de-guo-jia/#rest_code_3fe93a0173494d6ca05fb2915558d8b9-3"&gt;3&lt;/a&gt;
 &lt;a href="https://codinglonglong.github.io/posts/pythonhuo-qu-ipdi-zhi-suo-zai-de-guo-jia/#rest_code_3fe93a0173494d6ca05fb2915558d8b9-4"&gt;4&lt;/a&gt;
@@ -384,55 +406,4 @@
 &lt;p&gt;&lt;a class="reference external" href="http://pycurl.io/docs/latest/index.html"&gt;http://pycurl.io/docs/latest/index.html&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://docs.grablib.org/en/latest/"&gt;http://docs.grablib.org/en/latest/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a class="reference external" href="http://robobrowser.readthedocs.io/en/latest/"&gt;http://robobrowser.readthedocs.io/en/latest/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="http://splinter.readthedocs.io/en/latest/index.html"&gt;http://splinter.readthedocs.io/en/latest/index.html&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><category>Python</category><category>WebCrawler</category><guid>https://codinglonglong.github.io/posts/dockerpei-zhi-pythonpa-chong-huan-jing/</guid><pubDate>Tue, 28 Feb 2017 14:29:02 GMT</pubDate></item><item><title>Supervisor实现Python脚本自启动</title><link>https://codinglonglong.github.io/posts/supervisorshi-xian-pythonjiao-ben-zi-qi-dong/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;经过若干小时的反复试验，终于在树莓派上成功部署了homebank[&lt;a class="reference external" href="https://codinglonglong.github.io/posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/"&gt;https://codinglonglong.github.io/posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/&lt;/a&gt;]，最困难的地方就是配置Supervisor，配置过程中出现了各种错误……&lt;/p&gt;
-&lt;p&gt;1、安装supervisor。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="literal-block"&gt;
-&amp;gt;&amp;gt; sudo pip install supervisor
-&lt;/pre&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;2、编辑配置文件。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="literal-block"&gt;
-&amp;gt;&amp;gt; cd /home/pi/websites/
-&amp;gt;&amp;gt; echo_supervisord_conf &amp;gt; supervisord.conf
-&amp;gt;&amp;gt; sudo supervisord -c supervisord.conf
-&amp;gt;&amp;gt; emacs supervisord.conf
-[inet_http_server]         ; inet (TCP) server disabled by default
-port=0.0.0.0:9999        ; (ip_address:port specifier, *:port for all iface)
-username=user              ; (default is no username (open server))
-password=123               ; (default is no password (open server))
-
-[program:homebank]
-command=python main.py
-directory=/home/pi/websites/homebank
-&lt;/pre&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;3、启动服务。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="literal-block"&gt;
-&amp;gt;&amp;gt; sudo supervisorctl reload
-&amp;gt;&amp;gt; sudo supervisorctl status homebank
-homebank                         RUNNING   pid 2212, uptime 0:02:07
-&lt;/pre&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;4、设置开机启动。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="literal-block"&gt;
-&amp;gt;&amp;gt; sudo emacs /etc/rc.local
-sudo /usr/local/bin/supervisord -c /home/pi/websites/supervisord.conf
-&lt;/pre&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;5、设置sudo免密。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="literal-block"&gt;
-&amp;gt;&amp;gt; sudo visudo
-pi ALL = (ALL)NOPASSWD:ALL
-&lt;/pre&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;6、重启。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="literal-block"&gt;
-&amp;gt;&amp;gt; sudo reboot
-&lt;/pre&gt;
-&lt;/blockquote&gt;&lt;/div&gt;</description><category>supervisor</category><guid>https://codinglonglong.github.io/posts/supervisorshi-xian-pythonjiao-ben-zi-qi-dong/</guid><pubDate>Mon, 27 Feb 2017 18:06:10 GMT</pubDate></item></channel></rss>
+&lt;p&gt;&lt;a class="reference external" href="http://splinter.readthedocs.io/en/latest/index.html"&gt;http://splinter.readthedocs.io/en/latest/index.html&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><category>Python</category><category>WebCrawler</category><guid>https://codinglonglong.github.io/posts/dockerpei-zhi-pythonpa-chong-huan-jing/</guid><pubDate>Tue, 28 Feb 2017 14:29:02 GMT</pubDate></item></channel></rss>
