@@ -1,5 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 12 Jul 2017 13:31:11 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Python判断网络连接是否正常</title><link>https://codinglonglong.github.io/posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-1"&gt; 1&lt;/a&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 14 Jul 2017 12:31:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>最简化的Android入门程序</title><link>https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;用Android Studio创建的空项目包含好几个文件夹和文件，最核心的文件其实只有三个：&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;manifests目录下的AndroidManifest.xml&lt;/li&gt;
+&lt;li&gt;java目录下的MainActivity.java&lt;/li&gt;
+&lt;li&gt;layout目录下的activity_main.xml&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;以下是一个最简单的Android程序，启动后是一个空的页面。&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;AndroidManifest.xml&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-1"&gt; 1&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-2"&gt; 2&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-3"&gt; 3&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-4"&gt; 4&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-5"&gt; 5&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-6"&gt; 6&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-7"&gt; 7&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-8"&gt; 8&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-9"&gt; 9&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-10"&gt;10&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-11"&gt;11&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-12"&gt;12&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-13"&gt;13&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-14"&gt;14&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-15"&gt;15&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-16"&gt;16&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-17"&gt;17&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-18"&gt;18&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-19"&gt;19&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code xml"&gt;&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-1"&gt;&lt;/a&gt;&lt;span class="cp"&gt;&amp;lt;?xml version="1.0" encoding="utf-8"?&amp;gt;&lt;/span&gt;
+&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-2"&gt;&lt;/a&gt;&lt;span class="nt"&gt;&amp;lt;manifest&lt;/span&gt; &lt;span class="na"&gt;xmlns:android=&lt;/span&gt;&lt;span class="s"&gt;"http://schemas.android.com/apk/res/android"&lt;/span&gt;
+&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-3"&gt;&lt;/a&gt;    &lt;span class="na"&gt;package=&lt;/span&gt;&lt;span class="s"&gt;"com.example.along.homebank"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-4"&gt;&lt;/a&gt;
+&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-5"&gt;&lt;/a&gt;    &lt;span class="nt"&gt;&amp;lt;application&lt;/span&gt;
+&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-6"&gt;&lt;/a&gt;        &lt;span class="na"&gt;android:icon=&lt;/span&gt;&lt;span class="s"&gt;"@mipmap/ic_launcher"&lt;/span&gt;
+&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-7"&gt;&lt;/a&gt;        &lt;span class="na"&gt;android:label=&lt;/span&gt;&lt;span class="s"&gt;"@string/app_name"&lt;/span&gt;
+&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-8"&gt;&lt;/a&gt;        &lt;span class="na"&gt;android:theme=&lt;/span&gt;&lt;span class="s"&gt;"@style/AppTheme"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-9"&gt;&lt;/a&gt;        &lt;span class="nt"&gt;&amp;lt;activity&lt;/span&gt;
+&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-10"&gt;&lt;/a&gt;            &lt;span class="na"&gt;android:name=&lt;/span&gt;&lt;span class="s"&gt;".MainActivity"&lt;/span&gt;
+&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-11"&gt;&lt;/a&gt;            &lt;span class="na"&gt;android:label=&lt;/span&gt;&lt;span class="s"&gt;"@string/title_activity_main"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-12"&gt;&lt;/a&gt;            &lt;span class="nt"&gt;&amp;lt;intent-filter&amp;gt;&lt;/span&gt;
+&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-13"&gt;&lt;/a&gt;                &lt;span class="nt"&gt;&amp;lt;action&lt;/span&gt; &lt;span class="na"&gt;android:name=&lt;/span&gt;&lt;span class="s"&gt;"android.intent.action.MAIN"&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-14"&gt;&lt;/a&gt;                &lt;span class="nt"&gt;&amp;lt;category&lt;/span&gt; &lt;span class="na"&gt;android:name=&lt;/span&gt;&lt;span class="s"&gt;"android.intent.category.LAUNCHER"&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
+&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-15"&gt;&lt;/a&gt;            &lt;span class="nt"&gt;&amp;lt;/intent-filter&amp;gt;&lt;/span&gt;
+&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-16"&gt;&lt;/a&gt;        &lt;span class="nt"&gt;&amp;lt;/activity&amp;gt;&lt;/span&gt;
+&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-17"&gt;&lt;/a&gt;    &lt;span class="nt"&gt;&amp;lt;/application&amp;gt;&lt;/span&gt;
+&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-18"&gt;&lt;/a&gt;
+&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-19"&gt;&lt;/a&gt;&lt;span class="nt"&gt;&amp;lt;/manifest&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;最关键的是 &lt;strong&gt;&amp;lt;intent-filter&amp;gt;&lt;/strong&gt; 部分，里面设置了MainActivity是默认启动的Activity。&lt;/p&gt;
+&lt;ol class="arabic simple" start="2"&gt;
+&lt;li&gt;MainActivity.java&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-1"&gt; 1&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-2"&gt; 2&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-3"&gt; 3&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-4"&gt; 4&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-5"&gt; 5&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-6"&gt; 6&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-7"&gt; 7&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-8"&gt; 8&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-9"&gt; 9&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-10"&gt;10&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-11"&gt;11&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-12"&gt;12&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-13"&gt;13&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code java"&gt;&lt;a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;package&lt;/span&gt; &lt;span class="nn"&gt;com.example.along.homebank&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-2"&gt;&lt;/a&gt;
+&lt;a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-3"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;android.os.Bundle&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-4"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;android.support.v7.app.AppCompatActivity&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
+&lt;a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-5"&gt;&lt;/a&gt;
+&lt;a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-6"&gt;&lt;/a&gt;&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;MainActivity&lt;/span&gt; &lt;span class="kd"&gt;extends&lt;/span&gt; &lt;span class="n"&gt;AppCompatActivity&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+&lt;a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-7"&gt;&lt;/a&gt;
+&lt;a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-8"&gt;&lt;/a&gt;    &lt;span class="nd"&gt;@Override&lt;/span&gt;
+&lt;a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-9"&gt;&lt;/a&gt;    &lt;span class="kd"&gt;protected&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;onCreate&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Bundle&lt;/span&gt; &lt;span class="n"&gt;savedInstanceState&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+&lt;a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-10"&gt;&lt;/a&gt;        &lt;span class="kd"&gt;super&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;onCreate&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;savedInstanceState&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-11"&gt;&lt;/a&gt;        &lt;span class="n"&gt;setContentView&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;R&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;layout&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;activity_main&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
+&lt;a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-12"&gt;&lt;/a&gt;    &lt;span class="o"&gt;}&lt;/span&gt;
+&lt;a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-13"&gt;&lt;/a&gt;&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;最关键的是 &lt;strong&gt;setContentView(R.layout.activity_main);&lt;/strong&gt; ，里面设置了程序创建时要渲染的layout，也就是界面。&lt;/p&gt;
+&lt;ol class="arabic simple" start="3"&gt;
+&lt;li&gt;activity_main.xml&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_04de2390c5bf4829a80d7566d9af265f-1"&gt;1&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_04de2390c5bf4829a80d7566d9af265f-2"&gt;2&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_04de2390c5bf4829a80d7566d9af265f-3"&gt;3&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_04de2390c5bf4829a80d7566d9af265f-4"&gt;4&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_04de2390c5bf4829a80d7566d9af265f-5"&gt;5&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_04de2390c5bf4829a80d7566d9af265f-6"&gt;6&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_04de2390c5bf4829a80d7566d9af265f-7"&gt;7&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_04de2390c5bf4829a80d7566d9af265f-8"&gt;8&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code xml"&gt;&lt;a name="rest_code_04de2390c5bf4829a80d7566d9af265f-1"&gt;&lt;/a&gt;&lt;span class="cp"&gt;&amp;lt;?xml version="1.0" encoding="utf-8"?&amp;gt;&lt;/span&gt;
+&lt;a name="rest_code_04de2390c5bf4829a80d7566d9af265f-2"&gt;&lt;/a&gt;&lt;span class="nt"&gt;&amp;lt;android.support.design.widget.CoordinatorLayout&lt;/span&gt; &lt;span class="na"&gt;xmlns:android=&lt;/span&gt;&lt;span class="s"&gt;"http://schemas.android.com/apk/res/android"&lt;/span&gt;
+&lt;a name="rest_code_04de2390c5bf4829a80d7566d9af265f-3"&gt;&lt;/a&gt;    &lt;span class="na"&gt;xmlns:app=&lt;/span&gt;&lt;span class="s"&gt;"http://schemas.android.com/apk/res-auto"&lt;/span&gt;
+&lt;a name="rest_code_04de2390c5bf4829a80d7566d9af265f-4"&gt;&lt;/a&gt;    &lt;span class="na"&gt;xmlns:tools=&lt;/span&gt;&lt;span class="s"&gt;"http://schemas.android.com/tools"&lt;/span&gt;
+&lt;a name="rest_code_04de2390c5bf4829a80d7566d9af265f-5"&gt;&lt;/a&gt;    &lt;span class="na"&gt;android:layout_width=&lt;/span&gt;&lt;span class="s"&gt;"match_parent"&lt;/span&gt;
+&lt;a name="rest_code_04de2390c5bf4829a80d7566d9af265f-6"&gt;&lt;/a&gt;    &lt;span class="na"&gt;android:layout_height=&lt;/span&gt;&lt;span class="s"&gt;"match_parent"&lt;/span&gt;
+&lt;a name="rest_code_04de2390c5bf4829a80d7566d9af265f-7"&gt;&lt;/a&gt;    &lt;span class="na"&gt;tools:context=&lt;/span&gt;&lt;span class="s"&gt;"com.example.along.homebank.MainActivity"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+&lt;a name="rest_code_04de2390c5bf4829a80d7566d9af265f-8"&gt;&lt;/a&gt;&lt;span class="nt"&gt;&amp;lt;/android.support.design.widget.CoordinatorLayout&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;这个布局文件基本是空的，因为我们什么都没有放进去，所以程序运行时是一个白屏。&lt;/p&gt;
+&lt;p&gt;从这个最基本的Android程序中，我们可以看到一种程序设计的通用模式："配置+逻辑+布局"。
+配置负责控制一些全局的东西，逻辑负责控制整个程序的逻辑实现，布局负责控制用户交互。
+就好比做网站，一些JavaScript文件负责配置，大部分JavaScript负责逻辑，HTML和CSS负责布局。
+再经过合理的连接，形成配合，共同完成任务。不得不说，有一种程序设计上的"秩序美"。
+而这种有秩序的紧密配合，在程序开发中处处可见。
+也许这种美就是"自顶向下，逐步求精"和"模块化"两大思想的最好体现。&lt;/p&gt;&lt;/div&gt;</description><category>Android</category><category>java</category><guid>https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/</guid><pubDate>Fri, 14 Jul 2017 11:57:48 GMT</pubDate></item><item><title>Python判断网络连接是否正常</title><link>https://codinglonglong.github.io/posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-1"&gt; 1&lt;/a&gt;
 &lt;a href="https://codinglonglong.github.io/posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-2"&gt; 2&lt;/a&gt;
 &lt;a href="https://codinglonglong.github.io/posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-3"&gt; 3&lt;/a&gt;
 &lt;a href="https://codinglonglong.github.io/posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-4"&gt; 4&lt;/a&gt;
@@ -273,102 +374,4 @@ dotspacemacs-themes '(material-light
 &lt;a name="rest_code_4da207db62e84eb88aff51a913ea2130-8"&gt;&lt;/a&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
 &lt;a name="rest_code_4da207db62e84eb88aff51a913ea2130-9"&gt;&lt;/a&gt;    &lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;publish&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;topic&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;json&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dumps&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;payload&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
 &lt;a name="rest_code_4da207db62e84eb88aff51a913ea2130-10"&gt;&lt;/a&gt;    &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;/div&gt;</description><category>Android</category><category>Linux</category><category>mosquitto</category><category>mqtt</category><category>Python</category><guid>https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/</guid><pubDate>Sun, 21 May 2017 10:47:55 GMT</pubDate></item><item><title>基于mqtt的消息推送</title><link>https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;strong&gt;t1上&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;1、安装mosquitto服务器。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_ec3f709146a34f9ca3741d39eff702e6-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; apt install wget
-&lt;a name="rest_code_ec3f709146a34f9ca3741d39eff702e6-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt; wget http://mosquitto.org/files/source/mosquitto-1.4.11.tar.gz
-&lt;a name="rest_code_ec3f709146a34f9ca3741d39eff702e6-3"&gt;&lt;/a&gt;&amp;gt;&amp;gt; tar zxvf mosquitto-1.4.11.tar.gz
-&lt;a name="rest_code_ec3f709146a34f9ca3741d39eff702e6-4"&gt;&lt;/a&gt;&amp;gt;&amp;gt; &lt;span class="nb"&gt;cd&lt;/span&gt; mosquitto-1.4.11
-&lt;a name="rest_code_ec3f709146a34f9ca3741d39eff702e6-5"&gt;&lt;/a&gt;&amp;gt;&amp;gt; apt install libc-ares-dev uuid-dev libwebsockets-dev libssl-dev
-&lt;a name="rest_code_ec3f709146a34f9ca3741d39eff702e6-6"&gt;&lt;/a&gt;&amp;gt;&amp;gt; make binary
-&lt;a name="rest_code_ec3f709146a34f9ca3741d39eff702e6-7"&gt;&lt;/a&gt;&amp;gt;&amp;gt; make install
-&lt;a name="rest_code_ec3f709146a34f9ca3741d39eff702e6-8"&gt;&lt;/a&gt;&amp;gt;&amp;gt; vi /etc/profile
-&lt;a name="rest_code_ec3f709146a34f9ca3741d39eff702e6-9"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/usr/local/bin:&lt;span class="nv"&gt;$PATH&lt;/span&gt;
-&lt;a name="rest_code_ec3f709146a34f9ca3741d39eff702e6-10"&gt;&lt;/a&gt;&amp;gt;&amp;gt; &lt;span class="nb"&gt;source&lt;/span&gt; /etc/profile
-&lt;a name="rest_code_ec3f709146a34f9ca3741d39eff702e6-11"&gt;&lt;/a&gt;&amp;gt;&amp;gt; useradd -m mosquitto
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;2、启动mosquitto服务。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_fd3e3a27c8784778b39ec6bd0ac7da44-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; mosquitto
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;t2上&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;1、安装mosquitto的Python客户端。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_60870ef6d6064c0c882d466414e6059d-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; pip3 install paho-mqtt
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;2、编写并启动消息接收端。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-1"&gt; 1&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-2"&gt; 2&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-3"&gt; 3&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-4"&gt; 4&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-5"&gt; 5&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-6"&gt; 6&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-7"&gt; 7&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-8"&gt; 8&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-9"&gt; 9&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-10"&gt;10&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-11"&gt;11&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-12"&gt;12&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-13"&gt;13&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-14"&gt;14&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-15"&gt;15&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-16"&gt;16&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-17"&gt;17&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;paho.mqtt.client&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;mqtt&lt;/span&gt;
-&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-2"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;json&lt;/span&gt;
-&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-3"&gt;&lt;/a&gt;
-&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-4"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;on_connect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;userdata&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;flags&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;rc&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-5"&gt;&lt;/a&gt;    &lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;subscribe&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"test"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-6"&gt;&lt;/a&gt;
-&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;on_message&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;userdata&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-8"&gt;&lt;/a&gt;    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;topic&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;" "&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;payload&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-9"&gt;&lt;/a&gt;
-&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-10"&gt;&lt;/a&gt;&lt;span class="n"&gt;client&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;mqtt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Client&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-11"&gt;&lt;/a&gt;&lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;on_connect&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;on_connect&lt;/span&gt;
-&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-12"&gt;&lt;/a&gt;&lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;on_message&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;on_message&lt;/span&gt;
-&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-13"&gt;&lt;/a&gt;&lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-14"&gt;&lt;/a&gt;    &lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"172.16.0.111"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1883&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-15"&gt;&lt;/a&gt;    &lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loop_forever&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-16"&gt;&lt;/a&gt;&lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="ne"&gt;KeyboardInterrupt&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
-&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-17"&gt;&lt;/a&gt;    &lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;disconnect&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;t3上&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;1、安装mosquitto的Python客户端。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_7ac7e758c87a4dd190f8c36dc5f3d840-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; pip3 install paho-mqtt
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;2、编写并启动消息发送端。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_f72a23cbaf8f4553bc168b3a81b41081-1"&gt;1&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_f72a23cbaf8f4553bc168b3a81b41081-2"&gt;2&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_f72a23cbaf8f4553bc168b3a81b41081-3"&gt;3&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_f72a23cbaf8f4553bc168b3a81b41081-4"&gt;4&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_f72a23cbaf8f4553bc168b3a81b41081-5"&gt;5&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_f72a23cbaf8f4553bc168b3a81b41081-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;paho.mqtt.publish&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;publish&lt;/span&gt;
-&lt;a name="rest_code_f72a23cbaf8f4553bc168b3a81b41081-2"&gt;&lt;/a&gt;&lt;span class="n"&gt;host&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"172.16.0.111"&lt;/span&gt;
-&lt;a name="rest_code_f72a23cbaf8f4553bc168b3a81b41081-3"&gt;&lt;/a&gt;&lt;span class="n"&gt;topic&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"test"&lt;/span&gt;
-&lt;a name="rest_code_f72a23cbaf8f4553bc168b3a81b41081-4"&gt;&lt;/a&gt;&lt;span class="n"&gt;payload&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"hi"&lt;/span&gt;
-&lt;a name="rest_code_f72a23cbaf8f4553bc168b3a81b41081-5"&gt;&lt;/a&gt;&lt;span class="n"&gt;publish&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;single&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;topic&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;payload&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;qos&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;hostname&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;host&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;
-&lt;p&gt;还可以这样写&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_8a66e41b42cb4891acb37d3112aab331-1"&gt;1&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_8a66e41b42cb4891acb37d3112aab331-2"&gt;2&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_8a66e41b42cb4891acb37d3112aab331-3"&gt;3&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_8a66e41b42cb4891acb37d3112aab331-4"&gt;4&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_8a66e41b42cb4891acb37d3112aab331-5"&gt;5&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_8a66e41b42cb4891acb37d3112aab331-6"&gt;6&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_8a66e41b42cb4891acb37d3112aab331-7"&gt;7&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_8a66e41b42cb4891acb37d3112aab331-8"&gt;8&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_8a66e41b42cb4891acb37d3112aab331-9"&gt;9&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_8a66e41b42cb4891acb37d3112aab331-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;paho.mqtt.client&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;mqtt&lt;/span&gt;
-&lt;a name="rest_code_8a66e41b42cb4891acb37d3112aab331-2"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;
-&lt;a name="rest_code_8a66e41b42cb4891acb37d3112aab331-3"&gt;&lt;/a&gt;&lt;span class="n"&gt;client&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;mqtt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Client&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;a name="rest_code_8a66e41b42cb4891acb37d3112aab331-4"&gt;&lt;/a&gt;&lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"172.16.0.111"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_8a66e41b42cb4891acb37d3112aab331-5"&gt;&lt;/a&gt;&lt;span class="n"&gt;topic&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"test"&lt;/span&gt;
-&lt;a name="rest_code_8a66e41b42cb4891acb37d3112aab331-6"&gt;&lt;/a&gt;&lt;span class="n"&gt;payload&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"hi"&lt;/span&gt;
-&lt;a name="rest_code_8a66e41b42cb4891acb37d3112aab331-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-&lt;a name="rest_code_8a66e41b42cb4891acb37d3112aab331-8"&gt;&lt;/a&gt;    &lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;publish&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;topic&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;payload&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;a name="rest_code_8a66e41b42cb4891acb37d3112aab331-9"&gt;&lt;/a&gt;    &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;要先启动消息接收端，再启动消息发送端。如果分别在两个主机上启动消息接收端和消息发送端，那么就可以实现即时通讯了。&lt;/p&gt;&lt;/div&gt;</description><category>Android</category><category>Linux</category><category>mosquitto</category><category>mqtt</category><category>Python</category><guid>https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/</guid><pubDate>Sun, 21 May 2017 06:59:56 GMT</pubDate></item></channel></rss>
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;/div&gt;</description><category>Android</category><category>Linux</category><category>mosquitto</category><category>mqtt</category><category>Python</category><guid>https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/</guid><pubDate>Sun, 21 May 2017 10:47:55 GMT</pubDate></item></channel></rss>

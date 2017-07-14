@@ -15,7 +15,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/android.xml</loc>
-  <lastmod>2017-07-12T11:38:00Z</lastmod>
+  <lastmod>2017-07-14T12:08:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/ban-ben-guan-li.xml</loc>
@@ -27,7 +27,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_android.xml</loc>
-  <lastmod>2017-07-12T11:38:00Z</lastmod>
+  <lastmod>2017-07-14T12:08:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_docker.xml</loc>
@@ -55,7 +55,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_python.xml</loc>
-  <lastmod>2017-07-12T13:28:00Z</lastmod>
+  <lastmod>2017-07-12T13:31:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_raspberry.xml</loc>
@@ -158,6 +158,10 @@
   <lastmod>2017-07-12T11:38:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://codinglonglong.github.io/categories/java.xml</loc>
+  <lastmod>2017-07-14T12:08:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://codinglonglong.github.io/categories/javascript.xml</loc>
   <lastmod>2017-07-12T11:38:00Z</lastmod>
  </sitemap>
@@ -223,7 +227,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/python.xml</loc>
-  <lastmod>2017-07-12T13:28:00Z</lastmod>
+  <lastmod>2017-07-12T13:31:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/raspberry.xml</loc>
@@ -331,10 +335,10 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/rss.xml</loc>
-  <lastmod>2017-07-12T13:28:00Z</lastmod>
+  <lastmod>2017-07-14T12:08:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/sitemap.xml</loc>
-  <lastmod>2017-07-12T13:28:00Z</lastmod>
+  <lastmod>2017-07-14T12:08:00Z</lastmod>
  </sitemap>
 </sitemapindex>

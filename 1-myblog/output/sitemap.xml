@@ -43,11 +43,11 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/archive.html</loc>
-  <lastmod>2017-07-12T13:28:00Z</lastmod>
+  <lastmod>2017-07-14T12:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/</loc>
-  <lastmod>2017-07-12T11:37:00Z</lastmod>
+  <lastmod>2017-07-14T12:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/actionscript30/</loc>
@@ -200,6 +200,10 @@
  <url>
   <loc>https://codinglonglong.github.io/categories/hyper-v/</loc>
   <lastmod>2017-07-12T11:37:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/java/</loc>
+  <lastmod>2017-07-14T12:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/javascript/</loc>
@@ -387,7 +391,7 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-12.html</loc>
-  <lastmod>2017-07-12T13:28:00Z</lastmod>
+  <lastmod>2017-07-14T12:08:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-2.html</loc>
@@ -716,5 +720,9 @@
  <url>
   <loc>https://codinglonglong.github.io/posts/zeromqde-san-chong-ji-ben-tong-xin-mo-xing/</loc>
   <lastmod>2017-07-12T11:37:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/</loc>
+  <lastmod>2017-07-14T12:08:00Z</lastmod>
  </url>
 </urlset>
