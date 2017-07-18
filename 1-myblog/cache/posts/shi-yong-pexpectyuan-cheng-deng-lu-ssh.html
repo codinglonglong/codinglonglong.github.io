@@ -1,0 +1,15 @@
+<p>pexpect可以自动和命令行程序进行交互，在系统部署和测试的时候非常好用。</p>
+<p>以远程登录SSH并执行命令为例</p>
+<pre class="literal-block">
+&gt;&gt; emacs dparkstarter.py
+import pexpect
+
+ip = &quot;192.168.1.211&quot;
+name = &quot;long&quot;
+child = pexpect.spawn('ssh  %s&#64;%s' % (name, ip))
+child.expect('$')
+child.sendline('python dparkslave.py')
+child.interact()
+&gt;&gt; python dparkstarter.py
+</pre>
+<p>程序可以自动登录SSH，然后执行python dparkslave.py这条命令。</p>

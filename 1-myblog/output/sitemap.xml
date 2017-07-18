@@ -7,7 +7,19 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://codinglonglong.github.io/</loc>
-  <lastmod>2017-07-12T13:28:00Z</lastmod>
+  <lastmod>2017-07-18T11:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/2015/</loc>
+  <lastmod>2017-07-18T11:26:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/2015/09/</loc>
+  <lastmod>2017-07-18T11:23:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/2015/10/</loc>
+  <lastmod>2017-07-18T11:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/2017/</loc>
@@ -43,11 +55,11 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/archive.html</loc>
-  <lastmod>2017-07-14T12:08:00Z</lastmod>
+  <lastmod>2017-07-18T11:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/</loc>
-  <lastmod>2017-07-14T12:08:00Z</lastmod>
+  <lastmod>2017-07-18T11:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/actionscript30/</loc>
@@ -64,6 +76,14 @@
  <url>
   <loc>https://codinglonglong.github.io/categories/ban-ben-guan-li/</loc>
   <lastmod>2017-07-12T11:37:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/beansdb/</loc>
+  <lastmod>2017-07-18T11:23:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/c/</loc>
+  <lastmod>2017-07-18T11:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/cat_actionscript30/</loc>
@@ -114,6 +134,10 @@
   <lastmod>2017-07-12T11:37:00Z</lastmod>
  </url>
  <url>
+  <loc>https://codinglonglong.github.io/categories/cat_shang-xue-qi-jian-de-wen-zhang/</loc>
+  <lastmod>2017-07-18T11:23:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://codinglonglong.github.io/categories/cat_win10/</loc>
   <lastmod>2017-07-12T11:37:00Z</lastmod>
  </url>
@@ -128,6 +152,10 @@
  <url>
   <loc>https://codinglonglong.github.io/categories/cat_za-wen/</loc>
   <lastmod>2017-07-12T11:37:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/classmethod/</loc>
+  <lastmod>2017-07-18T11:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/colortheme/</loc>
@@ -154,12 +182,32 @@
   <lastmod>2017-07-12T11:37:00Z</lastmod>
  </url>
  <url>
+  <loc>https://codinglonglong.github.io/categories/dpark/</loc>
+  <lastmod>2017-07-18T11:23:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://codinglonglong.github.io/categories/droid4x/</loc>
   <lastmod>2017-07-12T11:37:00Z</lastmod>
  </url>
  <url>
+  <loc>https://codinglonglong.github.io/categories/duo-jin-cheng/</loc>
+  <lastmod>2017-07-18T11:47:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/duo-xian-cheng/</loc>
+  <lastmod>2017-07-18T11:36:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://codinglonglong.github.io/categories/emacs/</loc>
   <lastmod>2017-07-12T11:37:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/exec/</loc>
+  <lastmod>2017-07-18T11:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/fen-bu-shi/</loc>
+  <lastmod>2017-07-18T11:23:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/flash/</loc>
@@ -218,8 +266,24 @@
   <lastmod>2017-07-12T11:37:00Z</lastmod>
  </url>
  <url>
+  <loc>https://codinglonglong.github.io/categories/kvm/</loc>
+  <lastmod>2017-07-18T11:29:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://codinglonglong.github.io/categories/linux/</loc>
   <lastmod>2017-07-12T11:37:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/map/</loc>
+  <lastmod>2017-07-18T11:47:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/mesos/</loc>
+  <lastmod>2017-07-18T11:23:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/moosefs/</loc>
+  <lastmod>2017-07-18T11:23:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/mosquitto/</loc>
@@ -254,6 +318,14 @@
   <lastmod>2017-07-12T11:37:00Z</lastmod>
  </url>
  <url>
+  <loc>https://codinglonglong.github.io/categories/optparse/</loc>
+  <lastmod>2017-07-18T11:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/pexpect/</loc>
+  <lastmod>2017-07-18T11:51:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://codinglonglong.github.io/categories/pip/</loc>
   <lastmod>2017-07-12T11:37:00Z</lastmod>
  </url>
@@ -274,6 +346,10 @@
   <lastmod>2017-07-12T11:37:00Z</lastmod>
  </url>
  <url>
+  <loc>https://codinglonglong.github.io/categories/qiao-jie/</loc>
+  <lastmod>2017-07-18T11:29:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://codinglonglong.github.io/categories/raspberry/</loc>
   <lastmod>2017-07-12T11:37:00Z</lastmod>
  </url>
@@ -284,6 +360,10 @@
  <url>
   <loc>https://codinglonglong.github.io/categories/react/</loc>
   <lastmod>2017-07-12T11:37:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/reduce/</loc>
+  <lastmod>2017-07-18T11:47:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/remixos/</loc>
@@ -310,6 +390,14 @@
   <lastmod>2017-07-12T11:37:00Z</lastmod>
  </url>
  <url>
+  <loc>https://codinglonglong.github.io/categories/ssh/</loc>
+  <lastmod>2017-07-18T11:51:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/suan-fa/</loc>
+  <lastmod>2017-07-18T11:44:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://codinglonglong.github.io/categories/supervisor/</loc>
   <lastmod>2017-07-12T11:37:00Z</lastmod>
  </url>
@@ -320,6 +408,10 @@
  <url>
   <loc>https://codinglonglong.github.io/categories/tan-shi-she/</loc>
   <lastmod>2017-07-12T11:37:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/tu-pian-chu-li/</loc>
+  <lastmod>2017-07-18T11:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/vue-cli/</loc>
@@ -379,51 +471,59 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-1.html</loc>
-  <lastmod>2017-07-12T11:38:00Z</lastmod>
+  <lastmod>2017-07-18T11:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-10.html</loc>
-  <lastmod>2017-07-12T11:38:00Z</lastmod>
+  <lastmod>2017-07-18T11:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-11.html</loc>
-  <lastmod>2017-07-12T13:28:00Z</lastmod>
+  <lastmod>2017-07-18T11:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-12.html</loc>
-  <lastmod>2017-07-14T12:08:00Z</lastmod>
+  <lastmod>2017-07-18T11:52:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/index-13.html</loc>
+  <lastmod>2017-07-18T11:52:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/index-14.html</loc>
+  <lastmod>2017-07-18T11:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-2.html</loc>
-  <lastmod>2017-07-12T11:38:00Z</lastmod>
+  <lastmod>2017-07-18T11:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-3.html</loc>
-  <lastmod>2017-07-12T11:38:00Z</lastmod>
+  <lastmod>2017-07-18T11:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-4.html</loc>
-  <lastmod>2017-07-12T11:38:00Z</lastmod>
+  <lastmod>2017-07-18T11:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-5.html</loc>
-  <lastmod>2017-07-12T11:38:00Z</lastmod>
+  <lastmod>2017-07-18T11:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-6.html</loc>
-  <lastmod>2017-07-12T11:37:00Z</lastmod>
+  <lastmod>2017-07-18T11:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-7.html</loc>
-  <lastmod>2017-07-12T11:37:00Z</lastmod>
+  <lastmod>2017-07-18T11:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-8.html</loc>
-  <lastmod>2017-07-12T11:38:00Z</lastmod>
+  <lastmod>2017-07-18T11:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-9.html</loc>
-  <lastmod>2017-07-12T11:38:00Z</lastmod>
+  <lastmod>2017-07-18T11:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/listings/</loc>
@@ -448,6 +548,10 @@
  <url>
   <loc>https://codinglonglong.github.io/posts/could-not-open-a-connection-to-your-authentication-agent/</loc>
   <lastmod>2017-07-12T11:37:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/posts/da-jian-ben-di-gitfu-wu-qi/</loc>
+  <lastmod>2017-07-18T11:23:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/dao-bie-wai-zu-mu/</loc>
@@ -494,6 +598,10 @@
   <lastmod>2017-07-12T11:37:00Z</lastmod>
  </url>
  <url>
+  <loc>https://codinglonglong.github.io/posts/fen-bu-shi-xi-tong-xiang-guan-ruan-jian-de-xia-zai-di-zhi/</loc>
+  <lastmod>2017-07-18T11:23:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://codinglonglong.github.io/posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/</loc>
   <lastmod>2017-07-12T11:37:00Z</lastmod>
  </url>
@@ -504,6 +612,10 @@
  <url>
   <loc>https://codinglonglong.github.io/posts/guan-li-duo-ge-gitzhang-hu/</loc>
   <lastmod>2017-07-12T11:37:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/posts/guo-nei-de-pipjing-xiang-yuan/</loc>
+  <lastmod>2017-07-18T11:26:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/hui-dao-zui-chu-de-qi-dian/</loc>
@@ -530,12 +642,24 @@
   <lastmod>2017-07-12T11:37:00Z</lastmod>
  </url>
  <url>
+  <loc>https://codinglonglong.github.io/posts/kvmke-long-xu-ni-ji/</loc>
+  <lastmod>2017-07-18T11:29:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/posts/kvmshan-chu-virbr0/</loc>
+  <lastmod>2017-07-18T11:29:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://codinglonglong.github.io/posts/lian-xi-wo/</loc>
   <lastmod>2017-07-12T11:37:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/libdc1394-error-failed-to-initialize-libdc1394/</loc>
   <lastmod>2017-07-12T11:37:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/posts/linuxtian-jia-yong-hu-he-qie-huan-yong-hu/</loc>
+  <lastmod>2017-07-18T11:31:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/long-long-kan-ke-nan-1/</loc>
@@ -574,12 +698,36 @@
   <lastmod>2017-07-12T11:37:00Z</lastmod>
  </url>
  <url>
+  <loc>https://codinglonglong.github.io/posts/python-word-countde-si-chong-fang-fa-dui-bi/</loc>
+  <lastmod>2017-07-18T11:47:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://codinglonglong.github.io/posts/python2he-python3gong-cun-shi-ru-he-shi-yong-pip/</loc>
   <lastmod>2017-07-12T11:37:00Z</lastmod>
  </url>
  <url>
+  <loc>https://codinglonglong.github.io/posts/python3xiang-sqlitexie-ru-tu-pian/</loc>
+  <lastmod>2017-07-18T11:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/</loc>
+  <lastmod>2017-07-18T11:36:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/</loc>
+  <lastmod>2017-07-18T11:44:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://codinglonglong.github.io/posts/pythonhuo-qu-ipdi-zhi-suo-zai-de-guo-jia/</loc>
   <lastmod>2017-07-12T11:42:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/posts/pythonhuo-qu-qian-tao-lie-biao-de-yuan-su-xia-biao/</loc>
+  <lastmod>2017-07-18T11:44:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/</loc>
+  <lastmod>2017-07-18T11:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/</loc>
@@ -596,6 +744,10 @@
  <url>
   <loc>https://codinglonglong.github.io/posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/</loc>
   <lastmod>2017-07-12T11:37:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/</loc>
+  <lastmod>2017-07-18T11:45:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/pythontong-guo-wang-zhi-huo-qu-ipdi-zhi/</loc>
@@ -622,8 +774,16 @@
   <lastmod>2017-07-12T11:37:00Z</lastmod>
  </url>
  <url>
+  <loc>https://codinglonglong.github.io/posts/shi-yong-pexpectyuan-cheng-deng-lu-ssh/</loc>
+  <lastmod>2017-07-18T11:51:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://codinglonglong.github.io/posts/spacemacszhu-ti-lie-biao/</loc>
   <lastmod>2017-07-12T11:37:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/posts/sshyu-dao-agent-admitted-failure-to-sign-using-the-key/</loc>
+  <lastmod>2017-07-18T11:51:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/supervisorshi-xian-pythonjiao-ben-zi-qi-dong/</loc>
@@ -636,6 +796,10 @@
  <url>
   <loc>https://codinglonglong.github.io/posts/tong-guo-privoxyshi-xian-httphe-httpsdai-li/</loc>
   <lastmod>2017-07-12T11:37:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/</loc>
+  <lastmod>2017-07-18T11:52:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/typeerror-decimal5-is-not-json-serializable/</loc>

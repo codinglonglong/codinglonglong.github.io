@@ -1,0 +1,25 @@
+<p>搭建本地git服务器的步骤如下：</p>
+<p>1、找到一台没人用的电脑，安装上Linux系统，在这里选用的是Ubuntu 14.04。然后配置静态IP：172.16.0.110。</p>
+<p>2、安装git服务：</p>
+<pre class="literal-block">
+&gt;&gt; sudo apt-get install git
+</pre>
+<p>3、创建一个git用户：</p>
+<pre class="literal-block">
+&gt;&gt; sudo adduser git
+</pre>
+<p>创建git用户之后，远端才可以用git clone <strong>git</strong> &#64;......要不然这里需要换成默认用户名，总觉得有点怪异。</p>
+<p>4、建立/home/git/.ssh/authorized_keys文件，将团队每个人的~/.ssh/id_rsa.pub文件复制到上述文件中，一行一个。</p>
+<p>5、在/srv目录建立一个git仓库：</p>
+<pre class="literal-block">
+&gt;&gt; cd /srv
+&gt;&gt; sudo git init --bare ourwiki.git
+</pre>
+<p>6、修改git仓库的所属者：</p>
+<pre class="literal-block">
+&gt;&gt; sudo chown -R git:git ourwiki.git
+</pre>
+<p>7、这时团队成员通过如下命令即可克隆ourwiki项目了：</p>
+<pre class="literal-block">
+&gt;&gt; git clone git&#64;172.16.0.110:/srv/ourwiki.git
+</pre>

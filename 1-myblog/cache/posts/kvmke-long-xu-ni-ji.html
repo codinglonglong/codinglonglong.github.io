@@ -1,0 +1,13 @@
+<p>1、启动virt-manager，右击cn001，点击&quot;Clone...&quot;，在弹出窗口的Name中输入&quot;cn002&quot;，点击&quot;Clone&quot;。</p>
+<p>2、克隆完成后，启动cn002。</p>
+<p>3、修改hostname</p>
+<pre class="literal-block">
+&gt;&gt; sudo emacs /etc/hostname
+cn002
+</pre>
+<p>4、修改IP地址</p>
+<pre class="literal-block">
+&gt;&gt; sudo emacs /etc/network/interfaces
+address 192.168.1.212
+</pre>
+<p>5、重启就可以正常使用cn002了。</p>

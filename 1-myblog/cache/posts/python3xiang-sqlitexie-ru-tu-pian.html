@@ -1,0 +1,48 @@
+<p><strong>使用Python3向SQLite写入图片。</strong></p>
+<p>看代码binaryread.py：</p>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_7113ed24e8964e7f823311fa90ef05aa-1"> 1</a>
+<a href="#rest_code_7113ed24e8964e7f823311fa90ef05aa-2"> 2</a>
+<a href="#rest_code_7113ed24e8964e7f823311fa90ef05aa-3"> 3</a>
+<a href="#rest_code_7113ed24e8964e7f823311fa90ef05aa-4"> 4</a>
+<a href="#rest_code_7113ed24e8964e7f823311fa90ef05aa-5"> 5</a>
+<a href="#rest_code_7113ed24e8964e7f823311fa90ef05aa-6"> 6</a>
+<a href="#rest_code_7113ed24e8964e7f823311fa90ef05aa-7"> 7</a>
+<a href="#rest_code_7113ed24e8964e7f823311fa90ef05aa-8"> 8</a>
+<a href="#rest_code_7113ed24e8964e7f823311fa90ef05aa-9"> 9</a>
+<a href="#rest_code_7113ed24e8964e7f823311fa90ef05aa-10">10</a>
+<a href="#rest_code_7113ed24e8964e7f823311fa90ef05aa-11">11</a>
+<a href="#rest_code_7113ed24e8964e7f823311fa90ef05aa-12">12</a>
+<a href="#rest_code_7113ed24e8964e7f823311fa90ef05aa-13">13</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_7113ed24e8964e7f823311fa90ef05aa-1"></a><span class="kn">import</span> <span class="nn">sqlite3</span>
+<a name="rest_code_7113ed24e8964e7f823311fa90ef05aa-2"></a>
+<a name="rest_code_7113ed24e8964e7f823311fa90ef05aa-3"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;test.jpg&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+<a name="rest_code_7113ed24e8964e7f823311fa90ef05aa-4"></a>    <span class="n">picbin</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<a name="rest_code_7113ed24e8964e7f823311fa90ef05aa-5"></a>
+<a name="rest_code_7113ed24e8964e7f823311fa90ef05aa-6"></a><span class="n">cont</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;temp.db&quot;</span><span class="p">)</span>
+<a name="rest_code_7113ed24e8964e7f823311fa90ef05aa-7"></a><span class="n">cur</span> <span class="o">=</span> <span class="n">cont</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<a name="rest_code_7113ed24e8964e7f823311fa90ef05aa-8"></a><span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;create table pic(pic blob)&quot;&quot;&quot;</span>
+<a name="rest_code_7113ed24e8964e7f823311fa90ef05aa-9"></a><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
+<a name="rest_code_7113ed24e8964e7f823311fa90ef05aa-10"></a><span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;insert into pic(pic) values(?)&quot;&quot;&quot;</span>
+<a name="rest_code_7113ed24e8964e7f823311fa90ef05aa-11"></a><span class="n">b</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Binary</span><span class="p">(</span><span class="n">picbin</span><span class="p">)</span>
+<a name="rest_code_7113ed24e8964e7f823311fa90ef05aa-12"></a><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="p">(</span><span class="n">b</span><span class="p">,))</span>
+<a name="rest_code_7113ed24e8964e7f823311fa90ef05aa-13"></a><span class="n">cont</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></td></tr></table><p>执行代码，程序读取当前目录下的test.jpg，写入一个新创建的数据库，文件名是temp.db。</p>
+<p>然后读取图片数据，写入一个新的文件，看代码binarywrite.py：</p>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_7ceb5e9d808f4102a3022b530863d1c0-1">1</a>
+<a href="#rest_code_7ceb5e9d808f4102a3022b530863d1c0-2">2</a>
+<a href="#rest_code_7ceb5e9d808f4102a3022b530863d1c0-3">3</a>
+<a href="#rest_code_7ceb5e9d808f4102a3022b530863d1c0-4">4</a>
+<a href="#rest_code_7ceb5e9d808f4102a3022b530863d1c0-5">5</a>
+<a href="#rest_code_7ceb5e9d808f4102a3022b530863d1c0-6">6</a>
+<a href="#rest_code_7ceb5e9d808f4102a3022b530863d1c0-7">7</a>
+<a href="#rest_code_7ceb5e9d808f4102a3022b530863d1c0-8">8</a>
+<a href="#rest_code_7ceb5e9d808f4102a3022b530863d1c0-9">9</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_7ceb5e9d808f4102a3022b530863d1c0-1"></a><span class="kn">import</span> <span class="nn">sqlite3</span>
+<a name="rest_code_7ceb5e9d808f4102a3022b530863d1c0-2"></a>
+<a name="rest_code_7ceb5e9d808f4102a3022b530863d1c0-3"></a><span class="n">cont</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;temp.db&quot;</span><span class="p">)</span>
+<a name="rest_code_7ceb5e9d808f4102a3022b530863d1c0-4"></a><span class="n">cur</span> <span class="o">=</span> <span class="n">cont</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<a name="rest_code_7ceb5e9d808f4102a3022b530863d1c0-5"></a><span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;select pic from pic&quot;&quot;&quot;</span>
+<a name="rest_code_7ceb5e9d808f4102a3022b530863d1c0-6"></a><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
+<a name="rest_code_7ceb5e9d808f4102a3022b530863d1c0-7"></a><span class="n">pic</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<a name="rest_code_7ceb5e9d808f4102a3022b530863d1c0-8"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;test1.jpg&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+<a name="rest_code_7ceb5e9d808f4102a3022b530863d1c0-9"></a>    <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">pic</span><span class="p">)</span>
+</pre></td></tr></table><p>执行代码，生成了一个和test.jpg内容完全一样的test1.jpg。</p>
+<p>综上，在涉及到二进制数据写入SQLite数据库时，要使用sqlite3.Binary将二进制转换成SQLite可以写入的参数类型。</p>

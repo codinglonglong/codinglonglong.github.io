@@ -1,0 +1,20 @@
+<p>添加用户</p>
+<pre class="literal-block">
+&gt;&gt; sudo adduser long
+</pre>
+<p>这时系统会交互输入一些基本信息，按需要输入就可以。但是新添加的用户默认没有执行sudo的权限。</p>
+<p>赋予用户执行sudo的权限</p>
+<pre class="literal-block">
+&gt;&gt; sudo usermod  -a -G sudo long
+</pre>
+<hr class="docutils" />
+<p>切换用户</p>
+<pre class="literal-block">
+&gt;&gt; su - long
+</pre>
+<p>这样就进入long的用户环境了，毕竟一直用root工作不是很安全，还是建立一个普通用户比较保险。</p>
+<hr class="docutils" />
+<p>这里再多说一点关于su -、su和sudo的区别：</p>
+<p><strong>su -</strong> : 完全意义上的切换用户，包括环境变量配置之类的。</p>
+<p><strong>su</strong> : 只是切换了当前工作的用户，环境变量配置之类的不变。</p>
+<p><strong>sudo</strong> : 赋予用户执行部分高级功能的权限。</p>

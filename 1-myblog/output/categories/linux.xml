@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Linux)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/linux.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 12 Jul 2017 11:38:50 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>基于mqtt的json格式消息推送</title><link>https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;基于文章 &lt;a class="reference external" href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/"&gt;https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/&lt;/a&gt; ，我们进一步改进测试程序。&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Linux)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/linux.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 18 Jul 2017 11:51:11 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>基于mqtt的json格式消息推送</title><link>https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;基于文章 &lt;a class="reference external" href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/"&gt;https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/&lt;/a&gt; ，我们进一步改进测试程序。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;t2上&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;编写并启动消息接收端。&lt;/p&gt;
 &lt;blockquote&gt;
@@ -314,4 +314,50 @@ dns-nameservers 114.114.114.114
 &lt;a name="rest_code_154716383424438c9c980f23a3d66114-11"&gt;&lt;/a&gt;&lt;span class="m"&gt;2017&lt;/span&gt;-01-31 &lt;span class="m"&gt;15&lt;/span&gt;:50:19
 &lt;/pre&gt;&lt;/blockquote&gt;
 &lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;本方法是通过修改时区来“曲线救国”的。&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><category>Linux</category><guid>https://codinglonglong.github.io/posts/xiu-gai-dockerzhong-de-xi-tong-shi-jian/</guid><pubDate>Tue, 31 Jan 2017 07:36:34 GMT</pubDate></item></channel></rss>
+&lt;p&gt;本方法是通过修改时区来“曲线救国”的。&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><category>Linux</category><guid>https://codinglonglong.github.io/posts/xiu-gai-dockerzhong-de-xi-tong-shi-jian/</guid><pubDate>Tue, 31 Jan 2017 07:36:34 GMT</pubDate></item><item><title>Linux添加用户和切换用户</title><link>https://codinglonglong.github.io/posts/linuxtian-jia-yong-hu-he-qie-huan-yong-hu/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;添加用户&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo adduser long
+&lt;/pre&gt;
+&lt;p&gt;这时系统会交互输入一些基本信息，按需要输入就可以。但是新添加的用户默认没有执行sudo的权限。&lt;/p&gt;
+&lt;p&gt;赋予用户执行sudo的权限&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo usermod  -a -G sudo long
+&lt;/pre&gt;
+&lt;hr class="docutils"&gt;
+&lt;p&gt;切换用户&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; su - long
+&lt;/pre&gt;
+&lt;p&gt;这样就进入long的用户环境了，毕竟一直用root工作不是很安全，还是建立一个普通用户比较保险。&lt;/p&gt;
+&lt;hr class="docutils"&gt;
+&lt;p&gt;这里再多说一点关于su -、su和sudo的区别：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;su -&lt;/strong&gt; : 完全意义上的切换用户，包括环境变量配置之类的。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;su&lt;/strong&gt; : 只是切换了当前工作的用户，环境变量配置之类的不变。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;sudo&lt;/strong&gt; : 赋予用户执行部分高级功能的权限。&lt;/p&gt;&lt;/div&gt;</description><category>Linux</category><guid>https://codinglonglong.github.io/posts/linuxtian-jia-yong-hu-he-qie-huan-yong-hu/</guid><pubDate>Tue, 08 Sep 2015 01:16:20 GMT</pubDate></item><item><title>搭建本地git服务器</title><link>https://codinglonglong.github.io/posts/da-jian-ben-di-gitfu-wu-qi/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;搭建本地git服务器的步骤如下：&lt;/p&gt;
+&lt;p&gt;1、找到一台没人用的电脑，安装上Linux系统，在这里选用的是Ubuntu 14.04。然后配置静态IP：172.16.0.110。&lt;/p&gt;
+&lt;p&gt;2、安装git服务：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo apt-get install git
+&lt;/pre&gt;
+&lt;p&gt;3、创建一个git用户：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo adduser git
+&lt;/pre&gt;
+&lt;p&gt;创建git用户之后，远端才可以用git clone &lt;strong&gt;git&lt;/strong&gt; @......要不然这里需要换成默认用户名，总觉得有点怪异。&lt;/p&gt;
+&lt;p&gt;4、建立/home/git/.ssh/authorized_keys文件，将团队每个人的~/.ssh/id_rsa.pub文件复制到上述文件中，一行一个。&lt;/p&gt;
+&lt;p&gt;5、在/srv目录建立一个git仓库：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; cd /srv
+&amp;gt;&amp;gt; sudo git init --bare ourwiki.git
+&lt;/pre&gt;
+&lt;p&gt;6、修改git仓库的所属者：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo chown -R git:git ourwiki.git
+&lt;/pre&gt;
+&lt;p&gt;7、这时团队成员通过如下命令即可克隆ourwiki项目了：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; git clone git@172.16.0.110:/srv/ourwiki.git
+&lt;/pre&gt;&lt;/div&gt;</description><category>git</category><category>Linux</category><guid>https://codinglonglong.github.io/posts/da-jian-ben-di-gitfu-wu-qi/</guid><pubDate>Mon, 07 Sep 2015 10:54:09 GMT</pubDate></item><item><title>SSH遇到Agent admitted failure to sign using the key</title><link>https://codinglonglong.github.io/posts/sshyu-dao-agent-admitted-failure-to-sign-using-the-key/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;使用SSH登录时遇到Agent admitted failure to sign using the key错误，可以采用如下方法解决：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; ssh-add
+&lt;/pre&gt;&lt;/div&gt;</description><category>Linux</category><category>SSH</category><guid>https://codinglonglong.github.io/posts/sshyu-dao-agent-admitted-failure-to-sign-using-the-key/</guid><pubDate>Mon, 07 Sep 2015 03:05:27 GMT</pubDate></item></channel></rss>

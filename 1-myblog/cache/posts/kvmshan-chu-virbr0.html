@@ -1,0 +1,9 @@
+<p>安装KVM后，通过ifconfig，看到了一个名为virbr0的虚拟网络接口。</p>
+<p>由于在实验中，我们采用桥接方式使用虚拟机，所以这个接口是没有用的，我们通过如下方法可以将其删除。</p>
+<pre class="literal-block">
+&gt;&gt; virsh net-list
+&gt;&gt; virsh net-destroy default  #这里的default是上一步输出结果中的。
+&gt;&gt; virsh net-undefine default
+&gt;&gt; sudo service libvirt-bin restart
+</pre>
+<p>重启系统即可。</p>
