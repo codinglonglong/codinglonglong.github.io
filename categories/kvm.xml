@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about kvm)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/kvm.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 18 Jul 2017 11:29:09 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>KVM克隆虚拟机</title><link>https://codinglonglong.github.io/posts/kvmke-long-xu-ni-ji/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、启动virt-manager，右击cn001，点击"Clone..."，在弹出窗口的Name中输入"cn002"，点击"Clone"。&lt;/p&gt;
+&lt;p&gt;2、克隆完成后，启动cn002。&lt;/p&gt;
+&lt;p&gt;3、修改hostname&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo emacs /etc/hostname
+cn002
+&lt;/pre&gt;
+&lt;p&gt;4、修改IP地址&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo emacs /etc/network/interfaces
+address 192.168.1.212
+&lt;/pre&gt;
+&lt;p&gt;5、重启就可以正常使用cn002了。&lt;/p&gt;&lt;/div&gt;</description><category>kvm</category><category>分布式</category><guid>https://codinglonglong.github.io/posts/kvmke-long-xu-ni-ji/</guid><pubDate>Wed, 16 Sep 2015 07:15:30 GMT</pubDate></item><item><title>KVM删除virbr0</title><link>https://codinglonglong.github.io/posts/kvmshan-chu-virbr0/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;安装KVM后，通过ifconfig，看到了一个名为virbr0的虚拟网络接口。&lt;/p&gt;
+&lt;p&gt;由于在实验中，我们采用桥接方式使用虚拟机，所以这个接口是没有用的，我们通过如下方法可以将其删除。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; virsh net-list
+&amp;gt;&amp;gt; virsh net-destroy default  #这里的default是上一步输出结果中的。
+&amp;gt;&amp;gt; virsh net-undefine default
+&amp;gt;&amp;gt; sudo service libvirt-bin restart
+&lt;/pre&gt;
+&lt;p&gt;重启系统即可。&lt;/p&gt;&lt;/div&gt;</description><category>kvm</category><category>分布式</category><category>桥接</category><guid>https://codinglonglong.github.io/posts/kvmshan-chu-virbr0/</guid><pubDate>Thu, 10 Sep 2015 10:30:08 GMT</pubDate></item></channel></rss>

@@ -10,7 +10,7 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="https://codinglonglong.github.io/index-12.html">
-<link rel="prev" href="." type="text/html">
+<link rel="prev" href="index-13.html" type="text/html">
 <link rel="next" href="index-11.html" type="text/html">
 <!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><script>
 var _hmt = _hmt || [];
@@ -92,44 +92,229 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/yu-sheng-gong-mian/" class="u-url">与生共勉</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/" class="u-url">Windows配置Selenium测试环境</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
             </span></p>
-            <p class="dateline"><a href="posts/yu-sheng-gong-mian/" rel="bookmark"><time class="published dt-published" datetime="2017-06-20T22:42:28+08:00" title="2017-06-20 22:42">2017-06-20 22:42</time></a></p>
+            <p class="dateline"><a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/" rel="bookmark"><time class="published dt-published" datetime="2017-04-06T13:22:14+08:00" title="2017-04-06 13:22">2017-04-06 13:22</time></a></p>
         </div>
     </header><div class="p-summary entry-summary">
     <div>
-<p>手游穷三代，追剧毁一生。</p>
-<p>闲聊难休止，安睡若高僧。</p>
-<p>时光分秒过，不与世人争。</p>
-<p>求学无捷径，功到自然成。</p>
+<p>1、安装Selenium，参考： <a class="reference external" href="https://codinglonglong.github.io/posts/pipshi-yong-guo-nei-yuan/">https://codinglonglong.github.io/posts/pipshi-yong-guo-nei-yuan/</a></p>
+<p>2、下载浏览器驱动。</p>
+<blockquote>
+<ol class="arabic simple">
+<li>IE浏览器： <a class="reference external" href="http://selenium-release.storage.googleapis.com/index.html?path=IE.Driver.Beta/">http://selenium-release.storage.googleapis.com/index.html?path=IE.Driver.Beta/</a>
+</li>
+<li>Firefox浏览器： <a class="reference external" href="https://github.com/mozilla/geckodriver/releases">https://github.com/mozilla/geckodriver/releases</a>
+</li>
+<li>Chrome浏览器： <a class="reference external" href="https://sites.google.com/a/chromium.org/chromedriver/downloads">https://sites.google.com/a/chromium.org/chromedriver/downloads</a>
+</li>
+<li>Edge浏览器： <a class="reference external" href="https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/">https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/</a>
+</li>
+</ol>
+</blockquote>
+<p>3、把上一步中的驱动放到系统可执行目录，或者将该驱动的目录加入系统环境变量。</p>
+<p>4、编写代码：</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-1"> 1</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-2"> 2</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-3"> 3</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-4"> 4</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-5"> 5</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-6"> 6</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-7"> 7</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-8"> 8</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-9"> 9</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-10">10</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-11">11</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-12">12</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-13">13</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-14">14</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-15">15</a>
+<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-16">16</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_d5eba155c514452bb4d537b03e996f00-1"></a><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-2"></a>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-3"></a><span class="n">browser1</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Firefox</span><span class="p">()</span>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-4"></a><span class="n">browser1</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://codinglonglong.github.io/"</span><span class="p">)</span>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-5"></a>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-6"></a>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-7"></a><span class="n">browser2</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-8"></a><span class="n">browser2</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://codinglonglong.github.io/"</span><span class="p">)</span>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-9"></a>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-10"></a>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-11"></a><span class="n">browser3</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Edge</span><span class="p">()</span>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-12"></a><span class="n">browser3</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://codinglonglong.github.io/"</span><span class="p">)</span>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-13"></a>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-14"></a>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-15"></a><span class="n">browser4</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Ie</span><span class="p">()</span>
+<a name="rest_code_d5eba155c514452bb4d537b03e996f00-16"></a><span class="n">browser4</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://codinglonglong.github.io/"</span><span class="p">)</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p>5、运行代码即可自动打开浏览器。</p>
+<p><strong>Selenium文档</strong>: <a class="reference external" href="https://seleniumhq.github.io/selenium/docs/api/py/api.html">https://seleniumhq.github.io/selenium/docs/api/py/api.html</a></p>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/bai-du-wang-pan-da-wen-jian-pu-tong-xia-zai/" class="u-url">百度网盘大文件普通下载</a></h1>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pipshi-yong-guo-nei-yuan/" class="u-url">pip使用国内源</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
             </span></p>
-            <p class="dateline"><a href="posts/bai-du-wang-pan-da-wen-jian-pu-tong-xia-zai/" rel="bookmark"><time class="published dt-published" datetime="2017-06-15T02:02:22+08:00" title="2017-06-15 02:02">2017-06-15 02:02</time></a></p>
+            <p class="dateline"><a href="posts/pipshi-yong-guo-nei-yuan/" rel="bookmark"><time class="published dt-published" datetime="2017-04-06T12:55:09+08:00" title="2017-04-06 12:55">2017-04-06 12:55</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <pre class="literal-block">
+&gt;&gt; py -3 -m pip install selenium -i http://pypi.doubanio.com/simple/ --trusted-host pypi.doubanio.com
+</pre>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/long-long-kan-ke-nan-5/" class="u-url">龙龙看柯南（5）</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/long-long-kan-ke-nan-5/" rel="bookmark"><time class="published dt-published" datetime="2017-04-05T12:44:28+08:00" title="2017-04-05 12:44">2017-04-05 12:44</time></a></p>
         </div>
     </header><div class="p-summary entry-summary">
     <div>
-<p>使用百度网盘下载大文件时，会提示安装客户端，关键是注册还需要手机号码，这对于个人隐私来说，总觉得存在隐患。因为下载文件本身和手机号码间没有必然的联系……</p>
-<p>也实在感觉到，随着互联网的发展，越来越多根本与手机号码无关的网络服务都在要求使用手机号码注册，最大的“理由”就是找回密码，这也难怪能接到各种陌生电话的骚扰……因为谁也不知道这个号码到底是谁泄露出去的……所以，到头来，一些受苦受难的普通人，只能选择不注册……因为没有你的服务，地球一样可以转……不排除，确实有人不在乎骚扰……</p>
-<p>对此，我专门进行了实验，两部手机，两个号码，一个专门用来注册日常需要使用的APP和网站，包括填写网购时的快递信息等等；另一个几乎什么都没有注册过……</p>
-<p>一年过去了，后者安静地，让我感觉到，我的手机主要功能是用来叫我起床，还有写备忘。</p>
-<p>值得一提的是，任何APP或者网站，在注册时都会告诉我们——此号码只用于找回密码……</p>
-<p>不过话说回来，当我们有着急的事情，需要临时下载一些文件时，该怎么办呢？</p>
-<p>可以使用Firefox浏览器 <a class="reference external" href="http://www.firefox.com.cn/">http://www.firefox.com.cn/</a> ，在文件下载页面右击，选择“查看元素”，选择“控制台”，在最底下“&gt;&gt;”后面输入：</p>
+<p><strong>句子分析</strong></p>
+<p>だいいち、ワシのあしはまだ．．．</p>
+<p>首先，我的脚还……</p>
+<p><strong>词语分析</strong></p>
+<ol class="arabic simple">
+<li>第一（だいいち）：首先。</li>
+<li>ワシ：我，老年男子的自称。</li>
+<li>足（あし）：脚。</li>
+<li>まだ：还，仍旧。</li>
+</ol>
+<hr class="docutils">
+<p><strong>句子分析</strong></p>
+<p>ヘタな芝居は、やめてくださいよ．．．</p>
+<p>请停止拙劣的演技吧……</p>
+<p><strong>词语分析</strong></p>
+<ol class="arabic simple">
+<li>ヘタ：拙劣。</li>
+<li>芝居（しばい）：演技，花招。</li>
+<li>止める（やめる）：[一段动词]停止。</li>
+</ol>
+<p><strong>语法分析</strong></p>
+<ol class="arabic simple">
+<li>てください：请……。</li>
+</ol>
+<hr class="docutils">
+<p><strong>句子分析</strong></p>
+<p>もう、ネタはバレてんだ！！</p>
+<p>证据马上就要找到了！！</p>
+<p><strong>词语分析</strong></p>
+<ol class="arabic simple">
+<li>もう：就要，不久。</li>
+<li>ネタ：证据。</li>
+<li>バレる：[一段动词]揭穿。</li>
+</ol>
+<p><strong>语法分析</strong></p>
+<ol class="arabic">
+<li>
+<p class="first">んだ：　“んだ”是“んです”的普通体，一般用于以下三种情况：</p>
 <blockquote>
-<pre class="code js"><a name="rest_code_f3934978f0bb436c8b0212d5c4a9cb2e-1"></a><span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nb">Object</span><span class="p">.</span><span class="nx">getPrototypeOf</span><span class="p">(</span><span class="nx">navigator</span><span class="p">),</span> <span class="s1">'platform'</span><span class="p">,</span> <span class="p">{</span><span class="nx">get</span><span class="o">:</span><span class="kd">function</span><span class="p">(){</span><span class="k">return</span> <span class="s1">''</span><span class="p">;}});</span>
+<ol class="arabic simple">
+<li>用于说明、解释原因；</li>
+<li>用于说话人为了证实自己、说服他人而坚持强硬的主张或表示决心；</li>
+<li>用于说明自己的情况。</li>
+</ol>
+</blockquote>
+</li>
+</ol>
+<hr class="docutils">
+<p><strong>句子分析</strong></p>
+<p>だ、だんな様、足が．．．</p>
+<p>老爷，您的脚……</p>
+<p><strong>词语分析</strong></p>
+<ol class="arabic simple">
+<li>旦那（だんな）：老爷。</li>
+<li>様（さま）：先生（表示尊敬）。</li>
+</ol>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/long-long-kan-ke-nan-4/" class="u-url">龙龙看柯南（4）</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/long-long-kan-ke-nan-4/" rel="bookmark"><time class="published dt-published" datetime="2017-04-05T06:04:08+08:00" title="2017-04-05 06:04">2017-04-05 06:04</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p><strong>句子分析</strong></p>
+<p>御主人、あなたです！！！</p>
+<p>她丈夫，就是你！！！</p>
+<p><strong>词语分析</strong></p>
+<ol class="arabic simple">
+<li>御主人（ごしゅじん）：她丈夫。</li>
+<li>貴方（あなた）：你。</li>
+</ol>
+<hr class="docutils">
+<p><strong>句子分析</strong></p>
+<p>じょ、冗談はよしたまえ…</p>
+<p>别，这个玩笑真好……</p>
+<p><strong>词语分析</strong></p>
+<ol class="arabic simple">
+<li>じょ：不，别。（<strong>按照句意应该这么翻译，但是词典没查到……</strong>）</li>
+<li>冗談（じょうだん）：玩笑。</li>
+<li>よし：好。</li>
+</ol>
+<p><strong>语法分析</strong></p>
+<ol class="arabic simple">
+<li>たまえ：接在动词连用形后面，表示“...吧”，一般由成年男子使用，常用于命令部下或下辈。</li>
+</ol>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/eproto-protocol-error-symlink-acornbinacorn-usrdevelopmentmint-ui-starter-masternode_modulesbinacorn/" class="u-url">EPROTO: protocol error, symlink '../acorn/bin/acorn' -&gt; '/usr/development/mint-ui-starter-master/node_modules/.bin/acorn'</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/eproto-protocol-error-symlink-acornbinacorn-usrdevelopmentmint-ui-starter-masternode_modulesbinacorn/" rel="bookmark"><time class="published dt-published" datetime="2017-04-04T19:17:19+08:00" title="2017-04-04 19:17">2017-04-04 19:17</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>方法1：</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; npm install --no-bin-links
 </pre>
 </blockquote>
-<p>再去点击“下载”按钮，安装客户端的提示就没有了。</p>
-<p><strong>附加说明</strong></p>
-<p>本文不针对任何索要手机号码的网络服务，只表示对互联网行业现状的担忧，因为地球还是在转的。</p>
+<p>方法1可能会导致后续过程缺少依赖。</p>
+<p>方法2：</p>
+<blockquote>
+<pre class="literal-block">
+使用管理员权限打开docker。
+</pre>
+</blockquote>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/windowsming-ling-xing-yun-xing-pythonde-printhan-shu-wu-fa-shu-chu-zhong-wen/" class="u-url">Windows命令行运行Python的print函数无法输出中文</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/windowsming-ling-xing-yun-xing-pythonde-printhan-shu-wu-fa-shu-chu-zhong-wen/" rel="bookmark"><time class="published dt-published" datetime="2017-04-02T21:54:15+08:00" title="2017-04-02 21:54">2017-04-02 21:54</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>代码中加入如下内容：</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/windowsming-ling-xing-yun-xing-pythonde-printhan-shu-wu-fa-shu-chu-zhong-wen/#rest_code_9a88f2ca9512434f8d73a2932dcc5afa-1">1</a>
+<a href="posts/windowsming-ling-xing-yun-xing-pythonde-printhan-shu-wu-fa-shu-chu-zhong-wen/#rest_code_9a88f2ca9512434f8d73a2932dcc5afa-2">2</a>
+<a href="posts/windowsming-ling-xing-yun-xing-pythonde-printhan-shu-wu-fa-shu-chu-zhong-wen/#rest_code_9a88f2ca9512434f8d73a2932dcc5afa-3">3</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_9a88f2ca9512434f8d73a2932dcc5afa-1"></a><span class="kn">import</span> <span class="nn">io</span>
+<a name="rest_code_9a88f2ca9512434f8d73a2932dcc5afa-2"></a><span class="kn">import</span> <span class="nn">sys</span>
+<a name="rest_code_9a88f2ca9512434f8d73a2932dcc5afa-3"></a><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">TextIOWrapper</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">buffer</span><span class="p">,</span><span class="n">encoding</span><span class="o">=</span><span class="s1">'utf-8'</span><span class="p">)</span>
+</pre></td>
+</tr></table>
+</blockquote>
 </div>
     </div>
     </article>
@@ -137,7 +322,7 @@ body{
 
         <nav class="postindexpager"><ul class="pager">
 <li class="previous">
-                <a href="." rel="prev">Newer posts</a>
+                <a href="index-13.html" rel="prev">Newer posts</a>
             </li>
             <li class="next">
                 <a href="index-11.html" rel="next">Older posts</a>

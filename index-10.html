@@ -92,300 +92,463 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockershe-ding-gu-ding-ip/" class="u-url">Docker设定固定IP</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/python2he-python3gong-cun-shi-ru-he-shi-yong-pip/" class="u-url">Python2和Python3共存时如何使用pip</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
             </span></p>
-            <p class="dateline"><a href="posts/dockershe-ding-gu-ding-ip/" rel="bookmark"><time class="published dt-published" datetime="2017-05-14T14:55:30+08:00" title="2017-05-14 14:55">2017-05-14 14:55</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <ol class="arabic">
-<li>
-<p class="first">新建自定义网络。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_b3451969fae944ddbfe967638bdacc8e-1"></a>&gt;&gt; docker network create --subnet<span class="o">=</span><span class="m">172</span>.16.0.0/16 testnet
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">创建虚拟机。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_1dccd73e18014262beaa2a144c4700f1-1"></a>&gt;&gt;  docker run --name t1 -i -t --net<span class="o">=</span>testnet --ip<span class="o">=</span><span class="m">172</span>.16.0.111 -p <span class="m">8080</span>:8080 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
-<a name="rest_code_1dccd73e18014262beaa2a144c4700f1-2"></a>&gt;&gt;  docker run --name t2 -i -t --net<span class="o">=</span>testnet --ip<span class="o">=</span><span class="m">172</span>.16.0.112 -p <span class="m">8081</span>:8081 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">进入虚拟机，查看当前IP。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-1"></a>&gt;&gt; docker <span class="nb">exec</span> -it t1 /bin/bash
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-2"></a>&gt;&gt; root@2ef31a06d8f8:/# ifconfig
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-3"></a>eth0      Link encap:Ethernet  HWaddr <span class="m">02</span>:42:ac:10:00:6f
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-4"></a>        inet addr:172.16.0.111  Bcast:0.0.0.0  Mask:255.255.0.0
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-5"></a>        inet6 addr: fe80::42:acff:fe10:6f/64 Scope:Link
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-6"></a>        UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-7"></a>        RX packets:22 errors:0 dropped:0 overruns:0 frame:0
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-8"></a>        TX packets:13 errors:0 dropped:0 overruns:0 carrier:0
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-9"></a>        collisions:0 txqueuelen:0
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-10"></a>        RX bytes:1716 <span class="o">(</span><span class="m">1</span>.7 KB<span class="o">)</span>  TX bytes:1026 <span class="o">(</span><span class="m">1</span>.0 KB<span class="o">)</span>
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-11"></a>
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-12"></a>lo        Link encap:Local Loopback
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-13"></a>        inet addr:127.0.0.1  Mask:255.0.0.0
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-14"></a>        inet6 addr: ::1/128 Scope:Host
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-15"></a>        UP LOOPBACK RUNNING  MTU:65536  Metric:1
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-16"></a>        RX packets:0 errors:0 dropped:0 overruns:0 frame:0
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-17"></a>        TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-18"></a>        collisions:0 txqueuelen:1
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-19"></a>        RX bytes:0 <span class="o">(</span><span class="m">0</span>.0 B<span class="o">)</span>  TX bytes:0 <span class="o">(</span><span class="m">0</span>.0 B<span class="o">)</span>
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-20"></a>&gt;&gt; docker <span class="nb">exec</span> -it t2 /bin/bash
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-21"></a>&gt;&gt; root@a9cd9a699b05:/# ifconfig
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-22"></a>eth0      Link encap:Ethernet  HWaddr <span class="m">02</span>:42:ac:10:00:70
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-23"></a>        inet addr:172.16.0.112  Bcast:0.0.0.0  Mask:255.255.0.0
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-24"></a>        inet6 addr: fe80::42:acff:fe10:70/64 Scope:Link
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-25"></a>        UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-26"></a>        RX packets:14 errors:0 dropped:0 overruns:0 frame:0
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-27"></a>        TX packets:15 errors:0 dropped:0 overruns:0 carrier:0
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-28"></a>        collisions:0 txqueuelen:0
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-29"></a>        RX bytes:1068 <span class="o">(</span><span class="m">1</span>.0 KB<span class="o">)</span>  TX bytes:1166 <span class="o">(</span><span class="m">1</span>.1 KB<span class="o">)</span>
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-30"></a>
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-31"></a>lo        Link encap:Local Loopback
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-32"></a>        inet addr:127.0.0.1  Mask:255.0.0.0
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-33"></a>        inet6 addr: ::1/128 Scope:Host
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-34"></a>        UP LOOPBACK RUNNING  MTU:65536  Metric:1
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-35"></a>        RX packets:0 errors:0 dropped:0 overruns:0 frame:0
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-36"></a>        TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-37"></a>        collisions:0 txqueuelen:1
-<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-38"></a>        RX bytes:0 <span class="o">(</span><span class="m">0</span>.0 B<span class="o">)</span>  TX bytes:0 <span class="o">(</span><span class="m">0</span>.0 B<span class="o">)</span>
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">重启之后，IP地址依然保持之前的设置，并且可以相互ping通。</p>
-</li>
-</ol>
-</div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/android-studiolian-jie-ye-shen-mo-ni-qi-jin-xing-ce-shi/" class="u-url">Android Studio连接夜神模拟器进行测试</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/android-studiolian-jie-ye-shen-mo-ni-qi-jin-xing-ce-shi/" rel="bookmark"><time class="published dt-published" datetime="2017-05-14T14:40:57+08:00" title="2017-05-14 14:40">2017-05-14 14:40</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>在之前的文章 <a class="reference external" href="https://codinglonglong.github.io/posts/android-studiolian-jie-droid4xdiao-shi-app/">https://codinglonglong.github.io/posts/android-studiolian-jie-droid4xdiao-shi-app/</a> 中，我们已经成功使用Droid4X进行APP开发测试，这次我们使用夜神模拟器完成同样的工作。</p>
-<ol class="arabic">
-<li>
-<p class="first">安装夜神模拟器。</p>
-</li>
-<li>
-<p class="first">添加夜神模拟器的可执行路径到系统路径，我的在</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_08a3dff8eeb546b085fd8cd147b1a0a7-1"></a>C:<span class="se">\P</span>rogram Files<span class="se">\n</span>ox<span class="se">\N</span>ox<span class="se">\b</span>in
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">启动夜神模拟器服务。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_dda143f915074166947abc9d45413bfb-1"></a>&gt;&gt; nox_adb.exe connect <span class="m">127</span>.0.0.1:62001
-</pre>
-</blockquote>
-<p>出现</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_79a08f039cad458b88ac7c12842fceae-1"></a>* daemon started successfully *
-<a name="rest_code_79a08f039cad458b88ac7c12842fceae-2"></a> connected to <span class="m">127</span>.0.0.1:62001
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">在Android Studio中启动调试即可。</p>
-</li>
-</ol>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/hui-gui-ping-dan/" class="u-url">回归平淡</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/hui-gui-ping-dan/" rel="bookmark"><time class="published dt-published" datetime="2017-05-14T13:25:36+08:00" title="2017-05-14 13:25">2017-05-14 13:25</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>一个月的业余时间，终于把标日初级上册复习完了……学了好几年的日语，还在标日初级上册打转……真是无语……这次争取花几年业余时间把N2考下来，学外语总得有个目标，否则很难进步，总是在基本对话上来回反复……</p>
-<p>钢琴也刚刚学完小汤的前两册……少儿水平……不过终于从一只手上升为两只手了……</p>
-<p>放了一个月的各种开发环境都不是最新的了，今天升级了一下各个开发工具，再次回到平淡的技术学习中……Linux、Python、JavaScript、数据分析、个性化推荐……“别跟我提精通，技术是个永远都填不满的大坑”……</p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/long-long-kan-ke-nan-6/" class="u-url">龙龙看柯南（6）</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/long-long-kan-ke-nan-6/" rel="bookmark"><time class="published dt-published" datetime="2017-04-10T12:03:30+08:00" title="2017-04-10 12:03">2017-04-10 12:03</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p><strong>句子分析</strong></p>
-<p>あんたの足は、三か月前にもう治ってんだよ！！</p>
-<p>你的脚早在三个月之前就痊愈了！！</p>
-<p><strong>词语分析</strong></p>
-<ol class="arabic simple">
-<li>あんた：(あなた的转音，多对晚辈)你。</li>
-<li>治す（なおす）：[五段动词]医治。</li>
-</ol>
-<hr class="docutils">
-<p><strong>句子分析</strong></p>
-<p>そうですよね？目暮警部．．．</p>
-<p>对吧？目暮警官……</p>
-<p><strong>词语分析</strong></p>
-<ol class="arabic simple">
-<li>目暮警部（めぐれけいぶ）：目暮警官。</li>
-</ol>
-<hr class="docutils">
-<p><strong>句子分析</strong></p>
-<p>観念しろ！！おまえの主治医が、すべて吐いたぞ．．．</p>
-<p>死心吧！！你之前的主治医生早已全坦白了……</p>
-<p><strong>词语分析</strong></p>
-<ol class="arabic simple">
-<li>観念（かんねん）：[三类动词]断念，死心。</li>
-<li>主治医（しゅじい）：主治医师。</li>
-<li>全て（すべて）：全部。</li>
-<li>吐く（はく）：[五段动词]坦白。</li>
-</ol>
-<p><strong>语法分析</strong></p>
-<ol class="arabic simple">
-<li>ぞ结尾，表示叮嘱和提醒对方，和ぜ结尾一样，但语气比ぜ重。</li>
-<li>动词た形表示过去发生的动作。</li>
-</ol>
-<hr class="docutils">
-<p><strong>句子分析</strong></p>
-<p>さあ、さっさと歩け！！トホホ．．．</p>
-<p>快走！！</p>
-<p><strong>词语分析</strong></p>
-<ol class="arabic simple">
-<li>さあ：表示劝诱或催促。</li>
-<li>さっさと：迅速地。</li>
-<li>歩く（あるく）：[五段动词]行走。</li>
-<li>トホホ：难为情、或是感到悲痛的时候所说的话。</li>
-</ol>
-<hr class="docutils">
-<p><strong>句子分析</strong></p>
-<p>いやー、また君の力を借りてしまったな、工藤君！！</p>
-<p>唉呀，又让你帮了忙，工藤新一！！</p>
-<p><strong>词语分析</strong></p>
-<ol class="arabic simple">
-<li>また：又。</li>
-<li>君（きみ）：（男性）你。</li>
-<li>力（ちから）：力量，能力。</li>
-<li>借る（かる）：[五段动词]借。</li>
-<li>仕舞う（しまう）：[五段动词]完成，结束。</li>
-</ol>
-<p><strong>语法分析</strong></p>
-<ol class="arabic simple">
-<li>てしまう表示动作完成、结束。</li>
-</ol>
-<hr class="docutils">
-<p><strong>句子分析</strong></p>
-<p>いつもいつもすまんのー．．．</p>
-<p>总是麻烦你……</p>
-<p><strong>词语分析</strong></p>
-<ol class="arabic simple">
-<li>いつも：总是。</li>
-<li>すまん：对不起，麻烦了。</li>
-</ol>
-<hr class="docutils">
-<p><strong>句子分析</strong></p>
-<p>また難事件があれば、この名探偵工藤新一にご依頼を！！</p>
-<p>如果还有难以解决的案件，就尽管委托我名侦探工藤新一好了！！</p>
-<p><strong>词语分析</strong></p>
-<ol class="arabic simple">
-<li>難事件（なんじけん）：困难的案件。</li>
-<li>ある：[五段动词]存在。</li>
-<li>名探偵（めいたんてい）：名侦探。</li>
-<li>依頼（いらい）：[三类动词]委托。</li>
-</ol>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/" class="u-url">Windows配置Selenium测试环境</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/" rel="bookmark"><time class="published dt-published" datetime="2017-04-06T13:22:14+08:00" title="2017-04-06 13:22">2017-04-06 13:22</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>1、安装Selenium，参考： <a class="reference external" href="https://codinglonglong.github.io/posts/pipshi-yong-guo-nei-yuan/">https://codinglonglong.github.io/posts/pipshi-yong-guo-nei-yuan/</a></p>
-<p>2、下载浏览器驱动。</p>
-<blockquote>
-<ol class="arabic simple">
-<li>IE浏览器： <a class="reference external" href="http://selenium-release.storage.googleapis.com/index.html?path=IE.Driver.Beta/">http://selenium-release.storage.googleapis.com/index.html?path=IE.Driver.Beta/</a>
-</li>
-<li>Firefox浏览器： <a class="reference external" href="https://github.com/mozilla/geckodriver/releases">https://github.com/mozilla/geckodriver/releases</a>
-</li>
-<li>Chrome浏览器： <a class="reference external" href="https://sites.google.com/a/chromium.org/chromedriver/downloads">https://sites.google.com/a/chromium.org/chromedriver/downloads</a>
-</li>
-<li>Edge浏览器： <a class="reference external" href="https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/">https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/</a>
-</li>
-</ol>
-</blockquote>
-<p>3、把上一步中的驱动放到系统可执行目录，或者将该驱动的目录加入系统环境变量。</p>
-<p>4、编写代码：</p>
-<blockquote>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-1"> 1</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-2"> 2</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-3"> 3</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-4"> 4</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-5"> 5</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-6"> 6</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-7"> 7</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-8"> 8</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-9"> 9</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-10">10</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-11">11</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-12">12</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-13">13</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-14">14</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-15">15</a>
-<a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/#rest_code_d5eba155c514452bb4d537b03e996f00-16">16</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_d5eba155c514452bb4d537b03e996f00-1"></a><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
-<a name="rest_code_d5eba155c514452bb4d537b03e996f00-2"></a>
-<a name="rest_code_d5eba155c514452bb4d537b03e996f00-3"></a><span class="n">browser1</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Firefox</span><span class="p">()</span>
-<a name="rest_code_d5eba155c514452bb4d537b03e996f00-4"></a><span class="n">browser1</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://codinglonglong.github.io/"</span><span class="p">)</span>
-<a name="rest_code_d5eba155c514452bb4d537b03e996f00-5"></a>
-<a name="rest_code_d5eba155c514452bb4d537b03e996f00-6"></a>
-<a name="rest_code_d5eba155c514452bb4d537b03e996f00-7"></a><span class="n">browser2</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">()</span>
-<a name="rest_code_d5eba155c514452bb4d537b03e996f00-8"></a><span class="n">browser2</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://codinglonglong.github.io/"</span><span class="p">)</span>
-<a name="rest_code_d5eba155c514452bb4d537b03e996f00-9"></a>
-<a name="rest_code_d5eba155c514452bb4d537b03e996f00-10"></a>
-<a name="rest_code_d5eba155c514452bb4d537b03e996f00-11"></a><span class="n">browser3</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Edge</span><span class="p">()</span>
-<a name="rest_code_d5eba155c514452bb4d537b03e996f00-12"></a><span class="n">browser3</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://codinglonglong.github.io/"</span><span class="p">)</span>
-<a name="rest_code_d5eba155c514452bb4d537b03e996f00-13"></a>
-<a name="rest_code_d5eba155c514452bb4d537b03e996f00-14"></a>
-<a name="rest_code_d5eba155c514452bb4d537b03e996f00-15"></a><span class="n">browser4</span> <span class="o">=</span> <span class="n">webdriver</span><span class="o">.</span><span class="n">Ie</span><span class="p">()</span>
-<a name="rest_code_d5eba155c514452bb4d537b03e996f00-16"></a><span class="n">browser4</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"https://codinglonglong.github.io/"</span><span class="p">)</span>
-</pre></td>
-</tr></table>
-</blockquote>
-<p>5、运行代码即可自动打开浏览器。</p>
-<p><strong>Selenium文档</strong>: <a class="reference external" href="https://seleniumhq.github.io/selenium/docs/api/py/api.html">https://seleniumhq.github.io/selenium/docs/api/py/api.html</a></p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pipshi-yong-guo-nei-yuan/" class="u-url">pip使用国内源</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/pipshi-yong-guo-nei-yuan/" rel="bookmark"><time class="published dt-published" datetime="2017-04-06T12:55:09+08:00" title="2017-04-06 12:55">2017-04-06 12:55</time></a></p>
+            <p class="dateline"><a href="posts/python2he-python3gong-cun-shi-ru-he-shi-yong-pip/" rel="bookmark"><time class="published dt-published" datetime="2017-03-19T00:02:11+08:00" title="2017-03-19 00:02">2017-03-19 00:02</time></a></p>
         </div>
     </header><div class="p-summary entry-summary">
     <pre class="literal-block">
-&gt;&gt; py -3 -m pip install selenium -i http://pypi.doubanio.com/simple/ --trusted-host pypi.doubanio.com
+&gt;&gt; py -3 -m pip install tornado
+&gt;&gt; py -2 -m pip install tornado
 </pre>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/" class="u-url">Python使用装饰器实现单例模式</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/" rel="bookmark"><time class="published dt-published" datetime="2017-03-18T18:34:40+08:00" title="2017-03-18 18:34">2017-03-18 18:34</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-1"> 1</a>
+<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-2"> 2</a>
+<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-3"> 3</a>
+<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-4"> 4</a>
+<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-5"> 5</a>
+<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-6"> 6</a>
+<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-7"> 7</a>
+<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-8"> 8</a>
+<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-9"> 9</a>
+<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-10">10</a>
+<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-11">11</a>
+<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-12">12</a>
+<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-13">13</a>
+<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-14">14</a>
+<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-15">15</a>
+<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-16">16</a>
+<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-17">17</a>
+<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-18">18</a>
+<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-19">19</a>
+<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-20">20</a>
+<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-21">21</a>
+<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-22">22</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_994a2c7b040445f1ae7d5520e6523212-1"></a><span class="k">def</span> <span class="nf">singleton</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-2"></a>    <span class="n">instances</span> <span class="o">=</span> <span class="p">{}</span>
+<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-3"></a>    <span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-4"></a>        <span class="k">if</span> <span class="bp">cls</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">instances</span><span class="p">:</span>
+<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-5"></a>            <span class="n">instances</span><span class="p">[</span><span class="bp">cls</span><span class="p">]</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-6"></a>        <span class="k">return</span> <span class="n">instances</span><span class="p">[</span><span class="bp">cls</span><span class="p">]</span>
+<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-7"></a>    <span class="k">return</span> <span class="n">_</span>
+<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-8"></a>
+<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-9"></a><span class="nd">@singleton</span>
+<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-10"></a><span class="k">class</span> <span class="nc">Test</span><span class="p">():</span>
+<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-11"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-12"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-13"></a>
+<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-14"></a><span class="n">t1</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
+<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-15"></a><span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-16"></a><span class="n">t2</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
+<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-17"></a><span class="k">print</span><span class="p">(</span><span class="n">t2</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-18"></a><span class="n">t1</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
+<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-19"></a><span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-20"></a><span class="k">print</span><span class="p">(</span><span class="n">t2</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-21"></a><span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">t1</span><span class="p">))</span>
+<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-22"></a><span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">t2</span><span class="p">))</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p>运行结果：</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; python test1.py
+0
+0
+10
+10
+45825544
+45825544
+</pre>
+</blockquote>
+<p>可以看到，虽然初始化两个对象，但是两个对象的id是一样的，这样就实现了单例模式。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/raspberrypei-zhi-spacemacs/" class="u-url">Raspberry配置Spacemacs</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/raspberrypei-zhi-spacemacs/" rel="bookmark"><time class="published dt-published" datetime="2017-03-18T14:30:12+08:00" title="2017-03-18 14:30">2017-03-18 14:30</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>1、安装Emacs。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; wget http://mirrors.ustc.edu.cn/gnu/emacs/emacs-25.1.tar.gz
+&gt;&gt; tar zxvf emacs-25.1.tar.gz
+&gt;&gt; cd emacs-25.1
+&gt;&gt; sudo apt install libxpm-dev libgif-dev
+&gt;&gt; sudo apt install libtinfo-dev
+&gt;&gt; ./configure
+&gt;&gt; sudo make
+&gt;&gt; sudo make install
+</pre>
+</blockquote>
+<p>2、安装Spacemacs。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+&gt;&gt; vi .emacs.d/core/core-configuration-layer.el
+    (defvar configuration-layer--elpa-archives
+    '(("melpa" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+        ("org"   . "https://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+        ("gnu"   . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+        ("marmalade" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/marmalade/"))
+    "List of ELPA archives required by Spacemacs.")
+&gt;&gt; emacs
+</pre>
+</blockquote>
+<p>3、配置Spacemacs。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo apt install python-jedi python3-jedi python-virtualenv python-autopep8
+&gt;&gt; emacs
+&gt;&gt; M-x configuration-layer/create-layer
+    myconf
+&gt;&gt; C-x C-c
+&gt;&gt; emacs ~/.emacs.d/private/myconf/config.el
+    ;; 切换输入法
+    (global-unset-key (kbd "C-SPC"))
+    (global-set-key (kbd "M-SPC") 'set-mark-command)
+
+    ;; 中文字体
+    (set-fontset-font "fontset-default" 'unicode '("WenQuanYi Zen Hei"))
+
+    ;; Code Review
+    (defun add-code-review-note ()
+    "Add note for current file and line number"
+    (interactive)
+    (let ((file-name (buffer-file-name))
+            (file-line (line-number-at-pos)))
+        (switch-to-buffer-other-window (get-buffer-create "NOTES"))
+        (goto-char (point-min))
+        (when (not (search-forward "-*- mode:compilation-shell-minor"
+                                    nil t))
+        (compilation-shell-minor-mode 1)
+        (insert "-*- mode:compilation-shell-minor -*-\n\n"))
+        (goto-char (point-max))
+        (if (/= (current-column) 0)
+            (newline))
+        (insert file-name ":" (number-to-string file-line) ": ")))
+
+    (global-set-key (kbd "C-c r") 'add-code-review-note)
+
+    ;; Copy region or whole line
+    (global-set-key "\M-w"
+    (lambda ()
+    (interactive)
+    (if mark-active
+        (kill-ring-save (region-beginning)
+        (region-end))
+        (progn
+        (kill-ring-save (line-beginning-position)
+        (line-end-position))
+        (message "copied line")))))
+
+
+    ;; Kill region or whole line
+    (global-set-key "\C-w"
+    (lambda ()
+    (interactive)
+    (if mark-active
+        (kill-region (region-beginning)
+    (region-end))
+        (progn
+        (kill-region (line-beginning-position)
+    (line-end-position))
+        (message "killed line")))))
+
+    ;; 切换最大化
+    (global-set-key [f12] 'my-maximized)
+    (defun my-maximized ()
+    (interactive)
+    (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
+                            '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0))
+    (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
+                            '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0)))
+
+    ;; 切换半透明
+    (global-set-key [f8] 'loop-alpha)
+    (setq alpha-list '((100 100) (85 85) (35 35)))
+    (defun loop-alpha ()
+    (interactive)
+    (let ((h (car alpha-list)))
+        ((lambda (a ab)
+        (set-frame-parameter (selected-frame) 'alpha (list a ab))
+        (add-to-list 'default-frame-alist (cons 'alpha (list a ab)))
+        ) (car h) (car (cdr h)))
+        (setq alpha-list (cdr (append alpha-list (list h))))
+        )
+    )
+    (loop-alpha)
+
+    ;; 优化注释
+    (defun qiang-comment-dwim-line (&amp;optional arg)
+    (interactive "*P")
+    (comment-normalize-vars)
+    (if (and (not (region-active-p)) (not (looking-at "[ \t]*$")))
+        (comment-or-uncomment-region (line-beginning-position)
+        (line-end-position))
+        (comment-dwim arg)))
+    (global-set-key "\M-;" 'qiang-comment-dwim-line)
+
+    ;; Y or N
+    (fset 'yes-or-no-p 'y-or-n-p)
+
+    ;; Neotree
+    (global-set-key [f9] 'neotree-toggle)
+
+    ;; Line number
+    (global-linum-mode 1)
+
+    ;; Python mode
+    (add-to-list 'auto-mode-alist '("\\.py?\\'" . python-mode))
+
+    ;; autopep8
+    (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
+
+    ;; Fold
+    (add-hook 'python-mode-hook 'hideshowvis-enable)
+
+    ;; Mic-paren
+    (add-hook 'python-mode-hook 'paren-activate)
+
+    ;; Jedi
+    (autoload 'jedi:setup "jedi" nil t)
+    (add-hook 'python-mode-hook 'jedi:setup)
+    (setq jedi:setup-keys t)
+    (setq jedi:complete-on-dot t)
+
+    ;; Python mode
+    (setq py-python-command "ipython3")
+    (global-set-key [f5]  'run-python)
+    (add-hook 'python-mode-hook 'yas-global-mode)
+
+    ;; Web mode
+    (add-to-list 'auto-mode-alist '("\\.tpl\\'" . html-mode))
+    (add-to-list 'auto-mode-alist '("\\.html\\'" . html-mode))
+    (add-to-list 'auto-mode-alist '("\\.xml\\'" . html-mode))
+    (add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode))
+    (add-to-list 'auto-mode-alist '("\\.js\\'" . js-mode))
+    (add-hook 'html-mode-hook 'web-mode)
+    (add-hook 'css-mode-hook 'web-mode)
+    (add-hook 'js-mode-hook 'web-mode)
+    (add-hook 'web-mode-hook 'global-auto-complete-mode)
+    (add-hook 'web-mode-hook 'rainbow-mode)
+    (add-hook 'web-mode-hook 'emmet-mode)
+    (add-hook 'web-mode-hook 'hideshowvis-enable)
+
+
+    ;; Auto complete
+    (add-hook 'c-mode-hook 'auto-complete-mode)
+    (add-hook 'c-mode-hook 'yas-global-mode)
+    (setq ac-quick-help-prefer-pos-tip t)
+    (setq ac-use-quick-help t)
+    (setq ac-quick-help-delay 1.0)
+    (setq ac-fuzzy-enable t)
+    (setq ac-auto-start 1)
+    (setq ac-quick-help-delay 0.5)
+
+    ;; Yas
+    (global-set-key (kbd "C-c C-x 3") 'yas/expand)
+    (global-set-key (kbd "C-c C-x 4") 'yas/next-field)
+&gt;&gt; C-x C-s
+&gt;&gt; C-x C-c
+&gt;&gt; emacs ~/.spacemacs
+    dotspacemacs-configuration-layers
+    '(
+        python
+        ;; ----------------------------------------------------------------
+        ;; Example of useful layers you may want to use right away.
+        ;; Uncomment some layer names and press &lt;SPC f e R&gt; (Vim style) or
+        ;; &lt;M-m f e R&gt; (Emacs style) to install them.
+        ;; ----------------------------------------------------------------
+        helm
+        auto-completion
+        better-defaults
+        emacs-lisp
+        ;; git
+        markdown
+        org
+        myconf
+        ;; (shell :variables
+        ;;        shell-default-height 30
+        ;;        shell-default-position 'bottom)
+        ;; spell-checking
+        ;; syntax-checking
+        ;; version-control
+        )
+
+    dotspacemacs-additional-packages '(
+                                minimap
+                                py-autopep8
+                                jedi
+                                mic-paren
+                                hideshowvis
+                                emmet-mode
+                                python
+                                python-mode
+                                web-mode
+                                auto-complete
+                                pos-tip
+                                fuzzy
+                                popup
+                                rainbow-mode
+                                yasnippet)
+&gt;&gt; C-x C-s
+&gt;&gt; C-x C-c
+&gt;&gt; emacs
+&gt;&gt; M-x jedi:install-server
+</pre>
+</blockquote>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerpei-zhi-weexkai-fa-huan-jing/" class="u-url">Docker配置weex开发环境</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/dockerpei-zhi-weexkai-fa-huan-jing/" rel="bookmark"><time class="published dt-published" datetime="2017-03-13T22:30:01+08:00" title="2017-03-13 22:30">2017-03-13 22:30</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>1、安装weex。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; npm install -g cnpm --registry=https://registry.npm.taobao.org
+&gt;&gt; cnpm install -g weex-toolkit
+</pre>
+</blockquote>
+<p>2、初始化weex项目。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; weex init testapp
+</pre>
+</blockquote>
+<p>3、构建并测试项目。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; cd testapp
+&gt;&gt; npm install
+&gt;&gt; npm run dev
+&gt;&gt; npm run serve
+</pre>
+</blockquote>
+<p>4、主系统访问 <a class="reference external" href="http://192.168.99.100:8080/">http://192.168.99.100:8080/</a> 即可，这里只是实现浏览器预览，后面我们再进一步研究打包apk。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerpei-zhi-vuejskai-fa-huan-jing/" class="u-url">Docker配置vuejs开发环境</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/dockerpei-zhi-vuejskai-fa-huan-jing/" rel="bookmark"><time class="published dt-published" datetime="2017-03-13T20:36:24+08:00" title="2017-03-13 20:36">2017-03-13 20:36</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p><strong>为了防止出现问题，需要先用管理员权限打开Docker终端。</strong></p>
+<p>1、安装wget，下载最新版nodejs。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; apt udpate
+&gt;&gt; apt install wget
+&gt;&gt; cd ~
+&gt;&gt; wget https://nodejs.org/dist/v7.7.2/node-v7.7.2-linux-x64.tar.xz
+</pre>
+</blockquote>
+<p>2、安装nodejs。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; apt install xz-utils
+&gt;&gt; xz -d node-v7.7.2-linux-x64.tar.xz
+&gt;&gt; tar -xvf node-v7.7.2-linux-x64.tar
+&gt;&gt; apt install emacs
+&gt;&gt; emacs ~/.bashrc
+export PATH=$PATH:/root/node-v7.7.2-linux-x64/bin/
+&gt;&gt; source ~/.bashrc
+</pre>
+</blockquote>
+<p>3、安装vue和vue-cli。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; npm install --global vue vue-cli
+</pre>
+</blockquote>
+<p>4、创建新项目。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; cd ~
+&gt;&gt; mkdir development
+&gt;&gt; cd development
+&gt;&gt; apt install git
+&gt;&gt; vue init webpack test
+&gt;&gt; cd test
+&gt;&gt; npm install
+&gt;&gt; npm run dev
+</pre>
+</blockquote>
+<p>5、主系统访问 <a class="reference external" href="http://192.168.99.100:8080">http://192.168.99.100:8080</a> 即可。</p>
+<p><strong>注意</strong></p>
+<p>如果容器如下这样启动的话：</p>
+<pre class="literal-block">
+&gt;&gt; docker run --name t1 -i -t -p 10001:8080  ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
+</pre>
+<p>访问 <a class="reference external" href="http://192.168.99.100:10001">http://192.168.99.100:10001</a> 才可以看到虚拟机里的网站。</p>
+<p>虚拟机里的网站用8080端口，那么主系统需要访问192.168.99.100的10001端口。</p>
+<p>192.168.99.100是在docker终端启动时显示出来的。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/tong-guo-poliposhi-xian-httphe-httpsdai-li/" class="u-url">通过polipo实现http和https代理</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/tong-guo-poliposhi-xian-httphe-httpsdai-li/" rel="bookmark"><time class="published dt-published" datetime="2017-03-04T03:50:32+08:00" title="2017-03-04 03:50">2017-03-04 03:50</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>反复试验也没能让privoxy在树莓派上自启动，只好换一个软件来试验了……</p>
+<p>1、安装polipo。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo apt install polipo
+</pre>
+</blockquote>
+<p>2、编辑配置文件。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo emacs /etc/polipo/config
+proxyAddress="0.0.0.0"
+proxyPort=8228
+socksParentProxy="127.0.0.1:2080"
+socksProxyType=socks5
+</pre>
+</blockquote>
+<p>3、重启服务。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo service polipo restart
+&gt;&gt; sudo reboot
+</pre>
+</blockquote>
+<p>结果显示，polipo在树莓派上不需要任何进一步的配置就可以自动启动服务。</p>
+</div>
     </div>
     </article>
 </div>
