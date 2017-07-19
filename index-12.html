@@ -92,355 +92,7 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/" class="u-url">Python使用装饰器实现单例模式</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/" rel="bookmark"><time class="published dt-published" datetime="2017-03-18T18:34:40+08:00" title="2017-03-18 18:34">2017-03-18 18:34</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<blockquote>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-1"> 1</a>
-<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-2"> 2</a>
-<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-3"> 3</a>
-<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-4"> 4</a>
-<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-5"> 5</a>
-<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-6"> 6</a>
-<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-7"> 7</a>
-<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-8"> 8</a>
-<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-9"> 9</a>
-<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-10">10</a>
-<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-11">11</a>
-<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-12">12</a>
-<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-13">13</a>
-<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-14">14</a>
-<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-15">15</a>
-<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-16">16</a>
-<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-17">17</a>
-<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-18">18</a>
-<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-19">19</a>
-<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-20">20</a>
-<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-21">21</a>
-<a href="posts/pythonshi-yong-zhuang-shi-qi-shi-xian-dan-li-mo-shi/#rest_code_994a2c7b040445f1ae7d5520e6523212-22">22</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_994a2c7b040445f1ae7d5520e6523212-1"></a><span class="k">def</span> <span class="nf">singleton</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
-<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-2"></a>    <span class="n">instances</span> <span class="o">=</span> <span class="p">{}</span>
-<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-3"></a>    <span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
-<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-4"></a>        <span class="k">if</span> <span class="bp">cls</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">instances</span><span class="p">:</span>
-<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-5"></a>            <span class="n">instances</span><span class="p">[</span><span class="bp">cls</span><span class="p">]</span> <span class="o">=</span> <span class="bp">cls</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
-<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-6"></a>        <span class="k">return</span> <span class="n">instances</span><span class="p">[</span><span class="bp">cls</span><span class="p">]</span>
-<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-7"></a>    <span class="k">return</span> <span class="n">_</span>
-<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-8"></a>
-<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-9"></a><span class="nd">@singleton</span>
-<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-10"></a><span class="k">class</span> <span class="nc">Test</span><span class="p">():</span>
-<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-11"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-12"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
-<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-13"></a>
-<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-14"></a><span class="n">t1</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
-<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-15"></a><span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
-<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-16"></a><span class="n">t2</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
-<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-17"></a><span class="k">print</span><span class="p">(</span><span class="n">t2</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
-<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-18"></a><span class="n">t1</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
-<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-19"></a><span class="k">print</span><span class="p">(</span><span class="n">t1</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
-<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-20"></a><span class="k">print</span><span class="p">(</span><span class="n">t2</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
-<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-21"></a><span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">t1</span><span class="p">))</span>
-<a name="rest_code_994a2c7b040445f1ae7d5520e6523212-22"></a><span class="k">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">t2</span><span class="p">))</span>
-</pre></td>
-</tr></table>
-</blockquote>
-<p>运行结果：</p>
-<blockquote>
-<pre class="literal-block">
-&gt;&gt; python test1.py
-0
-0
-10
-10
-45825544
-45825544
-</pre>
-</blockquote>
-<p>可以看到，虽然初始化两个对象，但是两个对象的id是一样的，这样就实现了单例模式。</p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/raspberrypei-zhi-spacemacs/" class="u-url">Raspberry配置Spacemacs</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/raspberrypei-zhi-spacemacs/" rel="bookmark"><time class="published dt-published" datetime="2017-03-18T14:30:12+08:00" title="2017-03-18 14:30">2017-03-18 14:30</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>1、安装Emacs。</p>
-<blockquote>
-<pre class="literal-block">
-&gt;&gt; wget http://mirrors.ustc.edu.cn/gnu/emacs/emacs-25.1.tar.gz
-&gt;&gt; tar zxvf emacs-25.1.tar.gz
-&gt;&gt; cd emacs-25.1
-&gt;&gt; sudo apt install libxpm-dev libgif-dev
-&gt;&gt; sudo apt install libtinfo-dev
-&gt;&gt; ./configure
-&gt;&gt; sudo make
-&gt;&gt; sudo make install
-</pre>
-</blockquote>
-<p>2、安装Spacemacs。</p>
-<blockquote>
-<pre class="literal-block">
-&gt;&gt; git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-&gt;&gt; vi .emacs.d/core/core-configuration-layer.el
-    (defvar configuration-layer--elpa-archives
-    '(("melpa" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-        ("org"   . "https://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
-        ("gnu"   . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-        ("marmalade" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/marmalade/"))
-    "List of ELPA archives required by Spacemacs.")
-&gt;&gt; emacs
-</pre>
-</blockquote>
-<p>3、配置Spacemacs。</p>
-<blockquote>
-<pre class="literal-block">
-&gt;&gt; sudo apt install python-jedi python3-jedi python-virtualenv python-autopep8
-&gt;&gt; emacs
-&gt;&gt; M-x configuration-layer/create-layer
-    myconf
-&gt;&gt; C-x C-c
-&gt;&gt; emacs ~/.emacs.d/private/myconf/config.el
-    ;; 切换输入法
-    (global-unset-key (kbd "C-SPC"))
-    (global-set-key (kbd "M-SPC") 'set-mark-command)
-
-    ;; 中文字体
-    (set-fontset-font "fontset-default" 'unicode '("WenQuanYi Zen Hei"))
-
-    ;; Code Review
-    (defun add-code-review-note ()
-    "Add note for current file and line number"
-    (interactive)
-    (let ((file-name (buffer-file-name))
-            (file-line (line-number-at-pos)))
-        (switch-to-buffer-other-window (get-buffer-create "NOTES"))
-        (goto-char (point-min))
-        (when (not (search-forward "-*- mode:compilation-shell-minor"
-                                    nil t))
-        (compilation-shell-minor-mode 1)
-        (insert "-*- mode:compilation-shell-minor -*-\n\n"))
-        (goto-char (point-max))
-        (if (/= (current-column) 0)
-            (newline))
-        (insert file-name ":" (number-to-string file-line) ": ")))
-
-    (global-set-key (kbd "C-c r") 'add-code-review-note)
-
-    ;; Copy region or whole line
-    (global-set-key "\M-w"
-    (lambda ()
-    (interactive)
-    (if mark-active
-        (kill-ring-save (region-beginning)
-        (region-end))
-        (progn
-        (kill-ring-save (line-beginning-position)
-        (line-end-position))
-        (message "copied line")))))
-
-
-    ;; Kill region or whole line
-    (global-set-key "\C-w"
-    (lambda ()
-    (interactive)
-    (if mark-active
-        (kill-region (region-beginning)
-    (region-end))
-        (progn
-        (kill-region (line-beginning-position)
-    (line-end-position))
-        (message "killed line")))))
-
-    ;; 切换最大化
-    (global-set-key [f12] 'my-maximized)
-    (defun my-maximized ()
-    (interactive)
-    (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
-                            '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0))
-    (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
-                            '(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0)))
-
-    ;; 切换半透明
-    (global-set-key [f8] 'loop-alpha)
-    (setq alpha-list '((100 100) (85 85) (35 35)))
-    (defun loop-alpha ()
-    (interactive)
-    (let ((h (car alpha-list)))
-        ((lambda (a ab)
-        (set-frame-parameter (selected-frame) 'alpha (list a ab))
-        (add-to-list 'default-frame-alist (cons 'alpha (list a ab)))
-        ) (car h) (car (cdr h)))
-        (setq alpha-list (cdr (append alpha-list (list h))))
-        )
-    )
-    (loop-alpha)
-
-    ;; 优化注释
-    (defun qiang-comment-dwim-line (&amp;optional arg)
-    (interactive "*P")
-    (comment-normalize-vars)
-    (if (and (not (region-active-p)) (not (looking-at "[ \t]*$")))
-        (comment-or-uncomment-region (line-beginning-position)
-        (line-end-position))
-        (comment-dwim arg)))
-    (global-set-key "\M-;" 'qiang-comment-dwim-line)
-
-    ;; Y or N
-    (fset 'yes-or-no-p 'y-or-n-p)
-
-    ;; Neotree
-    (global-set-key [f9] 'neotree-toggle)
-
-    ;; Line number
-    (global-linum-mode 1)
-
-    ;; Python mode
-    (add-to-list 'auto-mode-alist '("\\.py?\\'" . python-mode))
-
-    ;; autopep8
-    (add-hook 'python-mode-hook 'py-autopep8-enable-on-save)
-
-    ;; Fold
-    (add-hook 'python-mode-hook 'hideshowvis-enable)
-
-    ;; Mic-paren
-    (add-hook 'python-mode-hook 'paren-activate)
-
-    ;; Jedi
-    (autoload 'jedi:setup "jedi" nil t)
-    (add-hook 'python-mode-hook 'jedi:setup)
-    (setq jedi:setup-keys t)
-    (setq jedi:complete-on-dot t)
-
-    ;; Python mode
-    (setq py-python-command "ipython3")
-    (global-set-key [f5]  'run-python)
-    (add-hook 'python-mode-hook 'yas-global-mode)
-
-    ;; Web mode
-    (add-to-list 'auto-mode-alist '("\\.tpl\\'" . html-mode))
-    (add-to-list 'auto-mode-alist '("\\.html\\'" . html-mode))
-    (add-to-list 'auto-mode-alist '("\\.xml\\'" . html-mode))
-    (add-to-list 'auto-mode-alist '("\\.css\\'" . css-mode))
-    (add-to-list 'auto-mode-alist '("\\.js\\'" . js-mode))
-    (add-hook 'html-mode-hook 'web-mode)
-    (add-hook 'css-mode-hook 'web-mode)
-    (add-hook 'js-mode-hook 'web-mode)
-    (add-hook 'web-mode-hook 'global-auto-complete-mode)
-    (add-hook 'web-mode-hook 'rainbow-mode)
-    (add-hook 'web-mode-hook 'emmet-mode)
-    (add-hook 'web-mode-hook 'hideshowvis-enable)
-
-
-    ;; Auto complete
-    (add-hook 'c-mode-hook 'auto-complete-mode)
-    (add-hook 'c-mode-hook 'yas-global-mode)
-    (setq ac-quick-help-prefer-pos-tip t)
-    (setq ac-use-quick-help t)
-    (setq ac-quick-help-delay 1.0)
-    (setq ac-fuzzy-enable t)
-    (setq ac-auto-start 1)
-    (setq ac-quick-help-delay 0.5)
-
-    ;; Yas
-    (global-set-key (kbd "C-c C-x 3") 'yas/expand)
-    (global-set-key (kbd "C-c C-x 4") 'yas/next-field)
-&gt;&gt; C-x C-s
-&gt;&gt; C-x C-c
-&gt;&gt; emacs ~/.spacemacs
-    dotspacemacs-configuration-layers
-    '(
-        python
-        ;; ----------------------------------------------------------------
-        ;; Example of useful layers you may want to use right away.
-        ;; Uncomment some layer names and press &lt;SPC f e R&gt; (Vim style) or
-        ;; &lt;M-m f e R&gt; (Emacs style) to install them.
-        ;; ----------------------------------------------------------------
-        helm
-        auto-completion
-        better-defaults
-        emacs-lisp
-        ;; git
-        markdown
-        org
-        myconf
-        ;; (shell :variables
-        ;;        shell-default-height 30
-        ;;        shell-default-position 'bottom)
-        ;; spell-checking
-        ;; syntax-checking
-        ;; version-control
-        )
-
-    dotspacemacs-additional-packages '(
-                                minimap
-                                py-autopep8
-                                jedi
-                                mic-paren
-                                hideshowvis
-                                emmet-mode
-                                python
-                                python-mode
-                                web-mode
-                                auto-complete
-                                pos-tip
-                                fuzzy
-                                popup
-                                rainbow-mode
-                                yasnippet)
-&gt;&gt; C-x C-s
-&gt;&gt; C-x C-c
-&gt;&gt; emacs
-&gt;&gt; M-x jedi:install-server
-</pre>
-</blockquote>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerpei-zhi-weexkai-fa-huan-jing/" class="u-url">Docker配置weex开发环境</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/dockerpei-zhi-weexkai-fa-huan-jing/" rel="bookmark"><time class="published dt-published" datetime="2017-03-13T22:30:01+08:00" title="2017-03-13 22:30">2017-03-13 22:30</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>1、安装weex。</p>
-<blockquote>
-<pre class="literal-block">
-&gt;&gt; npm install -g cnpm --registry=https://registry.npm.taobao.org
-&gt;&gt; cnpm install -g weex-toolkit
-</pre>
-</blockquote>
-<p>2、初始化weex项目。</p>
-<blockquote>
-<pre class="literal-block">
-&gt;&gt; weex init testapp
-</pre>
-</blockquote>
-<p>3、构建并测试项目。</p>
-<blockquote>
-<pre class="literal-block">
-&gt;&gt; cd testapp
-&gt;&gt; npm install
-&gt;&gt; npm run dev
-&gt;&gt; npm run serve
-</pre>
-</blockquote>
-<p>4、主系统访问 <a class="reference external" href="http://192.168.99.100:8080/">http://192.168.99.100:8080/</a> 即可，这里只是实现浏览器预览，后面我们再进一步研究打包apk。</p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerpei-zhi-vuejskai-fa-huan-jing/" class="u-url">Docker配置vuejs开发环境</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerpei-zhi-vuejskai-fa-huan-jing/" class="u-url">Docker配置vuejs开发环境</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
@@ -565,6 +217,152 @@ forward-socks5 / 127.0.0.1:1080 .
 <blockquote>
 <pre class="literal-block">
 &gt;&gt; sudo service privoxy restart
+&gt;&gt; sudo reboot
+</pre>
+</blockquote>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/libdc1394-error-failed-to-initialize-libdc1394/" class="u-url">libdc1394 error: Failed to initialize libdc1394</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/libdc1394-error-failed-to-initialize-libdc1394/" rel="bookmark"><time class="published dt-published" datetime="2017-03-03T19:22:25+08:00" title="2017-03-03 19:22">2017-03-03 19:22</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>在使用pydecodeqr时，出现了如下错误信息：</p>
+<blockquote>
+<pre class="literal-block">
+libdc1394 error: Failed to initialize libdc1394
+</pre>
+</blockquote>
+<p>可以通过如下方法解决：</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo ln /dev/null /dev/raw1394
+</pre>
+</blockquote>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerpei-zhi-pythonpa-chong-huan-jing/" class="u-url">Docker配置Python爬虫环境</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/dockerpei-zhi-pythonpa-chong-huan-jing/" rel="bookmark"><time class="published dt-published" datetime="2017-02-28T22:29:02+08:00" title="2017-02-28 22:29">2017-02-28 22:29</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>1、新建容器。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; docker run --name webcrawler -i -t -p 8080:8080 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
+</pre>
+</blockquote>
+<p>2、修改软件源。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; vi /etc/apt/sources.list
+:%s/archive.ubuntu/cn.archive.ubuntu/g
+:wq
+</pre>
+</blockquote>
+<p>3、更新软件。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; apt update
+</pre>
+</blockquote>
+<p>4、安装必要的软件和第三方库。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; apt install python
+&gt;&gt; apt install python-pip
+&gt;&gt; apt install python-dev
+&gt;&gt; pip install beautifulsoup4
+&gt;&gt; apt install libdecodeqr-dev libopencv-dev
+&gt;&gt; pip install pydecodeqr
+&gt;&gt; apt install libcurl4-openssl-dev
+&gt;&gt; pip install -U setuptools pip
+&gt;&gt; apt install libxml2-dev libxslt-dev libssl-dev
+&gt;&gt; pip install grab
+&gt;&gt; pip install robobrowser
+&gt;&gt; pip install pycurl
+&gt;&gt; pip install splinter
+&gt;&gt; pip install qrcode
+&gt;&gt; pip install requests
+</pre>
+</blockquote>
+<p><strong>参考</strong></p>
+<p><a class="reference external" href="http://www.python-requests.org/en/master/">http://www.python-requests.org/en/master/</a></p>
+<p><a class="reference external" href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/index">https://www.crummy.com/software/BeautifulSoup/bs4/doc/index</a>.html#</p>
+<p><a class="reference external" href="https://github.com/six519/pydecodeqr">https://github.com/six519/pydecodeqr</a></p>
+<p><a class="reference external" href="https://github.com/lincolnloop/python-qrcode">https://github.com/lincolnloop/python-qrcode</a></p>
+<p><a class="reference external" href="http://pycurl.io/docs/latest/index.html">http://pycurl.io/docs/latest/index.html</a></p>
+<p><a class="reference external" href="http://docs.grablib.org/en/latest/">http://docs.grablib.org/en/latest/</a></p>
+<p><a class="reference external" href="http://robobrowser.readthedocs.io/en/latest/">http://robobrowser.readthedocs.io/en/latest/</a></p>
+<p><a class="reference external" href="http://splinter.readthedocs.io/en/latest/index.html">http://splinter.readthedocs.io/en/latest/index.html</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/supervisorshi-xian-pythonjiao-ben-zi-qi-dong/" class="u-url">Supervisor实现Python脚本自启动</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/supervisorshi-xian-pythonjiao-ben-zi-qi-dong/" rel="bookmark"><time class="published dt-published" datetime="2017-02-28T02:06:10+08:00" title="2017-02-28 02:06">2017-02-28 02:06</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>经过若干小时的反复试验，终于在树莓派上成功部署了homebank[<a class="reference external" href="https://codinglonglong.github.io/posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/">https://codinglonglong.github.io/posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/</a>]，最困难的地方就是配置Supervisor，配置过程中出现了各种错误……</p>
+<p>1、安装supervisor。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo pip install supervisor
+</pre>
+</blockquote>
+<p>2、编辑配置文件。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; cd /home/pi/websites/
+&gt;&gt; echo_supervisord_conf &gt; supervisord.conf
+&gt;&gt; sudo supervisord -c supervisord.conf
+&gt;&gt; emacs supervisord.conf
+[inet_http_server]         ; inet (TCP) server disabled by default
+port=0.0.0.0:9999        ; (ip_address:port specifier, *:port for all iface)
+username=user              ; (default is no username (open server))
+password=123               ; (default is no password (open server))
+
+[program:homebank]
+command=python main.py
+directory=/home/pi/websites/homebank
+</pre>
+</blockquote>
+<p>3、启动服务。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo supervisorctl reload
+&gt;&gt; sudo supervisorctl status homebank
+homebank                         RUNNING   pid 2212, uptime 0:02:07
+</pre>
+</blockquote>
+<p>4、设置开机启动。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo emacs /etc/rc.local
+sudo /usr/local/bin/supervisord -c /home/pi/websites/supervisord.conf
+</pre>
+</blockquote>
+<p>5、设置sudo免密。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; sudo visudo
+pi ALL = (ALL)NOPASSWD:ALL
+</pre>
+</blockquote>
+<p>6、重启。</p>
+<blockquote>
+<pre class="literal-block">
 &gt;&gt; sudo reboot
 </pre>
 </blockquote>

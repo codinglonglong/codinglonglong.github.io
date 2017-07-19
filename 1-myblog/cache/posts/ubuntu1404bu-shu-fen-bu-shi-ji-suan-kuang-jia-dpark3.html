@@ -1,0 +1,184 @@
+<p><strong>在cn001上</strong></p>
+<p>1、安装ssh和emacs</p>
+<pre class="literal-block">
+&gt;&gt; sudo apt-get update
+&gt;&gt; sudo apt-get install ssh openssh-server openssh-client emacs
+</pre>
+<p>2、设定静态IP，参考文章 <a class="reference external" href="https://codinglonglong.github.io/posts/ubuntu1404bu-shu-tornado%2Bnginx%2Bsupervisor/">https://codinglonglong.github.io/posts/ubuntu1404bu-shu-tornado%2Bnginx%2Bsupervisor/</a></p>
+<p>3、重启系统</p>
+<p>4、安装Beansdb的Python接口</p>
+<pre class="literal-block">
+&gt;&gt; cd ~
+&gt;&gt; sudo apt-get install build-essential gcc g++ gfortran git python-pip python-dev autoconf automake libtool
+&gt;&gt; scp long&#64;192.168.1.203:/home/long/libmemcached-1.0.18.tar.gz .
+&gt;&gt; tar zxvf libmemcached-1.0.18.tar.gz
+&gt;&gt; cd libmemcached-1.0.18/
+&gt;&gt; ./configure
+&gt;&gt; sudo make
+&gt;&gt; sudo make install
+&gt;&gt; git clone https://github.com/douban/python-libmemcached
+&gt;&gt; cd python-libmemcached/
+&gt;&gt; sudo python setup.py install
+&gt;&gt; emacs ~/.profile
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+&gt;&gt; source ~/.profile
+&gt;&gt; sudo scp long&#64;192.168.1.203:/home/long/beansdb/python/dbclient.py /usr/local/lib/python2.7/dist-packages/
+</pre>
+<p>5、安装MooseFS的客户端</p>
+<pre class="literal-block">
+&gt;&gt; cd ~
+&gt;&gt; scp long&#64;192.168.1.203:/home/long/fuse-2.9.4.tar.gz .
+&gt;&gt; scp long&#64;192.168.1.203:/home/long/zlib-1.2.8.tar.gz .
+&gt;&gt; scp long&#64;192.168.1.203:/home/long/moosefs-2.0.73-1.tar.gz .
+&gt;&gt; tar zxvf fuse-2.9.4.tar.gz &amp;&amp; cd fuse-2.9.4 &amp;&amp; ./configure --prefix=/usr &amp;&amp; sudo make &amp;&amp; sudo make install &amp;&amp; cd ..
+&gt;&gt; tar zxvf zlib-1.2.8.tar.gz &amp;&amp; cd zlib-1.2.8 &amp;&amp; ./configure &amp;&amp; sudo make &amp;&amp; sudo make install &amp;&amp; cd ..
+&gt;&gt; sudo useradd mfs -M -s /sbin/nologin
+&gt;&gt; sudo apt-get install libpcap-dev pkg-config
+&gt;&gt; tar zxvf moosefs-2.0.73-1.tar.gz &amp;&amp; cd moosefs-2.0.73 &amp;&amp; ./configure --prefix=/usr/local/mfs --with-default-user=mfs --with-default-group=mfs --enable-mfsmount &amp;&amp; sudo make &amp;&amp; sudo make install &amp;&amp; cd ..
+&gt;&gt; cd /usr/local/mfs/etc/mfs
+&gt;&gt; sudo cp mfsmount.cfg.dist mfsmount.cfg
+&gt;&gt; sudo emacs mfsmount.cfg
+# Example:
+#
+/mnt/mfs
+&gt;&gt; sudo mkdir /mnt/mfs
+&gt;&gt; sudo chown -R mfs:mfs /mnt/mfs
+</pre>
+<p>6、建立自启动脚本</p>
+<pre class="literal-block">
+&gt;&gt; cd /usr/local/bin
+&gt;&gt; sudo emacs startmfsmount
+cd /usr/local/mfs/bin/
+./mfsmount -H 192.168.1.203 -o nonempty
+&gt;&gt; sudo chmod 777 startmfsmount
+</pre>
+<p>7、设定无密码启动</p>
+<pre class="literal-block">
+&gt;&gt; sudo visudo
+long ALL=NOPASSWD:/usr/local/bin/startmfsmount
+</pre>
+<p>8、安装Mesos的客户端</p>
+<pre class="literal-block">
+&gt;&gt; scp -r long&#64;192.168.1.203:/home/long/mesos /home/long
+&gt;&gt; sudo apt-get install build-essential openjdk-6-jdk python-dev python-boto libcurl4-nss-dev libsasl2-dev maven libapr1-dev libsvn-dev autoconf libtool
+</pre>
+<p>9、建立自启动脚本</p>
+<pre class="literal-block">
+&gt;&gt; cd /usr/local/bin
+&gt;&gt; sudo emacs startmesosslave
+cd /home/long/mesos/sbin
+./mesos-slave --master=192.168.1.203:5050 --quiet &amp;
+&gt;&gt; sudo chmod 777 startmesosslave
+</pre>
+<p>10、设定无密码启动</p>
+<pre class="literal-block">
+&gt;&gt; sudo visudo
+long ALL=NOPASSWD:/usr/local/bin/startmesosslave
+</pre>
+<p>11、安装Pymesos</p>
+<pre class="literal-block">
+&gt;&gt; git clone https://github.com/douban/pymesos.git
+&gt;&gt; cd pymesos
+&gt;&gt; sudo apt-get install python-pip
+&gt;&gt; sudo python setup.py install
+</pre>
+<p>12、安装Dpark</p>
+<pre class="literal-block">
+&gt;&gt; sudo apt-get install git libzmq-dev python-pip python-dev
+&gt;&gt; git clone https://github.com/douban/dpark.git
+&gt;&gt; cd dpark
+&gt;&gt; sudo apt-get install python-psutil psutils
+&gt;&gt; sudo python setup.py install
+</pre>
+<p>13、配置ssh无密码登录</p>
+<pre class="literal-block">
+&gt;&gt; scp long&#64;192.168.1.203:/home/long/.ssh/authorized_keys ~/.ssh/
+&gt;&gt; sudo chmod 600 ~/.ssh/authorized_keys
+</pre>
+<p>14、修改/etc/hosts</p>
+<pre class="literal-block">
+&gt;&gt; sudo emacs /etc/hosts
+192.168.1.201    pc1
+192.168.1.202    pc2
+192.168.1.203    pc3
+192.168.1.204    pc4
+192.168.1.211    cn001
+192.168.1.212    cn002
+192.168.1.213    cn003
+192.168.1.214    cn004
+192.168.1.215    cn005
+192.168.1.216    cn006
+192.168.1.217    cn007
+192.168.1.218    cn008
+192.168.1.219    cn009
+192.168.1.220    cn010
+192.168.1.221    cn011
+192.168.1.222    cn012
+192.168.1.241    snc001
+192.168.1.242    snc002
+192.168.1.243    snc003
+192.168.1.244    snc004
+192.168.1.210    client
+</pre>
+<p>15、测试Beansdb</p>
+<pre class="literal-block">
+&gt;&gt; sudo emacs dbtest.py
+from dbclient import Beansdb
+
+BEANSDBCFG = {
+    &quot;192.168.1.203:7900&quot;: range(16)
+}
+
+db = Beansdb(BEANSDBCFG, 16)
+for x in range(1, 10):
+    db.set(str(x), str(x**2))
+for x in range(1, 10):
+    print(db.get(str(x)))
+&gt;&gt; python dbtest.py
+&gt;&gt; 1
+&gt;&gt; 4
+&gt;&gt; 9
+&gt;&gt; 16
+&gt;&gt; 25
+&gt;&gt; 36
+&gt;&gt; 49
+&gt;&gt; 64
+&gt;&gt; 81
+</pre>
+<p>16、测试Dpark</p>
+<pre class="literal-block">
+&gt;&gt; emacs dparktest.py
+import time
+start = time.clock()
+
+from dpark import DparkContext
+from random import random
+dpk = DparkContext()
+count = dpk.accumulator(0)
+
+
+def random_once(*args, **kwrgs):
+    x = random() * 2 - 1
+    y = random() * 2 - 1
+    if x * x + y * y &lt; 1:
+        count.add(1)
+
+N = 100000
+
+dpk.parallelize(range(0, N), 50).foreach(random_once)
+print(&quot;PI is roughly: &quot; + str(4.0 * count.value / N))
+
+end = time.clock()
+print(end - start)
+&gt;&gt; python dparktest.py
+&gt;&gt; python dparktest.py -m mesos://192.168.1.203:5050
+</pre>
+<p>17、测试MooseFS</p>
+<pre class="literal-block">
+&gt;&gt; emacs mfstest.py
+from dpark import DparkContext
+dpk = DparkContext()
+f = dpk.textFile(&quot;/mnt/mfs/lastfm-dataset-1K/userid-profile.tsv&quot;)
+print(f.count())
+&gt;&gt; python mfstest.py -m mesos://192.168.1.203:5050
+</pre>

@@ -92,153 +92,7 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/libdc1394-error-failed-to-initialize-libdc1394/" class="u-url">libdc1394 error: Failed to initialize libdc1394</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/libdc1394-error-failed-to-initialize-libdc1394/" rel="bookmark"><time class="published dt-published" datetime="2017-03-03T19:22:25+08:00" title="2017-03-03 19:22">2017-03-03 19:22</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>在使用pydecodeqr时，出现了如下错误信息：</p>
-<blockquote>
-<pre class="literal-block">
-libdc1394 error: Failed to initialize libdc1394
-</pre>
-</blockquote>
-<p>可以通过如下方法解决：</p>
-<blockquote>
-<pre class="literal-block">
-&gt;&gt; sudo ln /dev/null /dev/raw1394
-</pre>
-</blockquote>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerpei-zhi-pythonpa-chong-huan-jing/" class="u-url">Docker配置Python爬虫环境</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/dockerpei-zhi-pythonpa-chong-huan-jing/" rel="bookmark"><time class="published dt-published" datetime="2017-02-28T22:29:02+08:00" title="2017-02-28 22:29">2017-02-28 22:29</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>1、新建容器。</p>
-<blockquote>
-<pre class="literal-block">
-&gt;&gt; docker run --name webcrawler -i -t -p 8080:8080 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
-</pre>
-</blockquote>
-<p>2、修改软件源。</p>
-<blockquote>
-<pre class="literal-block">
-&gt;&gt; vi /etc/apt/sources.list
-:%s/archive.ubuntu/cn.archive.ubuntu/g
-:wq
-</pre>
-</blockquote>
-<p>3、更新软件。</p>
-<blockquote>
-<pre class="literal-block">
-&gt;&gt; apt update
-</pre>
-</blockquote>
-<p>4、安装必要的软件和第三方库。</p>
-<blockquote>
-<pre class="literal-block">
-&gt;&gt; apt install python
-&gt;&gt; apt install python-pip
-&gt;&gt; apt install python-dev
-&gt;&gt; pip install beautifulsoup4
-&gt;&gt; apt install libdecodeqr-dev libopencv-dev
-&gt;&gt; pip install pydecodeqr
-&gt;&gt; apt install libcurl4-openssl-dev
-&gt;&gt; pip install -U setuptools pip
-&gt;&gt; apt install libxml2-dev libxslt-dev libssl-dev
-&gt;&gt; pip install grab
-&gt;&gt; pip install robobrowser
-&gt;&gt; pip install pycurl
-&gt;&gt; pip install splinter
-&gt;&gt; pip install qrcode
-&gt;&gt; pip install requests
-</pre>
-</blockquote>
-<p><strong>参考</strong></p>
-<p><a class="reference external" href="http://www.python-requests.org/en/master/">http://www.python-requests.org/en/master/</a></p>
-<p><a class="reference external" href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/index">https://www.crummy.com/software/BeautifulSoup/bs4/doc/index</a>.html#</p>
-<p><a class="reference external" href="https://github.com/six519/pydecodeqr">https://github.com/six519/pydecodeqr</a></p>
-<p><a class="reference external" href="https://github.com/lincolnloop/python-qrcode">https://github.com/lincolnloop/python-qrcode</a></p>
-<p><a class="reference external" href="http://pycurl.io/docs/latest/index.html">http://pycurl.io/docs/latest/index.html</a></p>
-<p><a class="reference external" href="http://docs.grablib.org/en/latest/">http://docs.grablib.org/en/latest/</a></p>
-<p><a class="reference external" href="http://robobrowser.readthedocs.io/en/latest/">http://robobrowser.readthedocs.io/en/latest/</a></p>
-<p><a class="reference external" href="http://splinter.readthedocs.io/en/latest/index.html">http://splinter.readthedocs.io/en/latest/index.html</a></p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/supervisorshi-xian-pythonjiao-ben-zi-qi-dong/" class="u-url">Supervisor实现Python脚本自启动</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/supervisorshi-xian-pythonjiao-ben-zi-qi-dong/" rel="bookmark"><time class="published dt-published" datetime="2017-02-28T02:06:10+08:00" title="2017-02-28 02:06">2017-02-28 02:06</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>经过若干小时的反复试验，终于在树莓派上成功部署了homebank[<a class="reference external" href="https://codinglonglong.github.io/posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/">https://codinglonglong.github.io/posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/</a>]，最困难的地方就是配置Supervisor，配置过程中出现了各种错误……</p>
-<p>1、安装supervisor。</p>
-<blockquote>
-<pre class="literal-block">
-&gt;&gt; sudo pip install supervisor
-</pre>
-</blockquote>
-<p>2、编辑配置文件。</p>
-<blockquote>
-<pre class="literal-block">
-&gt;&gt; cd /home/pi/websites/
-&gt;&gt; echo_supervisord_conf &gt; supervisord.conf
-&gt;&gt; sudo supervisord -c supervisord.conf
-&gt;&gt; emacs supervisord.conf
-[inet_http_server]         ; inet (TCP) server disabled by default
-port=0.0.0.0:9999        ; (ip_address:port specifier, *:port for all iface)
-username=user              ; (default is no username (open server))
-password=123               ; (default is no password (open server))
-
-[program:homebank]
-command=python main.py
-directory=/home/pi/websites/homebank
-</pre>
-</blockquote>
-<p>3、启动服务。</p>
-<blockquote>
-<pre class="literal-block">
-&gt;&gt; sudo supervisorctl reload
-&gt;&gt; sudo supervisorctl status homebank
-homebank                         RUNNING   pid 2212, uptime 0:02:07
-</pre>
-</blockquote>
-<p>4、设置开机启动。</p>
-<blockquote>
-<pre class="literal-block">
-&gt;&gt; sudo emacs /etc/rc.local
-sudo /usr/local/bin/supervisord -c /home/pi/websites/supervisord.conf
-</pre>
-</blockquote>
-<p>5、设置sudo免密。</p>
-<blockquote>
-<pre class="literal-block">
-&gt;&gt; sudo visudo
-pi ALL = (ALL)NOPASSWD:ALL
-</pre>
-</blockquote>
-<p>6、重启。</p>
-<blockquote>
-<pre class="literal-block">
-&gt;&gt; sudo reboot
-</pre>
-</blockquote>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/raspberrypei-zhi-nginx/" class="u-url">Raspberry配置nginx</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/raspberrypei-zhi-nginx/" class="u-url">Raspberry配置nginx</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
@@ -406,6 +260,421 @@ dns-nameservers 114.114.114.114
 </blockquote>
 <p>2、重启系统和路由器。</p>
 <p><strong>如果不行的话，试试把路由器也设置成静态地址绑定……</strong></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/" class="u-url">小家手帐网页版基本完成</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/" rel="bookmark"><time class="published dt-published" datetime="2017-02-25T15:34:06+08:00" title="2017-02-25 15:34">2017-02-25 15:34</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>利用不到一个月的周末业余时间，使用刚刚接触不久的vuejs，基本完成了小家手帐的网页版。</p>
+<p>代码发布到了 <a class="reference external" href="https://github.com/codinglonglong/homebankservice">https://github.com/codinglonglong/homebankservice</a> 和 <a class="reference external" href="https://github.com/codinglonglong/homebankweb">https://github.com/codinglonglong/homebankweb</a> 这两个代码仓库。</p>
+<p>服务端主要涉及的相关技术点包括：</p>
+<ol class="arabic simple">
+<li>flask_restplus实现的RESTful服务；</li>
+<li>sqlalchemy实现的数据库ORM；</li>
+<li>TimedRotatingFileHandler实现的滚动日志；</li>
+<li>自定义装饰器实现的权限验证；</li>
+<li>“接口-接口模型-数据库访问-数据库模型”结构网站的探索；</li>
+<li>Swagger-UI接口测试的使用。</li>
+</ol>
+<p>网页端主要涉及的相关技术点包括：</p>
+<ol class="arabic simple">
+<li>基于vue-router的页面导航；</li>
+<li>基于axios和vue-axios的前后端通信；</li>
+<li>基于element-ui的页面交互；</li>
+<li>基于vue-cookie的cookie操作；</li>
+<li>vuejs中多组件的通信。</li>
+</ol>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/" class="u-url">Flask-CORS解决Ajax跨域请求问题</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/" rel="bookmark"><time class="published dt-published" datetime="2017-02-08T12:59:14+08:00" title="2017-02-08 12:59">2017-02-08 12:59</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>在本地开发网站的过程中，js访问后端服务会出现</p>
+<pre class="code bash"><a name="rest_code_42b613c4caa94dd196a6fcdbd808d0a9-1"></a>已拦截跨源请求：同源策略禁止读取位于 http://192.168.99.100:8080/signup/ 的远程资源。（原因：CORS 头缺少 <span class="s1">'Access-Control-Allow-Origin'</span>）。
+</pre>
+<p>这时可以通过Flask-CORS解决问题。</p>
+<p>1、安装。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_3217a0f02fdc43f28263fc38bd0f96ea-1"></a>pip install flask-cors
+</pre>
+</blockquote>
+<p>2、使用。</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/#rest_code_0043df372b044bbc8baf1c8bc07fb5ac-1">1</a>
+<a href="posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/#rest_code_0043df372b044bbc8baf1c8bc07fb5ac-2">2</a>
+<a href="posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/#rest_code_0043df372b044bbc8baf1c8bc07fb5ac-3">3</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_0043df372b044bbc8baf1c8bc07fb5ac-1"></a><span class="kn">from</span> <span class="nn">flask_cors</span> <span class="kn">import</span> <span class="n">CORS</span>
+<a name="rest_code_0043df372b044bbc8baf1c8bc07fb5ac-2"></a><span class="n">global_app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<a name="rest_code_0043df372b044bbc8baf1c8bc07fb5ac-3"></a><span class="n">CORS</span><span class="p">(</span><span class="n">global_app</span><span class="p">)</span>
+</pre></td>
+</tr></table>
+</blockquote>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pythonzhuang-shi-qi-tan-suo/" class="u-url">Python装饰器探索</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/pythonzhuang-shi-qi-tan-suo/" rel="bookmark"><time class="published dt-published" datetime="2017-02-01T19:31:17+08:00" title="2017-02-01 19:31">2017-02-01 19:31</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>Python的装饰器是一个很有趣的语法糖，它可以让代码变得简洁优美，将与逻辑无关的部分分离出来，比如记录日志、验证权限、设置缓存、程序计时、配置上下文等等。</p>
+<p>1、带参数函数、无参数装饰器</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-1"> 1</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-2"> 2</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-3"> 3</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-4"> 4</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-5"> 5</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-6"> 6</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-7"> 7</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-8"> 8</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-9"> 9</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-10">10</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-11">11</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-12">12</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-13">13</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-14">14</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-15">15</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-16">16</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-17">17</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-18">18</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-19">19</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-20">20</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-21">21</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-22">22</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
+<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-2"></a><span class="c1"># 带参数函数、无参数装饰器</span>
+<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-3"></a>
+<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-4"></a>
+<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-5"></a><span class="k">def</span> <span class="nf">checklogin</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-6"></a>    <span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
+<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-7"></a>        <span class="n">validusers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"long"</span><span class="p">,</span> <span class="s2">"jack"</span><span class="p">]</span>
+<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-8"></a>        <span class="k">if</span> <span class="n">username</span> <span class="ow">in</span> <span class="n">validusers</span><span class="p">:</span>
+<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-9"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-10"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-11"></a>            <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">username</span><span class="p">)</span> <span class="o">+</span> <span class="s2">", 你没有操作权限"</span>
+<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-12"></a>    <span class="k">return</span> <span class="n">_</span>
+<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-13"></a>
+<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-14"></a>
+<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-15"></a><span class="nd">@checklogin</span>
+<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-16"></a><span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
+<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-17"></a>    <span class="k">return</span> <span class="s2">"欢迎你, "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-18"></a>
+<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-19"></a>
+<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-20"></a><span class="k">print</span><span class="p">(</span><span class="n">login</span><span class="p">(</span><span class="s2">"long"</span><span class="p">))</span>
+<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-21"></a><span class="k">print</span><span class="p">(</span><span class="n">login</span><span class="p">(</span><span class="s2">"tom"</span><span class="p">))</span>
+<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-22"></a><span class="k">print</span><span class="p">(</span><span class="n">login</span><span class="p">(</span><span class="s2">"jack"</span><span class="p">))</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p>运行结果：</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_cc7b323caa15461aa8f03c0bcd857531-1"></a>欢迎你, long
+<a name="rest_code_cc7b323caa15461aa8f03c0bcd857531-2"></a>tom, 你没有操作权限
+<a name="rest_code_cc7b323caa15461aa8f03c0bcd857531-3"></a>欢迎你, jack
+</pre>
+</blockquote>
+<p>2、可变参数函数、无参数装饰器</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-1"> 1</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-2"> 2</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-3"> 3</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-4"> 4</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-5"> 5</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-6"> 6</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-7"> 7</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-8"> 8</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-9"> 9</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-10">10</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-11">11</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-12">12</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-13">13</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-14">14</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-15">15</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-16">16</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-17">17</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-18">18</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-19">19</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-20">20</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-21">21</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-22">22</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-23">23</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-24">24</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-25">25</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-26">26</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-27">27</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-28">28</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-29">29</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-30">30</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-31">31</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-32">32</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-33">33</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-34">34</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-35">35</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-36">36</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-37">37</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-38">38</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-39">39</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-40">40</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-41">41</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-42">42</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_1c1317842d21495dac5b864b47216644-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-2"></a><span class="c1"># 可变参数函数、无参数装饰器</span>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-3"></a>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-4"></a>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-5"></a><span class="k">def</span> <span class="nf">logger</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-6"></a>    <span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-7"></a>        <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'被调用，参数包括：'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">kwargs</span><span class="p">))</span>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-8"></a>        <span class="k">if</span> <span class="n">args</span> <span class="ow">and</span> <span class="n">kwargs</span><span class="p">:</span>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-9"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-10"></a>        <span class="k">elif</span> <span class="n">args</span><span class="p">:</span>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-11"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-12"></a>        <span class="k">elif</span> <span class="n">kwargs</span><span class="p">:</span>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-13"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-14"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-15"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">()</span>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-16"></a>    <span class="k">return</span> <span class="n">_</span>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-17"></a>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-18"></a>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-19"></a><span class="nd">@logger</span>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-20"></a><span class="k">def</span> <span class="nf">test1</span><span class="p">():</span>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-21"></a>    <span class="k">pass</span>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-22"></a>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-23"></a>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-24"></a><span class="nd">@logger</span>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-25"></a><span class="k">def</span> <span class="nf">test2</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-26"></a>    <span class="k">pass</span>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-27"></a>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-28"></a>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-29"></a><span class="nd">@logger</span>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-30"></a><span class="k">def</span> <span class="nf">test3</span><span class="p">(</span><span class="n">kwargs</span><span class="p">):</span>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-31"></a>    <span class="k">pass</span>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-32"></a>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-33"></a>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-34"></a><span class="nd">@logger</span>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-35"></a><span class="k">def</span> <span class="nf">test4</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">):</span>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-36"></a>    <span class="k">pass</span>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-37"></a>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-38"></a>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-39"></a><span class="n">test1</span><span class="p">()</span>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-40"></a><span class="n">test2</span><span class="p">(</span><span class="s2">"long"</span><span class="p">)</span>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-41"></a><span class="n">test3</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<a name="rest_code_1c1317842d21495dac5b864b47216644-42"></a><span class="n">test4</span><span class="p">(</span><span class="s2">"long"</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p>运行结果：</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_e42a05fe0ff248c984ab278a76368aca-1"></a>test1被调用，参数包括：<span class="o">(){}</span>
+<a name="rest_code_e42a05fe0ff248c984ab278a76368aca-2"></a>test2被调用，参数包括：<span class="o">(</span><span class="s1">'long'</span>,<span class="o">){}</span>
+<a name="rest_code_e42a05fe0ff248c984ab278a76368aca-3"></a>test3被调用，参数包括：<span class="o">(){</span><span class="s1">'a'</span>: <span class="m">1</span>, <span class="s1">'b'</span>: <span class="m">2</span><span class="o">}</span>
+<a name="rest_code_e42a05fe0ff248c984ab278a76368aca-4"></a>test4被调用，参数包括：<span class="o">(</span><span class="s1">'long'</span>,<span class="o">){</span><span class="s1">'a'</span>: <span class="m">1</span>, <span class="s1">'b'</span>: <span class="m">2</span><span class="o">}</span>
+</pre>
+</blockquote>
+<p>3、带参数函数、带参数装饰器</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-1"> 1</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-2"> 2</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-3"> 3</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-4"> 4</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-5"> 5</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-6"> 6</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-7"> 7</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-8"> 8</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-9"> 9</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-10">10</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-11">11</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-12">12</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-13">13</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-14">14</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-15">15</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-16">16</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-17">17</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-18">18</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-19">19</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-20">20</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-21">21</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-22">22</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-23">23</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-24">24</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-25">25</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
+<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-2"></a><span class="c1"># 带参数函数、带参数装饰器</span>
+<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-3"></a>
+<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-4"></a>
+<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-5"></a><span class="k">def</span> <span class="nf">typechecker</span><span class="p">(</span><span class="n">paramtype</span><span class="p">):</span>
+<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-6"></a>    <span class="k">def</span> <span class="nf">_outer</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-7"></a>        <span class="k">def</span> <span class="nf">_inner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-8"></a>            <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-9"></a>                <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">paramtype</span><span class="p">:</span>
+<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-10"></a>                    <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">args</span><span class="p">]</span>
+<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-11"></a>                    <span class="k">return</span> <span class="s2">"+"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" 类型错误"</span>
+<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-12"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-13"></a>        <span class="k">return</span> <span class="n">_inner</span>
+<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-14"></a>    <span class="k">return</span> <span class="n">_outer</span>
+<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-15"></a>
+<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-16"></a>
+<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-17"></a><span class="nd">@typechecker</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-18"></a><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-19"></a>    <span class="n">result</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-20"></a>    <span class="n">value</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">value</span><span class="p">]</span>
+<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-21"></a>    <span class="k">return</span> <span class="s2">"+"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'='</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-22"></a>
+<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-23"></a>
+<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-24"></a><span class="k">print</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-25"></a><span class="k">print</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p>运行结果:</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_a8af202aeff44a2c8f0a249500dba5f9-1"></a><span class="m">1</span>+2+3+4+5<span class="o">=</span><span class="m">15</span>
+<a name="rest_code_a8af202aeff44a2c8f0a249500dba5f9-2"></a><span class="m">1</span>+2+3+a+5 类型错误
+</pre>
+</blockquote>
+<p>4、带参数函数、可变参数装饰器</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-1"> 1</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-2"> 2</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-3"> 3</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-4"> 4</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-5"> 5</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-6"> 6</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-7"> 7</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-8"> 8</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-9"> 9</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-10">10</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-11">11</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-12">12</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-13">13</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-14">14</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-15">15</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-16">16</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-17">17</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-18">18</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-19">19</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-20">20</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-21">21</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-22">22</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
+<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-2"></a><span class="c1"># 带参数函数、可变参数装饰器</span>
+<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-3"></a>
+<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-4"></a>
+<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-5"></a><span class="k">def</span> <span class="nf">typechecker</span><span class="p">(</span><span class="o">*</span><span class="n">paramtype</span><span class="p">):</span>
+<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-6"></a>    <span class="k">def</span> <span class="nf">_outer</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-7"></a>        <span class="k">def</span> <span class="nf">_inner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-8"></a>            <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
+<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-9"></a>                <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">paramtype</span><span class="p">:</span>
+<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-10"></a>                    <span class="k">return</span> <span class="s2">"参数不是有效的类型"</span>
+<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-11"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-12"></a>        <span class="k">return</span> <span class="n">_inner</span>
+<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-13"></a>    <span class="k">return</span> <span class="n">_outer</span>
+<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-14"></a>
+<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-15"></a>
+<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-16"></a><span class="nd">@typechecker</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
+<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-17"></a><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-18"></a>    <span class="k">return</span> <span class="s2">"参数有效"</span>
+<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-19"></a>
+<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-20"></a>
+<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-21"></a><span class="k">print</span><span class="p">(</span><span class="n">test</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">))</span>
+<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-22"></a><span class="k">print</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">5.2</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p>运行结果:</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_cdab12fec2ef42a6b4f77c9ebc8c2827-1"></a>参数不是有效的类型
+<a name="rest_code_cdab12fec2ef42a6b4f77c9ebc8c2827-2"></a>参数有效
+</pre>
+</blockquote>
+<p>5、多个装饰器的调用顺序</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-1"> 1</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-2"> 2</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-3"> 3</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-4"> 4</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-5"> 5</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-6"> 6</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-7"> 7</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-8"> 8</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-9"> 9</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-10">10</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-11">11</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-12">12</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-13">13</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-14">14</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-15">15</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-16">16</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-17">17</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-18">18</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-19">19</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-20">20</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-21">21</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-22">22</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-23">23</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-24">24</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-25">25</a>
+<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-26">26</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
+<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-2"></a><span class="c1"># 多个装饰器的调用顺序</span>
+<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-3"></a>
+<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-4"></a>
+<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-5"></a><span class="k">def</span> <span class="nf">deco1</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-6"></a>    <span class="k">def</span> <span class="nf">_</span><span class="p">():</span>
+<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-7"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">"deco1() is called."</span><span class="p">)</span>
+<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-8"></a>        <span class="k">return</span> <span class="n">func</span><span class="p">()</span>
+<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-9"></a>    <span class="k">return</span> <span class="n">_</span>
+<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-10"></a>
+<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-11"></a>
+<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-12"></a><span class="k">def</span> <span class="nf">deco2</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-13"></a>    <span class="k">def</span> <span class="nf">_</span><span class="p">():</span>
+<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-14"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">"deco2() is called."</span><span class="p">)</span>
+<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-15"></a>        <span class="k">return</span> <span class="n">func</span><span class="p">()</span>
+<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-16"></a>    <span class="k">return</span> <span class="n">_</span>
+<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-17"></a>
+<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-18"></a>
+<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-19"></a><span class="nd">@deco1</span>
+<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-20"></a><span class="nd">@deco2</span>
+<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-21"></a><span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
+<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-22"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"test() is called."</span><span class="p">)</span>
+<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-23"></a>
+<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-24"></a>
+<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-25"></a><span class="n">test</span><span class="p">()</span>
+<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-26"></a><span class="n">test</span><span class="p">()</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p>运行结果:</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_dfc54c261e9443fdabd8e335db12c8c2-1"></a>deco1<span class="o">()</span> is called.
+<a name="rest_code_dfc54c261e9443fdabd8e335db12c8c2-2"></a>deco2<span class="o">()</span> is called.
+<a name="rest_code_dfc54c261e9443fdabd8e335db12c8c2-3"></a>test<span class="o">()</span> is called.
+<a name="rest_code_dfc54c261e9443fdabd8e335db12c8c2-4"></a>deco1<span class="o">()</span> is called.
+<a name="rest_code_dfc54c261e9443fdabd8e335db12c8c2-5"></a>deco2<span class="o">()</span> is called.
+<a name="rest_code_dfc54c261e9443fdabd8e335db12c8c2-6"></a>test<span class="o">()</span> is called.
+</pre>
+</blockquote>
 </div>
     </div>
     </article>

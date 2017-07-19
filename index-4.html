@@ -92,24 +92,206 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/ubuntuxiu-gai-rootmi-ma/" class="u-url">Ubuntu修改root密码</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/ubuntu1404bu-shu-fen-bu-shi-ji-suan-kuang-jia-dpark1/" class="u-url">Ubuntu14.04部署分布式计算框架Dpark（1）</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
             </span></p>
-            <p class="dateline"><a href="posts/ubuntuxiu-gai-rootmi-ma/" rel="bookmark"><time class="published dt-published" datetime="2015-09-15T12:32:12+08:00" title="2015-09-15 12:32">2015-09-15 12:32</time></a></p>
+            <p class="dateline"><a href="posts/ubuntu1404bu-shu-fen-bu-shi-ji-suan-kuang-jia-dpark1/" rel="bookmark"><time class="published dt-published" datetime="2015-09-14T22:10:25+08:00" title="2015-09-14 22:10">2015-09-14 22:10</time></a></p>
         </div>
     </header><div class="p-summary entry-summary">
     <div>
-<p>Ubuntu修改root密码的方法如下：</p>
+<p>所用到的工具参考: <a class="reference external" href="https://codinglonglong.github.io/posts/fen-bu-shi-xi-tong-xiang-guan-ruan-jian-de-xia-zai-di-zhi/">https://codinglonglong.github.io/posts/fen-bu-shi-xi-tong-xiang-guan-ruan-jian-de-xia-zai-di-zhi/</a></p>
+<p>1、分别在三台机器上安装Ubuntu Desktop 14.04.3，并设定静态IP，参考文章 <a class="reference external" href="https://codinglonglong.github.io/posts/ubuntu1404bu-shu-tornado%2Bnginx%2Bsupervisor/">https://codinglonglong.github.io/posts/ubuntu1404bu-shu-tornado%2Bnginx%2Bsupervisor/</a></p>
+<p>2、分别在三台机器上安装ssh</p>
 <pre class="literal-block">
-long@pc3:/usr/local/lib/python2.7/dist-packages$ sudo passwd
-Enter new UNIX password:
-Retype new UNIX password:
-passwd: password updated successfully
-long@pc3:/usr/local/lib/python2.7/dist-packages$ su - root
-Password:
-root@pc3:~# ls
+&gt;&gt; sudo apt-get install ssh openssh-server openssh-client
+</pre>
+<p><strong>在pc3上</strong></p>
+<p>3、搭建内存数据库</p>
+<pre class="literal-block">
+&gt;&gt; sudo apt-get update
+&gt;&gt; sudo apt-get install git
+&gt;&gt; sudo apt-get install g++ gcc build-essential gfortran
+&gt;&gt; git clone https://github.com/douban/beansdb
+&gt;&gt; sudo apt-get install autoconf automake libtool
+&gt;&gt; cd beansdb/
+&gt;&gt; sudo ./autogen.sh
+&gt;&gt; ./configure &amp;&amp; sudo make &amp;&amp; sudo make install
+&gt;&gt; sudo cp beansdb_log.conf /etc/
+&gt;&gt; sudo mkdir /mnt/beansdb
+</pre>
+<p>4、建立自启动脚本</p>
+<pre class="literal-block">
+&gt;&gt; sudo apt-get install emacs
+&gt;&gt; cd /usr/local/bin
+&gt;&gt; sudo emacs startbeansdb
+beansdb -u root -H /mnt/beansdb -p 7900 -d
+&gt;&gt; sudo chmod 777 startbeansdb
+</pre>
+<p>5、设定无密码启动</p>
+<pre class="literal-block">
+&gt;&gt; sudo visudo
+long ALL=NOPASSWD:/usr/local/bin/startbeansdb
+</pre>
+<p>6、安装beansdb的python接口</p>
+<pre class="literal-block">
+&gt;&gt; sudo cp /home/long/beansdb/python/dbclient.py /usr/local/lib/python2.7/dist-packages/
+&gt;&gt; wget https://launchpad.net/libmemcached/1.0/1.0.18/+download/libmemcached-1.0.18.tar.gz
+&gt;&gt; tar zxvf libmemcached-1.0.18.tar.gz
+&gt;&gt; cd libmemcached-1.0.18/
+&gt;&gt; ./configure
+&gt;&gt; sudo make
+&gt;&gt; sudo make install
+&gt;&gt; git clone https://github.com/douban/python-libmemcached
+&gt;&gt; cd python-libmemcached/
+&gt;&gt; sudo apt-get install python-pip python-dev
+&gt;&gt; sudo python setup.py install
+&gt;&gt; emacs ~/.profile
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+&gt;&gt; source ~/.profile
+</pre>
+<p>7、搭建分布式文件系统服务器</p>
+<pre class="literal-block">
+&gt;&gt; wget http://nchc.dl.sourceforge.net/project/fuse/fuse-2.X/2.9.4/fuse-2.9.4.tar.gz
+&gt;&gt; wget http://ppa.moosefs.com/src/moosefs-2.0.73-1.tar.gz
+&gt;&gt; wget http://zlib.net/zlib-1.2.8.tar.gz
+&gt;&gt; tar zxvf fuse-2.9.4.tar.gz &amp;&amp; cd fuse-2.9.4 &amp;&amp; ./configure --prefix=/usr &amp;&amp; sudo make &amp;&amp; sudo make install &amp;&amp; cd ..
+&gt;&gt; tar zxvf zlib-1.2.8.tar.gz &amp;&amp; cd zlib-1.2.8 &amp;&amp; ./configure &amp;&amp; sudo make &amp;&amp; sudo make install &amp;&amp; cd ..
+&gt;&gt; sudo useradd mfs -M -s /sbin/nologin
+&gt;&gt; sudo apt-get install libpcap-dev pkg-config
+&gt;&gt; tar zxvf moosefs-2.0.73-1.tar.gz &amp;&amp; cd moosefs-2.0.73 &amp;&amp; ./configure --prefix=/usr/local/mfs --with-default-user=mfs --with-default-group=mfs --enable-mfsmount &amp;&amp; sudo make &amp;&amp; sudo make install
+&gt;&gt; cd /usr/local/mfs/etc/mfs
+&gt;&gt; sudo cp mfsmaster.cfg.dist mfsmaster.cfg
+&gt;&gt; sudo emacs mfsmaster.cfg
+MATOCS_LISTEN_HOST = 192.168.1.203
+&gt;&gt; sudo cp mfsexports.cfg.dist mfsexports.cfg
+&gt;&gt; sudo cp mfstopology.cfg.dist mfstopology.cfg
+&gt;&gt; cd /usr/local/mfs/etc/mfs
+&gt;&gt; sudo cp mfschunkserver.cfg.dist mfschunkserver.cfg
+&gt;&gt; sudo emacs mfschunkserver.cfg
+MASTER_HOST = 192.168.1.203
+&gt;&gt; sudo cp mfshdd.cfg.dist mfshdd.cfg
+&gt;&gt; sudo emacs mfshdd.cfg
+# 删除Examples:以下的内容
+# 在最后添加
+/usr/local/mfs/var/mfs
+&gt;&gt; sudo chown -R mfs:mfs /usr/local/mfs/var/mfs
+&gt;&gt; cd /usr/local/mfs/etc/mfs
+&gt;&gt; sudo cp mfsmount.cfg.dist mfsmount.cfg
+&gt;&gt; sudo emacs mfsmount.cfg
+# Example:
+#
+/mnt/mfs
+&gt;&gt; sudo mkdir /mnt/mfs
+&gt;&gt; sudo chown -R mfs:mfs /mnt/mfs
+</pre>
+<p>8、建立自启动脚本</p>
+<pre class="literal-block">
+&gt;&gt; cd /usr/local/bin
+&gt;&gt; sudo emacs startmfsmaster
+cd /usr/local/mfs/sbin
+./mfsmaster -a
+&gt;&gt; sudo chmod 777 startmfsmaster
+&gt;&gt; sudo emacs startmfscgi
+cd /usr/local/mfs/sbin
+./mfscgiserv
+&gt;&gt; sudo chmod 777 startmfscgi
+&gt;&gt; cd /usr/local/bin
+&gt;&gt; sudo emacs startmfschunk
+cd /usr/local/mfs/sbin/
+./mfschunkserver start
+&gt;&gt; sudo chmod 777 startmfschunk
+&gt;&gt; cd /usr/local/bin
+&gt;&gt; sudo emacs startmfsmount
+cd /usr/local/mfs/bin/
+./mfsmount -H 192.168.1.203 -o nonempty
+&gt;&gt; sudo chmod 777 startmfsmount
+</pre>
+<p>9、设定无密码启动</p>
+<pre class="literal-block">
+&gt;&gt; sudo visudo
+long ALL=NOPASSWD:/usr/local/bin/startmfsmaster
+long ALL=NOPASSWD:/usr/local/bin/startmfscgi
+long ALL=NOPASSWD:/usr/local/bin/startmfschunk
+long ALL=NOPASSWD:/usr/local/bin/startmfsmount
+</pre>
+<p>10、安装分布式资源调度框架</p>
+<pre class="literal-block">
+&gt;&gt; wget http://archive.apache.org/dist/mesos/0.22.1/mesos-0.22.1.tar.gz  (这里的版本最高就到0.22.1，要不然pymesos无法支持)
+&gt;&gt; tar zxf mesos-0.22.1.tar.gz
+&gt;&gt; sudo apt-get install build-essential openjdk-6-jdk python-dev python-boto libcurl4-nss-dev libsasl2-dev maven libapr1-dev libsvn-dev autoconf libtool
+&gt;&gt; cd mesos-0.22.1
+&gt;&gt; ./bootstrap
+&gt;&gt; mkdir build
+&gt;&gt; cd build
+&gt;&gt; ../configure --prefix=/home/long/mesos
+&gt;&gt; sudo make
+&gt;&gt; sudo make install
+</pre>
+<p>11、建立自启动脚本</p>
+<pre class="literal-block">
+&gt;&gt; cd /usr/local/bin
+&gt;&gt; sudo emacs startmesosmaster
+cd /home/long/mesos/sbin
+./mesos-master --ip=192.168.1.203 --work_dir=/var/lib/mesos --quiet &amp;
+&gt;&gt; sudo chmod 777 startmesosmaster
+&gt;&gt; sudo emacs startmesosslave
+cd /home/long/mesos/sbin
+./mesos-slave --master=192.168.1.203:5050 --quiet &amp;
+&gt;&gt; sudo chmod 777 startmesosslave
+</pre>
+<p>12、设定无密码启动</p>
+<pre class="literal-block">
+&gt;&gt; sudo visudo
+long ALL=NOPASSWD:/usr/local/bin/startmesosmaster
+long ALL=NOPASSWD:/usr/local/bin/startmesosslave
+</pre>
+<p>13、安装pymesos</p>
+<pre class="literal-block">
+&gt;&gt; git clone https://github.com/douban/pymesos.git
+&gt;&gt; cd pymesos
+&gt;&gt; sudo apt-get install python-pip
+&gt;&gt; sudo python setup.py install
+</pre>
+<p>14、安装dpark</p>
+<pre class="literal-block">
+&gt;&gt; sudo apt-get install git libzmq-dev python-pip python-dev
+&gt;&gt; git clone https://github.com/douban/dpark.git
+&gt;&gt; cd dpark
+&gt;&gt; sudo apt-get install python-psutil psutils
+&gt;&gt; sudo python setup.py install
+</pre>
+<p>15、修改/etc/hosts</p>
+<pre class="literal-block">
+&gt;&gt; sudo emacs /etc/hosts
+192.168.1.201    pc1
+192.168.1.202    pc2
+192.168.1.203    pc3
+192.168.1.204    pc4
+192.168.1.211    cn001
+192.168.1.212    cn002
+192.168.1.213    cn003
+192.168.1.214    cn004
+192.168.1.215    cn005
+192.168.1.216    cn006
+192.168.1.217    cn007
+192.168.1.218    cn008
+192.168.1.219    cn009
+192.168.1.220    cn010
+192.168.1.221    cn011
+192.168.1.222    cn012
+192.168.1.241    snc001
+192.168.1.242    snc002
+192.168.1.243    snc003
+192.168.1.244    snc004
+192.168.1.210    client
+</pre>
+<p>16、配置SSH无密码登录</p>
+<pre class="literal-block">
+&gt;&gt; ssh-keygen -t rsa -P ''
+&gt;&gt; cat ~/.ssh/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys
+&gt;&gt; sudo chmod 600 ~/.ssh/authorized_keys
 </pre>
 </div>
     </div>

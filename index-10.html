@@ -92,422 +92,7 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/" class="u-url">小家手帐网页版基本完成</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/" rel="bookmark"><time class="published dt-published" datetime="2017-02-25T15:34:06+08:00" title="2017-02-25 15:34">2017-02-25 15:34</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>利用不到一个月的周末业余时间，使用刚刚接触不久的vuejs，基本完成了小家手帐的网页版。</p>
-<p>代码发布到了 <a class="reference external" href="https://github.com/codinglonglong/homebankservice">https://github.com/codinglonglong/homebankservice</a> 和 <a class="reference external" href="https://github.com/codinglonglong/homebankweb">https://github.com/codinglonglong/homebankweb</a> 这两个代码仓库。</p>
-<p>服务端主要涉及的相关技术点包括：</p>
-<ol class="arabic simple">
-<li>flask_restplus实现的RESTful服务；</li>
-<li>sqlalchemy实现的数据库ORM；</li>
-<li>TimedRotatingFileHandler实现的滚动日志；</li>
-<li>自定义装饰器实现的权限验证；</li>
-<li>“接口-接口模型-数据库访问-数据库模型”结构网站的探索；</li>
-<li>Swagger-UI接口测试的使用。</li>
-</ol>
-<p>网页端主要涉及的相关技术点包括：</p>
-<ol class="arabic simple">
-<li>基于vue-router的页面导航；</li>
-<li>基于axios和vue-axios的前后端通信；</li>
-<li>基于element-ui的页面交互；</li>
-<li>基于vue-cookie的cookie操作；</li>
-<li>vuejs中多组件的通信。</li>
-</ol>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/" class="u-url">Flask-CORS解决Ajax跨域请求问题</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/" rel="bookmark"><time class="published dt-published" datetime="2017-02-08T12:59:14+08:00" title="2017-02-08 12:59">2017-02-08 12:59</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>在本地开发网站的过程中，js访问后端服务会出现</p>
-<pre class="code bash"><a name="rest_code_42b613c4caa94dd196a6fcdbd808d0a9-1"></a>已拦截跨源请求：同源策略禁止读取位于 http://192.168.99.100:8080/signup/ 的远程资源。（原因：CORS 头缺少 <span class="s1">'Access-Control-Allow-Origin'</span>）。
-</pre>
-<p>这时可以通过Flask-CORS解决问题。</p>
-<p>1、安装。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_3217a0f02fdc43f28263fc38bd0f96ea-1"></a>pip install flask-cors
-</pre>
-</blockquote>
-<p>2、使用。</p>
-<blockquote>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/#rest_code_0043df372b044bbc8baf1c8bc07fb5ac-1">1</a>
-<a href="posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/#rest_code_0043df372b044bbc8baf1c8bc07fb5ac-2">2</a>
-<a href="posts/flask-corsjie-jue-ajaxkua-yu-qing-qiu-wen-ti/#rest_code_0043df372b044bbc8baf1c8bc07fb5ac-3">3</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_0043df372b044bbc8baf1c8bc07fb5ac-1"></a><span class="kn">from</span> <span class="nn">flask_cors</span> <span class="kn">import</span> <span class="n">CORS</span>
-<a name="rest_code_0043df372b044bbc8baf1c8bc07fb5ac-2"></a><span class="n">global_app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-<a name="rest_code_0043df372b044bbc8baf1c8bc07fb5ac-3"></a><span class="n">CORS</span><span class="p">(</span><span class="n">global_app</span><span class="p">)</span>
-</pre></td>
-</tr></table>
-</blockquote>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pythonzhuang-shi-qi-tan-suo/" class="u-url">Python装饰器探索</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/pythonzhuang-shi-qi-tan-suo/" rel="bookmark"><time class="published dt-published" datetime="2017-02-01T19:31:17+08:00" title="2017-02-01 19:31">2017-02-01 19:31</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>Python的装饰器是一个很有趣的语法糖，它可以让代码变得简洁优美，将与逻辑无关的部分分离出来，比如记录日志、验证权限、设置缓存、程序计时、配置上下文等等。</p>
-<p>1、带参数函数、无参数装饰器</p>
-<blockquote>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-1"> 1</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-2"> 2</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-3"> 3</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-4"> 4</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-5"> 5</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-6"> 6</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-7"> 7</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-8"> 8</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-9"> 9</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-10">10</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-11">11</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-12">12</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-13">13</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-14">14</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-15">15</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-16">16</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-17">17</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-18">18</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-19">19</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-20">20</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-21">21</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_177bc86c23ce4f5d8052d1cfd88759d6-22">22</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
-<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-2"></a><span class="c1"># 带参数函数、无参数装饰器</span>
-<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-3"></a>
-<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-4"></a>
-<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-5"></a><span class="k">def</span> <span class="nf">checklogin</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-6"></a>    <span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
-<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-7"></a>        <span class="n">validusers</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"long"</span><span class="p">,</span> <span class="s2">"jack"</span><span class="p">]</span>
-<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-8"></a>        <span class="k">if</span> <span class="n">username</span> <span class="ow">in</span> <span class="n">validusers</span><span class="p">:</span>
-<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-9"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
-<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-10"></a>        <span class="k">else</span><span class="p">:</span>
-<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-11"></a>            <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">username</span><span class="p">)</span> <span class="o">+</span> <span class="s2">", 你没有操作权限"</span>
-<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-12"></a>    <span class="k">return</span> <span class="n">_</span>
-<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-13"></a>
-<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-14"></a>
-<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-15"></a><span class="nd">@checklogin</span>
-<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-16"></a><span class="k">def</span> <span class="nf">login</span><span class="p">(</span><span class="n">username</span><span class="p">):</span>
-<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-17"></a>    <span class="k">return</span> <span class="s2">"欢迎你, "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
-<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-18"></a>
-<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-19"></a>
-<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-20"></a><span class="k">print</span><span class="p">(</span><span class="n">login</span><span class="p">(</span><span class="s2">"long"</span><span class="p">))</span>
-<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-21"></a><span class="k">print</span><span class="p">(</span><span class="n">login</span><span class="p">(</span><span class="s2">"tom"</span><span class="p">))</span>
-<a name="rest_code_177bc86c23ce4f5d8052d1cfd88759d6-22"></a><span class="k">print</span><span class="p">(</span><span class="n">login</span><span class="p">(</span><span class="s2">"jack"</span><span class="p">))</span>
-</pre></td>
-</tr></table>
-</blockquote>
-<p>运行结果：</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_cc7b323caa15461aa8f03c0bcd857531-1"></a>欢迎你, long
-<a name="rest_code_cc7b323caa15461aa8f03c0bcd857531-2"></a>tom, 你没有操作权限
-<a name="rest_code_cc7b323caa15461aa8f03c0bcd857531-3"></a>欢迎你, jack
-</pre>
-</blockquote>
-<p>2、可变参数函数、无参数装饰器</p>
-<blockquote>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-1"> 1</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-2"> 2</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-3"> 3</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-4"> 4</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-5"> 5</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-6"> 6</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-7"> 7</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-8"> 8</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-9"> 9</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-10">10</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-11">11</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-12">12</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-13">13</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-14">14</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-15">15</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-16">16</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-17">17</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-18">18</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-19">19</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-20">20</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-21">21</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-22">22</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-23">23</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-24">24</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-25">25</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-26">26</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-27">27</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-28">28</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-29">29</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-30">30</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-31">31</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-32">32</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-33">33</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-34">34</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-35">35</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-36">36</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-37">37</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-38">38</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-39">39</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-40">40</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-41">41</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_1c1317842d21495dac5b864b47216644-42">42</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_1c1317842d21495dac5b864b47216644-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-2"></a><span class="c1"># 可变参数函数、无参数装饰器</span>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-3"></a>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-4"></a>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-5"></a><span class="k">def</span> <span class="nf">logger</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-6"></a>    <span class="k">def</span> <span class="nf">_</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-7"></a>        <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">func</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'被调用，参数包括：'</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">kwargs</span><span class="p">))</span>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-8"></a>        <span class="k">if</span> <span class="n">args</span> <span class="ow">and</span> <span class="n">kwargs</span><span class="p">:</span>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-9"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-10"></a>        <span class="k">elif</span> <span class="n">args</span><span class="p">:</span>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-11"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-12"></a>        <span class="k">elif</span> <span class="n">kwargs</span><span class="p">:</span>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-13"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-14"></a>        <span class="k">else</span><span class="p">:</span>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-15"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">()</span>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-16"></a>    <span class="k">return</span> <span class="n">_</span>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-17"></a>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-18"></a>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-19"></a><span class="nd">@logger</span>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-20"></a><span class="k">def</span> <span class="nf">test1</span><span class="p">():</span>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-21"></a>    <span class="k">pass</span>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-22"></a>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-23"></a>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-24"></a><span class="nd">@logger</span>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-25"></a><span class="k">def</span> <span class="nf">test2</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-26"></a>    <span class="k">pass</span>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-27"></a>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-28"></a>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-29"></a><span class="nd">@logger</span>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-30"></a><span class="k">def</span> <span class="nf">test3</span><span class="p">(</span><span class="n">kwargs</span><span class="p">):</span>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-31"></a>    <span class="k">pass</span>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-32"></a>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-33"></a>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-34"></a><span class="nd">@logger</span>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-35"></a><span class="k">def</span> <span class="nf">test4</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">):</span>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-36"></a>    <span class="k">pass</span>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-37"></a>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-38"></a>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-39"></a><span class="n">test1</span><span class="p">()</span>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-40"></a><span class="n">test2</span><span class="p">(</span><span class="s2">"long"</span><span class="p">)</span>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-41"></a><span class="n">test3</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-<a name="rest_code_1c1317842d21495dac5b864b47216644-42"></a><span class="n">test4</span><span class="p">(</span><span class="s2">"long"</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-</pre></td>
-</tr></table>
-</blockquote>
-<p>运行结果：</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_e42a05fe0ff248c984ab278a76368aca-1"></a>test1被调用，参数包括：<span class="o">(){}</span>
-<a name="rest_code_e42a05fe0ff248c984ab278a76368aca-2"></a>test2被调用，参数包括：<span class="o">(</span><span class="s1">'long'</span>,<span class="o">){}</span>
-<a name="rest_code_e42a05fe0ff248c984ab278a76368aca-3"></a>test3被调用，参数包括：<span class="o">(){</span><span class="s1">'a'</span>: <span class="m">1</span>, <span class="s1">'b'</span>: <span class="m">2</span><span class="o">}</span>
-<a name="rest_code_e42a05fe0ff248c984ab278a76368aca-4"></a>test4被调用，参数包括：<span class="o">(</span><span class="s1">'long'</span>,<span class="o">){</span><span class="s1">'a'</span>: <span class="m">1</span>, <span class="s1">'b'</span>: <span class="m">2</span><span class="o">}</span>
-</pre>
-</blockquote>
-<p>3、带参数函数、带参数装饰器</p>
-<blockquote>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-1"> 1</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-2"> 2</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-3"> 3</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-4"> 4</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-5"> 5</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-6"> 6</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-7"> 7</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-8"> 8</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-9"> 9</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-10">10</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-11">11</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-12">12</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-13">13</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-14">14</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-15">15</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-16">16</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-17">17</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-18">18</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-19">19</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-20">20</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-21">21</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-22">22</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-23">23</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-24">24</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_f62dabeeb66e4385b9189ca547e05d7c-25">25</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
-<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-2"></a><span class="c1"># 带参数函数、带参数装饰器</span>
-<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-3"></a>
-<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-4"></a>
-<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-5"></a><span class="k">def</span> <span class="nf">typechecker</span><span class="p">(</span><span class="n">paramtype</span><span class="p">):</span>
-<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-6"></a>    <span class="k">def</span> <span class="nf">_outer</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-7"></a>        <span class="k">def</span> <span class="nf">_inner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-8"></a>            <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
-<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-9"></a>                <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">paramtype</span><span class="p">:</span>
-<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-10"></a>                    <span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">args</span><span class="p">]</span>
-<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-11"></a>                    <span class="k">return</span> <span class="s2">"+"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" 类型错误"</span>
-<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-12"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
-<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-13"></a>        <span class="k">return</span> <span class="n">_inner</span>
-<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-14"></a>    <span class="k">return</span> <span class="n">_outer</span>
-<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-15"></a>
-<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-16"></a>
-<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-17"></a><span class="nd">@typechecker</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-18"></a><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
-<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-19"></a>    <span class="n">result</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
-<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-20"></a>    <span class="n">value</span> <span class="o">=</span> <span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">value</span><span class="p">]</span>
-<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-21"></a>    <span class="k">return</span> <span class="s2">"+"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'='</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-22"></a>
-<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-23"></a>
-<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-24"></a><span class="k">print</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-<a name="rest_code_f62dabeeb66e4385b9189ca547e05d7c-25"></a><span class="k">print</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-</pre></td>
-</tr></table>
-</blockquote>
-<p>运行结果:</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_a8af202aeff44a2c8f0a249500dba5f9-1"></a><span class="m">1</span>+2+3+4+5<span class="o">=</span><span class="m">15</span>
-<a name="rest_code_a8af202aeff44a2c8f0a249500dba5f9-2"></a><span class="m">1</span>+2+3+a+5 类型错误
-</pre>
-</blockquote>
-<p>4、带参数函数、可变参数装饰器</p>
-<blockquote>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-1"> 1</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-2"> 2</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-3"> 3</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-4"> 4</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-5"> 5</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-6"> 6</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-7"> 7</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-8"> 8</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-9"> 9</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-10">10</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-11">11</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-12">12</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-13">13</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-14">14</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-15">15</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-16">16</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-17">17</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-18">18</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-19">19</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-20">20</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-21">21</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_9f55bca7bf184f36a6de01d699bd140b-22">22</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
-<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-2"></a><span class="c1"># 带参数函数、可变参数装饰器</span>
-<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-3"></a>
-<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-4"></a>
-<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-5"></a><span class="k">def</span> <span class="nf">typechecker</span><span class="p">(</span><span class="o">*</span><span class="n">paramtype</span><span class="p">):</span>
-<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-6"></a>    <span class="k">def</span> <span class="nf">_outer</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-7"></a>        <span class="k">def</span> <span class="nf">_inner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
-<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-8"></a>            <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">args</span><span class="p">:</span>
-<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-9"></a>                <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">paramtype</span><span class="p">:</span>
-<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-10"></a>                    <span class="k">return</span> <span class="s2">"参数不是有效的类型"</span>
-<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-11"></a>            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
-<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-12"></a>        <span class="k">return</span> <span class="n">_inner</span>
-<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-13"></a>    <span class="k">return</span> <span class="n">_outer</span>
-<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-14"></a>
-<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-15"></a>
-<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-16"></a><span class="nd">@typechecker</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span>
-<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-17"></a><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
-<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-18"></a>    <span class="k">return</span> <span class="s2">"参数有效"</span>
-<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-19"></a>
-<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-20"></a>
-<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-21"></a><span class="k">print</span><span class="p">(</span><span class="n">test</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">))</span>
-<a name="rest_code_9f55bca7bf184f36a6de01d699bd140b-22"></a><span class="k">print</span><span class="p">(</span><span class="n">test</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">5.2</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
-</pre></td>
-</tr></table>
-</blockquote>
-<p>运行结果:</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_cdab12fec2ef42a6b4f77c9ebc8c2827-1"></a>参数不是有效的类型
-<a name="rest_code_cdab12fec2ef42a6b4f77c9ebc8c2827-2"></a>参数有效
-</pre>
-</blockquote>
-<p>5、多个装饰器的调用顺序</p>
-<blockquote>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-1"> 1</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-2"> 2</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-3"> 3</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-4"> 4</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-5"> 5</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-6"> 6</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-7"> 7</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-8"> 8</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-9"> 9</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-10">10</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-11">11</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-12">12</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-13">13</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-14">14</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-15">15</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-16">16</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-17">17</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-18">18</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-19">19</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-20">20</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-21">21</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-22">22</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-23">23</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-24">24</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-25">25</a>
-<a href="posts/pythonzhuang-shi-qi-tan-suo/#rest_code_85f30d46f34d40a3a2a726df0f67a9ca-26">26</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-1"></a><span class="c1"># -*-coding:utf-8-*-</span>
-<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-2"></a><span class="c1"># 多个装饰器的调用顺序</span>
-<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-3"></a>
-<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-4"></a>
-<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-5"></a><span class="k">def</span> <span class="nf">deco1</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-6"></a>    <span class="k">def</span> <span class="nf">_</span><span class="p">():</span>
-<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-7"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">"deco1() is called."</span><span class="p">)</span>
-<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-8"></a>        <span class="k">return</span> <span class="n">func</span><span class="p">()</span>
-<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-9"></a>    <span class="k">return</span> <span class="n">_</span>
-<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-10"></a>
-<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-11"></a>
-<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-12"></a><span class="k">def</span> <span class="nf">deco2</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-13"></a>    <span class="k">def</span> <span class="nf">_</span><span class="p">():</span>
-<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-14"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">"deco2() is called."</span><span class="p">)</span>
-<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-15"></a>        <span class="k">return</span> <span class="n">func</span><span class="p">()</span>
-<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-16"></a>    <span class="k">return</span> <span class="n">_</span>
-<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-17"></a>
-<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-18"></a>
-<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-19"></a><span class="nd">@deco1</span>
-<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-20"></a><span class="nd">@deco2</span>
-<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-21"></a><span class="k">def</span> <span class="nf">test</span><span class="p">():</span>
-<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-22"></a>    <span class="k">print</span><span class="p">(</span><span class="s2">"test() is called."</span><span class="p">)</span>
-<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-23"></a>
-<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-24"></a>
-<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-25"></a><span class="n">test</span><span class="p">()</span>
-<a name="rest_code_85f30d46f34d40a3a2a726df0f67a9ca-26"></a><span class="n">test</span><span class="p">()</span>
-</pre></td>
-</tr></table>
-</blockquote>
-<p>运行结果:</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_dfc54c261e9443fdabd8e335db12c8c2-1"></a>deco1<span class="o">()</span> is called.
-<a name="rest_code_dfc54c261e9443fdabd8e335db12c8c2-2"></a>deco2<span class="o">()</span> is called.
-<a name="rest_code_dfc54c261e9443fdabd8e335db12c8c2-3"></a>test<span class="o">()</span> is called.
-<a name="rest_code_dfc54c261e9443fdabd8e335db12c8c2-4"></a>deco1<span class="o">()</span> is called.
-<a name="rest_code_dfc54c261e9443fdabd8e335db12c8c2-5"></a>deco2<span class="o">()</span> is called.
-<a name="rest_code_dfc54c261e9443fdabd8e335db12c8c2-6"></a>test<span class="o">()</span> is called.
-</pre>
-</blockquote>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/yi-ge-zhi-de-can-kao-de-flask-sqlalchemycha-xun-an-li/" class="u-url">一个值得参考的Flask-SQLAlchemy查询案例</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/yi-ge-zhi-de-can-kao-de-flask-sqlalchemycha-xun-an-li/" class="u-url">一个值得参考的Flask-SQLAlchemy查询案例</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
@@ -686,6 +271,245 @@ body{
 </blockquote>
 <p><strong>注意</strong></p>
 <p>本方法是通过修改时区来“曲线救国”的。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerzhong-emacszhi-chi-tui-ge/" class="u-url">Docker中Emacs支持退格</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/dockerzhong-emacszhi-chi-tui-ge/" rel="bookmark"><time class="published dt-published" datetime="2017-01-30T22:03:15+08:00" title="2017-01-30 22:03">2017-01-30 22:03</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>默认在Docker中，Emacs使用退格无法删除光标前的字符，而是显示帮助信息，这让人有些费解，可以采用如下方法解决：</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_760187018c38427e811b519b805c31c0-1"></a>emacs ~/.emacs
+<a name="rest_code_760187018c38427e811b519b805c31c0-2"></a><span class="o">(</span>global-set-key <span class="s2">"\C-h"</span> <span class="s1">'backward-delete-char-untabify)</span>
+<a name="rest_code_760187018c38427e811b519b805c31c0-3"></a><span class="s1">(global-set-key "\d" '</span>delete-char<span class="o">)</span>
+<a name="rest_code_760187018c38427e811b519b805c31c0-4"></a>C-x C-s
+<a name="rest_code_760187018c38427e811b519b805c31c0-5"></a>C-x C-c
+</pre>
+</blockquote>
+<p>这时再用emacs命令打开文件，就可以正常使用退格键删除光标前的字符了。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/" class="u-url">Flask-Sqlalchemy连接Mysql并支持中文</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/" rel="bookmark"><time class="published dt-published" datetime="2017-01-30T21:36:46+08:00" title="2017-01-30 21:36">2017-01-30 21:36</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>按照文章 <a class="reference external" href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/">https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/</a> 配置好数据库，在默认使用Flask-Sqlalchemy连接Mysql时，如果插入的数据是中文，会保存成问号。如果要正常保存中文，需要注意以下四点：</p>
+<p>1、 .py文件本身是UTF-8的编码，这可以在开发工具的“文件编码”功能中进行查看。</p>
+<p>2、 .py文件开头加上 <strong># -*-coding:utf-8-*-</strong>。</p>
+<p>3、 连接字符串采用如下格式，注意最后的部分：</p>
+<blockquote>
+<pre class="code python"><a name="rest_code_e83bbfdc97324bda898584ee5039a6f6-1"></a><span class="n">dbconnection</span> <span class="o">=</span> <span class="s1">'mysql+mysqlconnector://username:password@host:port/dbname?charset=utf8'</span>
+</pre>
+</blockquote>
+<p>4、 默认Mysql是latin-1的编码，如下：</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ec28408a8a6a46b396809b5c58b45c4e-1"> 1</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ec28408a8a6a46b396809b5c58b45c4e-2"> 2</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ec28408a8a6a46b396809b5c58b45c4e-3"> 3</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ec28408a8a6a46b396809b5c58b45c4e-4"> 4</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ec28408a8a6a46b396809b5c58b45c4e-5"> 5</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ec28408a8a6a46b396809b5c58b45c4e-6"> 6</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ec28408a8a6a46b396809b5c58b45c4e-7"> 7</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ec28408a8a6a46b396809b5c58b45c4e-8"> 8</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ec28408a8a6a46b396809b5c58b45c4e-9"> 9</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ec28408a8a6a46b396809b5c58b45c4e-10">10</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ec28408a8a6a46b396809b5c58b45c4e-11">11</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ec28408a8a6a46b396809b5c58b45c4e-12">12</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_ec28408a8a6a46b396809b5c58b45c4e-13">13</a></pre></div></td>
+<td class="code"><pre class="code bash"><a name="rest_code_ec28408a8a6a46b396809b5c58b45c4e-1"></a>mysql&gt; status           <span class="m">12</span>
+<a name="rest_code_ec28408a8a6a46b396809b5c58b45c4e-2"></a>Current database:
+<a name="rest_code_ec28408a8a6a46b396809b5c58b45c4e-3"></a>Current user:.14 Distribroot@localhostebian-linux-gnu <span class="o">(</span>x86_64<span class="o">)</span> using readline <span class="m">6</span>.3
+<a name="rest_code_ec28408a8a6a46b396809b5c58b45c4e-4"></a>SSL:                    Not in use
+<a name="rest_code_ec28408a8a6a46b396809b5c58b45c4e-5"></a>Current pager:          <span class="s1">''</span>dout
+<a name="rest_code_ec28408a8a6a46b396809b5c58b45c4e-6"></a>Using delimiter:        <span class="m">5</span>.5.54-0ubuntu0.14.04.1 <span class="o">(</span>Ubuntu<span class="o">)</span>
+<a name="rest_code_ec28408a8a6a46b396809b5c58b45c4e-7"></a>Protocol version:       Localhost via UNIX socket
+<a name="rest_code_ec28408a8a6a46b396809b5c58b45c4e-8"></a>Server characterset:    latin1
+<a name="rest_code_ec28408a8a6a46b396809b5c58b45c4e-9"></a>Client characterset:    latin1
+<a name="rest_code_ec28408a8a6a46b396809b5c58b45c4e-10"></a>UNIX socket:cterset:    <span class="m">3</span> min <span class="m">58</span> secqld/mysqld.sock
+<a name="rest_code_ec28408a8a6a46b396809b5c58b45c4e-11"></a>Uptime:
+<a name="rest_code_ec28408a8a6a46b396809b5c58b45c4e-12"></a>Threads: <span class="m">3</span>  Questions: <span class="m">324</span>  Slow queries: <span class="m">0</span>  Opens: <span class="m">45</span>  Flush tables: <span class="m">1</span>  Open tables: <span class="m">31</span>  Queries per second avg: <span class="m">1</span>.361
+<a name="rest_code_ec28408a8a6a46b396809b5c58b45c4e-13"></a>--------------
+</pre></td>
+</tr></table>
+</blockquote>
+<p>要通过修改配置文件，改成utf-8编码。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_144b72391f814bb3948d3a4eb572abc0-1"></a>emacs /etc/mysql/my.cnf
+<a name="rest_code_144b72391f814bb3948d3a4eb572abc0-2"></a><span class="o">[</span>mysqld<span class="o">]</span>
+<a name="rest_code_144b72391f814bb3948d3a4eb572abc0-3"></a><span class="nv">character_set_server</span> <span class="o">=</span> utf8
+<a name="rest_code_144b72391f814bb3948d3a4eb572abc0-4"></a><span class="o">[</span>client<span class="o">]</span>
+<a name="rest_code_144b72391f814bb3948d3a4eb572abc0-5"></a>default-character-set <span class="o">=</span> utf8
+<a name="rest_code_144b72391f814bb3948d3a4eb572abc0-6"></a><span class="o">[</span>mysql<span class="o">]</span>
+<a name="rest_code_144b72391f814bb3948d3a4eb572abc0-7"></a>default-character-set <span class="o">=</span> utf8
+<a name="rest_code_144b72391f814bb3948d3a4eb572abc0-8"></a>
+<a name="rest_code_144b72391f814bb3948d3a4eb572abc0-9"></a>service mysql stop
+<a name="rest_code_144b72391f814bb3948d3a4eb572abc0-10"></a>mysqld
+</pre>
+</blockquote>
+<p>重启服务之后，可以看到：</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_dc53a1c1e22645fa9d9e7b114b62991a-1"> 1</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_dc53a1c1e22645fa9d9e7b114b62991a-2"> 2</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_dc53a1c1e22645fa9d9e7b114b62991a-3"> 3</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_dc53a1c1e22645fa9d9e7b114b62991a-4"> 4</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_dc53a1c1e22645fa9d9e7b114b62991a-5"> 5</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_dc53a1c1e22645fa9d9e7b114b62991a-6"> 6</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_dc53a1c1e22645fa9d9e7b114b62991a-7"> 7</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_dc53a1c1e22645fa9d9e7b114b62991a-8"> 8</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_dc53a1c1e22645fa9d9e7b114b62991a-9"> 9</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_dc53a1c1e22645fa9d9e7b114b62991a-10">10</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_dc53a1c1e22645fa9d9e7b114b62991a-11">11</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_dc53a1c1e22645fa9d9e7b114b62991a-12">12</a>
+<a href="posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/#rest_code_dc53a1c1e22645fa9d9e7b114b62991a-13">13</a></pre></div></td>
+<td class="code"><pre class="code bash"><a name="rest_code_dc53a1c1e22645fa9d9e7b114b62991a-1"></a>mysql&gt; status           <span class="m">1</span>
+<a name="rest_code_dc53a1c1e22645fa9d9e7b114b62991a-2"></a>Current database:
+<a name="rest_code_dc53a1c1e22645fa9d9e7b114b62991a-3"></a>Current user:.14 Distribroot@localhostebian-linux-gnu <span class="o">(</span>x86_64<span class="o">)</span> using readline <span class="m">6</span>.3
+<a name="rest_code_dc53a1c1e22645fa9d9e7b114b62991a-4"></a>SSL:                    Not in use
+<a name="rest_code_dc53a1c1e22645fa9d9e7b114b62991a-5"></a>Current pager:          <span class="s1">''</span>dout
+<a name="rest_code_dc53a1c1e22645fa9d9e7b114b62991a-6"></a>Using delimiter:        <span class="m">5</span>.5.54-0ubuntu0.14.04.1 <span class="o">(</span>Ubuntu<span class="o">)</span>
+<a name="rest_code_dc53a1c1e22645fa9d9e7b114b62991a-7"></a>Protocol version:       Localhost via UNIX socket
+<a name="rest_code_dc53a1c1e22645fa9d9e7b114b62991a-8"></a>Server characterset:    utf8
+<a name="rest_code_dc53a1c1e22645fa9d9e7b114b62991a-9"></a>Client characterset:    utf8
+<a name="rest_code_dc53a1c1e22645fa9d9e7b114b62991a-10"></a>UNIX socket:cterset:    <span class="m">6</span> secrun/mysqld/mysqld.sock
+<a name="rest_code_dc53a1c1e22645fa9d9e7b114b62991a-11"></a>Uptime:
+<a name="rest_code_dc53a1c1e22645fa9d9e7b114b62991a-12"></a>Threads: <span class="m">1</span>  Questions: <span class="m">5</span>  Slow queries: <span class="m">0</span>  Opens: <span class="m">33</span>  Flush tables: <span class="m">1</span>  Open tables: <span class="m">26</span>  Queries per second avg: <span class="m">0</span>.833
+<a name="rest_code_dc53a1c1e22645fa9d9e7b114b62991a-13"></a>--------------
+</pre></td>
+</tr></table>
+</blockquote>
+<p>满足上述四点之后，删除掉原来包含问号的数据库，然后重新创建数据库，运行程序，可以看到中文被正常处理了。</p>
+<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/mysqlchinese.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/mysqlchinese.PNG">
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/" class="u-url">Docker中配置Flask-Sqlalchemy和Mysql</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/" rel="bookmark"><time class="published dt-published" datetime="2017-01-25T13:37:42+08:00" title="2017-01-25 13:37">2017-01-25 13:37</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>继文章 <a class="reference external" href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/">https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/</a> 之后，我们进一步配置数据库的部分。</p>
+<p>1、Docker安装Mysql。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_05ac7f67af954791b11c5fcf11e2069f-1"></a>apt install mysql-server mysql-client
+</pre>
+</blockquote>
+<p>2、Docker下载安装mysql-connector-python。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_ecbae3bd4ecb4a4cbd066c0ee3cd183c-1"></a>apt install curl
+<a name="rest_code_ecbae3bd4ecb4a4cbd066c0ee3cd183c-2"></a>curl -O https://cdn.mysql.com/Downloads/Connector-Python/mysql-connector-python-2.1.5.tar.gz
+<a name="rest_code_ecbae3bd4ecb4a4cbd066c0ee3cd183c-3"></a>tar zxvf mysql-connector-python-2.1.5.tar.gz
+<a name="rest_code_ecbae3bd4ecb4a4cbd066c0ee3cd183c-4"></a><span class="nb">cd</span> mysql-connector-python-2.1.5
+<a name="rest_code_ecbae3bd4ecb4a4cbd066c0ee3cd183c-5"></a>python setup.py install
+</pre>
+</blockquote>
+<p>3、Docker安装Flask-Sqlalchemy和Flask-Script。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_e16d69c9fe584e138dfad553e7d6c7ce-1"></a>pip install flask-sqlalchemy
+<a name="rest_code_e16d69c9fe584e138dfad553e7d6c7ce-2"></a>pip install flask-script
+</pre>
+</blockquote>
+<p>4、为已有容器添加端口。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_19939862bb3e4958b68a70809e76016f-1"></a>docker commit mypc newpc
+<a name="rest_code_19939862bb3e4958b68a70809e76016f-2"></a>docker stop mypc
+<a name="rest_code_19939862bb3e4958b68a70809e76016f-3"></a>docker run --name mynewpc -i -t -p <span class="m">13306</span>:3306 -p <span class="m">8080</span>:8080 -v ~/share/:/usr/development/  newpc /bin/bash
+</pre>
+</blockquote>
+<p>5、Docker登录Mysql数据库。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_b89f2436c8504920933a5cf6bfba21d5-1"></a>mysql -u root -p
+<a name="rest_code_b89f2436c8504920933a5cf6bfba21d5-2"></a>create database test<span class="p">;</span>
+<a name="rest_code_b89f2436c8504920933a5cf6bfba21d5-3"></a>grant all privileges on *.* to root@<span class="s1">'192.168.99.1'</span> identified by <span class="s1">'root'</span> with grant option<span class="p">;</span>
+<a name="rest_code_b89f2436c8504920933a5cf6bfba21d5-4"></a>flush privileges<span class="p">;</span>
+<a name="rest_code_b89f2436c8504920933a5cf6bfba21d5-5"></a><span class="nb">exit</span>
+</pre>
+</blockquote>
+<p>6、Docker修改配置文件，我习惯用emacs，也可以用vim。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_57a74f56a71f488dbd9c1430b37e6a54-1"></a>apt install emacs
+<a name="rest_code_57a74f56a71f488dbd9c1430b37e6a54-2"></a>apt-get install -f
+<a name="rest_code_57a74f56a71f488dbd9c1430b37e6a54-3"></a>emacs /etc/mysql/my.cnf
+<a name="rest_code_57a74f56a71f488dbd9c1430b37e6a54-4"></a>bind-address            <span class="o">=</span> <span class="m">0</span>.0.0.0
+<a name="rest_code_57a74f56a71f488dbd9c1430b37e6a54-5"></a>C-x C-s
+<a name="rest_code_57a74f56a71f488dbd9c1430b37e6a54-6"></a>C-x C-c
+</pre>
+</blockquote>
+<p>7、重启mysql服务。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_6c4e8e88e5e64824b731065b94c16294-1"></a>sudo service mysql stop
+<a name="rest_code_6c4e8e88e5e64824b731065b94c16294-2"></a>mysqld
+</pre>
+</blockquote>
+<p>8、主系统编辑测试网站main.py。</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_8d5cb84d5b604b2683948fad6c75ba58-1"> 1</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_8d5cb84d5b604b2683948fad6c75ba58-2"> 2</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_8d5cb84d5b604b2683948fad6c75ba58-3"> 3</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_8d5cb84d5b604b2683948fad6c75ba58-4"> 4</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_8d5cb84d5b604b2683948fad6c75ba58-5"> 5</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_8d5cb84d5b604b2683948fad6c75ba58-6"> 6</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_8d5cb84d5b604b2683948fad6c75ba58-7"> 7</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_8d5cb84d5b604b2683948fad6c75ba58-8"> 8</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_8d5cb84d5b604b2683948fad6c75ba58-9"> 9</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_8d5cb84d5b604b2683948fad6c75ba58-10">10</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_8d5cb84d5b604b2683948fad6c75ba58-11">11</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_8d5cb84d5b604b2683948fad6c75ba58-12">12</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_8d5cb84d5b604b2683948fad6c75ba58-13">13</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_8d5cb84d5b604b2683948fad6c75ba58-14">14</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_8d5cb84d5b604b2683948fad6c75ba58-15">15</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_8d5cb84d5b604b2683948fad6c75ba58-16">16</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_8d5cb84d5b604b2683948fad6c75ba58-17">17</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_8d5cb84d5b604b2683948fad6c75ba58-18">18</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_8d5cb84d5b604b2683948fad6c75ba58-19">19</a>
+<a href="posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/#rest_code_8d5cb84d5b604b2683948fad6c75ba58-20">20</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-1"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-2"></a><span class="kn">from</span> <span class="nn">flask.ext.script</span> <span class="kn">import</span> <span class="n">Manager</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-3"></a><span class="kn">from</span> <span class="nn">flask.ext.sqlalchemy</span> <span class="kn">import</span> <span class="n">SQLAlchemy</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-4"></a>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-5"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-6"></a><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s1">'SQLALCHEMY_DATABASE_URI'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'mysql+mysqlconnector://root:root@127.0.0.1:3306/test?charset=utf8'</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-7"></a>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-8"></a><span class="n">db</span> <span class="o">=</span> <span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-9"></a><span class="n">manager</span> <span class="o">=</span> <span class="n">Manager</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-10"></a>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-11"></a><span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-12"></a>    <span class="n">__tablename__</span> <span class="o">=</span> <span class="s1">'users'</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-13"></a>    <span class="nb">id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-14"></a>    <span class="n">username</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">80</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-15"></a>    <span class="n">email</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">320</span><span class="p">),</span> <span class="n">unique</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-16"></a>    <span class="n">password</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span> <span class="n">nullable</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-17"></a>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-18"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-19"></a>    <span class="n">db</span><span class="o">.</span><span class="n">create_all</span><span class="p">()</span>
+<a name="rest_code_8d5cb84d5b604b2683948fad6c75ba58-20"></a>    <span class="n">manager</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p>9、开一个新的Docker terminal，启动测试网站。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_72ef481b588c41db95b4fd78dde08122-1"></a><span class="nb">cd</span> /usr/development
+<a name="rest_code_72ef481b588c41db95b4fd78dde08122-2"></a>python main.py runserver
+</pre>
+</blockquote>
+<p>10、主系统上打开MySQL Workbench，访问数据库。Hostname：192.168.99.100，Port：13306，Password：root。</p>
+<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/mysqlworkbench.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/mysqlworkbench.PNG"><p><strong>注意</strong></p>
+<p>修改bind-address = 0.0.0.0非常重要，否则主系统访问不到Docker中的数据库。</p>
 </div>
     </div>
     </article>

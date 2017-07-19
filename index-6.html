@@ -92,239 +92,7 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/vuejsxue-xi-1/" class="u-url">vuejs学习(1)</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/vuejsxue-xi-1/" rel="bookmark"><time class="published dt-published" datetime="2017-01-10T09:06:42+08:00" title="2017-01-10 09:06">2017-01-10 09:06</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>本文初步学习如何使用vue-cli建立一个简单的网页组件。</p>
-<ol class="arabic">
-<li>
-<p class="first">参考 <a class="reference external" href="https://cn.vuejs.org/v2/guide/installation.html">https://cn.vuejs.org/v2/guide/installation.html</a> 安装好vue和vue-cli。</p>
-</li>
-<li>
-<p class="first">用vue创建一个简单的项目，删除已有src目录中的文件。</p>
-</li>
-<li>
-<p class="first">找到index.html如下，不用改动。</p>
-<blockquote>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-1/#rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-1"> 1</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-2"> 2</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-3"> 3</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-4"> 4</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-5"> 5</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-6"> 6</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-7"> 7</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-8"> 8</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-9"> 9</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-10">10</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-11">11</a></pre></div></td>
-<td class="code"><pre class="code html"><a name="rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<a name="rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-2"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
-<a name="rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-3"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-<a name="rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-4"></a>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span><span class="p">&gt;</span>
-<a name="rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-5"></a>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>test<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-<a name="rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-6"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-<a name="rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-7"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-<a name="rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-8"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"app"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-9"></a>    <span class="c">&lt;!-- built files will be auto injected --&gt;</span>
-<a name="rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-10"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-<a name="rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-11"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</pre></td>
-</tr></table>
-</blockquote>
-<p>这里应该留意到已经包含一个id是app的div，未来要写的代码经过编译之后，会放在这个div的位置，而 &lt;div id="app"&gt;&lt;/div&gt; 会被替换掉。</p>
-</li>
-<li>
-<p class="first">在src目录下新建main.js，这是整个网站代码的入口，如下。</p>
-<blockquote>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-1/#rest_code_5f255307e07c4cb09affaca6d29879b2-1">1</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_5f255307e07c4cb09affaca6d29879b2-2">2</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_5f255307e07c4cb09affaca6d29879b2-3">3</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_5f255307e07c4cb09affaca6d29879b2-4">4</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_5f255307e07c4cb09affaca6d29879b2-5">5</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_5f255307e07c4cb09affaca6d29879b2-6">6</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_5f255307e07c4cb09affaca6d29879b2-7">7</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_5f255307e07c4cb09affaca6d29879b2-8">8</a></pre></div></td>
-<td class="code"><pre class="code html"><a name="rest_code_5f255307e07c4cb09affaca6d29879b2-1"></a>import Vue from 'vue'
-<a name="rest_code_5f255307e07c4cb09affaca6d29879b2-2"></a>import App from './App'
-<a name="rest_code_5f255307e07c4cb09affaca6d29879b2-3"></a>
-<a name="rest_code_5f255307e07c4cb09affaca6d29879b2-4"></a>new Vue({
-<a name="rest_code_5f255307e07c4cb09affaca6d29879b2-5"></a>    el: '#app',
-<a name="rest_code_5f255307e07c4cb09affaca6d29879b2-6"></a>    template: '<span class="p">&lt;</span><span class="nt">App</span><span class="p">/&gt;</span>',
-<a name="rest_code_5f255307e07c4cb09affaca6d29879b2-7"></a>    components: { App }
-<a name="rest_code_5f255307e07c4cb09affaca6d29879b2-8"></a>})
-</pre></td>
-</tr></table>
-</blockquote>
-<p>这里应该注意到，el，也就是element，绑定的是前面index.html中的 &lt;div id="app"&gt;&lt;/div&gt; ，而该位置对应的模板则是来自名为App的组件，也就是将App组件渲染到id为app的div的位置上。</p>
-</li>
-<li>
-<p class="first">在src目录下新建App.vue，这是网站的一个组件，可以多次反复使用，代码如下。</p>
-<blockquote>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-1"> 1</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-2"> 2</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-3"> 3</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-4"> 4</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-5"> 5</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-6"> 6</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-7"> 7</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-8"> 8</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-9"> 9</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-10">10</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-11">11</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-12">12</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-13">13</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-14">14</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-15">15</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-16">16</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-17">17</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-18">18</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-19">19</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-20">20</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-21">21</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-22">22</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-23">23</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-24">24</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-25">25</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-26">26</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-27">27</a>
-<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-28">28</a></pre></div></td>
-<td class="code"><pre class="code html"><a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-2"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"myapp"</span><span class="p">&gt;</span>
-<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-3"></a>        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hello, {{Name}}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-4"></a>        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">v-on:click</span><span class="o">=</span><span class="s">"sayhello"</span><span class="p">&gt;</span>sayhello<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-5"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-6"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-7"></a>
-<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-8"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-9"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
-<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-10"></a>    <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-11"></a>        <span class="k">return</span> <span class="p">{</span>
-<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-12"></a>            <span class="nx">Name</span><span class="o">:</span> <span class="s2">"龙龙龙"</span>
-<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-13"></a>        <span class="p">}</span>
-<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-14"></a>    <span class="p">},</span>
-<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-15"></a>    <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
-<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-16"></a>        <span class="nx">sayhello</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-17"></a>            <span class="nx">alert</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">Name</span><span class="p">);</span>
-<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-18"></a>        <span class="p">}</span>
-<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-19"></a>    <span class="p">}</span>
-<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-20"></a><span class="p">}</span>
-<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-21"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-22"></a>
-<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-23"></a><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
-<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-24"></a><span class="nt">p</span> <span class="p">{</span>
-<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-25"></a>    <span class="k">font-size</span><span class="p">:</span> <span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
-<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-26"></a>    <span class="k">color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
-<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-27"></a><span class="p">}</span>
-<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-28"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-</pre></td>
-</tr></table>
-</blockquote>
-<p>通过这段代码，可以看出：</p>
-<ol class="arabic simple">
-<li>一个vue组件由三大部分组成，&lt;template&gt;&lt;/template&gt;（组件模板），&lt;script&gt;&lt;/script&gt;（组件脚本），&lt;style&gt;&lt;/style&gt;（组件样式）。</li>
-<li>组件样式部分就是最基本的CSS。</li>
-<li>组件脚本部分被export default{}包围，这个例子中给出了data（数据）和methods（方法），可以学到如何绑定数据和如何添加自定义函数。</li>
-<li>组件模板部分必须被一个根div包围，在本例中是 &lt;div id="myapp"&gt;&lt;/div&gt;。</li>
-<li>按钮点击事件的实现采用 &lt;button v-on:click="sayhello"&gt;sayhello&lt;/button&gt;。</li>
-</ol>
-</li>
-</ol>
-<p><strong>总结</strong></p>
-<p>这个简单的例子一共涉及了以下几个问题：</p>
-<ol class="arabic simple">
-<li>vue组件的基本格式；</li>
-<li>如何加样式；</li>
-<li>如何加自定义函数；</li>
-<li>如何做数据绑定；</li>
-<li>如何把组件和网页联系在一起。</li>
-</ol>
-<p>后面我们将继续尝试多个组件的网站怎么写。</p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/win10-homeban-guan-bi-hyper-v/" class="u-url">Win10 home版关闭hyper-v</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/win10-homeban-guan-bi-hyper-v/" rel="bookmark"><time class="published dt-published" datetime="2017-01-10T04:45:37+08:00" title="2017-01-10 04:45">2017-01-10 04:45</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>在win10的home版中，安装Android Studio提供的haxm，会出现死机的现象，这是由于haxm与hyper-v冲突。而home版无法通过“启用或关闭Windows功能”来关闭hyper-v。这时可以通过如下方法关闭hyper-v。</p>
-<ol class="arabic">
-<li>
-<p class="first">管理员身份运行命令提示符cmd</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_abeefa4296dd448f820fe057c372684c-1"></a>&gt;&gt; bcdedit /copy <span class="o">{</span>current<span class="o">}</span> /d <span class="s2">"Windows10 no Hyper-V</span>
-<a name="rest_code_abeefa4296dd448f820fe057c372684c-2"></a><span class="s2">&gt;&gt; bcdedit /set {XXX} hypervisorlaunchtype OFF</span>
-</pre>
-</blockquote>
-<p>注意XXX的部分是上一步的输出结果。</p>
-</li>
-<li>
-<p class="first">重启Win10，选择“Windows10 no Hyper-V”，即可进入没有Hyper-V的win10系统。</p>
-</li>
-</ol>
-<p><strong>注意</strong></p>
-<p>如果要安装haxm，还需要注意以下两点：</p>
-<ol class="arabic simple">
-<li>别忘了在BIOS里打开虚拟化。</li>
-<li>haxm不仅会与hyper-v冲突，与杀毒软件Avast也会冲突，安装haxm之前先卸载掉Avast才行。</li>
-</ol>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/android-studiolian-jie-droid4xdiao-shi-app/" class="u-url">Android Studio连接Droid4X调试APP</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/android-studiolian-jie-droid4xdiao-shi-app/" rel="bookmark"><time class="published dt-published" datetime="2017-01-10T04:32:37+08:00" title="2017-01-10 04:32">2017-01-10 04:32</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>Android Studio用内置的虚拟机连i7的本都要跑半天，外接手机的话又太费手机，所以我们可以采用第三方Android虚拟机的方式来调试程序，在这里我们使用的是Droid4X。</p>
-<ol class="arabic">
-<li>
-<p class="first">安装VirtualBox。</p>
-</li>
-<li>
-<p class="first">安装Droid4X。</p>
-</li>
-<li>
-<p class="first">添加adb到系统路径，我的在</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_7eca715f54e2404989fe7d08baa270ce-1"></a>C:<span class="se">\U</span>sers<span class="se">\l</span>ong<span class="se">\A</span>ppData<span class="se">\L</span>ocal<span class="se">\A</span>ndroid<span class="se">\s</span>dk<span class="se">\p</span>latform-tools
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">连接adb到Droid4X。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_033b237fde2441ecbca825bb95fed80f-1"></a>&gt;&gt; adb connect <span class="m">127</span>.0.0.1:26944
-</pre>
-</blockquote>
-<p>出现</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_f9cd0e9d745843f38d2884526d7b6f8e-1"></a>* daemon started successfully *
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">启动调试即可。</p>
-</li>
-</ol>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/could-not-open-a-connection-to-your-authentication-agent/" class="u-url">Could not open a connection to your authentication agent</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/could-not-open-a-connection-to-your-authentication-agent/" class="u-url">Could not open a connection to your authentication agent</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
@@ -415,6 +183,57 @@ body{
 </li>
 </ul>
 </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/hui-dao-zui-chu-de-qi-dian/" class="u-url">回到最初的起点</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/hui-dao-zui-chu-de-qi-dian/" rel="bookmark"><time class="published dt-published" datetime="2017-01-09T16:05:11+08:00" title="2017-01-09 16:05">2017-01-09 16:05</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>时间才刚刚过去半年，一切感觉都不对了。没怎么碰代码的自己，在过去的半年里，除了一个字幕生成器以外，几乎没有什么完整的代码。虽然毕业以后，一直在忙碌工作的事情，适应新的环境，还出差学习了视频后期的基础知识，但不写代码的日子，总是在心里缺少些什么。少了刚上大学时“每天一个程序，每个程序都是传奇”的自信，少了争论哪种编程语言最好用时的面红耳赤，少了折腾代码解决bug时的那种驱动感。不过，单纯的我单纯地相信“只要努力，什么时候开始都不晚”，2017年，刚刚忙完教师证，买了新的笔记本，回到最初的起点，重做自己的技术梦。不管以后走不走开发这条路，有一颗热爱技术的心总是好的，因为热爱技术的人往往很可爱~~就像我们几个可爱的小伙伴…………</p>
+<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/sunnychasers.jpg" src="https://github.com/longlongpicture/myblogpicture/raw/master/sunnychasers.jpg">
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/guo-nei-de-pipjing-xiang-yuan/" class="u-url">国内的pip镜像源</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/guo-nei-de-pipjing-xiang-yuan/" rel="bookmark"><time class="published dt-published" datetime="2015-10-15T15:04:24+08:00" title="2015-10-15 15:04">2015-10-15 15:04</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p><a class="reference external" href="http://mirrors.aliyun.com/pypi/simple/">http://mirrors.aliyun.com/pypi/simple/</a></p>
+<p><a class="reference external" href="http://pypi.douban.com/simple/">http://pypi.douban.com/simple/</a></p>
+<p><a class="reference external" href="http://pypi.mirrors.ustc.edu.cn/simple/">http://pypi.mirrors.ustc.edu.cn/simple/</a></p>
+<p><a class="reference external" href="http://pypi.v2ex.com/simple/?allow_list_dir=1">http://pypi.v2ex.com/simple/?allow_list_dir=1</a></p>
+<p>安装的方法：</p>
+<pre class="literal-block">
+&gt;&gt; sudo pip install bottle -i http://pypi.douban.com/simple
+</pre>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/ubuntu1404guan-bi-lan-ya/" class="u-url">Ubuntu14.04关闭蓝牙</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/ubuntu1404guan-bi-lan-ya/" rel="bookmark"><time class="published dt-published" datetime="2015-09-21T21:29:28+08:00" title="2015-09-21 21:29">2015-09-21 21:29</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>一般很少用蓝牙，开着又费电。</p>
+<p>在Ubuntu14.04中默认关闭蓝牙的方法：</p>
+<pre class="literal-block">
+&gt;&gt; sudo emacs /etc/rc.local
+rfkill block bluetooth
+exit 0
+&gt;&gt; sudo reboot
+</pre>
+</div>
+    </div>
     </article>
 </div>
 
