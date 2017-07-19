@@ -10,7 +10,7 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="https://codinglonglong.github.io/">
-<link rel="next" href="index-14.html" type="text/html">
+<link rel="next" href="index-15.html" type="text/html">
 <!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><script>
 var _hmt = _hmt || [];
 (function() {
@@ -24,7 +24,7 @@ body{
     font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
 }
 </style>
-<link rel="prefetch" href="posts/zui-jian-hua-de-androidru-men-cheng-xu/" type="text/html">
+<link rel="prefetch" href="posts/ubuntuming-ling-xing-lian-jie-wifi/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -92,7 +92,30 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/" class="u-url">最简化的Android入门程序</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/ubuntuming-ling-xing-lian-jie-wifi/" class="u-url">Ubuntu命令行连接wifi</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/ubuntuming-ling-xing-lian-jie-wifi/" rel="bookmark"><time class="published dt-published" datetime="2017-07-19T11:06:54+08:00" title="2017-07-19 11:06">2017-07-19 11:06</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<pre class="literal-block">
+&gt;&gt; cd /usr/local/bin/
+&gt;&gt; cd /home/long
+&gt;&gt; wpa_passphrase SSID PWD &gt; /home/long/wifi.conf
+&gt;&gt; sudo emacs /etc/network/interfaces
+auto wlan0
+iface wlan0 inet dhcp
+wpa-conf /home/long/wifi.conf
+&gt;&gt; sudo reboot
+</pre>
+<p><strong>注意</strong></p>
+<p>路由器必须要打开DHCP才可以正常连接。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/" class="u-url">最简化的Android入门程序</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
@@ -319,159 +342,12 @@ body{
 </pre></td>
 </tr></table>
 </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/spacemacszhu-ti-lie-biao/" class="u-url">Spacemacs主题列表</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/spacemacszhu-ti-lie-biao/" rel="bookmark"><time class="published dt-published" datetime="2017-07-02T12:20:05+08:00" title="2017-07-02 12:20">2017-07-02 12:20</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <pre class="literal-block">
-dotspacemacs-themes '(material-light
-                      adwaita
-                      alect-black-alt
-                      alect-light
-                      ample-flat
-                      anti-zenburn
-                      badwolf
-                      bubbleberry
-                      clues
-                      cyberpunk
-                      darkmine
-                      default
-                      dorsey
-                      flatui
-                      gotham
-                      granger
-                      hc-zenburn
-                      heroku
-                      ir-black
-                      junio
-                      light-soap
-                      material
-                      minimal
-                      molokai
-                      monokai
-                      niflheim
-                      occidental
-                      organic-green
-                      phoenix-dark-pink
-                      purple-haze
-                      sanityinc-solarized-dark
-                      sanityinc-tomorrow-bright
-                      sanityinc-tomorrow-night
-                      soft-charcoal
-                      soothe
-                      stekene-light
-                      sunny-day
-                      tango-dark
-                      tao-yang
-                      tronesque
-                      twilight
-                      ujelly
-                      whiteboard
-                      zen-and-art
-                      zonokai-red
-                      zenburn
-                      wilson
-                      underwater
-                      twilight-anti-bright
-                      tsdh-dark
-                      tao-yin
-                      tango-plus
-                      tango
-                      subatomic
-                      spolsky
-                      spacegray
-                      soft-morning
-                      seti
-                      sanityinc-tomorrow-day
-                      sanityinc-solarized-light
-                      reverse
-                      planet
-                      pastels-on-dark
-                      odersky
-                      noctilux
-                      mustang
-                      monochrome
-                      minimal-light
-                      lush
-                      leuven
-                      jazz
-                      hickey
-                      hemisu-dark
-                      gruber-darker
-                      graham
-                      fogus
-                      firebelly
-                      espresso
-                      dichromacy
-                      darktooth
-                      dakrone
-                      colorsarenice-dark
-                      busybee
-                      birds-of-paradise-plus
-                      apropospriate-dark
-                      ample-light
-                      alect-light-alt
-                      alect-dark
-                      afternoon
-                      alect-black
-                      alect-dark-alt
-                      ample
-                      ample-zen
-                      apropospriate-light
-                      brin
-                      cherry-blossom
-                      colorsarenice-light
-                      darkburn
-                      deeper-blue
-                      django
-                      farmhouse-dark
-                      flatland
-                      gandalf
-                      grandshell
-                      gruvbox
-                      hemisu-light
-                      inkpot
-                      jbeans
-                      light-blue
-                      manoj-dark
-                      mccarthy
-                      misterioso
-                      monochrome-bright
-                      naquadah
-                      obsidian
-                      oldlace
-                      phoenix-dark-mono
-                      professional
-                      ritchie
-                      sanityinc-tomorrow-blue
-                      sanityinc-tomorrow-eighties
-                      smyx
-                      soft-stone
-                      stekene-dark
-                      subatomic256
-                      tango-2
-                      tangotango
-                      toxi
-                      tsdh-light
-                      twilight-bright
-                      wheatgrass
-                      wombat
-                      zonokai-blue
-                      farmhouse-light
-                      spacemacs-dark
-                      spacemacs-light)
-</pre>
-    </div>
     </article>
 </div>
 
         <nav class="postindexpager"><ul class="pager">
 <li class="next">
-                <a href="index-14.html" rel="next">Older posts</a>
+                <a href="index-15.html" rel="next">Older posts</a>
             </li>
         </ul></nav>
 </div>

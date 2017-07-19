@@ -7,7 +7,7 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://codinglonglong.github.io/</loc>
-  <lastmod>2017-07-18T11:44:00Z</lastmod>
+  <lastmod>2017-07-19T05:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/2015/</loc>
@@ -55,11 +55,11 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/archive.html</loc>
-  <lastmod>2017-07-18T11:52:00Z</lastmod>
+  <lastmod>2017-07-19T05:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/</loc>
-  <lastmod>2017-07-18T11:52:00Z</lastmod>
+  <lastmod>2017-07-19T05:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/actionscript30/</loc>
@@ -414,6 +414,10 @@
   <lastmod>2017-07-18T11:33:00Z</lastmod>
  </url>
  <url>
+  <loc>https://codinglonglong.github.io/categories/ubuntu/</loc>
+  <lastmod>2017-07-19T05:30:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://codinglonglong.github.io/categories/vue-cli/</loc>
   <lastmod>2017-07-12T11:37:00Z</lastmod>
  </url>
@@ -428,6 +432,10 @@
  <url>
   <loc>https://codinglonglong.github.io/categories/weex/</loc>
   <lastmod>2017-07-12T11:37:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/wifi/</loc>
+  <lastmod>2017-07-19T05:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/win10/</loc>
@@ -491,7 +499,11 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-14.html</loc>
-  <lastmod>2017-07-18T11:52:00Z</lastmod>
+  <lastmod>2017-07-19T05:30:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/index-15.html</loc>
+  <lastmod>2017-07-19T05:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-2.html</loc>
@@ -804,6 +816,10 @@
  <url>
   <loc>https://codinglonglong.github.io/posts/typeerror-decimal5-is-not-json-serializable/</loc>
   <lastmod>2017-07-12T11:37:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/posts/ubuntuming-ling-xing-lian-jie-wifi/</loc>
+  <lastmod>2017-07-19T05:30:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/vuejsxue-xi-1/</loc>

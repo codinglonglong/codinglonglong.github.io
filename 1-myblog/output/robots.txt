@@ -1,4 +1,0 @@
-Sitemap: https://codinglonglong.github.io/sitemapindex.xml
-
-User-Agent: *
-Host: codinglonglong.github.io

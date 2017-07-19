@@ -59,7 +59,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_linux.xml</loc>
-  <lastmod>2017-07-12T11:38:00Z</lastmod>
+  <lastmod>2017-07-19T05:30:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_python.xml</loc>
@@ -358,6 +358,10 @@
   <lastmod>2017-07-18T11:33:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://codinglonglong.github.io/categories/ubuntu.xml</loc>
+  <lastmod>2017-07-19T05:30:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://codinglonglong.github.io/categories/vue-cli.xml</loc>
   <lastmod>2017-07-12T11:38:00Z</lastmod>
  </sitemap>
@@ -372,6 +376,10 @@
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/weex.xml</loc>
   <lastmod>2017-07-12T11:37:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://codinglonglong.github.io/categories/wifi.xml</loc>
+  <lastmod>2017-07-19T05:30:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/win10.xml</loc>
@@ -415,10 +423,10 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/rss.xml</loc>
-  <lastmod>2017-07-18T11:52:00Z</lastmod>
+  <lastmod>2017-07-19T05:30:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/sitemap.xml</loc>
-  <lastmod>2017-07-18T11:52:00Z</lastmod>
+  <lastmod>2017-07-19T05:30:00Z</lastmod>
  </sitemap>
 </sitemapindex>
