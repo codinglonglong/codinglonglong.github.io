@@ -50,9 +50,6 @@
 
     end = time.clock()
     print(end - start)
-
-.. teaser_end
-
     
 我们来看程序的输出：
     

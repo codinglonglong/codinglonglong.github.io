@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Ubuntu)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/ubuntu.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 19 Jul 2017 09:01:52 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Ubuntu命令行连接wifi</title><link>https://codinglonglong.github.io/posts/ubuntuming-ling-xing-lian-jie-wifi/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;pre class="literal-block"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Ubuntu)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/ubuntu.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 19 Jul 2017 09:09:39 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Ubuntu命令行连接wifi</title><link>https://codinglonglong.github.io/posts/ubuntuming-ling-xing-lian-jie-wifi/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;pre class="literal-block"&gt;
 &amp;gt;&amp;gt; cd /usr/local/bin/
 &amp;gt;&amp;gt; cd /home/long
 &amp;gt;&amp;gt; wpa_passphrase SSID PWD &amp;gt; /home/long/wifi.conf
@@ -186,7 +186,117 @@ dns-nameserver 202.98.198.167
 &amp;gt;&amp;gt; tar zxvf reciteword.tar.gz
 &amp;gt;&amp;gt; tar zxvf supervisor-3.1.3.tar.gz
 &lt;/pre&gt;
-&lt;p&gt;&lt;a href="https://codinglonglong.github.io/posts/ubuntu1404bu-shu-tornado%2Bnginx%2Bsupervisor/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>nginx</category><category>Python</category><category>supervisor</category><category>Tornado</category><category>Ubuntu</category><guid>https://codinglonglong.github.io/posts/ubuntu1404bu-shu-tornado%2Bnginx%2Bsupervisor/</guid><pubDate>Mon, 07 Sep 2015 10:32:39 GMT</pubDate></item><item><title>Ubuntu修改默认程序</title><link>https://codinglonglong.github.io/posts/ubuntuxiu-gai-mo-ren-cheng-xu/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;Ubuntu默认的PDF阅读器Evince没有KDE内置的Okular功能强大，安装上Okular后，我们需要修改系统默认程序。&lt;/p&gt;
+&lt;p&gt;9、启动数据库&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo mysqld
+&lt;/pre&gt;
+&lt;p&gt;10、开启一个新的终端，生成数据库&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo mysql -u root -p
+mysql&amp;gt; source /home/long/reciteword/db/recitewordbase.sql;
+&lt;/pre&gt;
+&lt;p&gt;11、安装supervisor&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; cd supervisor-3.1.3/
+&amp;gt;&amp;gt; sudo python setup.py install
+&lt;/pre&gt;
+&lt;p&gt;12、编写supervisord.conf配置文件&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; cd /home/long/reciteword/
+&amp;gt;&amp;gt; echo_supervisord_conf &amp;gt; supervisord.conf
+&lt;/pre&gt;
+&lt;p&gt;在supervisord.conf最后追加&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+[program:reciteword-8001]
+command=python3 /home/long/reciteword/main.py --port=8001
+directory=/home/long/reciteword
+autorestart=true
+redirect_stderr=true
+stdout_logfile=/home/long/reciteword/reciteword_server-8001.log
+stdout_logfile_maxbytes=500MB
+stdout_logfile_backups=50
+stdout_capture_maxbytes=1MB
+stdout_events_enabled=false
+loglevel=warn
+
+[program:reciteword-8002]
+command=python3 /home/long/reciteword/main.py --port=8002
+directory=/home/long/reciteword
+autorestart=true
+redirect_stderr=true
+stdout_logfile=/home/long/reciteword/reciteword_server-8002.log
+stdout_logfile_maxbytes=500MB
+stdout_logfile_backups=50
+stdout_capture_maxbytes=1MB
+stdout_events_enabled=false
+loglevel=warn
+
+[program:reciteword-8003]
+command=python3 /home/long/reciteword/main.py --port=8003
+directory=/home/long/reciteword
+autorestart=true
+redirect_stderr=true
+stdout_logfile=/home/long/reciteword/reciteword_server-8003.log
+stdout_logfile_maxbytes=500MB
+stdout_logfile_backups=50
+stdout_capture_maxbytes=1MB
+stdout_events_enabled=false
+loglevel=warn
+
+[program:reciteword-8004]
+command=python3 /home/long/reciteword/main.py --port=8004
+directory=/home/long/reciteword
+autorestart=true
+redirect_stderr=true
+stdout_logfile=/home/long/reciteword/reciteword_server-8004.log
+stdout_logfile_maxbytes=500MB
+stdout_logfile_backups=50
+stdout_capture_maxbytes=1MB
+stdout_events_enabled=false
+&lt;/pre&gt;
+&lt;p&gt;13、启动supervisor&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; supervisord -c supervisord.conf
+&lt;/pre&gt;
+&lt;p&gt;14、修改nginx配置文件&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; cd /etc/nginx/sites-available
+&amp;gt;&amp;gt; sudo emacs default
+&lt;/pre&gt;
+&lt;p&gt;注释掉所有内容&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; cd /etc/nginx
+&amp;gt;&amp;gt; sudo emacs nginx.conf
+&lt;/pre&gt;
+&lt;p&gt;在http段追加以下配置：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+proxy_next_upstream error;
+upstream tornadoes {
+    server 192.168.122.150:8001;
+    server 192.168.122.150:8002;
+    server 192.168.122.150:8003;
+    server 192.168.122.150:8004;
+    ip_hash;
+ }
+server {
+    listen 80;
+    server_name 192.168.122.150;
+
+    location / {
+        proxy_pass_header Server;
+        proxy_set_header Host $http_host;
+        proxy_redirect off;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Scheme $scheme;
+        proxy_pass http://tornadoes;
+     }
+}
+&lt;/pre&gt;
+&lt;p&gt;15、保存，重启nginx&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo service nginx restart
+&lt;/pre&gt;
+&lt;p&gt;16、浏览器访问192.168.122.150即可&lt;/p&gt;&lt;/div&gt;</description><category>nginx</category><category>Python</category><category>supervisor</category><category>Tornado</category><category>Ubuntu</category><guid>https://codinglonglong.github.io/posts/ubuntu1404bu-shu-tornado%2Bnginx%2Bsupervisor/</guid><pubDate>Mon, 07 Sep 2015 10:32:39 GMT</pubDate></item><item><title>Ubuntu修改默认程序</title><link>https://codinglonglong.github.io/posts/ubuntuxiu-gai-mo-ren-cheng-xu/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;Ubuntu默认的PDF阅读器Evince没有KDE内置的Okular功能强大，安装上Okular后，我们需要修改系统默认程序。&lt;/p&gt;
 &lt;p&gt;修改方法如下：&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
 &amp;gt;&amp;gt; sudo gedit /etc/gnome/defaults.list

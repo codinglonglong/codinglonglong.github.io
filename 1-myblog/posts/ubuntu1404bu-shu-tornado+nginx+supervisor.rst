@@ -57,8 +57,6 @@
    >> tar zxvf reciteword.tar.gz
    >> tar zxvf supervisor-3.1.3.tar.gz
 
-.. teaser_end
-
 9、启动数据库
 ::
 

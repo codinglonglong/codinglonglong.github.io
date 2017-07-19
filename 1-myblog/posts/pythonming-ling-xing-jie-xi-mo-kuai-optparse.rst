@@ -52,8 +52,6 @@
     # 读取参数
     options, args = parser.parse_args()
     print(options)
-
-.. teaser_end
     
 我们执行代码:
 ::
