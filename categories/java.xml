@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about java)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/java.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 14 Jul 2017 12:31:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>最简化的Android入门程序</title><link>https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;用Android Studio创建的空项目包含好几个文件夹和文件，最核心的文件其实只有三个：&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about java)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/java.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 19 Jul 2017 08:55:37 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>最简化的Android入门程序</title><link>https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;用Android Studio创建的空项目包含好几个文件夹和文件，最核心的文件其实只有三个：&lt;/p&gt;
 &lt;ol class="arabic simple"&gt;
 &lt;li&gt;manifests目录下的AndroidManifest.xml&lt;/li&gt;
 &lt;li&gt;java目录下的MainActivity.java&lt;/li&gt;
@@ -100,4 +100,46 @@
 就好比做网站，一些JavaScript文件负责配置，大部分JavaScript负责逻辑，HTML和CSS负责布局。
 再经过合理的连接，形成配合，共同完成任务。不得不说，有一种程序设计上的"秩序美"。
 而这种有秩序的紧密配合，在程序开发中处处可见。
-也许这种美就是"自顶向下，逐步求精"和"模块化"两大思想的最好体现。&lt;/p&gt;&lt;/div&gt;</description><category>Android</category><category>java</category><guid>https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/</guid><pubDate>Fri, 14 Jul 2017 11:57:48 GMT</pubDate></item></channel></rss>
+也许这种美就是"自顶向下，逐步求精"和"模块化"两大思想的最好体现。&lt;/p&gt;&lt;/div&gt;</description><category>Android</category><category>java</category><guid>https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/</guid><pubDate>Fri, 14 Jul 2017 11:57:48 GMT</pubDate></item><item><title>Ubuntu14.04上安装JDK</title><link>https://codinglonglong.github.io/posts/ubuntu1404shang-an-zhuang-jdk/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、访问 &lt;a class="reference external" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html"&gt;http://www.oracle.com/technetwork/java/javase/downloads/index.html&lt;/a&gt; ，
+下载Java Platform (JDK)。&lt;/p&gt;
+&lt;p&gt;选择Linux x64     165.17 MB       jdk-8u40-linux-x64.tar.gz&lt;/p&gt;
+&lt;p&gt;2、解压&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; tar -zxvf jdk-8u40-linux-x64.tar.gz
+&lt;/pre&gt;
+&lt;p&gt;3、新建目录&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; cd /usr/lib
+&amp;gt;&amp;gt; sudo mkdir jvm
+&amp;gt;&amp;gt; cd jvm
+&lt;/pre&gt;
+&lt;p&gt;4、把解压好的文件夹放入jvm目录&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo mv ~/Downloads/jdk1.8.0_40 .
+&lt;/pre&gt;
+&lt;p&gt;5、修改环境变量&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; gedit ~/.bashrc
+&lt;/pre&gt;
+&lt;p&gt;添加如下内容：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_40
+export JRE_HOME=${JAVA_HOME}/jre
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+export PATH=${JAVA_HOME}/bin:$PATH
+&lt;/pre&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; source ~/.bashrc
+&lt;/pre&gt;
+&lt;p&gt;6、更新命令配置&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_40/bin/java 300
+&amp;gt;&amp;gt; sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.8.0_40/bin/javac 300
+&amp;gt;&amp;gt; sudo update-alternatives --config java
+&amp;gt;&amp;gt; sudo update-alternatives --config javac
+&lt;/pre&gt;
+&lt;p&gt;7、查看版本&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; java -version
+&amp;gt;&amp;gt; javac -version
+&lt;/pre&gt;&lt;/div&gt;</description><category>java</category><category>Ubuntu</category><guid>https://codinglonglong.github.io/posts/ubuntu1404shang-an-zhuang-jdk/</guid><pubDate>Mon, 07 Sep 2015 11:22:07 GMT</pubDate></item></channel></rss>

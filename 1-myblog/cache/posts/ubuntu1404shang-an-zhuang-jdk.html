@@ -1,0 +1,43 @@
+<p>1、访问 <a class="reference external" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a> ，
+下载Java Platform (JDK)。</p>
+<p>选择Linux x64     165.17 MB       jdk-8u40-linux-x64.tar.gz</p>
+<p>2、解压</p>
+<pre class="literal-block">
+&gt;&gt; tar -zxvf jdk-8u40-linux-x64.tar.gz
+</pre>
+<p>3、新建目录</p>
+<pre class="literal-block">
+&gt;&gt; cd /usr/lib
+&gt;&gt; sudo mkdir jvm
+&gt;&gt; cd jvm
+</pre>
+<p>4、把解压好的文件夹放入jvm目录</p>
+<pre class="literal-block">
+&gt;&gt; sudo mv ~/Downloads/jdk1.8.0_40 .
+</pre>
+<p>5、修改环境变量</p>
+<pre class="literal-block">
+&gt;&gt; gedit ~/.bashrc
+</pre>
+<p>添加如下内容：</p>
+<pre class="literal-block">
+export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_40
+export JRE_HOME=${JAVA_HOME}/jre
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+export PATH=${JAVA_HOME}/bin:$PATH
+</pre>
+<pre class="literal-block">
+&gt;&gt; source ~/.bashrc
+</pre>
+<p>6、更新命令配置</p>
+<pre class="literal-block">
+&gt;&gt; sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_40/bin/java 300
+&gt;&gt; sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.8.0_40/bin/javac 300
+&gt;&gt; sudo update-alternatives --config java
+&gt;&gt; sudo update-alternatives --config javac
+</pre>
+<p>7、查看版本</p>
+<pre class="literal-block">
+&gt;&gt; java -version
+&gt;&gt; javac -version
+</pre>

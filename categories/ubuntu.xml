@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Ubuntu)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/ubuntu.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 19 Jul 2017 05:30:18 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Ubuntu命令行连接wifi</title><link>https://codinglonglong.github.io/posts/ubuntuming-ling-xing-lian-jie-wifi/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;pre class="literal-block"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Ubuntu)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/ubuntu.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 19 Jul 2017 09:01:52 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Ubuntu命令行连接wifi</title><link>https://codinglonglong.github.io/posts/ubuntuming-ling-xing-lian-jie-wifi/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;pre class="literal-block"&gt;
 &amp;gt;&amp;gt; cd /usr/local/bin/
 &amp;gt;&amp;gt; cd /home/long
 &amp;gt;&amp;gt; wpa_passphrase SSID PWD &amp;gt; /home/long/wifi.conf
@@ -10,4 +10,186 @@ wpa-conf /home/long/wifi.conf
 &amp;gt;&amp;gt; sudo reboot
 &lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;路由器必须要打开DHCP才可以正常连接。&lt;/p&gt;&lt;/div&gt;</description><category>Ubuntu</category><category>wifi</category><guid>https://codinglonglong.github.io/posts/ubuntuming-ling-xing-lian-jie-wifi/</guid><pubDate>Wed, 19 Jul 2017 03:06:54 GMT</pubDate></item></channel></rss>
+&lt;p&gt;路由器必须要打开DHCP才可以正常连接。&lt;/p&gt;&lt;/div&gt;</description><category>Ubuntu</category><category>wifi</category><guid>https://codinglonglong.github.io/posts/ubuntuming-ling-xing-lian-jie-wifi/</guid><pubDate>Wed, 19 Jul 2017 03:06:54 GMT</pubDate></item><item><title>Ubuntu14.04关闭蓝牙</title><link>https://codinglonglong.github.io/posts/ubuntu1404guan-bi-lan-ya/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;一般很少用蓝牙，开着又费电。&lt;/p&gt;
+&lt;p&gt;在Ubuntu14.04中默认关闭蓝牙的方法：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo emacs /etc/rc.local
+rfkill block bluetooth
+exit 0
+&amp;gt;&amp;gt; sudo reboot
+&lt;/pre&gt;&lt;/div&gt;</description><category>Ubuntu</category><guid>https://codinglonglong.github.io/posts/ubuntu1404guan-bi-lan-ya/</guid><pubDate>Mon, 21 Sep 2015 13:29:28 GMT</pubDate></item><item><title>Ubuntu14.04关闭错误报告</title><link>https://codinglonglong.github.io/posts/ubuntu1404guan-bi-cuo-wu-bao-gao/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;错误报告总是弹出来，不知道什么问题，又无法解决问题，不如直接关掉。&lt;/p&gt;
+&lt;p&gt;Ubuntu14.04关闭错误报告的方法：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo emacs /etc/default/apport
+enabled=0
+&amp;gt;&amp;gt; sudo reboot
+&lt;/pre&gt;&lt;/div&gt;</description><category>Ubuntu</category><guid>https://codinglonglong.github.io/posts/ubuntu1404guan-bi-cuo-wu-bao-gao/</guid><pubDate>Mon, 21 Sep 2015 13:25:41 GMT</pubDate></item><item><title>Ubuntu修改root密码</title><link>https://codinglonglong.github.io/posts/ubuntuxiu-gai-rootmi-ma/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;Ubuntu修改root密码的方法如下：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+long@pc3:/usr/local/lib/python2.7/dist-packages$ sudo passwd
+Enter new UNIX password:
+Retype new UNIX password:
+passwd: password updated successfully
+long@pc3:/usr/local/lib/python2.7/dist-packages$ su - root
+Password:
+root@pc3:~# ls
+&lt;/pre&gt;&lt;/div&gt;</description><category>Ubuntu</category><guid>https://codinglonglong.github.io/posts/ubuntuxiu-gai-rootmi-ma/</guid><pubDate>Tue, 15 Sep 2015 04:32:12 GMT</pubDate></item><item><title>Ubuntu开机进入命令行模式</title><link>https://codinglonglong.github.io/posts/ubuntukai-ji-jin-ru-ming-ling-xing-mo-shi/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;打开终端执行如下命令：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo emacs /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash text"
+&amp;gt;&amp;gt; sudo update-grub
+&lt;/pre&gt;
+&lt;p&gt;重启就直接进入命令行界面了。&lt;/p&gt;&lt;/div&gt;</description><category>Ubuntu</category><guid>https://codinglonglong.github.io/posts/ubuntukai-ji-jin-ru-ming-ling-xing-mo-shi/</guid><pubDate>Mon, 14 Sep 2015 14:05:34 GMT</pubDate></item><item><title>Ubuntu14.04上安装JDK</title><link>https://codinglonglong.github.io/posts/ubuntu1404shang-an-zhuang-jdk/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、访问 &lt;a class="reference external" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html"&gt;http://www.oracle.com/technetwork/java/javase/downloads/index.html&lt;/a&gt; ，
+下载Java Platform (JDK)。&lt;/p&gt;
+&lt;p&gt;选择Linux x64     165.17 MB       jdk-8u40-linux-x64.tar.gz&lt;/p&gt;
+&lt;p&gt;2、解压&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; tar -zxvf jdk-8u40-linux-x64.tar.gz
+&lt;/pre&gt;
+&lt;p&gt;3、新建目录&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; cd /usr/lib
+&amp;gt;&amp;gt; sudo mkdir jvm
+&amp;gt;&amp;gt; cd jvm
+&lt;/pre&gt;
+&lt;p&gt;4、把解压好的文件夹放入jvm目录&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo mv ~/Downloads/jdk1.8.0_40 .
+&lt;/pre&gt;
+&lt;p&gt;5、修改环境变量&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; gedit ~/.bashrc
+&lt;/pre&gt;
+&lt;p&gt;添加如下内容：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_40
+export JRE_HOME=${JAVA_HOME}/jre
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+export PATH=${JAVA_HOME}/bin:$PATH
+&lt;/pre&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; source ~/.bashrc
+&lt;/pre&gt;
+&lt;p&gt;6、更新命令配置&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk1.8.0_40/bin/java 300
+&amp;gt;&amp;gt; sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk1.8.0_40/bin/javac 300
+&amp;gt;&amp;gt; sudo update-alternatives --config java
+&amp;gt;&amp;gt; sudo update-alternatives --config javac
+&lt;/pre&gt;
+&lt;p&gt;7、查看版本&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; java -version
+&amp;gt;&amp;gt; javac -version
+&lt;/pre&gt;&lt;/div&gt;</description><category>java</category><category>Ubuntu</category><guid>https://codinglonglong.github.io/posts/ubuntu1404shang-an-zhuang-jdk/</guid><pubDate>Mon, 07 Sep 2015 11:22:07 GMT</pubDate></item><item><title>Ubuntu安装KVM虚拟机</title><link>https://codinglonglong.github.io/posts/ubuntuan-zhuang-kvmxu-ni-ji/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、检查CPU是否支持虚拟化。&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; long@mylife:~$ egrep -o '(vmx|svm)' /proc/cpuinfo
+&amp;gt;&amp;gt; vmx
+&amp;gt;&amp;gt; vmx
+&amp;gt;&amp;gt; vmx
+&amp;gt;&amp;gt; vmx
+&lt;/pre&gt;
+&lt;p&gt;2、安装KVM相关软件&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo apt-get install qemu-kvm libvirt-bin virt-manager bridge-utils
+&lt;/pre&gt;
+&lt;p&gt;3、检查安装状态&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; long@mylife:~$ lsmod | grep kvm
+&amp;gt;&amp;gt; kvm_intel             143630  0
+&amp;gt;&amp;gt; kvm                   452096  1 kvm_intel
+&lt;/pre&gt;
+&lt;p&gt;4、启动虚拟系统管理器&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; virt-manager
+&lt;/pre&gt;
+&lt;p&gt;5、提示安装新的软件包，选择“是”==&amp;gt;“安装"==&amp;gt;"继续"&lt;/p&gt;
+&lt;p&gt;6、提示无法连接到libvirt，重启&lt;/p&gt;
+&lt;p&gt;7、启动虚拟系统管理器，至此KVM安装完成&lt;/p&gt;&lt;/div&gt;</description><category>kvm</category><category>Ubuntu</category><guid>https://codinglonglong.github.io/posts/ubuntuan-zhuang-kvmxu-ni-ji/</guid><pubDate>Mon, 07 Sep 2015 11:19:08 GMT</pubDate></item><item><title>Ubuntu查看硬件配置</title><link>https://codinglonglong.github.io/posts/ubuntucha-kan-ying-jian-pei-zhi/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1. 查看系统内核&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; long@pc1:/proc$ uname -a
+&amp;gt;&amp;gt; Linux pc1 3.16.0-41-generic #55~14.04.1-Ubuntu SMP Sun Jun 14 18:43:36 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+&lt;/pre&gt;
+&lt;p&gt;2. 查看CPU&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; long@pc1:/proc$ cat /proc/cpuinfo | grep model\ name
+&amp;gt;&amp;gt; model name       : Pentium(R) Dual-Core  CPU      E5500  @ 2.80GHz
+&amp;gt;&amp;gt; model name       : Pentium(R) Dual-Core  CPU      E5500  @ 2.80GHz
+&lt;/pre&gt;
+&lt;p&gt;3. 查看内存&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; long@pc1:/proc$ cat /proc/meminfo | grep MemTotal
+&amp;gt;&amp;gt; MemTotal:        4012620 kB
+&lt;/pre&gt;
+&lt;p&gt;4. 查看显卡&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; long@pc1:/proc$ lspci | grep 'VGA'
+&amp;gt;&amp;gt; 00:02.0 VGA compatible controller: Intel Corporation 4 Series Chipset Integrated Graphics Controller (rev 03)
+&lt;/pre&gt;
+&lt;p&gt;5. 查看声卡&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; long@pc1:/proc$ lspci | grep -i 'Audio'
+&amp;gt;&amp;gt; 00:1b.0 Audio device: Intel Corporation NM10/ICH7 Family High Definition Audio Controller (rev 01)
+&lt;/pre&gt;
+&lt;p&gt;6. 查看网卡&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; long@pc1:/proc$ lspci | grep -i 'Ethernet'
+&amp;gt;&amp;gt; 02:00.0 Ethernet controller: Marvell Technology Group Ltd. 88E8057 PCI-E Gigabit Ethernet Controller (rev 10)
+&lt;/pre&gt;
+&lt;p&gt;7. 查看硬盘&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; long@pc1:/proc$ df -lh
+&amp;gt;&amp;gt; Filesystem      Size  Used Avail Use% Mounted on
+&amp;gt;&amp;gt; /dev/sda1       292G  4.2G  273G   2% /
+&amp;gt;&amp;gt; none            4.0K     0  4.0K   0% /sys/fs/cgroup
+&amp;gt;&amp;gt; udev            2.0G  4.0K  2.0G   1% /dev
+&amp;gt;&amp;gt; tmpfs           392M  1.1M  391M   1% /run
+&amp;gt;&amp;gt; none            5.0M     0  5.0M   0% /run/lock
+&amp;gt;&amp;gt; none            2.0G   76K  2.0G   1% /run/shm
+&amp;gt;&amp;gt; none            100M   32K  100M   1% /run/user
+&lt;/pre&gt;&lt;/div&gt;</description><category>Ubuntu</category><category>硬件配置</category><guid>https://codinglonglong.github.io/posts/ubuntucha-kan-ying-jian-pei-zhi/</guid><pubDate>Mon, 07 Sep 2015 11:12:33 GMT</pubDate></item><item><title>Ubuntu14.04部署Tornado+Nginx+Supervisor</title><link>https://codinglonglong.github.io/posts/ubuntu1404bu-shu-tornado%2Bnginx%2Bsupervisor/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;本文主要讲述如何在Ubuntu上部署用Tornado编写的网站，涉及进程管理工具Supervisor和服务器Nginx。&lt;/p&gt;
+&lt;p&gt;前提：网站使用Python编写，采用Tornado框架和Mysql数据库，要部署网站的机器deploy为Ubuntu14.04系统，静态IP地址为192.168.122.150，要部署的网站为reciteword.tar.gz&lt;/p&gt;
+&lt;p&gt;1、安装emacs&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo apt-get install emacs
+&lt;/pre&gt;
+&lt;p&gt;2、设定静态IP&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo emacs /etc/network/interfaces
+&lt;/pre&gt;
+&lt;p&gt;3、修改eth0部分&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+auto eth0
+iface eth0 inet static
+address 192.168.122.150
+netmask 255.255.255.0
+gateway 192.168.122.1
+dns-nameserver 202.98.198.167
+&lt;/pre&gt;
+&lt;p&gt;4、保存文件，重启机器&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo reboot
+&lt;/pre&gt;
+&lt;p&gt;5、下载部署相关软件&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo apt-get install mysql-server mysql-client python3-tornado python3-mysql.connector emacs nginx python-pip python3-pip
+&lt;/pre&gt;
+&lt;p&gt;6、安装beautifulsoup4（这个是网站运行需要的）&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo pip3 install beautifulsoup4
+&lt;/pre&gt;
+&lt;p&gt;7、下载supervisor&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; wget https://pypi.python.org/packages/source/s/supervisor/supervisor-3.1.3.tar.gz
+&lt;/pre&gt;
+&lt;p&gt;8、解压网站代码和supervisor&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; tar zxvf reciteword.tar.gz
+&amp;gt;&amp;gt; tar zxvf supervisor-3.1.3.tar.gz
+&lt;/pre&gt;
+&lt;p&gt;&lt;a href="https://codinglonglong.github.io/posts/ubuntu1404bu-shu-tornado%2Bnginx%2Bsupervisor/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>nginx</category><category>Python</category><category>supervisor</category><category>Tornado</category><category>Ubuntu</category><guid>https://codinglonglong.github.io/posts/ubuntu1404bu-shu-tornado%2Bnginx%2Bsupervisor/</guid><pubDate>Mon, 07 Sep 2015 10:32:39 GMT</pubDate></item><item><title>Ubuntu修改默认程序</title><link>https://codinglonglong.github.io/posts/ubuntuxiu-gai-mo-ren-cheng-xu/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;Ubuntu默认的PDF阅读器Evince没有KDE内置的Okular功能强大，安装上Okular后，我们需要修改系统默认程序。&lt;/p&gt;
+&lt;p&gt;修改方法如下：&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo gedit /etc/gnome/defaults.list
+&lt;/pre&gt;
+&lt;p&gt;将 &lt;strong&gt;application/pdf=evince.desktop&lt;/strong&gt; 替换成 &lt;strong&gt;application/pdf=okular.desktop&lt;/strong&gt; 。&lt;/p&gt;
+&lt;p&gt;如果需要替换其他功能的默认程序，按照类似的操作即可。&lt;/p&gt;&lt;/div&gt;</description><category>Ubuntu</category><guid>https://codinglonglong.github.io/posts/ubuntuxiu-gai-mo-ren-cheng-xu/</guid><pubDate>Mon, 07 Sep 2015 02:48:45 GMT</pubDate></item></channel></rss>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about supervisor)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link rel="self" type="application/rss+xml" href="https://codinglonglong.github.io/categories/supervisor.xml"></atom:link><language>en</language><lastBuildDate>Sun, 02 Jul 2017 04:21:45 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Supervisor实现Python脚本自启动</title><link>https://codinglonglong.github.io/posts/supervisorshi-xian-pythonjiao-ben-zi-qi-dong/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;经过若干小时的反复试验，终于在树莓派上成功部署了homebank[&lt;a class="reference external" href="https://codinglonglong.github.io/posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/"&gt;https://codinglonglong.github.io/posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/&lt;/a&gt;]，最困难的地方就是配置Supervisor，配置过程中出现了各种错误……&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about supervisor)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/supervisor.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 19 Jul 2017 09:01:51 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Supervisor实现Python脚本自启动</title><link>https://codinglonglong.github.io/posts/supervisorshi-xian-pythonjiao-ben-zi-qi-dong/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;经过若干小时的反复试验，终于在树莓派上成功部署了homebank[&lt;a class="reference external" href="https://codinglonglong.github.io/posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/"&gt;https://codinglonglong.github.io/posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/&lt;/a&gt;]，最困难的地方就是配置Supervisor，配置过程中出现了各种错误……&lt;/p&gt;
 &lt;p&gt;1、安装supervisor。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;pre class="literal-block"&gt;
@@ -50,4 +50,44 @@ pi ALL = (ALL)NOPASSWD:ALL
 &lt;pre class="literal-block"&gt;
 &amp;gt;&amp;gt; sudo reboot
 &lt;/pre&gt;
-&lt;/blockquote&gt;&lt;/div&gt;</description><category>supervisor</category><guid>https://codinglonglong.github.io/posts/supervisorshi-xian-pythonjiao-ben-zi-qi-dong/</guid><pubDate>Mon, 27 Feb 2017 18:06:10 GMT</pubDate></item></channel></rss>
+&lt;/blockquote&gt;&lt;/div&gt;</description><category>supervisor</category><guid>https://codinglonglong.github.io/posts/supervisorshi-xian-pythonjiao-ben-zi-qi-dong/</guid><pubDate>Mon, 27 Feb 2017 18:06:10 GMT</pubDate></item><item><title>Ubuntu14.04部署Tornado+Nginx+Supervisor</title><link>https://codinglonglong.github.io/posts/ubuntu1404bu-shu-tornado%2Bnginx%2Bsupervisor/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;本文主要讲述如何在Ubuntu上部署用Tornado编写的网站，涉及进程管理工具Supervisor和服务器Nginx。&lt;/p&gt;
+&lt;p&gt;前提：网站使用Python编写，采用Tornado框架和Mysql数据库，要部署网站的机器deploy为Ubuntu14.04系统，静态IP地址为192.168.122.150，要部署的网站为reciteword.tar.gz&lt;/p&gt;
+&lt;p&gt;1、安装emacs&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo apt-get install emacs
+&lt;/pre&gt;
+&lt;p&gt;2、设定静态IP&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo emacs /etc/network/interfaces
+&lt;/pre&gt;
+&lt;p&gt;3、修改eth0部分&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+auto eth0
+iface eth0 inet static
+address 192.168.122.150
+netmask 255.255.255.0
+gateway 192.168.122.1
+dns-nameserver 202.98.198.167
+&lt;/pre&gt;
+&lt;p&gt;4、保存文件，重启机器&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo reboot
+&lt;/pre&gt;
+&lt;p&gt;5、下载部署相关软件&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo apt-get install mysql-server mysql-client python3-tornado python3-mysql.connector emacs nginx python-pip python3-pip
+&lt;/pre&gt;
+&lt;p&gt;6、安装beautifulsoup4（这个是网站运行需要的）&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo pip3 install beautifulsoup4
+&lt;/pre&gt;
+&lt;p&gt;7、下载supervisor&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; wget https://pypi.python.org/packages/source/s/supervisor/supervisor-3.1.3.tar.gz
+&lt;/pre&gt;
+&lt;p&gt;8、解压网站代码和supervisor&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; tar zxvf reciteword.tar.gz
+&amp;gt;&amp;gt; tar zxvf supervisor-3.1.3.tar.gz
+&lt;/pre&gt;
+&lt;p&gt;&lt;a href="https://codinglonglong.github.io/posts/ubuntu1404bu-shu-tornado%2Bnginx%2Bsupervisor/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>nginx</category><category>Python</category><category>supervisor</category><category>Tornado</category><category>Ubuntu</category><guid>https://codinglonglong.github.io/posts/ubuntu1404bu-shu-tornado%2Bnginx%2Bsupervisor/</guid><pubDate>Mon, 07 Sep 2015 10:32:39 GMT</pubDate></item></channel></rss>

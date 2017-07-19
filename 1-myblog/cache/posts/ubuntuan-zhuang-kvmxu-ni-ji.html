@@ -1,0 +1,25 @@
+<p>1、检查CPU是否支持虚拟化。</p>
+<pre class="literal-block">
+&gt;&gt; long&#64;mylife:~$ egrep -o '(vmx|svm)' /proc/cpuinfo
+&gt;&gt; vmx
+&gt;&gt; vmx
+&gt;&gt; vmx
+&gt;&gt; vmx
+</pre>
+<p>2、安装KVM相关软件</p>
+<pre class="literal-block">
+&gt;&gt; sudo apt-get install qemu-kvm libvirt-bin virt-manager bridge-utils
+</pre>
+<p>3、检查安装状态</p>
+<pre class="literal-block">
+&gt;&gt; long&#64;mylife:~$ lsmod | grep kvm
+&gt;&gt; kvm_intel             143630  0
+&gt;&gt; kvm                   452096  1 kvm_intel
+</pre>
+<p>4、启动虚拟系统管理器</p>
+<pre class="literal-block">
+&gt;&gt; virt-manager
+</pre>
+<p>5、提示安装新的软件包，选择“是”==&gt;“安装&quot;==&gt;&quot;继续&quot;</p>
+<p>6、提示无法连接到libvirt，重启</p>
+<p>7、启动虚拟系统管理器，至此KVM安装完成</p>

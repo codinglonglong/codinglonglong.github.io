@@ -1,0 +1,8 @@
+<p>一般很少用蓝牙，开着又费电。</p>
+<p>在Ubuntu14.04中默认关闭蓝牙的方法：</p>
+<pre class="literal-block">
+&gt;&gt; sudo emacs /etc/rc.local
+rfkill block bluetooth
+exit 0
+&gt;&gt; sudo reboot
+</pre>

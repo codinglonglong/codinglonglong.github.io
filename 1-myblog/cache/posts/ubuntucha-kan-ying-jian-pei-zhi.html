@@ -1,0 +1,43 @@
+<p>1. 查看系统内核</p>
+<pre class="literal-block">
+&gt;&gt; long&#64;pc1:/proc$ uname -a
+&gt;&gt; Linux pc1 3.16.0-41-generic #55~14.04.1-Ubuntu SMP Sun Jun 14 18:43:36 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+</pre>
+<p>2. 查看CPU</p>
+<pre class="literal-block">
+&gt;&gt; long&#64;pc1:/proc$ cat /proc/cpuinfo | grep model\ name
+&gt;&gt; model name       : Pentium(R) Dual-Core  CPU      E5500  &#64; 2.80GHz
+&gt;&gt; model name       : Pentium(R) Dual-Core  CPU      E5500  &#64; 2.80GHz
+</pre>
+<p>3. 查看内存</p>
+<pre class="literal-block">
+&gt;&gt; long&#64;pc1:/proc$ cat /proc/meminfo | grep MemTotal
+&gt;&gt; MemTotal:        4012620 kB
+</pre>
+<p>4. 查看显卡</p>
+<pre class="literal-block">
+&gt;&gt; long&#64;pc1:/proc$ lspci | grep 'VGA'
+&gt;&gt; 00:02.0 VGA compatible controller: Intel Corporation 4 Series Chipset Integrated Graphics Controller (rev 03)
+</pre>
+<p>5. 查看声卡</p>
+<pre class="literal-block">
+&gt;&gt; long&#64;pc1:/proc$ lspci | grep -i 'Audio'
+&gt;&gt; 00:1b.0 Audio device: Intel Corporation NM10/ICH7 Family High Definition Audio Controller (rev 01)
+</pre>
+<p>6. 查看网卡</p>
+<pre class="literal-block">
+&gt;&gt; long&#64;pc1:/proc$ lspci | grep -i 'Ethernet'
+&gt;&gt; 02:00.0 Ethernet controller: Marvell Technology Group Ltd. 88E8057 PCI-E Gigabit Ethernet Controller (rev 10)
+</pre>
+<p>7. 查看硬盘</p>
+<pre class="literal-block">
+&gt;&gt; long&#64;pc1:/proc$ df -lh
+&gt;&gt; Filesystem      Size  Used Avail Use% Mounted on
+&gt;&gt; /dev/sda1       292G  4.2G  273G   2% /
+&gt;&gt; none            4.0K     0  4.0K   0% /sys/fs/cgroup
+&gt;&gt; udev            2.0G  4.0K  2.0G   1% /dev
+&gt;&gt; tmpfs           392M  1.1M  391M   1% /run
+&gt;&gt; none            5.0M     0  5.0M   0% /run/lock
+&gt;&gt; none            2.0G   76K  2.0G   1% /run/shm
+&gt;&gt; none            100M   32K  100M   1% /run/user
+</pre>

@@ -1,0 +1,41 @@
+<p>1、修改配置文件</p>
+<pre class="literal-block">
+&gt;&gt; long&#64;happytime:~$ sudo emacs /etc/mysql/my.cnf
+</pre>
+<p>在[mysqld]部分加入： skip-grant-tables，然后保存退出。</p>
+<p>2、重新启动mysql服务</p>
+<pre class="literal-block">
+&gt;&gt; sudo service mysql restart
+</pre>
+<p>3、进入mysql修改密码</p>
+<pre class="literal-block">
+&gt;&gt; long&#64;happytime:~$ mysql
+&gt;&gt; Welcome to the MySQL monitor.  Commands end with ; or \g.
+&gt;&gt; Your MySQL connection id is 36
+&gt;&gt; Server version: 5.5.43-0ubuntu0.14.04.1 (Ubuntu)
+&gt;&gt;
+&gt;&gt; Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+&gt;&gt;
+&gt;&gt; Oracle is a registered trademark of Oracle Corporation and/or its
+&gt;&gt; affiliates. Other names may be trademarks of their respective
+&gt;&gt; owners.
+&gt;&gt;
+&gt;&gt; Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+&gt;&gt;
+&gt;&gt; mysql&gt; use mysql;
+&gt;&gt; Reading table information for completion of table and column names
+&gt;&gt; You can turn off this feature to get a quicker startup with -A
+&gt;&gt;
+&gt;&gt; Database changed
+&gt;&gt; mysql&gt; update user set Password=password('newpassword') where User='root';
+&gt;&gt; Query OK, 4 rows affected (0.00 sec)
+&gt;&gt; Rows matched: 4  Changed: 4  Warnings: 0
+&gt;&gt;
+&gt;&gt; mysql&gt; flush privileges;
+&gt;&gt; Query OK, 0 rows affected (0.00 sec)
+&gt;&gt;
+&gt;&gt; mysql&gt; quit
+&gt;&gt; Bye
+</pre>
+<p>4、记得把配置文件改回来</p>
+<p>5、重启mysql服务</p>

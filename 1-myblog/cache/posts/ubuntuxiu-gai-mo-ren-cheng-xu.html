@@ -1,0 +1,7 @@
+<p>Ubuntu默认的PDF阅读器Evince没有KDE内置的Okular功能强大，安装上Okular后，我们需要修改系统默认程序。</p>
+<p>修改方法如下：</p>
+<pre class="literal-block">
+&gt;&gt; sudo gedit /etc/gnome/defaults.list
+</pre>
+<p>将 <strong>application/pdf=evince.desktop</strong> 替换成 <strong>application/pdf=okular.desktop</strong> 。</p>
+<p>如果需要替换其他功能的默认程序，按照类似的操作即可。</p>

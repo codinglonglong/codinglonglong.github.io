@@ -92,550 +92,329 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerpei-zhi-kai-fa-jing-xiang/" class="u-url">Docker配置开发镜像</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/vuejsxue-xi-1/" class="u-url">vuejs学习(1)</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
             </span></p>
-            <p class="dateline"><a href="posts/dockerpei-zhi-kai-fa-jing-xiang/" rel="bookmark"><time class="published dt-published" datetime="2017-01-23T23:08:02+08:00" title="2017-01-23 23:08">2017-01-23 23:08</time></a></p>
+            <p class="dateline"><a href="posts/vuejsxue-xi-1/" rel="bookmark"><time class="published dt-published" datetime="2017-01-10T09:06:42+08:00" title="2017-01-10 09:06">2017-01-10 09:06</time></a></p>
         </div>
     </header><div class="p-summary entry-summary">
     <div>
-<p>在主系统上开发，在Docker中部署，在主系统上测试……不需要一手一台电脑，也不需要担心虚拟机占用资源太高，而且不管主系统是Linux、Windows还是MacOS，开发都是一样的……感觉很不错……</p>
+<p>本文初步学习如何使用vue-cli建立一个简单的网页组件。</p>
 <ol class="arabic">
 <li>
-<p class="first">新建容器。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_dfcc32c5dd024e8eafb82c7f22e8e8bf-1"></a>docker run --name mypc -i -t -p <span class="m">8080</span>:8080 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
-</pre>
-</blockquote>
+<p class="first">参考 <a class="reference external" href="https://cn.vuejs.org/v2/guide/installation.html">https://cn.vuejs.org/v2/guide/installation.html</a> 安装好vue和vue-cli。</p>
 </li>
 <li>
-<p class="first">Docker中修改Ubuntu软件源。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_8a71c0ba853248bd956fdddadaf52785-1"></a>vi /etc/apt/sources.list
-<a name="rest_code_8a71c0ba853248bd956fdddadaf52785-2"></a>:%s/archive.ubuntu/cn.archive.ubuntu/g
-<a name="rest_code_8a71c0ba853248bd956fdddadaf52785-3"></a>:wq
-</pre>
-</blockquote>
+<p class="first">用vue创建一个简单的项目，删除已有src目录中的文件。</p>
 </li>
 <li>
-<p class="first">Docker中更新软件源。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_0b9c8dc22bcf413ba16c79e9cc4f517c-1"></a>apt update
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">Docker中安装Python和Flask。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_09f1e90c0f2d4567b9f97bf254ccbe54-1"></a>apt install python
-<a name="rest_code_09f1e90c0f2d4567b9f97bf254ccbe54-2"></a>apt install python-pip
-<a name="rest_code_09f1e90c0f2d4567b9f97bf254ccbe54-3"></a>apt install python-dev
-<a name="rest_code_09f1e90c0f2d4567b9f97bf254ccbe54-4"></a>pip install flask
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">在主系统目录 <strong>~/share/</strong> 下编写测试网站main.py。</p>
+<p class="first">找到index.html如下，不用改动。</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_619a39f223f94702b445dc72474e0fb4-1">1</a>
-<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_619a39f223f94702b445dc72474e0fb4-2">2</a>
-<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_619a39f223f94702b445dc72474e0fb4-3">3</a>
-<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_619a39f223f94702b445dc72474e0fb4-4">4</a>
-<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_619a39f223f94702b445dc72474e0fb4-5">5</a>
-<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_619a39f223f94702b445dc72474e0fb4-6">6</a>
-<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_619a39f223f94702b445dc72474e0fb4-7">7</a>
-<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_619a39f223f94702b445dc72474e0fb4-8">8</a>
-<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_619a39f223f94702b445dc72474e0fb4-9">9</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_619a39f223f94702b445dc72474e0fb4-1"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
-<a name="rest_code_619a39f223f94702b445dc72474e0fb4-2"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-<a name="rest_code_619a39f223f94702b445dc72474e0fb4-3"></a>
-<a name="rest_code_619a39f223f94702b445dc72474e0fb4-4"></a><span class="nd">@app.route</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
-<a name="rest_code_619a39f223f94702b445dc72474e0fb4-5"></a><span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
-<a name="rest_code_619a39f223f94702b445dc72474e0fb4-6"></a>    <span class="k">return</span> <span class="s1">'Hello World!'</span>
-<a name="rest_code_619a39f223f94702b445dc72474e0fb4-7"></a>
-<a name="rest_code_619a39f223f94702b445dc72474e0fb4-8"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
-<a name="rest_code_619a39f223f94702b445dc72474e0fb4-9"></a>    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">"0.0.0.0"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="s2">"8080"</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-1/#rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-1"> 1</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-2"> 2</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-3"> 3</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-4"> 4</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-5"> 5</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-6"> 6</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-7"> 7</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-8"> 8</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-9"> 9</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-10">10</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-11">11</a></pre></div></td>
+<td class="code"><pre class="code html"><a name="rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<a name="rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-2"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<a name="rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-3"></a><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<a name="rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-4"></a>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span><span class="p">&gt;</span>
+<a name="rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-5"></a>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>test<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<a name="rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-6"></a><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<a name="rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-7"></a><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<a name="rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-8"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"app"</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-9"></a>    <span class="c">&lt;!-- built files will be auto injected --&gt;</span>
+<a name="rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-10"></a><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<a name="rest_code_3ce67dbff2ba4a3788a43057f60fa8ed-11"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></td>
 </tr></table>
 </blockquote>
+<p>这里应该留意到已经包含一个id是app的div，未来要写的代码经过编译之后，会放在这个div的位置，而 &lt;div id="app"&gt;&lt;/div&gt; 会被替换掉。</p>
 </li>
 <li>
-<p class="first">Docker中运行网站。</p>
+<p class="first">在src目录下新建main.js，这是整个网站代码的入口，如下。</p>
 <blockquote>
-<pre class="code bash"><a name="rest_code_3de184267c9f444fab8256d465c1328f-1"></a><span class="nb">cd</span> /usr/development/
-<a name="rest_code_3de184267c9f444fab8256d465c1328f-2"></a>python main.py
-</pre>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-1/#rest_code_5f255307e07c4cb09affaca6d29879b2-1">1</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_5f255307e07c4cb09affaca6d29879b2-2">2</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_5f255307e07c4cb09affaca6d29879b2-3">3</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_5f255307e07c4cb09affaca6d29879b2-4">4</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_5f255307e07c4cb09affaca6d29879b2-5">5</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_5f255307e07c4cb09affaca6d29879b2-6">6</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_5f255307e07c4cb09affaca6d29879b2-7">7</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_5f255307e07c4cb09affaca6d29879b2-8">8</a></pre></div></td>
+<td class="code"><pre class="code html"><a name="rest_code_5f255307e07c4cb09affaca6d29879b2-1"></a>import Vue from 'vue'
+<a name="rest_code_5f255307e07c4cb09affaca6d29879b2-2"></a>import App from './App'
+<a name="rest_code_5f255307e07c4cb09affaca6d29879b2-3"></a>
+<a name="rest_code_5f255307e07c4cb09affaca6d29879b2-4"></a>new Vue({
+<a name="rest_code_5f255307e07c4cb09affaca6d29879b2-5"></a>    el: '#app',
+<a name="rest_code_5f255307e07c4cb09affaca6d29879b2-6"></a>    template: '<span class="p">&lt;</span><span class="nt">App</span><span class="p">/&gt;</span>',
+<a name="rest_code_5f255307e07c4cb09affaca6d29879b2-7"></a>    components: { App }
+<a name="rest_code_5f255307e07c4cb09affaca6d29879b2-8"></a>})
+</pre></td>
+</tr></table>
 </blockquote>
+<p>这里应该注意到，el，也就是element，绑定的是前面index.html中的 &lt;div id="app"&gt;&lt;/div&gt; ，而该位置对应的模板则是来自名为App的组件，也就是将App组件渲染到id为app的div的位置上。</p>
 </li>
 <li>
-<p class="first">主系统上查看效果。</p>
-</li>
-</ol>
-<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/flaskhelloworld.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/flaskhelloworld.PNG"><p><strong>注意</strong></p>
+<p class="first">在src目录下新建App.vue，这是网站的一个组件，可以多次反复使用，代码如下。</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-1"> 1</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-2"> 2</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-3"> 3</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-4"> 4</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-5"> 5</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-6"> 6</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-7"> 7</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-8"> 8</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-9"> 9</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-10">10</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-11">11</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-12">12</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-13">13</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-14">14</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-15">15</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-16">16</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-17">17</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-18">18</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-19">19</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-20">20</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-21">21</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-22">22</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-23">23</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-24">24</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-25">25</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-26">26</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-27">27</a>
+<a href="posts/vuejsxue-xi-1/#rest_code_153e448f65ac476bbabc8e9bb46aef15-28">28</a></pre></div></td>
+<td class="code"><pre class="code html"><a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-2"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"myapp"</span><span class="p">&gt;</span>
+<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-3"></a>        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Hello, {{Name}}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-4"></a>        <span class="p">&lt;</span><span class="nt">button</span> <span class="na">v-on:click</span><span class="o">=</span><span class="s">"sayhello"</span><span class="p">&gt;</span>sayhello<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-5"></a>    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-6"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-7"></a>
+<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-8"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-9"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-10"></a>    <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-11"></a>        <span class="k">return</span> <span class="p">{</span>
+<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-12"></a>            <span class="nx">Name</span><span class="o">:</span> <span class="s2">"龙龙龙"</span>
+<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-13"></a>        <span class="p">}</span>
+<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-14"></a>    <span class="p">},</span>
+<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-15"></a>    <span class="nx">methods</span><span class="o">:</span> <span class="p">{</span>
+<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-16"></a>        <span class="nx">sayhello</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-17"></a>            <span class="nx">alert</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">Name</span><span class="p">);</span>
+<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-18"></a>        <span class="p">}</span>
+<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-19"></a>    <span class="p">}</span>
+<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-20"></a><span class="p">}</span>
+<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-21"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-22"></a>
+<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-23"></a><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-24"></a><span class="nt">p</span> <span class="p">{</span>
+<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-25"></a>    <span class="k">font-size</span><span class="p">:</span> <span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
+<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-26"></a>    <span class="k">color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
+<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-27"></a><span class="p">}</span>
+<a name="rest_code_153e448f65ac476bbabc8e9bb46aef15-28"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p>通过这段代码，可以看出：</p>
 <ol class="arabic simple">
-<li>docker run --name mypc -i -t -p 8080:8080 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash 中的 <strong>/usr/development/</strong> 不可以是系统已有目录，否则会有权限问题，影响后续的安装。</li>
-<li>如果不喜欢使用vim，第二步中可以先安装emacs，再修改/etc/apt/sources.list。</li>
+<li>一个vue组件由三大部分组成，&lt;template&gt;&lt;/template&gt;（组件模板），&lt;script&gt;&lt;/script&gt;（组件脚本），&lt;style&gt;&lt;/style&gt;（组件样式）。</li>
+<li>组件样式部分就是最基本的CSS。</li>
+<li>组件脚本部分被export default{}包围，这个例子中给出了data（数据）和methods（方法），可以学到如何绑定数据和如何添加自定义函数。</li>
+<li>组件模板部分必须被一个根div包围，在本例中是 &lt;div id="myapp"&gt;&lt;/div&gt;。</li>
+<li>按钮点击事件的实现采用 &lt;button v-on:click="sayhello"&gt;sayhello&lt;/button&gt;。</li>
 </ol>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerchang-yong-ming-ling/" class="u-url">Docker常用命令</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/dockerchang-yong-ming-ling/" rel="bookmark"><time class="published dt-published" datetime="2017-01-21T20:13:52+08:00" title="2017-01-21 20:13">2017-01-21 20:13</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<ol class="arabic">
-<li>
-<p class="first">创建容器。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_6d4f93b2b6524ba698fa42a37ec6705b-1"></a>docker run --name mypc -it ubuntu:16.04 /bin/bash
-</pre>
-</blockquote>
 </li>
 </ol>
-<p>经过实验，目前只有这样创建的容器可以在后边正常start。</p>
-<ol class="arabic" start="2">
-<li>
-<p class="first">查看已有容器及其状态。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_00282a2a82a84931a32b7431d7816a3e-1"></a>docker ps -a
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">启动已有容器。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_55877fd45f85487c905b3e8ac417eb29-1"></a>docker start mypc
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">登陆正在运行的容器。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_9bde5643197c46d89fb4bbb846c886c0-1"></a>docker <span class="nb">exec</span> -it mypc /bin/bash
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">关闭正在运行的容器。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_46976fad557646a1a0b1dafdfe7e019f-1"></a>docker stop mypc
-</pre>
-</blockquote>
-</li>
-<li>
-<p class="first">删除容器。</p>
-<blockquote>
-<pre class="code bash"><a name="rest_code_b4debc330fb34183b1730d815e891c3d-1"></a>docker rm mypc
-</pre>
-</blockquote>
-</li>
-</ol>
-<p><strong>注意</strong> ：重启电脑之前，记得先把VirtualBox里边的虚拟机正常关机，否则等重启回来，容器可能就找不到了。</p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/windowspei-zhi-docker/" class="u-url">Windows配置Docker</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/windowspei-zhi-docker/" rel="bookmark"><time class="published dt-published" datetime="2017-01-21T17:27:00+08:00" title="2017-01-21 17:27">2017-01-21 17:27</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>因为新笔记本的无线网卡和声卡比较新，目前的Linux发行版都无法很好地支持，所以只好先用Windows来进行开发了……</p>
-<p>第一步，在Windows上部署Linux开发环境，首先考虑到的是用Docker。</p>
-<ol class="arabic">
-<li>
-<p class="first">安装docker-toolbox。访问下载安装： <a class="reference external" href="https://www.docker.com/products/docker-toolbox">https://www.docker.com/products/docker-toolbox</a></p>
-</li>
-<li>
-<p class="first">在开始菜单双击运行Docker Quickstart Terminal，等待……………………直到出现</p>
-<blockquote>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/windowspei-zhi-docker/#rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-1">1</a>
-<a href="posts/windowspei-zhi-docker/#rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-2">2</a>
-<a href="posts/windowspei-zhi-docker/#rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-3">3</a>
-<a href="posts/windowspei-zhi-docker/#rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-4">4</a>
-<a href="posts/windowspei-zhi-docker/#rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-5">5</a>
-<a href="posts/windowspei-zhi-docker/#rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-6">6</a>
-<a href="posts/windowspei-zhi-docker/#rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-7">7</a></pre></div></td>
-<td class="code"><pre class="code bash"><a name="rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-1"></a>docker is configured to use the default machine with IP <span class="m">192</span>.168.99.100
-<a name="rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-2"></a>For <span class="nb">help</span> getting started, check out the docs at https://docs.docker.com
-<a name="rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-3"></a>
-<a name="rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-4"></a>Start interactive shell
-<a name="rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-5"></a>
-<a name="rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-6"></a>long@DESKTOP-N79DL8P MINGW64 ~
-<a name="rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-7"></a>$
-</pre></td>
-</tr></table>
-</blockquote>
-</li>
-<li>
-<p class="first">运行 <strong>docker pull ubuntu:16.04</strong> 。</p>
-</li>
-<li>
-<p class="first">运行 <strong>docker run -it --rm ubuntu:16.04 bash</strong> ，进入ubuntu的交互环境。</p>
-</li>
-</ol>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/vuejsxue-xi-8/" class="u-url">vuejs学习(8)</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/vuejsxue-xi-8/" rel="bookmark"><time class="published dt-published" datetime="2017-01-14T15:07:00+08:00" title="2017-01-14 15:07">2017-01-14 15:07</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>本文要学习的是列表渲染 v-for ，看测试代码 <strong>TodoItem.vue</strong> ：</p>
-<blockquote>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-1"> 1</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-2"> 2</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-3"> 3</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-4"> 4</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-5"> 5</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-6"> 6</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-7"> 7</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-8"> 8</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-9"> 9</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-10">10</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-11">11</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-12">12</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-13">13</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-14">14</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-15">15</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-16">16</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-17">17</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-18">18</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-19">19</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-20">20</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-21">21</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-22">22</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-23">23</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-24">24</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-25">25</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-26">26</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-27">27</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-28">28</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-29">29</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-30">30</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-31">31</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-32">32</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-33">33</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-34">34</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-35">35</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-36">36</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-37">37</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-38">38</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-39">39</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-40">40</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-41">41</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-42">42</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-43">43</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-44">44</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-45">45</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-46">46</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-47">47</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-48">48</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-49">49</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-50">50</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-51">51</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-52">52</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-53">53</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-54">54</a>
-<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-55">55</a></pre></div></td>
-<td class="code"><pre class="code html"><a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-2"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"todoitem"</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-3"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-4"></a>        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in items1"</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-5"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-6"></a>    <span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">"1"</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-7"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-8"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>项1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-9"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>项2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-10"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>索引<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-11"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-12"></a>        <span class="p">&lt;</span><span class="nt">tr</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item, index in items2"</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-13"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{item[0]}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-14"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{item[1]}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-15"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{index}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-16"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-17"></a>    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-18"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-19"></a>        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"value, key, index in items3"</span><span class="p">&gt;</span>{{index}}==&gt;{{key}}==&gt;{{value}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-20"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-21"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-22"></a>        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in 3"</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-23"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-24"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-25"></a>        <span class="p">&lt;</span><span class="nt">template</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in items5"</span> <span class="na">v-if</span><span class="o">=</span><span class="s">"male"</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-26"></a>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-27"></a>        <span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-28"></a>        <span class="p">&lt;</span><span class="nt">template</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in items6"</span> <span class="na">v-if</span><span class="o">=</span><span class="s">"!male"</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-29"></a>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-30"></a>        <span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-31"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-32"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-33"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-34"></a>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-35"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-36"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-37"></a>    <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-38"></a>        <span class="k">return</span> <span class="p">{</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-39"></a>            <span class="nx">items1</span><span class="o">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-40"></a>            <span class="nx">items2</span><span class="o">:</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]],</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-41"></a>            <span class="nx">items3</span><span class="o">:</span> <span class="p">{</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-42"></a>                <span class="s1">'name'</span><span class="o">:</span> <span class="s1">'Tom'</span><span class="p">,</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-43"></a>                <span class="s1">'age'</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-44"></a>                <span class="s1">'gender'</span><span class="o">:</span> <span class="s1">'male'</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-45"></a>            <span class="p">},</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-46"></a>            <span class="nx">male</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-47"></a>            <span class="nx">items5</span><span class="o">:</span> <span class="p">[</span><span class="s2">"Boy1"</span><span class="p">,</span> <span class="s2">"Boy2"</span><span class="p">,</span> <span class="s2">"Boy3"</span><span class="p">],</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-48"></a>            <span class="nx">items6</span><span class="o">:</span> <span class="p">[</span><span class="s2">"Girl1"</span><span class="p">,</span> <span class="s2">"Girl2"</span><span class="p">,</span> <span class="s2">"Girl3"</span><span class="p">],</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-49"></a>        <span class="p">}</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-50"></a>    <span class="p">},</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-51"></a><span class="p">}</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-52"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-53"></a>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-54"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
-<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-55"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-</pre></td>
-</tr></table>
-</blockquote>
-<p>运行结果：</p>
-<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/vueforrender.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/vueforrender.PNG"><p>在上述的代码中，我们需要学到以下几个问题：</p>
+<p><strong>总结</strong></p>
+<p>这个简单的例子一共涉及了以下几个问题：</p>
 <ol class="arabic simple">
-<li>vuejs的v-for和Python的for循环有很多相似的地方，比如元素迭代，比如整数迭代。</li>
-<li>vuejs的迭代可以包含索引，如果是列表，用“item, index in items”；如果是对象，用“value, key, index in items”。</li>
-<li>v-for迭代的目标也可以是函数的可迭代返回值，比如返回列表。</li>
+<li>vue组件的基本格式；</li>
+<li>如何加样式；</li>
+<li>如何加自定义函数；</li>
+<li>如何做数据绑定；</li>
+<li>如何把组件和网页联系在一起。</li>
 </ol>
-<p>后面的文章我们将学习更复杂的列表渲染。</p>
+<p>后面我们将继续尝试多个组件的网站怎么写。</p>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/vuejsxue-xi-7/" class="u-url">vuejs学习(7)</a></h1>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/win10-homeban-guan-bi-hyper-v/" class="u-url">Win10 home版关闭hyper-v</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
             </span></p>
-            <p class="dateline"><a href="posts/vuejsxue-xi-7/" rel="bookmark"><time class="published dt-published" datetime="2017-01-13T20:28:47+08:00" title="2017-01-13 20:28">2017-01-13 20:28</time></a></p>
+            <p class="dateline"><a href="posts/win10-homeban-guan-bi-hyper-v/" rel="bookmark"><time class="published dt-published" datetime="2017-01-10T04:45:37+08:00" title="2017-01-10 04:45">2017-01-10 04:45</time></a></p>
         </div>
     </header><div class="p-summary entry-summary">
     <div>
-<p>本文对比两种条件渲染， <strong>v-if</strong> 和 <strong>v-show</strong> 。</p>
-<p>测试代码TodoItem.vue如下：</p>
+<p>在win10的home版中，安装Android Studio提供的haxm，会出现死机的现象，这是由于haxm与hyper-v冲突。而home版无法通过“启用或关闭Windows功能”来关闭hyper-v。这时可以通过如下方法关闭hyper-v。</p>
+<ol class="arabic">
+<li>
+<p class="first">管理员身份运行命令提示符cmd</p>
 <blockquote>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-7/#rest_code_95f487a27b4c4f868b82056ff27a80d1-1"> 1</a>
-<a href="posts/vuejsxue-xi-7/#rest_code_95f487a27b4c4f868b82056ff27a80d1-2"> 2</a>
-<a href="posts/vuejsxue-xi-7/#rest_code_95f487a27b4c4f868b82056ff27a80d1-3"> 3</a>
-<a href="posts/vuejsxue-xi-7/#rest_code_95f487a27b4c4f868b82056ff27a80d1-4"> 4</a>
-<a href="posts/vuejsxue-xi-7/#rest_code_95f487a27b4c4f868b82056ff27a80d1-5"> 5</a>
-<a href="posts/vuejsxue-xi-7/#rest_code_95f487a27b4c4f868b82056ff27a80d1-6"> 6</a>
-<a href="posts/vuejsxue-xi-7/#rest_code_95f487a27b4c4f868b82056ff27a80d1-7"> 7</a>
-<a href="posts/vuejsxue-xi-7/#rest_code_95f487a27b4c4f868b82056ff27a80d1-8"> 8</a>
-<a href="posts/vuejsxue-xi-7/#rest_code_95f487a27b4c4f868b82056ff27a80d1-9"> 9</a>
-<a href="posts/vuejsxue-xi-7/#rest_code_95f487a27b4c4f868b82056ff27a80d1-10">10</a>
-<a href="posts/vuejsxue-xi-7/#rest_code_95f487a27b4c4f868b82056ff27a80d1-11">11</a>
-<a href="posts/vuejsxue-xi-7/#rest_code_95f487a27b4c4f868b82056ff27a80d1-12">12</a>
-<a href="posts/vuejsxue-xi-7/#rest_code_95f487a27b4c4f868b82056ff27a80d1-13">13</a>
-<a href="posts/vuejsxue-xi-7/#rest_code_95f487a27b4c4f868b82056ff27a80d1-14">14</a>
-<a href="posts/vuejsxue-xi-7/#rest_code_95f487a27b4c4f868b82056ff27a80d1-15">15</a>
-<a href="posts/vuejsxue-xi-7/#rest_code_95f487a27b4c4f868b82056ff27a80d1-16">16</a>
-<a href="posts/vuejsxue-xi-7/#rest_code_95f487a27b4c4f868b82056ff27a80d1-17">17</a>
-<a href="posts/vuejsxue-xi-7/#rest_code_95f487a27b4c4f868b82056ff27a80d1-18">18</a>
-<a href="posts/vuejsxue-xi-7/#rest_code_95f487a27b4c4f868b82056ff27a80d1-19">19</a>
-<a href="posts/vuejsxue-xi-7/#rest_code_95f487a27b4c4f868b82056ff27a80d1-20">20</a>
-<a href="posts/vuejsxue-xi-7/#rest_code_95f487a27b4c4f868b82056ff27a80d1-21">21</a>
-<a href="posts/vuejsxue-xi-7/#rest_code_95f487a27b4c4f868b82056ff27a80d1-22">22</a></pre></div></td>
-<td class="code"><pre class="code html"><a name="rest_code_95f487a27b4c4f868b82056ff27a80d1-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_95f487a27b4c4f868b82056ff27a80d1-2"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"todoitem"</span><span class="p">&gt;</span>
-<a name="rest_code_95f487a27b4c4f868b82056ff27a80d1-3"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-if</span><span class="o">=</span><span class="s">"flag"</span><span class="p">&gt;</span>你好<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_95f487a27b4c4f868b82056ff27a80d1-4"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-show</span><span class="o">=</span><span class="s">"flag"</span><span class="p">&gt;</span>你好<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_95f487a27b4c4f868b82056ff27a80d1-5"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-if</span><span class="o">=</span><span class="s">"flag1"</span><span class="p">&gt;</span>你好<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_95f487a27b4c4f868b82056ff27a80d1-6"></a>    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">v-show</span><span class="o">=</span><span class="s">"flag1"</span><span class="p">&gt;</span>你好<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_95f487a27b4c4f868b82056ff27a80d1-7"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_95f487a27b4c4f868b82056ff27a80d1-8"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_95f487a27b4c4f868b82056ff27a80d1-9"></a>
-<a name="rest_code_95f487a27b4c4f868b82056ff27a80d1-10"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_95f487a27b4c4f868b82056ff27a80d1-11"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
-<a name="rest_code_95f487a27b4c4f868b82056ff27a80d1-12"></a>    <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-<a name="rest_code_95f487a27b4c4f868b82056ff27a80d1-13"></a>        <span class="k">return</span> <span class="p">{</span>
-<a name="rest_code_95f487a27b4c4f868b82056ff27a80d1-14"></a>            <span class="nx">flag</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-<a name="rest_code_95f487a27b4c4f868b82056ff27a80d1-15"></a>            <span class="nx">flag1</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-<a name="rest_code_95f487a27b4c4f868b82056ff27a80d1-16"></a>        <span class="p">}</span>
-<a name="rest_code_95f487a27b4c4f868b82056ff27a80d1-17"></a>    <span class="p">},</span>
-<a name="rest_code_95f487a27b4c4f868b82056ff27a80d1-18"></a><span class="p">}</span>
-<a name="rest_code_95f487a27b4c4f868b82056ff27a80d1-19"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_95f487a27b4c4f868b82056ff27a80d1-20"></a>
-<a name="rest_code_95f487a27b4c4f868b82056ff27a80d1-21"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
-<a name="rest_code_95f487a27b4c4f868b82056ff27a80d1-22"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-</pre></td>
-</tr></table>
+<pre class="code bash"><a name="rest_code_abeefa4296dd448f820fe057c372684c-1"></a>&gt;&gt; bcdedit /copy <span class="o">{</span>current<span class="o">}</span> /d <span class="s2">"Windows10 no Hyper-V</span>
+<a name="rest_code_abeefa4296dd448f820fe057c372684c-2"></a><span class="s2">&gt;&gt; bcdedit /set {XXX} hypervisorlaunchtype OFF</span>
+</pre>
 </blockquote>
-<p>很明显，输出结果是两行“你好”。貌似v-if和v-show没什么区别，这里需要注意：</p>
-<p><strong>v-if 有更高的切换消耗而 v-show 有更高的初始渲染消耗。因此，如果需要频繁切换使用的话， v-show 较好，而如果在运行时条件不大可能发生改变，则使用 v-if 较好。</strong></p>
+<p>注意XXX的部分是上一步的输出结果。</p>
+</li>
+<li>
+<p class="first">重启Win10，选择“Windows10 no Hyper-V”，即可进入没有Hyper-V的win10系统。</p>
+</li>
+</ol>
+<p><strong>注意</strong></p>
+<p>如果要安装haxm，还需要注意以下两点：</p>
+<ol class="arabic simple">
+<li>别忘了在BIOS里打开虚拟化。</li>
+<li>haxm不仅会与hyper-v冲突，与杀毒软件Avast也会冲突，安装haxm之前先卸载掉Avast才行。</li>
+</ol>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/javascriptzhong-he-de-dui-bi/" class="u-url">JavaScript中==和===的对比</a></h1>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/android-studiolian-jie-droid4xdiao-shi-app/" class="u-url">Android Studio连接Droid4X调试APP</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
             </span></p>
-            <p class="dateline"><a href="posts/javascriptzhong-he-de-dui-bi/" rel="bookmark"><time class="published dt-published" datetime="2017-01-13T15:10:28+08:00" title="2017-01-13 15:10">2017-01-13 15:10</time></a></p>
+            <p class="dateline"><a href="posts/android-studiolian-jie-droid4xdiao-shi-app/" rel="bookmark"><time class="published dt-published" datetime="2017-01-10T04:32:37+08:00" title="2017-01-10 04:32">2017-01-10 04:32</time></a></p>
         </div>
     </header><div class="p-summary entry-summary">
     <div>
-<p>JavaScript中的==和===一直是个复杂的问题。对此我们进行了实验，代码如下：</p>
+<p>Android Studio用内置的虚拟机连i7的本都要跑半天，外接手机的话又太费手机，所以我们可以采用第三方Android虚拟机的方式来调试程序，在这里我们使用的是Droid4X。</p>
+<ol class="arabic">
+<li>
+<p class="first">安装VirtualBox。</p>
+</li>
+<li>
+<p class="first">安装Droid4X。</p>
+</li>
+<li>
+<p class="first">添加adb到系统路径，我的在</p>
 <blockquote>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-1"> 1</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-2"> 2</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-3"> 3</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-4"> 4</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-5"> 5</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-6"> 6</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-7"> 7</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-8"> 8</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-9"> 9</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-10">10</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-11">11</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-12">12</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-13">13</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-14">14</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-15">15</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-16">16</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-17">17</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-18">18</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-19">19</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-20">20</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-21">21</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-22">22</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-23">23</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-24">24</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-25">25</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-26">26</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-27">27</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-28">28</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-29">29</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-30">30</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-31">31</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-32">32</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-33">33</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-34">34</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-35">35</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-36">36</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-37">37</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-38">38</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-39">39</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-40">40</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-41">41</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-42">42</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-43">43</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-44">44</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-45">45</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-46">46</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-47">47</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-48">48</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-49">49</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-50">50</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-51">51</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-52">52</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-53">53</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-54">54</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-55">55</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-56">56</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-57">57</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-58">58</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-59">59</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-60">60</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-61">61</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-62">62</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-63">63</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-64">64</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-65">65</a>
-<a href="posts/javascriptzhong-he-de-dui-bi/#rest_code_b7663e3cd63849b8b6dbc162f33abe46-66">66</a></pre></div></td>
-<td class="code"><pre class="code html"><a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-2"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"todoitem"</span><span class="p">&gt;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-3"></a>    <span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-4"></a>        var a = {'1': 'a', '2': 'b'};
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-5"></a>        var b = {'1': 'a', '2': 'b'};
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-6"></a>        var c = a;
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-7"></a>    <span class="p">&lt;/</span><span class="nt">pre</span><span class="p">&gt;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-8"></a>    <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-9"></a>        <span class="p">&lt;</span><span class="nt">tr</span> <span class="na">class</span><span class="o">=</span><span class="s">"header"</span><span class="p">&gt;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-10"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>A<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-11"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>B<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-12"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>A==B<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-13"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>A===B<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-14"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-15"></a>        <span class="p">&lt;</span><span class="nt">tr</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in items"</span><span class="p">&gt;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-16"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-17"></a>                {{item[0]}}
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-18"></a>            <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-19"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-20"></a>                {{item[1]}}
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-21"></a>            <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-22"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-23"></a>                {{item[2]}}
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-24"></a>            <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-25"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-26"></a>                {{item[3]}}
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-27"></a>            <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-28"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-29"></a>    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-30"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-31"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-32"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-33"></a>    <span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-34"></a>        <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-35"></a>            <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'1'</span><span class="o">:</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'2'</span><span class="o">:</span> <span class="s1">'b'</span><span class="p">};</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-36"></a>            <span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'1'</span><span class="o">:</span> <span class="s1">'a'</span><span class="p">,</span> <span class="s1">'2'</span><span class="o">:</span> <span class="s1">'b'</span><span class="p">};</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-37"></a>            <span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="nx">a</span><span class="p">;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-38"></a>            <span class="k">return</span> <span class="p">{</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-39"></a>                <span class="nx">items</span><span class="o">:</span> <span class="p">[</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-40"></a>                    <span class="p">[</span><span class="s2">"1"</span><span class="p">,</span> <span class="s2">"1"</span><span class="p">,</span> <span class="mi">1</span><span class="o">==</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="o">===</span><span class="mi">1</span><span class="p">],</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-41"></a>                    <span class="p">[</span><span class="s2">"1"</span><span class="p">,</span> <span class="s2">"'1'"</span><span class="p">,</span> <span class="mi">1</span><span class="o">==</span><span class="s1">'1'</span><span class="p">,</span> <span class="mi">1</span><span class="o">===</span><span class="s1">'1'</span><span class="p">],</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-42"></a>                    <span class="p">[</span><span class="s2">"String(1)"</span><span class="p">,</span> <span class="s2">"'1'"</span><span class="p">,</span> <span class="nb">String</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">==</span><span class="s1">'1'</span><span class="p">,</span> <span class="nb">String</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">===</span><span class="s1">'1'</span><span class="p">],</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-43"></a>                    <span class="p">[</span><span class="s2">"parseInt('1')"</span><span class="p">,</span> <span class="s2">"1"</span><span class="p">,</span> <span class="nb">parseInt</span><span class="p">(</span><span class="s1">'1'</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">,</span> <span class="nb">parseInt</span><span class="p">(</span><span class="s1">'1'</span><span class="p">)</span><span class="o">===</span><span class="mi">1</span><span class="p">],</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-44"></a>                    <span class="p">[</span><span class="s2">"1.1"</span><span class="p">,</span> <span class="s2">"'1.1'"</span><span class="p">,</span> <span class="mf">1.1</span><span class="o">==</span><span class="s1">'1.1'</span><span class="p">,</span> <span class="mf">1.1</span><span class="o">===</span><span class="s1">'1.1'</span><span class="p">],</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-45"></a>                    <span class="p">[</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="nx">a</span><span class="o">==</span><span class="nx">b</span><span class="p">,</span> <span class="nx">a</span><span class="o">===</span><span class="nx">b</span><span class="p">],</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-46"></a>                    <span class="p">[</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">,</span> <span class="nx">a</span><span class="o">==</span><span class="nx">c</span><span class="p">,</span> <span class="nx">a</span><span class="o">===</span><span class="nx">c</span><span class="p">],</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-47"></a>                    <span class="p">[</span><span class="s2">"null"</span><span class="p">,</span> <span class="s2">"undefined"</span><span class="p">,</span> <span class="kc">null</span><span class="o">==</span><span class="kc">undefined</span><span class="p">,</span> <span class="kc">null</span><span class="o">===</span><span class="kc">undefined</span><span class="p">],</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-48"></a>                    <span class="p">[</span><span class="s2">"NaN"</span><span class="p">,</span> <span class="s2">"0"</span><span class="p">,</span> <span class="kc">NaN</span><span class="o">==</span><span class="mi">0</span><span class="p">,</span> <span class="kc">NaN</span><span class="o">===</span><span class="mi">0</span><span class="p">],</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-49"></a>                    <span class="p">[</span><span class="s2">"NaN"</span><span class="p">,</span> <span class="s2">"null"</span><span class="p">,</span> <span class="kc">NaN</span><span class="o">==</span><span class="kc">null</span><span class="p">,</span> <span class="kc">NaN</span><span class="o">===</span><span class="kc">null</span><span class="p">],</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-50"></a>                    <span class="p">[</span><span class="s2">"NaN"</span><span class="p">,</span> <span class="s2">"undefined"</span><span class="p">,</span> <span class="kc">NaN</span><span class="o">==</span><span class="kc">undefined</span><span class="p">,</span> <span class="kc">NaN</span><span class="o">===</span><span class="kc">undefined</span><span class="p">],</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-51"></a>                <span class="p">]</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-52"></a>            <span class="p">}</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-53"></a>        <span class="p">},</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-54"></a>    <span class="p">}</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-55"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-56"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-57"></a>    <span class="p">.</span><span class="nc">header</span> <span class="nt">td</span><span class="p">{</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-58"></a>        <span class="k">color</span><span class="p">:</span> <span class="kc">blue</span><span class="p">;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-59"></a>    <span class="p">}</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-60"></a>    <span class="nt">table</span> <span class="p">{</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-61"></a>        <span class="k">border-collapse</span><span class="p">:</span> <span class="kc">collapse</span><span class="p">;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-62"></a>    <span class="p">}</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-63"></a>    <span class="nt">table</span> <span class="nt">td</span><span class="p">{</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-64"></a>        <span class="k">border</span><span class="p">:</span> <span class="kc">solid</span> <span class="mi">2</span><span class="kt">px</span> <span class="kc">green</span><span class="p">;</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-65"></a>    <span class="p">}</span>
-<a name="rest_code_b7663e3cd63849b8b6dbc162f33abe46-66"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
-</pre></td>
-</tr></table>
+<pre class="code bash"><a name="rest_code_7eca715f54e2404989fe7d08baa270ce-1"></a>C:<span class="se">\U</span>sers<span class="se">\l</span>ong<span class="se">\A</span>ppData<span class="se">\L</span>ocal<span class="se">\A</span>ndroid<span class="se">\s</span>dk<span class="se">\p</span>latform-tools
+</pre>
 </blockquote>
-<p>输出结果：</p>
-<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/jsequal.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/jsequal.PNG"><p>我只想说，如果===结果符合测试预期，我一定会一直用===，直到哪天发现==有实际价值，再记住使用的环境。</p>
+</li>
+<li>
+<p class="first">连接adb到Droid4X。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_033b237fde2441ecbca825bb95fed80f-1"></a>&gt;&gt; adb connect <span class="m">127</span>.0.0.1:26944
+</pre>
+</blockquote>
+<p>出现</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_f9cd0e9d745843f38d2884526d7b6f8e-1"></a>* daemon started successfully *
+</pre>
+</blockquote>
+</li>
+<li>
+<p class="first">启动调试即可。</p>
+</li>
+</ol>
 </div>
     </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/could-not-open-a-connection-to-your-authentication-agent/" class="u-url">Could not open a connection to your authentication agent</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/could-not-open-a-connection-to-your-authentication-agent/" rel="bookmark"><time class="published dt-published" datetime="2017-01-09T22:11:08+08:00" title="2017-01-09 22:11">2017-01-09 22:11</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>在执行ssh-add时，如果出现“Could not open a connection to your authentication agent”这一错误信息，可以通过如下方法解决：</p>
+<pre class="code bash"><a name="rest_code_4357774b0d934e9fbf80b2c82b86ed91-1"></a>&gt;&gt; <span class="nb">eval</span> <span class="sb">`</span>ssh-agent<span class="sb">`</span>
+</pre>
+<p><strong>注意</strong> 是 <strong>`</strong> 而不是 <strong>'</strong> 。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/guan-li-duo-ge-gitzhang-hu/" class="u-url">管理多个git账户</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/guan-li-duo-ge-gitzhang-hu/" rel="bookmark"><time class="published dt-published" datetime="2017-01-09T21:28:59+08:00" title="2017-01-09 21:28">2017-01-09 21:28</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>因为博客用了两个github账户，一个放文章，一个放图片，所以出现了两个git账户同时存在的问题。这时可以通过如下的方法解决冲突：</p>
+<ol class="arabic simple">
+<li>生成两个ssh key.</li>
+</ol>
+<pre class="code bash"><a name="rest_code_47dc01b3c59c4c2db23165799193fc58-1"></a>&gt;&gt; ssh-keygen -t rsa -C <span class="s2">"email address 1"</span>
+<a name="rest_code_47dc01b3c59c4c2db23165799193fc58-2"></a>&gt;&gt; ssh-keygen -t rsa -C <span class="s2">"email address 2"</span>
+</pre>
+<ol class="arabic simple" start="2">
+<li>添加上一步生成的两个ssh key.</li>
+</ol>
+<pre class="code bash"><a name="rest_code_42743c6cbfa741a2b2fd7a0e355d2376-1"></a>&gt;&gt; ssh-add ~/.ssh/id_rsa1
+<a name="rest_code_42743c6cbfa741a2b2fd7a0e355d2376-2"></a>&gt;&gt; ssh-add ~/.ssh/id_rsa2
+</pre>
+<ol class="arabic simple" start="3">
+<li>创建配置文件.</li>
+</ol>
+<pre class="code bash"><a name="rest_code_99ae10759ec94994bfe5999ffc8d6d43-1"></a>&gt;&gt; touch config
+</pre>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/guan-li-duo-ge-gitzhang-hu/#rest_code_a6132711b36c430ab674ebf6dfd52e4e-1"> 1</a>
+<a href="posts/guan-li-duo-ge-gitzhang-hu/#rest_code_a6132711b36c430ab674ebf6dfd52e4e-2"> 2</a>
+<a href="posts/guan-li-duo-ge-gitzhang-hu/#rest_code_a6132711b36c430ab674ebf6dfd52e4e-3"> 3</a>
+<a href="posts/guan-li-duo-ge-gitzhang-hu/#rest_code_a6132711b36c430ab674ebf6dfd52e4e-4"> 4</a>
+<a href="posts/guan-li-duo-ge-gitzhang-hu/#rest_code_a6132711b36c430ab674ebf6dfd52e4e-5"> 5</a>
+<a href="posts/guan-li-duo-ge-gitzhang-hu/#rest_code_a6132711b36c430ab674ebf6dfd52e4e-6"> 6</a>
+<a href="posts/guan-li-duo-ge-gitzhang-hu/#rest_code_a6132711b36c430ab674ebf6dfd52e4e-7"> 7</a>
+<a href="posts/guan-li-duo-ge-gitzhang-hu/#rest_code_a6132711b36c430ab674ebf6dfd52e4e-8"> 8</a>
+<a href="posts/guan-li-duo-ge-gitzhang-hu/#rest_code_a6132711b36c430ab674ebf6dfd52e4e-9"> 9</a>
+<a href="posts/guan-li-duo-ge-gitzhang-hu/#rest_code_a6132711b36c430ab674ebf6dfd52e4e-10">10</a></pre></div></td>
+<td class="code"><pre class="code bash"><a name="rest_code_a6132711b36c430ab674ebf6dfd52e4e-1"></a><span class="c1"># github1</span>
+<a name="rest_code_a6132711b36c430ab674ebf6dfd52e4e-2"></a>Host github1
+<a name="rest_code_a6132711b36c430ab674ebf6dfd52e4e-3"></a>     HostName github.com
+<a name="rest_code_a6132711b36c430ab674ebf6dfd52e4e-4"></a>     PreferredAuthentications publickey
+<a name="rest_code_a6132711b36c430ab674ebf6dfd52e4e-5"></a>     IdentityFile ~/.ssh/id_rsa1
+<a name="rest_code_a6132711b36c430ab674ebf6dfd52e4e-6"></a><span class="c1"># github2</span>
+<a name="rest_code_a6132711b36c430ab674ebf6dfd52e4e-7"></a>Host github2
+<a name="rest_code_a6132711b36c430ab674ebf6dfd52e4e-8"></a>     HostName github.com
+<a name="rest_code_a6132711b36c430ab674ebf6dfd52e4e-9"></a>     PreferredAuthentications publickey
+<a name="rest_code_a6132711b36c430ab674ebf6dfd52e4e-10"></a>     IdentityFile ~/.ssh/id_rsa2
+</pre></td>
+</tr></table>
+<ol class="arabic simple" start="4">
+<li>测试.</li>
+</ol>
+<pre class="code bash"><a name="rest_code_2936e6d7b74542b2b5f76356f5419f0c-1"></a>&gt;&gt; ssh -T git@github1
+<a name="rest_code_2936e6d7b74542b2b5f76356f5419f0c-2"></a>&gt;&gt; ssh -T git@github2
+</pre>
+<p><strong>注意</strong></p>
+<ol class="arabic simple">
+<li>过程之中遇到yes或者no，都输入yes。</li>
+<li>生成的ssh key别忘了放进github的“设置”里，并且注意结尾不能有回车。</li>
+</ol>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/you-qing-lian-jie/" class="u-url">友情链接</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/you-qing-lian-jie/" rel="bookmark"><time class="published dt-published" datetime="2017-01-09T20:26:21+08:00" title="2017-01-09 20:26">2017-01-09 20:26</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <ul class="simple">
+<li>纸鸢@红豆·绿豆 <a class="reference external" href="http://www.cnblogs.com/jlj9520/">http://www.cnblogs.com/jlj9520/</a>
+</li>
+</ul>
+</div>
     </article>
 </div>
 

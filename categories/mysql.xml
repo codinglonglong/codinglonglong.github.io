@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Mysql)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/mysql.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 12 Jul 2017 11:38:50 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Flask-Sqlalchemy连接Mysql并支持中文</title><link>https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;按照文章 &lt;a class="reference external" href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/"&gt;https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/&lt;/a&gt; 配置好数据库，在默认使用Flask-Sqlalchemy连接Mysql时，如果插入的数据是中文，会保存成问号。如果要正常保存中文，需要注意以下四点：&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Mysql)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/mysql.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 19 Jul 2017 07:36:47 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Flask-Sqlalchemy连接Mysql并支持中文</title><link>https://codinglonglong.github.io/posts/flask-sqlalchemylian-jie-mysqlbing-zhi-chi-zhong-wen/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;按照文章 &lt;a class="reference external" href="https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/"&gt;https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/&lt;/a&gt; 配置好数据库，在默认使用Flask-Sqlalchemy连接Mysql时，如果插入的数据是中文，会保存成问号。如果要正常保存中文，需要注意以下四点：&lt;/p&gt;
 &lt;p&gt;1、 .py文件本身是UTF-8的编码，这可以在开发工具的“文件编码”功能中进行查看。&lt;/p&gt;
 &lt;p&gt;2、 .py文件开头加上 &lt;strong&gt;# -*-coding:utf-8-*-&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;3、 连接字符串采用如下格式，注意最后的部分：&lt;/p&gt;
@@ -172,4 +172,44 @@
 &lt;p&gt;10、主系统上打开MySQL Workbench，访问数据库。Hostname：192.168.99.100，Port：13306，Password：root。&lt;/p&gt;
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/mysqlworkbench.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/mysqlworkbench.PNG"&gt;
 &lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;修改bind-address = 0.0.0.0非常重要，否则主系统访问不到Docker中的数据库。&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><category>Flask-Sqlalchemy</category><category>Mysql</category><category>Python</category><guid>https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/</guid><pubDate>Wed, 25 Jan 2017 05:37:42 GMT</pubDate></item></channel></rss>
+&lt;p&gt;修改bind-address = 0.0.0.0非常重要，否则主系统访问不到Docker中的数据库。&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><category>Flask-Sqlalchemy</category><category>Mysql</category><category>Python</category><guid>https://codinglonglong.github.io/posts/dockerzhong-pei-zhi-flask-sqlalchemyhe-mysql/</guid><pubDate>Wed, 25 Jan 2017 05:37:42 GMT</pubDate></item><item><title>忘记Mysql密码</title><link>https://codinglonglong.github.io/posts/wang-ji-mysqlmi-ma/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、修改配置文件&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; long@happytime:~$ sudo emacs /etc/mysql/my.cnf
+&lt;/pre&gt;
+&lt;p&gt;在[mysqld]部分加入： skip-grant-tables，然后保存退出。&lt;/p&gt;
+&lt;p&gt;2、重新启动mysql服务&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo service mysql restart
+&lt;/pre&gt;
+&lt;p&gt;3、进入mysql修改密码&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; long@happytime:~$ mysql
+&amp;gt;&amp;gt; Welcome to the MySQL monitor.  Commands end with ; or \g.
+&amp;gt;&amp;gt; Your MySQL connection id is 36
+&amp;gt;&amp;gt; Server version: 5.5.43-0ubuntu0.14.04.1 (Ubuntu)
+&amp;gt;&amp;gt;
+&amp;gt;&amp;gt; Copyright (c) 2000, 2015, Oracle and/or its affiliates. All rights reserved.
+&amp;gt;&amp;gt;
+&amp;gt;&amp;gt; Oracle is a registered trademark of Oracle Corporation and/or its
+&amp;gt;&amp;gt; affiliates. Other names may be trademarks of their respective
+&amp;gt;&amp;gt; owners.
+&amp;gt;&amp;gt;
+&amp;gt;&amp;gt; Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+&amp;gt;&amp;gt;
+&amp;gt;&amp;gt; mysql&amp;gt; use mysql;
+&amp;gt;&amp;gt; Reading table information for completion of table and column names
+&amp;gt;&amp;gt; You can turn off this feature to get a quicker startup with -A
+&amp;gt;&amp;gt;
+&amp;gt;&amp;gt; Database changed
+&amp;gt;&amp;gt; mysql&amp;gt; update user set Password=password('newpassword') where User='root';
+&amp;gt;&amp;gt; Query OK, 4 rows affected (0.00 sec)
+&amp;gt;&amp;gt; Rows matched: 4  Changed: 4  Warnings: 0
+&amp;gt;&amp;gt;
+&amp;gt;&amp;gt; mysql&amp;gt; flush privileges;
+&amp;gt;&amp;gt; Query OK, 0 rows affected (0.00 sec)
+&amp;gt;&amp;gt;
+&amp;gt;&amp;gt; mysql&amp;gt; quit
+&amp;gt;&amp;gt; Bye
+&lt;/pre&gt;
+&lt;p&gt;4、记得把配置文件改回来&lt;/p&gt;
+&lt;p&gt;5、重启mysql服务&lt;/p&gt;&lt;/div&gt;</description><category>Mysql</category><guid>https://codinglonglong.github.io/posts/wang-ji-mysqlmi-ma/</guid><pubDate>Mon, 07 Sep 2015 01:48:46 GMT</pubDate></item></channel></rss>

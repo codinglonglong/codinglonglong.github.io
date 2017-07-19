@@ -1,0 +1,9 @@
+<p>Ubuntu系统在执行sudo apt-get update之后，可能会出现如下错误：</p>
+<pre class="literal-block">
+&gt;&gt; W: GPG error: http://extras.ubuntu.com trusty Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 16126D3A3E5C1192
+</pre>
+<p>解决办法：</p>
+<pre class="literal-block">
+&gt;&gt; gpg --keyserver keyserver.ubuntu.com --recv 16126D3A3E5C1192
+&gt;&gt; gpg --export --armor 16126D3A3E5C1192 | sudo apt-key add -
+</pre>

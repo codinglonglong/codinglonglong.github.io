@@ -1,0 +1,42 @@
+<p>1、安装启动动画</p>
+<pre class="literal-block">
+&gt;&gt; long&#64;happytime:~$ sudo apt-get install plymouth-theme-*
+</pre>
+<p>2、修改默认启动动画</p>
+<pre class="literal-block">
+&gt;&gt; long&#64;happytime:~$ sudo update-alternatives --config default.plymouth
+</pre>
+<p>执行之后可以得到所有可用的启动动画，如下：</p>
+<pre class="literal-block">
+&gt;&gt; 有 15 个候选项可用于替换 default.plymouth (提供 /lib/plymouth/themes/default.plymouth)。
+&gt;&gt;  选择       路径                                                             优先级  状态
+&gt;&gt; ------------------------------------------------------------
+&gt;&gt;   0            /lib/plymouth/themes/edubuntu-logo/edubuntu-logo.plymouth           150       自动模式
+&gt;&gt;   1            /lib/plymouth/themes/edubuntu-logo/edubuntu-logo.plymouth           150       手动模式
+&gt;&gt;   2            /lib/plymouth/themes/fade-in/fade-in.plymouth                       10        手动模式
+&gt;&gt;   3            /lib/plymouth/themes/glow/glow.plymouth                             10        手动模式
+&gt;&gt;   4            /lib/plymouth/themes/kubuntu-logo/kubuntu-logo.plymouth             150       手动模式
+&gt;&gt;   5            /lib/plymouth/themes/lubuntu-logo/lubuntu-logo.plymouth             150       手动模式
+&gt;&gt;   6            /lib/plymouth/themes/numix/numix.plymouth                           100       手动模式
+&gt;&gt;   7            /lib/plymouth/themes/sabily/sabily.plymouth                         60        手动模式
+&gt;&gt;   8            /lib/plymouth/themes/script/script.plymouth                         10        手动模式
+&gt;&gt; * 9            /lib/plymouth/themes/solar/solar.plymouth                           10        手动模式
+&gt;&gt;   10           /lib/plymouth/themes/spinfinity/spinfinity.plymouth                 10        手动模式
+&gt;&gt;   11           /lib/plymouth/themes/ubuntu-gnome-logo/ubuntu-gnome-logo.plymouth   150       手动模式
+&gt;&gt;   12           /lib/plymouth/themes/ubuntu-logo/ubuntu-logo-scale-2.plymouth       99        手动模式
+&gt;&gt;   13           /lib/plymouth/themes/ubuntu-logo/ubuntu-logo.plymouth               100       手动模式
+&gt;&gt;   14           /lib/plymouth/themes/ubuntustudio-logo/ubuntustudio-logo.plymouth   150       手动模式
+&gt;&gt;   15           /lib/plymouth/themes/xubuntu-logo/xubuntu-logo.plymouth             150       手动模式
+&gt;&gt;
+&gt;&gt; 要维持当前值[*]请按回车键，或者键入选择的编号：
+</pre>
+<p>3、输入编号</p>
+<pre class="literal-block">
+&gt;&gt; 要维持当前值[*]请按回车键，或者键入选择的编号：10
+&gt;&gt; update-alternatives: using /lib/plymouth/themes/spinfinity/spinfinity.plymouth to provide /lib/plymouth/themes/default.plymouth (default.plymouth) in 手动模式
+</pre>
+<p>4、更新设置</p>
+<pre class="literal-block">
+&gt;&gt; sudo update-initramfs -u
+</pre>
+<p>重启即可看到切换之后的启动画面。</p>

@@ -92,602 +92,517 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/fen-bu-shi-xi-tong-xiang-guan-ruan-jian-de-xia-zai-di-zhi/" class="u-url">分布式系统相关软件的下载地址</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/ubuntuan-zhuang-kvmxu-ni-ji/" class="u-url">Ubuntu安装KVM虚拟机</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
             </span></p>
-            <p class="dateline"><a href="posts/fen-bu-shi-xi-tong-xiang-guan-ruan-jian-de-xia-zai-di-zhi/" rel="bookmark"><time class="published dt-published" datetime="2015-09-09T16:07:49+08:00" title="2015-09-09 16:07">2015-09-09 16:07</time></a></p>
+            <p class="dateline"><a href="posts/ubuntuan-zhuang-kvmxu-ni-ji/" rel="bookmark"><time class="published dt-published" datetime="2015-09-07T19:19:08+08:00" title="2015-09-07 19:19">2015-09-07 19:19</time></a></p>
         </div>
     </header><div class="p-summary entry-summary">
     <div>
-<p>本文所指分布式系统包含：分布式文件系统Moosefs、分布式数据库Beansdb、分布式资源调度框架Mesos和分布式计算框架Dpark。</p>
-<ul class="simple">
-<li>Fuse <a class="reference external" href="http://nchc.dl.sourceforge.net/project/fuse/fuse-2.X/2.9.4/fuse-2.9.4.tar.gz">http://nchc.dl.sourceforge.net/project/fuse/fuse-2.X/2.9.4/fuse-2.9.4.tar.gz</a>
-</li>
-<li>Moosefs <a class="reference external" href="http://ppa.moosefs.com/src/moosefs-2.0.73-1.tar.gz">http://ppa.moosefs.com/src/moosefs-2.0.73-1.tar.gz</a>
-</li>
-<li>Zlib <a class="reference external" href="http://zlib.net/zlib-1.2.8.tar.gz">http://zlib.net/zlib-1.2.8.tar.gz</a>
-</li>
-<li>Mesos <a class="reference external" href="http://www.apache.org/dist/mesos/0.23.0/mesos-0.23.0.tar.gz">http://www.apache.org/dist/mesos/0.23.0/mesos-0.23.0.tar.gz</a>
-</li>
-<li>Beansdb <a class="reference external" href="https://github.com/douban/beansdb.git">https://github.com/douban/beansdb.git</a>
-</li>
-<li>Dpark <a class="reference external" href="https://github.com/douban/dpark.git">https://github.com/douban/dpark.git</a>
-</li>
-<li>Pymesos <a class="reference external" href="https://github.com/douban/pymesos.git">https://github.com/douban/pymesos.git</a>
-</li>
-<li>Libmemcached <a class="reference external" href="https://launchpad.net/libmemcached/1.0/1.0.18/+download/libmemcached-1.0.18.tar.gz">https://launchpad.net/libmemcached/1.0/1.0.18/+download/libmemcached-1.0.18.tar.gz</a>
-</li>
-<li>Python-libmemcached <a class="reference external" href="https://github.com/douban/python-libmemcached.git">https://github.com/douban/python-libmemcached.git</a>
-</li>
-</ul>
-<p>其中以tar.gz结尾的文件可以用wget下载，以git结尾的要用git克隆。</p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/" class="u-url">Python Word Count的四种方法对比</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/" rel="bookmark"><time class="published dt-published" datetime="2015-09-09T10:52:56+08:00" title="2015-09-09 10:52">2015-09-09 10:52</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>Word Count可以认为是大数据时代的Hello World。我们使用Python按照四种方案进行一篇文章的词数统计，并进行性能对比，我们已经手工去除了乱码和多余的标点。</p>
-<p>方案1、内置map和reduce函数</p>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_c0a0d5fb58774fc7a853a938d917c19b-1"> 1</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_c0a0d5fb58774fc7a853a938d917c19b-2"> 2</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_c0a0d5fb58774fc7a853a938d917c19b-3"> 3</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_c0a0d5fb58774fc7a853a938d917c19b-4"> 4</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_c0a0d5fb58774fc7a853a938d917c19b-5"> 5</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_c0a0d5fb58774fc7a853a938d917c19b-6"> 6</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_c0a0d5fb58774fc7a853a938d917c19b-7"> 7</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_c0a0d5fb58774fc7a853a938d917c19b-8"> 8</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_c0a0d5fb58774fc7a853a938d917c19b-9"> 9</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_c0a0d5fb58774fc7a853a938d917c19b-10">10</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_c0a0d5fb58774fc7a853a938d917c19b-11">11</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_c0a0d5fb58774fc7a853a938d917c19b-12">12</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_c0a0d5fb58774fc7a853a938d917c19b-13">13</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_c0a0d5fb58774fc7a853a938d917c19b-14">14</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_c0a0d5fb58774fc7a853a938d917c19b-15">15</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_c0a0d5fb58774fc7a853a938d917c19b-16">16</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_c0a0d5fb58774fc7a853a938d917c19b-1"></a><span class="c1"># 内置map和reduce函数</span>
-<a name="rest_code_c0a0d5fb58774fc7a853a938d917c19b-2"></a><span class="k">print</span><span class="p">(</span><span class="s2">"内置map和reduce函数"</span><span class="p">)</span>
-<a name="rest_code_c0a0d5fb58774fc7a853a938d917c19b-3"></a><span class="kn">import</span> <span class="nn">time</span>
-<a name="rest_code_c0a0d5fb58774fc7a853a938d917c19b-4"></a><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
-<a name="rest_code_c0a0d5fb58774fc7a853a938d917c19b-5"></a>
-<a name="rest_code_c0a0d5fb58774fc7a853a938d917c19b-6"></a><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
-<a name="rest_code_c0a0d5fb58774fc7a853a938d917c19b-7"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"sample.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-<a name="rest_code_c0a0d5fb58774fc7a853a938d917c19b-8"></a>    <span class="c1"># 读取文件</span>
-<a name="rest_code_c0a0d5fb58774fc7a853a938d917c19b-9"></a>    <span class="n">datas</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-<a name="rest_code_c0a0d5fb58774fc7a853a938d917c19b-10"></a>    <span class="c1"># 使用mapreduce统计单词数目</span>
-<a name="rest_code_c0a0d5fb58774fc7a853a938d917c19b-11"></a>    <span class="n">wordcount</span> <span class="o">=</span> <span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span>
-<a name="rest_code_c0a0d5fb58774fc7a853a938d917c19b-12"></a>                       <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">()),</span> <span class="n">datas</span><span class="p">))</span>
-<a name="rest_code_c0a0d5fb58774fc7a853a938d917c19b-13"></a>    <span class="k">print</span><span class="p">(</span><span class="n">wordcount</span><span class="p">)</span>
-<a name="rest_code_c0a0d5fb58774fc7a853a938d917c19b-14"></a>
-<a name="rest_code_c0a0d5fb58774fc7a853a938d917c19b-15"></a><span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
-<a name="rest_code_c0a0d5fb58774fc7a853a938d917c19b-16"></a><span class="k">print</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
-</pre></td>
-</tr></table>
-<p>运行结果：</p>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_ab8294aaf32a40389613552d76289eaf-1">1</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_ab8294aaf32a40389613552d76289eaf-2">2</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_ab8294aaf32a40389613552d76289eaf-3">3</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_ab8294aaf32a40389613552d76289eaf-1"></a><span class="o">&gt;&gt;</span> <span class="err">内置</span><span class="n">map和reduce函数</span>
-<a name="rest_code_ab8294aaf32a40389613552d76289eaf-2"></a><span class="o">&gt;&gt;</span> <span class="mi">767</span>
-<a name="rest_code_ab8294aaf32a40389613552d76289eaf-3"></a><span class="o">&gt;&gt;</span> <span class="mf">0.008342000000000002</span>
-</pre></td>
-</tr></table>
-<p>方案2、直接计算单词个数</p>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_92e0f84924eb4b88b4fb6634afcfdf99-1"> 1</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_92e0f84924eb4b88b4fb6634afcfdf99-2"> 2</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_92e0f84924eb4b88b4fb6634afcfdf99-3"> 3</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_92e0f84924eb4b88b4fb6634afcfdf99-4"> 4</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_92e0f84924eb4b88b4fb6634afcfdf99-5"> 5</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_92e0f84924eb4b88b4fb6634afcfdf99-6"> 6</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_92e0f84924eb4b88b4fb6634afcfdf99-7"> 7</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_92e0f84924eb4b88b4fb6634afcfdf99-8"> 8</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_92e0f84924eb4b88b4fb6634afcfdf99-9"> 9</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_92e0f84924eb4b88b4fb6634afcfdf99-10">10</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_92e0f84924eb4b88b4fb6634afcfdf99-11">11</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_92e0f84924eb4b88b4fb6634afcfdf99-12">12</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_92e0f84924eb4b88b4fb6634afcfdf99-13">13</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_92e0f84924eb4b88b4fb6634afcfdf99-14">14</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_92e0f84924eb4b88b4fb6634afcfdf99-15">15</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_92e0f84924eb4b88b4fb6634afcfdf99-16">16</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_92e0f84924eb4b88b4fb6634afcfdf99-17">17</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_92e0f84924eb4b88b4fb6634afcfdf99-18">18</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_92e0f84924eb4b88b4fb6634afcfdf99-1"></a><span class="c1"># 直接计算单词个数</span>
-<a name="rest_code_92e0f84924eb4b88b4fb6634afcfdf99-2"></a><span class="k">print</span><span class="p">(</span><span class="s2">"直接计算单词个数"</span><span class="p">)</span>
-<a name="rest_code_92e0f84924eb4b88b4fb6634afcfdf99-3"></a><span class="kn">import</span> <span class="nn">time</span>
-<a name="rest_code_92e0f84924eb4b88b4fb6634afcfdf99-4"></a><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
-<a name="rest_code_92e0f84924eb4b88b4fb6634afcfdf99-5"></a>
-<a name="rest_code_92e0f84924eb4b88b4fb6634afcfdf99-6"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"sample.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-<a name="rest_code_92e0f84924eb4b88b4fb6634afcfdf99-7"></a>    <span class="c1"># 读取文件</span>
-<a name="rest_code_92e0f84924eb4b88b4fb6634afcfdf99-8"></a>    <span class="n">datas</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-<a name="rest_code_92e0f84924eb4b88b4fb6634afcfdf99-9"></a>    <span class="c1"># 合并成一个字符串</span>
-<a name="rest_code_92e0f84924eb4b88b4fb6634afcfdf99-10"></a>    <span class="n">datas</span> <span class="o">=</span> <span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">datas</span><span class="p">)</span>
-<a name="rest_code_92e0f84924eb4b88b4fb6634afcfdf99-11"></a>    <span class="c1"># 划分成单词</span>
-<a name="rest_code_92e0f84924eb4b88b4fb6634afcfdf99-12"></a>    <span class="n">datas</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-<a name="rest_code_92e0f84924eb4b88b4fb6634afcfdf99-13"></a>    <span class="c1"># 求单词数目</span>
-<a name="rest_code_92e0f84924eb4b88b4fb6634afcfdf99-14"></a>    <span class="n">wordcount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">datas</span><span class="p">)</span>
-<a name="rest_code_92e0f84924eb4b88b4fb6634afcfdf99-15"></a>    <span class="k">print</span><span class="p">(</span><span class="n">wordcount</span><span class="p">)</span>
-<a name="rest_code_92e0f84924eb4b88b4fb6634afcfdf99-16"></a>
-<a name="rest_code_92e0f84924eb4b88b4fb6634afcfdf99-17"></a><span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
-<a name="rest_code_92e0f84924eb4b88b4fb6634afcfdf99-18"></a><span class="k">print</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
-</pre></td>
-</tr></table>
-<p>运行结果：</p>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_114e6f4b2958494eadc442248ff5a1c5-1">1</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_114e6f4b2958494eadc442248ff5a1c5-2">2</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_114e6f4b2958494eadc442248ff5a1c5-3">3</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_114e6f4b2958494eadc442248ff5a1c5-1"></a><span class="o">&gt;&gt;</span> <span class="err">直接计算单词个数</span>
-<a name="rest_code_114e6f4b2958494eadc442248ff5a1c5-2"></a><span class="o">&gt;&gt;</span> <span class="mi">767</span>
-<a name="rest_code_114e6f4b2958494eadc442248ff5a1c5-3"></a><span class="o">&gt;&gt;</span> <span class="mf">0.0002339999999999981</span>
-</pre></td>
-</tr></table>
-<p>方案3、多线程MapReduce</p>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-1"> 1</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-2"> 2</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-3"> 3</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-4"> 4</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-5"> 5</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-6"> 6</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-7"> 7</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-8"> 8</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-9"> 9</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-10">10</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-11">11</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-12">12</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-13">13</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-14">14</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-15">15</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-16">16</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-17">17</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-18">18</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-19">19</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-20">20</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-21">21</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-22">22</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-23">23</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-24">24</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-25">25</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-26">26</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-27">27</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-28">28</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-29">29</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-30">30</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-31">31</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-32">32</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-33">33</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-34">34</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-35">35</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b49b75c4aba44c19970dbcab6acbc664-36">36</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-1"></a><span class="c1"># 多线程MapReduce</span>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-2"></a><span class="k">print</span><span class="p">(</span><span class="s2">"多线程MapReduce"</span><span class="p">)</span>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-3"></a><span class="kn">import</span> <span class="nn">time</span>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-4"></a><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-5"></a>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-6"></a><span class="kn">import</span> <span class="nn">threading</span>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-7"></a><span class="kn">from</span> <span class="nn">queue</span> <span class="kn">import</span> <span class="n">Queue</span>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-8"></a><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-9"></a>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-10"></a>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-11"></a><span class="k">class</span> <span class="nc">WordCount</span><span class="p">(</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">):</span>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-12"></a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wordstr</span><span class="p">,</span> <span class="n">queue</span><span class="p">):</span>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-13"></a>        <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-14"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">queue</span> <span class="o">=</span> <span class="n">queue</span>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-15"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">wordstr</span> <span class="o">=</span> <span class="n">wordstr</span>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-16"></a>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-17"></a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-18"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wordstr</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-19"></a>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-20"></a>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-21"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"sample.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-22"></a>    <span class="n">datas</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-23"></a>    <span class="n">threadlist</span> <span class="o">=</span> <span class="p">[]</span>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-24"></a>    <span class="n">queue</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-25"></a>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">datas</span><span class="p">:</span>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-26"></a>        <span class="n">threadlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">WordCount</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">queue</span><span class="p">))</span>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-27"></a>    <span class="k">for</span> <span class="n">trd</span> <span class="ow">in</span> <span class="n">threadlist</span><span class="p">:</span>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-28"></a>        <span class="n">trd</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-29"></a>    <span class="k">for</span> <span class="n">trd</span> <span class="ow">in</span> <span class="n">threadlist</span><span class="p">:</span>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-30"></a>        <span class="n">trd</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-31"></a>    <span class="n">datalist</span> <span class="o">=</span> <span class="p">[</span><span class="n">queue</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">queue</span><span class="o">.</span><span class="n">qsize</span><span class="p">())]</span>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-32"></a>    <span class="n">wordcount</span> <span class="o">=</span> <span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">datalist</span><span class="p">)</span>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-33"></a>    <span class="k">print</span><span class="p">(</span><span class="n">wordcount</span><span class="p">)</span>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-34"></a>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-35"></a><span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
-<a name="rest_code_b49b75c4aba44c19970dbcab6acbc664-36"></a><span class="k">print</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
-</pre></td>
-</tr></table>
-<p>注意：Python提供的Queue是线程安全的，所以这里不需要锁。</p>
-<p>运行结果：</p>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_4ebce82ac8f3446a9d9306dc78df5285-1">1</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_4ebce82ac8f3446a9d9306dc78df5285-2">2</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_4ebce82ac8f3446a9d9306dc78df5285-3">3</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_4ebce82ac8f3446a9d9306dc78df5285-1"></a><span class="o">&gt;&gt;</span> <span class="err">多线程</span><span class="n">MapReduce</span>
-<a name="rest_code_4ebce82ac8f3446a9d9306dc78df5285-2"></a><span class="o">&gt;&gt;</span> <span class="mi">767</span>
-<a name="rest_code_4ebce82ac8f3446a9d9306dc78df5285-3"></a><span class="o">&gt;&gt;</span> <span class="mf">0.02518399999999999</span>
-</pre></td>
-</tr></table>
-<p>方案4、多进程MapReduce</p>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_2ff75d91fd5847e4aec7ba544d811689-1"> 1</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_2ff75d91fd5847e4aec7ba544d811689-2"> 2</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_2ff75d91fd5847e4aec7ba544d811689-3"> 3</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_2ff75d91fd5847e4aec7ba544d811689-4"> 4</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_2ff75d91fd5847e4aec7ba544d811689-5"> 5</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_2ff75d91fd5847e4aec7ba544d811689-6"> 6</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_2ff75d91fd5847e4aec7ba544d811689-7"> 7</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_2ff75d91fd5847e4aec7ba544d811689-8"> 8</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_2ff75d91fd5847e4aec7ba544d811689-9"> 9</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_2ff75d91fd5847e4aec7ba544d811689-10">10</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_2ff75d91fd5847e4aec7ba544d811689-11">11</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_2ff75d91fd5847e4aec7ba544d811689-12">12</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_2ff75d91fd5847e4aec7ba544d811689-13">13</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_2ff75d91fd5847e4aec7ba544d811689-14">14</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_2ff75d91fd5847e4aec7ba544d811689-15">15</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_2ff75d91fd5847e4aec7ba544d811689-16">16</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_2ff75d91fd5847e4aec7ba544d811689-17">17</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_2ff75d91fd5847e4aec7ba544d811689-18">18</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_2ff75d91fd5847e4aec7ba544d811689-19">19</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_2ff75d91fd5847e4aec7ba544d811689-20">20</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_2ff75d91fd5847e4aec7ba544d811689-21">21</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_2ff75d91fd5847e4aec7ba544d811689-22">22</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_2ff75d91fd5847e4aec7ba544d811689-1"></a><span class="c1"># 多进程MapReduce</span>
-<a name="rest_code_2ff75d91fd5847e4aec7ba544d811689-2"></a><span class="k">print</span><span class="p">(</span><span class="s2">"多进程MapReduce"</span><span class="p">)</span>
-<a name="rest_code_2ff75d91fd5847e4aec7ba544d811689-3"></a><span class="kn">import</span> <span class="nn">time</span>
-<a name="rest_code_2ff75d91fd5847e4aec7ba544d811689-4"></a><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
-<a name="rest_code_2ff75d91fd5847e4aec7ba544d811689-5"></a>
-<a name="rest_code_2ff75d91fd5847e4aec7ba544d811689-6"></a><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Pool</span>
-<a name="rest_code_2ff75d91fd5847e4aec7ba544d811689-7"></a><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
-<a name="rest_code_2ff75d91fd5847e4aec7ba544d811689-8"></a>
-<a name="rest_code_2ff75d91fd5847e4aec7ba544d811689-9"></a>
-<a name="rest_code_2ff75d91fd5847e4aec7ba544d811689-10"></a><span class="k">def</span> <span class="nf">wordcount</span><span class="p">(</span><span class="n">wordstr</span><span class="p">):</span>
-<a name="rest_code_2ff75d91fd5847e4aec7ba544d811689-11"></a>    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">wordstr</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
-<a name="rest_code_2ff75d91fd5847e4aec7ba544d811689-12"></a>
-<a name="rest_code_2ff75d91fd5847e4aec7ba544d811689-13"></a>
-<a name="rest_code_2ff75d91fd5847e4aec7ba544d811689-14"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"sample.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-<a name="rest_code_2ff75d91fd5847e4aec7ba544d811689-15"></a>    <span class="n">datas</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-<a name="rest_code_2ff75d91fd5847e4aec7ba544d811689-16"></a>    <span class="n">p</span> <span class="o">=</span> <span class="n">Pool</span><span class="p">()</span>
-<a name="rest_code_2ff75d91fd5847e4aec7ba544d811689-17"></a>    <span class="n">datalist</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">wordcount</span><span class="p">,</span> <span class="n">datas</span><span class="p">)</span>
-<a name="rest_code_2ff75d91fd5847e4aec7ba544d811689-18"></a>    <span class="n">wordcount</span> <span class="o">=</span> <span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">datalist</span><span class="p">)</span>
-<a name="rest_code_2ff75d91fd5847e4aec7ba544d811689-19"></a>    <span class="k">print</span><span class="p">(</span><span class="n">wordcount</span><span class="p">)</span>
-<a name="rest_code_2ff75d91fd5847e4aec7ba544d811689-20"></a>
-<a name="rest_code_2ff75d91fd5847e4aec7ba544d811689-21"></a><span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
-<a name="rest_code_2ff75d91fd5847e4aec7ba544d811689-22"></a><span class="k">print</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
-</pre></td>
-</tr></table>
-<p>注意：Python提供的进程池Pool自带map函数。</p>
-<p>运行结果：</p>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b8a99d5e5a144853b2cc363a51f36f2a-1">1</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b8a99d5e5a144853b2cc363a51f36f2a-2">2</a>
-<a href="posts/python-word-countde-si-chong-fang-fa-dui-bi/#rest_code_b8a99d5e5a144853b2cc363a51f36f2a-3">3</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_b8a99d5e5a144853b2cc363a51f36f2a-1"></a><span class="o">&gt;&gt;</span> <span class="err">多进程</span><span class="n">MapReduce</span>
-<a name="rest_code_b8a99d5e5a144853b2cc363a51f36f2a-2"></a><span class="o">&gt;&gt;</span> <span class="mi">767</span>
-<a name="rest_code_b8a99d5e5a144853b2cc363a51f36f2a-3"></a><span class="o">&gt;&gt;</span> <span class="mf">0.056589</span>
-</pre></td>
-</tr></table>
-<p>性能对比十分明显：
-直接计算单词个数 &gt; 内置map和reduce函数 &gt; 多线程MapReduce &gt; 多进程MapReduce</p>
-<p>可见，在单机运行环境中，MapReduce不能起到提高性能的作用。</p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/" class="u-url">Python多线程运行时的几种情况</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/" rel="bookmark"><time class="published dt-published" datetime="2015-09-09T10:41:07+08:00" title="2015-09-09 10:41">2015-09-09 10:41</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>本文学习Python在多线程运行时的几种情况。</p>
-<p>看代码，这是一个标准的多线程程序：</p>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-1"> 1</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-2"> 2</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-3"> 3</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-4"> 4</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-5"> 5</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-6"> 6</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-7"> 7</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-8"> 8</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-9"> 9</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-10">10</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-11">11</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-12">12</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-13">13</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-14">14</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-15">15</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-16">16</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-17">17</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-18">18</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-19">19</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-20">20</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-21">21</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-22">22</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-23">23</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-24">24</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-25">25</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-26">26</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-27">27</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-28">28</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-29">29</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-30">30</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-31">31</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-32">32</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-33">33</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-34">34</a>
-<a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/#rest_code_f96f224c34a14ce38f21f839a3e1b212-35">35</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-1"></a><span class="kn">import</span> <span class="nn">time</span>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-2"></a><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-3"></a>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-4"></a><span class="kn">import</span> <span class="nn">threading</span>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-5"></a>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-6"></a>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-7"></a><span class="k">class</span> <span class="nc">Stu</span><span class="p">:</span>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-8"></a>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-9"></a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-11"></a>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-12"></a>    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-13"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-14"></a>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-15"></a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-16"></a>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-17"></a>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"datas"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-18"></a>            <span class="n">fp</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">"puts "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-19"></a>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-20"></a>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-21"></a><span class="k">def</span> <span class="nf">spawn</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-22"></a>    <span class="n">t</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-23"></a>        <span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">target</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="n">kw</span><span class="p">)</span>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-24"></a>    <span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-25"></a>    <span class="k">return</span> <span class="n">t</span>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-26"></a>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-27"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"datas"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-28"></a>    <span class="n">fp</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">"main thread start.</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-29"></a><span class="n">studentlist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">,</span> <span class="s1">'e'</span><span class="p">]</span>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-30"></a><span class="p">[</span><span class="n">spawn</span><span class="p">(</span><span class="n">Stu</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">studentlist</span><span class="p">]</span>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-31"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"datas"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-32"></a>    <span class="n">fp</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">"main thread end here.</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-33"></a>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-34"></a><span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
-<a name="rest_code_f96f224c34a14ce38f21f839a3e1b212-35"></a><span class="k">print</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
-</pre></td>
-</tr></table>
-<p class="more"><a href="posts/pythonduo-xian-cheng-yun-xing-shi-de-ji-chong-qing-kuang/">Read more…</a></p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/" class="u-url">Python通过配置文件动态修改全局变量</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/" rel="bookmark"><time class="published dt-published" datetime="2015-09-09T10:06:20+08:00" title="2015-09-09 10:06">2015-09-09 10:06</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>本文学习如何通过配置文件动态修改全局变量。</p>
-<p>看代码main.py：</p>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_03cf8b591f1e439996cb8300e5518237-1">1</a>
-<a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_03cf8b591f1e439996cb8300e5518237-2">2</a>
-<a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_03cf8b591f1e439996cb8300e5518237-3">3</a>
-<a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_03cf8b591f1e439996cb8300e5518237-4">4</a>
-<a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_03cf8b591f1e439996cb8300e5518237-5">5</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_03cf8b591f1e439996cb8300e5518237-1"></a><span class="kn">import</span> <span class="nn">conf</span>
-<a name="rest_code_03cf8b591f1e439996cb8300e5518237-2"></a><span class="k">print</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">defaultpath</span><span class="p">)</span>
-<a name="rest_code_03cf8b591f1e439996cb8300e5518237-3"></a><span class="n">conf</span><span class="o">.</span><span class="n">load_conf</span><span class="p">()</span>
-<a name="rest_code_03cf8b591f1e439996cb8300e5518237-4"></a><span class="k">print</span><span class="p">(</span><span class="s2">"*"</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
-<a name="rest_code_03cf8b591f1e439996cb8300e5518237-5"></a><span class="k">print</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">defaultpath</span><span class="p">)</span>
-</pre></td>
-</tr></table>
-<p>和代码conf.py：</p>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_93abb01d4c914500b73540e254e135b2-1">1</a>
-<a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_93abb01d4c914500b73540e254e135b2-2">2</a>
-<a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_93abb01d4c914500b73540e254e135b2-3">3</a>
-<a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_93abb01d4c914500b73540e254e135b2-4">4</a>
-<a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_93abb01d4c914500b73540e254e135b2-5">5</a>
-<a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_93abb01d4c914500b73540e254e135b2-6">6</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_93abb01d4c914500b73540e254e135b2-1"></a><span class="n">defaultpath</span> <span class="o">=</span> <span class="s2">"/home/long/"</span>
-<a name="rest_code_93abb01d4c914500b73540e254e135b2-2"></a>
-<a name="rest_code_93abb01d4c914500b73540e254e135b2-3"></a>
-<a name="rest_code_93abb01d4c914500b73540e254e135b2-4"></a><span class="k">def</span> <span class="nf">load_conf</span><span class="p">():</span>
-<a name="rest_code_93abb01d4c914500b73540e254e135b2-5"></a>    <span class="n">data</span> <span class="o">=</span> <span class="s2">"defaultpath = '/home/long/test'"</span>
-<a name="rest_code_93abb01d4c914500b73540e254e135b2-6"></a>    <span class="k">exec</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">(),</span> <span class="nb">globals</span><span class="p">()</span>
-</pre></td>
-</tr></table>
-<p>运行结果：</p>
+<p>1、检查CPU是否支持虚拟化。</p>
 <pre class="literal-block">
-&gt;&gt; long@happytime:~/exectest$ python main.py
-&gt;&gt; /home/long/
-&gt;&gt; **************************************************
-&gt;&gt; /home/long/test
+&gt;&gt; long@mylife:~$ egrep -o '(vmx|svm)' /proc/cpuinfo
+&gt;&gt; vmx
+&gt;&gt; vmx
+&gt;&gt; vmx
+&gt;&gt; vmx
 </pre>
-<p>通过load_conf()函数，我们的程序动态修改了全局变量。通过这样的方式就可以实现初始按照默认配置、必要时通过配置文件对全局变量进行修改了。</p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/" class="u-url">Python命令行解析模块optparse</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/" rel="bookmark"><time class="published dt-published" datetime="2015-09-08T11:08:18+08:00" title="2015-09-08 11:08">2015-09-08 11:08</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>本文学习命令行参数解析的模块optparse。这个模块在Python2.7之后已经不鼓励使用，并由argparse所替代。</p>
-<p>我们稍微改了一点Dpark中的源码如下opttest.py：</p>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-1"> 1</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-2"> 2</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-3"> 3</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-4"> 4</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-5"> 5</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-6"> 6</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-7"> 7</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-8"> 8</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-9"> 9</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-10">10</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-11">11</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-12">12</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-13">13</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-14">14</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-15">15</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-16">16</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-17">17</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-18">18</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-19">19</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-20">20</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-21">21</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-22">22</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-23">23</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-24">24</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-25">25</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-26">26</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-27">27</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-28">28</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-29">29</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-30">30</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-31">31</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-32">32</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-33">33</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-34">34</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-35">35</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-36">36</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_628dd3fe919743d49c94d5232fcd1762-37">37</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_628dd3fe919743d49c94d5232fcd1762-1"></a><span class="kn">import</span> <span class="nn">optparse</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-2"></a>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-3"></a><span class="n">parser</span> <span class="o">=</span> <span class="n">optparse</span><span class="o">.</span><span class="n">OptionParser</span><span class="p">(</span><span class="n">usage</span><span class="o">=</span><span class="s2">"Usage: %prog [options] [args]"</span><span class="p">)</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-4"></a><span class="c1"># 禁用散置参数，参数解析到第一个非选项参数为止，之后的就不再作为选项解析</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-5"></a><span class="n">parser</span><span class="o">.</span><span class="n">disable_interspersed_args</span><span class="p">()</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-6"></a><span class="c1"># 选项组</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-7"></a><span class="n">group</span> <span class="o">=</span> <span class="n">optparse</span><span class="o">.</span><span class="n">OptionGroup</span><span class="p">(</span><span class="n">parser</span><span class="p">,</span> <span class="s2">"Dpark Options"</span><span class="p">)</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-8"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-m"</span><span class="p">,</span> <span class="s2">"--master"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"string"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">"local"</span><span class="p">,</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-9"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"master of Mesos: local, process, "</span> <span class="o">+</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-10"></a>                 <span class="s2">"host[:port], or mesos: //"</span><span class="p">)</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-11"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-p"</span><span class="p">,</span> <span class="s2">"--parallel"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"int"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-12"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"number of processes"</span><span class="p">)</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-13"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-c"</span><span class="p">,</span> <span class="s2">"--cpus"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"float"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-14"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"cpus used per task"</span><span class="p">)</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-15"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-M"</span><span class="p">,</span> <span class="s2">"--mem"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"float"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">1000.0</span><span class="p">,</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-16"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"memory used per task"</span><span class="p">)</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-17"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-g"</span><span class="p">,</span> <span class="s2">"--group"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"string"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-18"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"which group of machines"</span><span class="p">)</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-19"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--err"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"float"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-20"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"acceptable ignored error record ratio (0.01%)"</span><span class="p">)</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-21"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--snapshot_dir"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"string"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-22"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"shared dir to keep snapshot of RDDs"</span><span class="p">)</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-23"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--conf"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"string"</span><span class="p">,</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-24"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"path for configuration file"</span><span class="p">)</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-25"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--self"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">"store_true"</span><span class="p">,</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-26"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"user self as exectuor"</span><span class="p">)</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-27"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--profile"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">"store_true"</span><span class="p">,</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-28"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"do profiling"</span><span class="p">)</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-29"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--keep-order"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">"store_true"</span><span class="p">,</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-30"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"deprecated, always keep order"</span><span class="p">)</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-31"></a><span class="n">parser</span><span class="o">.</span><span class="n">add_option_group</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-32"></a><span class="c1"># 独立选项</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-33"></a><span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-q"</span><span class="p">,</span> <span class="s2">"--quiet"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">"store_true"</span><span class="p">)</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-34"></a><span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-v"</span><span class="p">,</span> <span class="s2">"--verbose"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">"store_true"</span><span class="p">)</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-35"></a><span class="c1"># 读取参数</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-36"></a><span class="n">options</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
-<a name="rest_code_628dd3fe919743d49c94d5232fcd1762-37"></a><span class="k">print</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
-</pre></td>
-</tr></table>
-<p class="more"><a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/">Read more…</a></p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/" class="u-url">Python构造对象编号自动加一</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/" rel="bookmark"><time class="published dt-published" datetime="2015-09-08T10:46:21+08:00" title="2015-09-08 10:46">2015-09-08 10:46</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<blockquote>
-这是一个Python中类方法的使用案例。</blockquote>
-<p>我们如何实现每生成一个对象，它的编号就自动加1呢？</p>
-<p>看代码：</p>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_dbe9bf490a564306b393c61df9b26068-1"> 1</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_dbe9bf490a564306b393c61df9b26068-2"> 2</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_dbe9bf490a564306b393c61df9b26068-3"> 3</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_dbe9bf490a564306b393c61df9b26068-4"> 4</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_dbe9bf490a564306b393c61df9b26068-5"> 5</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_dbe9bf490a564306b393c61df9b26068-6"> 6</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_dbe9bf490a564306b393c61df9b26068-7"> 7</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_dbe9bf490a564306b393c61df9b26068-8"> 8</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_dbe9bf490a564306b393c61df9b26068-9"> 9</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_dbe9bf490a564306b393c61df9b26068-10">10</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_dbe9bf490a564306b393c61df9b26068-11">11</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_dbe9bf490a564306b393c61df9b26068-12">12</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_dbe9bf490a564306b393c61df9b26068-13">13</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_dbe9bf490a564306b393c61df9b26068-14">14</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_dbe9bf490a564306b393c61df9b26068-15">15</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_dbe9bf490a564306b393c61df9b26068-16">16</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_dbe9bf490a564306b393c61df9b26068-17">17</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_dbe9bf490a564306b393c61df9b26068-18">18</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_dbe9bf490a564306b393c61df9b26068-19">19</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_dbe9bf490a564306b393c61df9b26068-20">20</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_dbe9bf490a564306b393c61df9b26068-21">21</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_dbe9bf490a564306b393c61df9b26068-22">22</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_dbe9bf490a564306b393c61df9b26068-23">23</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_dbe9bf490a564306b393c61df9b26068-24">24</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_dbe9bf490a564306b393c61df9b26068-25">25</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_dbe9bf490a564306b393c61df9b26068-1"></a><span class="k">class</span> <span class="nc">Stu</span><span class="p">:</span>
-<a name="rest_code_dbe9bf490a564306b393c61df9b26068-2"></a>
-<a name="rest_code_dbe9bf490a564306b393c61df9b26068-3"></a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_dbe9bf490a564306b393c61df9b26068-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getnewid</span><span class="p">()</span>
-<a name="rest_code_dbe9bf490a564306b393c61df9b26068-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">"写程序的龙龙"</span>
-<a name="rest_code_dbe9bf490a564306b393c61df9b26068-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s2">"https://codinglonglong.github.io"</span>
-<a name="rest_code_dbe9bf490a564306b393c61df9b26068-7"></a>
-<a name="rest_code_dbe9bf490a564306b393c61df9b26068-8"></a>    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_dbe9bf490a564306b393c61df9b26068-9"></a>        <span class="k">return</span> <span class="s2">"id: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">newid</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> \
-<a name="rest_code_dbe9bf490a564306b393c61df9b26068-10"></a>            <span class="s2">"name: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> \
-<a name="rest_code_dbe9bf490a564306b393c61df9b26068-11"></a>            <span class="s2">"blog: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
-<a name="rest_code_dbe9bf490a564306b393c61df9b26068-12"></a>
-<a name="rest_code_dbe9bf490a564306b393c61df9b26068-13"></a>    <span class="n">newid</span> <span class="o">=</span> <span class="mi">0</span>
-<a name="rest_code_dbe9bf490a564306b393c61df9b26068-14"></a>
-<a name="rest_code_dbe9bf490a564306b393c61df9b26068-15"></a>    <span class="nd">@classmethod</span>
-<a name="rest_code_dbe9bf490a564306b393c61df9b26068-16"></a>    <span class="k">def</span> <span class="nf">getnewid</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
-<a name="rest_code_dbe9bf490a564306b393c61df9b26068-17"></a>        <span class="n">cls</span><span class="o">.</span><span class="n">newid</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">newid</span> <span class="o">+</span> <span class="mi">1</span>
-<a name="rest_code_dbe9bf490a564306b393c61df9b26068-18"></a>        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">newid</span>
-<a name="rest_code_dbe9bf490a564306b393c61df9b26068-19"></a>
-<a name="rest_code_dbe9bf490a564306b393c61df9b26068-20"></a>
-<a name="rest_code_dbe9bf490a564306b393c61df9b26068-21"></a><span class="n">stu1</span> <span class="o">=</span> <span class="n">Stu</span><span class="p">()</span>
-<a name="rest_code_dbe9bf490a564306b393c61df9b26068-22"></a><span class="k">print</span><span class="p">(</span><span class="n">stu1</span><span class="p">)</span>
-<a name="rest_code_dbe9bf490a564306b393c61df9b26068-23"></a><span class="k">print</span><span class="p">(</span><span class="s2">"*"</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
-<a name="rest_code_dbe9bf490a564306b393c61df9b26068-24"></a><span class="n">stu2</span> <span class="o">=</span> <span class="n">Stu</span><span class="p">()</span>
-<a name="rest_code_dbe9bf490a564306b393c61df9b26068-25"></a><span class="k">print</span><span class="p">(</span><span class="n">stu2</span><span class="p">)</span>
-</pre></td>
-</tr></table>
-<p>运行程序，得到如下结果：</p>
+<p>2、安装KVM相关软件</p>
 <pre class="literal-block">
-&gt;&gt; long@mylife:~$ python3 test.py
-&gt;&gt; id: 1
-&gt;&gt; name: 写程序的龙龙
-&gt;&gt; blog: https://codinglonglong.github.io
-&gt;&gt; **************************************************
-&gt;&gt; id: 2
-&gt;&gt; name: 写程序的龙龙
-&gt;&gt; blog: https://codinglonglong.github.io
+&gt;&gt; sudo apt-get install qemu-kvm libvirt-bin virt-manager bridge-utils
 </pre>
-<p>我们看到，每初始化一个对象，对象的id就增加了1。</p>
+<p>3、检查安装状态</p>
+<pre class="literal-block">
+&gt;&gt; long@mylife:~$ lsmod | grep kvm
+&gt;&gt; kvm_intel             143630  0
+&gt;&gt; kvm                   452096  1 kvm_intel
+</pre>
+<p>4、启动虚拟系统管理器</p>
+<pre class="literal-block">
+&gt;&gt; virt-manager
+</pre>
+<p>5、提示安装新的软件包，选择“是”==&gt;“安装"==&gt;"继续"</p>
+<p>6、提示无法连接到libvirt，重启</p>
+<p>7、启动虚拟系统管理器，至此KVM安装完成</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/ubuntucha-kan-ying-jian-pei-zhi/" class="u-url">Ubuntu查看硬件配置</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/ubuntucha-kan-ying-jian-pei-zhi/" rel="bookmark"><time class="published dt-published" datetime="2015-09-07T19:12:33+08:00" title="2015-09-07 19:12">2015-09-07 19:12</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>1. 查看系统内核</p>
+<pre class="literal-block">
+&gt;&gt; long@pc1:/proc$ uname -a
+&gt;&gt; Linux pc1 3.16.0-41-generic #55~14.04.1-Ubuntu SMP Sun Jun 14 18:43:36 UTC 2015 x86_64 x86_64 x86_64 GNU/Linux
+</pre>
+<p>2. 查看CPU</p>
+<pre class="literal-block">
+&gt;&gt; long@pc1:/proc$ cat /proc/cpuinfo | grep model\ name
+&gt;&gt; model name       : Pentium(R) Dual-Core  CPU      E5500  @ 2.80GHz
+&gt;&gt; model name       : Pentium(R) Dual-Core  CPU      E5500  @ 2.80GHz
+</pre>
+<p>3. 查看内存</p>
+<pre class="literal-block">
+&gt;&gt; long@pc1:/proc$ cat /proc/meminfo | grep MemTotal
+&gt;&gt; MemTotal:        4012620 kB
+</pre>
+<p>4. 查看显卡</p>
+<pre class="literal-block">
+&gt;&gt; long@pc1:/proc$ lspci | grep 'VGA'
+&gt;&gt; 00:02.0 VGA compatible controller: Intel Corporation 4 Series Chipset Integrated Graphics Controller (rev 03)
+</pre>
+<p>5. 查看声卡</p>
+<pre class="literal-block">
+&gt;&gt; long@pc1:/proc$ lspci | grep -i 'Audio'
+&gt;&gt; 00:1b.0 Audio device: Intel Corporation NM10/ICH7 Family High Definition Audio Controller (rev 01)
+</pre>
+<p>6. 查看网卡</p>
+<pre class="literal-block">
+&gt;&gt; long@pc1:/proc$ lspci | grep -i 'Ethernet'
+&gt;&gt; 02:00.0 Ethernet controller: Marvell Technology Group Ltd. 88E8057 PCI-E Gigabit Ethernet Controller (rev 10)
+</pre>
+<p>7. 查看硬盘</p>
+<pre class="literal-block">
+&gt;&gt; long@pc1:/proc$ df -lh
+&gt;&gt; Filesystem      Size  Used Avail Use% Mounted on
+&gt;&gt; /dev/sda1       292G  4.2G  273G   2% /
+&gt;&gt; none            4.0K     0  4.0K   0% /sys/fs/cgroup
+&gt;&gt; udev            2.0G  4.0K  2.0G   1% /dev
+&gt;&gt; tmpfs           392M  1.1M  391M   1% /run
+&gt;&gt; none            5.0M     0  5.0M   0% /run/lock
+&gt;&gt; none            2.0G   76K  2.0G   1% /run/shm
+&gt;&gt; none            100M   32K  100M   1% /run/user
+</pre>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/da-jian-ben-di-gitfu-wu-qi/" class="u-url">搭建本地git服务器</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/da-jian-ben-di-gitfu-wu-qi/" rel="bookmark"><time class="published dt-published" datetime="2015-09-07T18:54:09+08:00" title="2015-09-07 18:54">2015-09-07 18:54</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>搭建本地git服务器的步骤如下：</p>
+<p>1、找到一台没人用的电脑，安装上Linux系统，在这里选用的是Ubuntu 14.04。然后配置静态IP：172.16.0.110。</p>
+<p>2、安装git服务：</p>
+<pre class="literal-block">
+&gt;&gt; sudo apt-get install git
+</pre>
+<p>3、创建一个git用户：</p>
+<pre class="literal-block">
+&gt;&gt; sudo adduser git
+</pre>
+<p>创建git用户之后，远端才可以用git clone <strong>git</strong> @......要不然这里需要换成默认用户名，总觉得有点怪异。</p>
+<p>4、建立/home/git/.ssh/authorized_keys文件，将团队每个人的~/.ssh/id_rsa.pub文件复制到上述文件中，一行一个。</p>
+<p>5、在/srv目录建立一个git仓库：</p>
+<pre class="literal-block">
+&gt;&gt; cd /srv
+&gt;&gt; sudo git init --bare ourwiki.git
+</pre>
+<p>6、修改git仓库的所属者：</p>
+<pre class="literal-block">
+&gt;&gt; sudo chown -R git:git ourwiki.git
+</pre>
+<p>7、这时团队成员通过如下命令即可克隆ourwiki项目了：</p>
+<pre class="literal-block">
+&gt;&gt; git clone git@172.16.0.110:/srv/ourwiki.git
+</pre>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/ubuntu1404bu-shu-tornado%2Bnginx%2Bsupervisor/" class="u-url">Ubuntu14.04部署Tornado+Nginx+Supervisor</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/ubuntu1404bu-shu-tornado%2Bnginx%2Bsupervisor/" rel="bookmark"><time class="published dt-published" datetime="2015-09-07T18:32:39+08:00" title="2015-09-07 18:32">2015-09-07 18:32</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>本文主要讲述如何在Ubuntu上部署用Tornado编写的网站，涉及进程管理工具Supervisor和服务器Nginx。</p>
+<p>前提：网站使用Python编写，采用Tornado框架和Mysql数据库，要部署网站的机器deploy为Ubuntu14.04系统，静态IP地址为192.168.122.150，要部署的网站为reciteword.tar.gz</p>
+<p>1、安装emacs</p>
+<pre class="literal-block">
+&gt;&gt; sudo apt-get install emacs
+</pre>
+<p>2、设定静态IP</p>
+<pre class="literal-block">
+&gt;&gt; sudo emacs /etc/network/interfaces
+</pre>
+<p>3、修改eth0部分</p>
+<pre class="literal-block">
+auto eth0
+iface eth0 inet static
+address 192.168.122.150
+netmask 255.255.255.0
+gateway 192.168.122.1
+dns-nameserver 202.98.198.167
+</pre>
+<p>4、保存文件，重启机器</p>
+<pre class="literal-block">
+&gt;&gt; sudo reboot
+</pre>
+<p>5、下载部署相关软件</p>
+<pre class="literal-block">
+&gt;&gt; sudo apt-get install mysql-server mysql-client python3-tornado python3-mysql.connector emacs nginx python-pip python3-pip
+</pre>
+<p>6、安装beautifulsoup4（这个是网站运行需要的）</p>
+<pre class="literal-block">
+&gt;&gt; sudo pip3 install beautifulsoup4
+</pre>
+<p>7、下载supervisor</p>
+<pre class="literal-block">
+&gt;&gt; wget https://pypi.python.org/packages/source/s/supervisor/supervisor-3.1.3.tar.gz
+</pre>
+<p>8、解压网站代码和supervisor</p>
+<pre class="literal-block">
+&gt;&gt; tar zxvf reciteword.tar.gz
+&gt;&gt; tar zxvf supervisor-3.1.3.tar.gz
+</pre>
+<p class="more"><a href="posts/ubuntu1404bu-shu-tornado%2Bnginx%2Bsupervisor/">Read more…</a></p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/" class="u-url">通过Python的C扩展进行任意长度字符串逆序输出</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/" rel="bookmark"><time class="published dt-published" datetime="2015-09-07T12:42:48+08:00" title="2015-09-07 12:42">2015-09-07 12:42</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>本文展示如何通过Python的C扩展进行任意长度字符串逆序输出。</p>
+<p>1、编写C扩展stringreverse.c</p>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-1">  1</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-2">  2</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-3">  3</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-4">  4</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-5">  5</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-6">  6</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-7">  7</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-8">  8</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-9">  9</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-10"> 10</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-11"> 11</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-12"> 12</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-13"> 13</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-14"> 14</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-15"> 15</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-16"> 16</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-17"> 17</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-18"> 18</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-19"> 19</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-20"> 20</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-21"> 21</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-22"> 22</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-23"> 23</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-24"> 24</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-25"> 25</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-26"> 26</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-27"> 27</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-28"> 28</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-29"> 29</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-30"> 30</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-31"> 31</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-32"> 32</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-33"> 33</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-34"> 34</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-35"> 35</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-36"> 36</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-37"> 37</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-38"> 38</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-39"> 39</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-40"> 40</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-41"> 41</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-42"> 42</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-43"> 43</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-44"> 44</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-45"> 45</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-46"> 46</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-47"> 47</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-48"> 48</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-49"> 49</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-50"> 50</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-51"> 51</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-52"> 52</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-53"> 53</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-54"> 54</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-55"> 55</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-56"> 56</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-57"> 57</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-58"> 58</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-59"> 59</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-60"> 60</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-61"> 61</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-62"> 62</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-63"> 63</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-64"> 64</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-65"> 65</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-66"> 66</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-67"> 67</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-68"> 68</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-69"> 69</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-70"> 70</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-71"> 71</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-72"> 72</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-73"> 73</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-74"> 74</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-75"> 75</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-76"> 76</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-77"> 77</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-78"> 78</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-79"> 79</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-80"> 80</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-81"> 81</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-82"> 82</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-83"> 83</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-84"> 84</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-85"> 85</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-86"> 86</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-87"> 87</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-88"> 88</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-89"> 89</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-90"> 90</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-91"> 91</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-92"> 92</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-93"> 93</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-94"> 94</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-95"> 95</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-96"> 96</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-97"> 97</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-98"> 98</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-99"> 99</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-100">100</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-101">101</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-102">102</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-103">103</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-104">104</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-105">105</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-106">106</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-107">107</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-108">108</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-109">109</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-110">110</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-111">111</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-112">112</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-113">113</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_2dd3a7811b6b419797d359e03f9ade1f-114">114</a></pre></div></td>
+<td class="code"><pre class="code C"><a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-1"></a><span class="cp">#include</span> <span class="cpf">&lt;/usr/include/python3.4m/Python.h&gt;</span><span class="cp"></span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-2"></a>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-3"></a><span class="k">static</span> <span class="n">PyObject</span> <span class="o">*</span> <span class="n">StringError</span><span class="p">;</span>  <span class="c1">//错误信息对象</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-4"></a>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-5"></a><span class="c1">// 自定义函数</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-6"></a><span class="c1">// 实现任意长度字符串反转</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-7"></a><span class="kt">int</span> <span class="nf">reverse</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span> <span class="n">inputstr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">length</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">outputstr</span><span class="p">)</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-8"></a><span class="p">{</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-9"></a>  <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-10"></a>  <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-11"></a>    <span class="p">{</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-12"></a>      <span class="n">outputstr</span><span class="p">[</span><span class="n">length</span><span class="o">-</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">inputstr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-13"></a>    <span class="p">}</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-14"></a>  <span class="n">outputstr</span><span class="p">[</span><span class="n">length</span><span class="p">]</span> <span class="o">=</span> <span class="sc">'\0'</span><span class="p">;</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-15"></a>  <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-16"></a><span class="p">}</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-17"></a>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-18"></a><span class="c1">// Python和C的接口</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-19"></a><span class="k">static</span> <span class="n">PyObject</span> <span class="o">*</span> <span class="nf">stringreverse</span><span class="p">(</span><span class="n">PyObject</span> <span class="o">*</span> <span class="n">self</span><span class="p">,</span> <span class="n">PyObject</span> <span class="o">*</span> <span class="n">args</span><span class="p">)</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-20"></a><span class="p">{</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-21"></a>  <span class="kt">char</span> <span class="o">*</span> <span class="n">inputstr</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="c1">// 用来接收参数的本地变量</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-22"></a>  <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>         <span class="c1">// 用来接收参数的本地变量</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-23"></a>  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">PyArg_ParseTuple</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="s">"(si)"</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">inputstr</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">length</span><span class="p">))</span>  <span class="c1">// 接收参数给本地变量</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-24"></a>    <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-25"></a>  <span class="kt">char</span> <span class="o">*</span><span class="n">outputpointer</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">length</span> <span class="o">+</span> <span class="mi">1</span><span class="p">));</span> <span class="c1">// 分配返回值空间，多一位存放'\0'</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-26"></a>  <span class="kt">int</span> <span class="n">sts</span><span class="p">;</span>  <span class="c1">// 判断函数是否成功执行</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-27"></a>  <span class="n">sts</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="n">inputstr</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">outputpointer</span><span class="p">);</span> <span class="c1">// 调用自定义函数</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-28"></a>  <span class="k">if</span> <span class="p">(</span><span class="n">sts</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-29"></a>    <span class="n">PyErr_SetString</span><span class="p">(</span><span class="n">StringError</span><span class="p">,</span> <span class="s">"Encode Error"</span><span class="p">);</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-30"></a>    <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-31"></a>  <span class="p">}</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-32"></a>  <span class="k">return</span> <span class="n">Py_BuildValue</span><span class="p">(</span><span class="s">"s"</span><span class="p">,</span> <span class="n">outputpointer</span><span class="p">);</span>  <span class="c1">// 返回函数计算结果</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-33"></a><span class="p">}</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-34"></a>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-35"></a><span class="c1">// 声明方法调用接口</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-36"></a><span class="k">static</span> <span class="n">PyMethodDef</span> <span class="n">StringReverseMethods</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-37"></a>  <span class="p">{</span><span class="s">"reverse"</span><span class="p">,</span> <span class="n">stringreverse</span><span class="p">,</span> <span class="n">METH_VARARGS</span><span class="p">,</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-38"></a>   <span class="s">"Reverse A String."</span><span class="p">},</span>  <span class="c1">// {对外函数名称, 对内函数名称, 标志位, 函数说明}</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-39"></a>  <span class="p">{</span><span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">}</span>  <span class="c1">//哨兵变量</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-40"></a><span class="p">};</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-41"></a><span class="cm">/*</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-42"></a><span class="cm">  METH_VARARGS标志位，用来告诉解释器应使用调用C函数的规则。</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-43"></a><span class="cm">  当此位置为值0，表示PyArg_ParseTuple()函数使用的变量是废弃的。</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-44"></a><span class="cm">  当仅使用时"METH_VARARGS"，表示希望参数经由PyArg_ParseTuple()被传递进来。</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-45"></a><span class="cm">*/</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-46"></a>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-47"></a><span class="c1">// 声明模块包含的方法集</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-48"></a><span class="k">static</span> <span class="k">struct</span> <span class="n">PyModuleDef</span> <span class="n">stringmodules</span> <span class="o">=</span> <span class="p">{</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-49"></a>  <span class="n">PyModuleDef_HEAD_INIT</span><span class="p">,</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-50"></a>  <span class="s">"stringreverse"</span><span class="p">,</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-51"></a>  <span class="nb">NULL</span><span class="p">,</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-52"></a>  <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-53"></a>  <span class="n">StringReverseMethods</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-54"></a><span class="p">};</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-55"></a>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-56"></a><span class="c1">// 模块初始化，包括异常处理</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-57"></a><span class="n">PyMODINIT_FUNC</span> <span class="nf">PyInit_stringreverse</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-58"></a><span class="p">{</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-59"></a>  <span class="n">PyObject</span> <span class="o">*</span><span class="n">m</span><span class="p">;</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-60"></a>  <span class="n">m</span> <span class="o">=</span> <span class="n">PyModule_Create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">stringmodules</span><span class="p">);</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-61"></a>  <span class="k">if</span> <span class="p">(</span><span class="n">m</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-62"></a>    <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-63"></a>  <span class="n">StringError</span> <span class="o">=</span> <span class="n">PyErr_NewException</span><span class="p">(</span><span class="s">"stringreverse.error"</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-64"></a>  <span class="n">Py_INCREF</span><span class="p">(</span><span class="n">StringError</span><span class="p">);</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-65"></a>  <span class="n">PyModule_AddObject</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s">"error"</span><span class="p">,</span> <span class="n">StringError</span><span class="p">);</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-66"></a>  <span class="k">return</span> <span class="n">m</span><span class="p">;</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-67"></a><span class="p">}</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-68"></a>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-69"></a><span class="c1">// 初始化</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-70"></a><span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">wchar_t</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-71"></a><span class="p">{</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-72"></a>  <span class="n">PyImport_AppendInittab</span><span class="p">(</span><span class="s">"stringreverse"</span><span class="p">,</span> <span class="n">PyInit_stringreverse</span><span class="p">);</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-73"></a>  <span class="n">Py_SetProgramName</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-74"></a>  <span class="n">Py_Initialize</span><span class="p">();</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-75"></a>  <span class="n">PyImport_ImportModule</span><span class="p">(</span><span class="s">"stringreverse"</span><span class="p">);</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-76"></a><span class="p">}</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-77"></a>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-78"></a><span class="cm">/*</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-79"></a><span class="cm">  PyArg_ParseTuple()可以使用的格式参数</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-80"></a><span class="cm">  "s" (string or Unicode object) [char *]</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-81"></a><span class="cm">  "s#" (string, Unicode or any read buffer compatible object) [char *, int]</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-82"></a><span class="cm">  "z" (string or None) [char *]</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-83"></a><span class="cm">  "z#" (string or None or any read buffer compatible object) [char *, int]</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-84"></a><span class="cm">  "u" (Unicode object) [Py_UNICODE *]</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-85"></a><span class="cm">  "u#" (Unicode object) [Py_UNICODE *, int]</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-86"></a><span class="cm">  "es" (string, Unicode object or character buffer compatible object) [const char *encoding, char **buffer]</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-87"></a><span class="cm">  "es#" (string, Unicode object or character buffer compatible object) [const char *encoding, char **buffer, int *buffer_length]</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-88"></a><span class="cm">  "b" (integer) [char]</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-89"></a><span class="cm">  "h" (integer) [short int]</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-90"></a><span class="cm">  "i" (integer) [int]</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-91"></a><span class="cm">  "l" (integer) [long int]</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-92"></a><span class="cm">  "c" (string of length 1) [char]</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-93"></a><span class="cm">  "f" (float) [float]</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-94"></a><span class="cm">  "d" (float) [double]</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-95"></a><span class="cm">  "D" (complex) [Py_complex]</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-96"></a><span class="cm">  "O" (object) [PyObject *]</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-97"></a><span class="cm">  "O!" (object) [typeobject, PyObject *]</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-98"></a><span class="cm">  "O&amp;" (object) [converter, anything]</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-99"></a><span class="cm">  "S" (string) [PyStringObject *]</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-100"></a><span class="cm">  "U" (Unicode string) [PyUnicodeObject *]</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-101"></a><span class="cm">  "t#" (read-only character buffer) [char *, int]</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-102"></a><span class="cm">  "w" (read-write character buffer) [char *]</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-103"></a><span class="cm">  "w#" (read-write character buffer) [char *, int]</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-104"></a><span class="cm">  "(items)" (tuple) [matching-items]  ==&gt; Py_BuildValue("(i, i)", 1, 2) (1, 2)</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-105"></a><span class="cm">  "[items]" (list) [matching-items]   ==&gt; Py_BuildValue("[i, i]", 1, 2) [1, 2]</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-106"></a><span class="cm">  "{items}" (dictionary) [matching-items]  ==&gt; Py_BuildValue("{s, i}", 'a', 2) {'a': 2}</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-107"></a>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-108"></a><span class="cm">  "|"</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-109"></a><span class="cm">  Indicates that the remaining arguments in the Python argument list are optional. The C variables corresponding to optional arguments should be initialized to their default value -- when an optional argument is not specified, PyArg_ParseTuple() does not touch the contents of the corresponding C variable(s).</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-110"></a><span class="cm">  ":"</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-111"></a><span class="cm">  The list of format units ends here; the string after the colon is used as the function name in error messages (the ``associated value'' of the exception that PyArg_ParseTuple() raises).</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-112"></a><span class="cm">  ";"</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-113"></a><span class="cm">  The list of format units ends here; the string after the semicolon is used as the error message instead of the default error message. Clearly, ":" and ";" mutually exclude each other.</span>
+<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-114"></a><span class="cm">*/</span>
+</pre></td>
+</tr></table>
+<p>2、将C扩展编译成动态链接库stringreverse.so</p>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_a2e8c09a6743439fa0b020e9ed27bab7-1">1</a></pre></div></td>
+<td class="code"><pre class="code Python"><a name="rest_code_a2e8c09a6743439fa0b020e9ed27bab7-1"></a><span class="o">&gt;&gt;</span> <span class="n">gcc</span> <span class="o">-</span><span class="n">o</span> <span class="n">stringreverse</span><span class="o">.</span><span class="n">so</span> <span class="o">-</span><span class="n">shared</span> <span class="o">-</span><span class="n">fPIC</span> <span class="n">stringreverse</span><span class="o">.</span><span class="n">c</span>
+</pre></td>
+</tr></table>
+<p>3、Python调用动态链接库test.py</p>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_262997d7322d47ae87d5d1039fa60c48-1">1</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_262997d7322d47ae87d5d1039fa60c48-2">2</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_262997d7322d47ae87d5d1039fa60c48-3">3</a></pre></div></td>
+<td class="code"><pre class="code Python"><a name="rest_code_262997d7322d47ae87d5d1039fa60c48-1"></a><span class="kn">import</span> <span class="nn">stringreverse</span>
+<a name="rest_code_262997d7322d47ae87d5d1039fa60c48-2"></a><span class="n">aimstr</span> <span class="o">=</span> <span class="s2">"abc"</span>
+<a name="rest_code_262997d7322d47ae87d5d1039fa60c48-3"></a><span class="k">print</span><span class="p">(</span><span class="n">stringreverse</span><span class="o">.</span><span class="n">reverse</span><span class="p">((</span><span class="n">aimstr</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">aimstr</span><span class="p">))))</span>
+</pre></td>
+</tr></table>
+<p>输出结果：</p>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_b14578ba2ca14e119ad8e60f569fbafb-1">1</a>
+<a href="posts/tong-guo-pythonde-ckuo-zhan-jin-xing-ren-yi-chang-du-zi-fu-chuan-ni-xu-shu-chu/#rest_code_b14578ba2ca14e119ad8e60f569fbafb-2">2</a></pre></div></td>
+<td class="code"><pre class="code Python"><a name="rest_code_b14578ba2ca14e119ad8e60f569fbafb-1"></a><span class="o">&gt;&gt;</span> <span class="nb">long</span><span class="nd">@happytime</span><span class="p">:</span><span class="o">~/</span><span class="n">pythontest</span><span class="err">$</span> <span class="n">python3</span> <span class="n">test</span><span class="o">.</span><span class="n">py</span>
+<a name="rest_code_b14578ba2ca14e119ad8e60f569fbafb-2"></a><span class="o">&gt;&gt;</span> <span class="n">cba</span>
+</pre></td>
+</tr></table>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/python3xiang-sqlitexie-ru-tu-pian/" class="u-url">Python3向SQLite写入图片</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/python3xiang-sqlitexie-ru-tu-pian/" rel="bookmark"><time class="published dt-published" datetime="2015-09-07T12:36:21+08:00" title="2015-09-07 12:36">2015-09-07 12:36</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p><strong>使用Python3向SQLite写入图片。</strong></p>
+<p>看代码binaryread.py：</p>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/python3xiang-sqlitexie-ru-tu-pian/#rest_code_7113ed24e8964e7f823311fa90ef05aa-1"> 1</a>
+<a href="posts/python3xiang-sqlitexie-ru-tu-pian/#rest_code_7113ed24e8964e7f823311fa90ef05aa-2"> 2</a>
+<a href="posts/python3xiang-sqlitexie-ru-tu-pian/#rest_code_7113ed24e8964e7f823311fa90ef05aa-3"> 3</a>
+<a href="posts/python3xiang-sqlitexie-ru-tu-pian/#rest_code_7113ed24e8964e7f823311fa90ef05aa-4"> 4</a>
+<a href="posts/python3xiang-sqlitexie-ru-tu-pian/#rest_code_7113ed24e8964e7f823311fa90ef05aa-5"> 5</a>
+<a href="posts/python3xiang-sqlitexie-ru-tu-pian/#rest_code_7113ed24e8964e7f823311fa90ef05aa-6"> 6</a>
+<a href="posts/python3xiang-sqlitexie-ru-tu-pian/#rest_code_7113ed24e8964e7f823311fa90ef05aa-7"> 7</a>
+<a href="posts/python3xiang-sqlitexie-ru-tu-pian/#rest_code_7113ed24e8964e7f823311fa90ef05aa-8"> 8</a>
+<a href="posts/python3xiang-sqlitexie-ru-tu-pian/#rest_code_7113ed24e8964e7f823311fa90ef05aa-9"> 9</a>
+<a href="posts/python3xiang-sqlitexie-ru-tu-pian/#rest_code_7113ed24e8964e7f823311fa90ef05aa-10">10</a>
+<a href="posts/python3xiang-sqlitexie-ru-tu-pian/#rest_code_7113ed24e8964e7f823311fa90ef05aa-11">11</a>
+<a href="posts/python3xiang-sqlitexie-ru-tu-pian/#rest_code_7113ed24e8964e7f823311fa90ef05aa-12">12</a>
+<a href="posts/python3xiang-sqlitexie-ru-tu-pian/#rest_code_7113ed24e8964e7f823311fa90ef05aa-13">13</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_7113ed24e8964e7f823311fa90ef05aa-1"></a><span class="kn">import</span> <span class="nn">sqlite3</span>
+<a name="rest_code_7113ed24e8964e7f823311fa90ef05aa-2"></a>
+<a name="rest_code_7113ed24e8964e7f823311fa90ef05aa-3"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"test.jpg"</span><span class="p">,</span> <span class="s2">"rb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+<a name="rest_code_7113ed24e8964e7f823311fa90ef05aa-4"></a>    <span class="n">picbin</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<a name="rest_code_7113ed24e8964e7f823311fa90ef05aa-5"></a>
+<a name="rest_code_7113ed24e8964e7f823311fa90ef05aa-6"></a><span class="n">cont</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"temp.db"</span><span class="p">)</span>
+<a name="rest_code_7113ed24e8964e7f823311fa90ef05aa-7"></a><span class="n">cur</span> <span class="o">=</span> <span class="n">cont</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<a name="rest_code_7113ed24e8964e7f823311fa90ef05aa-8"></a><span class="n">sql</span> <span class="o">=</span> <span class="s2">"""create table pic(pic blob)"""</span>
+<a name="rest_code_7113ed24e8964e7f823311fa90ef05aa-9"></a><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
+<a name="rest_code_7113ed24e8964e7f823311fa90ef05aa-10"></a><span class="n">sql</span> <span class="o">=</span> <span class="s2">"""insert into pic(pic) values(?)"""</span>
+<a name="rest_code_7113ed24e8964e7f823311fa90ef05aa-11"></a><span class="n">b</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">Binary</span><span class="p">(</span><span class="n">picbin</span><span class="p">)</span>
+<a name="rest_code_7113ed24e8964e7f823311fa90ef05aa-12"></a><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="p">(</span><span class="n">b</span><span class="p">,))</span>
+<a name="rest_code_7113ed24e8964e7f823311fa90ef05aa-13"></a><span class="n">cont</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
+</pre></td>
+</tr></table>
+<p>执行代码，程序读取当前目录下的test.jpg，写入一个新创建的数据库，文件名是temp.db。</p>
+<p>然后读取图片数据，写入一个新的文件，看代码binarywrite.py：</p>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/python3xiang-sqlitexie-ru-tu-pian/#rest_code_7ceb5e9d808f4102a3022b530863d1c0-1">1</a>
+<a href="posts/python3xiang-sqlitexie-ru-tu-pian/#rest_code_7ceb5e9d808f4102a3022b530863d1c0-2">2</a>
+<a href="posts/python3xiang-sqlitexie-ru-tu-pian/#rest_code_7ceb5e9d808f4102a3022b530863d1c0-3">3</a>
+<a href="posts/python3xiang-sqlitexie-ru-tu-pian/#rest_code_7ceb5e9d808f4102a3022b530863d1c0-4">4</a>
+<a href="posts/python3xiang-sqlitexie-ru-tu-pian/#rest_code_7ceb5e9d808f4102a3022b530863d1c0-5">5</a>
+<a href="posts/python3xiang-sqlitexie-ru-tu-pian/#rest_code_7ceb5e9d808f4102a3022b530863d1c0-6">6</a>
+<a href="posts/python3xiang-sqlitexie-ru-tu-pian/#rest_code_7ceb5e9d808f4102a3022b530863d1c0-7">7</a>
+<a href="posts/python3xiang-sqlitexie-ru-tu-pian/#rest_code_7ceb5e9d808f4102a3022b530863d1c0-8">8</a>
+<a href="posts/python3xiang-sqlitexie-ru-tu-pian/#rest_code_7ceb5e9d808f4102a3022b530863d1c0-9">9</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_7ceb5e9d808f4102a3022b530863d1c0-1"></a><span class="kn">import</span> <span class="nn">sqlite3</span>
+<a name="rest_code_7ceb5e9d808f4102a3022b530863d1c0-2"></a>
+<a name="rest_code_7ceb5e9d808f4102a3022b530863d1c0-3"></a><span class="n">cont</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">"temp.db"</span><span class="p">)</span>
+<a name="rest_code_7ceb5e9d808f4102a3022b530863d1c0-4"></a><span class="n">cur</span> <span class="o">=</span> <span class="n">cont</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<a name="rest_code_7ceb5e9d808f4102a3022b530863d1c0-5"></a><span class="n">sql</span> <span class="o">=</span> <span class="s2">"""select pic from pic"""</span>
+<a name="rest_code_7ceb5e9d808f4102a3022b530863d1c0-6"></a><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
+<a name="rest_code_7ceb5e9d808f4102a3022b530863d1c0-7"></a><span class="n">pic</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<a name="rest_code_7ceb5e9d808f4102a3022b530863d1c0-8"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"test1.jpg"</span><span class="p">,</span> <span class="s2">"wb"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+<a name="rest_code_7ceb5e9d808f4102a3022b530863d1c0-9"></a>    <span class="n">fp</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">pic</span><span class="p">)</span>
+</pre></td>
+</tr></table>
+<p>执行代码，生成了一个和test.jpg内容完全一样的test1.jpg。</p>
+<p>综上，在涉及到二进制数据写入SQLite数据库时，要使用sqlite3.Binary将二进制转换成SQLite可以写入的参数类型。</p>
 </div>
     </div>
     </article>
