@@ -24,7 +24,7 @@ body{
     font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
 }
 </style>
-<link rel="prefetch" href="posts/ubuntuming-ling-xing-lian-jie-wifi/" type="text/html">
+<link rel="prefetch" href="posts/javadai-bao-bian-yi-yuan-wen-jian/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -92,7 +92,48 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/ubuntuming-ling-xing-lian-jie-wifi/" class="u-url">Ubuntu命令行连接wifi</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/javadai-bao-bian-yi-yuan-wen-jian/" class="u-url">Java带包编译源文件</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/javadai-bao-bian-yi-yuan-wen-jian/" rel="bookmark"><time class="published dt-published" datetime="2017-07-22T14:44:00+08:00" title="2017-07-22 14:44">2017-07-22 14:44</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>如果在java代码中给出package，直接编译生成的class文件会无法运行，提示 <strong>“错误: 找不到或无法加载主类”</strong> 。</p>
+<p>目录结构：</p>
+<pre class="literal-block">
+Desktop/src/test/T1.java
+Desktop/src/test/T1.class
+</pre>
+<p>解决办法如下：</p>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/javadai-bao-bian-yi-yuan-wen-jian/#rest_code_93fcc79483b34fde8f829781630e00d8-1">1</a>
+<a href="posts/javadai-bao-bian-yi-yuan-wen-jian/#rest_code_93fcc79483b34fde8f829781630e00d8-2">2</a>
+<a href="posts/javadai-bao-bian-yi-yuan-wen-jian/#rest_code_93fcc79483b34fde8f829781630e00d8-3">3</a>
+<a href="posts/javadai-bao-bian-yi-yuan-wen-jian/#rest_code_93fcc79483b34fde8f829781630e00d8-4">4</a>
+<a href="posts/javadai-bao-bian-yi-yuan-wen-jian/#rest_code_93fcc79483b34fde8f829781630e00d8-5">5</a>
+<a href="posts/javadai-bao-bian-yi-yuan-wen-jian/#rest_code_93fcc79483b34fde8f829781630e00d8-6">6</a></pre></div></td>
+<td class="code"><pre class="code java"><a name="rest_code_93fcc79483b34fde8f829781630e00d8-1"></a><span class="kn">package</span> <span class="nn">src</span><span class="o">;</span>
+<a name="rest_code_93fcc79483b34fde8f829781630e00d8-2"></a><span class="kd">public</span> <span class="kd">class</span> <span class="nc">T1</span><span class="o">{</span>
+<a name="rest_code_93fcc79483b34fde8f829781630e00d8-3"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+<a name="rest_code_93fcc79483b34fde8f829781630e00d8-4"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello World"</span><span class="o">);</span>
+<a name="rest_code_93fcc79483b34fde8f829781630e00d8-5"></a>    <span class="o">}</span>
+<a name="rest_code_93fcc79483b34fde8f829781630e00d8-6"></a><span class="o">}</span>
+</pre></td>
+</tr></table>
+<pre class="literal-block">
+&gt;&gt; long@iphone7 MINGW64 ~/Desktop
+&gt;&gt; $ javac -d . src/test/T1.java
+
+&gt;&gt; long@iphone7 MINGW64 ~/Desktop
+&gt;&gt; $ java src.T1
+&gt;&gt; Hello World
+</pre>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/ubuntuming-ling-xing-lian-jie-wifi/" class="u-url">Ubuntu命令行连接wifi</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
@@ -317,28 +358,6 @@ wpa-conf /home/long/wifi.conf
 <td class="code"><pre class="code python"><a name="rest_code_3cdabd61062642f6a685216422d1149c-1"></a><span class="k">def</span> <span class="nf">getipbyhost</span><span class="p">(</span><span class="n">hostaddress</span><span class="p">):</span>
 <a name="rest_code_3cdabd61062642f6a685216422d1149c-2"></a>    <span class="n">ip</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">gethostbyname</span><span class="p">(</span><span class="n">hostaddress</span><span class="p">)</span>
 <a name="rest_code_3cdabd61062642f6a685216422d1149c-3"></a>    <span class="k">return</span> <span class="n">ip</span>
-</pre></td>
-</tr></table>
-</div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pythonpan-duan-zi-fu-chuan-zhong-shi-fou-han-you-zhong-wen/" class="u-url">Python判断字符串中是否含有中文</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/pythonpan-duan-zi-fu-chuan-zhong-shi-fou-han-you-zhong-wen/" rel="bookmark"><time class="published dt-published" datetime="2017-07-12T19:37:44+08:00" title="2017-07-12 19:37">2017-07-12 19:37</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonpan-duan-zi-fu-chuan-zhong-shi-fou-han-you-zhong-wen/#rest_code_010dafddead4408f925a5b6e065f99c3-1">1</a>
-<a href="posts/pythonpan-duan-zi-fu-chuan-zhong-shi-fou-han-you-zhong-wen/#rest_code_010dafddead4408f925a5b6e065f99c3-2">2</a>
-<a href="posts/pythonpan-duan-zi-fu-chuan-zhong-shi-fou-han-you-zhong-wen/#rest_code_010dafddead4408f925a5b6e065f99c3-3">3</a>
-<a href="posts/pythonpan-duan-zi-fu-chuan-zhong-shi-fou-han-you-zhong-wen/#rest_code_010dafddead4408f925a5b6e065f99c3-4">4</a>
-<a href="posts/pythonpan-duan-zi-fu-chuan-zhong-shi-fou-han-you-zhong-wen/#rest_code_010dafddead4408f925a5b6e065f99c3-5">5</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_010dafddead4408f925a5b6e065f99c3-1"></a><span class="k">def</span> <span class="nf">haschinese</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
-<a name="rest_code_010dafddead4408f925a5b6e065f99c3-2"></a>    <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">text</span><span class="p">:</span>
-<a name="rest_code_010dafddead4408f925a5b6e065f99c3-3"></a>        <span class="k">if</span> <span class="s1">'</span><span class="se">\u4e00</span><span class="s1">'</span> <span class="o">&lt;=</span> <span class="n">t</span> <span class="o">&lt;=</span> <span class="s1">'</span><span class="se">\u9fff</span><span class="s1">'</span><span class="p">:</span>
-<a name="rest_code_010dafddead4408f925a5b6e065f99c3-4"></a>            <span class="k">return</span> <span class="bp">True</span>
-<a name="rest_code_010dafddead4408f925a5b6e065f99c3-5"></a>    <span class="k">return</span> <span class="bp">False</span>
 </pre></td>
 </tr></table>
 </div>
