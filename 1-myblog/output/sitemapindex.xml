@@ -22,6 +22,10 @@
   <lastmod>2017-08-31T19:45:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://codinglonglong.github.io/categories/ban-zhu-ren.xml</loc>
+  <lastmod>2017-09-25T05:09:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://codinglonglong.github.io/categories/beansdb.xml</loc>
   <lastmod>2017-08-31T19:45:00Z</lastmod>
  </sitemap>
@@ -36,6 +40,10 @@
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_android.xml</loc>
   <lastmod>2017-08-31T19:45:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://codinglonglong.github.io/categories/cat_ban-zhu-ren-bi-ji.xml</loc>
+  <lastmod>2017-09-25T05:09:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_docker.xml</loc>
@@ -443,10 +451,10 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/rss.xml</loc>
-  <lastmod>2017-08-31T19:45:00Z</lastmod>
+  <lastmod>2017-09-25T05:09:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/sitemap.xml</loc>
-  <lastmod>2017-08-31T19:45:00Z</lastmod>
+  <lastmod>2017-09-25T05:09:00Z</lastmod>
  </sitemap>
 </sitemapindex>

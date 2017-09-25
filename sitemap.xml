@@ -59,11 +59,11 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/archive.html</loc>
-  <lastmod>2017-08-31T19:45:00Z</lastmod>
+  <lastmod>2017-09-25T05:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/</loc>
-  <lastmod>2017-08-31T19:45:00Z</lastmod>
+  <lastmod>2017-09-25T05:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/actionscript30/</loc>
@@ -82,6 +82,10 @@
   <lastmod>2017-08-31T19:45:00Z</lastmod>
  </url>
  <url>
+  <loc>https://codinglonglong.github.io/categories/ban-zhu-ren/</loc>
+  <lastmod>2017-09-25T05:09:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://codinglonglong.github.io/categories/beansdb/</loc>
   <lastmod>2017-08-31T19:45:00Z</lastmod>
  </url>
@@ -96,6 +100,10 @@
  <url>
   <loc>https://codinglonglong.github.io/categories/cat_android/</loc>
   <lastmod>2017-08-31T19:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/cat_ban-zhu-ren-bi-ji/</loc>
+  <lastmod>2017-09-25T05:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/cat_docker/</loc>
@@ -539,7 +547,7 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-18.html</loc>
-  <lastmod>2017-08-31T19:45:00Z</lastmod>
+  <lastmod>2017-09-25T05:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-2.html</loc>
@@ -992,6 +1000,10 @@
  <url>
   <loc>https://codinglonglong.github.io/posts/xiao-jia-shou-zhang-wang-ye-ban-ji-ben-wan-cheng/</loc>
   <lastmod>2017-08-31T19:45:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/posts/xin-ban-zhu-ren-bi-ji-ru-xue-di-yi-ge-yue-1/</loc>
+  <lastmod>2017-09-25T05:09:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/xiu-gai-dockerzhong-de-xi-tong-shi-jian/</loc>
