@@ -515,16 +515,16 @@ FRONT_INDEX_HEADER = {
 }
 
 # Create per-month archives instead of per-year
-CREATE_MONTHLY_ARCHIVE = True
+# CREATE_MONTHLY_ARCHIVE = False
 # Create one large archive instead of per-year
-# CREATE_SINGLE_ARCHIVE = False
+CREATE_SINGLE_ARCHIVE = True
 # Create year, month, and day archives each with a (long) list of posts
 # (overrides both CREATE_MONTHLY_ARCHIVE and CREATE_SINGLE_ARCHIVE)
 # CREATE_FULL_ARCHIVES = False
 # If monthly archives or full archives are created, adds also one archive per day
 # CREATE_DAILY_ARCHIVE = False
 # Create previous, up, next navigation links for archives
-# CREATE_ARCHIVE_NAVIGATION = False
+CREATE_ARCHIVE_NAVIGATION = True
 # Final locations for the archives are:
 # output / TRANSLATION[lang] / ARCHIVE_PATH / ARCHIVE_FILENAME
 # output / TRANSLATION[lang] / ARCHIVE_PATH / YEAR / index.html
