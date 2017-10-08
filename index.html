@@ -24,7 +24,7 @@ body{
     font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
 }
 </style>
-<link rel="prefetch" href="posts/vscodepei-zhi-python3yun-xing-huan-jing/" type="text/html">
+<link rel="prefetch" href="posts/wxpythonxue-xi-ji-ben-chuang-kou/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -92,7 +92,59 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/vscodepei-zhi-python3yun-xing-huan-jing/" class="u-url">VSCode配置Python3运行环境</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/wxpythonxue-xi-ji-ben-chuang-kou/" class="u-url">wxPython学习（1）——基本窗口</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/wxpythonxue-xi-ji-ben-chuang-kou/" rel="bookmark"><time class="published dt-published" datetime="2017-10-08T18:20:07+08:00" title="2017-10-08 18:20">2017-10-08 18:20</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>基于Web的程序不方便操作本地文件，不得不回退到当初用Tkinter做界面的年代，但是Tkinter做一些复杂界面确实不容易，这回研究个相对成熟一些的桌面GUI库wxPython。前些年wxPython不支持Python3，现在支持了，可以好好学习一下了。</p>
+<p>一个基本的wxPython窗口程序如下：</p>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/wxpythonxue-xi-ji-ben-chuang-kou/#rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-1"> 1</a>
+<a href="posts/wxpythonxue-xi-ji-ben-chuang-kou/#rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-2"> 2</a>
+<a href="posts/wxpythonxue-xi-ji-ben-chuang-kou/#rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-3"> 3</a>
+<a href="posts/wxpythonxue-xi-ji-ben-chuang-kou/#rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-4"> 4</a>
+<a href="posts/wxpythonxue-xi-ji-ben-chuang-kou/#rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-5"> 5</a>
+<a href="posts/wxpythonxue-xi-ji-ben-chuang-kou/#rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-6"> 6</a>
+<a href="posts/wxpythonxue-xi-ji-ben-chuang-kou/#rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-7"> 7</a>
+<a href="posts/wxpythonxue-xi-ji-ben-chuang-kou/#rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-8"> 8</a>
+<a href="posts/wxpythonxue-xi-ji-ben-chuang-kou/#rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-9"> 9</a>
+<a href="posts/wxpythonxue-xi-ji-ben-chuang-kou/#rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-10">10</a>
+<a href="posts/wxpythonxue-xi-ji-ben-chuang-kou/#rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-11">11</a>
+<a href="posts/wxpythonxue-xi-ji-ben-chuang-kou/#rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-12">12</a>
+<a href="posts/wxpythonxue-xi-ji-ben-chuang-kou/#rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-13">13</a>
+<a href="posts/wxpythonxue-xi-ji-ben-chuang-kou/#rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-14">14</a>
+<a href="posts/wxpythonxue-xi-ji-ben-chuang-kou/#rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-15">15</a>
+<a href="posts/wxpythonxue-xi-ji-ben-chuang-kou/#rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-16">16</a>
+<a href="posts/wxpythonxue-xi-ji-ben-chuang-kou/#rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-17">17</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-1"></a><span class="kn">import</span> <span class="nn">wx</span>
+<a name="rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-2"></a>
+<a name="rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-3"></a><span class="k">class</span> <span class="nc">MyFrame1</span><span class="p">(</span><span class="n">wx</span><span class="o">.</span><span class="n">Frame</span><span class="p">):</span>
+<a name="rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-4"></a>
+<a name="rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-5"></a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">fid</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">pos</span><span class="o">=</span><span class="n">wx</span><span class="o">.</span><span class="n">DefaultPosition</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">wx</span><span class="o">.</span><span class="n">DefaultSize</span><span class="p">):</span>
+<a name="rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-6"></a>        <span class="n">wx</span><span class="o">.</span><span class="n">Frame</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent</span><span class="p">,</span> <span class="n">fid</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+<a name="rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-7"></a>
+<a name="rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-8"></a><span class="k">class</span> <span class="nc">App</span><span class="p">(</span><span class="n">wx</span><span class="o">.</span><span class="n">App</span><span class="p">):</span>
+<a name="rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-9"></a>
+<a name="rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-10"></a>    <span class="k">def</span> <span class="nf">OnInit</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-11"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">f</span> <span class="o">=</span>  <span class="n">MyFrame1</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">"你好"</span><span class="p">)</span>
+<a name="rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-12"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">f</span><span class="o">.</span><span class="n">Show</span><span class="p">()</span>
+<a name="rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-13"></a>        <span class="k">return</span> <span class="bp">True</span>
+<a name="rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-14"></a>
+<a name="rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-15"></a><span class="k">if</span> <span class="n">__name__</span><span class="o">==</span><span class="s2">"__main__"</span><span class="p">:</span>
+<a name="rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-16"></a>    <span class="n">app</span> <span class="o">=</span> <span class="n">App</span><span class="p">()</span>
+<a name="rest_code_9d878f034ef14a5bbb3d2282bdd8a1cf-17"></a>    <span class="n">app</span><span class="o">.</span><span class="n">MainLoop</span><span class="p">()</span>
+</pre></td>
+</tr></table>
+<p>运行结果：</p>
+<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/wxPython1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/wxPython1.PNG"><p>这样就创建了一个最简单的窗口程序，在这个量级上，和Tkinter的写法非常相似。程序是App的事件循环，Frame是App的容器。后边我们将一个一个欣赏wxPython提供的窗口控件。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/vscodepei-zhi-python3yun-xing-huan-jing/" class="u-url">VSCode配置Python3运行环境</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
@@ -724,47 +776,6 @@ numb:2
 -1
 </pre>
 <p>这也就意味着，由于没有默认参数机制，Java要实现这样的debug，必须要为每个函数设定一个debug参数，总不能每个方法都写一个函数重载吧？要不，就利用IDE进行一遍一遍的单步调试？？</p>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/javadai-bao-bian-yi-yuan-wen-jian/" class="u-url">Java带包编译源文件</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/javadai-bao-bian-yi-yuan-wen-jian/" rel="bookmark"><time class="published dt-published" datetime="2017-07-22T14:44:00+08:00" title="2017-07-22 14:44">2017-07-22 14:44</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>如果在java代码中给出package，直接编译生成的class文件会无法运行，提示 <strong>“错误: 找不到或无法加载主类”</strong> 。</p>
-<p>目录结构：</p>
-<pre class="literal-block">
-Desktop/src/test/T1.java
-Desktop/src/test/T1.class
-</pre>
-<p>解决办法如下：</p>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/javadai-bao-bian-yi-yuan-wen-jian/#rest_code_93fcc79483b34fde8f829781630e00d8-1">1</a>
-<a href="posts/javadai-bao-bian-yi-yuan-wen-jian/#rest_code_93fcc79483b34fde8f829781630e00d8-2">2</a>
-<a href="posts/javadai-bao-bian-yi-yuan-wen-jian/#rest_code_93fcc79483b34fde8f829781630e00d8-3">3</a>
-<a href="posts/javadai-bao-bian-yi-yuan-wen-jian/#rest_code_93fcc79483b34fde8f829781630e00d8-4">4</a>
-<a href="posts/javadai-bao-bian-yi-yuan-wen-jian/#rest_code_93fcc79483b34fde8f829781630e00d8-5">5</a>
-<a href="posts/javadai-bao-bian-yi-yuan-wen-jian/#rest_code_93fcc79483b34fde8f829781630e00d8-6">6</a></pre></div></td>
-<td class="code"><pre class="code java"><a name="rest_code_93fcc79483b34fde8f829781630e00d8-1"></a><span class="kn">package</span> <span class="nn">src</span><span class="o">;</span>
-<a name="rest_code_93fcc79483b34fde8f829781630e00d8-2"></a><span class="kd">public</span> <span class="kd">class</span> <span class="nc">T1</span><span class="o">{</span>
-<a name="rest_code_93fcc79483b34fde8f829781630e00d8-3"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
-<a name="rest_code_93fcc79483b34fde8f829781630e00d8-4"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello World"</span><span class="o">);</span>
-<a name="rest_code_93fcc79483b34fde8f829781630e00d8-5"></a>    <span class="o">}</span>
-<a name="rest_code_93fcc79483b34fde8f829781630e00d8-6"></a><span class="o">}</span>
-</pre></td>
-</tr></table>
-<pre class="literal-block">
-&gt;&gt; long@iphone7 MINGW64 ~/Desktop
-&gt;&gt; $ javac -d . src/test/T1.java
-
-&gt;&gt; long@iphone7 MINGW64 ~/Desktop
-&gt;&gt; $ java src.T1
-&gt;&gt; Hello World
-</pre>
 </div>
     </div>
     </article>

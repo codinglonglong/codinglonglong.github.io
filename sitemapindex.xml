@@ -75,7 +75,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_python.xml</loc>
-  <lastmod>2017-09-27T03:23:00Z</lastmod>
+  <lastmod>2017-10-08T10:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_raspberry.xml</loc>
@@ -194,6 +194,10 @@
   <lastmod>2017-09-27T03:24:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://codinglonglong.github.io/categories/gui.xml</loc>
+  <lastmod>2017-10-08T10:35:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://codinglonglong.github.io/categories/haxm.xml</loc>
   <lastmod>2017-09-27T03:24:00Z</lastmod>
  </sitemap>
@@ -303,7 +307,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/python.xml</loc>
-  <lastmod>2017-09-27T03:23:00Z</lastmod>
+  <lastmod>2017-10-08T10:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/qiao-jie.xml</loc>
@@ -426,6 +430,10 @@
   <lastmod>2017-09-27T03:23:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://codinglonglong.github.io/categories/wxpython.xml</loc>
+  <lastmod>2017-10-08T10:35:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://codinglonglong.github.io/categories/ye-shen-mo-ni-qi.xml</loc>
   <lastmod>2017-09-27T03:23:00Z</lastmod>
  </sitemap>
@@ -455,10 +463,10 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/rss.xml</loc>
-  <lastmod>2017-10-02T06:39:00Z</lastmod>
+  <lastmod>2017-10-08T10:35:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/sitemap.xml</loc>
-  <lastmod>2017-10-02T06:39:00Z</lastmod>
+  <lastmod>2017-10-08T10:35:00Z</lastmod>
  </sitemap>
 </sitemapindex>
