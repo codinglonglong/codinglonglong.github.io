@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 01 Nov 2017 14:06:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>CAD练习题1——平行、偏移、移动</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-1-ping-xing-pian-yi-yi-dong/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目:&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 01 Nov 2017 15:45:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>新班主任笔记——入学第二个月（2）</title><link>https://codinglonglong.github.io/posts/xin-ban-zhu-ren-bi-ji-ru-xue-di-er-ge-yue-2/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;入学第二个月，没有太多的流程要走了，但是和学生们在一起的生活开始了。学习、卫生和纪律，三个重要的方面要考虑，学习上有时间就多陪陪孩子们，卫生方面很高兴有个负责的卫生委，纪律方面就需要多费心了，目前还在摸索中……&lt;/p&gt;
+&lt;p&gt;为了能多陪孩子们学习，很多晚上没有晚自习也留在学校和孩子们一起上课，等到回家，家人都快睡觉了……家人得不到陪伴，家庭关系的问题也需要进一步考虑，合理地控制工作生活时间，是下一步的重点问题。几乎每天的上下班都是在三首歌中度过的——《最好的未来》《你的样子》《你怎么舍得我难过》，这三首歌充分反映了一个新班主任内心的困扰：都是自己的孩子，每个孩子都要好好的，一个也不能少；但是这样真的挺累的，一个班四十多个人，一颗心分成四十多份，制造并消耗爱的过程，也正是增加忧郁和孤单的过程，和小伙伴们在一起总是努力开开心心的，眼睛里看不到大家，忧郁和孤单就迅速来了；当小伙伴们不听话，违规违纪的时候，一方面是愤怒，但更重的分量是难过，感觉自己努力地用正能量去带着大家好好学习，遵规守纪，长了本事以后找个好工作，但还是有不理你这一套的，觉得你是在糊弄他学习，失望和无奈一起涌上心头……往往在上学的时候，不把未来当回事；可等到当回事的时候，你已经没有回头的机会了……恐怕教育学最应该研究的问题之一，就是如何避免这样的悲剧。&lt;/p&gt;
+&lt;p&gt;这一个月，出差加上培训就用去了一半，后面还有听课和录课，当班主任的同时，还要带着三个班的二十二节课，“亲子”和“养子”的矛盾就来了，不得不说，开学这两个月，几乎没有多少能安安静静备课的时间，自己班上发生的各类大事小事都要过班主任，不管是违纪，还是生病，或者其他各类事情，除此之外，学校安排的军训、入学手续、学籍建档、体检、出差、培训、听课、录课等等都需要占用时间，再加上孩子们报名参加的主持人大赛之类的学校活动，类似的这些事情都在占用时间；为了培养孩子们的学习习惯，我还安排了每天半小时的读书计划；为了让孩子们知道上课该干什么，不该干什么，剩余时间中的大部分又用在了陪孩子们上课，帮孩子们建立习惯上。所以，对于上课的这三个班来说，网页课还好，是上学时学过的，也是之前一直在用的；但是CAD，在上学的时候根本没开过这门课，我也是“零基础从入门到精通“的……可想而知，没有时间反复研究那些复杂的技巧题，又不忍心一直让孩子们做简单题浪费生命，所以多次被挂在了课堂上……因为我也不是神童，有些技巧题真的够烧脑……于是新的矛盾就来了，为了让这些孩子们能多学点东西，我自己加高了难度；有限的时间又让我无法专心研究这些难题，不得不怀揣着未被完全验证的思路就去上课了，然后就冷场了……一冷场，能帮着你一起解决问题的孩子只是少数，大部分就开始自由自在地扰乱秩序了，因为“老师也不会做了”……也许这样的问题多教几届孩子，经验积累丰富了就好了，但是对于现在的孩子们呢？&lt;/p&gt;
+&lt;p&gt;于是，我问我们班的孩子们，你们说是亲生的重要，还是抱养的重要？孩子们不假思索……&lt;/p&gt;
+&lt;p&gt;可我也能这样不假思索吗？&lt;/p&gt;&lt;/div&gt;</description><category>班主任</category><guid>https://codinglonglong.github.io/posts/xin-ban-zhu-ren-bi-ji-ru-xue-di-er-ge-yue-2/</guid><pubDate>Wed, 01 Nov 2017 15:34:01 GMT</pubDate></item><item><title>CAD练习题1——平行、偏移、移动</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-1-ping-xing-pian-yi-yi-dong/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目:&lt;/p&gt;
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p1-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p1-6.PNG"&gt;
 &lt;p&gt;这道题主要涉及到平行、偏移和移动，三个主要的工具。&lt;/p&gt;
 &lt;p&gt;1、利用平行，画出部分已知图形。&lt;/p&gt;
@@ -638,105 +642,4 @@ wpa-conf /home/long/wifi.conf
 &amp;gt;&amp;gt; sudo reboot
 &lt;/pre&gt;
 &lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;路由器必须要打开DHCP才可以正常连接。&lt;/p&gt;&lt;/div&gt;</description><category>Ubuntu</category><category>wifi</category><guid>https://codinglonglong.github.io/posts/ubuntuming-ling-xing-lian-jie-wifi/</guid><pubDate>Wed, 19 Jul 2017 03:06:54 GMT</pubDate></item><item><title>最简化的Android入门程序</title><link>https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;用Android Studio创建的空项目包含好几个文件夹和文件，最核心的文件其实只有三个：&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;manifests目录下的AndroidManifest.xml&lt;/li&gt;
-&lt;li&gt;java目录下的MainActivity.java&lt;/li&gt;
-&lt;li&gt;layout目录下的activity_main.xml&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;以下是一个最简单的Android程序，启动后是一个空的页面。&lt;/p&gt;
-&lt;ol class="arabic simple"&gt;
-&lt;li&gt;AndroidManifest.xml&lt;/li&gt;
-&lt;/ol&gt;
-&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-1"&gt; 1&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-2"&gt; 2&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-3"&gt; 3&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-4"&gt; 4&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-5"&gt; 5&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-6"&gt; 6&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-7"&gt; 7&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-8"&gt; 8&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-9"&gt; 9&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-10"&gt;10&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-11"&gt;11&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-12"&gt;12&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-13"&gt;13&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-14"&gt;14&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-15"&gt;15&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-16"&gt;16&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-17"&gt;17&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-18"&gt;18&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_fed00bffad2840f0a2abb79316a64350-19"&gt;19&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code xml"&gt;&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-1"&gt;&lt;/a&gt;&lt;span class="cp"&gt;&amp;lt;?xml version="1.0" encoding="utf-8"?&amp;gt;&lt;/span&gt;
-&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-2"&gt;&lt;/a&gt;&lt;span class="nt"&gt;&amp;lt;manifest&lt;/span&gt; &lt;span class="na"&gt;xmlns:android=&lt;/span&gt;&lt;span class="s"&gt;"http://schemas.android.com/apk/res/android"&lt;/span&gt;
-&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-3"&gt;&lt;/a&gt;    &lt;span class="na"&gt;package=&lt;/span&gt;&lt;span class="s"&gt;"com.example.along.homebank"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
-&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-4"&gt;&lt;/a&gt;
-&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-5"&gt;&lt;/a&gt;    &lt;span class="nt"&gt;&amp;lt;application&lt;/span&gt;
-&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-6"&gt;&lt;/a&gt;        &lt;span class="na"&gt;android:icon=&lt;/span&gt;&lt;span class="s"&gt;"@mipmap/ic_launcher"&lt;/span&gt;
-&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-7"&gt;&lt;/a&gt;        &lt;span class="na"&gt;android:label=&lt;/span&gt;&lt;span class="s"&gt;"@string/app_name"&lt;/span&gt;
-&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-8"&gt;&lt;/a&gt;        &lt;span class="na"&gt;android:theme=&lt;/span&gt;&lt;span class="s"&gt;"@style/AppTheme"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
-&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-9"&gt;&lt;/a&gt;        &lt;span class="nt"&gt;&amp;lt;activity&lt;/span&gt;
-&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-10"&gt;&lt;/a&gt;            &lt;span class="na"&gt;android:name=&lt;/span&gt;&lt;span class="s"&gt;".MainActivity"&lt;/span&gt;
-&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-11"&gt;&lt;/a&gt;            &lt;span class="na"&gt;android:label=&lt;/span&gt;&lt;span class="s"&gt;"@string/title_activity_main"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
-&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-12"&gt;&lt;/a&gt;            &lt;span class="nt"&gt;&amp;lt;intent-filter&amp;gt;&lt;/span&gt;
-&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-13"&gt;&lt;/a&gt;                &lt;span class="nt"&gt;&amp;lt;action&lt;/span&gt; &lt;span class="na"&gt;android:name=&lt;/span&gt;&lt;span class="s"&gt;"android.intent.action.MAIN"&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
-&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-14"&gt;&lt;/a&gt;                &lt;span class="nt"&gt;&amp;lt;category&lt;/span&gt; &lt;span class="na"&gt;android:name=&lt;/span&gt;&lt;span class="s"&gt;"android.intent.category.LAUNCHER"&lt;/span&gt;&lt;span class="nt"&gt;/&amp;gt;&lt;/span&gt;
-&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-15"&gt;&lt;/a&gt;            &lt;span class="nt"&gt;&amp;lt;/intent-filter&amp;gt;&lt;/span&gt;
-&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-16"&gt;&lt;/a&gt;        &lt;span class="nt"&gt;&amp;lt;/activity&amp;gt;&lt;/span&gt;
-&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-17"&gt;&lt;/a&gt;    &lt;span class="nt"&gt;&amp;lt;/application&amp;gt;&lt;/span&gt;
-&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-18"&gt;&lt;/a&gt;
-&lt;a name="rest_code_fed00bffad2840f0a2abb79316a64350-19"&gt;&lt;/a&gt;&lt;span class="nt"&gt;&amp;lt;/manifest&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;最关键的是 &lt;strong&gt;&amp;lt;intent-filter&amp;gt;&lt;/strong&gt; 部分，里面设置了MainActivity是默认启动的Activity。&lt;/p&gt;
-&lt;ol class="arabic simple" start="2"&gt;
-&lt;li&gt;MainActivity.java&lt;/li&gt;
-&lt;/ol&gt;
-&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-1"&gt; 1&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-2"&gt; 2&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-3"&gt; 3&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-4"&gt; 4&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-5"&gt; 5&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-6"&gt; 6&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-7"&gt; 7&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-8"&gt; 8&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-9"&gt; 9&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-10"&gt;10&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-11"&gt;11&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-12"&gt;12&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-13"&gt;13&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code java"&gt;&lt;a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;package&lt;/span&gt; &lt;span class="nn"&gt;com.example.along.homebank&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-&lt;a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-2"&gt;&lt;/a&gt;
-&lt;a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-3"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;android.os.Bundle&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-&lt;a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-4"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;android.support.v7.app.AppCompatActivity&lt;/span&gt;&lt;span class="o"&gt;;&lt;/span&gt;
-&lt;a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-5"&gt;&lt;/a&gt;
-&lt;a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-6"&gt;&lt;/a&gt;&lt;span class="kd"&gt;public&lt;/span&gt; &lt;span class="kd"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;MainActivity&lt;/span&gt; &lt;span class="kd"&gt;extends&lt;/span&gt; &lt;span class="n"&gt;AppCompatActivity&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-&lt;a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-7"&gt;&lt;/a&gt;
-&lt;a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-8"&gt;&lt;/a&gt;    &lt;span class="nd"&gt;@Override&lt;/span&gt;
-&lt;a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-9"&gt;&lt;/a&gt;    &lt;span class="kd"&gt;protected&lt;/span&gt; &lt;span class="kt"&gt;void&lt;/span&gt; &lt;span class="nf"&gt;onCreate&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Bundle&lt;/span&gt; &lt;span class="n"&gt;savedInstanceState&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
-&lt;a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-10"&gt;&lt;/a&gt;        &lt;span class="kd"&gt;super&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;onCreate&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;savedInstanceState&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
-&lt;a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-11"&gt;&lt;/a&gt;        &lt;span class="n"&gt;setContentView&lt;/span&gt;&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="n"&gt;R&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;layout&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="na"&gt;activity_main&lt;/span&gt;&lt;span class="o"&gt;);&lt;/span&gt;
-&lt;a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-12"&gt;&lt;/a&gt;    &lt;span class="o"&gt;}&lt;/span&gt;
-&lt;a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-13"&gt;&lt;/a&gt;&lt;span class="o"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;最关键的是 &lt;strong&gt;setContentView(R.layout.activity_main);&lt;/strong&gt; ，里面设置了程序创建时要渲染的layout，也就是界面。&lt;/p&gt;
-&lt;ol class="arabic simple" start="3"&gt;
-&lt;li&gt;activity_main.xml&lt;/li&gt;
-&lt;/ol&gt;
-&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_04de2390c5bf4829a80d7566d9af265f-1"&gt;1&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_04de2390c5bf4829a80d7566d9af265f-2"&gt;2&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_04de2390c5bf4829a80d7566d9af265f-3"&gt;3&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_04de2390c5bf4829a80d7566d9af265f-4"&gt;4&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_04de2390c5bf4829a80d7566d9af265f-5"&gt;5&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_04de2390c5bf4829a80d7566d9af265f-6"&gt;6&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_04de2390c5bf4829a80d7566d9af265f-7"&gt;7&lt;/a&gt;
-&lt;a href="https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_04de2390c5bf4829a80d7566d9af265f-8"&gt;8&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code xml"&gt;&lt;a name="rest_code_04de2390c5bf4829a80d7566d9af265f-1"&gt;&lt;/a&gt;&lt;span class="cp"&gt;&amp;lt;?xml version="1.0" encoding="utf-8"?&amp;gt;&lt;/span&gt;
-&lt;a name="rest_code_04de2390c5bf4829a80d7566d9af265f-2"&gt;&lt;/a&gt;&lt;span class="nt"&gt;&amp;lt;android.support.design.widget.CoordinatorLayout&lt;/span&gt; &lt;span class="na"&gt;xmlns:android=&lt;/span&gt;&lt;span class="s"&gt;"http://schemas.android.com/apk/res/android"&lt;/span&gt;
-&lt;a name="rest_code_04de2390c5bf4829a80d7566d9af265f-3"&gt;&lt;/a&gt;    &lt;span class="na"&gt;xmlns:app=&lt;/span&gt;&lt;span class="s"&gt;"http://schemas.android.com/apk/res-auto"&lt;/span&gt;
-&lt;a name="rest_code_04de2390c5bf4829a80d7566d9af265f-4"&gt;&lt;/a&gt;    &lt;span class="na"&gt;xmlns:tools=&lt;/span&gt;&lt;span class="s"&gt;"http://schemas.android.com/tools"&lt;/span&gt;
-&lt;a name="rest_code_04de2390c5bf4829a80d7566d9af265f-5"&gt;&lt;/a&gt;    &lt;span class="na"&gt;android:layout_width=&lt;/span&gt;&lt;span class="s"&gt;"match_parent"&lt;/span&gt;
-&lt;a name="rest_code_04de2390c5bf4829a80d7566d9af265f-6"&gt;&lt;/a&gt;    &lt;span class="na"&gt;android:layout_height=&lt;/span&gt;&lt;span class="s"&gt;"match_parent"&lt;/span&gt;
-&lt;a name="rest_code_04de2390c5bf4829a80d7566d9af265f-7"&gt;&lt;/a&gt;    &lt;span class="na"&gt;tools:context=&lt;/span&gt;&lt;span class="s"&gt;"com.example.along.homebank.MainActivity"&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
-&lt;a name="rest_code_04de2390c5bf4829a80d7566d9af265f-8"&gt;&lt;/a&gt;&lt;span class="nt"&gt;&amp;lt;/android.support.design.widget.CoordinatorLayout&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;这个布局文件基本是空的，因为我们什么都没有放进去，所以程序运行时是一个白屏。&lt;/p&gt;
-&lt;p&gt;从这个最基本的Android程序中，我们可以看到一种程序设计的通用模式："配置+逻辑+布局"。
-配置负责控制一些全局的东西，逻辑负责控制整个程序的逻辑实现，布局负责控制用户交互。
-就好比做网站，一些JavaScript文件负责配置，大部分JavaScript负责逻辑，HTML和CSS负责布局。
-再经过合理的连接，形成配合，共同完成任务。不得不说，有一种程序设计上的"秩序美"。
-而这种有秩序的紧密配合，在程序开发中处处可见。
-也许这种美就是"自顶向下，逐步求精"和"模块化"两大思想的最好体现。&lt;/p&gt;&lt;/div&gt;</description><category>Android</category><category>java</category><guid>https://codinglonglong.github.io/posts/zui-jian-hua-de-androidru-men-cheng-xu/</guid><pubDate>Fri, 14 Jul 2017 11:57:48 GMT</pubDate></item></channel></rss>
+&lt;p&gt;路由器必须要打开DHCP才可以正常连接。&lt;/p&gt;&lt;/div&gt;</description><category>Ubuntu</category><category>wifi</category><guid>https://codinglonglong.github.io/posts/ubuntuming-ling-xing-lian-jie-wifi/</guid><pubDate>Wed, 19 Jul 2017 03:06:54 GMT</pubDate></item></channel></rss>

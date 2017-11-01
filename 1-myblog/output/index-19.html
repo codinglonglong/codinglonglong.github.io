@@ -92,7 +92,137 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/" class="u-url">Python和Java有趣的语法对比（1）——构造函数默认参数</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/" class="u-url">Python和Java有趣的语法对比（2）——实例化是否调用基类的构造函数</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/" rel="bookmark"><time class="published dt-published" datetime="2017-07-27T21:10:49+08:00" title="2017-07-27 21:10">2017-07-27 21:10</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>Python和Java在子类实例化上也有区别，看下面这个例子：</p>
+<p><strong>Python版本</strong></p>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_8fc437a5986a4047978b8ab68b4624fb-1"> 1</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_8fc437a5986a4047978b8ab68b4624fb-2"> 2</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_8fc437a5986a4047978b8ab68b4624fb-3"> 3</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_8fc437a5986a4047978b8ab68b4624fb-4"> 4</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_8fc437a5986a4047978b8ab68b4624fb-5"> 5</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_8fc437a5986a4047978b8ab68b4624fb-6"> 6</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_8fc437a5986a4047978b8ab68b4624fb-7"> 7</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_8fc437a5986a4047978b8ab68b4624fb-8"> 8</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_8fc437a5986a4047978b8ab68b4624fb-9"> 9</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_8fc437a5986a4047978b8ab68b4624fb-10">10</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_8fc437a5986a4047978b8ab68b4624fb-11">11</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_8fc437a5986a4047978b8ab68b4624fb-12">12</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_8fc437a5986a4047978b8ab68b4624fb-13">13</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_8fc437a5986a4047978b8ab68b4624fb-14">14</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_8fc437a5986a4047978b8ab68b4624fb-15">15</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_8fc437a5986a4047978b8ab68b4624fb-16">16</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_8fc437a5986a4047978b8ab68b4624fb-17">17</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_8fc437a5986a4047978b8ab68b4624fb-18">18</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_8fc437a5986a4047978b8ab68b4624fb-19">19</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-1"></a><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-2"></a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-3"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">"A的构造函数"</span><span class="p">)</span>
+<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-4"></a>
+<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-5"></a>    <span class="k">def</span> <span class="nf">sayhello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-6"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">"Hello A"</span><span class="p">)</span>
+<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-7"></a>
+<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-8"></a><span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-9"></a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-10"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">"B的构造函数"</span><span class="p">)</span>
+<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-11"></a>
+<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-12"></a>    <span class="k">def</span> <span class="nf">sayhello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-13"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">"Hello B"</span><span class="p">)</span>
+<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-14"></a>
+<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-15"></a>
+<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-16"></a><span class="n">b</span> <span class="o">=</span> <span class="n">B</span><span class="p">()</span>
+<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-17"></a><span class="n">b</span><span class="o">.</span><span class="n">sayhello</span><span class="p">()</span>
+<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-18"></a><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-19"></a><span class="n">a</span><span class="o">.</span><span class="n">sayhello</span><span class="p">()</span>
+</pre></td>
+</tr></table>
+<p>输出:</p>
+<pre class="literal-block">
+C:\Users\long\Desktop\src\test&gt;python3 test.py
+B的构造函数
+Hello B
+A的构造函数
+Hello A
+</pre>
+<p><strong>Java版本</strong></p>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-1"> 1</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-2"> 2</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-3"> 3</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-4"> 4</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-5"> 5</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-6"> 6</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-7"> 7</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-8"> 8</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-9"> 9</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-10">10</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-11">11</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-12">12</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-13">13</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-14">14</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-15">15</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-16">16</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-17">17</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-18">18</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-19">19</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-20">20</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-21">21</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-22">22</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-23">23</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-24">24</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-25">25</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-26">26</a></pre></div></td>
+<td class="code"><pre class="code java"><a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-1"></a><span class="kd">public</span> <span class="kd">class</span> <span class="nc">T1</span><span class="o">{</span>
+<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-2"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-3"></a>        <span class="n">B</span> <span class="n">b</span> <span class="o">=</span>  <span class="k">new</span> <span class="n">B</span><span class="o">();</span>
+<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-4"></a>        <span class="n">b</span><span class="o">.</span><span class="na">sayhello</span><span class="o">();</span>
+<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-5"></a>        <span class="n">A</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">A</span><span class="o">();</span>
+<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-6"></a>        <span class="n">a</span><span class="o">.</span><span class="na">sayhello</span><span class="o">();</span>
+<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-7"></a>    <span class="o">}</span>
+<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-8"></a><span class="o">}</span>
+<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-9"></a>
+<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-10"></a><span class="kd">class</span> <span class="nc">A</span><span class="o">{</span>
+<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-11"></a>    <span class="n">A</span><span class="o">(){</span>
+<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-12"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"A的构造函数"</span><span class="o">);</span>
+<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-13"></a>    <span class="o">}</span>
+<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-14"></a>    <span class="kt">void</span> <span class="nf">sayhello</span><span class="o">(){</span>
+<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-15"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello A"</span><span class="o">);</span>
+<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-16"></a>    <span class="o">}</span>
+<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-17"></a><span class="o">}</span>
+<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-18"></a>
+<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-19"></a><span class="kd">class</span> <span class="nc">B</span> <span class="kd">extends</span> <span class="n">A</span><span class="o">{</span>
+<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-20"></a>    <span class="n">B</span><span class="o">(){</span>
+<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-21"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"B的构造函数"</span><span class="o">);</span>
+<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-22"></a>    <span class="o">}</span>
+<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-23"></a>    <span class="kt">void</span> <span class="nf">sayhello</span><span class="o">(){</span>
+<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-24"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello B"</span><span class="o">);</span>
+<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-25"></a>    <span class="o">}</span>
+<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-26"></a><span class="o">}</span>
+</pre></td>
+</tr></table>
+<p>输出:</p>
+<pre class="literal-block">
+C:\Users\long\Desktop\src\test&gt;javac -encoding UTF8 *.java
+
+C:\Users\long\Desktop\src\test&gt;java T1
+A的构造函数
+B的构造函数
+Hello B
+A的构造函数
+Hello A
+</pre>
+<p>这里体现了Java有趣的地方，对于类继承，Java实例化子类的时候，不仅会调用子类的构造函数，还会自动调用父类的构造函数，而调用子类的实例方法却不会调用父类的实例方法。在这一点上，Python比较符合人的直观感受，都是调用的实例对应的方法，不管是构造函数还是实例方法。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/" class="u-url">Python和Java有趣的语法对比（1）——构造函数默认参数</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
