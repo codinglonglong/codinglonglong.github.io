@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about CAD)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_cad.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 01 Nov 2017 14:06:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>CAD练习题1——平行、偏移、移动</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-1-ping-xing-pian-yi-yi-dong/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目:&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p1-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p1-6.PNG"&gt;
+&lt;p&gt;这道题主要涉及到平行、偏移和移动，三个主要的工具。&lt;/p&gt;
+&lt;p&gt;1、利用平行，画出部分已知图形。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p1-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p1-1.PNG"&gt;
+&lt;p&gt;2、因为没法直接连上，先在旁边画上其他已知图形，找找机会。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p1-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p1-2.PNG"&gt;
+&lt;p&gt;3、图中的106是连接两个图形的关键点，另外就是图中蓝色的垂线，这条垂线给定了偏移距离。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p1-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p1-3.PNG"&gt;
+&lt;p&gt;4、偏移左边图形顶端线，与106水平线交于一点，这个点就是右边图形要移动到的目标点，移动图形。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p1-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p1-4.PNG"&gt;
+&lt;p&gt;5、去掉多余的线，得到结果。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p1-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p1-5.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-1-ping-xing-pian-yi-yi-dong/</guid><pubDate>Wed, 01 Nov 2017 12:33:23 GMT</pubDate></item></channel></rss>

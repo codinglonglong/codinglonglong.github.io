@@ -10,7 +10,7 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
 <link rel="canonical" href="https://codinglonglong.github.io/">
-<link rel="next" href="index-18.html" type="text/html">
+<link rel="next" href="index-19.html" type="text/html">
 <!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><script>
 var _hmt = _hmt || [];
 (function() {
@@ -24,7 +24,7 @@ body{
     font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
 }
 </style>
-<link rel="prefetch" href="posts/wxpythonxue-xi-ji-ben-chuang-kou/" type="text/html">
+<link rel="prefetch" href="posts/cadlian-xi-ti-1-ping-xing-pian-yi-yi-dong/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -92,7 +92,26 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/wxpythonxue-xi-ji-ben-chuang-kou/" class="u-url">wxPython学习（1）——基本窗口</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/cadlian-xi-ti-1-ping-xing-pian-yi-yi-dong/" class="u-url">CAD练习题1——平行、偏移、移动</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/cadlian-xi-ti-1-ping-xing-pian-yi-yi-dong/" rel="bookmark"><time class="published dt-published" datetime="2017-11-01T20:33:23+08:00" title="2017-11-01 20:33">2017-11-01 20:33</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>题目:</p>
+<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p1-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p1-6.PNG"><p>这道题主要涉及到平行、偏移和移动，三个主要的工具。</p>
+<p>1、利用平行，画出部分已知图形。</p>
+<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p1-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p1-1.PNG"><p>2、因为没法直接连上，先在旁边画上其他已知图形，找找机会。</p>
+<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p1-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p1-2.PNG"><p>3、图中的106是连接两个图形的关键点，另外就是图中蓝色的垂线，这条垂线给定了偏移距离。</p>
+<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p1-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p1-3.PNG"><p>4、偏移左边图形顶端线，与106水平线交于一点，这个点就是右边图形要移动到的目标点，移动图形。</p>
+<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p1-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p1-4.PNG"><p>5、去掉多余的线，得到结果。</p>
+<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p1-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p1-5.PNG">
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/wxpythonxue-xi-ji-ben-chuang-kou/" class="u-url">wxPython学习（1）——基本窗口</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
@@ -518,272 +537,12 @@ Hello A
 <p>这里体现了Java有趣的地方，对于类继承，Java实例化子类的时候，不仅会调用子类的构造函数，还会自动调用父类的构造函数，而调用子类的实例方法却不会调用父类的实例方法。在这一点上，Python比较符合人的直观感受，都是调用的实例对应的方法，不管是构造函数还是实例方法。</p>
 </div>
     </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/" class="u-url">Python和Java有趣的语法对比（1）——构造函数默认参数</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/" rel="bookmark"><time class="published dt-published" datetime="2017-07-27T18:15:52+08:00" title="2017-07-27 18:15">2017-07-27 18:15</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>一直在用Python，很少用Java，现在学习Android，为了Native App的流畅性，不得不用Java了。</p>
-<p>普通语法上，Python和Java基本可以完全对译，无非是动态类型和静态类型的区别，但是面向对象上，两者的区别就很有意思了。</p>
-<p>今天我们来研究一下构造函数默认参数这个话题。举个例子：</p>
-<p>如果我们想在类方法执行过程中，有时看到一些debug信息，有时不想看到，而不想每次都重复写输出语句之后再删除，该怎么办呢？</p>
-<p>先来看看Python实现：</p>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_403052cb7f1d4391a7ca0ada4e7e5057-1"> 1</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_403052cb7f1d4391a7ca0ada4e7e5057-2"> 2</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_403052cb7f1d4391a7ca0ada4e7e5057-3"> 3</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_403052cb7f1d4391a7ca0ada4e7e5057-4"> 4</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_403052cb7f1d4391a7ca0ada4e7e5057-5"> 5</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_403052cb7f1d4391a7ca0ada4e7e5057-6"> 6</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_403052cb7f1d4391a7ca0ada4e7e5057-7"> 7</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_403052cb7f1d4391a7ca0ada4e7e5057-8"> 8</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_403052cb7f1d4391a7ca0ada4e7e5057-9"> 9</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_403052cb7f1d4391a7ca0ada4e7e5057-10">10</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_403052cb7f1d4391a7ca0ada4e7e5057-11">11</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_403052cb7f1d4391a7ca0ada4e7e5057-12">12</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_403052cb7f1d4391a7ca0ada4e7e5057-13">13</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_403052cb7f1d4391a7ca0ada4e7e5057-14">14</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_403052cb7f1d4391a7ca0ada4e7e5057-15">15</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_403052cb7f1d4391a7ca0ada4e7e5057-16">16</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_403052cb7f1d4391a7ca0ada4e7e5057-17">17</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_403052cb7f1d4391a7ca0ada4e7e5057-18">18</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_403052cb7f1d4391a7ca0ada4e7e5057-19">19</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_403052cb7f1d4391a7ca0ada4e7e5057-20">20</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_403052cb7f1d4391a7ca0ada4e7e5057-21">21</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_403052cb7f1d4391a7ca0ada4e7e5057-22">22</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_403052cb7f1d4391a7ca0ada4e7e5057-23">23</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_403052cb7f1d4391a7ca0ada4e7e5057-1"></a><span class="k">class</span> <span class="nc">Test</span><span class="p">:</span>
-<a name="rest_code_403052cb7f1d4391a7ca0ada4e7e5057-2"></a>
-<a name="rest_code_403052cb7f1d4391a7ca0ada4e7e5057-3"></a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
-<a name="rest_code_403052cb7f1d4391a7ca0ada4e7e5057-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">debug</span> <span class="o">=</span> <span class="n">debug</span>
-<a name="rest_code_403052cb7f1d4391a7ca0ada4e7e5057-5"></a>
-<a name="rest_code_403052cb7f1d4391a7ca0ada4e7e5057-6"></a>    <span class="k">def</span> <span class="nf">test_add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numa</span><span class="p">,</span> <span class="n">numb</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
-<a name="rest_code_403052cb7f1d4391a7ca0ada4e7e5057-7"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">debug</span> <span class="ow">or</span> <span class="n">debug</span><span class="p">:</span>
-<a name="rest_code_403052cb7f1d4391a7ca0ada4e7e5057-8"></a>            <span class="k">print</span><span class="p">(</span><span class="s2">"test_add"</span><span class="p">)</span>
-<a name="rest_code_403052cb7f1d4391a7ca0ada4e7e5057-9"></a>            <span class="k">print</span><span class="p">(</span><span class="s2">"numa:"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">numa</span><span class="p">))</span>
-<a name="rest_code_403052cb7f1d4391a7ca0ada4e7e5057-10"></a>            <span class="k">print</span><span class="p">(</span><span class="s2">"numb:"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">numb</span><span class="p">))</span>
-<a name="rest_code_403052cb7f1d4391a7ca0ada4e7e5057-11"></a>        <span class="k">return</span> <span class="n">numa</span> <span class="o">+</span> <span class="n">numb</span>
-<a name="rest_code_403052cb7f1d4391a7ca0ada4e7e5057-12"></a>
-<a name="rest_code_403052cb7f1d4391a7ca0ada4e7e5057-13"></a>    <span class="k">def</span> <span class="nf">test_minus</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numa</span><span class="p">,</span> <span class="n">numb</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
-<a name="rest_code_403052cb7f1d4391a7ca0ada4e7e5057-14"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">debug</span> <span class="ow">or</span> <span class="n">debug</span><span class="p">:</span>
-<a name="rest_code_403052cb7f1d4391a7ca0ada4e7e5057-15"></a>            <span class="k">print</span><span class="p">(</span><span class="s2">"test_minus"</span><span class="p">)</span>
-<a name="rest_code_403052cb7f1d4391a7ca0ada4e7e5057-16"></a>            <span class="k">print</span><span class="p">(</span><span class="s2">"numa:"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">numa</span><span class="p">))</span>
-<a name="rest_code_403052cb7f1d4391a7ca0ada4e7e5057-17"></a>            <span class="k">print</span><span class="p">(</span><span class="s2">"numb:"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">numb</span><span class="p">))</span>
-<a name="rest_code_403052cb7f1d4391a7ca0ada4e7e5057-18"></a>        <span class="k">return</span> <span class="n">numa</span> <span class="o">-</span> <span class="n">numb</span>
-<a name="rest_code_403052cb7f1d4391a7ca0ada4e7e5057-19"></a>
-<a name="rest_code_403052cb7f1d4391a7ca0ada4e7e5057-20"></a>
-<a name="rest_code_403052cb7f1d4391a7ca0ada4e7e5057-21"></a><span class="n">t</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
-<a name="rest_code_403052cb7f1d4391a7ca0ada4e7e5057-22"></a><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">test_add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-<a name="rest_code_403052cb7f1d4391a7ca0ada4e7e5057-23"></a><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">test_minus</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-</pre></td>
-</tr></table>
-<p>输出:</p>
-<pre class="literal-block">
-$ python3 test.py
-3
--1
-</pre>
-<p>如果想输出一个类里的所有debug，只需要在实例化的时候设置参数就可以了。</p>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_d68db8066e8948d6801cc9db9b3b1a41-1">1</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_d68db8066e8948d6801cc9db9b3b1a41-2">2</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_d68db8066e8948d6801cc9db9b3b1a41-3">3</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_d68db8066e8948d6801cc9db9b3b1a41-1"></a><span class="n">t</span> <span class="o">=</span> <span class="n">Test</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-<a name="rest_code_d68db8066e8948d6801cc9db9b3b1a41-2"></a><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">test_add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-<a name="rest_code_d68db8066e8948d6801cc9db9b3b1a41-3"></a><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">test_minus</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-</pre></td>
-</tr></table>
-<p>输出:</p>
-<pre class="literal-block">
-$ python3 test.py
-test_add
-numa:1
-numb:2
-3
-test_minus
-numa:1
-numb:2
--1
-</pre>
-<p>如果只想debug某个函数，只需要调用函数的时候设置参数就可以了。</p>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_21ec02e0996d4941aabca6054d658dca-1">1</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_21ec02e0996d4941aabca6054d658dca-2">2</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_21ec02e0996d4941aabca6054d658dca-3">3</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_21ec02e0996d4941aabca6054d658dca-1"></a><span class="n">t</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
-<a name="rest_code_21ec02e0996d4941aabca6054d658dca-2"></a><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">test_add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span>
-<a name="rest_code_21ec02e0996d4941aabca6054d658dca-3"></a><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">test_minus</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-</pre></td>
-</tr></table>
-<p>输出:</p>
-<pre class="literal-block">
-$ python3 test.py
-test_add
-numa:1
-numb:2
-3
--1
-</pre>
-<p>如果用Java实现类似的效果，该怎么办呢？要注意到： <strong>Java不支持默认参数</strong></p>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-1"> 1</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-2"> 2</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-3"> 3</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-4"> 4</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-5"> 5</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-6"> 6</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-7"> 7</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-8"> 8</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-9"> 9</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-10">10</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-11">11</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-12">12</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-13">13</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-14">14</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-15">15</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-16">16</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-17">17</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-18">18</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-19">19</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-20">20</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-21">21</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-22">22</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-23">23</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-24">24</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-25">25</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-26">26</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-27">27</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-28">28</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-29">29</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-30">30</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-31">31</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-32">32</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_c7e7bd19906942fc8d462c74c1097308-33">33</a></pre></div></td>
-<td class="code"><pre class="code java"><a name="rest_code_c7e7bd19906942fc8d462c74c1097308-1"></a><span class="kd">public</span> <span class="kd">class</span> <span class="nc">T1</span><span class="o">{</span>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-2"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-3"></a>        <span class="n">Test</span> <span class="n">t</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Test</span><span class="o">();</span>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-4"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">t</span><span class="o">.</span><span class="na">test_add</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="kc">false</span><span class="o">));</span>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-5"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">t</span><span class="o">.</span><span class="na">test_minus</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="kc">false</span><span class="o">));</span>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-6"></a>    <span class="o">}</span>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-7"></a><span class="o">}</span>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-8"></a>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-9"></a><span class="kd">class</span> <span class="nc">Test</span><span class="o">{</span>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-10"></a>    <span class="kt">boolean</span> <span class="n">debug</span><span class="o">=</span><span class="kc">false</span><span class="o">;</span>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-11"></a>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-12"></a>    <span class="kt">void</span> <span class="nf">set_global</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">debug</span><span class="o">){</span>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-13"></a>        <span class="k">this</span><span class="o">.</span><span class="na">debug</span> <span class="o">=</span> <span class="n">debug</span><span class="o">;</span>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-14"></a>    <span class="o">}</span>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-15"></a>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-16"></a>    <span class="kt">int</span> <span class="nf">test_add</span><span class="o">(</span><span class="kt">int</span> <span class="n">numa</span><span class="o">,</span> <span class="kt">int</span> <span class="n">numb</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">debug</span><span class="o">){</span>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-17"></a>        <span class="k">if</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">debug</span> <span class="o">||</span> <span class="n">debug</span><span class="o">){</span>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-18"></a>            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"test_add"</span><span class="o">);</span>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-19"></a>            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"numa:"</span> <span class="o">+</span> <span class="n">numa</span><span class="o">);</span>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-20"></a>            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"numb:"</span> <span class="o">+</span> <span class="n">numb</span><span class="o">);</span>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-21"></a>        <span class="o">}</span>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-22"></a>        <span class="k">return</span> <span class="n">numa</span> <span class="o">+</span> <span class="n">numb</span><span class="o">;</span>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-23"></a>    <span class="o">}</span>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-24"></a>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-25"></a>    <span class="kt">int</span> <span class="nf">test_minus</span><span class="o">(</span><span class="kt">int</span> <span class="n">numa</span><span class="o">,</span> <span class="kt">int</span> <span class="n">numb</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">debug</span><span class="o">){</span>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-26"></a>        <span class="k">if</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">debug</span> <span class="o">||</span> <span class="n">debug</span><span class="o">){</span>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-27"></a>            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"test_minus"</span><span class="o">);</span>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-28"></a>            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"numa:"</span> <span class="o">+</span> <span class="n">numa</span><span class="o">);</span>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-29"></a>            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"numb:"</span> <span class="o">+</span> <span class="n">numb</span><span class="o">);</span>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-30"></a>        <span class="o">}</span>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-31"></a>        <span class="k">return</span> <span class="n">numa</span> <span class="o">-</span> <span class="n">numb</span><span class="o">;</span>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-32"></a>    <span class="o">}</span>
-<a name="rest_code_c7e7bd19906942fc8d462c74c1097308-33"></a><span class="o">}</span>
-</pre></td>
-</tr></table>
-<p>输出:</p>
-<pre class="literal-block">
-long@iphone7 MINGW64 ~/Desktop/src/test
-$ javac *.java
-
-long@iphone7 MINGW64 ~/Desktop/src/test
-$ java T1
-3
--1
-</pre>
-<p>设置类的debug参数。</p>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_f828c41f5b054154ad8d70ee95f93fbd-1">1</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_f828c41f5b054154ad8d70ee95f93fbd-2">2</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_f828c41f5b054154ad8d70ee95f93fbd-3">3</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_f828c41f5b054154ad8d70ee95f93fbd-4">4</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_f828c41f5b054154ad8d70ee95f93fbd-5">5</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_f828c41f5b054154ad8d70ee95f93fbd-6">6</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_f828c41f5b054154ad8d70ee95f93fbd-7">7</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_f828c41f5b054154ad8d70ee95f93fbd-8">8</a></pre></div></td>
-<td class="code"><pre class="code java"><a name="rest_code_f828c41f5b054154ad8d70ee95f93fbd-1"></a><span class="kd">public</span> <span class="kd">class</span> <span class="nc">T1</span><span class="o">{</span>
-<a name="rest_code_f828c41f5b054154ad8d70ee95f93fbd-2"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
-<a name="rest_code_f828c41f5b054154ad8d70ee95f93fbd-3"></a>        <span class="n">Test</span> <span class="n">t</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Test</span><span class="o">();</span>
-<a name="rest_code_f828c41f5b054154ad8d70ee95f93fbd-4"></a>        <span class="n">t</span><span class="o">.</span><span class="na">set_global</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
-<a name="rest_code_f828c41f5b054154ad8d70ee95f93fbd-5"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">t</span><span class="o">.</span><span class="na">test_add</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="kc">false</span><span class="o">));</span>
-<a name="rest_code_f828c41f5b054154ad8d70ee95f93fbd-6"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">t</span><span class="o">.</span><span class="na">test_minus</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="kc">false</span><span class="o">));</span>
-<a name="rest_code_f828c41f5b054154ad8d70ee95f93fbd-7"></a>    <span class="o">}</span>
-<a name="rest_code_f828c41f5b054154ad8d70ee95f93fbd-8"></a><span class="o">}</span>
-</pre></td>
-</tr></table>
-<p>输出:</p>
-<pre class="literal-block">
-long@iphone7 MINGW64 ~/Desktop/src/test
-$ javac *.java
-
-long@iphone7 MINGW64 ~/Desktop/src/test
-$ java T1
-test_add
-numa:1
-numb:2
-3
-test_minus
-numa:1
-numb:2
--1
-</pre>
-<p>debug某个函数。</p>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_efb295c4db444f7798db7bbd325eb1ad-1">1</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_efb295c4db444f7798db7bbd325eb1ad-2">2</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_efb295c4db444f7798db7bbd325eb1ad-3">3</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_efb295c4db444f7798db7bbd325eb1ad-4">4</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_efb295c4db444f7798db7bbd325eb1ad-5">5</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_efb295c4db444f7798db7bbd325eb1ad-6">6</a>
-<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_efb295c4db444f7798db7bbd325eb1ad-7">7</a></pre></div></td>
-<td class="code"><pre class="code java"><a name="rest_code_efb295c4db444f7798db7bbd325eb1ad-1"></a><span class="kd">public</span> <span class="kd">class</span> <span class="nc">T1</span><span class="o">{</span>
-<a name="rest_code_efb295c4db444f7798db7bbd325eb1ad-2"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
-<a name="rest_code_efb295c4db444f7798db7bbd325eb1ad-3"></a>        <span class="n">Test</span> <span class="n">t</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Test</span><span class="o">();</span>
-<a name="rest_code_efb295c4db444f7798db7bbd325eb1ad-4"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">t</span><span class="o">.</span><span class="na">test_add</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="kc">true</span><span class="o">));</span>
-<a name="rest_code_efb295c4db444f7798db7bbd325eb1ad-5"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">t</span><span class="o">.</span><span class="na">test_minus</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="kc">false</span><span class="o">));</span>
-<a name="rest_code_efb295c4db444f7798db7bbd325eb1ad-6"></a>    <span class="o">}</span>
-<a name="rest_code_efb295c4db444f7798db7bbd325eb1ad-7"></a><span class="o">}</span>
-</pre></td>
-</tr></table>
-<p>输出:</p>
-<pre class="literal-block">
-long@iphone7 MINGW64 ~/Desktop/src/test
-$ javac *.java
-
-long@iphone7 MINGW64 ~/Desktop/src/test
-$ java T1
-test_add
-numa:1
-numb:2
-3
--1
-</pre>
-<p>这也就意味着，由于没有默认参数机制，Java要实现这样的debug，必须要为每个函数设定一个debug参数，总不能每个方法都写一个函数重载吧？要不，就利用IDE进行一遍一遍的单步调试？？</p>
-</div>
-    </div>
     </article>
 </div>
 
         <nav class="postindexpager"><ul class="pager">
 <li class="next">
-                <a href="index-18.html" rel="next">Older posts</a>
+                <a href="index-19.html" rel="next">Older posts</a>
             </li>
         </ul></nav>
 </div>
