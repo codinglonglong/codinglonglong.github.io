@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about CAD)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_cad.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 01 Nov 2017 14:06:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>CAD练习题1——平行、偏移、移动</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-1-ping-xing-pian-yi-yi-dong/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目:&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about CAD)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_cad.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Thu, 02 Nov 2017 10:38:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>CAD练习题3——顶点到对边垂线、三边相切画圆、缩放、阵列</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-3-ding-dian-dao-dui-bian-chui-xian-san-bian-xiang-qie-hua-yuan-suo-fang/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目:&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p3-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p3-5.PNG"&gt;
+&lt;p&gt;这道题只给了一个100，其他的条件都不明确。像这样的对称图形，都应优先考虑多边形的使用，再加上一圈都有圆弧相切，应能想到利用相切画圆，又由于无法确定半径，所以肯定要构造三边相切画圆。&lt;/p&gt;
+&lt;p&gt;1、因为是七个花瓣，所以画一个七边形，利用顶点到对边垂线，构造三边相切画圆。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p3-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p3-1.PNG"&gt;
+&lt;p&gt;2、利用镜像或者阵列，得到一圈图形。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p3-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p3-2.PNG"&gt;
+&lt;p&gt;3、清理图形。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p3-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p3-3.PNG"&gt;
+&lt;p&gt;4、画中心的圆，连接垂线，缩放图形。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p3-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p3-4.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-3-ding-dian-dao-dui-bian-chui-xian-san-bian-xiang-qie-hua-yuan-suo-fang/</guid><pubDate>Thu, 02 Nov 2017 10:28:45 GMT</pubDate></item><item><title>CAD练习题2——圆心所在直线、镜像、三点画弧、等分、阵列</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-2-yuan-xin-suo-zai-zhi-xian-jing-xiang-san-dian-hua-hu-deng-fen/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目:&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p2-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p2-5.PNG"&gt;
+&lt;p&gt;这道题给了圆心所在的直线，给了圆弧过的两个点，那么如何画出这个弧呢？我们利用的是镜像和三点画弧。&lt;/p&gt;
+&lt;p&gt;1、画出基本图形。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p2-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p2-1.PNG"&gt;
+&lt;p&gt;2、因为给定了圆心所在的直线，所以可以利用镜像构造三点画弧。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p2-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p2-2.PNG"&gt;
+&lt;p&gt;3、利用阵列，画出其他部分。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p2-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p2-3.PNG"&gt;
+&lt;p&gt;4、清理图形。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p2-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p2-4.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-2-yuan-xin-suo-zai-zhi-xian-jing-xiang-san-dian-hua-hu-deng-fen/</guid><pubDate>Thu, 02 Nov 2017 10:11:57 GMT</pubDate></item><item><title>CAD练习题1——平行、偏移、移动</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-1-ping-xing-pian-yi-yi-dong/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目:&lt;/p&gt;
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p1-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p1-6.PNG"&gt;
 &lt;p&gt;这道题主要涉及到平行、偏移和移动，三个主要的工具。&lt;/p&gt;
 &lt;p&gt;1、利用平行，画出部分已知图形。&lt;/p&gt;
