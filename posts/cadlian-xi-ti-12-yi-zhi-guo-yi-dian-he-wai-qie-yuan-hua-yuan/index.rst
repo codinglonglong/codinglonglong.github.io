@@ -11,7 +11,7 @@
 
 .. image:: https://github.com/longlongpicture/myblogpicture/raw/master/p12-7.PNG
 
-这道题知道圆过点、外切圆、半径，既不符合相切相切半径、也不符合三边相切。那么怎么画呢？
+这道题知道圆过点、相切圆、半径，既不符合相切相切半径、也不符合三边相切。那么怎么画呢？
 
 1、先画已知的部分。
 
