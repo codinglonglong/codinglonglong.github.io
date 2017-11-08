@@ -1,23 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 07 Nov 2017 11:31:45 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>CAD练习题12——利用圆形旋转作水滴</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-12-li-yong-yuan-xing-xuan-zhuan-zuo-shui-di/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目：&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-9.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-9.PNG"&gt;
-&lt;p&gt;这道题上边的两个弧很不好把握，只知道过一点和半径，不管是作弧，还是作圆，都差点什么。&lt;/p&gt;
-&lt;p&gt;1、先画上已知部分。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-1.PNG"&gt;
-&lt;p&gt;2、构造两个等大的圆，实现一个圆围绕另一个圆转。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-2.PNG"&gt;
-&lt;p&gt;3、利用圆的半径相等，连接旋转前和旋转后的两条弦。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-3.PNG"&gt;
-&lt;p&gt;4、利用两条弦作参照，旋转两个圆使其重合，可以看到实现了：过一点、定半径、相切。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-4.PNG"&gt;
-&lt;p&gt;5、清理图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-5.PNG"&gt;
-&lt;p&gt;6、利用同样的原理，作出左侧的弧，注意找对弦的位置。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-6.PNG"&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-7.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-7.PNG"&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-8.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-8.PNG"&gt;
-&lt;p&gt;7、清理图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-9.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-9.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-12-li-yong-yuan-xing-xuan-zhuan-zuo-shui-di/</guid><pubDate>Tue, 07 Nov 2017 11:24:14 GMT</pubDate></item><item><title>CAD练习题11——利用平行和偏移作三角形内接花型图案</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-11-li-yong-ping-xing-he-pian-yi-zuo-san-jiao-xing-nei-jie-hua-xing-tu-an/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目：&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 08 Nov 2017 11:23:53 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>CAD练习题11——利用平行和偏移作三角形内接花型图案</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-11-li-yong-ping-xing-he-pian-yi-zuo-san-jiao-xing-nei-jie-hua-xing-tu-an/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目：&lt;/p&gt;
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p11-8.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p11-8.PNG"&gt;
 &lt;p&gt;这道题看上去很难入手，先画三角形吧，不好找到内切的位置；先画花吧，不好找到外切的位置……&lt;/p&gt;
 &lt;p&gt;1、先画三角形。&lt;/p&gt;
@@ -148,4 +130,14 @@
 &lt;p&gt;3、清理图形。&lt;/p&gt;
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p3-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p3-3.PNG"&gt;
 &lt;p&gt;4、画中心的圆，连接垂线，缩放图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p3-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p3-4.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-3-ding-dian-dao-dui-bian-chui-xian-san-bian-xiang-qie-hua-yuan-suo-fang/</guid><pubDate>Thu, 02 Nov 2017 10:28:45 GMT</pubDate></item></channel></rss>
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p3-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p3-4.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-3-ding-dian-dao-dui-bian-chui-xian-san-bian-xiang-qie-hua-yuan-suo-fang/</guid><pubDate>Thu, 02 Nov 2017 10:28:45 GMT</pubDate></item><item><title>CAD练习题2——圆心所在直线、镜像、三点画弧、等分、阵列</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-2-yuan-xin-suo-zai-zhi-xian-jing-xiang-san-dian-hua-hu-deng-fen/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目:&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p2-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p2-5.PNG"&gt;
+&lt;p&gt;这道题给了圆心所在的直线，给了圆弧过的两个点，那么如何画出这个弧呢？我们利用的是镜像和三点画弧。&lt;/p&gt;
+&lt;p&gt;1、画出基本图形。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p2-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p2-1.PNG"&gt;
+&lt;p&gt;2、因为给定了圆心所在的直线，所以可以利用镜像构造三点画弧。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p2-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p2-2.PNG"&gt;
+&lt;p&gt;3、利用阵列，画出其他部分。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p2-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p2-3.PNG"&gt;
+&lt;p&gt;4、清理图形。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p2-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p2-4.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-2-yuan-xin-suo-zai-zhi-xian-jing-xiang-san-dian-hua-hu-deng-fen/</guid><pubDate>Thu, 02 Nov 2017 10:11:57 GMT</pubDate></item></channel></rss>
