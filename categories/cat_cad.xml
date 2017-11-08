@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about CAD)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_cad.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 08 Nov 2017 11:23:51 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>CAD练习题11——利用平行和偏移作三角形内接花型图案</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-11-li-yong-ping-xing-he-pian-yi-zuo-san-jiao-xing-nei-jie-hua-xing-tu-an/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目：&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about CAD)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_cad.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 08 Nov 2017 12:03:11 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>CAD练习题12——已知过一点和相切圆画圆</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-12-yi-zhi-guo-yi-dian-he-wai-qie-yuan-hua-yuan/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目：&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-7.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-7.PNG"&gt;
+&lt;p&gt;这道题知道圆过点、外切圆、半径，既不符合相切相切半径、也不符合三边相切。那么怎么画呢？&lt;/p&gt;
+&lt;p&gt;1、先画已知的部分。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-1.PNG"&gt;
+&lt;p&gt;2、由于过一点又知道半径，那么我们从这一点为圆心画圆，目标弧的圆心一定在这个圆上。同时又知道外切圆，所以圆心之间连线长度等于半径之和，所以一个圆半径是35，一个圆半径是50，总长度是85。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-2.PNG"&gt;
+&lt;p&gt;3、上一步中两个圆的交点就是目标弧的圆心。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-3.PNG"&gt;
+&lt;p&gt;4、清理图形。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-4.PNG"&gt;
+&lt;p&gt;5、同样的画法来画左边的80，但是注意这个是内切圆了，所以半径是减法，一个圆半径是80，一个圆半径是35，总长度是45。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-5.PNG"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-6.PNG"&gt;
+&lt;p&gt;6、清理图形。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-7.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-7.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-12-yi-zhi-guo-yi-dian-he-wai-qie-yuan-hua-yuan/</guid><pubDate>Wed, 08 Nov 2017 11:47:14 GMT</pubDate></item><item><title>CAD练习题11——利用平行和偏移作三角形内接花型图案</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-11-li-yong-ping-xing-he-pian-yi-zuo-san-jiao-xing-nei-jie-hua-xing-tu-an/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目：&lt;/p&gt;
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p11-8.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p11-8.PNG"&gt;
 &lt;p&gt;这道题看上去很难入手，先画三角形吧，不好找到内切的位置；先画花吧，不好找到外切的位置……&lt;/p&gt;
 &lt;p&gt;1、先画三角形。&lt;/p&gt;
@@ -130,14 +145,4 @@
 &lt;p&gt;3、清理图形。&lt;/p&gt;
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p3-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p3-3.PNG"&gt;
 &lt;p&gt;4、画中心的圆，连接垂线，缩放图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p3-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p3-4.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-3-ding-dian-dao-dui-bian-chui-xian-san-bian-xiang-qie-hua-yuan-suo-fang/</guid><pubDate>Thu, 02 Nov 2017 10:28:45 GMT</pubDate></item><item><title>CAD练习题2——圆心所在直线、镜像、三点画弧、等分、阵列</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-2-yuan-xin-suo-zai-zhi-xian-jing-xiang-san-dian-hua-hu-deng-fen/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目:&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p2-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p2-5.PNG"&gt;
-&lt;p&gt;这道题给了圆心所在的直线，给了圆弧过的两个点，那么如何画出这个弧呢？我们利用的是镜像和三点画弧。&lt;/p&gt;
-&lt;p&gt;1、画出基本图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p2-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p2-1.PNG"&gt;
-&lt;p&gt;2、因为给定了圆心所在的直线，所以可以利用镜像构造三点画弧。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p2-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p2-2.PNG"&gt;
-&lt;p&gt;3、利用阵列，画出其他部分。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p2-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p2-3.PNG"&gt;
-&lt;p&gt;4、清理图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p2-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p2-4.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-2-yuan-xin-suo-zai-zhi-xian-jing-xiang-san-dian-hua-hu-deng-fen/</guid><pubDate>Thu, 02 Nov 2017 10:11:57 GMT</pubDate></item></channel></rss>
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p3-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p3-4.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-3-ding-dian-dao-dui-bian-chui-xian-san-bian-xiang-qie-hua-yuan-suo-fang/</guid><pubDate>Thu, 02 Nov 2017 10:28:45 GMT</pubDate></item></channel></rss>

@@ -7,11 +7,11 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://codinglonglong.github.io/</loc>
-  <lastmod>2017-11-08T11:23:00Z</lastmod>
+  <lastmod>2017-11-08T12:02:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/archive.html</loc>
-  <lastmod>2017-11-08T11:23:00Z</lastmod>
+  <lastmod>2017-11-08T12:03:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/</loc>
@@ -531,7 +531,11 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-20.html</loc>
-  <lastmod>2017-11-08T11:23:00Z</lastmod>
+  <lastmod>2017-11-08T12:02:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/index-21.html</loc>
+  <lastmod>2017-11-08T12:02:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-3.html</loc>
@@ -588,6 +592,10 @@
  <url>
   <loc>https://codinglonglong.github.io/posts/cadlian-xi-ti-11-li-yong-ping-xing-he-pian-yi-zuo-san-jiao-xing-nei-jie-hua-xing-tu-an/</loc>
   <lastmod>2017-11-08T11:23:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/posts/cadlian-xi-ti-12-yi-zhi-guo-yi-dian-he-wai-qie-yuan-hua-yuan/</loc>
+  <lastmod>2017-11-08T12:02:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/cadlian-xi-ti-2-yuan-xin-suo-zai-zhi-xian-jing-xiang-san-dian-hua-hu-deng-fen/</loc>
