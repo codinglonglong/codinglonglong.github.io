@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 21 Nov 2017 12:21:02 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>win10下仅允许一个程序联网，并禁止其他所有程序联网</title><link>https://codinglonglong.github.io/posts/win10xia-jin-yun-xu-yi-ge-cheng-xu-lian-wang-bing-jin-zhi-qi-ta-suo-you-cheng-xu-lian-wang/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;当电脑共享手机热点上网时，为避免浪费流量，就需要设置只让我们需要的程序联网，使用win10自带的防火墙，可以设置所有程序都不能联网，但是无法设置只让一个程序联网。&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 21 Nov 2017 12:48:02 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>CAD练习题13--利用平行四边形画不规则多边形1</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-13-li-yong-ping-xing-si-bian-xing-hua-bu-gui-ze-duo-bian-xing-1/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目：&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p13-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p13-5.PNG"&gt;
+&lt;p&gt;这道题看上去不难，但是画到上边斜线的时候就需要想一下从哪里下手了。&lt;/p&gt;
+&lt;p&gt;1、先画外边的三角形。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p13-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p13-1.PNG"&gt;
+&lt;p&gt;2、构造一个平行四边形，在底边构造一条和上边斜线平行并且一样长的线，然后利用平行四边形对边平行且相等，平移到目标位置。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p13-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p13-2.PNG"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p13-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p13-3.PNG"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p13-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p13-4.PNG"&gt;
+&lt;p&gt;3、清理图形。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p13-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p13-5.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-13-li-yong-ping-xing-si-bian-xing-hua-bu-gui-ze-duo-bian-xing-1/</guid><pubDate>Tue, 21 Nov 2017 12:33:37 GMT</pubDate></item><item><title>win10下仅允许一个程序联网，并禁止其他所有程序联网</title><link>https://codinglonglong.github.io/posts/win10xia-jin-yun-xu-yi-ge-cheng-xu-lian-wang-bing-jin-zhi-qi-ta-suo-you-cheng-xu-lian-wang/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;当电脑共享手机热点上网时，为避免浪费流量，就需要设置只让我们需要的程序联网，使用win10自带的防火墙，可以设置所有程序都不能联网，但是无法设置只让一个程序联网。&lt;/p&gt;
 &lt;p&gt;TinyWall（&lt;a class="reference external" href="http://tinywall.pados.hu/"&gt;http://tinywall.pados.hu/&lt;/a&gt;）可以解决这个问题。&lt;/p&gt;
 &lt;p&gt;安装好之后，启动要允许联网的程序，右击托盘图标，点击"管理"，“应用程序例外”，“添加应用程序”，“选择进程”即可。&lt;/p&gt;&lt;/div&gt;</description><category>win10</category><category>防火墙</category><guid>https://codinglonglong.github.io/posts/win10xia-jin-yun-xu-yi-ge-cheng-xu-lian-wang-bing-jin-zhi-qi-ta-suo-you-cheng-xu-lian-wang/</guid><pubDate>Tue, 21 Nov 2017 12:02:14 GMT</pubDate></item><item><title>业罢伤秋</title><link>https://codinglonglong.github.io/posts/ye-ba-shang-qiu/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;冬临万木枝灿灿，秋扫街头叶翩翩。&lt;/p&gt;
 &lt;p&gt;枯蒿处处无颜色，干草丛丛有碧澜。&lt;/p&gt;
@@ -112,20 +122,4 @@
 &lt;p&gt;8、作右侧的对称部分。&lt;/p&gt;
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p6-8.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p6-8.PNG"&gt;
 &lt;p&gt;9、清理图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p6-9.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p6-9.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-6-yi-zhi-yuan-xin-suo-zai-zhi-xian-he-yi-tiao-xian-chang-hua-yuan-hua-zhi-ding-jiao-du-he-chang-du-de-xian/</guid><pubDate>Sat, 04 Nov 2017 11:21:44 GMT</pubDate></item><item><title>CAD练习题5——连续圆弧的画法</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-5-lian-xu-yuan-hu-de-hua-fa/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目:&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p5-8.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p5-8.PNG"&gt;
-&lt;p&gt;这道题看上去很乱，大部分都可以慢慢画出来，主要需要留意的是右侧上下对称的连续圆弧。&lt;/p&gt;
-&lt;p&gt;1、先把明显的地方画好。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p5-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p5-1.PNG"&gt;
-&lt;p&gt;2、处理上边的小圆。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p5-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p5-2.PNG"&gt;
-&lt;p&gt;3、留意到，中间小圆与上边小圆连线为半径画的圆，正好是”蚕豆“中间的参考线。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p5-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p5-3.PNG"&gt;
-&lt;p&gt;4、相切相切半径画出整个“蚕豆”图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p5-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p5-4.PNG"&gt;
-&lt;p&gt;5、处理右侧简单部分。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p5-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p5-5.PNG"&gt;
-&lt;p&gt;6、处理连续圆弧，而连续圆弧的定位，靠的是与半径82.6圆的相切，现有条件下，如果没有这个相切，连续圆弧无法定位。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p5-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p5-6.PNG"&gt;
-&lt;p&gt;7、清理图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p5-7.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p5-7.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-5-lian-xu-yuan-hu-de-hua-fa/</guid><pubDate>Thu, 02 Nov 2017 13:54:29 GMT</pubDate></item></channel></rss>
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p6-9.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p6-9.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-6-yi-zhi-yuan-xin-suo-zai-zhi-xian-he-yi-tiao-xian-chang-hua-yuan-hua-zhi-ding-jiao-du-he-chang-du-de-xian/</guid><pubDate>Sat, 04 Nov 2017 11:21:44 GMT</pubDate></item></channel></rss>

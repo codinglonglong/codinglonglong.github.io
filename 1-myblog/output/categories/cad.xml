@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about CAD)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cad.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 08 Nov 2017 12:05:34 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>CAD练习题12——已知过一点和相切圆画圆</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-12-yi-zhi-guo-yi-dian-he-wai-qie-yuan-hua-yuan/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目：&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about CAD)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cad.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 21 Nov 2017 12:48:02 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>CAD练习题13--利用平行四边形画不规则多边形1</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-13-li-yong-ping-xing-si-bian-xing-hua-bu-gui-ze-duo-bian-xing-1/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目：&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p13-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p13-5.PNG"&gt;
+&lt;p&gt;这道题看上去不难，但是画到上边斜线的时候就需要想一下从哪里下手了。&lt;/p&gt;
+&lt;p&gt;1、先画外边的三角形。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p13-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p13-1.PNG"&gt;
+&lt;p&gt;2、构造一个平行四边形，在底边构造一条和上边斜线平行并且一样长的线，然后利用平行四边形对边平行且相等，平移到目标位置。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p13-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p13-2.PNG"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p13-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p13-3.PNG"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p13-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p13-4.PNG"&gt;
+&lt;p&gt;3、清理图形。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p13-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p13-5.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-13-li-yong-ping-xing-si-bian-xing-hua-bu-gui-ze-duo-bian-xing-1/</guid><pubDate>Tue, 21 Nov 2017 12:33:37 GMT</pubDate></item><item><title>CAD练习题12——已知过一点和相切圆画圆</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-12-yi-zhi-guo-yi-dian-he-wai-qie-yuan-hua-yuan/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目：&lt;/p&gt;
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-7.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-7.PNG"&gt;
 &lt;p&gt;这道题知道圆过点、相切圆、半径，既不符合相切相切半径、也不符合三边相切。那么怎么画呢？&lt;/p&gt;
 &lt;p&gt;1、先画已知的部分。&lt;/p&gt;
@@ -135,14 +145,4 @@
 &lt;p&gt;4、利用垂直于切点的半径做固定角度的切线。&lt;/p&gt;
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p4-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p4-4.PNG"&gt;
 &lt;p&gt;5、完成图形，清理图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p4-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p4-5.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-4-ping-xing-chui-zhi-yu-qie-dian-de-ban-jing-xiang-qie-xiang-qie-ban-jing-hua-yuan/</guid><pubDate>Thu, 02 Nov 2017 11:12:52 GMT</pubDate></item><item><title>CAD练习题3——顶点到对边垂线、三边相切画圆、缩放、阵列</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-3-ding-dian-dao-dui-bian-chui-xian-san-bian-xiang-qie-hua-yuan-suo-fang/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目:&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p3-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p3-5.PNG"&gt;
-&lt;p&gt;这道题只给了一个100，其他的条件都不明确。像这样的对称图形，都应优先考虑多边形的使用，再加上一圈都有圆弧相切，应能想到利用相切画圆，又由于无法确定半径，所以肯定要构造三边相切画圆。&lt;/p&gt;
-&lt;p&gt;1、因为是七个花瓣，所以画一个七边形，利用顶点到对边垂线，构造三边相切画圆。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p3-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p3-1.PNG"&gt;
-&lt;p&gt;2、利用镜像或者阵列，得到一圈图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p3-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p3-2.PNG"&gt;
-&lt;p&gt;3、清理图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p3-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p3-3.PNG"&gt;
-&lt;p&gt;4、画中心的圆，连接垂线，缩放图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p3-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p3-4.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-3-ding-dian-dao-dui-bian-chui-xian-san-bian-xiang-qie-hua-yuan-suo-fang/</guid><pubDate>Thu, 02 Nov 2017 10:28:45 GMT</pubDate></item></channel></rss>
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p4-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p4-5.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-4-ping-xing-chui-zhi-yu-qie-dian-de-ban-jing-xiang-qie-xiang-qie-ban-jing-hua-yuan/</guid><pubDate>Thu, 02 Nov 2017 11:12:52 GMT</pubDate></item></channel></rss>
