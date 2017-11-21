@@ -1,4 +1,4 @@
-.. title: CAD练习题13--利用平行四边形画不规则多边形1
+.. title: CAD练习题13——利用平行四边形画不规则多边形1
 .. slug: cadlian-xi-ti-13-li-yong-ping-xing-si-bian-xing-hua-bu-gui-ze-duo-bian-xing-1
 .. date: 2017-11-21 20:33:37 UTC+08:00
 .. tags: CAD
