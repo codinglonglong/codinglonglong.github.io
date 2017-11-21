@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about CAD)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_cad.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 21 Nov 2017 13:17:21 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>CAD练习题14——利用平行四边形画不规则多边形2</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-14-li-yong-ping-xing-si-bian-xing-hua-bu-gui-ze-duo-bian-xing-2/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目:&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about CAD)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_cad.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 21 Nov 2017 14:20:32 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>CAD练习题15--利用平行四边形画不规则多边形3</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-15-li-yong-ping-xing-si-bian-xing-hua-bu-gui-ze-duo-bian-xing-3/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目:&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p15-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p15-6.PNG"&gt;
+&lt;p&gt;这道题的方法与 &lt;a class="reference external" href="https://codinglonglong.github.io/posts/cadlian-xi-ti-13-li-yong-ping-xing-si-bian-xing-hua-bu-gui-ze-duo-bian-xing-1/"&gt;https://codinglonglong.github.io/posts/cadlian-xi-ti-13-li-yong-ping-xing-si-bian-xing-hua-bu-gui-ze-duo-bian-xing-1/&lt;/a&gt; 也是一致的，只是多了一个平移，当然这里的做法不止这一种。&lt;/p&gt;
+&lt;p&gt;1、先分别画已知的部分。&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/longlongpicture/myblogpicture/raw/master/p15-1.PNG"&gt;https://github.com/longlongpicture/myblogpicture/raw/master/p15-1.PNG&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2、平移到一起。&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/longlongpicture/myblogpicture/raw/master/p15-2.PNG"&gt;https://github.com/longlongpicture/myblogpicture/raw/master/p15-2.PNG&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;3、作平行四边形。&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/longlongpicture/myblogpicture/raw/master/p15-3.PNG"&gt;https://github.com/longlongpicture/myblogpicture/raw/master/p15-3.PNG&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/longlongpicture/myblogpicture/raw/master/p15-4.PNG"&gt;https://github.com/longlongpicture/myblogpicture/raw/master/p15-4.PNG&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class="reference external" href="https://github.com/longlongpicture/myblogpicture/raw/master/p15-5.PNG"&gt;https://github.com/longlongpicture/myblogpicture/raw/master/p15-5.PNG&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;4、清理图形。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p15-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p15-6.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-15-li-yong-ping-xing-si-bian-xing-hua-bu-gui-ze-duo-bian-xing-3/</guid><pubDate>Tue, 21 Nov 2017 14:16:20 GMT</pubDate></item><item><title>CAD练习题14——利用平行四边形画不规则多边形2</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-14-li-yong-ping-xing-si-bian-xing-hua-bu-gui-ze-duo-bian-xing-2/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目:&lt;/p&gt;
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p14-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p14-5.PNG"&gt;
 &lt;p&gt;这道题的方法与 &lt;a class="reference external" href="https://codinglonglong.github.io/posts/cadlian-xi-ti-13-li-yong-ping-xing-si-bian-xing-hua-bu-gui-ze-duo-bian-xing-1/"&gt;https://codinglonglong.github.io/posts/cadlian-xi-ti-13-li-yong-ping-xing-si-bian-xing-hua-bu-gui-ze-duo-bian-xing-1/&lt;/a&gt; 是一致的。&lt;/p&gt;
 &lt;p&gt;1、先画已知部分。&lt;/p&gt;
@@ -127,20 +139,4 @@
 &lt;p&gt;8、作右侧的对称部分。&lt;/p&gt;
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p6-8.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p6-8.PNG"&gt;
 &lt;p&gt;9、清理图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p6-9.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p6-9.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-6-yi-zhi-yuan-xin-suo-zai-zhi-xian-he-yi-tiao-xian-chang-hua-yuan-hua-zhi-ding-jiao-du-he-chang-du-de-xian/</guid><pubDate>Sat, 04 Nov 2017 11:21:44 GMT</pubDate></item><item><title>CAD练习题5——连续圆弧的画法</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-5-lian-xu-yuan-hu-de-hua-fa/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目:&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p5-8.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p5-8.PNG"&gt;
-&lt;p&gt;这道题看上去很乱，大部分都可以慢慢画出来，主要需要留意的是右侧上下对称的连续圆弧。&lt;/p&gt;
-&lt;p&gt;1、先把明显的地方画好。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p5-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p5-1.PNG"&gt;
-&lt;p&gt;2、处理上边的小圆。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p5-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p5-2.PNG"&gt;
-&lt;p&gt;3、留意到，中间小圆与上边小圆连线为半径画的圆，正好是”蚕豆“中间的参考线。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p5-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p5-3.PNG"&gt;
-&lt;p&gt;4、相切相切半径画出整个“蚕豆”图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p5-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p5-4.PNG"&gt;
-&lt;p&gt;5、处理右侧简单部分。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p5-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p5-5.PNG"&gt;
-&lt;p&gt;6、处理连续圆弧，而连续圆弧的定位，靠的是与半径82.6圆的相切，现有条件下，如果没有这个相切，连续圆弧无法定位。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p5-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p5-6.PNG"&gt;
-&lt;p&gt;7、清理图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p5-7.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p5-7.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-5-lian-xu-yuan-hu-de-hua-fa/</guid><pubDate>Thu, 02 Nov 2017 13:54:29 GMT</pubDate></item></channel></rss>
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p6-9.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p6-9.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-6-yi-zhi-yuan-xin-suo-zai-zhi-xian-he-yi-tiao-xian-chang-hua-yuan-hua-zhi-ding-jiao-du-he-chang-du-de-xian/</guid><pubDate>Sat, 04 Nov 2017 11:21:44 GMT</pubDate></item></channel></rss>
