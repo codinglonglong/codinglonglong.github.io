@@ -16,19 +16,19 @@
 
 1、先分别画已知的部分。
 
-https://github.com/longlongpicture/myblogpicture/raw/master/p15-1.PNG
+.. image:: https://github.com/longlongpicture/myblogpicture/raw/master/p15-1.PNG
 
 2、平移到一起。
 
-https://github.com/longlongpicture/myblogpicture/raw/master/p15-2.PNG
+.. image:: https://github.com/longlongpicture/myblogpicture/raw/master/p15-2.PNG
 
 3、作平行四边形。
 
-https://github.com/longlongpicture/myblogpicture/raw/master/p15-3.PNG
+.. image:: https://github.com/longlongpicture/myblogpicture/raw/master/p15-3.PNG
 
-https://github.com/longlongpicture/myblogpicture/raw/master/p15-4.PNG
+.. image:: https://github.com/longlongpicture/myblogpicture/raw/master/p15-4.PNG
 
-https://github.com/longlongpicture/myblogpicture/raw/master/p15-5.PNG
+.. image:: https://github.com/longlongpicture/myblogpicture/raw/master/p15-5.PNG
 
 4、清理图形。
 
