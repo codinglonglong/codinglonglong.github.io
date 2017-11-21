@@ -103,7 +103,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_win10.xml</loc>
-  <lastmod>2017-11-08T11:23:00Z</lastmod>
+  <lastmod>2017-11-21T12:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_wo-de-shi-ci.xml</loc>
@@ -168,6 +168,10 @@
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/exec.xml</loc>
   <lastmod>2017-11-08T11:23:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://codinglonglong.github.io/categories/fang-huo-qiang.xml</loc>
+  <lastmod>2017-11-21T12:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/fen-bu-shi.xml</loc>
@@ -427,7 +431,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/win10.xml</loc>
-  <lastmod>2017-11-08T11:23:00Z</lastmod>
+  <lastmod>2017-11-21T12:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/windows.xml</loc>
@@ -471,10 +475,10 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/rss.xml</loc>
-  <lastmod>2017-11-14T15:20:00Z</lastmod>
+  <lastmod>2017-11-21T12:21:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/sitemap.xml</loc>
-  <lastmod>2017-11-14T15:20:00Z</lastmod>
+  <lastmod>2017-11-21T12:21:00Z</lastmod>
  </sitemap>
 </sitemapindex>
