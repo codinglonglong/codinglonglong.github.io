@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about CAD)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cad.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 22 Nov 2017 12:31:57 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>CAD练习题18——利用固定角度三角形画不规则多边形</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-18-li-yong-gu-ding-jiao-du-san-jiao-xing-hua-bu-gui-ze-duo-bian-xing/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目:&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about CAD)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cad.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 22 Nov 2017 13:07:22 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>CAD练习题19——画指定角度和长度的弦1</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-19-hua-zhi-ding-jiao-du-he-chang-du-de-xian-1/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目:&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p19-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p19-6.PNG"&gt;
+&lt;p&gt;这个题算是 &lt;a class="reference external" href="https://codinglonglong.github.io/posts/cadlian-xi-ti-6-yi-zhi-yuan-xin-suo-zai-zhi-xian-he-yi-tiao-xian-chang-hua-yuan-hua-zhi-ding-jiao-du-he-chang-du-de-xian/"&gt;https://codinglonglong.github.io/posts/cadlian-xi-ti-6-yi-zhi-yuan-xin-suo-zai-zhi-xian-he-yi-tiao-xian-chang-hua-yuan-hua-zhi-ding-jiao-du-he-chang-du-de-xian/&lt;/a&gt; 的精简版，只需要画指定角度和长度的弦。&lt;/p&gt;
+&lt;p&gt;1、先画已知的部分。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p19-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p19-1.PNG"&gt;
+&lt;p&gt;2、利用偏移画固定长度的弦。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p19-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p19-2.PNG"&gt;
+&lt;p&gt;3、加上固定角度。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p19-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p19-3.PNG"&gt;
+&lt;p&gt;4、旋转。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p19-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p19-4.PNG"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p19-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p19-5.PNG"&gt;
+&lt;p&gt;5、清理图形。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p19-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p19-6.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-19-hua-zhi-ding-jiao-du-he-chang-du-de-xian-1/</guid><pubDate>Wed, 22 Nov 2017 12:56:02 GMT</pubDate></item><item><title>CAD练习题18——利用固定角度三角形画不规则多边形</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-18-li-yong-gu-ding-jiao-du-san-jiao-xing-hua-bu-gui-ze-duo-bian-xing/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目:&lt;/p&gt;
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p18-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p18-6.PNG"&gt;
 &lt;p&gt;这道题不大好用平行四边形了，因为75度下边对应的两个角的度数目前都不知道，这就导致没法作目标直线的平行线。所以我们不妨换个思路。&lt;/p&gt;
 &lt;p&gt;1、先画已知部分。&lt;/p&gt;
@@ -107,25 +120,4 @@
 &lt;p&gt;4、清理图形。&lt;/p&gt;
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p10-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p10-4.PNG"&gt;
 &lt;p&gt;5、缩放图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p10-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p10-5.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-10-li-yong-ping-xing-zuo-san-jiao-xing-de-jin-si-nei-jie-duo-bian-xing/</guid><pubDate>Tue, 07 Nov 2017 11:10:53 GMT</pubDate></item><item><title>CAD练习题9——较为复杂的利用圆作固定角度三角形</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-9-jiao-wei-fu-za-de-li-yong-yuan-zuo-gu-ding-jiao-du-san-jiao-xing/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目:&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p9-12.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p9-12.PNG"&gt;
-&lt;p&gt;这道题看上去较为复杂，但实际上还是利用圆作固定角度三角形。&lt;/p&gt;
-&lt;p&gt;1、画出明显已知的部分。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p9-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p9-1.PNG"&gt;
-&lt;p&gt;2、画出下半部分的90度。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p9-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p9-2.PNG"&gt;
-&lt;p&gt;3、作等分和旋转作垂线。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p9-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p9-3.PNG"&gt;
-&lt;p&gt;4、先处理右侧的72度，由于顶角是72度，所以作一条18度的斜线和过基线中点的垂线，以相交的点为圆心画圆。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p9-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p9-4.PNG"&gt;
-&lt;p&gt;5、上一步的圆与最右侧垂线交于一点，连接三点，得到72度顶角。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p9-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p9-5.PNG"&gt;
-&lt;p&gt;6、同样原理，得到其他三个角，注意每次基线长度是不同的。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p9-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p9-6.PNG"&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p9-7.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p9-7.PNG"&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p9-8.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p9-8.PNG"&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p9-9.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p9-9.PNG"&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p9-10.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p9-10.PNG"&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p9-11.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p9-11.PNG"&gt;
-&lt;p&gt;7、清理图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p9-12.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p9-12.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-9-jiao-wei-fu-za-de-li-yong-yuan-zuo-gu-ding-jiao-du-san-jiao-xing/</guid><pubDate>Tue, 07 Nov 2017 11:01:53 GMT</pubDate></item></channel></rss>
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p10-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p10-5.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-10-li-yong-ping-xing-zuo-san-jiao-xing-de-jin-si-nei-jie-duo-bian-xing/</guid><pubDate>Tue, 07 Nov 2017 11:10:53 GMT</pubDate></item></channel></rss>

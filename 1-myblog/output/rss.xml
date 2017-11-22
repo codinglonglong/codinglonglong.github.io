@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 22 Nov 2017 12:31:57 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>CAD练习题18——利用固定角度三角形画不规则多边形</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-18-li-yong-gu-ding-jiao-du-san-jiao-xing-hua-bu-gui-ze-duo-bian-xing/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目:&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Wed, 22 Nov 2017 13:07:22 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>CAD练习题19——画指定角度和长度的弦1</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-19-hua-zhi-ding-jiao-du-he-chang-du-de-xian-1/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目:&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p19-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p19-6.PNG"&gt;
+&lt;p&gt;这个题算是 &lt;a class="reference external" href="https://codinglonglong.github.io/posts/cadlian-xi-ti-6-yi-zhi-yuan-xin-suo-zai-zhi-xian-he-yi-tiao-xian-chang-hua-yuan-hua-zhi-ding-jiao-du-he-chang-du-de-xian/"&gt;https://codinglonglong.github.io/posts/cadlian-xi-ti-6-yi-zhi-yuan-xin-suo-zai-zhi-xian-he-yi-tiao-xian-chang-hua-yuan-hua-zhi-ding-jiao-du-he-chang-du-de-xian/&lt;/a&gt; 的精简版，只需要画指定角度和长度的弦。&lt;/p&gt;
+&lt;p&gt;1、先画已知的部分。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p19-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p19-1.PNG"&gt;
+&lt;p&gt;2、利用偏移画固定长度的弦。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p19-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p19-2.PNG"&gt;
+&lt;p&gt;3、加上固定角度。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p19-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p19-3.PNG"&gt;
+&lt;p&gt;4、旋转。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p19-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p19-4.PNG"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p19-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p19-5.PNG"&gt;
+&lt;p&gt;5、清理图形。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p19-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p19-6.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-19-hua-zhi-ding-jiao-du-he-chang-du-de-xian-1/</guid><pubDate>Wed, 22 Nov 2017 12:56:02 GMT</pubDate></item><item><title>CAD练习题18——利用固定角度三角形画不规则多边形</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-18-li-yong-gu-ding-jiao-du-san-jiao-xing-hua-bu-gui-ze-duo-bian-xing/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目:&lt;/p&gt;
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p18-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p18-6.PNG"&gt;
 &lt;p&gt;这道题不大好用平行四边形了，因为75度下边对应的两个角的度数目前都不知道，这就导致没法作目标直线的平行线。所以我们不妨换个思路。&lt;/p&gt;
 &lt;p&gt;1、先画已知部分。&lt;/p&gt;
@@ -84,20 +97,4 @@
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-5.PNG"&gt;
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-6.PNG"&gt;
 &lt;p&gt;6、清理图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-7.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-7.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-12-yi-zhi-guo-yi-dian-he-wai-qie-yuan-hua-yuan/</guid><pubDate>Wed, 08 Nov 2017 11:47:14 GMT</pubDate></item><item><title>CAD练习题11——利用平行和偏移作三角形内接花型图案</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-11-li-yong-ping-xing-he-pian-yi-zuo-san-jiao-xing-nei-jie-hua-xing-tu-an/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目：&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p11-8.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p11-8.PNG"&gt;
-&lt;p&gt;这道题看上去很难入手，先画三角形吧，不好找到内切的位置；先画花吧，不好找到外切的位置……&lt;/p&gt;
-&lt;p&gt;1、先画三角形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p11-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p11-1.PNG"&gt;
-&lt;p&gt;2、利用五边形画花。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p11-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p11-2.PNG"&gt;
-&lt;p&gt;3、过五边形左右两个顶点和底边顶点，分别作三角形三边的平行线。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p11-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p11-3.PNG"&gt;
-&lt;p&gt;4、利用圆的半径，偏移上一步中的三条直线。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p11-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p11-4.PNG"&gt;
-&lt;p&gt;5、清理图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p11-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p11-5.PNG"&gt;
-&lt;p&gt;6、缩放图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p11-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p11-6.PNG"&gt;
-&lt;p&gt;7、清理图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p11-7.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p11-7.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-11-li-yong-ping-xing-he-pian-yi-zuo-san-jiao-xing-nei-jie-hua-xing-tu-an/</guid><pubDate>Tue, 07 Nov 2017 11:16:45 GMT</pubDate></item></channel></rss>
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-7.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-7.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-12-yi-zhi-guo-yi-dian-he-wai-qie-yuan-hua-yuan/</guid><pubDate>Wed, 08 Nov 2017 11:47:14 GMT</pubDate></item></channel></rss>
