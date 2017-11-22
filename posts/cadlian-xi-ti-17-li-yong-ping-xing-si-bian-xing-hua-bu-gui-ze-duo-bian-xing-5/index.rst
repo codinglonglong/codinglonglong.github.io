@@ -1,4 +1,4 @@
-.. title: CAD练习题17--利用平行四边形画不规则多边形5
+.. title: CAD练习题17——利用平行四边形画不规则多边形5
 .. slug: cadlian-xi-ti-17-li-yong-ping-xing-si-bian-xing-hua-bu-gui-ze-duo-bian-xing-5
 .. date: 2017-11-22 19:33:53 UTC+08:00
 .. tags: CAD
