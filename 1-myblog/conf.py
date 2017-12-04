@@ -134,20 +134,18 @@ TRANSLATIONS_PATTERN = "{path}.{lang}.{ext}"
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
+        ("/posts/hui-dao-zui-chu-de-qi-dian/", "回到最初的起点"),
+        ("/categories/wo-de-shi-ci/", "我的诗词"),
+        ("/posts/lian-xi-wo/", "联系我"),
         ("/archive.html", "文章存档"),
         ("/categories/", "标签"),
-        ("/posts/hui-dao-zui-chu-de-qi-dian/", "回到最初的起点"),
-        ("/categories/cat_ge-ren-zuo-pin/", "个人作品"),
-        ("https://github.com/codinglonglong/", "Github"), 
-        ("/categories/wo-de-shi-ci/", "我的诗词"),
-        ("/posts/you-qing-lian-jie/", "友情链接"),
-        ("/posts/lian-xi-wo/", "联系我"),
+        ("https://github.com/codinglonglong/", "个人作品"),
         ("/rss.xml", "RSS 源"),
     ),
 }
 
 # Name of the theme to use.
-THEME = "bootstrap3"
+THEME = "material-theme"
 
 # Primary color of your theme. This will be used to customize your theme and
 # auto-generate related colors in POSTS_SECTION_COLORS. Must be a HEX value.
@@ -1183,7 +1181,7 @@ var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
   hm.src = "https://hm.baidu.com/hm.js?26f9e777606d49ebbdbe4df058bd028c";
-  var s = document.getElementsByTagName("script")[0]; 
+  var s = document.getElementsByTagName("script")[0];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
