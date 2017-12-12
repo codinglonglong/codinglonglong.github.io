@@ -19,11 +19,11 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/archive.html</loc>
-  <lastmod>2017-12-12T00:15:00Z</lastmod>
+  <lastmod>2017-12-12T02:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/</loc>
-  <lastmod>2017-12-12T00:15:00Z</lastmod>
+  <lastmod>2017-12-12T02:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/actionscript30/</loc>
@@ -242,6 +242,10 @@
   <lastmod>2017-12-12T00:15:00Z</lastmod>
  </url>
  <url>
+  <loc>https://codinglonglong.github.io/categories/ie/</loc>
+  <lastmod>2017-12-12T02:04:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://codinglonglong.github.io/categories/java/</loc>
   <lastmod>2017-12-12T00:15:00Z</lastmod>
  </url>
@@ -308,6 +312,10 @@
  <url>
   <loc>https://codinglonglong.github.io/categories/npm/</loc>
   <lastmod>2017-12-12T00:15:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/ntce/</loc>
+  <lastmod>2017-12-12T02:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/opensuse/</loc>
@@ -559,7 +567,7 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-23.html</loc>
-  <lastmod>2017-12-12T00:15:00Z</lastmod>
+  <lastmod>2017-12-12T02:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-3.html</loc>
@@ -932,6 +940,10 @@
  <url>
   <loc>https://codinglonglong.github.io/posts/raspberryshe-zhi-jing-tai-ip/</loc>
   <lastmod>2017-12-12T00:15:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/posts/she-zhi-iejian-rong-xing-fang-wen-ntcecn/</loc>
+  <lastmod>2017-12-12T02:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/</loc>

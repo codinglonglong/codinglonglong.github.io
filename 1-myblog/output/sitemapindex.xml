@@ -103,7 +103,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_win10.xml</loc>
-  <lastmod>2017-12-12T00:15:00Z</lastmod>
+  <lastmod>2017-12-12T02:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_wo-de-shi-ci.xml</loc>
@@ -222,6 +222,10 @@
   <lastmod>2017-12-12T00:15:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://codinglonglong.github.io/categories/ie.xml</loc>
+  <lastmod>2017-12-12T02:04:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://codinglonglong.github.io/categories/java.xml</loc>
   <lastmod>2017-12-12T00:15:00Z</lastmod>
  </sitemap>
@@ -288,6 +292,10 @@
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/npm.xml</loc>
   <lastmod>2017-12-12T00:15:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://codinglonglong.github.io/categories/ntce.xml</loc>
+  <lastmod>2017-12-12T02:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/opensuse.xml</loc>
@@ -479,10 +487,10 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/rss.xml</loc>
-  <lastmod>2017-12-12T00:15:00Z</lastmod>
+  <lastmod>2017-12-12T02:04:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/sitemap.xml</loc>
-  <lastmod>2017-12-12T00:15:00Z</lastmod>
+  <lastmod>2017-12-12T02:04:00Z</lastmod>
  </sitemap>
 </sitemapindex>
