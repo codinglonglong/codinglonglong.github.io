@@ -139,13 +139,13 @@ NAVIGATION_LINKS = {
         ("/posts/lian-xi-wo/", "联系我"),
         ("/archive.html", "文章存档"),
         ("/categories/", "标签"),
-        ("https://github.com/codinglonglong/", "个人作品"),
+        ("https://github.com/codinglonglong/", "Github"),
         ("/rss.xml", "RSS 源"),
     ),
 }
 
 # Name of the theme to use.
-THEME = "material-theme"
+THEME = "bootstrap3"
 
 # Primary color of your theme. This will be used to customize your theme and
 # auto-generate related colors in POSTS_SECTION_COLORS. Must be a HEX value.
