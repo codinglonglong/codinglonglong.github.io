@@ -135,32 +135,32 @@ def load_co'>
 <p>本文学习如何通过配置文件动态修改全局变量。</p>
 <p>看代码main.py：</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_03cf8b591f1e439996cb8300e5518237-1">1</a>
-<a href="#rest_code_03cf8b591f1e439996cb8300e5518237-2">2</a>
-<a href="#rest_code_03cf8b591f1e439996cb8300e5518237-3">3</a>
-<a href="#rest_code_03cf8b591f1e439996cb8300e5518237-4">4</a>
-<a href="#rest_code_03cf8b591f1e439996cb8300e5518237-5">5</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_03cf8b591f1e439996cb8300e5518237-1"></a><span class="kn">import</span> <span class="nn">conf</span>
-<a name="rest_code_03cf8b591f1e439996cb8300e5518237-2"></a><span class="k">print</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">defaultpath</span><span class="p">)</span>
-<a name="rest_code_03cf8b591f1e439996cb8300e5518237-3"></a><span class="n">conf</span><span class="o">.</span><span class="n">load_conf</span><span class="p">()</span>
-<a name="rest_code_03cf8b591f1e439996cb8300e5518237-4"></a><span class="k">print</span><span class="p">(</span><span class="s2">"*"</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
-<a name="rest_code_03cf8b591f1e439996cb8300e5518237-5"></a><span class="k">print</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">defaultpath</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_3fac9681ea7848f6bcaa61593dd7be6f-1">1</a>
+<a href="#rest_code_3fac9681ea7848f6bcaa61593dd7be6f-2">2</a>
+<a href="#rest_code_3fac9681ea7848f6bcaa61593dd7be6f-3">3</a>
+<a href="#rest_code_3fac9681ea7848f6bcaa61593dd7be6f-4">4</a>
+<a href="#rest_code_3fac9681ea7848f6bcaa61593dd7be6f-5">5</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_3fac9681ea7848f6bcaa61593dd7be6f-1"></a><span class="kn">import</span> <span class="nn">conf</span>
+<a name="rest_code_3fac9681ea7848f6bcaa61593dd7be6f-2"></a><span class="k">print</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">defaultpath</span><span class="p">)</span>
+<a name="rest_code_3fac9681ea7848f6bcaa61593dd7be6f-3"></a><span class="n">conf</span><span class="o">.</span><span class="n">load_conf</span><span class="p">()</span>
+<a name="rest_code_3fac9681ea7848f6bcaa61593dd7be6f-4"></a><span class="k">print</span><span class="p">(</span><span class="s2">"*"</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+<a name="rest_code_3fac9681ea7848f6bcaa61593dd7be6f-5"></a><span class="k">print</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">defaultpath</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 <p>和代码conf.py：</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_93abb01d4c914500b73540e254e135b2-1">1</a>
-<a href="#rest_code_93abb01d4c914500b73540e254e135b2-2">2</a>
-<a href="#rest_code_93abb01d4c914500b73540e254e135b2-3">3</a>
-<a href="#rest_code_93abb01d4c914500b73540e254e135b2-4">4</a>
-<a href="#rest_code_93abb01d4c914500b73540e254e135b2-5">5</a>
-<a href="#rest_code_93abb01d4c914500b73540e254e135b2-6">6</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_93abb01d4c914500b73540e254e135b2-1"></a><span class="n">defaultpath</span> <span class="o">=</span> <span class="s2">"/home/long/"</span>
-<a name="rest_code_93abb01d4c914500b73540e254e135b2-2"></a>
-<a name="rest_code_93abb01d4c914500b73540e254e135b2-3"></a>
-<a name="rest_code_93abb01d4c914500b73540e254e135b2-4"></a><span class="k">def</span> <span class="nf">load_conf</span><span class="p">():</span>
-<a name="rest_code_93abb01d4c914500b73540e254e135b2-5"></a>    <span class="n">data</span> <span class="o">=</span> <span class="s2">"defaultpath = '/home/long/test'"</span>
-<a name="rest_code_93abb01d4c914500b73540e254e135b2-6"></a>    <span class="k">exec</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">(),</span> <span class="nb">globals</span><span class="p">()</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_0a70506665d445ac8958e0aa3ae3c751-1">1</a>
+<a href="#rest_code_0a70506665d445ac8958e0aa3ae3c751-2">2</a>
+<a href="#rest_code_0a70506665d445ac8958e0aa3ae3c751-3">3</a>
+<a href="#rest_code_0a70506665d445ac8958e0aa3ae3c751-4">4</a>
+<a href="#rest_code_0a70506665d445ac8958e0aa3ae3c751-5">5</a>
+<a href="#rest_code_0a70506665d445ac8958e0aa3ae3c751-6">6</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_0a70506665d445ac8958e0aa3ae3c751-1"></a><span class="n">defaultpath</span> <span class="o">=</span> <span class="s2">"/home/long/"</span>
+<a name="rest_code_0a70506665d445ac8958e0aa3ae3c751-2"></a>
+<a name="rest_code_0a70506665d445ac8958e0aa3ae3c751-3"></a>
+<a name="rest_code_0a70506665d445ac8958e0aa3ae3c751-4"></a><span class="k">def</span> <span class="nf">load_conf</span><span class="p">():</span>
+<a name="rest_code_0a70506665d445ac8958e0aa3ae3c751-5"></a>    <span class="n">data</span> <span class="o">=</span> <span class="s2">"defaultpath = '/home/long/test'"</span>
+<a name="rest_code_0a70506665d445ac8958e0aa3ae3c751-6"></a>    <span class="k">exec</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">(),</span> <span class="nb">globals</span><span class="p">()</span>
 </pre></td>
 </tr></table>
 <p>运行结果：</p>

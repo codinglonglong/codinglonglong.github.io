@@ -1,242 +1,242 @@
 <p>本文展示如何通过Python的C扩展进行任意长度字符串逆序输出。</p>
 <p>1、编写C扩展stringreverse.c</p>
-<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-1">  1</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-2">  2</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-3">  3</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-4">  4</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-5">  5</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-6">  6</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-7">  7</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-8">  8</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-9">  9</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-10"> 10</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-11"> 11</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-12"> 12</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-13"> 13</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-14"> 14</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-15"> 15</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-16"> 16</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-17"> 17</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-18"> 18</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-19"> 19</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-20"> 20</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-21"> 21</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-22"> 22</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-23"> 23</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-24"> 24</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-25"> 25</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-26"> 26</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-27"> 27</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-28"> 28</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-29"> 29</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-30"> 30</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-31"> 31</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-32"> 32</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-33"> 33</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-34"> 34</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-35"> 35</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-36"> 36</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-37"> 37</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-38"> 38</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-39"> 39</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-40"> 40</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-41"> 41</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-42"> 42</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-43"> 43</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-44"> 44</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-45"> 45</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-46"> 46</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-47"> 47</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-48"> 48</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-49"> 49</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-50"> 50</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-51"> 51</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-52"> 52</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-53"> 53</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-54"> 54</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-55"> 55</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-56"> 56</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-57"> 57</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-58"> 58</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-59"> 59</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-60"> 60</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-61"> 61</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-62"> 62</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-63"> 63</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-64"> 64</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-65"> 65</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-66"> 66</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-67"> 67</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-68"> 68</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-69"> 69</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-70"> 70</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-71"> 71</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-72"> 72</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-73"> 73</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-74"> 74</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-75"> 75</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-76"> 76</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-77"> 77</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-78"> 78</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-79"> 79</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-80"> 80</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-81"> 81</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-82"> 82</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-83"> 83</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-84"> 84</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-85"> 85</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-86"> 86</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-87"> 87</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-88"> 88</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-89"> 89</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-90"> 90</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-91"> 91</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-92"> 92</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-93"> 93</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-94"> 94</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-95"> 95</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-96"> 96</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-97"> 97</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-98"> 98</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-99"> 99</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-100">100</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-101">101</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-102">102</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-103">103</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-104">104</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-105">105</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-106">106</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-107">107</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-108">108</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-109">109</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-110">110</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-111">111</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-112">112</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-113">113</a>
-<a href="#rest_code_2dd3a7811b6b419797d359e03f9ade1f-114">114</a></pre></div></td><td class="code"><pre class="code C"><a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-1"></a><span class="cp">#include</span> <span class="cpf">&lt;/usr/include/python3.4m/Python.h&gt;</span><span class="cp"></span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-2"></a>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-3"></a><span class="k">static</span> <span class="n">PyObject</span> <span class="o">*</span> <span class="n">StringError</span><span class="p">;</span>  <span class="c1">//错误信息对象</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-4"></a>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-5"></a><span class="c1">// 自定义函数</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-6"></a><span class="c1">// 实现任意长度字符串反转</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-7"></a><span class="kt">int</span> <span class="nf">reverse</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span> <span class="n">inputstr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">length</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">outputstr</span><span class="p">)</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-8"></a><span class="p">{</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-9"></a>  <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-10"></a>  <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-11"></a>    <span class="p">{</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-12"></a>      <span class="n">outputstr</span><span class="p">[</span><span class="n">length</span><span class="o">-</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">inputstr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-13"></a>    <span class="p">}</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-14"></a>  <span class="n">outputstr</span><span class="p">[</span><span class="n">length</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-15"></a>  <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-16"></a><span class="p">}</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-17"></a>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-18"></a><span class="c1">// Python和C的接口</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-19"></a><span class="k">static</span> <span class="n">PyObject</span> <span class="o">*</span> <span class="nf">stringreverse</span><span class="p">(</span><span class="n">PyObject</span> <span class="o">*</span> <span class="n">self</span><span class="p">,</span> <span class="n">PyObject</span> <span class="o">*</span> <span class="n">args</span><span class="p">)</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-20"></a><span class="p">{</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-21"></a>  <span class="kt">char</span> <span class="o">*</span> <span class="n">inputstr</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="c1">// 用来接收参数的本地变量</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-22"></a>  <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>         <span class="c1">// 用来接收参数的本地变量</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-23"></a>  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">PyArg_ParseTuple</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="s">&quot;(si)&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">inputstr</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">length</span><span class="p">))</span>  <span class="c1">// 接收参数给本地变量</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-24"></a>    <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-25"></a>  <span class="kt">char</span> <span class="o">*</span><span class="n">outputpointer</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">length</span> <span class="o">+</span> <span class="mi">1</span><span class="p">));</span> <span class="c1">// 分配返回值空间，多一位存放&#39;\0&#39;</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-26"></a>  <span class="kt">int</span> <span class="n">sts</span><span class="p">;</span>  <span class="c1">// 判断函数是否成功执行</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-27"></a>  <span class="n">sts</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="n">inputstr</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">outputpointer</span><span class="p">);</span> <span class="c1">// 调用自定义函数</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-28"></a>  <span class="k">if</span> <span class="p">(</span><span class="n">sts</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-29"></a>    <span class="n">PyErr_SetString</span><span class="p">(</span><span class="n">StringError</span><span class="p">,</span> <span class="s">&quot;Encode Error&quot;</span><span class="p">);</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-30"></a>    <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-31"></a>  <span class="p">}</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-32"></a>  <span class="k">return</span> <span class="n">Py_BuildValue</span><span class="p">(</span><span class="s">&quot;s&quot;</span><span class="p">,</span> <span class="n">outputpointer</span><span class="p">);</span>  <span class="c1">// 返回函数计算结果</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-33"></a><span class="p">}</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-34"></a>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-35"></a><span class="c1">// 声明方法调用接口</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-36"></a><span class="k">static</span> <span class="n">PyMethodDef</span> <span class="n">StringReverseMethods</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-37"></a>  <span class="p">{</span><span class="s">&quot;reverse&quot;</span><span class="p">,</span> <span class="n">stringreverse</span><span class="p">,</span> <span class="n">METH_VARARGS</span><span class="p">,</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-38"></a>   <span class="s">&quot;Reverse A String.&quot;</span><span class="p">},</span>  <span class="c1">// {对外函数名称, 对内函数名称, 标志位, 函数说明}</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-39"></a>  <span class="p">{</span><span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">}</span>  <span class="c1">//哨兵变量</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-40"></a><span class="p">};</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-41"></a><span class="cm">/*</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-42"></a><span class="cm">  METH_VARARGS标志位，用来告诉解释器应使用调用C函数的规则。</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-43"></a><span class="cm">  当此位置为值0，表示PyArg_ParseTuple()函数使用的变量是废弃的。</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-44"></a><span class="cm">  当仅使用时&quot;METH_VARARGS&quot;，表示希望参数经由PyArg_ParseTuple()被传递进来。</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-45"></a><span class="cm">*/</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-46"></a>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-47"></a><span class="c1">// 声明模块包含的方法集</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-48"></a><span class="k">static</span> <span class="k">struct</span> <span class="n">PyModuleDef</span> <span class="n">stringmodules</span> <span class="o">=</span> <span class="p">{</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-49"></a>  <span class="n">PyModuleDef_HEAD_INIT</span><span class="p">,</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-50"></a>  <span class="s">&quot;stringreverse&quot;</span><span class="p">,</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-51"></a>  <span class="nb">NULL</span><span class="p">,</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-52"></a>  <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-53"></a>  <span class="n">StringReverseMethods</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-54"></a><span class="p">};</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-55"></a>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-56"></a><span class="c1">// 模块初始化，包括异常处理</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-57"></a><span class="n">PyMODINIT_FUNC</span> <span class="nf">PyInit_stringreverse</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-58"></a><span class="p">{</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-59"></a>  <span class="n">PyObject</span> <span class="o">*</span><span class="n">m</span><span class="p">;</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-60"></a>  <span class="n">m</span> <span class="o">=</span> <span class="n">PyModule_Create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">stringmodules</span><span class="p">);</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-61"></a>  <span class="k">if</span> <span class="p">(</span><span class="n">m</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-62"></a>    <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-63"></a>  <span class="n">StringError</span> <span class="o">=</span> <span class="n">PyErr_NewException</span><span class="p">(</span><span class="s">&quot;stringreverse.error&quot;</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-64"></a>  <span class="n">Py_INCREF</span><span class="p">(</span><span class="n">StringError</span><span class="p">);</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-65"></a>  <span class="n">PyModule_AddObject</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s">&quot;error&quot;</span><span class="p">,</span> <span class="n">StringError</span><span class="p">);</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-66"></a>  <span class="k">return</span> <span class="n">m</span><span class="p">;</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-67"></a><span class="p">}</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-68"></a>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-69"></a><span class="c1">// 初始化</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-70"></a><span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">wchar_t</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-71"></a><span class="p">{</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-72"></a>  <span class="n">PyImport_AppendInittab</span><span class="p">(</span><span class="s">&quot;stringreverse&quot;</span><span class="p">,</span> <span class="n">PyInit_stringreverse</span><span class="p">);</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-73"></a>  <span class="n">Py_SetProgramName</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-74"></a>  <span class="n">Py_Initialize</span><span class="p">();</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-75"></a>  <span class="n">PyImport_ImportModule</span><span class="p">(</span><span class="s">&quot;stringreverse&quot;</span><span class="p">);</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-76"></a><span class="p">}</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-77"></a>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-78"></a><span class="cm">/*</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-79"></a><span class="cm">  PyArg_ParseTuple()可以使用的格式参数</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-80"></a><span class="cm">  &quot;s&quot; (string or Unicode object) [char *]</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-81"></a><span class="cm">  &quot;s#&quot; (string, Unicode or any read buffer compatible object) [char *, int]</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-82"></a><span class="cm">  &quot;z&quot; (string or None) [char *]</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-83"></a><span class="cm">  &quot;z#&quot; (string or None or any read buffer compatible object) [char *, int]</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-84"></a><span class="cm">  &quot;u&quot; (Unicode object) [Py_UNICODE *]</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-85"></a><span class="cm">  &quot;u#&quot; (Unicode object) [Py_UNICODE *, int]</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-86"></a><span class="cm">  &quot;es&quot; (string, Unicode object or character buffer compatible object) [const char *encoding, char **buffer]</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-87"></a><span class="cm">  &quot;es#&quot; (string, Unicode object or character buffer compatible object) [const char *encoding, char **buffer, int *buffer_length]</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-88"></a><span class="cm">  &quot;b&quot; (integer) [char]</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-89"></a><span class="cm">  &quot;h&quot; (integer) [short int]</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-90"></a><span class="cm">  &quot;i&quot; (integer) [int]</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-91"></a><span class="cm">  &quot;l&quot; (integer) [long int]</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-92"></a><span class="cm">  &quot;c&quot; (string of length 1) [char]</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-93"></a><span class="cm">  &quot;f&quot; (float) [float]</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-94"></a><span class="cm">  &quot;d&quot; (float) [double]</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-95"></a><span class="cm">  &quot;D&quot; (complex) [Py_complex]</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-96"></a><span class="cm">  &quot;O&quot; (object) [PyObject *]</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-97"></a><span class="cm">  &quot;O!&quot; (object) [typeobject, PyObject *]</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-98"></a><span class="cm">  &quot;O&amp;&quot; (object) [converter, anything]</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-99"></a><span class="cm">  &quot;S&quot; (string) [PyStringObject *]</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-100"></a><span class="cm">  &quot;U&quot; (Unicode string) [PyUnicodeObject *]</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-101"></a><span class="cm">  &quot;t#&quot; (read-only character buffer) [char *, int]</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-102"></a><span class="cm">  &quot;w&quot; (read-write character buffer) [char *]</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-103"></a><span class="cm">  &quot;w#&quot; (read-write character buffer) [char *, int]</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-104"></a><span class="cm">  &quot;(items)&quot; (tuple) [matching-items]  ==&gt; Py_BuildValue(&quot;(i, i)&quot;, 1, 2) (1, 2)</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-105"></a><span class="cm">  &quot;[items]&quot; (list) [matching-items]   ==&gt; Py_BuildValue(&quot;[i, i]&quot;, 1, 2) [1, 2]</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-106"></a><span class="cm">  &quot;{items}&quot; (dictionary) [matching-items]  ==&gt; Py_BuildValue(&quot;{s, i}&quot;, &#39;a&#39;, 2) {&#39;a&#39;: 2}</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-107"></a>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-108"></a><span class="cm">  &quot;|&quot;</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-109"></a><span class="cm">  Indicates that the remaining arguments in the Python argument list are optional. The C variables corresponding to optional arguments should be initialized to their default value -- when an optional argument is not specified, PyArg_ParseTuple() does not touch the contents of the corresponding C variable(s).</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-110"></a><span class="cm">  &quot;:&quot;</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-111"></a><span class="cm">  The list of format units ends here; the string after the colon is used as the function name in error messages (the ``associated value&#39;&#39; of the exception that PyArg_ParseTuple() raises).</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-112"></a><span class="cm">  &quot;;&quot;</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-113"></a><span class="cm">  The list of format units ends here; the string after the semicolon is used as the error message instead of the default error message. Clearly, &quot;:&quot; and &quot;;&quot; mutually exclude each other.</span>
-<a name="rest_code_2dd3a7811b6b419797d359e03f9ade1f-114"></a><span class="cm">*/</span>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-1">  1</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-2">  2</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-3">  3</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-4">  4</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-5">  5</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-6">  6</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-7">  7</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-8">  8</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-9">  9</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-10"> 10</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-11"> 11</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-12"> 12</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-13"> 13</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-14"> 14</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-15"> 15</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-16"> 16</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-17"> 17</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-18"> 18</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-19"> 19</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-20"> 20</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-21"> 21</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-22"> 22</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-23"> 23</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-24"> 24</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-25"> 25</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-26"> 26</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-27"> 27</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-28"> 28</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-29"> 29</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-30"> 30</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-31"> 31</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-32"> 32</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-33"> 33</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-34"> 34</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-35"> 35</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-36"> 36</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-37"> 37</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-38"> 38</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-39"> 39</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-40"> 40</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-41"> 41</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-42"> 42</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-43"> 43</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-44"> 44</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-45"> 45</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-46"> 46</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-47"> 47</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-48"> 48</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-49"> 49</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-50"> 50</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-51"> 51</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-52"> 52</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-53"> 53</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-54"> 54</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-55"> 55</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-56"> 56</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-57"> 57</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-58"> 58</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-59"> 59</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-60"> 60</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-61"> 61</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-62"> 62</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-63"> 63</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-64"> 64</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-65"> 65</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-66"> 66</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-67"> 67</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-68"> 68</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-69"> 69</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-70"> 70</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-71"> 71</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-72"> 72</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-73"> 73</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-74"> 74</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-75"> 75</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-76"> 76</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-77"> 77</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-78"> 78</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-79"> 79</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-80"> 80</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-81"> 81</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-82"> 82</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-83"> 83</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-84"> 84</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-85"> 85</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-86"> 86</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-87"> 87</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-88"> 88</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-89"> 89</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-90"> 90</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-91"> 91</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-92"> 92</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-93"> 93</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-94"> 94</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-95"> 95</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-96"> 96</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-97"> 97</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-98"> 98</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-99"> 99</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-100">100</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-101">101</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-102">102</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-103">103</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-104">104</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-105">105</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-106">106</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-107">107</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-108">108</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-109">109</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-110">110</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-111">111</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-112">112</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-113">113</a>
+<a href="#rest_code_abce4be1641642009dd6b4ff643ce4d1-114">114</a></pre></div></td><td class="code"><pre class="code C"><a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-1"></a><span class="cp">#include</span> <span class="cpf">&lt;/usr/include/python3.4m/Python.h&gt;</span><span class="cp"></span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-2"></a>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-3"></a><span class="k">static</span> <span class="n">PyObject</span> <span class="o">*</span> <span class="n">StringError</span><span class="p">;</span>  <span class="c1">//错误信息对象</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-4"></a>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-5"></a><span class="c1">// 自定义函数</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-6"></a><span class="c1">// 实现任意长度字符串反转</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-7"></a><span class="kt">int</span> <span class="nf">reverse</span><span class="p">(</span><span class="kt">char</span> <span class="o">*</span> <span class="n">inputstr</span><span class="p">,</span> <span class="kt">int</span> <span class="n">length</span><span class="p">,</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">outputstr</span><span class="p">)</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-8"></a><span class="p">{</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-9"></a>  <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-10"></a>  <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-11"></a>    <span class="p">{</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-12"></a>      <span class="n">outputstr</span><span class="p">[</span><span class="n">length</span><span class="o">-</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">inputstr</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-13"></a>    <span class="p">}</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-14"></a>  <span class="n">outputstr</span><span class="p">[</span><span class="n">length</span><span class="p">]</span> <span class="o">=</span> <span class="sc">&#39;\0&#39;</span><span class="p">;</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-15"></a>  <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-16"></a><span class="p">}</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-17"></a>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-18"></a><span class="c1">// Python和C的接口</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-19"></a><span class="k">static</span> <span class="n">PyObject</span> <span class="o">*</span> <span class="nf">stringreverse</span><span class="p">(</span><span class="n">PyObject</span> <span class="o">*</span> <span class="n">self</span><span class="p">,</span> <span class="n">PyObject</span> <span class="o">*</span> <span class="n">args</span><span class="p">)</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-20"></a><span class="p">{</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-21"></a>  <span class="kt">char</span> <span class="o">*</span> <span class="n">inputstr</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="c1">// 用来接收参数的本地变量</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-22"></a>  <span class="kt">int</span> <span class="n">length</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>         <span class="c1">// 用来接收参数的本地变量</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-23"></a>  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">PyArg_ParseTuple</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="s">&quot;(si)&quot;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">inputstr</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">length</span><span class="p">))</span>  <span class="c1">// 接收参数给本地变量</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-24"></a>    <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-25"></a>  <span class="kt">char</span> <span class="o">*</span><span class="n">outputpointer</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="kt">char</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">length</span> <span class="o">+</span> <span class="mi">1</span><span class="p">));</span> <span class="c1">// 分配返回值空间，多一位存放&#39;\0&#39;</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-26"></a>  <span class="kt">int</span> <span class="n">sts</span><span class="p">;</span>  <span class="c1">// 判断函数是否成功执行</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-27"></a>  <span class="n">sts</span> <span class="o">=</span> <span class="n">reverse</span><span class="p">(</span><span class="n">inputstr</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">outputpointer</span><span class="p">);</span> <span class="c1">// 调用自定义函数</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-28"></a>  <span class="k">if</span> <span class="p">(</span><span class="n">sts</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-29"></a>    <span class="n">PyErr_SetString</span><span class="p">(</span><span class="n">StringError</span><span class="p">,</span> <span class="s">&quot;Encode Error&quot;</span><span class="p">);</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-30"></a>    <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-31"></a>  <span class="p">}</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-32"></a>  <span class="k">return</span> <span class="n">Py_BuildValue</span><span class="p">(</span><span class="s">&quot;s&quot;</span><span class="p">,</span> <span class="n">outputpointer</span><span class="p">);</span>  <span class="c1">// 返回函数计算结果</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-33"></a><span class="p">}</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-34"></a>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-35"></a><span class="c1">// 声明方法调用接口</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-36"></a><span class="k">static</span> <span class="n">PyMethodDef</span> <span class="n">StringReverseMethods</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-37"></a>  <span class="p">{</span><span class="s">&quot;reverse&quot;</span><span class="p">,</span> <span class="n">stringreverse</span><span class="p">,</span> <span class="n">METH_VARARGS</span><span class="p">,</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-38"></a>   <span class="s">&quot;Reverse A String.&quot;</span><span class="p">},</span>  <span class="c1">// {对外函数名称, 对内函数名称, 标志位, 函数说明}</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-39"></a>  <span class="p">{</span><span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">}</span>  <span class="c1">//哨兵变量</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-40"></a><span class="p">};</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-41"></a><span class="cm">/*</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-42"></a><span class="cm">  METH_VARARGS标志位，用来告诉解释器应使用调用C函数的规则。</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-43"></a><span class="cm">  当此位置为值0，表示PyArg_ParseTuple()函数使用的变量是废弃的。</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-44"></a><span class="cm">  当仅使用时&quot;METH_VARARGS&quot;，表示希望参数经由PyArg_ParseTuple()被传递进来。</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-45"></a><span class="cm">*/</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-46"></a>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-47"></a><span class="c1">// 声明模块包含的方法集</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-48"></a><span class="k">static</span> <span class="k">struct</span> <span class="n">PyModuleDef</span> <span class="n">stringmodules</span> <span class="o">=</span> <span class="p">{</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-49"></a>  <span class="n">PyModuleDef_HEAD_INIT</span><span class="p">,</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-50"></a>  <span class="s">&quot;stringreverse&quot;</span><span class="p">,</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-51"></a>  <span class="nb">NULL</span><span class="p">,</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-52"></a>  <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-53"></a>  <span class="n">StringReverseMethods</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-54"></a><span class="p">};</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-55"></a>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-56"></a><span class="c1">// 模块初始化，包括异常处理</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-57"></a><span class="n">PyMODINIT_FUNC</span> <span class="nf">PyInit_stringreverse</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-58"></a><span class="p">{</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-59"></a>  <span class="n">PyObject</span> <span class="o">*</span><span class="n">m</span><span class="p">;</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-60"></a>  <span class="n">m</span> <span class="o">=</span> <span class="n">PyModule_Create</span><span class="p">(</span><span class="o">&amp;</span><span class="n">stringmodules</span><span class="p">);</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-61"></a>  <span class="k">if</span> <span class="p">(</span><span class="n">m</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-62"></a>    <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-63"></a>  <span class="n">StringError</span> <span class="o">=</span> <span class="n">PyErr_NewException</span><span class="p">(</span><span class="s">&quot;stringreverse.error&quot;</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-64"></a>  <span class="n">Py_INCREF</span><span class="p">(</span><span class="n">StringError</span><span class="p">);</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-65"></a>  <span class="n">PyModule_AddObject</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s">&quot;error&quot;</span><span class="p">,</span> <span class="n">StringError</span><span class="p">);</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-66"></a>  <span class="k">return</span> <span class="n">m</span><span class="p">;</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-67"></a><span class="p">}</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-68"></a>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-69"></a><span class="c1">// 初始化</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-70"></a><span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="kt">wchar_t</span> <span class="o">*</span><span class="n">argv</span><span class="p">[])</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-71"></a><span class="p">{</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-72"></a>  <span class="n">PyImport_AppendInittab</span><span class="p">(</span><span class="s">&quot;stringreverse&quot;</span><span class="p">,</span> <span class="n">PyInit_stringreverse</span><span class="p">);</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-73"></a>  <span class="n">Py_SetProgramName</span><span class="p">(</span><span class="n">argv</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-74"></a>  <span class="n">Py_Initialize</span><span class="p">();</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-75"></a>  <span class="n">PyImport_ImportModule</span><span class="p">(</span><span class="s">&quot;stringreverse&quot;</span><span class="p">);</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-76"></a><span class="p">}</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-77"></a>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-78"></a><span class="cm">/*</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-79"></a><span class="cm">  PyArg_ParseTuple()可以使用的格式参数</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-80"></a><span class="cm">  &quot;s&quot; (string or Unicode object) [char *]</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-81"></a><span class="cm">  &quot;s#&quot; (string, Unicode or any read buffer compatible object) [char *, int]</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-82"></a><span class="cm">  &quot;z&quot; (string or None) [char *]</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-83"></a><span class="cm">  &quot;z#&quot; (string or None or any read buffer compatible object) [char *, int]</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-84"></a><span class="cm">  &quot;u&quot; (Unicode object) [Py_UNICODE *]</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-85"></a><span class="cm">  &quot;u#&quot; (Unicode object) [Py_UNICODE *, int]</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-86"></a><span class="cm">  &quot;es&quot; (string, Unicode object or character buffer compatible object) [const char *encoding, char **buffer]</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-87"></a><span class="cm">  &quot;es#&quot; (string, Unicode object or character buffer compatible object) [const char *encoding, char **buffer, int *buffer_length]</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-88"></a><span class="cm">  &quot;b&quot; (integer) [char]</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-89"></a><span class="cm">  &quot;h&quot; (integer) [short int]</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-90"></a><span class="cm">  &quot;i&quot; (integer) [int]</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-91"></a><span class="cm">  &quot;l&quot; (integer) [long int]</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-92"></a><span class="cm">  &quot;c&quot; (string of length 1) [char]</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-93"></a><span class="cm">  &quot;f&quot; (float) [float]</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-94"></a><span class="cm">  &quot;d&quot; (float) [double]</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-95"></a><span class="cm">  &quot;D&quot; (complex) [Py_complex]</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-96"></a><span class="cm">  &quot;O&quot; (object) [PyObject *]</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-97"></a><span class="cm">  &quot;O!&quot; (object) [typeobject, PyObject *]</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-98"></a><span class="cm">  &quot;O&amp;&quot; (object) [converter, anything]</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-99"></a><span class="cm">  &quot;S&quot; (string) [PyStringObject *]</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-100"></a><span class="cm">  &quot;U&quot; (Unicode string) [PyUnicodeObject *]</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-101"></a><span class="cm">  &quot;t#&quot; (read-only character buffer) [char *, int]</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-102"></a><span class="cm">  &quot;w&quot; (read-write character buffer) [char *]</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-103"></a><span class="cm">  &quot;w#&quot; (read-write character buffer) [char *, int]</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-104"></a><span class="cm">  &quot;(items)&quot; (tuple) [matching-items]  ==&gt; Py_BuildValue(&quot;(i, i)&quot;, 1, 2) (1, 2)</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-105"></a><span class="cm">  &quot;[items]&quot; (list) [matching-items]   ==&gt; Py_BuildValue(&quot;[i, i]&quot;, 1, 2) [1, 2]</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-106"></a><span class="cm">  &quot;{items}&quot; (dictionary) [matching-items]  ==&gt; Py_BuildValue(&quot;{s, i}&quot;, &#39;a&#39;, 2) {&#39;a&#39;: 2}</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-107"></a>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-108"></a><span class="cm">  &quot;|&quot;</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-109"></a><span class="cm">  Indicates that the remaining arguments in the Python argument list are optional. The C variables corresponding to optional arguments should be initialized to their default value -- when an optional argument is not specified, PyArg_ParseTuple() does not touch the contents of the corresponding C variable(s).</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-110"></a><span class="cm">  &quot;:&quot;</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-111"></a><span class="cm">  The list of format units ends here; the string after the colon is used as the function name in error messages (the ``associated value&#39;&#39; of the exception that PyArg_ParseTuple() raises).</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-112"></a><span class="cm">  &quot;;&quot;</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-113"></a><span class="cm">  The list of format units ends here; the string after the semicolon is used as the error message instead of the default error message. Clearly, &quot;:&quot; and &quot;;&quot; mutually exclude each other.</span>
+<a name="rest_code_abce4be1641642009dd6b4ff643ce4d1-114"></a><span class="cm">*/</span>
 </pre></td></tr></table><p>2、将C扩展编译成动态链接库stringreverse.so</p>
-<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_a2e8c09a6743439fa0b020e9ed27bab7-1">1</a></pre></div></td><td class="code"><pre class="code Python"><a name="rest_code_a2e8c09a6743439fa0b020e9ed27bab7-1"></a><span class="o">&gt;&gt;</span> <span class="n">gcc</span> <span class="o">-</span><span class="n">o</span> <span class="n">stringreverse</span><span class="o">.</span><span class="n">so</span> <span class="o">-</span><span class="n">shared</span> <span class="o">-</span><span class="n">fPIC</span> <span class="n">stringreverse</span><span class="o">.</span><span class="n">c</span>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_968a45dd4ed1499b9fd82b59c748ec54-1">1</a></pre></div></td><td class="code"><pre class="code Python"><a name="rest_code_968a45dd4ed1499b9fd82b59c748ec54-1"></a><span class="o">&gt;&gt;</span> <span class="n">gcc</span> <span class="o">-</span><span class="n">o</span> <span class="n">stringreverse</span><span class="o">.</span><span class="n">so</span> <span class="o">-</span><span class="n">shared</span> <span class="o">-</span><span class="n">fPIC</span> <span class="n">stringreverse</span><span class="o">.</span><span class="n">c</span>
 </pre></td></tr></table><p>3、Python调用动态链接库test.py</p>
-<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_262997d7322d47ae87d5d1039fa60c48-1">1</a>
-<a href="#rest_code_262997d7322d47ae87d5d1039fa60c48-2">2</a>
-<a href="#rest_code_262997d7322d47ae87d5d1039fa60c48-3">3</a></pre></div></td><td class="code"><pre class="code Python"><a name="rest_code_262997d7322d47ae87d5d1039fa60c48-1"></a><span class="kn">import</span> <span class="nn">stringreverse</span>
-<a name="rest_code_262997d7322d47ae87d5d1039fa60c48-2"></a><span class="n">aimstr</span> <span class="o">=</span> <span class="s2">&quot;abc&quot;</span>
-<a name="rest_code_262997d7322d47ae87d5d1039fa60c48-3"></a><span class="k">print</span><span class="p">(</span><span class="n">stringreverse</span><span class="o">.</span><span class="n">reverse</span><span class="p">((</span><span class="n">aimstr</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">aimstr</span><span class="p">))))</span>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_bb1e28457ab74c36b6273e0b9bbdde14-1">1</a>
+<a href="#rest_code_bb1e28457ab74c36b6273e0b9bbdde14-2">2</a>
+<a href="#rest_code_bb1e28457ab74c36b6273e0b9bbdde14-3">3</a></pre></div></td><td class="code"><pre class="code Python"><a name="rest_code_bb1e28457ab74c36b6273e0b9bbdde14-1"></a><span class="kn">import</span> <span class="nn">stringreverse</span>
+<a name="rest_code_bb1e28457ab74c36b6273e0b9bbdde14-2"></a><span class="n">aimstr</span> <span class="o">=</span> <span class="s2">&quot;abc&quot;</span>
+<a name="rest_code_bb1e28457ab74c36b6273e0b9bbdde14-3"></a><span class="k">print</span><span class="p">(</span><span class="n">stringreverse</span><span class="o">.</span><span class="n">reverse</span><span class="p">((</span><span class="n">aimstr</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">aimstr</span><span class="p">))))</span>
 </pre></td></tr></table><p>输出结果：</p>
-<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_b14578ba2ca14e119ad8e60f569fbafb-1">1</a>
-<a href="#rest_code_b14578ba2ca14e119ad8e60f569fbafb-2">2</a></pre></div></td><td class="code"><pre class="code Python"><a name="rest_code_b14578ba2ca14e119ad8e60f569fbafb-1"></a><span class="o">&gt;&gt;</span> <span class="nb">long</span><span class="nd">@happytime</span><span class="p">:</span><span class="o">~/</span><span class="n">pythontest</span><span class="err">$</span> <span class="n">python3</span> <span class="n">test</span><span class="o">.</span><span class="n">py</span>
-<a name="rest_code_b14578ba2ca14e119ad8e60f569fbafb-2"></a><span class="o">&gt;&gt;</span> <span class="n">cba</span>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_3d0389d51f834af49e5fceacac3dd56b-1">1</a>
+<a href="#rest_code_3d0389d51f834af49e5fceacac3dd56b-2">2</a></pre></div></td><td class="code"><pre class="code Python"><a name="rest_code_3d0389d51f834af49e5fceacac3dd56b-1"></a><span class="o">&gt;&gt;</span> <span class="nb">long</span><span class="nd">@happytime</span><span class="p">:</span><span class="o">~/</span><span class="n">pythontest</span><span class="err">$</span> <span class="n">python3</span> <span class="n">test</span><span class="o">.</span><span class="n">py</span>
+<a name="rest_code_3d0389d51f834af49e5fceacac3dd56b-2"></a><span class="o">&gt;&gt;</span> <span class="n">cba</span>
 </pre></td></tr></table>

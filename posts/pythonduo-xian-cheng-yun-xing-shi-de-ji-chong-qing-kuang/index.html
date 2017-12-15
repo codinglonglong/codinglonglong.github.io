@@ -157,76 +157,76 @@ c">
 <p>本文学习Python在多线程运行时的几种情况。</p>
 <p>看代码，这是一个标准的多线程程序：</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-1"> 1</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-2"> 2</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-3"> 3</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-4"> 4</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-5"> 5</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-6"> 6</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-7"> 7</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-8"> 8</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-9"> 9</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-10">10</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-11">11</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-12">12</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-13">13</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-14">14</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-15">15</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-16">16</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-17">17</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-18">18</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-19">19</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-20">20</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-21">21</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-22">22</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-23">23</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-24">24</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-25">25</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-26">26</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-27">27</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-28">28</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-29">29</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-30">30</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-31">31</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-32">32</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-33">33</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-34">34</a>
-<a href="#rest_code_0862b680c4054d23a0233cf61b66c1f2-35">35</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-1"></a><span class="kn">import</span> <span class="nn">time</span>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-2"></a><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-3"></a>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-4"></a><span class="kn">import</span> <span class="nn">threading</span>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-5"></a>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-6"></a>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-7"></a><span class="k">class</span> <span class="nc">Stu</span><span class="p">:</span>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-8"></a>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-9"></a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-11"></a>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-12"></a>    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-13"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-14"></a>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-15"></a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-16"></a>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-17"></a>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"datas"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-18"></a>            <span class="n">fp</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">"puts "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-19"></a>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-20"></a>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-21"></a><span class="k">def</span> <span class="nf">spawn</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-22"></a>    <span class="n">t</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-23"></a>        <span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">target</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="n">kw</span><span class="p">)</span>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-24"></a>    <span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-25"></a>    <span class="k">return</span> <span class="n">t</span>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-26"></a>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-27"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"datas"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-28"></a>    <span class="n">fp</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">"main thread start.</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-29"></a><span class="n">studentlist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">,</span> <span class="s1">'e'</span><span class="p">]</span>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-30"></a><span class="p">[</span><span class="n">spawn</span><span class="p">(</span><span class="n">Stu</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">studentlist</span><span class="p">]</span>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-31"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"datas"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-32"></a>    <span class="n">fp</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">"main thread end here.</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-33"></a>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-34"></a><span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
-<a name="rest_code_0862b680c4054d23a0233cf61b66c1f2-35"></a><span class="k">print</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-1"> 1</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-2"> 2</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-3"> 3</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-4"> 4</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-5"> 5</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-6"> 6</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-7"> 7</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-8"> 8</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-9"> 9</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-10">10</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-11">11</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-12">12</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-13">13</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-14">14</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-15">15</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-16">16</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-17">17</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-18">18</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-19">19</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-20">20</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-21">21</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-22">22</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-23">23</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-24">24</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-25">25</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-26">26</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-27">27</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-28">28</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-29">29</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-30">30</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-31">31</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-32">32</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-33">33</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-34">34</a>
+<a href="#rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-35">35</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-1"></a><span class="kn">import</span> <span class="nn">time</span>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-2"></a><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-3"></a>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-4"></a><span class="kn">import</span> <span class="nn">threading</span>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-5"></a>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-6"></a>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-7"></a><span class="k">class</span> <span class="nc">Stu</span><span class="p">:</span>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-8"></a>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-9"></a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-11"></a>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-12"></a>    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-13"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-14"></a>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-15"></a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-16"></a>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-17"></a>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"datas"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-18"></a>            <span class="n">fp</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">"puts "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-19"></a>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-20"></a>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-21"></a><span class="k">def</span> <span class="nf">spawn</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-22"></a>    <span class="n">t</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-23"></a>        <span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">target</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="n">kw</span><span class="p">)</span>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-24"></a>    <span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-25"></a>    <span class="k">return</span> <span class="n">t</span>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-26"></a>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-27"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"datas"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-28"></a>    <span class="n">fp</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">"main thread start.</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-29"></a><span class="n">studentlist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">,</span> <span class="s1">'e'</span><span class="p">]</span>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-30"></a><span class="p">[</span><span class="n">spawn</span><span class="p">(</span><span class="n">Stu</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">studentlist</span><span class="p">]</span>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-31"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"datas"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-32"></a>    <span class="n">fp</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">"main thread end here.</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-33"></a>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-34"></a><span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
+<a name="rest_code_2ee09bbbc2724f119fa3af8d7e407f4d-35"></a><span class="k">print</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 <p>我们来看程序的输出：</p>
@@ -245,78 +245,78 @@ c">
 <p>线程都正常启动了，主线程最先结束，然后每个线程分别向datas中写入自己的name。这是最简单的多线程，也是没有任何控制的多线程。</p>
 <p>下一步，我们如果设置守护线程，看看会发生什么。</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_5e464defa80448e1bc3f005230d7849d-1"> 1</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-2"> 2</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-3"> 3</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-4"> 4</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-5"> 5</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-6"> 6</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-7"> 7</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-8"> 8</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-9"> 9</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-10">10</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-11">11</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-12">12</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-13">13</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-14">14</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-15">15</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-16">16</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-17">17</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-18">18</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-19">19</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-20">20</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-21">21</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-22">22</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-23">23</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-24">24</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-25">25</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-26">26</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-27">27</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-28">28</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-29">29</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-30">30</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-31">31</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-32">32</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-33">33</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-34">34</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-35">35</a>
-<a href="#rest_code_5e464defa80448e1bc3f005230d7849d-36">36</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_5e464defa80448e1bc3f005230d7849d-1"></a><span class="kn">import</span> <span class="nn">time</span>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-2"></a><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-3"></a>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-4"></a><span class="kn">import</span> <span class="nn">threading</span>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-5"></a>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-6"></a>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-7"></a><span class="k">class</span> <span class="nc">Stu</span><span class="p">:</span>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-8"></a>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-9"></a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-11"></a>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-12"></a>    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-13"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-14"></a>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-15"></a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-16"></a>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-17"></a>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"datas"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-18"></a>            <span class="n">fp</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">"puts "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-19"></a>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-20"></a>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-21"></a><span class="k">def</span> <span class="nf">spawn</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-22"></a>    <span class="n">t</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-23"></a>        <span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">target</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="n">kw</span><span class="p">)</span>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-24"></a>    <span class="n">t</span><span class="o">.</span><span class="n">daemon</span> <span class="o">=</span> <span class="bp">True</span>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-25"></a>    <span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-26"></a>    <span class="k">return</span> <span class="n">t</span>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-27"></a>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-28"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"datas"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-29"></a>    <span class="n">fp</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">"main thread start.</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-30"></a><span class="n">studentlist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">,</span> <span class="s1">'e'</span><span class="p">]</span>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-31"></a><span class="p">[</span><span class="n">spawn</span><span class="p">(</span><span class="n">Stu</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">studentlist</span><span class="p">]</span>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-32"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"datas"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-33"></a>    <span class="n">fp</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">"main thread end here.</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-34"></a>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-35"></a><span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
-<a name="rest_code_5e464defa80448e1bc3f005230d7849d-36"></a><span class="k">print</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-1"> 1</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-2"> 2</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-3"> 3</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-4"> 4</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-5"> 5</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-6"> 6</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-7"> 7</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-8"> 8</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-9"> 9</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-10">10</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-11">11</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-12">12</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-13">13</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-14">14</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-15">15</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-16">16</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-17">17</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-18">18</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-19">19</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-20">20</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-21">21</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-22">22</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-23">23</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-24">24</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-25">25</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-26">26</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-27">27</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-28">28</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-29">29</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-30">30</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-31">31</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-32">32</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-33">33</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-34">34</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-35">35</a>
+<a href="#rest_code_f2a5bc7641d941b8b5e46530ef361e5d-36">36</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-1"></a><span class="kn">import</span> <span class="nn">time</span>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-2"></a><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-3"></a>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-4"></a><span class="kn">import</span> <span class="nn">threading</span>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-5"></a>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-6"></a>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-7"></a><span class="k">class</span> <span class="nc">Stu</span><span class="p">:</span>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-8"></a>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-9"></a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-11"></a>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-12"></a>    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-13"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-14"></a>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-15"></a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-16"></a>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-17"></a>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"datas"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-18"></a>            <span class="n">fp</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">"puts "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-19"></a>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-20"></a>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-21"></a><span class="k">def</span> <span class="nf">spawn</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-22"></a>    <span class="n">t</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-23"></a>        <span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">target</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="n">kw</span><span class="p">)</span>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-24"></a>    <span class="n">t</span><span class="o">.</span><span class="n">daemon</span> <span class="o">=</span> <span class="bp">True</span>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-25"></a>    <span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-26"></a>    <span class="k">return</span> <span class="n">t</span>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-27"></a>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-28"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"datas"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-29"></a>    <span class="n">fp</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">"main thread start.</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-30"></a><span class="n">studentlist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">,</span> <span class="s1">'e'</span><span class="p">]</span>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-31"></a><span class="p">[</span><span class="n">spawn</span><span class="p">(</span><span class="n">Stu</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">studentlist</span><span class="p">]</span>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-32"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"datas"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-33"></a>    <span class="n">fp</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">"main thread end here.</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-34"></a>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-35"></a><span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
+<a name="rest_code_f2a5bc7641d941b8b5e46530ef361e5d-36"></a><span class="k">print</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 <p>运行结果：</p>
@@ -330,78 +330,78 @@ c">
 <p>我们发现，一旦将子线程设置为daemon，也就是守护线程，主线程结束后，程序就退出了，子线程也结束了。要注意的地方是，daemon要在start之前调用。</p>
 <p>那如果我们想让子线程都结束后，主线程再继续执行，该如何实现呢？看代码：</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-1"> 1</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-2"> 2</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-3"> 3</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-4"> 4</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-5"> 5</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-6"> 6</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-7"> 7</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-8"> 8</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-9"> 9</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-10">10</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-11">11</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-12">12</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-13">13</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-14">14</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-15">15</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-16">16</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-17">17</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-18">18</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-19">19</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-20">20</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-21">21</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-22">22</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-23">23</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-24">24</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-25">25</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-26">26</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-27">27</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-28">28</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-29">29</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-30">30</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-31">31</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-32">32</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-33">33</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-34">34</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-35">35</a>
-<a href="#rest_code_b42f07a7e145419b8a0ae0bc583f3205-36">36</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-1"></a><span class="kn">import</span> <span class="nn">time</span>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-2"></a><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-3"></a>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-4"></a><span class="kn">import</span> <span class="nn">threading</span>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-5"></a>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-6"></a>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-7"></a><span class="k">class</span> <span class="nc">Stu</span><span class="p">:</span>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-8"></a>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-9"></a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-11"></a>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-12"></a>    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-13"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-14"></a>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-15"></a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-16"></a>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-17"></a>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"datas"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-18"></a>            <span class="n">fp</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">"puts "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-19"></a>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-20"></a>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-21"></a><span class="k">def</span> <span class="nf">spawn</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-22"></a>    <span class="n">t</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-23"></a>        <span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">target</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="n">kw</span><span class="p">)</span>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-24"></a>    <span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-25"></a>    <span class="n">t</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-26"></a>    <span class="k">return</span> <span class="n">t</span>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-27"></a>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-28"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"datas"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-29"></a>    <span class="n">fp</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">"main thread start.</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-30"></a><span class="n">studentlist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">,</span> <span class="s1">'e'</span><span class="p">]</span>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-31"></a><span class="p">[</span><span class="n">spawn</span><span class="p">(</span><span class="n">Stu</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">studentlist</span><span class="p">]</span>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-32"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"datas"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-33"></a>    <span class="n">fp</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">"main thread end here.</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-34"></a>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-35"></a><span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
-<a name="rest_code_b42f07a7e145419b8a0ae0bc583f3205-36"></a><span class="k">print</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-1"> 1</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-2"> 2</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-3"> 3</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-4"> 4</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-5"> 5</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-6"> 6</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-7"> 7</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-8"> 8</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-9"> 9</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-10">10</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-11">11</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-12">12</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-13">13</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-14">14</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-15">15</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-16">16</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-17">17</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-18">18</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-19">19</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-20">20</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-21">21</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-22">22</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-23">23</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-24">24</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-25">25</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-26">26</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-27">27</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-28">28</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-29">29</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-30">30</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-31">31</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-32">32</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-33">33</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-34">34</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-35">35</a>
+<a href="#rest_code_0571128e2db74600b5a892de4fbb0b05-36">36</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_0571128e2db74600b5a892de4fbb0b05-1"></a><span class="kn">import</span> <span class="nn">time</span>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-2"></a><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-3"></a>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-4"></a><span class="kn">import</span> <span class="nn">threading</span>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-5"></a>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-6"></a>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-7"></a><span class="k">class</span> <span class="nc">Stu</span><span class="p">:</span>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-8"></a>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-9"></a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-11"></a>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-12"></a>    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-13"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-14"></a>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-15"></a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-16"></a>        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-17"></a>        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"datas"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-18"></a>            <span class="n">fp</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">"puts "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-19"></a>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-20"></a>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-21"></a><span class="k">def</span> <span class="nf">spawn</span><span class="p">(</span><span class="n">target</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-22"></a>    <span class="n">t</span> <span class="o">=</span> <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-23"></a>        <span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">target</span><span class="o">.</span><span class="n">__name__</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="n">kw</span><span class="p">)</span>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-24"></a>    <span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-25"></a>    <span class="n">t</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-26"></a>    <span class="k">return</span> <span class="n">t</span>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-27"></a>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-28"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"datas"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-29"></a>    <span class="n">fp</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">"main thread start.</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-30"></a><span class="n">studentlist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">,</span> <span class="s1">'c'</span><span class="p">,</span> <span class="s1">'d'</span><span class="p">,</span> <span class="s1">'e'</span><span class="p">]</span>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-31"></a><span class="p">[</span><span class="n">spawn</span><span class="p">(</span><span class="n">Stu</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">studentlist</span><span class="p">]</span>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-32"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"datas"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-33"></a>    <span class="n">fp</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="s2">"main thread end here.</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-34"></a>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-35"></a><span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
+<a name="rest_code_0571128e2db74600b5a892de4fbb0b05-36"></a><span class="k">print</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 <p>程序运行结果：</p>

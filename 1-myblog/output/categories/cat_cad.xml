@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about CAD)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_cad.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 12 Dec 2017 00:15:56 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>CAD练习题21——利用圆的切线作直角</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-21-li-yong-yuan-de-qie-xian-zuo-zhi-jiao/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目:&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about CAD)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_cad.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 15 Dec 2017 04:11:58 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>CAD练习题22——利用len作指定长度的弧</title><link>https://codinglonglong.github.io/posts/li-yong-lenzuo-zhi-ding-chang-du-de-hu/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目：&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-12.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-12.PNG"&gt;
+&lt;p&gt;这道题只需要注意一个地方，就是指定长度的弧怎么做。&lt;/p&gt;
+&lt;p&gt;1、先画明显的部分。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-1.PNG"&gt;
+&lt;p&gt;2、利用圆作两个对接的弧。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-2.PNG"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-3.PNG"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-4.PNG"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-5.PNG"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-6.PNG"&gt;
+&lt;p&gt;3、利用len作指定长度的弧。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-7.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-7.PNG"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-8.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-8.PNG"&gt;
+&lt;p&gt;4、利用类平行四边形、镜像画弧。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-9.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-9.PNG"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-10.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-10.PNG"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-11.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-11.PNG"&gt;
+&lt;p&gt;5、清理图形&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-12.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-12.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/li-yong-lenzuo-zhi-ding-chang-du-de-hu/</guid><pubDate>Fri, 15 Dec 2017 04:01:34 GMT</pubDate></item><item><title>CAD练习题21——利用圆的切线作直角</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-21-li-yong-yuan-de-qie-xian-zuo-zhi-jiao/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目:&lt;/p&gt;
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p21-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p21-4.PNG"&gt;
 &lt;p&gt;这道题不算难，条件很丰富，方法也很多，在这里我们用圆的切线来作图。&lt;/p&gt;
 &lt;p&gt;1、画已知部分。&lt;/p&gt;
@@ -96,19 +115,4 @@
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p13-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p13-3.PNG"&gt;
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p13-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p13-4.PNG"&gt;
 &lt;p&gt;3、清理图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p13-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p13-5.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-13-li-yong-ping-xing-si-bian-xing-hua-bu-gui-ze-duo-bian-xing-1/</guid><pubDate>Tue, 21 Nov 2017 12:33:37 GMT</pubDate></item><item><title>CAD练习题12——已知过一点和相切圆画圆</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-12-yi-zhi-guo-yi-dian-he-wai-qie-yuan-hua-yuan/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目：&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-7.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-7.PNG"&gt;
-&lt;p&gt;这道题知道圆过点、相切圆、半径，既不符合相切相切半径、也不符合三边相切。那么怎么画呢？&lt;/p&gt;
-&lt;p&gt;1、先画已知的部分。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-1.PNG"&gt;
-&lt;p&gt;2、由于过一点又知道半径，那么我们从这一点为圆心画圆，目标弧的圆心一定在这个圆上。同时又知道外切圆，所以圆心之间连线长度等于半径之和，所以一个圆半径是35，一个圆半径是50，总长度是85。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-2.PNG"&gt;
-&lt;p&gt;3、上一步中两个圆的交点就是目标弧的圆心。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-3.PNG"&gt;
-&lt;p&gt;4、清理图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-4.PNG"&gt;
-&lt;p&gt;5、同样的画法来画左边的80，但是注意这个是内切圆了，所以半径是减法，一个圆半径是80，一个圆半径是35，总长度是45。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-5.PNG"&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-6.PNG"&gt;
-&lt;p&gt;6、清理图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p12-7.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p12-7.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-12-yi-zhi-guo-yi-dian-he-wai-qie-yuan-hua-yuan/</guid><pubDate>Wed, 08 Nov 2017 11:47:14 GMT</pubDate></item></channel></rss>
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p13-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p13-5.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-13-li-yong-ping-xing-si-bian-xing-hua-bu-gui-ze-duo-bian-xing-1/</guid><pubDate>Tue, 21 Nov 2017 12:33:37 GMT</pubDate></item></channel></rss>

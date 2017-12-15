@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 12 Dec 2017 02:06:55 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>设置IE兼容性访问ntce.cn</title><link>https://codinglonglong.github.io/posts/she-zhi-iejian-rong-xing-fang-wen-ntcecn/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;随着IE逐步被淘汰，很多旧网站都会出现兼容性问题。以ntce.cn为例来解决这个问题：&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 15 Dec 2017 04:11:58 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>CAD练习题22——利用len作指定长度的弧</title><link>https://codinglonglong.github.io/posts/li-yong-lenzuo-zhi-ding-chang-du-de-hu/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目：&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-12.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-12.PNG"&gt;
+&lt;p&gt;这道题只需要注意一个地方，就是指定长度的弧怎么做。&lt;/p&gt;
+&lt;p&gt;1、先画明显的部分。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-1.PNG"&gt;
+&lt;p&gt;2、利用圆作两个对接的弧。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-2.PNG"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-3.PNG"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-4.PNG"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-5.PNG"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-6.PNG"&gt;
+&lt;p&gt;3、利用len作指定长度的弧。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-7.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-7.PNG"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-8.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-8.PNG"&gt;
+&lt;p&gt;4、利用类平行四边形、镜像画弧。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-9.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-9.PNG"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-10.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-10.PNG"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-11.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-11.PNG"&gt;
+&lt;p&gt;5、清理图形&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-12.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-12.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/li-yong-lenzuo-zhi-ding-chang-du-de-hu/</guid><pubDate>Fri, 15 Dec 2017 04:01:34 GMT</pubDate></item><item><title>设置IE兼容性访问ntce.cn</title><link>https://codinglonglong.github.io/posts/she-zhi-iejian-rong-xing-fang-wen-ntcecn/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;随着IE逐步被淘汰，很多旧网站都会出现兼容性问题。以ntce.cn为例来解决这个问题：&lt;/p&gt;
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-1.PNG"&gt;
 &lt;hr class="docutils"&gt;
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-2.PNG"&gt;
@@ -164,14 +183,4 @@
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p17-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p17-4.PNG"&gt;
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p17-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p17-5.PNG"&gt;
 &lt;p&gt;4、清理图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p17-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p17-6.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-17-li-yong-ping-xing-si-bian-xing-hua-bu-gui-ze-duo-bian-xing-5/</guid><pubDate>Wed, 22 Nov 2017 11:33:53 GMT</pubDate></item><item><title>CAD练习题16——利用平行四边形画不规则多边形4</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-16-li-yong-ping-xing-si-bian-xing-hua-bu-gui-ze-duo-bian-xing-4/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目:&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p16-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p16-5.PNG"&gt;
-&lt;p&gt;这道题的方法与 &lt;a class="reference external" href="https://codinglonglong.github.io/posts/cadlian-xi-ti-13-li-yong-ping-xing-si-bian-xing-hua-bu-gui-ze-duo-bian-xing-1/"&gt;https://codinglonglong.github.io/posts/cadlian-xi-ti-13-li-yong-ping-xing-si-bian-xing-hua-bu-gui-ze-duo-bian-xing-1/&lt;/a&gt; 也是一致的。&lt;/p&gt;
-&lt;p&gt;1、先分别画已知的部分。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p16-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p16-1.PNG"&gt;
-&lt;p&gt;2、构造平行四边形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p16-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p16-2.PNG"&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p16-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p16-3.PNG"&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p16-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p16-4.PNG"&gt;
-&lt;p&gt;3、清理图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p16-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p16-5.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-16-li-yong-ping-xing-si-bian-xing-hua-bu-gui-ze-duo-bian-xing-4/</guid><pubDate>Wed, 22 Nov 2017 11:26:07 GMT</pubDate></item></channel></rss>
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p17-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p17-6.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-17-li-yong-ping-xing-si-bian-xing-hua-bu-gui-ze-duo-bian-xing-5/</guid><pubDate>Wed, 22 Nov 2017 11:33:53 GMT</pubDate></item></channel></rss>
