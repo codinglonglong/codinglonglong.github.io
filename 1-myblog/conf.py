@@ -138,7 +138,7 @@ NAVIGATION_LINKS = {
         ("/categories/wo-de-shi-ci/", "我的诗词"),
         ("/posts/lian-xi-wo/", "联系我"),
         ("/archive.html", "文章存档"),
-        ("/categories/", "标签"),
+        ("/categories/", "标签 & 分类"),
         ("https://github.com/codinglonglong/", "Github"),
         ("/rss.xml", "RSS 源"),
     ),
