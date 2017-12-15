@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 15 Dec 2017 04:11:58 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>CAD练习题22——利用len作指定长度的弧</title><link>https://codinglonglong.github.io/posts/li-yong-lenzuo-zhi-ding-chang-du-de-hu/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目：&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Fri, 15 Dec 2017 04:23:57 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>CAD练习题23——利用三边相切和缩放解决圆形密铺问题</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-23-li-yong-san-bian-xiang-qie-he-suo-fang-jie-jue-yuan-xing-mi-pu-wen-ti/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目：&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p23-7.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p23-7.PNG"&gt;
+&lt;p&gt;这道题需要从外往里画，最后再缩放。&lt;/p&gt;
+&lt;p&gt;1、构造外部一圈圆形。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p23-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p23-1.PNG"&gt;
+&lt;p&gt;2、作内切三角形。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p23-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p23-2.PNG"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p23-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p23-3.PNG"&gt;
+&lt;p&gt;3、作对角线以构造三边相切。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p23-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p23-4.PNG"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p23-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p23-5.PNG"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p23-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p23-6.PNG"&gt;
+&lt;p&gt;4、缩放并清理图形。&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p23-7.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p23-7.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-23-li-yong-san-bian-xiang-qie-he-suo-fang-jie-jue-yuan-xing-mi-pu-wen-ti/</guid><pubDate>Fri, 15 Dec 2017 04:19:55 GMT</pubDate></item><item><title>CAD练习题22——利用len作指定长度的弧</title><link>https://codinglonglong.github.io/posts/li-yong-lenzuo-zhi-ding-chang-du-de-hu/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目：&lt;/p&gt;
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-12.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-12.PNG"&gt;
 &lt;p&gt;这道题只需要注意一个地方，就是指定长度的弧怎么做。&lt;/p&gt;
 &lt;p&gt;1、先画明显的部分。&lt;/p&gt;
@@ -171,16 +184,4 @@
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p18-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p18-4.PNG"&gt;
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p18-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p18-5.PNG"&gt;
 &lt;p&gt;3、清理图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p18-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p18-6.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-18-li-yong-gu-ding-jiao-du-san-jiao-xing-hua-bu-gui-ze-duo-bian-xing/</guid><pubDate>Wed, 22 Nov 2017 12:10:11 GMT</pubDate></item><item><title>CAD练习题17——利用平行四边形画不规则多边形5</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-17-li-yong-ping-xing-si-bian-xing-hua-bu-gui-ze-duo-bian-xing-5/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目:&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p17-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p17-6.PNG"&gt;
-&lt;p&gt;这道题看上去不大容易直接构造平行四边形了，那又该用什么黑科技呢？&lt;/p&gt;
-&lt;p&gt;1、先画已知部分。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p17-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p17-1.PNG"&gt;
-&lt;p&gt;2、还是和之前 &lt;a class="reference external" href="https://codinglonglong.github.io/posts/cadlian-xi-ti-13-li-yong-ping-xing-si-bian-xing-hua-bu-gui-ze-duo-bian-xing-1/"&gt;https://codinglonglong.github.io/posts/cadlian-xi-ti-13-li-yong-ping-xing-si-bian-xing-hua-bu-gui-ze-duo-bian-xing-1/&lt;/a&gt; 相似的方法，构造一条和目标直线平行且相等的线。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p17-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p17-2.PNG"&gt;
-&lt;p&gt;3、问题是怎么把上一步的直线平移到两个圆上，并且还两端都各自正好搭到一个圆呢？下面看看黑科技。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p17-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p17-3.PNG"&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p17-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p17-4.PNG"&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p17-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p17-5.PNG"&gt;
-&lt;p&gt;4、清理图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p17-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p17-6.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-17-li-yong-ping-xing-si-bian-xing-hua-bu-gui-ze-duo-bian-xing-5/</guid><pubDate>Wed, 22 Nov 2017 11:33:53 GMT</pubDate></item></channel></rss>
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p18-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p18-6.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-18-li-yong-gu-ding-jiao-du-san-jiao-xing-hua-bu-gui-ze-duo-bian-xing/</guid><pubDate>Wed, 22 Nov 2017 12:10:11 GMT</pubDate></item></channel></rss>
