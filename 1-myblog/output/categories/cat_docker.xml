@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Docker)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_docker.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 19 Dec 2017 00:52:53 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Docker设定固定IP</title><link>https://codinglonglong.github.io/posts/dockershe-ding-gu-ding-ip/</link><dc:creator>龙龙</dc:creator><description>&lt;ol class="arabic"&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Docker)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_docker.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 19 Dec 2017 14:07:08 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Docker设定国内镜像源</title><link>https://codinglonglong.github.io/posts/dockershe-ding-guo-nei-jing-xiang-yuan/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、访问 &lt;a class="reference external" href="http://www.daocloud.io/mirror"&gt;http://www.daocloud.io/mirror&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2、注册一个账号，登录&lt;/p&gt;
+&lt;p&gt;3、访问 &lt;a class="reference external" href="http://www.daocloud.io/mirror#accelerator-doc"&gt;http://www.daocloud.io/mirror#accelerator-doc&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;4、点Windows&lt;/p&gt;
+&lt;p&gt;5、点Copy，将加速地址复制到剪贴板里&lt;/p&gt;
+&lt;p&gt;6、启动"Docker Quickstart Terminal"&lt;/p&gt;
+&lt;p&gt;7、输入如下命令&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; docker-machine ssh default
+&amp;gt;&amp;gt; sudo sed -i "s|EXTRA_ARGS='|EXTRA_ARGS='--registry-mirror=加速地址 |g" /var/lib/boot2docker/profile
+&amp;gt;&amp;gt; exit
+&amp;gt;&amp;gt; docker-machine restart default
+&lt;/pre&gt;
+&lt;p&gt;8、再执行docker run时就从daocloud上下载系统镜像了&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><guid>https://codinglonglong.github.io/posts/dockershe-ding-guo-nei-jing-xiang-yuan/</guid><pubDate>Tue, 19 Dec 2017 13:58:48 GMT</pubDate></item><item><title>Docker设定固定IP</title><link>https://codinglonglong.github.io/posts/dockershe-ding-gu-ding-ip/</link><dc:creator>龙龙</dc:creator><description>&lt;ol class="arabic"&gt;
 &lt;li&gt;&lt;p class="first"&gt;新建自定义网络。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;pre class="code bash"&gt;&lt;a name="rest_code_b3451969fae944ddbfe967638bdacc8e-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; docker network create --subnet&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;172&lt;/span&gt;.16.0.0/16 testnet

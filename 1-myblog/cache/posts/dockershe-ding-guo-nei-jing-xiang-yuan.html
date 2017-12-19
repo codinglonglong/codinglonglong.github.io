@@ -1,0 +1,14 @@
+<p>1、访问 <a class="reference external" href="http://www.daocloud.io/mirror">http://www.daocloud.io/mirror</a></p>
+<p>2、注册一个账号，登录</p>
+<p>3、访问 <a class="reference external" href="http://www.daocloud.io/mirror#accelerator-doc">http://www.daocloud.io/mirror#accelerator-doc</a></p>
+<p>4、点Windows</p>
+<p>5、点Copy，将加速地址复制到剪贴板里</p>
+<p>6、启动&quot;Docker Quickstart Terminal&quot;</p>
+<p>7、输入如下命令</p>
+<pre class="literal-block">
+&gt;&gt; docker-machine ssh default
+&gt;&gt; sudo sed -i &quot;s|EXTRA_ARGS='|EXTRA_ARGS='--registry-mirror=加速地址 |g&quot; /var/lib/boot2docker/profile
+&gt;&gt; exit
+&gt;&gt; docker-machine restart default
+</pre>
+<p>8、再执行docker run时就从daocloud上下载系统镜像了</p>

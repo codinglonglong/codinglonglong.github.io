@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 19 Dec 2017 00:52:54 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>CAD练习题26——已知半径之和作图</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-26-yi-zhi-ban-jing-zhi-he-zuo-tu/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目：&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Tue, 19 Dec 2017 14:07:08 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Docker设定国内镜像源</title><link>https://codinglonglong.github.io/posts/dockershe-ding-guo-nei-jing-xiang-yuan/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、访问 &lt;a class="reference external" href="http://www.daocloud.io/mirror"&gt;http://www.daocloud.io/mirror&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;2、注册一个账号，登录&lt;/p&gt;
+&lt;p&gt;3、访问 &lt;a class="reference external" href="http://www.daocloud.io/mirror#accelerator-doc"&gt;http://www.daocloud.io/mirror#accelerator-doc&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;4、点Windows&lt;/p&gt;
+&lt;p&gt;5、点Copy，将加速地址复制到剪贴板里&lt;/p&gt;
+&lt;p&gt;6、启动"Docker Quickstart Terminal"&lt;/p&gt;
+&lt;p&gt;7、输入如下命令&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; docker-machine ssh default
+&amp;gt;&amp;gt; sudo sed -i "s|EXTRA_ARGS='|EXTRA_ARGS='--registry-mirror=加速地址 |g" /var/lib/boot2docker/profile
+&amp;gt;&amp;gt; exit
+&amp;gt;&amp;gt; docker-machine restart default
+&lt;/pre&gt;
+&lt;p&gt;8、再执行docker run时就从daocloud上下载系统镜像了&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><guid>https://codinglonglong.github.io/posts/dockershe-ding-guo-nei-jing-xiang-yuan/</guid><pubDate>Tue, 19 Dec 2017 13:58:48 GMT</pubDate></item><item><title>CAD练习题26——已知半径之和作图</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-26-yi-zhi-ban-jing-zhi-he-zuo-tu/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目：&lt;/p&gt;
 &lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p26-7.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p26-7.PNG"&gt;
 &lt;p&gt;这道题还是比较困难的，两个圆的半径不知道，只知道半径的和，画的时候就不好下手，知道弧长120，却不知道圆心的具体位置，只知道一个100，还加上了b的半径。能画的，就剩下了中间一个长度120的直线。这道题是真的有点难度了……&lt;/p&gt;
 &lt;p&gt;1、先画原图中唯一已知的一条120直线。由于a和b的半径和是50，并且给定了100的直线，也就是2倍的a+b，外加弧120与b外切，也就意味着，利用半径和50，以及给定的100，构造两个圆，可以确定弧120的圆心。&lt;/p&gt;
@@ -180,14 +193,4 @@
 &lt;a name="rest_code_02a0523dad0b4640a46e2f98619df3c9-47"&gt;&lt;/a&gt;            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt;
 &lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</description><category>Excel</category><category>Python</category><guid>https://codinglonglong.github.io/posts/pythonshi-xian-excellie-ming-he-xia-biao-de-xiang-hu-zhuan-huan/</guid><pubDate>Mon, 11 Dec 2017 16:17:58 GMT</pubDate></item><item><title>夜饮微醺</title><link>https://codinglonglong.github.io/posts/ye-yin-wei-xun/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;此心憔悴不思量，望家长盼浣纱娘。&lt;/p&gt;
 &lt;p&gt;只言片语空度日，阁中犹挂嫁衣裳。&lt;/p&gt;&lt;/div&gt;</description><category>我的诗词</category><guid>https://codinglonglong.github.io/posts/ye-yin-wei-xun/</guid><pubDate>Mon, 04 Dec 2017 17:06:44 GMT</pubDate></item><item><title>夜酌听诗</title><link>https://codinglonglong.github.io/posts/ye-zhuo-ting-shi/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;小楼独酌诗酒茶，当年何处后庭花。&lt;/p&gt;
-&lt;p&gt;孤星暗月空自许，秋千院落夜还家。&lt;/p&gt;&lt;/div&gt;</description><category>我的诗词</category><guid>https://codinglonglong.github.io/posts/ye-zhuo-ting-shi/</guid><pubDate>Mon, 04 Dec 2017 14:27:31 GMT</pubDate></item><item><title>CAD练习题21——利用圆的切线作直角</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-21-li-yong-yuan-de-qie-xian-zuo-zhi-jiao/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目:&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p21-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p21-4.PNG"&gt;
-&lt;p&gt;这道题不算难，条件很丰富，方法也很多，在这里我们用圆的切线来作图。&lt;/p&gt;
-&lt;p&gt;1、画已知部分。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p21-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p21-1.PNG"&gt;
-&lt;p&gt;2、作切线。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p21-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p21-2.PNG"&gt;
-&lt;p&gt;3、连接圆心和切点。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p21-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p21-3.PNG"&gt;
-&lt;p&gt;4、清理图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p21-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p21-4.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-21-li-yong-yuan-de-qie-xian-zuo-zhi-jiao/</guid><pubDate>Wed, 22 Nov 2017 13:19:55 GMT</pubDate></item></channel></rss>
+&lt;p&gt;孤星暗月空自许，秋千院落夜还家。&lt;/p&gt;&lt;/div&gt;</description><category>我的诗词</category><guid>https://codinglonglong.github.io/posts/ye-zhuo-ting-shi/</guid><pubDate>Mon, 04 Dec 2017 14:27:31 GMT</pubDate></item></channel></rss>

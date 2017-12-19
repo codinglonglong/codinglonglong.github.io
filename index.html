@@ -24,7 +24,7 @@ body{
     font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
 }
 </style>
-<link rel="prefetch" href="posts/cadlian-xi-ti-26-yi-zhi-ban-jing-zhi-he-zuo-tu/" type="text/html">
+<link rel="prefetch" href="posts/dockershe-ding-guo-nei-jing-xiang-yuan/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -86,7 +86,32 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/cadlian-xi-ti-26-yi-zhi-ban-jing-zhi-he-zuo-tu/" class="u-url">CAD练习题26——已知半径之和作图</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockershe-ding-guo-nei-jing-xiang-yuan/" class="u-url">Docker设定国内镜像源</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/dockershe-ding-guo-nei-jing-xiang-yuan/" rel="bookmark"><time class="published dt-published" datetime="2017-12-19T21:58:48+08:00" title="2017-12-19 21:58">2017-12-19 21:58</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>1、访问 <a class="reference external" href="http://www.daocloud.io/mirror">http://www.daocloud.io/mirror</a></p>
+<p>2、注册一个账号，登录</p>
+<p>3、访问 <a class="reference external" href="http://www.daocloud.io/mirror#accelerator-doc">http://www.daocloud.io/mirror#accelerator-doc</a></p>
+<p>4、点Windows</p>
+<p>5、点Copy，将加速地址复制到剪贴板里</p>
+<p>6、启动"Docker Quickstart Terminal"</p>
+<p>7、输入如下命令</p>
+<pre class="literal-block">
+&gt;&gt; docker-machine ssh default
+&gt;&gt; sudo sed -i "s|EXTRA_ARGS='|EXTRA_ARGS='--registry-mirror=加速地址 |g" /var/lib/boot2docker/profile
+&gt;&gt; exit
+&gt;&gt; docker-machine restart default
+</pre>
+<p>8、再执行docker run时就从daocloud上下载系统镜像了</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/cadlian-xi-ti-26-yi-zhi-ban-jing-zhi-he-zuo-tu/" class="u-url">CAD练习题26——已知半径之和作图</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
@@ -176,26 +201,6 @@ body{
 <img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-7.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-7.PNG"><img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-8.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-8.PNG"><p>4、利用类平行四边形、镜像画弧。</p>
 <img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-9.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-9.PNG"><img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-10.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-10.PNG"><img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-11.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-11.PNG"><p>5、清理图形</p>
 <img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p22-12.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p22-12.PNG">
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/she-zhi-iejian-rong-xing-fang-wen-ntcecn/" class="u-url">设置IE兼容性访问ntce.cn</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/she-zhi-iejian-rong-xing-fang-wen-ntcecn/" rel="bookmark"><time class="published dt-published" datetime="2017-12-12T09:59:24+08:00" title="2017-12-12 09:59">2017-12-12 09:59</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>随着IE逐步被淘汰，很多旧网站都会出现兼容性问题。以ntce.cn为例来解决这个问题：</p>
-<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-1.PNG"><hr class="docutils">
-<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-2.PNG"><hr class="docutils">
-<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-3.png" src="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-3.png"><hr class="docutils">
-<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-4.PNG"><hr class="docutils">
-<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-5.png" src="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-5.png"><hr class="docutils">
-<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-6.PNG"><hr class="docutils">
-<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-7.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-7.PNG"><hr class="docutils">
-<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-8.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-8.PNG">
 </div>
     </div>
     </article>
