@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about redis)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/redis.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sat, 30 Dec 2017 15:36:29 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Redis修改默认端口</title><link>https://codinglonglong.github.io/posts/redisxiu-gai-mo-ren-duan-kou/</link><dc:creator>龙龙</dc:creator><description>&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; emacs /etc/redis/redis.conf
+port 8083
+bind 0.0.0.0
+&amp;gt;&amp;gt; redis-server /etc/redis/redis.conf
+&lt;/pre&gt;</description><category>redis</category><guid>https://codinglonglong.github.io/posts/redisxiu-gai-mo-ren-duan-kou/</guid><pubDate>Sat, 30 Dec 2017 15:31:05 GMT</pubDate></item></channel></rss>

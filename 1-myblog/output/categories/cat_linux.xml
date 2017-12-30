@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Linux)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_linux.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sat, 30 Dec 2017 10:17:41 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>使用Tmux实现终端分屏</title><link>https://codinglonglong.github.io/posts/shi-yong-tmuxshi-xian-zhong-duan-fen-ping/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;在终端下工作时，经常要打开多个窗口，运用Tmux就可以只开一个终端，分屏进行操作了。&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Linux)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_linux.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sat, 30 Dec 2017 15:36:32 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Redis修改默认端口</title><link>https://codinglonglong.github.io/posts/redisxiu-gai-mo-ren-duan-kou/</link><dc:creator>龙龙</dc:creator><description>&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; emacs /etc/redis/redis.conf
+port 8083
+bind 0.0.0.0
+&amp;gt;&amp;gt; redis-server /etc/redis/redis.conf
+&lt;/pre&gt;</description><category>redis</category><guid>https://codinglonglong.github.io/posts/redisxiu-gai-mo-ren-duan-kou/</guid><pubDate>Sat, 30 Dec 2017 15:31:05 GMT</pubDate></item><item><title>使用Tmux实现终端分屏</title><link>https://codinglonglong.github.io/posts/shi-yong-tmuxshi-xian-zhong-duan-fen-ping/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;在终端下工作时，经常要打开多个窗口，运用Tmux就可以只开一个终端，分屏进行操作了。&lt;/p&gt;
 &lt;p&gt;首先按下Ctrl-b，然后按下对应按键完成功能：&lt;/p&gt;
 &lt;table border="1" class="docutils"&gt;
 &lt;colgroup&gt;
@@ -352,131 +357,4 @@ libdc1394 error: Failed to initialize libdc1394
 &lt;pre class="literal-block"&gt;
 &amp;gt;&amp;gt; sudo ln /dev/null /dev/raw1394
 &lt;/pre&gt;
-&lt;/blockquote&gt;&lt;/div&gt;</description><category>Linux</category><guid>https://codinglonglong.github.io/posts/libdc1394-error-failed-to-initialize-libdc1394/</guid><pubDate>Fri, 03 Mar 2017 11:22:25 GMT</pubDate></item><item><title>修改Docker中的系统时间</title><link>https://codinglonglong.github.io/posts/xiu-gai-dockerzhong-de-xi-tong-shi-jian/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;默认在Docker中无法使用常见的命令修改系统时间，会显示没有权限，但测试程序往往需要修改系统时间，可以通过如下方法解决该问题：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-1"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-2"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-3"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-4"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;07&lt;/span&gt;:39:26 GMT &lt;span class="m"&gt;2017&lt;/span&gt;
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-5"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-1
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-6"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-7"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-8"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;08&lt;/span&gt;:39:35 +01 &lt;span class="m"&gt;2017&lt;/span&gt;
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-9"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-2
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-10"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-11"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-12"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;09&lt;/span&gt;:39:40 +02 &lt;span class="m"&gt;2017&lt;/span&gt;
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-13"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-3
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-14"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-15"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-16"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:39:45 +03 &lt;span class="m"&gt;2017&lt;/span&gt;
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-17"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-4
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-18"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-19"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-20"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;11&lt;/span&gt;:42:57 +04 &lt;span class="m"&gt;2017&lt;/span&gt;
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-21"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-5
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-22"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-23"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-24"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;12&lt;/span&gt;:43:05 +05 &lt;span class="m"&gt;2017&lt;/span&gt;
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-25"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-6
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-26"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-27"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-28"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;13&lt;/span&gt;:43:10 +06 &lt;span class="m"&gt;2017&lt;/span&gt;
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-29"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-7
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-30"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-31"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-32"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;14&lt;/span&gt;:43:15 +07 &lt;span class="m"&gt;2017&lt;/span&gt;
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-33"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-8
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-34"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-35"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-36"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;15&lt;/span&gt;:43:20 +08 &lt;span class="m"&gt;2017&lt;/span&gt;
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-37"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-9
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-38"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-39"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-40"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;16&lt;/span&gt;:43:25 +09 &lt;span class="m"&gt;2017&lt;/span&gt;
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-41"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-10
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-42"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-43"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-44"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;17&lt;/span&gt;:43:30 +10 &lt;span class="m"&gt;2017&lt;/span&gt;
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-45"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-11
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-46"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-47"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-48"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;18&lt;/span&gt;:43:35 +11 &lt;span class="m"&gt;2017&lt;/span&gt;
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-49"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-12
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-50"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-51"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-52"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;19&lt;/span&gt;:43:39 +12 &lt;span class="m"&gt;2017&lt;/span&gt;
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-53"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-13
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-54"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-55"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-56"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt;:43:43 +13 &lt;span class="m"&gt;2017&lt;/span&gt;
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-57"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-14
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-58"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-59"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-60"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;21&lt;/span&gt;:43:50 +14 &lt;span class="m"&gt;2017&lt;/span&gt;
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-61"&gt;&lt;/a&gt;
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-62"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+1
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-63"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-64"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-65"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;06&lt;/span&gt;:44:57 -01 &lt;span class="m"&gt;2017&lt;/span&gt;
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-66"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+2
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-67"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-68"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-69"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;05&lt;/span&gt;:45:01 -02 &lt;span class="m"&gt;2017&lt;/span&gt;
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-70"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+3
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-71"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-72"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-73"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;04&lt;/span&gt;:45:05 -03 &lt;span class="m"&gt;2017&lt;/span&gt;
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-74"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+4
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-75"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-76"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-77"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;03&lt;/span&gt;:45:09 -04 &lt;span class="m"&gt;2017&lt;/span&gt;
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-78"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+5
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-79"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-80"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-81"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;02&lt;/span&gt;:45:13 -05 &lt;span class="m"&gt;2017&lt;/span&gt;
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-82"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+6
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-83"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-84"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-85"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;01&lt;/span&gt;:45:17 -06 &lt;span class="m"&gt;2017&lt;/span&gt;
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-86"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+7
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-87"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-88"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-89"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;00&lt;/span&gt;:45:24 -07 &lt;span class="m"&gt;2017&lt;/span&gt;
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-90"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+8
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-91"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-92"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-93"&gt;&lt;/a&gt;Mon Jan &lt;span class="m"&gt;30&lt;/span&gt; &lt;span class="m"&gt;23&lt;/span&gt;:45:28 -08 &lt;span class="m"&gt;2017&lt;/span&gt;
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-94"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+9
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-95"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-96"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-97"&gt;&lt;/a&gt;Mon Jan &lt;span class="m"&gt;30&lt;/span&gt; &lt;span class="m"&gt;22&lt;/span&gt;:45:32 -09 &lt;span class="m"&gt;2017&lt;/span&gt;
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-98"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+10
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-99"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-100"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-101"&gt;&lt;/a&gt;Mon Jan &lt;span class="m"&gt;30&lt;/span&gt; &lt;span class="m"&gt;21&lt;/span&gt;:45:37 -10 &lt;span class="m"&gt;2017&lt;/span&gt;
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-102"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+11
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-103"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-104"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-105"&gt;&lt;/a&gt;Mon Jan &lt;span class="m"&gt;30&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt;:45:53 -11 &lt;span class="m"&gt;2017&lt;/span&gt;
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-106"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+12
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-107"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-108"&gt;&lt;/a&gt;root@d26965edacdd:/# date
-&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-109"&gt;&lt;/a&gt;Mon Jan &lt;span class="m"&gt;30&lt;/span&gt; &lt;span class="m"&gt;19&lt;/span&gt;:46:00 -12 &lt;span class="m"&gt;2017&lt;/span&gt;
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;我们测试一下实际效果：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;pre class="code bash"&gt;&lt;a name="rest_code_154716383424438c9c980f23a3d66114-1"&gt;&lt;/a&gt;root@d26965edacdd:/usr/development# cat test.py
-&lt;a name="rest_code_154716383424438c9c980f23a3d66114-2"&gt;&lt;/a&gt;import &lt;span class="nb"&gt;time&lt;/span&gt;
-&lt;a name="rest_code_154716383424438c9c980f23a3d66114-3"&gt;&lt;/a&gt;print&lt;span class="o"&gt;(&lt;/span&gt;time.strftime&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'%Y-%m-%d %H:%M:%S'&lt;/span&gt;,time.localtime&lt;span class="o"&gt;(&lt;/span&gt;time.time&lt;span class="o"&gt;())))&lt;/span&gt;
-&lt;a name="rest_code_154716383424438c9c980f23a3d66114-4"&gt;&lt;/a&gt;root@d26965edacdd:/usr/development# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT
-&lt;a name="rest_code_154716383424438c9c980f23a3d66114-5"&gt;&lt;/a&gt;root@d26965edacdd:/usr/development# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_154716383424438c9c980f23a3d66114-6"&gt;&lt;/a&gt;root@d26965edacdd:/usr/development# python test.py
-&lt;a name="rest_code_154716383424438c9c980f23a3d66114-7"&gt;&lt;/a&gt;&lt;span class="m"&gt;2017&lt;/span&gt;-01-31 &lt;span class="m"&gt;07&lt;/span&gt;:50:13
-&lt;a name="rest_code_154716383424438c9c980f23a3d66114-8"&gt;&lt;/a&gt;root@d26965edacdd:/usr/development# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-8
-&lt;a name="rest_code_154716383424438c9c980f23a3d66114-9"&gt;&lt;/a&gt;root@d26965edacdd:/usr/development# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
-&lt;a name="rest_code_154716383424438c9c980f23a3d66114-10"&gt;&lt;/a&gt;root@d26965edacdd:/usr/development# python test.py
-&lt;a name="rest_code_154716383424438c9c980f23a3d66114-11"&gt;&lt;/a&gt;&lt;span class="m"&gt;2017&lt;/span&gt;-01-31 &lt;span class="m"&gt;15&lt;/span&gt;:50:19
-&lt;/pre&gt;&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;本方法是通过修改时区来“曲线救国”的。&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><category>Linux</category><guid>https://codinglonglong.github.io/posts/xiu-gai-dockerzhong-de-xi-tong-shi-jian/</guid><pubDate>Tue, 31 Jan 2017 07:36:34 GMT</pubDate></item></channel></rss>
+&lt;/blockquote&gt;&lt;/div&gt;</description><category>Linux</category><guid>https://codinglonglong.github.io/posts/libdc1394-error-failed-to-initialize-libdc1394/</guid><pubDate>Fri, 03 Mar 2017 11:22:25 GMT</pubDate></item></channel></rss>
