@@ -24,7 +24,7 @@ body{
     font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
 }
 </style>
-<link rel="prefetch" href="posts/redisxiu-gai-mo-ren-duan-kou/" type="text/html">
+<link rel="prefetch" href="posts/ce-shi-shi-dockerzhong-duan-wu-fa-xian-shi-zhong-wen/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -86,7 +86,24 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/redisxiu-gai-mo-ren-duan-kou/" class="u-url">Redis修改默认端口</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/ce-shi-shi-dockerzhong-duan-wu-fa-xian-shi-zhong-wen/" class="u-url">测试时，Docker终端无法显示中文</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/ce-shi-shi-dockerzhong-duan-wu-fa-xian-shi-zhong-wen/" rel="bookmark"><time class="published dt-published" datetime="2017-12-31T00:00:02+08:00" title="2017-12-31 00:00">2017-12-31 00:00</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>测试代码的时候，无法用print在Docker终端输出中文，对于这个问题，我们采用的办法是将要输出的信息记录在redis里，然后在主系统通过redis图形客户端查看，这样的好处在于:</p>
+<ol class="arabic simple">
+<li>不需要改动docker镜像本身；</li>
+<li>redis可以很好地支持中文；</li>
+<li>测试过程可记录，容易追溯问题所在。</li>
+</ol>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/redisxiu-gai-mo-ren-duan-kou/" class="u-url">Redis修改默认端口</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
@@ -335,25 +352,6 @@ bind 0.0.0.0
 <img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p26-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p26-2.PNG"><img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p26-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p26-3.PNG"><img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p26-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p26-4.PNG"><p>3、镜像得到下边的弧120，同时画出两边的圆。</p>
 <img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p26-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p26-5.PNG"><p>4、完成并清理图形。</p>
 <img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p26-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p26-6.PNG"><img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p26-7.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p26-7.PNG">
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/cadlian-xi-ti-25-li-yong-suo-fang-jie-jue-cheng-bi-li-bian-chang-wen-ti/" class="u-url">CAD练习题25——利用缩放解决成比例边长问题</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/cadlian-xi-ti-25-li-yong-suo-fang-jie-jue-cheng-bi-li-bian-chang-wen-ti/" rel="bookmark"><time class="published dt-published" datetime="2017-12-17T00:12:00+08:00" title="2017-12-17 00:12">2017-12-17 00:12</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>题目：</p>
-<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p25-7.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p25-7.PNG"><p>这道题的难点在于2倍关系如何实现，在这里我们采用的是缩放。</p>
-<p>1、先画已知部分。</p>
-<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p25-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p25-1.PNG"><p>2、构造半径2倍关系的两个圆。</p>
-<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p25-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p25-2.PNG"><p>3、沿着直角三角形斜边进行缩放。</p>
-<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p25-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p25-3.PNG"><p>4、完成2倍关系。</p>
-<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p25-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p25-4.PNG"><img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p25-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p25-5.PNG"><p>5、利用起点端点方向画弧，完成其他部分，并清理图形。</p>
-<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p25-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p25-6.PNG"><img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p25-7.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p25-7.PNG">
 </div>
     </div>
     </article>

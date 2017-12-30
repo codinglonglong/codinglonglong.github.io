@@ -1,0 +1,6 @@
+<p>测试代码的时候，无法用print在Docker终端输出中文，对于这个问题，我们采用的办法是将要输出的信息记录在redis里，然后在主系统通过redis图形客户端查看，这样的好处在于:</p>
+<ol class="arabic simple">
+<li>不需要改动docker镜像本身；</li>
+<li>redis可以很好地支持中文；</li>
+<li>测试过程可记录，容易追溯问题所在。</li>
+</ol>
