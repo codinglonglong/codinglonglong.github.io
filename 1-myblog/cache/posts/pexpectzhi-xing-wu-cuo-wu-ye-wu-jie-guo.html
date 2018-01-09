@@ -1,0 +1,37 @@
+<p>最后一行代码可以解决这个问题。</p>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_54f7e1744913489893d0e64e49f9bbc7-1"> 1</a>
+<a href="#rest_code_54f7e1744913489893d0e64e49f9bbc7-2"> 2</a>
+<a href="#rest_code_54f7e1744913489893d0e64e49f9bbc7-3"> 3</a>
+<a href="#rest_code_54f7e1744913489893d0e64e49f9bbc7-4"> 4</a>
+<a href="#rest_code_54f7e1744913489893d0e64e49f9bbc7-5"> 5</a>
+<a href="#rest_code_54f7e1744913489893d0e64e49f9bbc7-6"> 6</a>
+<a href="#rest_code_54f7e1744913489893d0e64e49f9bbc7-7"> 7</a>
+<a href="#rest_code_54f7e1744913489893d0e64e49f9bbc7-8"> 8</a>
+<a href="#rest_code_54f7e1744913489893d0e64e49f9bbc7-9"> 9</a>
+<a href="#rest_code_54f7e1744913489893d0e64e49f9bbc7-10">10</a>
+<a href="#rest_code_54f7e1744913489893d0e64e49f9bbc7-11">11</a>
+<a href="#rest_code_54f7e1744913489893d0e64e49f9bbc7-12">12</a>
+<a href="#rest_code_54f7e1744913489893d0e64e49f9bbc7-13">13</a>
+<a href="#rest_code_54f7e1744913489893d0e64e49f9bbc7-14">14</a>
+<a href="#rest_code_54f7e1744913489893d0e64e49f9bbc7-15">15</a>
+<a href="#rest_code_54f7e1744913489893d0e64e49f9bbc7-16">16</a>
+<a href="#rest_code_54f7e1744913489893d0e64e49f9bbc7-17">17</a>
+<a href="#rest_code_54f7e1744913489893d0e64e49f9bbc7-18">18</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_54f7e1744913489893d0e64e49f9bbc7-1"></a><span class="kn">import</span> <span class="nn">pexpect</span>
+<a name="rest_code_54f7e1744913489893d0e64e49f9bbc7-2"></a>
+<a name="rest_code_54f7e1744913489893d0e64e49f9bbc7-3"></a><span class="n">userid</span> <span class="o">=</span> <span class="mi">1</span>
+<a name="rest_code_54f7e1744913489893d0e64e49f9bbc7-4"></a><span class="n">userpass</span> <span class="o">=</span> <span class="s2">&quot;abcdef&quot;</span>
+<a name="rest_code_54f7e1744913489893d0e64e49f9bbc7-5"></a><span class="n">username</span> <span class="o">=</span> <span class="s2">&quot;写程序的龙龙&quot;</span>
+<a name="rest_code_54f7e1744913489893d0e64e49f9bbc7-6"></a><span class="n">useremail</span> <span class="o">=</span> <span class="s2">&quot;codinglonglong@126.com&quot;</span>
+<a name="rest_code_54f7e1744913489893d0e64e49f9bbc7-7"></a>
+<a name="rest_code_54f7e1744913489893d0e64e49f9bbc7-8"></a><span class="n">child</span> <span class="o">=</span> <span class="n">pexpect</span><span class="o">.</span><span class="n">spawn</span><span class="p">(</span><span class="s1">&#39;ssh-keygen -t rsa -C &quot;&#39;</span> <span class="o">+</span> <span class="n">useremail</span> <span class="o">+</span> <span class="s1">&#39;&quot;&#39;</span><span class="p">)</span>
+<a name="rest_code_54f7e1744913489893d0e64e49f9bbc7-9"></a><span class="k">print</span><span class="p">(</span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
+<a name="rest_code_54f7e1744913489893d0e64e49f9bbc7-10"></a><span class="n">child</span><span class="o">.</span><span class="n">expect</span><span class="p">(</span><span class="s2">&quot;: &quot;</span><span class="p">)</span>
+<a name="rest_code_54f7e1744913489893d0e64e49f9bbc7-11"></a><span class="n">child</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="s2">&quot;/home/long/.ssh/u&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">userid</span><span class="p">))</span>
+<a name="rest_code_54f7e1744913489893d0e64e49f9bbc7-12"></a><span class="k">print</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">)</span>
+<a name="rest_code_54f7e1744913489893d0e64e49f9bbc7-13"></a><span class="n">child</span><span class="o">.</span><span class="n">expect</span><span class="p">(</span><span class="s2">&quot;: &quot;</span><span class="p">)</span>
+<a name="rest_code_54f7e1744913489893d0e64e49f9bbc7-14"></a><span class="n">child</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">userpass</span><span class="p">))</span>
+<a name="rest_code_54f7e1744913489893d0e64e49f9bbc7-15"></a><span class="k">print</span><span class="p">(</span><span class="s2">&quot;3&quot;</span><span class="p">)</span>
+<a name="rest_code_54f7e1744913489893d0e64e49f9bbc7-16"></a><span class="n">child</span><span class="o">.</span><span class="n">expect</span><span class="p">(</span><span class="s2">&quot;: &quot;</span><span class="p">)</span>
+<a name="rest_code_54f7e1744913489893d0e64e49f9bbc7-17"></a><span class="n">child</span><span class="o">.</span><span class="n">sendline</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">userpass</span><span class="p">))</span>
+<a name="rest_code_54f7e1744913489893d0e64e49f9bbc7-18"></a><span class="n">child</span><span class="o">.</span><span class="n">expect</span><span class="p">(</span><span class="n">pexpect</span><span class="o">.</span><span class="n">EOF</span><span class="p">)</span>
+</pre></td></tr></table>
