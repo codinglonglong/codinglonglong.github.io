@@ -140,6 +140,7 @@ NAVIGATION_LINKS = {
         ("/archive.html", "文章存档"),
         ("/categories/", "标签 & 分类"),
         ("https://github.com/codinglonglong/", "Github"),
+        ("/posts/you-qing-lian-jie/", "友情链接"),
         ("/rss.xml", "RSS 源"),
     ),
 }
