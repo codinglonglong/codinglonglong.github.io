@@ -23,11 +23,11 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/archive.html</loc>
-  <lastmod>2018-01-28T13:04:00Z</lastmod>
+  <lastmod>2018-01-28T13:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/</loc>
-  <lastmod>2018-01-24T13:28:00Z</lastmod>
+  <lastmod>2018-01-28T13:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/actionscript30/</loc>
@@ -326,12 +326,20 @@
   <lastmod>2018-01-24T13:28:00Z</lastmod>
  </url>
  <url>
+  <loc>https://codinglonglong.github.io/categories/pdf/</loc>
+  <lastmod>2018-01-28T13:13:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://codinglonglong.github.io/categories/pexpect/</loc>
   <lastmod>2018-01-24T13:28:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/pip/</loc>
   <lastmod>2018-01-24T13:28:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/categories/png/</loc>
+  <lastmod>2018-01-28T13:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/categories/polipo/</loc>
@@ -579,7 +587,7 @@
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-25.html</loc>
-  <lastmod>2018-01-28T13:04:00Z</lastmod>
+  <lastmod>2018-01-28T13:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/index-3.html</loc>
@@ -936,6 +944,10 @@
  <url>
   <loc>https://codinglonglong.github.io/posts/pythonhuo-qu-qian-tao-lie-biao-de-yuan-su-xia-biao/</loc>
   <lastmod>2018-01-24T13:28:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://codinglonglong.github.io/posts/pythonjiang-pdfzhuan-cheng-tu-pian/</loc>
+  <lastmod>2018-01-28T13:13:00Z</lastmod>
  </url>
  <url>
   <loc>https://codinglonglong.github.io/posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/</loc>

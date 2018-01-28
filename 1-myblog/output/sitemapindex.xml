@@ -75,7 +75,7 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_python.xml</loc>
-  <lastmod>2018-01-24T13:28:00Z</lastmod>
+  <lastmod>2018-01-28T13:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/cat_raspberry.xml</loc>
@@ -302,12 +302,20 @@
   <lastmod>2018-01-24T13:28:00Z</lastmod>
  </sitemap>
  <sitemap>
+  <loc>https://codinglonglong.github.io/categories/pdf.xml</loc>
+  <lastmod>2018-01-28T13:13:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://codinglonglong.github.io/categories/pexpect.xml</loc>
   <lastmod>2018-01-24T13:28:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/pip.xml</loc>
   <lastmod>2018-01-24T13:28:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://codinglonglong.github.io/categories/png.xml</loc>
+  <lastmod>2018-01-28T13:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/categories/polipo.xml</loc>
@@ -487,10 +495,10 @@
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/rss.xml</loc>
-  <lastmod>2018-01-28T13:04:00Z</lastmod>
+  <lastmod>2018-01-28T13:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://codinglonglong.github.io/sitemap.xml</loc>
-  <lastmod>2018-01-28T13:04:00Z</lastmod>
+  <lastmod>2018-01-28T13:13:00Z</lastmod>
  </sitemap>
 </sitemapindex>
