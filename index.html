@@ -24,7 +24,7 @@ body{
     font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
 }
 </style>
-<link rel="prefetch" href="posts/pythonjiang-pdfzhuan-cheng-tu-pian/" type="text/html">
+<link rel="prefetch" href="posts/excelzhong-guo-shi-pai-ming/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -89,7 +89,23 @@ body{
 
     
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pythonjiang-pdfzhuan-cheng-tu-pian/" class="u-url">Python将PDF转成图片</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/excelzhong-guo-shi-pai-ming/" class="u-url">Excel中国式排名</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/excelzhong-guo-shi-pai-ming/" rel="bookmark"><time class="published dt-published" datetime="2018-01-29T09:28:24+08:00" title="2018-01-29 09:28">2018-01-29 09:28</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>假设Y5是数据的第一行，Y5:Y45是所有数据，那么在排名列的第一行输入</p>
+<pre class="literal-block">
+=RANK(Y5,$Y$5:$Y$45,0)
+</pre>
+<p>向下填充之后就实现中国式排名了。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pythonjiang-pdfzhuan-cheng-tu-pian/" class="u-url">Python将PDF转成图片</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn">
                 龙龙
@@ -229,98 +245,6 @@ port 8083
 bind 0.0.0.0
 &gt;&gt; redis-server /etc/redis/redis.conf
 </pre>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/" class="u-url">修改npm run dev的默认端口</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/" rel="bookmark"><time class="published dt-published" datetime="2017-12-30T18:10:22+08:00" title="2017-12-30 18:10">2017-12-30 18:10</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p>修改项目目录中的 <strong>config/index.js</strong></p>
-<table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-1"> 1</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-2"> 2</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-3"> 3</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-4"> 4</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-5"> 5</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-6"> 6</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-7"> 7</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-8"> 8</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-9"> 9</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-10">10</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-11">11</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-12">12</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-13">13</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-14">14</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-15">15</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-16">16</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-17">17</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-18">18</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-19">19</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-20">20</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-21">21</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-22">22</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-23">23</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-24">24</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-25">25</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-26">26</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-27">27</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-28">28</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-29">29</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-30">30</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-31">31</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-32">32</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-33">33</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-34">34</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-35">35</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-36">36</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-37">37</a>
-<a href="posts/xiu-gai-npm-run-devde-mo-ren-duan-kou/#rest_code_84b8c4223e174a91bcc405cef79b0e95-38">38</a></pre></div></td>
-<td class="code"><pre class="code javascript"><a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-1"></a><span class="c1">// see http://vuejs-templates.github.io/webpack for documentation.</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-2"></a><span class="kd">var</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'path'</span><span class="p">)</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-3"></a>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-4"></a><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-5"></a>    <span class="nx">build</span><span class="o">:</span> <span class="p">{</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-6"></a>        <span class="nx">env</span><span class="o">:</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'./prod.env'</span><span class="p">),</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-7"></a>        <span class="nx">index</span><span class="o">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">'../dist/index.html'</span><span class="p">),</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-8"></a>        <span class="nx">assetsRoot</span><span class="o">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">'../dist'</span><span class="p">),</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-9"></a>        <span class="nx">assetsSubDirectory</span><span class="o">:</span> <span class="s1">'static'</span><span class="p">,</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-10"></a>        <span class="nx">assetsPublicPath</span><span class="o">:</span> <span class="s1">'/'</span><span class="p">,</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-11"></a>        <span class="nx">productionSourceMap</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-12"></a>        <span class="c1">// Gzip off by default as many popular static hosts such as</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-13"></a>        <span class="c1">// Surge or Netlify already gzip all static assets for you.</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-14"></a>        <span class="c1">// Before setting to `true`, make sure to:</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-15"></a>        <span class="c1">// npm install --save-dev compression-webpack-plugin</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-16"></a>        <span class="nx">productionGzip</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-17"></a>        <span class="nx">productionGzipExtensions</span><span class="o">:</span> <span class="p">[</span><span class="s1">'js'</span><span class="p">,</span> <span class="s1">'css'</span><span class="p">],</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-18"></a>        <span class="c1">// Run the build command with an extra argument to</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-19"></a>        <span class="c1">// View the bundle analyzer report after build finishes:</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-20"></a>        <span class="c1">// `npm run build --report`</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-21"></a>        <span class="c1">// Set to `true` or `false` to always turn it on or off</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-22"></a>        <span class="nx">bundleAnalyzerReport</span><span class="o">:</span> <span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">npm_config_report</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-23"></a>    <span class="p">},</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-24"></a>    <span class="nx">dev</span><span class="o">:</span> <span class="p">{</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-25"></a>        <span class="nx">env</span><span class="o">:</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'./dev.env'</span><span class="p">),</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-26"></a>        <span class="nx">port</span><span class="o">:</span> <span class="mi">8080</span><span class="p">,</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-27"></a>        <span class="nx">autoOpenBrowser</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-28"></a>        <span class="nx">assetsSubDirectory</span><span class="o">:</span> <span class="s1">'static'</span><span class="p">,</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-29"></a>        <span class="nx">assetsPublicPath</span><span class="o">:</span> <span class="s1">'/'</span><span class="p">,</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-30"></a>        <span class="nx">proxyTable</span><span class="o">:</span> <span class="p">{},</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-31"></a>        <span class="c1">// CSS Sourcemaps off by default because relative paths are "buggy"</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-32"></a>        <span class="c1">// with this option, according to the CSS-Loader README</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-33"></a>        <span class="c1">// (https://github.com/webpack/css-loader#sourcemaps)</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-34"></a>        <span class="c1">// In our experience, they generally work as expected,</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-35"></a>        <span class="c1">// just be aware of this issue when enabling this option.</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-36"></a>        <span class="nx">cssSourceMap</span><span class="o">:</span> <span class="kc">false</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-37"></a>    <span class="p">}</span>
-<a name="rest_code_84b8c4223e174a91bcc405cef79b0e95-38"></a><span class="p">}</span>
-</pre></td>
-</tr></table>
-<p>修改里面的port即可。</p>
-</div>
     </div>
     </article>
 </div>

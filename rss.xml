@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sun, 28 Jan 2018 13:20:22 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Python将PDF转成图片</title><link>https://codinglonglong.github.io/posts/pythonjiang-pdfzhuan-cheng-tu-pian/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;使用Python的fitz库，参考代码：&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙</title><link>https://codinglonglong.github.io/</link><description>龙龙的技术博客</description><atom:link href="https://codinglonglong.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Mon, 29 Jan 2018 01:32:04 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Excel中国式排名</title><link>https://codinglonglong.github.io/posts/excelzhong-guo-shi-pai-ming/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;假设Y5是数据的第一行，Y5:Y45是所有数据，那么在排名列的第一行输入&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+=RANK(Y5,$Y$5:$Y$45,0)
+&lt;/pre&gt;
+&lt;p&gt;向下填充之后就实现中国式排名了。&lt;/p&gt;&lt;/div&gt;</description><category>Excel</category><guid>https://codinglonglong.github.io/posts/excelzhong-guo-shi-pai-ming/</guid><pubDate>Mon, 29 Jan 2018 01:28:24 GMT</pubDate></item><item><title>Python将PDF转成图片</title><link>https://codinglonglong.github.io/posts/pythonjiang-pdfzhuan-cheng-tu-pian/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;使用Python的fitz库，参考代码：&lt;/p&gt;
 &lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/pythonjiang-pdfzhuan-cheng-tu-pian/#rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-1"&gt; 1&lt;/a&gt;
 &lt;a href="https://codinglonglong.github.io/posts/pythonjiang-pdfzhuan-cheng-tu-pian/#rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-2"&gt; 2&lt;/a&gt;
 &lt;a href="https://codinglonglong.github.io/posts/pythonjiang-pdfzhuan-cheng-tu-pian/#rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-3"&gt; 3&lt;/a&gt;
@@ -244,17 +248,4 @@ bind 0.0.0.0
 &amp;gt;&amp;gt; exit
 &amp;gt;&amp;gt; docker-machine restart default
 &lt;/pre&gt;
-&lt;p&gt;8、再执行docker run时就从daocloud上下载系统镜像了&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><guid>https://codinglonglong.github.io/posts/dockershe-ding-guo-nei-jing-xiang-yuan/</guid><pubDate>Tue, 19 Dec 2017 13:58:48 GMT</pubDate></item><item><title>CAD练习题26——已知半径之和作图</title><link>https://codinglonglong.github.io/posts/cadlian-xi-ti-26-yi-zhi-ban-jing-zhi-he-zuo-tu/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;题目：&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p26-7.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p26-7.PNG"&gt;
-&lt;p&gt;这道题还是比较困难的，两个圆的半径不知道，只知道半径的和，画的时候就不好下手，知道弧长120，却不知道圆心的具体位置，只知道一个100，还加上了b的半径。能画的，就剩下了中间一个长度120的直线。这道题是真的有点难度了……&lt;/p&gt;
-&lt;p&gt;1、先画原图中唯一已知的一条120直线。由于a和b的半径和是50，并且给定了100的直线，也就是2倍的a+b，外加弧120与b外切，也就意味着，利用半径和50，以及给定的100，构造两个圆，可以确定弧120的圆心。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p26-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p26-1.PNG"&gt;
-&lt;p&gt;2、连接交点和两个圆的圆心，可以得到弧120两个端点所在的直线，利用缩放得到120弧。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p26-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p26-2.PNG"&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p26-3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p26-3.PNG"&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p26-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p26-4.PNG"&gt;
-&lt;p&gt;3、镜像得到下边的弧120，同时画出两边的圆。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p26-5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p26-5.PNG"&gt;
-&lt;p&gt;4、完成并清理图形。&lt;/p&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p26-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p26-6.PNG"&gt;
-&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/p26-7.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/p26-7.PNG"&gt;&lt;/div&gt;</description><category>CAD</category><guid>https://codinglonglong.github.io/posts/cadlian-xi-ti-26-yi-zhi-ban-jing-zhi-he-zuo-tu/</guid><pubDate>Sat, 16 Dec 2017 16:34:18 GMT</pubDate></item></channel></rss>
+&lt;p&gt;8、再执行docker run时就从daocloud上下载系统镜像了&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><guid>https://codinglonglong.github.io/posts/dockershe-ding-guo-nei-jing-xiang-yuan/</guid><pubDate>Tue, 19 Dec 2017 13:58:48 GMT</pubDate></item></channel></rss>
