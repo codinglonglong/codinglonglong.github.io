@@ -1,23 +1,23 @@
-<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-1"> 1</a>
-<a href="#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-2"> 2</a>
-<a href="#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-3"> 3</a>
-<a href="#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-4"> 4</a>
-<a href="#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-5"> 5</a>
-<a href="#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-6"> 6</a>
-<a href="#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-7"> 7</a>
-<a href="#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-8"> 8</a>
-<a href="#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-9"> 9</a>
-<a href="#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-10">10</a>
-<a href="#rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-11">11</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-1"></a><span class="k">def</span> <span class="nf">checkconnection</span><span class="p">():</span>
-<a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-2"></a>    <span class="n">proxies</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;http&quot;</span><span class="p">:</span> <span class="s2">&quot;http://192.168.1.254:8228&quot;</span><span class="p">,</span> <span class="s2">&quot;https&quot;</span><span class="p">:</span> <span class="s2">&quot;http://192.168.1.254:8228&quot;</span><span class="p">}</span>
-<a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-3"></a>    <span class="k">try</span><span class="p">:</span>
-<a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-4"></a>        <span class="n">r1</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;http://www.facebook.com&quot;</span><span class="p">,</span>
-<a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-5"></a>                          <span class="n">proxies</span><span class="o">=</span><span class="n">proxies</span><span class="p">,</span>
-<a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-6"></a>                          <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-7"></a>        <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">r1</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;200&quot;</span><span class="p">:</span>
-<a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-8"></a>            <span class="k">return</span> <span class="bp">True</span>
-<a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-9"></a>        <span class="k">return</span> <span class="bp">False</span>
-<a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-10"></a>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-<a name="rest_code_1157c10acb4d41daaf3ffb0ff07cf96a-11"></a>        <span class="k">return</span> <span class="bp">False</span>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_391489a556a04fe6865dc64aacd2153f-1"> 1</a>
+<a href="#rest_code_391489a556a04fe6865dc64aacd2153f-2"> 2</a>
+<a href="#rest_code_391489a556a04fe6865dc64aacd2153f-3"> 3</a>
+<a href="#rest_code_391489a556a04fe6865dc64aacd2153f-4"> 4</a>
+<a href="#rest_code_391489a556a04fe6865dc64aacd2153f-5"> 5</a>
+<a href="#rest_code_391489a556a04fe6865dc64aacd2153f-6"> 6</a>
+<a href="#rest_code_391489a556a04fe6865dc64aacd2153f-7"> 7</a>
+<a href="#rest_code_391489a556a04fe6865dc64aacd2153f-8"> 8</a>
+<a href="#rest_code_391489a556a04fe6865dc64aacd2153f-9"> 9</a>
+<a href="#rest_code_391489a556a04fe6865dc64aacd2153f-10">10</a>
+<a href="#rest_code_391489a556a04fe6865dc64aacd2153f-11">11</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_391489a556a04fe6865dc64aacd2153f-1"></a><span class="k">def</span> <span class="nf">checkconnection</span><span class="p">():</span>
+<a name="rest_code_391489a556a04fe6865dc64aacd2153f-2"></a>    <span class="n">proxies</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;http&quot;</span><span class="p">:</span> <span class="s2">&quot;http://192.168.1.254:8228&quot;</span><span class="p">,</span> <span class="s2">&quot;https&quot;</span><span class="p">:</span> <span class="s2">&quot;http://192.168.1.254:8228&quot;</span><span class="p">}</span>
+<a name="rest_code_391489a556a04fe6865dc64aacd2153f-3"></a>    <span class="k">try</span><span class="p">:</span>
+<a name="rest_code_391489a556a04fe6865dc64aacd2153f-4"></a>        <span class="n">r1</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;http://www.facebook.com&quot;</span><span class="p">,</span>
+<a name="rest_code_391489a556a04fe6865dc64aacd2153f-5"></a>                          <span class="n">proxies</span><span class="o">=</span><span class="n">proxies</span><span class="p">,</span>
+<a name="rest_code_391489a556a04fe6865dc64aacd2153f-6"></a>                          <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<a name="rest_code_391489a556a04fe6865dc64aacd2153f-7"></a>        <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">r1</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;200&quot;</span><span class="p">:</span>
+<a name="rest_code_391489a556a04fe6865dc64aacd2153f-8"></a>            <span class="k">return</span> <span class="bp">True</span>
+<a name="rest_code_391489a556a04fe6865dc64aacd2153f-9"></a>        <span class="k">return</span> <span class="bp">False</span>
+<a name="rest_code_391489a556a04fe6865dc64aacd2153f-10"></a>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a name="rest_code_391489a556a04fe6865dc64aacd2153f-11"></a>        <span class="k">return</span> <span class="bp">False</span>
 </pre></td></tr></table><p><strong>注意</strong></p>
 <p>如果不需要测试代理，去掉 <strong>proxies=proxies，</strong> 就可以了。</p>

@@ -1,65 +1,65 @@
 <p><strong>题目可以描述为：</strong></p>
 <p>已经定义如下列表：</p>
-<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_8281725882634764961ebaac286d4b5a-1">1</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_8281725882634764961ebaac286d4b5a-1"></a><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="mi">8</span><span class="p">]],</span> <span class="mi">8</span><span class="p">]</span>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_ba519a26d03742fca84743e51a409f8c-1">1</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_ba519a26d03742fca84743e51a409f8c-1"></a><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="mi">8</span><span class="p">]],</span> <span class="mi">8</span><span class="p">]</span>
 </pre></td></tr></table><p>求元素8在嵌套列表lista中的下标。</p>
 <p>解决方法——递归：</p>
-<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-1"> 1</a>
-<a href="#rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-2"> 2</a>
-<a href="#rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-3"> 3</a>
-<a href="#rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-4"> 4</a>
-<a href="#rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-5"> 5</a>
-<a href="#rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-6"> 6</a>
-<a href="#rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-7"> 7</a>
-<a href="#rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-8"> 8</a>
-<a href="#rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-9"> 9</a>
-<a href="#rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-10">10</a>
-<a href="#rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-11">11</a>
-<a href="#rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-12">12</a>
-<a href="#rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-13">13</a>
-<a href="#rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-14">14</a>
-<a href="#rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-15">15</a>
-<a href="#rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-16">16</a>
-<a href="#rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-17">17</a>
-<a href="#rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-18">18</a>
-<a href="#rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-19">19</a>
-<a href="#rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-20">20</a>
-<a href="#rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-21">21</a>
-<a href="#rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-22">22</a>
-<a href="#rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-23">23</a>
-<a href="#rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-24">24</a>
-<a href="#rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-25">25</a>
-<a href="#rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-26">26</a>
-<a href="#rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-27">27</a>
-<a href="#rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-28">28</a>
-<a href="#rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-29">29</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-1"></a><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="mi">8</span><span class="p">]],</span> <span class="mi">8</span><span class="p">]</span>
-<a name="rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-2"></a>
-<a name="rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-3"></a>
-<a name="rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-4"></a><span class="k">def</span> <span class="nf">judge_find</span><span class="p">(</span><span class="n">templist</span><span class="p">,</span> <span class="n">pathlist</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
-<a name="rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-5"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pathlist</span><span class="p">:</span>
-<a name="rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-6"></a>        <span class="n">templist</span> <span class="o">=</span> <span class="n">templist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-<a name="rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-7"></a>        <span class="k">if</span> <span class="n">templist</span> <span class="o">==</span> <span class="n">x</span><span class="p">:</span>
-<a name="rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-8"></a>            <span class="k">return</span> <span class="bp">True</span>
-<a name="rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-9"></a>    <span class="k">else</span><span class="p">:</span>
-<a name="rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-10"></a>        <span class="k">return</span> <span class="bp">False</span>
-<a name="rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-11"></a>
-<a name="rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-12"></a>
-<a name="rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-13"></a><span class="k">def</span> <span class="nf">find_multiple_index</span><span class="p">(</span><span class="n">originlist</span><span class="p">,</span> <span class="n">templist</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">pathlist</span><span class="p">,</span> <span class="n">resultlist</span><span class="p">):</span>
-<a name="rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-14"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">templist</span><span class="p">)):</span>
-<a name="rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-15"></a>        <span class="k">if</span> <span class="n">templist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">x</span><span class="p">:</span>
-<a name="rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-16"></a>            <span class="n">pathlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<a name="rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-17"></a>            <span class="n">resultlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">pathlist</span><span class="p">[:]))</span>
-<a name="rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-18"></a>            <span class="n">pathlist</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
-<a name="rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-19"></a>        <span class="k">else</span><span class="p">:</span>
-<a name="rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-20"></a>            <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">templist</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="ow">is</span> <span class="nb">list</span><span class="p">:</span>
-<a name="rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-21"></a>                <span class="n">pathlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<a name="rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-22"></a>                <span class="k">if</span> <span class="ow">not</span> <span class="n">find_multiple_index</span><span class="p">(</span><span class="n">originlist</span><span class="p">,</span> <span class="n">templist</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">x</span><span class="p">,</span> <span class="n">pathlist</span><span class="p">,</span> <span class="n">resultlist</span><span class="p">):</span>
-<a name="rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-23"></a>                    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pathlist</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-<a name="rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-24"></a>                        <span class="n">pathlist</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
-<a name="rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-25"></a>
-<a name="rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-26"></a><span class="n">pathlist</span> <span class="o">=</span> <span class="p">[]</span>
-<a name="rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-27"></a><span class="n">resultlist</span> <span class="o">=</span> <span class="p">[]</span>
-<a name="rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-28"></a><span class="n">find_multiple_index</span><span class="p">(</span><span class="n">lista</span><span class="p">[:],</span> <span class="n">lista</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">pathlist</span><span class="p">,</span> <span class="n">resultlist</span><span class="p">)</span>
-<a name="rest_code_a640f6c4e96a4b6bbc741fc71d49cb5c-29"></a><span class="k">print</span><span class="p">(</span><span class="n">resultlist</span><span class="p">)</span>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_ca2eb37f668041e297b44cda4cea63fc-1"> 1</a>
+<a href="#rest_code_ca2eb37f668041e297b44cda4cea63fc-2"> 2</a>
+<a href="#rest_code_ca2eb37f668041e297b44cda4cea63fc-3"> 3</a>
+<a href="#rest_code_ca2eb37f668041e297b44cda4cea63fc-4"> 4</a>
+<a href="#rest_code_ca2eb37f668041e297b44cda4cea63fc-5"> 5</a>
+<a href="#rest_code_ca2eb37f668041e297b44cda4cea63fc-6"> 6</a>
+<a href="#rest_code_ca2eb37f668041e297b44cda4cea63fc-7"> 7</a>
+<a href="#rest_code_ca2eb37f668041e297b44cda4cea63fc-8"> 8</a>
+<a href="#rest_code_ca2eb37f668041e297b44cda4cea63fc-9"> 9</a>
+<a href="#rest_code_ca2eb37f668041e297b44cda4cea63fc-10">10</a>
+<a href="#rest_code_ca2eb37f668041e297b44cda4cea63fc-11">11</a>
+<a href="#rest_code_ca2eb37f668041e297b44cda4cea63fc-12">12</a>
+<a href="#rest_code_ca2eb37f668041e297b44cda4cea63fc-13">13</a>
+<a href="#rest_code_ca2eb37f668041e297b44cda4cea63fc-14">14</a>
+<a href="#rest_code_ca2eb37f668041e297b44cda4cea63fc-15">15</a>
+<a href="#rest_code_ca2eb37f668041e297b44cda4cea63fc-16">16</a>
+<a href="#rest_code_ca2eb37f668041e297b44cda4cea63fc-17">17</a>
+<a href="#rest_code_ca2eb37f668041e297b44cda4cea63fc-18">18</a>
+<a href="#rest_code_ca2eb37f668041e297b44cda4cea63fc-19">19</a>
+<a href="#rest_code_ca2eb37f668041e297b44cda4cea63fc-20">20</a>
+<a href="#rest_code_ca2eb37f668041e297b44cda4cea63fc-21">21</a>
+<a href="#rest_code_ca2eb37f668041e297b44cda4cea63fc-22">22</a>
+<a href="#rest_code_ca2eb37f668041e297b44cda4cea63fc-23">23</a>
+<a href="#rest_code_ca2eb37f668041e297b44cda4cea63fc-24">24</a>
+<a href="#rest_code_ca2eb37f668041e297b44cda4cea63fc-25">25</a>
+<a href="#rest_code_ca2eb37f668041e297b44cda4cea63fc-26">26</a>
+<a href="#rest_code_ca2eb37f668041e297b44cda4cea63fc-27">27</a>
+<a href="#rest_code_ca2eb37f668041e297b44cda4cea63fc-28">28</a>
+<a href="#rest_code_ca2eb37f668041e297b44cda4cea63fc-29">29</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_ca2eb37f668041e297b44cda4cea63fc-1"></a><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="mi">8</span><span class="p">]],</span> <span class="mi">8</span><span class="p">]</span>
+<a name="rest_code_ca2eb37f668041e297b44cda4cea63fc-2"></a>
+<a name="rest_code_ca2eb37f668041e297b44cda4cea63fc-3"></a>
+<a name="rest_code_ca2eb37f668041e297b44cda4cea63fc-4"></a><span class="k">def</span> <span class="nf">judge_find</span><span class="p">(</span><span class="n">templist</span><span class="p">,</span> <span class="n">pathlist</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<a name="rest_code_ca2eb37f668041e297b44cda4cea63fc-5"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">pathlist</span><span class="p">:</span>
+<a name="rest_code_ca2eb37f668041e297b44cda4cea63fc-6"></a>        <span class="n">templist</span> <span class="o">=</span> <span class="n">templist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<a name="rest_code_ca2eb37f668041e297b44cda4cea63fc-7"></a>        <span class="k">if</span> <span class="n">templist</span> <span class="o">==</span> <span class="n">x</span><span class="p">:</span>
+<a name="rest_code_ca2eb37f668041e297b44cda4cea63fc-8"></a>            <span class="k">return</span> <span class="bp">True</span>
+<a name="rest_code_ca2eb37f668041e297b44cda4cea63fc-9"></a>    <span class="k">else</span><span class="p">:</span>
+<a name="rest_code_ca2eb37f668041e297b44cda4cea63fc-10"></a>        <span class="k">return</span> <span class="bp">False</span>
+<a name="rest_code_ca2eb37f668041e297b44cda4cea63fc-11"></a>
+<a name="rest_code_ca2eb37f668041e297b44cda4cea63fc-12"></a>
+<a name="rest_code_ca2eb37f668041e297b44cda4cea63fc-13"></a><span class="k">def</span> <span class="nf">find_multiple_index</span><span class="p">(</span><span class="n">originlist</span><span class="p">,</span> <span class="n">templist</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">pathlist</span><span class="p">,</span> <span class="n">resultlist</span><span class="p">):</span>
+<a name="rest_code_ca2eb37f668041e297b44cda4cea63fc-14"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">templist</span><span class="p">)):</span>
+<a name="rest_code_ca2eb37f668041e297b44cda4cea63fc-15"></a>        <span class="k">if</span> <span class="n">templist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">x</span><span class="p">:</span>
+<a name="rest_code_ca2eb37f668041e297b44cda4cea63fc-16"></a>            <span class="n">pathlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a name="rest_code_ca2eb37f668041e297b44cda4cea63fc-17"></a>            <span class="n">resultlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">tuple</span><span class="p">(</span><span class="n">pathlist</span><span class="p">[:]))</span>
+<a name="rest_code_ca2eb37f668041e297b44cda4cea63fc-18"></a>            <span class="n">pathlist</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<a name="rest_code_ca2eb37f668041e297b44cda4cea63fc-19"></a>        <span class="k">else</span><span class="p">:</span>
+<a name="rest_code_ca2eb37f668041e297b44cda4cea63fc-20"></a>            <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">templist</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="ow">is</span> <span class="nb">list</span><span class="p">:</span>
+<a name="rest_code_ca2eb37f668041e297b44cda4cea63fc-21"></a>                <span class="n">pathlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a name="rest_code_ca2eb37f668041e297b44cda4cea63fc-22"></a>                <span class="k">if</span> <span class="ow">not</span> <span class="n">find_multiple_index</span><span class="p">(</span><span class="n">originlist</span><span class="p">,</span> <span class="n">templist</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">x</span><span class="p">,</span> <span class="n">pathlist</span><span class="p">,</span> <span class="n">resultlist</span><span class="p">):</span>
+<a name="rest_code_ca2eb37f668041e297b44cda4cea63fc-23"></a>                    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pathlist</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<a name="rest_code_ca2eb37f668041e297b44cda4cea63fc-24"></a>                        <span class="n">pathlist</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<a name="rest_code_ca2eb37f668041e297b44cda4cea63fc-25"></a>
+<a name="rest_code_ca2eb37f668041e297b44cda4cea63fc-26"></a><span class="n">pathlist</span> <span class="o">=</span> <span class="p">[]</span>
+<a name="rest_code_ca2eb37f668041e297b44cda4cea63fc-27"></a><span class="n">resultlist</span> <span class="o">=</span> <span class="p">[]</span>
+<a name="rest_code_ca2eb37f668041e297b44cda4cea63fc-28"></a><span class="n">find_multiple_index</span><span class="p">(</span><span class="n">lista</span><span class="p">[:],</span> <span class="n">lista</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="n">pathlist</span><span class="p">,</span> <span class="n">resultlist</span><span class="p">)</span>
+<a name="rest_code_ca2eb37f668041e297b44cda4cea63fc-29"></a><span class="k">print</span><span class="p">(</span><span class="n">resultlist</span><span class="p">)</span>
 </pre></td></tr></table><p>运行结果：</p>
 <pre class="literal-block">
 &gt;&gt; long&#64;mylife:~/Downloads$ python3 tree_find_any_position.py

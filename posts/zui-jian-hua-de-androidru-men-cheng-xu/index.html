@@ -116,12 +116,12 @@ AndroidManifest.xml
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">最简化的Android入门程序</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     龙龙
             </span></p>
             <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2017-07-14T19:57:48+08:00" itemprop="datePublished" title="2017-07-14 19:57">2017-07-14 19:57</time></a></p>
             
-        <p class="sourceline"><a href="index.rst" id="sourcelink">Source</a></p>
+        <p class="sourceline"><a href="index.rst" class="sourcelink">Source</a></p>
 
         </div>
         
@@ -139,44 +139,44 @@ AndroidManifest.xml
 <li>AndroidManifest.xml</li>
 </ol>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_fed00bffad2840f0a2abb79316a64350-1"> 1</a>
-<a href="#rest_code_fed00bffad2840f0a2abb79316a64350-2"> 2</a>
-<a href="#rest_code_fed00bffad2840f0a2abb79316a64350-3"> 3</a>
-<a href="#rest_code_fed00bffad2840f0a2abb79316a64350-4"> 4</a>
-<a href="#rest_code_fed00bffad2840f0a2abb79316a64350-5"> 5</a>
-<a href="#rest_code_fed00bffad2840f0a2abb79316a64350-6"> 6</a>
-<a href="#rest_code_fed00bffad2840f0a2abb79316a64350-7"> 7</a>
-<a href="#rest_code_fed00bffad2840f0a2abb79316a64350-8"> 8</a>
-<a href="#rest_code_fed00bffad2840f0a2abb79316a64350-9"> 9</a>
-<a href="#rest_code_fed00bffad2840f0a2abb79316a64350-10">10</a>
-<a href="#rest_code_fed00bffad2840f0a2abb79316a64350-11">11</a>
-<a href="#rest_code_fed00bffad2840f0a2abb79316a64350-12">12</a>
-<a href="#rest_code_fed00bffad2840f0a2abb79316a64350-13">13</a>
-<a href="#rest_code_fed00bffad2840f0a2abb79316a64350-14">14</a>
-<a href="#rest_code_fed00bffad2840f0a2abb79316a64350-15">15</a>
-<a href="#rest_code_fed00bffad2840f0a2abb79316a64350-16">16</a>
-<a href="#rest_code_fed00bffad2840f0a2abb79316a64350-17">17</a>
-<a href="#rest_code_fed00bffad2840f0a2abb79316a64350-18">18</a>
-<a href="#rest_code_fed00bffad2840f0a2abb79316a64350-19">19</a></pre></div></td>
-<td class="code"><pre class="code xml"><a name="rest_code_fed00bffad2840f0a2abb79316a64350-1"></a><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<a name="rest_code_fed00bffad2840f0a2abb79316a64350-2"></a><span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
-<a name="rest_code_fed00bffad2840f0a2abb79316a64350-3"></a>    <span class="na">package=</span><span class="s">"com.example.along.homebank"</span><span class="nt">&gt;</span>
-<a name="rest_code_fed00bffad2840f0a2abb79316a64350-4"></a>
-<a name="rest_code_fed00bffad2840f0a2abb79316a64350-5"></a>    <span class="nt">&lt;application</span>
-<a name="rest_code_fed00bffad2840f0a2abb79316a64350-6"></a>        <span class="na">android:icon=</span><span class="s">"@mipmap/ic_launcher"</span>
-<a name="rest_code_fed00bffad2840f0a2abb79316a64350-7"></a>        <span class="na">android:label=</span><span class="s">"@string/app_name"</span>
-<a name="rest_code_fed00bffad2840f0a2abb79316a64350-8"></a>        <span class="na">android:theme=</span><span class="s">"@style/AppTheme"</span><span class="nt">&gt;</span>
-<a name="rest_code_fed00bffad2840f0a2abb79316a64350-9"></a>        <span class="nt">&lt;activity</span>
-<a name="rest_code_fed00bffad2840f0a2abb79316a64350-10"></a>            <span class="na">android:name=</span><span class="s">".MainActivity"</span>
-<a name="rest_code_fed00bffad2840f0a2abb79316a64350-11"></a>            <span class="na">android:label=</span><span class="s">"@string/title_activity_main"</span><span class="nt">&gt;</span>
-<a name="rest_code_fed00bffad2840f0a2abb79316a64350-12"></a>            <span class="nt">&lt;intent-filter&gt;</span>
-<a name="rest_code_fed00bffad2840f0a2abb79316a64350-13"></a>                <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span><span class="nt">/&gt;</span>
-<a name="rest_code_fed00bffad2840f0a2abb79316a64350-14"></a>                <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.LAUNCHER"</span><span class="nt">/&gt;</span>
-<a name="rest_code_fed00bffad2840f0a2abb79316a64350-15"></a>            <span class="nt">&lt;/intent-filter&gt;</span>
-<a name="rest_code_fed00bffad2840f0a2abb79316a64350-16"></a>        <span class="nt">&lt;/activity&gt;</span>
-<a name="rest_code_fed00bffad2840f0a2abb79316a64350-17"></a>    <span class="nt">&lt;/application&gt;</span>
-<a name="rest_code_fed00bffad2840f0a2abb79316a64350-18"></a>
-<a name="rest_code_fed00bffad2840f0a2abb79316a64350-19"></a><span class="nt">&lt;/manifest&gt;</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-1"> 1</a>
+<a href="#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-2"> 2</a>
+<a href="#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-3"> 3</a>
+<a href="#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-4"> 4</a>
+<a href="#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-5"> 5</a>
+<a href="#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-6"> 6</a>
+<a href="#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-7"> 7</a>
+<a href="#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-8"> 8</a>
+<a href="#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-9"> 9</a>
+<a href="#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-10">10</a>
+<a href="#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-11">11</a>
+<a href="#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-12">12</a>
+<a href="#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-13">13</a>
+<a href="#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-14">14</a>
+<a href="#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-15">15</a>
+<a href="#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-16">16</a>
+<a href="#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-17">17</a>
+<a href="#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-18">18</a>
+<a href="#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-19">19</a></pre></div></td>
+<td class="code"><pre class="code xml"><a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-1"></a><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-2"></a><span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-3"></a>    <span class="na">package=</span><span class="s">"com.example.along.homebank"</span><span class="nt">&gt;</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-4"></a>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-5"></a>    <span class="nt">&lt;application</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-6"></a>        <span class="na">android:icon=</span><span class="s">"@mipmap/ic_launcher"</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-7"></a>        <span class="na">android:label=</span><span class="s">"@string/app_name"</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-8"></a>        <span class="na">android:theme=</span><span class="s">"@style/AppTheme"</span><span class="nt">&gt;</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-9"></a>        <span class="nt">&lt;activity</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-10"></a>            <span class="na">android:name=</span><span class="s">".MainActivity"</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-11"></a>            <span class="na">android:label=</span><span class="s">"@string/title_activity_main"</span><span class="nt">&gt;</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-12"></a>            <span class="nt">&lt;intent-filter&gt;</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-13"></a>                <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span><span class="nt">/&gt;</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-14"></a>                <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.LAUNCHER"</span><span class="nt">/&gt;</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-15"></a>            <span class="nt">&lt;/intent-filter&gt;</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-16"></a>        <span class="nt">&lt;/activity&gt;</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-17"></a>    <span class="nt">&lt;/application&gt;</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-18"></a>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-19"></a><span class="nt">&lt;/manifest&gt;</span>
 </pre></td>
 </tr></table>
 <p>最关键的是 <strong>&lt;intent-filter&gt;</strong> 部分，里面设置了MainActivity是默认启动的Activity。</p>
@@ -184,32 +184,32 @@ AndroidManifest.xml
 <li>MainActivity.java</li>
 </ol>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-1"> 1</a>
-<a href="#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-2"> 2</a>
-<a href="#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-3"> 3</a>
-<a href="#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-4"> 4</a>
-<a href="#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-5"> 5</a>
-<a href="#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-6"> 6</a>
-<a href="#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-7"> 7</a>
-<a href="#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-8"> 8</a>
-<a href="#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-9"> 9</a>
-<a href="#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-10">10</a>
-<a href="#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-11">11</a>
-<a href="#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-12">12</a>
-<a href="#rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-13">13</a></pre></div></td>
-<td class="code"><pre class="code java"><a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-1"></a><span class="kn">package</span> <span class="nn">com.example.along.homebank</span><span class="o">;</span>
-<a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-2"></a>
-<a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-3"></a><span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
-<a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-4"></a><span class="kn">import</span> <span class="nn">android.support.v7.app.AppCompatActivity</span><span class="o">;</span>
-<a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-5"></a>
-<a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-6"></a><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
-<a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-7"></a>
-<a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-8"></a>    <span class="nd">@Override</span>
-<a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-9"></a>    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
-<a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-10"></a>        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
-<a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-11"></a>        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_main</span><span class="o">);</span>
-<a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-12"></a>    <span class="o">}</span>
-<a name="rest_code_a5bdfa7b7afb48d9a65afdf92cf9d63a-13"></a><span class="o">}</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_19aa4ba93ac041689d1bfdeb14fb5200-1"> 1</a>
+<a href="#rest_code_19aa4ba93ac041689d1bfdeb14fb5200-2"> 2</a>
+<a href="#rest_code_19aa4ba93ac041689d1bfdeb14fb5200-3"> 3</a>
+<a href="#rest_code_19aa4ba93ac041689d1bfdeb14fb5200-4"> 4</a>
+<a href="#rest_code_19aa4ba93ac041689d1bfdeb14fb5200-5"> 5</a>
+<a href="#rest_code_19aa4ba93ac041689d1bfdeb14fb5200-6"> 6</a>
+<a href="#rest_code_19aa4ba93ac041689d1bfdeb14fb5200-7"> 7</a>
+<a href="#rest_code_19aa4ba93ac041689d1bfdeb14fb5200-8"> 8</a>
+<a href="#rest_code_19aa4ba93ac041689d1bfdeb14fb5200-9"> 9</a>
+<a href="#rest_code_19aa4ba93ac041689d1bfdeb14fb5200-10">10</a>
+<a href="#rest_code_19aa4ba93ac041689d1bfdeb14fb5200-11">11</a>
+<a href="#rest_code_19aa4ba93ac041689d1bfdeb14fb5200-12">12</a>
+<a href="#rest_code_19aa4ba93ac041689d1bfdeb14fb5200-13">13</a></pre></div></td>
+<td class="code"><pre class="code java"><a name="rest_code_19aa4ba93ac041689d1bfdeb14fb5200-1"></a><span class="kn">package</span> <span class="nn">com.example.along.homebank</span><span class="o">;</span>
+<a name="rest_code_19aa4ba93ac041689d1bfdeb14fb5200-2"></a>
+<a name="rest_code_19aa4ba93ac041689d1bfdeb14fb5200-3"></a><span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+<a name="rest_code_19aa4ba93ac041689d1bfdeb14fb5200-4"></a><span class="kn">import</span> <span class="nn">android.support.v7.app.AppCompatActivity</span><span class="o">;</span>
+<a name="rest_code_19aa4ba93ac041689d1bfdeb14fb5200-5"></a>
+<a name="rest_code_19aa4ba93ac041689d1bfdeb14fb5200-6"></a><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
+<a name="rest_code_19aa4ba93ac041689d1bfdeb14fb5200-7"></a>
+<a name="rest_code_19aa4ba93ac041689d1bfdeb14fb5200-8"></a>    <span class="nd">@Override</span>
+<a name="rest_code_19aa4ba93ac041689d1bfdeb14fb5200-9"></a>    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+<a name="rest_code_19aa4ba93ac041689d1bfdeb14fb5200-10"></a>        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+<a name="rest_code_19aa4ba93ac041689d1bfdeb14fb5200-11"></a>        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_main</span><span class="o">);</span>
+<a name="rest_code_19aa4ba93ac041689d1bfdeb14fb5200-12"></a>    <span class="o">}</span>
+<a name="rest_code_19aa4ba93ac041689d1bfdeb14fb5200-13"></a><span class="o">}</span>
 </pre></td>
 </tr></table>
 <p>最关键的是 <strong>setContentView(R.layout.activity_main);</strong> ，里面设置了程序创建时要渲染的layout，也就是界面。</p>
@@ -217,22 +217,22 @@ AndroidManifest.xml
 <li>activity_main.xml</li>
 </ol>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_04de2390c5bf4829a80d7566d9af265f-1">1</a>
-<a href="#rest_code_04de2390c5bf4829a80d7566d9af265f-2">2</a>
-<a href="#rest_code_04de2390c5bf4829a80d7566d9af265f-3">3</a>
-<a href="#rest_code_04de2390c5bf4829a80d7566d9af265f-4">4</a>
-<a href="#rest_code_04de2390c5bf4829a80d7566d9af265f-5">5</a>
-<a href="#rest_code_04de2390c5bf4829a80d7566d9af265f-6">6</a>
-<a href="#rest_code_04de2390c5bf4829a80d7566d9af265f-7">7</a>
-<a href="#rest_code_04de2390c5bf4829a80d7566d9af265f-8">8</a></pre></div></td>
-<td class="code"><pre class="code xml"><a name="rest_code_04de2390c5bf4829a80d7566d9af265f-1"></a><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
-<a name="rest_code_04de2390c5bf4829a80d7566d9af265f-2"></a><span class="nt">&lt;android.support.design.widget.CoordinatorLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
-<a name="rest_code_04de2390c5bf4829a80d7566d9af265f-3"></a>    <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
-<a name="rest_code_04de2390c5bf4829a80d7566d9af265f-4"></a>    <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span>
-<a name="rest_code_04de2390c5bf4829a80d7566d9af265f-5"></a>    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
-<a name="rest_code_04de2390c5bf4829a80d7566d9af265f-6"></a>    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
-<a name="rest_code_04de2390c5bf4829a80d7566d9af265f-7"></a>    <span class="na">tools:context=</span><span class="s">"com.example.along.homebank.MainActivity"</span><span class="nt">&gt;</span>
-<a name="rest_code_04de2390c5bf4829a80d7566d9af265f-8"></a><span class="nt">&lt;/android.support.design.widget.CoordinatorLayout&gt;</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_7d987a873b844d3eb9ee881fb2ff9886-1">1</a>
+<a href="#rest_code_7d987a873b844d3eb9ee881fb2ff9886-2">2</a>
+<a href="#rest_code_7d987a873b844d3eb9ee881fb2ff9886-3">3</a>
+<a href="#rest_code_7d987a873b844d3eb9ee881fb2ff9886-4">4</a>
+<a href="#rest_code_7d987a873b844d3eb9ee881fb2ff9886-5">5</a>
+<a href="#rest_code_7d987a873b844d3eb9ee881fb2ff9886-6">6</a>
+<a href="#rest_code_7d987a873b844d3eb9ee881fb2ff9886-7">7</a>
+<a href="#rest_code_7d987a873b844d3eb9ee881fb2ff9886-8">8</a></pre></div></td>
+<td class="code"><pre class="code xml"><a name="rest_code_7d987a873b844d3eb9ee881fb2ff9886-1"></a><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<a name="rest_code_7d987a873b844d3eb9ee881fb2ff9886-2"></a><span class="nt">&lt;android.support.design.widget.CoordinatorLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+<a name="rest_code_7d987a873b844d3eb9ee881fb2ff9886-3"></a>    <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+<a name="rest_code_7d987a873b844d3eb9ee881fb2ff9886-4"></a>    <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span>
+<a name="rest_code_7d987a873b844d3eb9ee881fb2ff9886-5"></a>    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+<a name="rest_code_7d987a873b844d3eb9ee881fb2ff9886-6"></a>    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+<a name="rest_code_7d987a873b844d3eb9ee881fb2ff9886-7"></a>    <span class="na">tools:context=</span><span class="s">"com.example.along.homebank.MainActivity"</span><span class="nt">&gt;</span>
+<a name="rest_code_7d987a873b844d3eb9ee881fb2ff9886-8"></a><span class="nt">&lt;/android.support.design.widget.CoordinatorLayout&gt;</span>
 </pre></td>
 </tr></table>
 <p>这个布局文件基本是空的，因为我们什么都没有放进去，所以程序运行时是一个白屏。</p>

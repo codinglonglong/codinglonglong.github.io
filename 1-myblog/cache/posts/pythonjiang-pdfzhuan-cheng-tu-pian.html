@@ -1,31 +1,31 @@
 <p>使用Python的fitz库，参考代码：</p>
-<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-1"> 1</a>
-<a href="#rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-2"> 2</a>
-<a href="#rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-3"> 3</a>
-<a href="#rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-4"> 4</a>
-<a href="#rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-5"> 5</a>
-<a href="#rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-6"> 6</a>
-<a href="#rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-7"> 7</a>
-<a href="#rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-8"> 8</a>
-<a href="#rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-9"> 9</a>
-<a href="#rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-10">10</a>
-<a href="#rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-11">11</a>
-<a href="#rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-12">12</a>
-<a href="#rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-13">13</a>
-<a href="#rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-14">14</a>
-<a href="#rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-15">15</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-1"></a><span class="kn">import</span> <span class="nn">fitz</span>
-<a name="rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-2"></a>
-<a name="rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-3"></a><span class="n">sizelist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mf">6.5</span><span class="p">,</span> <span class="mf">7.5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span>
-<a name="rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-4"></a>            <span class="mi">10</span><span class="p">,</span> <span class="mf">10.5</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span>
-<a name="rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-5"></a>            <span class="mi">20</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span>
-<a name="rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-6"></a>            <span class="mi">42</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">72</span><span class="p">]</span>
-<a name="rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-7"></a>
-<a name="rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-8"></a><span class="k">for</span> <span class="n">si</span> <span class="ow">in</span> <span class="n">sizelist</span><span class="p">:</span>
-<a name="rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-9"></a>    <span class="k">print</span><span class="p">(</span><span class="n">si</span><span class="p">)</span>
-<a name="rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-10"></a>    <span class="n">docs</span> <span class="o">=</span> <span class="n">fitz</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;字库/&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">si</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;/字库.pdf&quot;</span><span class="p">)</span>
-<a name="rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-11"></a>    <span class="n">pagenum</span> <span class="o">=</span> <span class="mi">1</span>
-<a name="rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-12"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">docs</span><span class="o">.</span><span class="n">pageCount</span><span class="p">):</span>
-<a name="rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-13"></a>        <span class="n">page</span> <span class="o">=</span> <span class="n">docs</span><span class="o">.</span><span class="n">getPagePixmap</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<a name="rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-14"></a>        <span class="n">page</span><span class="o">.</span><span class="n">writePNG</span><span class="p">(</span><span class="s2">&quot;textdb/&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">si</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;/page&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">pagenum</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;.png&quot;</span><span class="p">)</span>
-<a name="rest_code_16ccadb9be9d41f0bd497d30a9e3fc60-15"></a>        <span class="n">pagenum</span> <span class="o">=</span> <span class="n">pagenum</span> <span class="o">+</span> <span class="mi">1</span>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_f29ee2637d814593a107d1a251117bf4-1"> 1</a>
+<a href="#rest_code_f29ee2637d814593a107d1a251117bf4-2"> 2</a>
+<a href="#rest_code_f29ee2637d814593a107d1a251117bf4-3"> 3</a>
+<a href="#rest_code_f29ee2637d814593a107d1a251117bf4-4"> 4</a>
+<a href="#rest_code_f29ee2637d814593a107d1a251117bf4-5"> 5</a>
+<a href="#rest_code_f29ee2637d814593a107d1a251117bf4-6"> 6</a>
+<a href="#rest_code_f29ee2637d814593a107d1a251117bf4-7"> 7</a>
+<a href="#rest_code_f29ee2637d814593a107d1a251117bf4-8"> 8</a>
+<a href="#rest_code_f29ee2637d814593a107d1a251117bf4-9"> 9</a>
+<a href="#rest_code_f29ee2637d814593a107d1a251117bf4-10">10</a>
+<a href="#rest_code_f29ee2637d814593a107d1a251117bf4-11">11</a>
+<a href="#rest_code_f29ee2637d814593a107d1a251117bf4-12">12</a>
+<a href="#rest_code_f29ee2637d814593a107d1a251117bf4-13">13</a>
+<a href="#rest_code_f29ee2637d814593a107d1a251117bf4-14">14</a>
+<a href="#rest_code_f29ee2637d814593a107d1a251117bf4-15">15</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_f29ee2637d814593a107d1a251117bf4-1"></a><span class="kn">import</span> <span class="nn">fitz</span>
+<a name="rest_code_f29ee2637d814593a107d1a251117bf4-2"></a>
+<a name="rest_code_f29ee2637d814593a107d1a251117bf4-3"></a><span class="n">sizelist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mf">5.5</span><span class="p">,</span> <span class="mf">6.5</span><span class="p">,</span> <span class="mf">7.5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span>
+<a name="rest_code_f29ee2637d814593a107d1a251117bf4-4"></a>            <span class="mi">10</span><span class="p">,</span> <span class="mf">10.5</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span>
+<a name="rest_code_f29ee2637d814593a107d1a251117bf4-5"></a>            <span class="mi">20</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span>
+<a name="rest_code_f29ee2637d814593a107d1a251117bf4-6"></a>            <span class="mi">42</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">72</span><span class="p">]</span>
+<a name="rest_code_f29ee2637d814593a107d1a251117bf4-7"></a>
+<a name="rest_code_f29ee2637d814593a107d1a251117bf4-8"></a><span class="k">for</span> <span class="n">si</span> <span class="ow">in</span> <span class="n">sizelist</span><span class="p">:</span>
+<a name="rest_code_f29ee2637d814593a107d1a251117bf4-9"></a>    <span class="k">print</span><span class="p">(</span><span class="n">si</span><span class="p">)</span>
+<a name="rest_code_f29ee2637d814593a107d1a251117bf4-10"></a>    <span class="n">docs</span> <span class="o">=</span> <span class="n">fitz</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;字库/&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">si</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;/字库.pdf&quot;</span><span class="p">)</span>
+<a name="rest_code_f29ee2637d814593a107d1a251117bf4-11"></a>    <span class="n">pagenum</span> <span class="o">=</span> <span class="mi">1</span>
+<a name="rest_code_f29ee2637d814593a107d1a251117bf4-12"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">docs</span><span class="o">.</span><span class="n">pageCount</span><span class="p">):</span>
+<a name="rest_code_f29ee2637d814593a107d1a251117bf4-13"></a>        <span class="n">page</span> <span class="o">=</span> <span class="n">docs</span><span class="o">.</span><span class="n">getPagePixmap</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a name="rest_code_f29ee2637d814593a107d1a251117bf4-14"></a>        <span class="n">page</span><span class="o">.</span><span class="n">writePNG</span><span class="p">(</span><span class="s2">&quot;textdb/&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">si</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;/page&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">pagenum</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;.png&quot;</span><span class="p">)</span>
+<a name="rest_code_f29ee2637d814593a107d1a251117bf4-15"></a>        <span class="n">pagenum</span> <span class="o">=</span> <span class="n">pagenum</span> <span class="o">+</span> <span class="mi">1</span>
 </pre></td></tr></table>

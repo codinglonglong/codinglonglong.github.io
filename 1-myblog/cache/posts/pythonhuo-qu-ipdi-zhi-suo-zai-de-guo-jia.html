@@ -1,12 +1,12 @@
-<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_3fe93a0173494d6ca05fb2915558d8b9-1">1</a>
-<a href="#rest_code_3fe93a0173494d6ca05fb2915558d8b9-2">2</a>
-<a href="#rest_code_3fe93a0173494d6ca05fb2915558d8b9-3">3</a>
-<a href="#rest_code_3fe93a0173494d6ca05fb2915558d8b9-4">4</a>
-<a href="#rest_code_3fe93a0173494d6ca05fb2915558d8b9-5">5</a>
-<a href="#rest_code_3fe93a0173494d6ca05fb2915558d8b9-6">6</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_3fe93a0173494d6ca05fb2915558d8b9-1"></a><span class="kn">import</span> <span class="nn">simplejson</span>
-<a name="rest_code_3fe93a0173494d6ca05fb2915558d8b9-2"></a>
-<a name="rest_code_3fe93a0173494d6ca05fb2915558d8b9-3"></a><span class="k">def</span> <span class="nf">getipposition</span><span class="p">(</span><span class="n">ipstr</span><span class="p">):</span>
-<a name="rest_code_3fe93a0173494d6ca05fb2915558d8b9-4"></a>    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json&amp;ip=&quot;</span><span class="o">+</span><span class="n">ipstr</span><span class="p">,</span>
-<a name="rest_code_3fe93a0173494d6ca05fb2915558d8b9-5"></a>                      <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<a name="rest_code_3fe93a0173494d6ca05fb2915558d8b9-6"></a>    <span class="k">return</span> <span class="n">simplejson</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)[</span><span class="s2">&quot;country&quot;</span><span class="p">]</span>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_5ee4152349a4451b963c2c838e3772e9-1">1</a>
+<a href="#rest_code_5ee4152349a4451b963c2c838e3772e9-2">2</a>
+<a href="#rest_code_5ee4152349a4451b963c2c838e3772e9-3">3</a>
+<a href="#rest_code_5ee4152349a4451b963c2c838e3772e9-4">4</a>
+<a href="#rest_code_5ee4152349a4451b963c2c838e3772e9-5">5</a>
+<a href="#rest_code_5ee4152349a4451b963c2c838e3772e9-6">6</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_5ee4152349a4451b963c2c838e3772e9-1"></a><span class="kn">import</span> <span class="nn">simplejson</span>
+<a name="rest_code_5ee4152349a4451b963c2c838e3772e9-2"></a>
+<a name="rest_code_5ee4152349a4451b963c2c838e3772e9-3"></a><span class="k">def</span> <span class="nf">getipposition</span><span class="p">(</span><span class="n">ipstr</span><span class="p">):</span>
+<a name="rest_code_5ee4152349a4451b963c2c838e3772e9-4"></a>    <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=json&amp;ip=&quot;</span><span class="o">+</span><span class="n">ipstr</span><span class="p">,</span>
+<a name="rest_code_5ee4152349a4451b963c2c838e3772e9-5"></a>                      <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<a name="rest_code_5ee4152349a4451b963c2c838e3772e9-6"></a>    <span class="k">return</span> <span class="n">simplejson</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)[</span><span class="s2">&quot;country&quot;</span><span class="p">]</span>
 </pre></td></tr></table>

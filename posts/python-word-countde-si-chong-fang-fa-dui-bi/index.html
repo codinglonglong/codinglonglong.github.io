@@ -125,12 +125,12 @@ impor'>
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Python Word Count的四种方法对比</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     龙龙
             </span></p>
             <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2015-09-09T10:52:56+08:00" itemprop="datePublished" title="2015-09-09 10:52">2015-09-09 10:52</time></a></p>
             
-        <p class="sourceline"><a href="index.rst" id="sourcelink">Source</a></p>
+        <p class="sourceline"><a href="index.rst" class="sourcelink">Source</a></p>
 
         </div>
         
@@ -140,244 +140,244 @@ impor'>
 <p>Word Count可以认为是大数据时代的Hello World。我们使用Python按照四种方案进行一篇文章的词数统计，并进行性能对比，我们已经手工去除了乱码和多余的标点。</p>
 <p>方案1、内置map和reduce函数</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_cbfca85e792943c8ae37b77541d06f54-1"> 1</a>
-<a href="#rest_code_cbfca85e792943c8ae37b77541d06f54-2"> 2</a>
-<a href="#rest_code_cbfca85e792943c8ae37b77541d06f54-3"> 3</a>
-<a href="#rest_code_cbfca85e792943c8ae37b77541d06f54-4"> 4</a>
-<a href="#rest_code_cbfca85e792943c8ae37b77541d06f54-5"> 5</a>
-<a href="#rest_code_cbfca85e792943c8ae37b77541d06f54-6"> 6</a>
-<a href="#rest_code_cbfca85e792943c8ae37b77541d06f54-7"> 7</a>
-<a href="#rest_code_cbfca85e792943c8ae37b77541d06f54-8"> 8</a>
-<a href="#rest_code_cbfca85e792943c8ae37b77541d06f54-9"> 9</a>
-<a href="#rest_code_cbfca85e792943c8ae37b77541d06f54-10">10</a>
-<a href="#rest_code_cbfca85e792943c8ae37b77541d06f54-11">11</a>
-<a href="#rest_code_cbfca85e792943c8ae37b77541d06f54-12">12</a>
-<a href="#rest_code_cbfca85e792943c8ae37b77541d06f54-13">13</a>
-<a href="#rest_code_cbfca85e792943c8ae37b77541d06f54-14">14</a>
-<a href="#rest_code_cbfca85e792943c8ae37b77541d06f54-15">15</a>
-<a href="#rest_code_cbfca85e792943c8ae37b77541d06f54-16">16</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_cbfca85e792943c8ae37b77541d06f54-1"></a><span class="c1"># 内置map和reduce函数</span>
-<a name="rest_code_cbfca85e792943c8ae37b77541d06f54-2"></a><span class="k">print</span><span class="p">(</span><span class="s2">"内置map和reduce函数"</span><span class="p">)</span>
-<a name="rest_code_cbfca85e792943c8ae37b77541d06f54-3"></a><span class="kn">import</span> <span class="nn">time</span>
-<a name="rest_code_cbfca85e792943c8ae37b77541d06f54-4"></a><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
-<a name="rest_code_cbfca85e792943c8ae37b77541d06f54-5"></a>
-<a name="rest_code_cbfca85e792943c8ae37b77541d06f54-6"></a><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
-<a name="rest_code_cbfca85e792943c8ae37b77541d06f54-7"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"sample.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-<a name="rest_code_cbfca85e792943c8ae37b77541d06f54-8"></a>    <span class="c1"># 读取文件</span>
-<a name="rest_code_cbfca85e792943c8ae37b77541d06f54-9"></a>    <span class="n">datas</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-<a name="rest_code_cbfca85e792943c8ae37b77541d06f54-10"></a>    <span class="c1"># 使用mapreduce统计单词数目</span>
-<a name="rest_code_cbfca85e792943c8ae37b77541d06f54-11"></a>    <span class="n">wordcount</span> <span class="o">=</span> <span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span>
-<a name="rest_code_cbfca85e792943c8ae37b77541d06f54-12"></a>                       <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">()),</span> <span class="n">datas</span><span class="p">))</span>
-<a name="rest_code_cbfca85e792943c8ae37b77541d06f54-13"></a>    <span class="k">print</span><span class="p">(</span><span class="n">wordcount</span><span class="p">)</span>
-<a name="rest_code_cbfca85e792943c8ae37b77541d06f54-14"></a>
-<a name="rest_code_cbfca85e792943c8ae37b77541d06f54-15"></a><span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
-<a name="rest_code_cbfca85e792943c8ae37b77541d06f54-16"></a><span class="k">print</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_2d49a865856e499da62d6466ae3aa509-1"> 1</a>
+<a href="#rest_code_2d49a865856e499da62d6466ae3aa509-2"> 2</a>
+<a href="#rest_code_2d49a865856e499da62d6466ae3aa509-3"> 3</a>
+<a href="#rest_code_2d49a865856e499da62d6466ae3aa509-4"> 4</a>
+<a href="#rest_code_2d49a865856e499da62d6466ae3aa509-5"> 5</a>
+<a href="#rest_code_2d49a865856e499da62d6466ae3aa509-6"> 6</a>
+<a href="#rest_code_2d49a865856e499da62d6466ae3aa509-7"> 7</a>
+<a href="#rest_code_2d49a865856e499da62d6466ae3aa509-8"> 8</a>
+<a href="#rest_code_2d49a865856e499da62d6466ae3aa509-9"> 9</a>
+<a href="#rest_code_2d49a865856e499da62d6466ae3aa509-10">10</a>
+<a href="#rest_code_2d49a865856e499da62d6466ae3aa509-11">11</a>
+<a href="#rest_code_2d49a865856e499da62d6466ae3aa509-12">12</a>
+<a href="#rest_code_2d49a865856e499da62d6466ae3aa509-13">13</a>
+<a href="#rest_code_2d49a865856e499da62d6466ae3aa509-14">14</a>
+<a href="#rest_code_2d49a865856e499da62d6466ae3aa509-15">15</a>
+<a href="#rest_code_2d49a865856e499da62d6466ae3aa509-16">16</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_2d49a865856e499da62d6466ae3aa509-1"></a><span class="c1"># 内置map和reduce函数</span>
+<a name="rest_code_2d49a865856e499da62d6466ae3aa509-2"></a><span class="k">print</span><span class="p">(</span><span class="s2">"内置map和reduce函数"</span><span class="p">)</span>
+<a name="rest_code_2d49a865856e499da62d6466ae3aa509-3"></a><span class="kn">import</span> <span class="nn">time</span>
+<a name="rest_code_2d49a865856e499da62d6466ae3aa509-4"></a><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
+<a name="rest_code_2d49a865856e499da62d6466ae3aa509-5"></a>
+<a name="rest_code_2d49a865856e499da62d6466ae3aa509-6"></a><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
+<a name="rest_code_2d49a865856e499da62d6466ae3aa509-7"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"sample.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+<a name="rest_code_2d49a865856e499da62d6466ae3aa509-8"></a>    <span class="c1"># 读取文件</span>
+<a name="rest_code_2d49a865856e499da62d6466ae3aa509-9"></a>    <span class="n">datas</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<a name="rest_code_2d49a865856e499da62d6466ae3aa509-10"></a>    <span class="c1"># 使用mapreduce统计单词数目</span>
+<a name="rest_code_2d49a865856e499da62d6466ae3aa509-11"></a>    <span class="n">wordcount</span> <span class="o">=</span> <span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span>
+<a name="rest_code_2d49a865856e499da62d6466ae3aa509-12"></a>                       <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">()),</span> <span class="n">datas</span><span class="p">))</span>
+<a name="rest_code_2d49a865856e499da62d6466ae3aa509-13"></a>    <span class="k">print</span><span class="p">(</span><span class="n">wordcount</span><span class="p">)</span>
+<a name="rest_code_2d49a865856e499da62d6466ae3aa509-14"></a>
+<a name="rest_code_2d49a865856e499da62d6466ae3aa509-15"></a><span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
+<a name="rest_code_2d49a865856e499da62d6466ae3aa509-16"></a><span class="k">print</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 <p>运行结果：</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_18db0a6338954e0093bceb85c815d8cf-1">1</a>
-<a href="#rest_code_18db0a6338954e0093bceb85c815d8cf-2">2</a>
-<a href="#rest_code_18db0a6338954e0093bceb85c815d8cf-3">3</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_18db0a6338954e0093bceb85c815d8cf-1"></a><span class="o">&gt;&gt;</span> <span class="err">内置</span><span class="n">map和reduce函数</span>
-<a name="rest_code_18db0a6338954e0093bceb85c815d8cf-2"></a><span class="o">&gt;&gt;</span> <span class="mi">767</span>
-<a name="rest_code_18db0a6338954e0093bceb85c815d8cf-3"></a><span class="o">&gt;&gt;</span> <span class="mf">0.008342000000000002</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_9cc41ec50e324458b8de432883a53b62-1">1</a>
+<a href="#rest_code_9cc41ec50e324458b8de432883a53b62-2">2</a>
+<a href="#rest_code_9cc41ec50e324458b8de432883a53b62-3">3</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_9cc41ec50e324458b8de432883a53b62-1"></a><span class="o">&gt;&gt;</span> <span class="err">内置</span><span class="n">map和reduce函数</span>
+<a name="rest_code_9cc41ec50e324458b8de432883a53b62-2"></a><span class="o">&gt;&gt;</span> <span class="mi">767</span>
+<a name="rest_code_9cc41ec50e324458b8de432883a53b62-3"></a><span class="o">&gt;&gt;</span> <span class="mf">0.008342000000000002</span>
 </pre></td>
 </tr></table>
 <p>方案2、直接计算单词个数</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_b4c02fa4a50e480fb9aa7d26293432c9-1"> 1</a>
-<a href="#rest_code_b4c02fa4a50e480fb9aa7d26293432c9-2"> 2</a>
-<a href="#rest_code_b4c02fa4a50e480fb9aa7d26293432c9-3"> 3</a>
-<a href="#rest_code_b4c02fa4a50e480fb9aa7d26293432c9-4"> 4</a>
-<a href="#rest_code_b4c02fa4a50e480fb9aa7d26293432c9-5"> 5</a>
-<a href="#rest_code_b4c02fa4a50e480fb9aa7d26293432c9-6"> 6</a>
-<a href="#rest_code_b4c02fa4a50e480fb9aa7d26293432c9-7"> 7</a>
-<a href="#rest_code_b4c02fa4a50e480fb9aa7d26293432c9-8"> 8</a>
-<a href="#rest_code_b4c02fa4a50e480fb9aa7d26293432c9-9"> 9</a>
-<a href="#rest_code_b4c02fa4a50e480fb9aa7d26293432c9-10">10</a>
-<a href="#rest_code_b4c02fa4a50e480fb9aa7d26293432c9-11">11</a>
-<a href="#rest_code_b4c02fa4a50e480fb9aa7d26293432c9-12">12</a>
-<a href="#rest_code_b4c02fa4a50e480fb9aa7d26293432c9-13">13</a>
-<a href="#rest_code_b4c02fa4a50e480fb9aa7d26293432c9-14">14</a>
-<a href="#rest_code_b4c02fa4a50e480fb9aa7d26293432c9-15">15</a>
-<a href="#rest_code_b4c02fa4a50e480fb9aa7d26293432c9-16">16</a>
-<a href="#rest_code_b4c02fa4a50e480fb9aa7d26293432c9-17">17</a>
-<a href="#rest_code_b4c02fa4a50e480fb9aa7d26293432c9-18">18</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_b4c02fa4a50e480fb9aa7d26293432c9-1"></a><span class="c1"># 直接计算单词个数</span>
-<a name="rest_code_b4c02fa4a50e480fb9aa7d26293432c9-2"></a><span class="k">print</span><span class="p">(</span><span class="s2">"直接计算单词个数"</span><span class="p">)</span>
-<a name="rest_code_b4c02fa4a50e480fb9aa7d26293432c9-3"></a><span class="kn">import</span> <span class="nn">time</span>
-<a name="rest_code_b4c02fa4a50e480fb9aa7d26293432c9-4"></a><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
-<a name="rest_code_b4c02fa4a50e480fb9aa7d26293432c9-5"></a>
-<a name="rest_code_b4c02fa4a50e480fb9aa7d26293432c9-6"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"sample.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-<a name="rest_code_b4c02fa4a50e480fb9aa7d26293432c9-7"></a>    <span class="c1"># 读取文件</span>
-<a name="rest_code_b4c02fa4a50e480fb9aa7d26293432c9-8"></a>    <span class="n">datas</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-<a name="rest_code_b4c02fa4a50e480fb9aa7d26293432c9-9"></a>    <span class="c1"># 合并成一个字符串</span>
-<a name="rest_code_b4c02fa4a50e480fb9aa7d26293432c9-10"></a>    <span class="n">datas</span> <span class="o">=</span> <span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">datas</span><span class="p">)</span>
-<a name="rest_code_b4c02fa4a50e480fb9aa7d26293432c9-11"></a>    <span class="c1"># 划分成单词</span>
-<a name="rest_code_b4c02fa4a50e480fb9aa7d26293432c9-12"></a>    <span class="n">datas</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
-<a name="rest_code_b4c02fa4a50e480fb9aa7d26293432c9-13"></a>    <span class="c1"># 求单词数目</span>
-<a name="rest_code_b4c02fa4a50e480fb9aa7d26293432c9-14"></a>    <span class="n">wordcount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">datas</span><span class="p">)</span>
-<a name="rest_code_b4c02fa4a50e480fb9aa7d26293432c9-15"></a>    <span class="k">print</span><span class="p">(</span><span class="n">wordcount</span><span class="p">)</span>
-<a name="rest_code_b4c02fa4a50e480fb9aa7d26293432c9-16"></a>
-<a name="rest_code_b4c02fa4a50e480fb9aa7d26293432c9-17"></a><span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
-<a name="rest_code_b4c02fa4a50e480fb9aa7d26293432c9-18"></a><span class="k">print</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-1"> 1</a>
+<a href="#rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-2"> 2</a>
+<a href="#rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-3"> 3</a>
+<a href="#rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-4"> 4</a>
+<a href="#rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-5"> 5</a>
+<a href="#rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-6"> 6</a>
+<a href="#rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-7"> 7</a>
+<a href="#rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-8"> 8</a>
+<a href="#rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-9"> 9</a>
+<a href="#rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-10">10</a>
+<a href="#rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-11">11</a>
+<a href="#rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-12">12</a>
+<a href="#rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-13">13</a>
+<a href="#rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-14">14</a>
+<a href="#rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-15">15</a>
+<a href="#rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-16">16</a>
+<a href="#rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-17">17</a>
+<a href="#rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-18">18</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-1"></a><span class="c1"># 直接计算单词个数</span>
+<a name="rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-2"></a><span class="k">print</span><span class="p">(</span><span class="s2">"直接计算单词个数"</span><span class="p">)</span>
+<a name="rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-3"></a><span class="kn">import</span> <span class="nn">time</span>
+<a name="rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-4"></a><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
+<a name="rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-5"></a>
+<a name="rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-6"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"sample.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+<a name="rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-7"></a>    <span class="c1"># 读取文件</span>
+<a name="rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-8"></a>    <span class="n">datas</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<a name="rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-9"></a>    <span class="c1"># 合并成一个字符串</span>
+<a name="rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-10"></a>    <span class="n">datas</span> <span class="o">=</span> <span class="s2">" "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">datas</span><span class="p">)</span>
+<a name="rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-11"></a>    <span class="c1"># 划分成单词</span>
+<a name="rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-12"></a>    <span class="n">datas</span> <span class="o">=</span> <span class="n">datas</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<a name="rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-13"></a>    <span class="c1"># 求单词数目</span>
+<a name="rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-14"></a>    <span class="n">wordcount</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">datas</span><span class="p">)</span>
+<a name="rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-15"></a>    <span class="k">print</span><span class="p">(</span><span class="n">wordcount</span><span class="p">)</span>
+<a name="rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-16"></a>
+<a name="rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-17"></a><span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
+<a name="rest_code_f8584bd0bfb9459c95f5a99c1dcf22e4-18"></a><span class="k">print</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 <p>运行结果：</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_97e30dd5e5394d21972c6b52bc78a99e-1">1</a>
-<a href="#rest_code_97e30dd5e5394d21972c6b52bc78a99e-2">2</a>
-<a href="#rest_code_97e30dd5e5394d21972c6b52bc78a99e-3">3</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_97e30dd5e5394d21972c6b52bc78a99e-1"></a><span class="o">&gt;&gt;</span> <span class="err">直接计算单词个数</span>
-<a name="rest_code_97e30dd5e5394d21972c6b52bc78a99e-2"></a><span class="o">&gt;&gt;</span> <span class="mi">767</span>
-<a name="rest_code_97e30dd5e5394d21972c6b52bc78a99e-3"></a><span class="o">&gt;&gt;</span> <span class="mf">0.0002339999999999981</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_a1635583b09c48739adec01fadfb9f43-1">1</a>
+<a href="#rest_code_a1635583b09c48739adec01fadfb9f43-2">2</a>
+<a href="#rest_code_a1635583b09c48739adec01fadfb9f43-3">3</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_a1635583b09c48739adec01fadfb9f43-1"></a><span class="o">&gt;&gt;</span> <span class="err">直接计算单词个数</span>
+<a name="rest_code_a1635583b09c48739adec01fadfb9f43-2"></a><span class="o">&gt;&gt;</span> <span class="mi">767</span>
+<a name="rest_code_a1635583b09c48739adec01fadfb9f43-3"></a><span class="o">&gt;&gt;</span> <span class="mf">0.0002339999999999981</span>
 </pre></td>
 </tr></table>
 <p>方案3、多线程MapReduce</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-1"> 1</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-2"> 2</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-3"> 3</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-4"> 4</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-5"> 5</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-6"> 6</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-7"> 7</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-8"> 8</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-9"> 9</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-10">10</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-11">11</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-12">12</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-13">13</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-14">14</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-15">15</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-16">16</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-17">17</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-18">18</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-19">19</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-20">20</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-21">21</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-22">22</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-23">23</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-24">24</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-25">25</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-26">26</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-27">27</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-28">28</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-29">29</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-30">30</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-31">31</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-32">32</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-33">33</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-34">34</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-35">35</a>
-<a href="#rest_code_f0111379a4e44d9d8c7237e014f37a30-36">36</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-1"></a><span class="c1"># 多线程MapReduce</span>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-2"></a><span class="k">print</span><span class="p">(</span><span class="s2">"多线程MapReduce"</span><span class="p">)</span>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-3"></a><span class="kn">import</span> <span class="nn">time</span>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-4"></a><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-5"></a>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-6"></a><span class="kn">import</span> <span class="nn">threading</span>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-7"></a><span class="kn">from</span> <span class="nn">queue</span> <span class="kn">import</span> <span class="n">Queue</span>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-8"></a><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-9"></a>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-10"></a>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-11"></a><span class="k">class</span> <span class="nc">WordCount</span><span class="p">(</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">):</span>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-12"></a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wordstr</span><span class="p">,</span> <span class="n">queue</span><span class="p">):</span>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-13"></a>        <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-14"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">queue</span> <span class="o">=</span> <span class="n">queue</span>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-15"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">wordstr</span> <span class="o">=</span> <span class="n">wordstr</span>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-16"></a>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-17"></a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-18"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wordstr</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-19"></a>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-20"></a>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-21"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"sample.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-22"></a>    <span class="n">datas</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-23"></a>    <span class="n">threadlist</span> <span class="o">=</span> <span class="p">[]</span>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-24"></a>    <span class="n">queue</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-25"></a>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">datas</span><span class="p">:</span>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-26"></a>        <span class="n">threadlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">WordCount</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">queue</span><span class="p">))</span>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-27"></a>    <span class="k">for</span> <span class="n">trd</span> <span class="ow">in</span> <span class="n">threadlist</span><span class="p">:</span>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-28"></a>        <span class="n">trd</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-29"></a>    <span class="k">for</span> <span class="n">trd</span> <span class="ow">in</span> <span class="n">threadlist</span><span class="p">:</span>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-30"></a>        <span class="n">trd</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-31"></a>    <span class="n">datalist</span> <span class="o">=</span> <span class="p">[</span><span class="n">queue</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">queue</span><span class="o">.</span><span class="n">qsize</span><span class="p">())]</span>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-32"></a>    <span class="n">wordcount</span> <span class="o">=</span> <span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">datalist</span><span class="p">)</span>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-33"></a>    <span class="k">print</span><span class="p">(</span><span class="n">wordcount</span><span class="p">)</span>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-34"></a>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-35"></a><span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
-<a name="rest_code_f0111379a4e44d9d8c7237e014f37a30-36"></a><span class="k">print</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_040f805f7a4540888123642186af2717-1"> 1</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-2"> 2</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-3"> 3</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-4"> 4</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-5"> 5</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-6"> 6</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-7"> 7</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-8"> 8</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-9"> 9</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-10">10</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-11">11</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-12">12</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-13">13</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-14">14</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-15">15</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-16">16</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-17">17</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-18">18</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-19">19</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-20">20</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-21">21</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-22">22</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-23">23</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-24">24</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-25">25</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-26">26</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-27">27</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-28">28</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-29">29</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-30">30</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-31">31</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-32">32</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-33">33</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-34">34</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-35">35</a>
+<a href="#rest_code_040f805f7a4540888123642186af2717-36">36</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_040f805f7a4540888123642186af2717-1"></a><span class="c1"># 多线程MapReduce</span>
+<a name="rest_code_040f805f7a4540888123642186af2717-2"></a><span class="k">print</span><span class="p">(</span><span class="s2">"多线程MapReduce"</span><span class="p">)</span>
+<a name="rest_code_040f805f7a4540888123642186af2717-3"></a><span class="kn">import</span> <span class="nn">time</span>
+<a name="rest_code_040f805f7a4540888123642186af2717-4"></a><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
+<a name="rest_code_040f805f7a4540888123642186af2717-5"></a>
+<a name="rest_code_040f805f7a4540888123642186af2717-6"></a><span class="kn">import</span> <span class="nn">threading</span>
+<a name="rest_code_040f805f7a4540888123642186af2717-7"></a><span class="kn">from</span> <span class="nn">queue</span> <span class="kn">import</span> <span class="n">Queue</span>
+<a name="rest_code_040f805f7a4540888123642186af2717-8"></a><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
+<a name="rest_code_040f805f7a4540888123642186af2717-9"></a>
+<a name="rest_code_040f805f7a4540888123642186af2717-10"></a>
+<a name="rest_code_040f805f7a4540888123642186af2717-11"></a><span class="k">class</span> <span class="nc">WordCount</span><span class="p">(</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">):</span>
+<a name="rest_code_040f805f7a4540888123642186af2717-12"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">wordstr</span><span class="p">,</span> <span class="n">queue</span><span class="p">):</span>
+<a name="rest_code_040f805f7a4540888123642186af2717-13"></a>        <span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<a name="rest_code_040f805f7a4540888123642186af2717-14"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">queue</span> <span class="o">=</span> <span class="n">queue</span>
+<a name="rest_code_040f805f7a4540888123642186af2717-15"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">wordstr</span> <span class="o">=</span> <span class="n">wordstr</span>
+<a name="rest_code_040f805f7a4540888123642186af2717-16"></a>
+<a name="rest_code_040f805f7a4540888123642186af2717-17"></a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_040f805f7a4540888123642186af2717-18"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">queue</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wordstr</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+<a name="rest_code_040f805f7a4540888123642186af2717-19"></a>
+<a name="rest_code_040f805f7a4540888123642186af2717-20"></a>
+<a name="rest_code_040f805f7a4540888123642186af2717-21"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"sample.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+<a name="rest_code_040f805f7a4540888123642186af2717-22"></a>    <span class="n">datas</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<a name="rest_code_040f805f7a4540888123642186af2717-23"></a>    <span class="n">threadlist</span> <span class="o">=</span> <span class="p">[]</span>
+<a name="rest_code_040f805f7a4540888123642186af2717-24"></a>    <span class="n">queue</span> <span class="o">=</span> <span class="n">Queue</span><span class="p">()</span>
+<a name="rest_code_040f805f7a4540888123642186af2717-25"></a>    <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">datas</span><span class="p">:</span>
+<a name="rest_code_040f805f7a4540888123642186af2717-26"></a>        <span class="n">threadlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">WordCount</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">queue</span><span class="p">))</span>
+<a name="rest_code_040f805f7a4540888123642186af2717-27"></a>    <span class="k">for</span> <span class="n">trd</span> <span class="ow">in</span> <span class="n">threadlist</span><span class="p">:</span>
+<a name="rest_code_040f805f7a4540888123642186af2717-28"></a>        <span class="n">trd</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<a name="rest_code_040f805f7a4540888123642186af2717-29"></a>    <span class="k">for</span> <span class="n">trd</span> <span class="ow">in</span> <span class="n">threadlist</span><span class="p">:</span>
+<a name="rest_code_040f805f7a4540888123642186af2717-30"></a>        <span class="n">trd</span><span class="o">.</span><span class="n">join</span><span class="p">()</span>
+<a name="rest_code_040f805f7a4540888123642186af2717-31"></a>    <span class="n">datalist</span> <span class="o">=</span> <span class="p">[</span><span class="n">queue</span><span class="o">.</span><span class="n">get</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">queue</span><span class="o">.</span><span class="n">qsize</span><span class="p">())]</span>
+<a name="rest_code_040f805f7a4540888123642186af2717-32"></a>    <span class="n">wordcount</span> <span class="o">=</span> <span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">datalist</span><span class="p">)</span>
+<a name="rest_code_040f805f7a4540888123642186af2717-33"></a>    <span class="k">print</span><span class="p">(</span><span class="n">wordcount</span><span class="p">)</span>
+<a name="rest_code_040f805f7a4540888123642186af2717-34"></a>
+<a name="rest_code_040f805f7a4540888123642186af2717-35"></a><span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
+<a name="rest_code_040f805f7a4540888123642186af2717-36"></a><span class="k">print</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 <p>注意：Python提供的Queue是线程安全的，所以这里不需要锁。</p>
 <p>运行结果：</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_219c1494166e4795894272b39616716b-1">1</a>
-<a href="#rest_code_219c1494166e4795894272b39616716b-2">2</a>
-<a href="#rest_code_219c1494166e4795894272b39616716b-3">3</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_219c1494166e4795894272b39616716b-1"></a><span class="o">&gt;&gt;</span> <span class="err">多线程</span><span class="n">MapReduce</span>
-<a name="rest_code_219c1494166e4795894272b39616716b-2"></a><span class="o">&gt;&gt;</span> <span class="mi">767</span>
-<a name="rest_code_219c1494166e4795894272b39616716b-3"></a><span class="o">&gt;&gt;</span> <span class="mf">0.02518399999999999</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_3349f4eb36b046dcb10f271eeb29f803-1">1</a>
+<a href="#rest_code_3349f4eb36b046dcb10f271eeb29f803-2">2</a>
+<a href="#rest_code_3349f4eb36b046dcb10f271eeb29f803-3">3</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_3349f4eb36b046dcb10f271eeb29f803-1"></a><span class="o">&gt;&gt;</span> <span class="err">多线程</span><span class="n">MapReduce</span>
+<a name="rest_code_3349f4eb36b046dcb10f271eeb29f803-2"></a><span class="o">&gt;&gt;</span> <span class="mi">767</span>
+<a name="rest_code_3349f4eb36b046dcb10f271eeb29f803-3"></a><span class="o">&gt;&gt;</span> <span class="mf">0.02518399999999999</span>
 </pre></td>
 </tr></table>
 <p>方案4、多进程MapReduce</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_c586e5d769b147b8b395cd8285a97395-1"> 1</a>
-<a href="#rest_code_c586e5d769b147b8b395cd8285a97395-2"> 2</a>
-<a href="#rest_code_c586e5d769b147b8b395cd8285a97395-3"> 3</a>
-<a href="#rest_code_c586e5d769b147b8b395cd8285a97395-4"> 4</a>
-<a href="#rest_code_c586e5d769b147b8b395cd8285a97395-5"> 5</a>
-<a href="#rest_code_c586e5d769b147b8b395cd8285a97395-6"> 6</a>
-<a href="#rest_code_c586e5d769b147b8b395cd8285a97395-7"> 7</a>
-<a href="#rest_code_c586e5d769b147b8b395cd8285a97395-8"> 8</a>
-<a href="#rest_code_c586e5d769b147b8b395cd8285a97395-9"> 9</a>
-<a href="#rest_code_c586e5d769b147b8b395cd8285a97395-10">10</a>
-<a href="#rest_code_c586e5d769b147b8b395cd8285a97395-11">11</a>
-<a href="#rest_code_c586e5d769b147b8b395cd8285a97395-12">12</a>
-<a href="#rest_code_c586e5d769b147b8b395cd8285a97395-13">13</a>
-<a href="#rest_code_c586e5d769b147b8b395cd8285a97395-14">14</a>
-<a href="#rest_code_c586e5d769b147b8b395cd8285a97395-15">15</a>
-<a href="#rest_code_c586e5d769b147b8b395cd8285a97395-16">16</a>
-<a href="#rest_code_c586e5d769b147b8b395cd8285a97395-17">17</a>
-<a href="#rest_code_c586e5d769b147b8b395cd8285a97395-18">18</a>
-<a href="#rest_code_c586e5d769b147b8b395cd8285a97395-19">19</a>
-<a href="#rest_code_c586e5d769b147b8b395cd8285a97395-20">20</a>
-<a href="#rest_code_c586e5d769b147b8b395cd8285a97395-21">21</a>
-<a href="#rest_code_c586e5d769b147b8b395cd8285a97395-22">22</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_c586e5d769b147b8b395cd8285a97395-1"></a><span class="c1"># 多进程MapReduce</span>
-<a name="rest_code_c586e5d769b147b8b395cd8285a97395-2"></a><span class="k">print</span><span class="p">(</span><span class="s2">"多进程MapReduce"</span><span class="p">)</span>
-<a name="rest_code_c586e5d769b147b8b395cd8285a97395-3"></a><span class="kn">import</span> <span class="nn">time</span>
-<a name="rest_code_c586e5d769b147b8b395cd8285a97395-4"></a><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
-<a name="rest_code_c586e5d769b147b8b395cd8285a97395-5"></a>
-<a name="rest_code_c586e5d769b147b8b395cd8285a97395-6"></a><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Pool</span>
-<a name="rest_code_c586e5d769b147b8b395cd8285a97395-7"></a><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
-<a name="rest_code_c586e5d769b147b8b395cd8285a97395-8"></a>
-<a name="rest_code_c586e5d769b147b8b395cd8285a97395-9"></a>
-<a name="rest_code_c586e5d769b147b8b395cd8285a97395-10"></a><span class="k">def</span> <span class="nf">wordcount</span><span class="p">(</span><span class="n">wordstr</span><span class="p">):</span>
-<a name="rest_code_c586e5d769b147b8b395cd8285a97395-11"></a>    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">wordstr</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
-<a name="rest_code_c586e5d769b147b8b395cd8285a97395-12"></a>
-<a name="rest_code_c586e5d769b147b8b395cd8285a97395-13"></a>
-<a name="rest_code_c586e5d769b147b8b395cd8285a97395-14"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"sample.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
-<a name="rest_code_c586e5d769b147b8b395cd8285a97395-15"></a>    <span class="n">datas</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-<a name="rest_code_c586e5d769b147b8b395cd8285a97395-16"></a>    <span class="n">p</span> <span class="o">=</span> <span class="n">Pool</span><span class="p">()</span>
-<a name="rest_code_c586e5d769b147b8b395cd8285a97395-17"></a>    <span class="n">datalist</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">wordcount</span><span class="p">,</span> <span class="n">datas</span><span class="p">)</span>
-<a name="rest_code_c586e5d769b147b8b395cd8285a97395-18"></a>    <span class="n">wordcount</span> <span class="o">=</span> <span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">datalist</span><span class="p">)</span>
-<a name="rest_code_c586e5d769b147b8b395cd8285a97395-19"></a>    <span class="k">print</span><span class="p">(</span><span class="n">wordcount</span><span class="p">)</span>
-<a name="rest_code_c586e5d769b147b8b395cd8285a97395-20"></a>
-<a name="rest_code_c586e5d769b147b8b395cd8285a97395-21"></a><span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
-<a name="rest_code_c586e5d769b147b8b395cd8285a97395-22"></a><span class="k">print</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_410dcf95d8af47edb53df2afb99bef00-1"> 1</a>
+<a href="#rest_code_410dcf95d8af47edb53df2afb99bef00-2"> 2</a>
+<a href="#rest_code_410dcf95d8af47edb53df2afb99bef00-3"> 3</a>
+<a href="#rest_code_410dcf95d8af47edb53df2afb99bef00-4"> 4</a>
+<a href="#rest_code_410dcf95d8af47edb53df2afb99bef00-5"> 5</a>
+<a href="#rest_code_410dcf95d8af47edb53df2afb99bef00-6"> 6</a>
+<a href="#rest_code_410dcf95d8af47edb53df2afb99bef00-7"> 7</a>
+<a href="#rest_code_410dcf95d8af47edb53df2afb99bef00-8"> 8</a>
+<a href="#rest_code_410dcf95d8af47edb53df2afb99bef00-9"> 9</a>
+<a href="#rest_code_410dcf95d8af47edb53df2afb99bef00-10">10</a>
+<a href="#rest_code_410dcf95d8af47edb53df2afb99bef00-11">11</a>
+<a href="#rest_code_410dcf95d8af47edb53df2afb99bef00-12">12</a>
+<a href="#rest_code_410dcf95d8af47edb53df2afb99bef00-13">13</a>
+<a href="#rest_code_410dcf95d8af47edb53df2afb99bef00-14">14</a>
+<a href="#rest_code_410dcf95d8af47edb53df2afb99bef00-15">15</a>
+<a href="#rest_code_410dcf95d8af47edb53df2afb99bef00-16">16</a>
+<a href="#rest_code_410dcf95d8af47edb53df2afb99bef00-17">17</a>
+<a href="#rest_code_410dcf95d8af47edb53df2afb99bef00-18">18</a>
+<a href="#rest_code_410dcf95d8af47edb53df2afb99bef00-19">19</a>
+<a href="#rest_code_410dcf95d8af47edb53df2afb99bef00-20">20</a>
+<a href="#rest_code_410dcf95d8af47edb53df2afb99bef00-21">21</a>
+<a href="#rest_code_410dcf95d8af47edb53df2afb99bef00-22">22</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_410dcf95d8af47edb53df2afb99bef00-1"></a><span class="c1"># 多进程MapReduce</span>
+<a name="rest_code_410dcf95d8af47edb53df2afb99bef00-2"></a><span class="k">print</span><span class="p">(</span><span class="s2">"多进程MapReduce"</span><span class="p">)</span>
+<a name="rest_code_410dcf95d8af47edb53df2afb99bef00-3"></a><span class="kn">import</span> <span class="nn">time</span>
+<a name="rest_code_410dcf95d8af47edb53df2afb99bef00-4"></a><span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
+<a name="rest_code_410dcf95d8af47edb53df2afb99bef00-5"></a>
+<a name="rest_code_410dcf95d8af47edb53df2afb99bef00-6"></a><span class="kn">from</span> <span class="nn">multiprocessing</span> <span class="kn">import</span> <span class="n">Pool</span>
+<a name="rest_code_410dcf95d8af47edb53df2afb99bef00-7"></a><span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
+<a name="rest_code_410dcf95d8af47edb53df2afb99bef00-8"></a>
+<a name="rest_code_410dcf95d8af47edb53df2afb99bef00-9"></a>
+<a name="rest_code_410dcf95d8af47edb53df2afb99bef00-10"></a><span class="k">def</span> <span class="nf">wordcount</span><span class="p">(</span><span class="n">wordstr</span><span class="p">):</span>
+<a name="rest_code_410dcf95d8af47edb53df2afb99bef00-11"></a>    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">wordstr</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<a name="rest_code_410dcf95d8af47edb53df2afb99bef00-12"></a>
+<a name="rest_code_410dcf95d8af47edb53df2afb99bef00-13"></a>
+<a name="rest_code_410dcf95d8af47edb53df2afb99bef00-14"></a><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"sample.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+<a name="rest_code_410dcf95d8af47edb53df2afb99bef00-15"></a>    <span class="n">datas</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+<a name="rest_code_410dcf95d8af47edb53df2afb99bef00-16"></a>    <span class="n">p</span> <span class="o">=</span> <span class="n">Pool</span><span class="p">()</span>
+<a name="rest_code_410dcf95d8af47edb53df2afb99bef00-17"></a>    <span class="n">datalist</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">wordcount</span><span class="p">,</span> <span class="n">datas</span><span class="p">)</span>
+<a name="rest_code_410dcf95d8af47edb53df2afb99bef00-18"></a>    <span class="n">wordcount</span> <span class="o">=</span> <span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">datalist</span><span class="p">)</span>
+<a name="rest_code_410dcf95d8af47edb53df2afb99bef00-19"></a>    <span class="k">print</span><span class="p">(</span><span class="n">wordcount</span><span class="p">)</span>
+<a name="rest_code_410dcf95d8af47edb53df2afb99bef00-20"></a>
+<a name="rest_code_410dcf95d8af47edb53df2afb99bef00-21"></a><span class="n">end</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
+<a name="rest_code_410dcf95d8af47edb53df2afb99bef00-22"></a><span class="k">print</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">start</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 <p>注意：Python提供的进程池Pool自带map函数。</p>
 <p>运行结果：</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_4d6d066e972140e78e944dd446408f85-1">1</a>
-<a href="#rest_code_4d6d066e972140e78e944dd446408f85-2">2</a>
-<a href="#rest_code_4d6d066e972140e78e944dd446408f85-3">3</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_4d6d066e972140e78e944dd446408f85-1"></a><span class="o">&gt;&gt;</span> <span class="err">多进程</span><span class="n">MapReduce</span>
-<a name="rest_code_4d6d066e972140e78e944dd446408f85-2"></a><span class="o">&gt;&gt;</span> <span class="mi">767</span>
-<a name="rest_code_4d6d066e972140e78e944dd446408f85-3"></a><span class="o">&gt;&gt;</span> <span class="mf">0.056589</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_3557daa9898747e1aa2e6927df89db91-1">1</a>
+<a href="#rest_code_3557daa9898747e1aa2e6927df89db91-2">2</a>
+<a href="#rest_code_3557daa9898747e1aa2e6927df89db91-3">3</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_3557daa9898747e1aa2e6927df89db91-1"></a><span class="o">&gt;&gt;</span> <span class="err">多进程</span><span class="n">MapReduce</span>
+<a name="rest_code_3557daa9898747e1aa2e6927df89db91-2"></a><span class="o">&gt;&gt;</span> <span class="mi">767</span>
+<a name="rest_code_3557daa9898747e1aa2e6927df89db91-3"></a><span class="o">&gt;&gt;</span> <span class="mf">0.056589</span>
 </pre></td>
 </tr></table>
 <p>性能对比十分明显：

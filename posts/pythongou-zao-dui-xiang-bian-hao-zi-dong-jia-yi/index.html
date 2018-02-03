@@ -134,12 +134,12 @@ body{
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Python构造对象编号自动加一</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     龙龙
             </span></p>
             <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2015-09-08T10:46:21+08:00" itemprop="datePublished" title="2015-09-08 10:46">2015-09-08 10:46</time></a></p>
             
-        <p class="sourceline"><a href="index.rst" id="sourcelink">Source</a></p>
+        <p class="sourceline"><a href="index.rst" class="sourcelink">Source</a></p>
 
         </div>
         
@@ -151,56 +151,56 @@ body{
 <p>我们如何实现每生成一个对象，它的编号就自动加1呢？</p>
 <p>看代码：</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-1"> 1</a>
-<a href="#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-2"> 2</a>
-<a href="#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-3"> 3</a>
-<a href="#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-4"> 4</a>
-<a href="#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-5"> 5</a>
-<a href="#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-6"> 6</a>
-<a href="#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-7"> 7</a>
-<a href="#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-8"> 8</a>
-<a href="#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-9"> 9</a>
-<a href="#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-10">10</a>
-<a href="#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-11">11</a>
-<a href="#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-12">12</a>
-<a href="#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-13">13</a>
-<a href="#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-14">14</a>
-<a href="#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-15">15</a>
-<a href="#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-16">16</a>
-<a href="#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-17">17</a>
-<a href="#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-18">18</a>
-<a href="#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-19">19</a>
-<a href="#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-20">20</a>
-<a href="#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-21">21</a>
-<a href="#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-22">22</a>
-<a href="#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-23">23</a>
-<a href="#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-24">24</a>
-<a href="#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-25">25</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-1"></a><span class="k">class</span> <span class="nc">Stu</span><span class="p">:</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-2"></a>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-3"></a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getnewid</span><span class="p">()</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">"写程序的龙龙"</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s2">"https://codinglonglong.github.io"</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-7"></a>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-8"></a>    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-9"></a>        <span class="k">return</span> <span class="s2">"id: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">newid</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> \
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-10"></a>            <span class="s2">"name: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> \
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-11"></a>            <span class="s2">"blog: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-12"></a>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-13"></a>    <span class="n">newid</span> <span class="o">=</span> <span class="mi">0</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-14"></a>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-15"></a>    <span class="nd">@classmethod</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-16"></a>    <span class="k">def</span> <span class="nf">getnewid</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-17"></a>        <span class="n">cls</span><span class="o">.</span><span class="n">newid</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">newid</span> <span class="o">+</span> <span class="mi">1</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-18"></a>        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">newid</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-19"></a>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-20"></a>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-21"></a><span class="n">stu1</span> <span class="o">=</span> <span class="n">Stu</span><span class="p">()</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-22"></a><span class="k">print</span><span class="p">(</span><span class="n">stu1</span><span class="p">)</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-23"></a><span class="k">print</span><span class="p">(</span><span class="s2">"*"</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-24"></a><span class="n">stu2</span> <span class="o">=</span> <span class="n">Stu</span><span class="p">()</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-25"></a><span class="k">print</span><span class="p">(</span><span class="n">stu2</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_f9b32a64db0f4a6c8450e139812980bd-1"> 1</a>
+<a href="#rest_code_f9b32a64db0f4a6c8450e139812980bd-2"> 2</a>
+<a href="#rest_code_f9b32a64db0f4a6c8450e139812980bd-3"> 3</a>
+<a href="#rest_code_f9b32a64db0f4a6c8450e139812980bd-4"> 4</a>
+<a href="#rest_code_f9b32a64db0f4a6c8450e139812980bd-5"> 5</a>
+<a href="#rest_code_f9b32a64db0f4a6c8450e139812980bd-6"> 6</a>
+<a href="#rest_code_f9b32a64db0f4a6c8450e139812980bd-7"> 7</a>
+<a href="#rest_code_f9b32a64db0f4a6c8450e139812980bd-8"> 8</a>
+<a href="#rest_code_f9b32a64db0f4a6c8450e139812980bd-9"> 9</a>
+<a href="#rest_code_f9b32a64db0f4a6c8450e139812980bd-10">10</a>
+<a href="#rest_code_f9b32a64db0f4a6c8450e139812980bd-11">11</a>
+<a href="#rest_code_f9b32a64db0f4a6c8450e139812980bd-12">12</a>
+<a href="#rest_code_f9b32a64db0f4a6c8450e139812980bd-13">13</a>
+<a href="#rest_code_f9b32a64db0f4a6c8450e139812980bd-14">14</a>
+<a href="#rest_code_f9b32a64db0f4a6c8450e139812980bd-15">15</a>
+<a href="#rest_code_f9b32a64db0f4a6c8450e139812980bd-16">16</a>
+<a href="#rest_code_f9b32a64db0f4a6c8450e139812980bd-17">17</a>
+<a href="#rest_code_f9b32a64db0f4a6c8450e139812980bd-18">18</a>
+<a href="#rest_code_f9b32a64db0f4a6c8450e139812980bd-19">19</a>
+<a href="#rest_code_f9b32a64db0f4a6c8450e139812980bd-20">20</a>
+<a href="#rest_code_f9b32a64db0f4a6c8450e139812980bd-21">21</a>
+<a href="#rest_code_f9b32a64db0f4a6c8450e139812980bd-22">22</a>
+<a href="#rest_code_f9b32a64db0f4a6c8450e139812980bd-23">23</a>
+<a href="#rest_code_f9b32a64db0f4a6c8450e139812980bd-24">24</a>
+<a href="#rest_code_f9b32a64db0f4a6c8450e139812980bd-25">25</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-1"></a><span class="k">class</span> <span class="nc">Stu</span><span class="p">:</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-2"></a>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-3"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getnewid</span><span class="p">()</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">"写程序的龙龙"</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s2">"https://codinglonglong.github.io"</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-7"></a>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-8"></a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-9"></a>        <span class="k">return</span> <span class="s2">"id: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">newid</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> \
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-10"></a>            <span class="s2">"name: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> \
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-11"></a>            <span class="s2">"blog: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-12"></a>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-13"></a>    <span class="n">newid</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-14"></a>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-15"></a>    <span class="nd">@classmethod</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-16"></a>    <span class="k">def</span> <span class="nf">getnewid</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-17"></a>        <span class="bp">cls</span><span class="o">.</span><span class="n">newid</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">newid</span> <span class="o">+</span> <span class="mi">1</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-18"></a>        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">newid</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-19"></a>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-20"></a>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-21"></a><span class="n">stu1</span> <span class="o">=</span> <span class="n">Stu</span><span class="p">()</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-22"></a><span class="k">print</span><span class="p">(</span><span class="n">stu1</span><span class="p">)</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-23"></a><span class="k">print</span><span class="p">(</span><span class="s2">"*"</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-24"></a><span class="n">stu2</span> <span class="o">=</span> <span class="n">Stu</span><span class="p">()</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-25"></a><span class="k">print</span><span class="p">(</span><span class="n">stu2</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 <p>运行程序，得到如下结果：</p>

@@ -128,12 +128,12 @@ Python版本
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Python和Java有趣的语法对比（2）——实例化是否调用基类的构造函数</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     龙龙
             </span></p>
             <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2017-07-27T21:10:49+08:00" itemprop="datePublished" title="2017-07-27 21:10">2017-07-27 21:10</time></a></p>
             
-        <p class="sourceline"><a href="index.rst" id="sourcelink">Source</a></p>
+        <p class="sourceline"><a href="index.rst" class="sourcelink">Source</a></p>
 
         </div>
         
@@ -143,44 +143,44 @@ Python版本
 <p>Python和Java在子类实例化上也有区别，看下面这个例子：</p>
 <p><strong>Python版本</strong></p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_8fc437a5986a4047978b8ab68b4624fb-1"> 1</a>
-<a href="#rest_code_8fc437a5986a4047978b8ab68b4624fb-2"> 2</a>
-<a href="#rest_code_8fc437a5986a4047978b8ab68b4624fb-3"> 3</a>
-<a href="#rest_code_8fc437a5986a4047978b8ab68b4624fb-4"> 4</a>
-<a href="#rest_code_8fc437a5986a4047978b8ab68b4624fb-5"> 5</a>
-<a href="#rest_code_8fc437a5986a4047978b8ab68b4624fb-6"> 6</a>
-<a href="#rest_code_8fc437a5986a4047978b8ab68b4624fb-7"> 7</a>
-<a href="#rest_code_8fc437a5986a4047978b8ab68b4624fb-8"> 8</a>
-<a href="#rest_code_8fc437a5986a4047978b8ab68b4624fb-9"> 9</a>
-<a href="#rest_code_8fc437a5986a4047978b8ab68b4624fb-10">10</a>
-<a href="#rest_code_8fc437a5986a4047978b8ab68b4624fb-11">11</a>
-<a href="#rest_code_8fc437a5986a4047978b8ab68b4624fb-12">12</a>
-<a href="#rest_code_8fc437a5986a4047978b8ab68b4624fb-13">13</a>
-<a href="#rest_code_8fc437a5986a4047978b8ab68b4624fb-14">14</a>
-<a href="#rest_code_8fc437a5986a4047978b8ab68b4624fb-15">15</a>
-<a href="#rest_code_8fc437a5986a4047978b8ab68b4624fb-16">16</a>
-<a href="#rest_code_8fc437a5986a4047978b8ab68b4624fb-17">17</a>
-<a href="#rest_code_8fc437a5986a4047978b8ab68b4624fb-18">18</a>
-<a href="#rest_code_8fc437a5986a4047978b8ab68b4624fb-19">19</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-1"></a><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
-<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-2"></a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-3"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">"A的构造函数"</span><span class="p">)</span>
-<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-4"></a>
-<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-5"></a>    <span class="k">def</span> <span class="nf">sayhello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-6"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">"Hello A"</span><span class="p">)</span>
-<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-7"></a>
-<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-8"></a><span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
-<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-9"></a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-10"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">"B的构造函数"</span><span class="p">)</span>
-<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-11"></a>
-<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-12"></a>    <span class="k">def</span> <span class="nf">sayhello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-13"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">"Hello B"</span><span class="p">)</span>
-<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-14"></a>
-<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-15"></a>
-<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-16"></a><span class="n">b</span> <span class="o">=</span> <span class="n">B</span><span class="p">()</span>
-<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-17"></a><span class="n">b</span><span class="o">.</span><span class="n">sayhello</span><span class="p">()</span>
-<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-18"></a><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
-<a name="rest_code_8fc437a5986a4047978b8ab68b4624fb-19"></a><span class="n">a</span><span class="o">.</span><span class="n">sayhello</span><span class="p">()</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_ac415af057124bd7a810cf135e6fbcf9-1"> 1</a>
+<a href="#rest_code_ac415af057124bd7a810cf135e6fbcf9-2"> 2</a>
+<a href="#rest_code_ac415af057124bd7a810cf135e6fbcf9-3"> 3</a>
+<a href="#rest_code_ac415af057124bd7a810cf135e6fbcf9-4"> 4</a>
+<a href="#rest_code_ac415af057124bd7a810cf135e6fbcf9-5"> 5</a>
+<a href="#rest_code_ac415af057124bd7a810cf135e6fbcf9-6"> 6</a>
+<a href="#rest_code_ac415af057124bd7a810cf135e6fbcf9-7"> 7</a>
+<a href="#rest_code_ac415af057124bd7a810cf135e6fbcf9-8"> 8</a>
+<a href="#rest_code_ac415af057124bd7a810cf135e6fbcf9-9"> 9</a>
+<a href="#rest_code_ac415af057124bd7a810cf135e6fbcf9-10">10</a>
+<a href="#rest_code_ac415af057124bd7a810cf135e6fbcf9-11">11</a>
+<a href="#rest_code_ac415af057124bd7a810cf135e6fbcf9-12">12</a>
+<a href="#rest_code_ac415af057124bd7a810cf135e6fbcf9-13">13</a>
+<a href="#rest_code_ac415af057124bd7a810cf135e6fbcf9-14">14</a>
+<a href="#rest_code_ac415af057124bd7a810cf135e6fbcf9-15">15</a>
+<a href="#rest_code_ac415af057124bd7a810cf135e6fbcf9-16">16</a>
+<a href="#rest_code_ac415af057124bd7a810cf135e6fbcf9-17">17</a>
+<a href="#rest_code_ac415af057124bd7a810cf135e6fbcf9-18">18</a>
+<a href="#rest_code_ac415af057124bd7a810cf135e6fbcf9-19">19</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-1"></a><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-2"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-3"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">"A的构造函数"</span><span class="p">)</span>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-4"></a>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-5"></a>    <span class="k">def</span> <span class="nf">sayhello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-6"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">"Hello A"</span><span class="p">)</span>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-7"></a>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-8"></a><span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-9"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-10"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">"B的构造函数"</span><span class="p">)</span>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-11"></a>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-12"></a>    <span class="k">def</span> <span class="nf">sayhello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-13"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">"Hello B"</span><span class="p">)</span>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-14"></a>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-15"></a>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-16"></a><span class="n">b</span> <span class="o">=</span> <span class="n">B</span><span class="p">()</span>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-17"></a><span class="n">b</span><span class="o">.</span><span class="n">sayhello</span><span class="p">()</span>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-18"></a><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-19"></a><span class="n">a</span><span class="o">.</span><span class="n">sayhello</span><span class="p">()</span>
 </pre></td>
 </tr></table>
 <p>输出:</p>
@@ -193,58 +193,58 @@ Hello A
 </pre>
 <p><strong>Java版本</strong></p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-1"> 1</a>
-<a href="#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-2"> 2</a>
-<a href="#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-3"> 3</a>
-<a href="#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-4"> 4</a>
-<a href="#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-5"> 5</a>
-<a href="#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-6"> 6</a>
-<a href="#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-7"> 7</a>
-<a href="#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-8"> 8</a>
-<a href="#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-9"> 9</a>
-<a href="#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-10">10</a>
-<a href="#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-11">11</a>
-<a href="#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-12">12</a>
-<a href="#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-13">13</a>
-<a href="#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-14">14</a>
-<a href="#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-15">15</a>
-<a href="#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-16">16</a>
-<a href="#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-17">17</a>
-<a href="#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-18">18</a>
-<a href="#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-19">19</a>
-<a href="#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-20">20</a>
-<a href="#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-21">21</a>
-<a href="#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-22">22</a>
-<a href="#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-23">23</a>
-<a href="#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-24">24</a>
-<a href="#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-25">25</a>
-<a href="#rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-26">26</a></pre></div></td>
-<td class="code"><pre class="code java"><a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-1"></a><span class="kd">public</span> <span class="kd">class</span> <span class="nc">T1</span><span class="o">{</span>
-<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-2"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
-<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-3"></a>        <span class="n">B</span> <span class="n">b</span> <span class="o">=</span>  <span class="k">new</span> <span class="n">B</span><span class="o">();</span>
-<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-4"></a>        <span class="n">b</span><span class="o">.</span><span class="na">sayhello</span><span class="o">();</span>
-<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-5"></a>        <span class="n">A</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">A</span><span class="o">();</span>
-<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-6"></a>        <span class="n">a</span><span class="o">.</span><span class="na">sayhello</span><span class="o">();</span>
-<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-7"></a>    <span class="o">}</span>
-<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-8"></a><span class="o">}</span>
-<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-9"></a>
-<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-10"></a><span class="kd">class</span> <span class="nc">A</span><span class="o">{</span>
-<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-11"></a>    <span class="n">A</span><span class="o">(){</span>
-<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-12"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"A的构造函数"</span><span class="o">);</span>
-<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-13"></a>    <span class="o">}</span>
-<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-14"></a>    <span class="kt">void</span> <span class="nf">sayhello</span><span class="o">(){</span>
-<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-15"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello A"</span><span class="o">);</span>
-<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-16"></a>    <span class="o">}</span>
-<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-17"></a><span class="o">}</span>
-<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-18"></a>
-<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-19"></a><span class="kd">class</span> <span class="nc">B</span> <span class="kd">extends</span> <span class="n">A</span><span class="o">{</span>
-<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-20"></a>    <span class="n">B</span><span class="o">(){</span>
-<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-21"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"B的构造函数"</span><span class="o">);</span>
-<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-22"></a>    <span class="o">}</span>
-<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-23"></a>    <span class="kt">void</span> <span class="nf">sayhello</span><span class="o">(){</span>
-<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-24"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello B"</span><span class="o">);</span>
-<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-25"></a>    <span class="o">}</span>
-<a name="rest_code_bf24bd9c1c3a4975aa94b57f5bb77276-26"></a><span class="o">}</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-1"> 1</a>
+<a href="#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-2"> 2</a>
+<a href="#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-3"> 3</a>
+<a href="#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-4"> 4</a>
+<a href="#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-5"> 5</a>
+<a href="#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-6"> 6</a>
+<a href="#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-7"> 7</a>
+<a href="#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-8"> 8</a>
+<a href="#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-9"> 9</a>
+<a href="#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-10">10</a>
+<a href="#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-11">11</a>
+<a href="#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-12">12</a>
+<a href="#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-13">13</a>
+<a href="#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-14">14</a>
+<a href="#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-15">15</a>
+<a href="#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-16">16</a>
+<a href="#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-17">17</a>
+<a href="#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-18">18</a>
+<a href="#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-19">19</a>
+<a href="#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-20">20</a>
+<a href="#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-21">21</a>
+<a href="#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-22">22</a>
+<a href="#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-23">23</a>
+<a href="#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-24">24</a>
+<a href="#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-25">25</a>
+<a href="#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-26">26</a></pre></div></td>
+<td class="code"><pre class="code java"><a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-1"></a><span class="kd">public</span> <span class="kd">class</span> <span class="nc">T1</span><span class="o">{</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-2"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-3"></a>        <span class="n">B</span> <span class="n">b</span> <span class="o">=</span>  <span class="k">new</span> <span class="n">B</span><span class="o">();</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-4"></a>        <span class="n">b</span><span class="o">.</span><span class="na">sayhello</span><span class="o">();</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-5"></a>        <span class="n">A</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">A</span><span class="o">();</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-6"></a>        <span class="n">a</span><span class="o">.</span><span class="na">sayhello</span><span class="o">();</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-7"></a>    <span class="o">}</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-8"></a><span class="o">}</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-9"></a>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-10"></a><span class="kd">class</span> <span class="nc">A</span><span class="o">{</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-11"></a>    <span class="n">A</span><span class="o">(){</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-12"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"A的构造函数"</span><span class="o">);</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-13"></a>    <span class="o">}</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-14"></a>    <span class="kt">void</span> <span class="nf">sayhello</span><span class="o">(){</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-15"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello A"</span><span class="o">);</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-16"></a>    <span class="o">}</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-17"></a><span class="o">}</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-18"></a>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-19"></a><span class="kd">class</span> <span class="nc">B</span> <span class="kd">extends</span> <span class="n">A</span><span class="o">{</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-20"></a>    <span class="n">B</span><span class="o">(){</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-21"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"B的构造函数"</span><span class="o">);</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-22"></a>    <span class="o">}</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-23"></a>    <span class="kt">void</span> <span class="nf">sayhello</span><span class="o">(){</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-24"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello B"</span><span class="o">);</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-25"></a>    <span class="o">}</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-26"></a><span class="o">}</span>
 </pre></td>
 </tr></table>
 <p>输出:</p>

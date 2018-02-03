@@ -140,12 +140,12 @@ body{
 <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Python命令行解析模块optparse</a></h1>
 
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                     龙龙
             </span></p>
             <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2015-09-08T11:08:18+08:00" itemprop="datePublished" title="2015-09-08 11:08">2015-09-08 11:08</time></a></p>
             
-        <p class="sourceline"><a href="index.rst" id="sourcelink">Source</a></p>
+        <p class="sourceline"><a href="index.rst" class="sourcelink">Source</a></p>
 
         </div>
         
@@ -155,80 +155,80 @@ body{
 <p>本文学习命令行参数解析的模块optparse。这个模块在Python2.7之后已经不鼓励使用，并由argparse所替代。</p>
 <p>我们稍微改了一点Dpark中的源码如下opttest.py：</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-1"> 1</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-2"> 2</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-3"> 3</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-4"> 4</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-5"> 5</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-6"> 6</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-7"> 7</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-8"> 8</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-9"> 9</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-10">10</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-11">11</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-12">12</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-13">13</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-14">14</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-15">15</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-16">16</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-17">17</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-18">18</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-19">19</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-20">20</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-21">21</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-22">22</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-23">23</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-24">24</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-25">25</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-26">26</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-27">27</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-28">28</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-29">29</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-30">30</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-31">31</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-32">32</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-33">33</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-34">34</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-35">35</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-36">36</a>
-<a href="#rest_code_a23c30eac9054aa7a1eec87a74eadfde-37">37</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-1"></a><span class="kn">import</span> <span class="nn">optparse</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-2"></a>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-3"></a><span class="n">parser</span> <span class="o">=</span> <span class="n">optparse</span><span class="o">.</span><span class="n">OptionParser</span><span class="p">(</span><span class="n">usage</span><span class="o">=</span><span class="s2">"Usage: %prog [options] [args]"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-4"></a><span class="c1"># 禁用散置参数，参数解析到第一个非选项参数为止，之后的就不再作为选项解析</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-5"></a><span class="n">parser</span><span class="o">.</span><span class="n">disable_interspersed_args</span><span class="p">()</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-6"></a><span class="c1"># 选项组</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-7"></a><span class="n">group</span> <span class="o">=</span> <span class="n">optparse</span><span class="o">.</span><span class="n">OptionGroup</span><span class="p">(</span><span class="n">parser</span><span class="p">,</span> <span class="s2">"Dpark Options"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-8"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-m"</span><span class="p">,</span> <span class="s2">"--master"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"string"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">"local"</span><span class="p">,</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-9"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"master of Mesos: local, process, "</span> <span class="o">+</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-10"></a>                 <span class="s2">"host[:port], or mesos: //"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-11"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-p"</span><span class="p">,</span> <span class="s2">"--parallel"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"int"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-12"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"number of processes"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-13"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-c"</span><span class="p">,</span> <span class="s2">"--cpus"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"float"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-14"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"cpus used per task"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-15"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-M"</span><span class="p">,</span> <span class="s2">"--mem"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"float"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">1000.0</span><span class="p">,</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-16"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"memory used per task"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-17"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-g"</span><span class="p">,</span> <span class="s2">"--group"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"string"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-18"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"which group of machines"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-19"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--err"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"float"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-20"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"acceptable ignored error record ratio (0.01%)"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-21"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--snapshot_dir"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"string"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-22"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"shared dir to keep snapshot of RDDs"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-23"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--conf"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"string"</span><span class="p">,</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-24"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"path for configuration file"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-25"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--self"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">"store_true"</span><span class="p">,</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-26"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"user self as exectuor"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-27"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--profile"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">"store_true"</span><span class="p">,</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-28"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"do profiling"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-29"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--keep-order"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">"store_true"</span><span class="p">,</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-30"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"deprecated, always keep order"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-31"></a><span class="n">parser</span><span class="o">.</span><span class="n">add_option_group</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-32"></a><span class="c1"># 独立选项</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-33"></a><span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-q"</span><span class="p">,</span> <span class="s2">"--quiet"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">"store_true"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-34"></a><span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-v"</span><span class="p">,</span> <span class="s2">"--verbose"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">"store_true"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-35"></a><span class="c1"># 读取参数</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-36"></a><span class="n">options</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-37"></a><span class="k">print</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_780d77176d584f64a37f63188b6478ef-1"> 1</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-2"> 2</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-3"> 3</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-4"> 4</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-5"> 5</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-6"> 6</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-7"> 7</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-8"> 8</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-9"> 9</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-10">10</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-11">11</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-12">12</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-13">13</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-14">14</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-15">15</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-16">16</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-17">17</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-18">18</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-19">19</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-20">20</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-21">21</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-22">22</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-23">23</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-24">24</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-25">25</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-26">26</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-27">27</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-28">28</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-29">29</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-30">30</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-31">31</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-32">32</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-33">33</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-34">34</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-35">35</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-36">36</a>
+<a href="#rest_code_780d77176d584f64a37f63188b6478ef-37">37</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_780d77176d584f64a37f63188b6478ef-1"></a><span class="kn">import</span> <span class="nn">optparse</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-2"></a>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-3"></a><span class="n">parser</span> <span class="o">=</span> <span class="n">optparse</span><span class="o">.</span><span class="n">OptionParser</span><span class="p">(</span><span class="n">usage</span><span class="o">=</span><span class="s2">"Usage: %prog [options] [args]"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-4"></a><span class="c1"># 禁用散置参数，参数解析到第一个非选项参数为止，之后的就不再作为选项解析</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-5"></a><span class="n">parser</span><span class="o">.</span><span class="n">disable_interspersed_args</span><span class="p">()</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-6"></a><span class="c1"># 选项组</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-7"></a><span class="n">group</span> <span class="o">=</span> <span class="n">optparse</span><span class="o">.</span><span class="n">OptionGroup</span><span class="p">(</span><span class="n">parser</span><span class="p">,</span> <span class="s2">"Dpark Options"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-8"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-m"</span><span class="p">,</span> <span class="s2">"--master"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"string"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">"local"</span><span class="p">,</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-9"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"master of Mesos: local, process, "</span> <span class="o">+</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-10"></a>                 <span class="s2">"host[:port], or mesos: //"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-11"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-p"</span><span class="p">,</span> <span class="s2">"--parallel"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"int"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-12"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"number of processes"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-13"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-c"</span><span class="p">,</span> <span class="s2">"--cpus"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"float"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-14"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"cpus used per task"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-15"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-M"</span><span class="p">,</span> <span class="s2">"--mem"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"float"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">1000.0</span><span class="p">,</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-16"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"memory used per task"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-17"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-g"</span><span class="p">,</span> <span class="s2">"--group"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"string"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-18"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"which group of machines"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-19"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--err"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"float"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-20"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"acceptable ignored error record ratio (0.01%)"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-21"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--snapshot_dir"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"string"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-22"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"shared dir to keep snapshot of RDDs"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-23"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--conf"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"string"</span><span class="p">,</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-24"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"path for configuration file"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-25"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--self"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">"store_true"</span><span class="p">,</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-26"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"user self as exectuor"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-27"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--profile"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">"store_true"</span><span class="p">,</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-28"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"do profiling"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-29"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--keep-order"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">"store_true"</span><span class="p">,</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-30"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"deprecated, always keep order"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-31"></a><span class="n">parser</span><span class="o">.</span><span class="n">add_option_group</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-32"></a><span class="c1"># 独立选项</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-33"></a><span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-q"</span><span class="p">,</span> <span class="s2">"--quiet"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">"store_true"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-34"></a><span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-v"</span><span class="p">,</span> <span class="s2">"--verbose"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">"store_true"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-35"></a><span class="c1"># 读取参数</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-36"></a><span class="n">options</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-37"></a><span class="k">print</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 <p>我们执行代码:</p>

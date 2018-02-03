@@ -1,26 +1,26 @@
 <p>本文学习如何通过配置文件动态修改全局变量。</p>
 <p>看代码main.py：</p>
-<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_3fac9681ea7848f6bcaa61593dd7be6f-1">1</a>
-<a href="#rest_code_3fac9681ea7848f6bcaa61593dd7be6f-2">2</a>
-<a href="#rest_code_3fac9681ea7848f6bcaa61593dd7be6f-3">3</a>
-<a href="#rest_code_3fac9681ea7848f6bcaa61593dd7be6f-4">4</a>
-<a href="#rest_code_3fac9681ea7848f6bcaa61593dd7be6f-5">5</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_3fac9681ea7848f6bcaa61593dd7be6f-1"></a><span class="kn">import</span> <span class="nn">conf</span>
-<a name="rest_code_3fac9681ea7848f6bcaa61593dd7be6f-2"></a><span class="k">print</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">defaultpath</span><span class="p">)</span>
-<a name="rest_code_3fac9681ea7848f6bcaa61593dd7be6f-3"></a><span class="n">conf</span><span class="o">.</span><span class="n">load_conf</span><span class="p">()</span>
-<a name="rest_code_3fac9681ea7848f6bcaa61593dd7be6f-4"></a><span class="k">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
-<a name="rest_code_3fac9681ea7848f6bcaa61593dd7be6f-5"></a><span class="k">print</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">defaultpath</span><span class="p">)</span>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_d93d5a584c494176bcd7807d3e740174-1">1</a>
+<a href="#rest_code_d93d5a584c494176bcd7807d3e740174-2">2</a>
+<a href="#rest_code_d93d5a584c494176bcd7807d3e740174-3">3</a>
+<a href="#rest_code_d93d5a584c494176bcd7807d3e740174-4">4</a>
+<a href="#rest_code_d93d5a584c494176bcd7807d3e740174-5">5</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_d93d5a584c494176bcd7807d3e740174-1"></a><span class="kn">import</span> <span class="nn">conf</span>
+<a name="rest_code_d93d5a584c494176bcd7807d3e740174-2"></a><span class="k">print</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">defaultpath</span><span class="p">)</span>
+<a name="rest_code_d93d5a584c494176bcd7807d3e740174-3"></a><span class="n">conf</span><span class="o">.</span><span class="n">load_conf</span><span class="p">()</span>
+<a name="rest_code_d93d5a584c494176bcd7807d3e740174-4"></a><span class="k">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+<a name="rest_code_d93d5a584c494176bcd7807d3e740174-5"></a><span class="k">print</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">defaultpath</span><span class="p">)</span>
 </pre></td></tr></table><p>和代码conf.py：</p>
-<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_0a70506665d445ac8958e0aa3ae3c751-1">1</a>
-<a href="#rest_code_0a70506665d445ac8958e0aa3ae3c751-2">2</a>
-<a href="#rest_code_0a70506665d445ac8958e0aa3ae3c751-3">3</a>
-<a href="#rest_code_0a70506665d445ac8958e0aa3ae3c751-4">4</a>
-<a href="#rest_code_0a70506665d445ac8958e0aa3ae3c751-5">5</a>
-<a href="#rest_code_0a70506665d445ac8958e0aa3ae3c751-6">6</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_0a70506665d445ac8958e0aa3ae3c751-1"></a><span class="n">defaultpath</span> <span class="o">=</span> <span class="s2">&quot;/home/long/&quot;</span>
-<a name="rest_code_0a70506665d445ac8958e0aa3ae3c751-2"></a>
-<a name="rest_code_0a70506665d445ac8958e0aa3ae3c751-3"></a>
-<a name="rest_code_0a70506665d445ac8958e0aa3ae3c751-4"></a><span class="k">def</span> <span class="nf">load_conf</span><span class="p">():</span>
-<a name="rest_code_0a70506665d445ac8958e0aa3ae3c751-5"></a>    <span class="n">data</span> <span class="o">=</span> <span class="s2">&quot;defaultpath = &#39;/home/long/test&#39;&quot;</span>
-<a name="rest_code_0a70506665d445ac8958e0aa3ae3c751-6"></a>    <span class="k">exec</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">(),</span> <span class="nb">globals</span><span class="p">()</span>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_e18edf28c93a4c0dae0b38a76b4ae9a8-1">1</a>
+<a href="#rest_code_e18edf28c93a4c0dae0b38a76b4ae9a8-2">2</a>
+<a href="#rest_code_e18edf28c93a4c0dae0b38a76b4ae9a8-3">3</a>
+<a href="#rest_code_e18edf28c93a4c0dae0b38a76b4ae9a8-4">4</a>
+<a href="#rest_code_e18edf28c93a4c0dae0b38a76b4ae9a8-5">5</a>
+<a href="#rest_code_e18edf28c93a4c0dae0b38a76b4ae9a8-6">6</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_e18edf28c93a4c0dae0b38a76b4ae9a8-1"></a><span class="n">defaultpath</span> <span class="o">=</span> <span class="s2">&quot;/home/long/&quot;</span>
+<a name="rest_code_e18edf28c93a4c0dae0b38a76b4ae9a8-2"></a>
+<a name="rest_code_e18edf28c93a4c0dae0b38a76b4ae9a8-3"></a>
+<a name="rest_code_e18edf28c93a4c0dae0b38a76b4ae9a8-4"></a><span class="k">def</span> <span class="nf">load_conf</span><span class="p">():</span>
+<a name="rest_code_e18edf28c93a4c0dae0b38a76b4ae9a8-5"></a>    <span class="n">data</span> <span class="o">=</span> <span class="s2">&quot;defaultpath = &#39;/home/long/test&#39;&quot;</span>
+<a name="rest_code_e18edf28c93a4c0dae0b38a76b4ae9a8-6"></a>    <span class="k">exec</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">(),</span> <span class="nb">globals</span><span class="p">()</span>
 </pre></td></tr></table><p>运行结果：</p>
 <pre class="literal-block">
 &gt;&gt; long&#64;happytime:~/exectest$ python main.py

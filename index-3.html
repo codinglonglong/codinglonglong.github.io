@@ -88,10 +88,13 @@ body{
             
 
     
+
+
+    
 <div class="postindex">
     <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/" class="u-url">Python通过配置文件动态修改全局变量</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 龙龙
             </span></p>
             <p class="dateline"><a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/" rel="bookmark"><time class="published dt-published" datetime="2015-09-09T10:06:20+08:00" title="2015-09-09 10:06">2015-09-09 10:06</time></a></p>
@@ -101,32 +104,32 @@ body{
 <p>本文学习如何通过配置文件动态修改全局变量。</p>
 <p>看代码main.py：</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_3fac9681ea7848f6bcaa61593dd7be6f-1">1</a>
-<a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_3fac9681ea7848f6bcaa61593dd7be6f-2">2</a>
-<a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_3fac9681ea7848f6bcaa61593dd7be6f-3">3</a>
-<a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_3fac9681ea7848f6bcaa61593dd7be6f-4">4</a>
-<a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_3fac9681ea7848f6bcaa61593dd7be6f-5">5</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_3fac9681ea7848f6bcaa61593dd7be6f-1"></a><span class="kn">import</span> <span class="nn">conf</span>
-<a name="rest_code_3fac9681ea7848f6bcaa61593dd7be6f-2"></a><span class="k">print</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">defaultpath</span><span class="p">)</span>
-<a name="rest_code_3fac9681ea7848f6bcaa61593dd7be6f-3"></a><span class="n">conf</span><span class="o">.</span><span class="n">load_conf</span><span class="p">()</span>
-<a name="rest_code_3fac9681ea7848f6bcaa61593dd7be6f-4"></a><span class="k">print</span><span class="p">(</span><span class="s2">"*"</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
-<a name="rest_code_3fac9681ea7848f6bcaa61593dd7be6f-5"></a><span class="k">print</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">defaultpath</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_d93d5a584c494176bcd7807d3e740174-1">1</a>
+<a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_d93d5a584c494176bcd7807d3e740174-2">2</a>
+<a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_d93d5a584c494176bcd7807d3e740174-3">3</a>
+<a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_d93d5a584c494176bcd7807d3e740174-4">4</a>
+<a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_d93d5a584c494176bcd7807d3e740174-5">5</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_d93d5a584c494176bcd7807d3e740174-1"></a><span class="kn">import</span> <span class="nn">conf</span>
+<a name="rest_code_d93d5a584c494176bcd7807d3e740174-2"></a><span class="k">print</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">defaultpath</span><span class="p">)</span>
+<a name="rest_code_d93d5a584c494176bcd7807d3e740174-3"></a><span class="n">conf</span><span class="o">.</span><span class="n">load_conf</span><span class="p">()</span>
+<a name="rest_code_d93d5a584c494176bcd7807d3e740174-4"></a><span class="k">print</span><span class="p">(</span><span class="s2">"*"</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+<a name="rest_code_d93d5a584c494176bcd7807d3e740174-5"></a><span class="k">print</span><span class="p">(</span><span class="n">conf</span><span class="o">.</span><span class="n">defaultpath</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 <p>和代码conf.py：</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_0a70506665d445ac8958e0aa3ae3c751-1">1</a>
-<a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_0a70506665d445ac8958e0aa3ae3c751-2">2</a>
-<a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_0a70506665d445ac8958e0aa3ae3c751-3">3</a>
-<a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_0a70506665d445ac8958e0aa3ae3c751-4">4</a>
-<a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_0a70506665d445ac8958e0aa3ae3c751-5">5</a>
-<a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_0a70506665d445ac8958e0aa3ae3c751-6">6</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_0a70506665d445ac8958e0aa3ae3c751-1"></a><span class="n">defaultpath</span> <span class="o">=</span> <span class="s2">"/home/long/"</span>
-<a name="rest_code_0a70506665d445ac8958e0aa3ae3c751-2"></a>
-<a name="rest_code_0a70506665d445ac8958e0aa3ae3c751-3"></a>
-<a name="rest_code_0a70506665d445ac8958e0aa3ae3c751-4"></a><span class="k">def</span> <span class="nf">load_conf</span><span class="p">():</span>
-<a name="rest_code_0a70506665d445ac8958e0aa3ae3c751-5"></a>    <span class="n">data</span> <span class="o">=</span> <span class="s2">"defaultpath = '/home/long/test'"</span>
-<a name="rest_code_0a70506665d445ac8958e0aa3ae3c751-6"></a>    <span class="k">exec</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">(),</span> <span class="nb">globals</span><span class="p">()</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_e18edf28c93a4c0dae0b38a76b4ae9a8-1">1</a>
+<a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_e18edf28c93a4c0dae0b38a76b4ae9a8-2">2</a>
+<a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_e18edf28c93a4c0dae0b38a76b4ae9a8-3">3</a>
+<a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_e18edf28c93a4c0dae0b38a76b4ae9a8-4">4</a>
+<a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_e18edf28c93a4c0dae0b38a76b4ae9a8-5">5</a>
+<a href="posts/pythontong-guo-pei-zhi-wen-jian-dong-tai-xiu-gai-quan-ju-bian-liang/#rest_code_e18edf28c93a4c0dae0b38a76b4ae9a8-6">6</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_e18edf28c93a4c0dae0b38a76b4ae9a8-1"></a><span class="n">defaultpath</span> <span class="o">=</span> <span class="s2">"/home/long/"</span>
+<a name="rest_code_e18edf28c93a4c0dae0b38a76b4ae9a8-2"></a>
+<a name="rest_code_e18edf28c93a4c0dae0b38a76b4ae9a8-3"></a>
+<a name="rest_code_e18edf28c93a4c0dae0b38a76b4ae9a8-4"></a><span class="k">def</span> <span class="nf">load_conf</span><span class="p">():</span>
+<a name="rest_code_e18edf28c93a4c0dae0b38a76b4ae9a8-5"></a>    <span class="n">data</span> <span class="o">=</span> <span class="s2">"defaultpath = '/home/long/test'"</span>
+<a name="rest_code_e18edf28c93a4c0dae0b38a76b4ae9a8-6"></a>    <span class="k">exec</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">(),</span> <span class="nb">globals</span><span class="p">()</span>
 </pre></td>
 </tr></table>
 <p>运行结果：</p>
@@ -141,7 +144,7 @@ body{
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/" class="u-url">Python命令行解析模块optparse</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 龙龙
             </span></p>
             <p class="dateline"><a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/" rel="bookmark"><time class="published dt-published" datetime="2015-09-08T11:08:18+08:00" title="2015-09-08 11:08">2015-09-08 11:08</time></a></p>
@@ -151,80 +154,80 @@ body{
 <p>本文学习命令行参数解析的模块optparse。这个模块在Python2.7之后已经不鼓励使用，并由argparse所替代。</p>
 <p>我们稍微改了一点Dpark中的源码如下opttest.py：</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-1"> 1</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-2"> 2</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-3"> 3</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-4"> 4</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-5"> 5</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-6"> 6</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-7"> 7</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-8"> 8</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-9"> 9</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-10">10</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-11">11</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-12">12</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-13">13</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-14">14</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-15">15</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-16">16</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-17">17</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-18">18</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-19">19</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-20">20</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-21">21</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-22">22</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-23">23</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-24">24</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-25">25</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-26">26</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-27">27</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-28">28</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-29">29</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-30">30</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-31">31</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-32">32</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-33">33</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-34">34</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-35">35</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-36">36</a>
-<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_a23c30eac9054aa7a1eec87a74eadfde-37">37</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-1"></a><span class="kn">import</span> <span class="nn">optparse</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-2"></a>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-3"></a><span class="n">parser</span> <span class="o">=</span> <span class="n">optparse</span><span class="o">.</span><span class="n">OptionParser</span><span class="p">(</span><span class="n">usage</span><span class="o">=</span><span class="s2">"Usage: %prog [options] [args]"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-4"></a><span class="c1"># 禁用散置参数，参数解析到第一个非选项参数为止，之后的就不再作为选项解析</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-5"></a><span class="n">parser</span><span class="o">.</span><span class="n">disable_interspersed_args</span><span class="p">()</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-6"></a><span class="c1"># 选项组</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-7"></a><span class="n">group</span> <span class="o">=</span> <span class="n">optparse</span><span class="o">.</span><span class="n">OptionGroup</span><span class="p">(</span><span class="n">parser</span><span class="p">,</span> <span class="s2">"Dpark Options"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-8"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-m"</span><span class="p">,</span> <span class="s2">"--master"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"string"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">"local"</span><span class="p">,</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-9"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"master of Mesos: local, process, "</span> <span class="o">+</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-10"></a>                 <span class="s2">"host[:port], or mesos: //"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-11"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-p"</span><span class="p">,</span> <span class="s2">"--parallel"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"int"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-12"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"number of processes"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-13"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-c"</span><span class="p">,</span> <span class="s2">"--cpus"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"float"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-14"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"cpus used per task"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-15"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-M"</span><span class="p">,</span> <span class="s2">"--mem"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"float"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">1000.0</span><span class="p">,</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-16"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"memory used per task"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-17"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-g"</span><span class="p">,</span> <span class="s2">"--group"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"string"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-18"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"which group of machines"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-19"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--err"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"float"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-20"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"acceptable ignored error record ratio (0.01%)"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-21"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--snapshot_dir"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"string"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-22"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"shared dir to keep snapshot of RDDs"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-23"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--conf"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"string"</span><span class="p">,</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-24"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"path for configuration file"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-25"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--self"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">"store_true"</span><span class="p">,</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-26"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"user self as exectuor"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-27"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--profile"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">"store_true"</span><span class="p">,</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-28"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"do profiling"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-29"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--keep-order"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">"store_true"</span><span class="p">,</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-30"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"deprecated, always keep order"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-31"></a><span class="n">parser</span><span class="o">.</span><span class="n">add_option_group</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-32"></a><span class="c1"># 独立选项</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-33"></a><span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-q"</span><span class="p">,</span> <span class="s2">"--quiet"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">"store_true"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-34"></a><span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-v"</span><span class="p">,</span> <span class="s2">"--verbose"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">"store_true"</span><span class="p">)</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-35"></a><span class="c1"># 读取参数</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-36"></a><span class="n">options</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
-<a name="rest_code_a23c30eac9054aa7a1eec87a74eadfde-37"></a><span class="k">print</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-1"> 1</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-2"> 2</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-3"> 3</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-4"> 4</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-5"> 5</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-6"> 6</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-7"> 7</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-8"> 8</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-9"> 9</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-10">10</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-11">11</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-12">12</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-13">13</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-14">14</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-15">15</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-16">16</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-17">17</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-18">18</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-19">19</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-20">20</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-21">21</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-22">22</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-23">23</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-24">24</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-25">25</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-26">26</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-27">27</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-28">28</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-29">29</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-30">30</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-31">31</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-32">32</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-33">33</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-34">34</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-35">35</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-36">36</a>
+<a href="posts/pythonming-ling-xing-jie-xi-mo-kuai-optparse/#rest_code_780d77176d584f64a37f63188b6478ef-37">37</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_780d77176d584f64a37f63188b6478ef-1"></a><span class="kn">import</span> <span class="nn">optparse</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-2"></a>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-3"></a><span class="n">parser</span> <span class="o">=</span> <span class="n">optparse</span><span class="o">.</span><span class="n">OptionParser</span><span class="p">(</span><span class="n">usage</span><span class="o">=</span><span class="s2">"Usage: %prog [options] [args]"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-4"></a><span class="c1"># 禁用散置参数，参数解析到第一个非选项参数为止，之后的就不再作为选项解析</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-5"></a><span class="n">parser</span><span class="o">.</span><span class="n">disable_interspersed_args</span><span class="p">()</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-6"></a><span class="c1"># 选项组</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-7"></a><span class="n">group</span> <span class="o">=</span> <span class="n">optparse</span><span class="o">.</span><span class="n">OptionGroup</span><span class="p">(</span><span class="n">parser</span><span class="p">,</span> <span class="s2">"Dpark Options"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-8"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-m"</span><span class="p">,</span> <span class="s2">"--master"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"string"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">"local"</span><span class="p">,</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-9"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"master of Mesos: local, process, "</span> <span class="o">+</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-10"></a>                 <span class="s2">"host[:port], or mesos: //"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-11"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-p"</span><span class="p">,</span> <span class="s2">"--parallel"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"int"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-12"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"number of processes"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-13"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-c"</span><span class="p">,</span> <span class="s2">"--cpus"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"float"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-14"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"cpus used per task"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-15"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-M"</span><span class="p">,</span> <span class="s2">"--mem"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"float"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">1000.0</span><span class="p">,</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-16"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"memory used per task"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-17"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-g"</span><span class="p">,</span> <span class="s2">"--group"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"string"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-18"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"which group of machines"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-19"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--err"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"float"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-20"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"acceptable ignored error record ratio (0.01%)"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-21"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--snapshot_dir"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"string"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s2">""</span><span class="p">,</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-22"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"shared dir to keep snapshot of RDDs"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-23"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--conf"</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">"string"</span><span class="p">,</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-24"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"path for configuration file"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-25"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--self"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">"store_true"</span><span class="p">,</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-26"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"user self as exectuor"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-27"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--profile"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">"store_true"</span><span class="p">,</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-28"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"do profiling"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-29"></a><span class="n">group</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"--keep-order"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">"store_true"</span><span class="p">,</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-30"></a>                 <span class="n">help</span><span class="o">=</span><span class="s2">"deprecated, always keep order"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-31"></a><span class="n">parser</span><span class="o">.</span><span class="n">add_option_group</span><span class="p">(</span><span class="n">group</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-32"></a><span class="c1"># 独立选项</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-33"></a><span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-q"</span><span class="p">,</span> <span class="s2">"--quiet"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">"store_true"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-34"></a><span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">"-v"</span><span class="p">,</span> <span class="s2">"--verbose"</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">"store_true"</span><span class="p">)</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-35"></a><span class="c1"># 读取参数</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-36"></a><span class="n">options</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+<a name="rest_code_780d77176d584f64a37f63188b6478ef-37"></a><span class="k">print</span><span class="p">(</span><span class="n">options</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 <p>我们执行代码:</p>
@@ -267,7 +270,7 @@ body{
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/" class="u-url">Python构造对象编号自动加一</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 龙龙
             </span></p>
             <p class="dateline"><a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/" rel="bookmark"><time class="published dt-published" datetime="2015-09-08T10:46:21+08:00" title="2015-09-08 10:46">2015-09-08 10:46</time></a></p>
@@ -279,56 +282,56 @@ body{
 <p>我们如何实现每生成一个对象，它的编号就自动加1呢？</p>
 <p>看代码：</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-1"> 1</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-2"> 2</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-3"> 3</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-4"> 4</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-5"> 5</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-6"> 6</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-7"> 7</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-8"> 8</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-9"> 9</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-10">10</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-11">11</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-12">12</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-13">13</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-14">14</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-15">15</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-16">16</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-17">17</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-18">18</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-19">19</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-20">20</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-21">21</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-22">22</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-23">23</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-24">24</a>
-<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_379f8aa9b6434fbb926df1cf91a4d02e-25">25</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-1"></a><span class="k">class</span> <span class="nc">Stu</span><span class="p">:</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-2"></a>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-3"></a>    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getnewid</span><span class="p">()</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">"写程序的龙龙"</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s2">"https://codinglonglong.github.io"</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-7"></a>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-8"></a>    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-9"></a>        <span class="k">return</span> <span class="s2">"id: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">newid</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> \
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-10"></a>            <span class="s2">"name: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> \
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-11"></a>            <span class="s2">"blog: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-12"></a>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-13"></a>    <span class="n">newid</span> <span class="o">=</span> <span class="mi">0</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-14"></a>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-15"></a>    <span class="nd">@classmethod</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-16"></a>    <span class="k">def</span> <span class="nf">getnewid</span><span class="p">(</span><span class="n">cls</span><span class="p">):</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-17"></a>        <span class="n">cls</span><span class="o">.</span><span class="n">newid</span> <span class="o">=</span> <span class="n">cls</span><span class="o">.</span><span class="n">newid</span> <span class="o">+</span> <span class="mi">1</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-18"></a>        <span class="k">return</span> <span class="n">cls</span><span class="o">.</span><span class="n">newid</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-19"></a>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-20"></a>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-21"></a><span class="n">stu1</span> <span class="o">=</span> <span class="n">Stu</span><span class="p">()</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-22"></a><span class="k">print</span><span class="p">(</span><span class="n">stu1</span><span class="p">)</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-23"></a><span class="k">print</span><span class="p">(</span><span class="s2">"*"</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-24"></a><span class="n">stu2</span> <span class="o">=</span> <span class="n">Stu</span><span class="p">()</span>
-<a name="rest_code_379f8aa9b6434fbb926df1cf91a4d02e-25"></a><span class="k">print</span><span class="p">(</span><span class="n">stu2</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_f9b32a64db0f4a6c8450e139812980bd-1"> 1</a>
+<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_f9b32a64db0f4a6c8450e139812980bd-2"> 2</a>
+<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_f9b32a64db0f4a6c8450e139812980bd-3"> 3</a>
+<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_f9b32a64db0f4a6c8450e139812980bd-4"> 4</a>
+<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_f9b32a64db0f4a6c8450e139812980bd-5"> 5</a>
+<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_f9b32a64db0f4a6c8450e139812980bd-6"> 6</a>
+<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_f9b32a64db0f4a6c8450e139812980bd-7"> 7</a>
+<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_f9b32a64db0f4a6c8450e139812980bd-8"> 8</a>
+<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_f9b32a64db0f4a6c8450e139812980bd-9"> 9</a>
+<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_f9b32a64db0f4a6c8450e139812980bd-10">10</a>
+<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_f9b32a64db0f4a6c8450e139812980bd-11">11</a>
+<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_f9b32a64db0f4a6c8450e139812980bd-12">12</a>
+<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_f9b32a64db0f4a6c8450e139812980bd-13">13</a>
+<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_f9b32a64db0f4a6c8450e139812980bd-14">14</a>
+<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_f9b32a64db0f4a6c8450e139812980bd-15">15</a>
+<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_f9b32a64db0f4a6c8450e139812980bd-16">16</a>
+<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_f9b32a64db0f4a6c8450e139812980bd-17">17</a>
+<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_f9b32a64db0f4a6c8450e139812980bd-18">18</a>
+<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_f9b32a64db0f4a6c8450e139812980bd-19">19</a>
+<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_f9b32a64db0f4a6c8450e139812980bd-20">20</a>
+<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_f9b32a64db0f4a6c8450e139812980bd-21">21</a>
+<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_f9b32a64db0f4a6c8450e139812980bd-22">22</a>
+<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_f9b32a64db0f4a6c8450e139812980bd-23">23</a>
+<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_f9b32a64db0f4a6c8450e139812980bd-24">24</a>
+<a href="posts/pythongou-zao-dui-xiang-bian-hao-zi-dong-jia-yi/#rest_code_f9b32a64db0f4a6c8450e139812980bd-25">25</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-1"></a><span class="k">class</span> <span class="nc">Stu</span><span class="p">:</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-2"></a>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-3"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getnewid</span><span class="p">()</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">"写程序的龙龙"</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s2">"https://codinglonglong.github.io"</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-7"></a>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-8"></a>    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-9"></a>        <span class="k">return</span> <span class="s2">"id: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">newid</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> \
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-10"></a>            <span class="s2">"name: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">"</span> <span class="o">+</span> \
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-11"></a>            <span class="s2">"blog: "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-12"></a>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-13"></a>    <span class="n">newid</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-14"></a>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-15"></a>    <span class="nd">@classmethod</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-16"></a>    <span class="k">def</span> <span class="nf">getnewid</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-17"></a>        <span class="bp">cls</span><span class="o">.</span><span class="n">newid</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">newid</span> <span class="o">+</span> <span class="mi">1</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-18"></a>        <span class="k">return</span> <span class="bp">cls</span><span class="o">.</span><span class="n">newid</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-19"></a>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-20"></a>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-21"></a><span class="n">stu1</span> <span class="o">=</span> <span class="n">Stu</span><span class="p">()</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-22"></a><span class="k">print</span><span class="p">(</span><span class="n">stu1</span><span class="p">)</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-23"></a><span class="k">print</span><span class="p">(</span><span class="s2">"*"</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-24"></a><span class="n">stu2</span> <span class="o">=</span> <span class="n">Stu</span><span class="p">()</span>
+<a name="rest_code_f9b32a64db0f4a6c8450e139812980bd-25"></a><span class="k">print</span><span class="p">(</span><span class="n">stu2</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 <p>运行程序，得到如下结果：</p>
@@ -347,7 +350,7 @@ body{
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/ueditorde-pythonqian-yi/" class="u-url">UEditor的Python迁移</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 龙龙
             </span></p>
             <p class="dateline"><a href="posts/ueditorde-pythonqian-yi/" rel="bookmark"><time class="published dt-published" datetime="2015-09-08T09:21:16+08:00" title="2015-09-08 09:21">2015-09-08 09:21</time></a></p>
@@ -371,14 +374,14 @@ body{
 <p>1、把UEditor的代码放到项目的static/ueditor中，放置结构如上图。</p>
 <p>2、main.py完成静态资源文件的映射，代码如下：</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/ueditorde-pythonqian-yi/#rest_code_a99816575ac7473a9eeb2cc02219b3d7-1">1</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_a99816575ac7473a9eeb2cc02219b3d7-2">2</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_a99816575ac7473a9eeb2cc02219b3d7-3">3</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_a99816575ac7473a9eeb2cc02219b3d7-4">4</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_a99816575ac7473a9eeb2cc02219b3d7-1"></a><span class="nd">@route</span><span class="p">(</span><span class="s2">"/static/&lt;path:re:.*&gt;"</span><span class="p">)</span>
-<a name="rest_code_a99816575ac7473a9eeb2cc02219b3d7-2"></a><span class="k">def</span> <span class="nf">getstaticdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-<a name="rest_code_a99816575ac7473a9eeb2cc02219b3d7-3"></a>    <span class="n">path</span> <span class="o">=</span> <span class="s2">"./static/"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-<a name="rest_code_a99816575ac7473a9eeb2cc02219b3d7-4"></a>    <span class="k">return</span> <span class="n">static_file</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="s2">"."</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/ueditorde-pythonqian-yi/#rest_code_63cf7607f72d4d66afbd9d7383aa7a80-1">1</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_63cf7607f72d4d66afbd9d7383aa7a80-2">2</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_63cf7607f72d4d66afbd9d7383aa7a80-3">3</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_63cf7607f72d4d66afbd9d7383aa7a80-4">4</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_63cf7607f72d4d66afbd9d7383aa7a80-1"></a><span class="nd">@route</span><span class="p">(</span><span class="s2">"/static/&lt;path:re:.*&gt;"</span><span class="p">)</span>
+<a name="rest_code_63cf7607f72d4d66afbd9d7383aa7a80-2"></a><span class="k">def</span> <span class="nf">getstaticdir</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+<a name="rest_code_63cf7607f72d4d66afbd9d7383aa7a80-3"></a>    <span class="n">path</span> <span class="o">=</span> <span class="s2">"./static/"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+<a name="rest_code_63cf7607f72d4d66afbd9d7383aa7a80-4"></a>    <span class="k">return</span> <span class="n">static_file</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="s2">"."</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 <p>3、修改umeditor.config.js：</p>
@@ -390,247 +393,247 @@ body{
 </pre>
 <p>4、将UEditor放到页面上，views下任意一个tpl文件中：</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-1"> 1</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-2"> 2</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-3"> 3</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-4"> 4</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-5"> 5</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-6"> 6</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-7"> 7</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-8"> 8</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-9"> 9</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-10">10</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-11">11</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-12">12</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-13">13</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-14">14</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-15">15</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-16">16</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-17">17</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-18">18</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-19">19</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-20">20</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-21">21</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-22">22</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-23">23</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-24">24</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-25">25</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-26">26</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-27">27</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-28">28</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-29">29</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-30">30</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-31">31</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-32">32</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-33">33</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-34">34</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-35">35</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-36">36</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-37">37</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-38">38</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-39">39</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-40">40</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-41">41</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-42">42</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-43">43</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-44">44</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-45">45</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-46">46</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-47">47</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-48">48</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-49">49</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-50">50</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-51">51</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-52">52</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-53">53</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-54">54</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-55">55</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-56">56</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-57">57</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-58">58</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-59">59</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-60">60</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-61">61</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-62">62</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-63">63</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-64">64</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-65">65</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-66">66</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-67">67</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-68">68</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-69">69</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-70">70</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-71">71</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-72">72</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-73">73</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-74">74</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-75">75</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-76">76</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-77">77</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-78">78</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-79">79</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_7b3aed36fc6f415fbd6bad126b02c66b-80">80</a></pre></div></td>
-<td class="code"><pre class="code html"><a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-1"></a><span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">"/static/ueditor/themes/default/css/umeditor.css"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/css"</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span><span class="p">&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-2"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/javascript"</span> <span class="na">src</span><span class="o">=</span><span class="s">"/static/ueditor/third-party/jquery.min.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-3"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/javascript"</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span> <span class="na">src</span><span class="o">=</span><span class="s">"/static/ueditor/umeditor.config.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-4"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/javascript"</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span> <span class="na">src</span><span class="o">=</span><span class="s">"/static/ueditor/umeditor.min.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-5"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/javascript"</span> <span class="na">src</span><span class="o">=</span><span class="s">"/static/ueditor/lang/zh-cn/zh-cn.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-6"></a>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-7"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"editor"</span><span class="p">&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-8"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/plain"</span> <span class="na">id</span><span class="o">=</span><span class="s">"myEditor"</span> <span class="na">style</span><span class="o">=</span><span class="s">"width:1000px;height:240px;"</span><span class="p">&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-9"></a><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">这里我可以写一些输入提示</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-10"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-11"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/javascript"</span><span class="p">&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-12"></a><span class="kd">var</span> <span class="nx">um</span> <span class="o">=</span> <span class="nx">UM</span><span class="p">.</span><span class="nx">getEditor</span><span class="p">(</span><span class="s1">'myEditor'</span><span class="p">);</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-13"></a><span class="kd">function</span> <span class="nx">getAllHtml</span><span class="p">()</span> <span class="p">{</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-14"></a>    <span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-15"></a>    <span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">UM</span><span class="p">.</span><span class="nx">getEditor</span><span class="p">(</span><span class="s1">'myEditor'</span><span class="p">).</span><span class="nx">getAllHtml</span><span class="p">());</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-16"></a>    <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="o">=</span><span class="s2">"/getallhtml?contentstr="</span> <span class="o">+</span> <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">));</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-17"></a><span class="p">}</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-18"></a><span class="kd">function</span> <span class="nx">getContent</span><span class="p">()</span> <span class="p">{</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-19"></a>    <span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-20"></a>    <span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">UM</span><span class="p">.</span><span class="nx">getEditor</span><span class="p">(</span><span class="s1">'myEditor'</span><span class="p">).</span><span class="nx">getContent</span><span class="p">());</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-21"></a>    <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="o">=</span><span class="s2">"/getallhtml?contentstr="</span> <span class="o">+</span> <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">));</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-22"></a><span class="p">}</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-23"></a><span class="kd">function</span> <span class="nx">getContentTxt</span><span class="p">()</span> <span class="p">{</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-24"></a>    <span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-25"></a>    <span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">UM</span><span class="p">.</span><span class="nx">getEditor</span><span class="p">(</span><span class="s1">'myEditor'</span><span class="p">).</span><span class="nx">getContentTxt</span><span class="p">());</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-26"></a>    <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="o">=</span><span class="s2">"/getallhtml?contentstr="</span> <span class="o">+</span> <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">));</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-27"></a><span class="p">}</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-28"></a><span class="kd">function</span> <span class="nx">hasContent</span><span class="p">()</span> <span class="p">{</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-29"></a>    <span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-30"></a>    <span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">UM</span><span class="p">.</span><span class="nx">getEditor</span><span class="p">(</span><span class="s1">'myEditor'</span><span class="p">).</span><span class="nx">hasContents</span><span class="p">());</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-31"></a>    <span class="nx">alert</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">));</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-32"></a><span class="p">}</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-33"></a><span class="kd">function</span> <span class="nx">setFocus</span><span class="p">()</span> <span class="p">{</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-34"></a>    <span class="nx">UM</span><span class="p">.</span><span class="nx">getEditor</span><span class="p">(</span><span class="s1">'myEditor'</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-35"></a><span class="p">}</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-36"></a><span class="kd">function</span> <span class="nx">doBlur</span><span class="p">(){</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-37"></a>    <span class="nx">um</span><span class="p">.</span><span class="nx">blur</span><span class="p">();</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-38"></a><span class="p">}</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-39"></a><span class="kd">function</span> <span class="nx">setContent</span><span class="p">()</span> <span class="p">{</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-40"></a>    <span class="nx">UM</span><span class="p">.</span><span class="nx">getEditor</span><span class="p">(</span><span class="s1">'myEditor'</span><span class="p">).</span><span class="nx">setContent</span><span class="p">(</span><span class="s1">'欢迎使用umeditor'</span><span class="p">);</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-41"></a><span class="p">}</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-42"></a><span class="kd">function</span> <span class="nx">setDisabled</span><span class="p">()</span> <span class="p">{</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-43"></a>    <span class="nx">UM</span><span class="p">.</span><span class="nx">getEditor</span><span class="p">(</span><span class="s1">'myEditor'</span><span class="p">).</span><span class="nx">setDisabled</span><span class="p">(</span><span class="s1">'fullscreen'</span><span class="p">);</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-44"></a>    <span class="nx">disableBtn</span><span class="p">(</span><span class="s2">"enable"</span><span class="p">);</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-45"></a><span class="p">}</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-46"></a><span class="kd">function</span> <span class="nx">setEnabled</span><span class="p">()</span> <span class="p">{</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-47"></a>    <span class="nx">UM</span><span class="p">.</span><span class="nx">getEditor</span><span class="p">(</span><span class="s1">'myEditor'</span><span class="p">).</span><span class="nx">setEnabled</span><span class="p">();</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-48"></a>    <span class="nx">enableBtn</span><span class="p">();</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-49"></a><span class="p">}</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-50"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-51"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-52"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"btns"</span><span class="p">&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-53"></a>    <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-54"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-55"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-56"></a>                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"getAllHtml()"</span><span class="p">&gt;</span>获得整个html的内容<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-57"></a>                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"getContent()"</span><span class="p">&gt;</span>获得内容<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-58"></a>                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"getContentTxt()"</span><span class="p">&gt;</span>获得纯文本<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-59"></a>                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"hasContent()"</span><span class="p">&gt;</span>判断是否有内容<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-60"></a>            <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-61"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-62"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-63"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-64"></a>                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"setFocus()"</span><span class="p">&gt;</span>编辑器获得焦点<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-65"></a>                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"doBlur()"</span><span class="p">&gt;</span>编辑器取消焦点<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-66"></a>                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"setContent()"</span><span class="p">&gt;</span>插入给定的内容<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-67"></a>                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"setEnabled()"</span><span class="p">&gt;</span>可以编辑<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-68"></a>                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"setDisabled()"</span><span class="p">&gt;</span>不可编辑<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-69"></a>            <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-70"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-71"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-72"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-73"></a>                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"UM.getEditor('myEditor').setHide()"</span><span class="p">&gt;</span>隐藏编辑器<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-74"></a>                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"UM.getEditor('myEditor').setShow()"</span><span class="p">&gt;</span>显示编辑器<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-75"></a>                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"UM.getEditor('myEditor').setHeight(300)"</span><span class="p">&gt;</span>设置编辑器的高度为300<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-76"></a>                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"UM.getEditor('myEditor').setWidth(1200)"</span><span class="p">&gt;</span>设置编辑器的宽度为1200<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-77"></a>            <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-78"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-79"></a>    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
-<a name="rest_code_7b3aed36fc6f415fbd6bad126b02c66b-80"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-1"> 1</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-2"> 2</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-3"> 3</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-4"> 4</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-5"> 5</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-6"> 6</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-7"> 7</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-8"> 8</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-9"> 9</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-10">10</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-11">11</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-12">12</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-13">13</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-14">14</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-15">15</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-16">16</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-17">17</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-18">18</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-19">19</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-20">20</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-21">21</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-22">22</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-23">23</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-24">24</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-25">25</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-26">26</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-27">27</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-28">28</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-29">29</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-30">30</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-31">31</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-32">32</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-33">33</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-34">34</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-35">35</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-36">36</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-37">37</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-38">38</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-39">39</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-40">40</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-41">41</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-42">42</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-43">43</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-44">44</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-45">45</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-46">46</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-47">47</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-48">48</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-49">49</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-50">50</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-51">51</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-52">52</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-53">53</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-54">54</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-55">55</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-56">56</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-57">57</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-58">58</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-59">59</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-60">60</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-61">61</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-62">62</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-63">63</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-64">64</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-65">65</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-66">66</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-67">67</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-68">68</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-69">69</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-70">70</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-71">71</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-72">72</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-73">73</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-74">74</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-75">75</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-76">76</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-77">77</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-78">78</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-79">79</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-80">80</a></pre></div></td>
+<td class="code"><pre class="code html"><a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-1"></a><span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">"/static/ueditor/themes/default/css/umeditor.css"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/css"</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span><span class="p">&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-2"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/javascript"</span> <span class="na">src</span><span class="o">=</span><span class="s">"/static/ueditor/third-party/jquery.min.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-3"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/javascript"</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span> <span class="na">src</span><span class="o">=</span><span class="s">"/static/ueditor/umeditor.config.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-4"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/javascript"</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span> <span class="na">src</span><span class="o">=</span><span class="s">"/static/ueditor/umeditor.min.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-5"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/javascript"</span> <span class="na">src</span><span class="o">=</span><span class="s">"/static/ueditor/lang/zh-cn/zh-cn.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-6"></a>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-7"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"editor"</span><span class="p">&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-8"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/plain"</span> <span class="na">id</span><span class="o">=</span><span class="s">"myEditor"</span> <span class="na">style</span><span class="o">=</span><span class="s">"width:1000px;height:240px;"</span><span class="p">&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-9"></a><span class="o">&lt;</span><span class="nx">p</span><span class="o">&gt;</span><span class="nx">这里我可以写一些输入提示</span><span class="o">&lt;</span><span class="err">/p&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-10"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-11"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/javascript"</span><span class="p">&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-12"></a><span class="kd">var</span> <span class="nx">um</span> <span class="o">=</span> <span class="nx">UM</span><span class="p">.</span><span class="nx">getEditor</span><span class="p">(</span><span class="s1">'myEditor'</span><span class="p">);</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-13"></a><span class="kd">function</span> <span class="nx">getAllHtml</span><span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-14"></a>    <span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-15"></a>    <span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">UM</span><span class="p">.</span><span class="nx">getEditor</span><span class="p">(</span><span class="s1">'myEditor'</span><span class="p">).</span><span class="nx">getAllHtml</span><span class="p">());</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-16"></a>    <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="o">=</span><span class="s2">"/getallhtml?contentstr="</span> <span class="o">+</span> <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">));</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-17"></a><span class="p">}</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-18"></a><span class="kd">function</span> <span class="nx">getContent</span><span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-19"></a>    <span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-20"></a>    <span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">UM</span><span class="p">.</span><span class="nx">getEditor</span><span class="p">(</span><span class="s1">'myEditor'</span><span class="p">).</span><span class="nx">getContent</span><span class="p">());</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-21"></a>    <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="o">=</span><span class="s2">"/getallhtml?contentstr="</span> <span class="o">+</span> <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">));</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-22"></a><span class="p">}</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-23"></a><span class="kd">function</span> <span class="nx">getContentTxt</span><span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-24"></a>    <span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-25"></a>    <span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">UM</span><span class="p">.</span><span class="nx">getEditor</span><span class="p">(</span><span class="s1">'myEditor'</span><span class="p">).</span><span class="nx">getContentTxt</span><span class="p">());</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-26"></a>    <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="o">=</span><span class="s2">"/getallhtml?contentstr="</span> <span class="o">+</span> <span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">));</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-27"></a><span class="p">}</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-28"></a><span class="kd">function</span> <span class="nx">hasContent</span><span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-29"></a>    <span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[];</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-30"></a>    <span class="nx">arr</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">UM</span><span class="p">.</span><span class="nx">getEditor</span><span class="p">(</span><span class="s1">'myEditor'</span><span class="p">).</span><span class="nx">hasContents</span><span class="p">());</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-31"></a>    <span class="nx">alert</span><span class="p">(</span><span class="nx">arr</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s2">"\n"</span><span class="p">));</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-32"></a><span class="p">}</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-33"></a><span class="kd">function</span> <span class="nx">setFocus</span><span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-34"></a>    <span class="nx">UM</span><span class="p">.</span><span class="nx">getEditor</span><span class="p">(</span><span class="s1">'myEditor'</span><span class="p">).</span><span class="nx">focus</span><span class="p">();</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-35"></a><span class="p">}</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-36"></a><span class="kd">function</span> <span class="nx">doBlur</span><span class="p">(){</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-37"></a>    <span class="nx">um</span><span class="p">.</span><span class="nx">blur</span><span class="p">();</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-38"></a><span class="p">}</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-39"></a><span class="kd">function</span> <span class="nx">setContent</span><span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-40"></a>    <span class="nx">UM</span><span class="p">.</span><span class="nx">getEditor</span><span class="p">(</span><span class="s1">'myEditor'</span><span class="p">).</span><span class="nx">setContent</span><span class="p">(</span><span class="s1">'欢迎使用umeditor'</span><span class="p">);</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-41"></a><span class="p">}</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-42"></a><span class="kd">function</span> <span class="nx">setDisabled</span><span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-43"></a>    <span class="nx">UM</span><span class="p">.</span><span class="nx">getEditor</span><span class="p">(</span><span class="s1">'myEditor'</span><span class="p">).</span><span class="nx">setDisabled</span><span class="p">(</span><span class="s1">'fullscreen'</span><span class="p">);</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-44"></a>    <span class="nx">disableBtn</span><span class="p">(</span><span class="s2">"enable"</span><span class="p">);</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-45"></a><span class="p">}</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-46"></a><span class="kd">function</span> <span class="nx">setEnabled</span><span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-47"></a>    <span class="nx">UM</span><span class="p">.</span><span class="nx">getEditor</span><span class="p">(</span><span class="s1">'myEditor'</span><span class="p">).</span><span class="nx">setEnabled</span><span class="p">();</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-48"></a>    <span class="nx">enableBtn</span><span class="p">();</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-49"></a><span class="p">}</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-50"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-51"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-52"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"btns"</span><span class="p">&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-53"></a>    <span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-54"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-55"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-56"></a>                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"getAllHtml()"</span><span class="p">&gt;</span>获得整个html的内容<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-57"></a>                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"getContent()"</span><span class="p">&gt;</span>获得内容<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-58"></a>                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"getContentTxt()"</span><span class="p">&gt;</span>获得纯文本<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-59"></a>                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"hasContent()"</span><span class="p">&gt;</span>判断是否有内容<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-60"></a>            <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-61"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-62"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-63"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-64"></a>                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"setFocus()"</span><span class="p">&gt;</span>编辑器获得焦点<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-65"></a>                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"doBlur()"</span><span class="p">&gt;</span>编辑器取消焦点<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-66"></a>                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"setContent()"</span><span class="p">&gt;</span>插入给定的内容<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-67"></a>                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"setEnabled()"</span><span class="p">&gt;</span>可以编辑<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-68"></a>                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"setDisabled()"</span><span class="p">&gt;</span>不可编辑<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-69"></a>            <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-70"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-71"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-72"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-73"></a>                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"UM.getEditor('myEditor').setHide()"</span><span class="p">&gt;</span>隐藏编辑器<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-74"></a>                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"UM.getEditor('myEditor').setShow()"</span><span class="p">&gt;</span>显示编辑器<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-75"></a>                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"UM.getEditor('myEditor').setHeight(300)"</span><span class="p">&gt;</span>设置编辑器的高度为300<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span><span class="ni">&amp;nbsp;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-76"></a>                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">class</span><span class="o">=</span><span class="s">"btn"</span> <span class="na">onclick</span><span class="o">=</span><span class="s">"UM.getEditor('myEditor').setWidth(1200)"</span><span class="p">&gt;</span>设置编辑器的宽度为1200<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-77"></a>            <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-78"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-79"></a>    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<a name="rest_code_058f3d0b9fd34fc293fea5da7cec8cb1-80"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
 </pre></td>
 </tr></table>
 <p>注意，由于要提交的内容本身含有特殊字符，如空格。需要用javascript的encodeURIComponent函数进行编码。</p>
 <p>5、编写后台接收提交的代码main.py或者rpl下的任意一个py文件中:</p>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-1"> 1</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-2"> 2</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-3"> 3</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-4"> 4</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-5"> 5</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-6"> 6</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-7"> 7</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-8"> 8</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-9"> 9</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-10">10</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-11">11</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-12">12</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-13">13</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-14">14</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-15">15</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-16">16</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-17">17</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-18">18</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-19">19</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-20">20</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-21">21</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-22">22</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-23">23</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-24">24</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-25">25</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-26">26</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-27">27</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-28">28</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-29">29</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-30">30</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-31">31</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-32">32</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-33">33</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-34">34</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-35">35</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-36">36</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-37">37</a>
-<a href="posts/ueditorde-pythonqian-yi/#rest_code_91f33eecd0a3496db62c356703635610-38">38</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_91f33eecd0a3496db62c356703635610-1"></a><span class="nd">@route</span><span class="p">(</span><span class="s1">'/imageup'</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">"POST"</span><span class="p">)</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-2"></a><span class="k">def</span> <span class="nf">imageup</span><span class="p">():</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-3"></a>    <span class="n">fileobj</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="o">.</span><span class="n">upfile</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-4"></a>    <span class="n">filename</span> <span class="o">=</span> <span class="n">fileobj</span><span class="o">.</span><span class="n">filename</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-5"></a>    <span class="n">content</span> <span class="o">=</span> <span class="n">fileobj</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-6"></a>    <span class="n">imagedir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">+</span> <span class="s2">"/static/images"</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-7"></a>    <span class="n">webimagedir</span> <span class="o">=</span> <span class="s2">"/static/images"</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-8"></a>    <span class="n">newimagename</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid1</span><span class="p">())</span> <span class="o">+</span> <span class="n">filename</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-9"></a>    <span class="n">imageurl</span> <span class="o">=</span> <span class="n">imagedir</span> <span class="o">+</span> <span class="s2">"/"</span> <span class="o">+</span> <span class="n">newimagename</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-10"></a>    <span class="n">webimageurl</span> <span class="o">=</span> <span class="n">webimagedir</span> <span class="o">+</span> <span class="s2">"/"</span> <span class="o">+</span> <span class="n">newimagename</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-11"></a>    <span class="n">fout</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">imageurl</span><span class="p">,</span> <span class="s2">"wb"</span><span class="p">)</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-12"></a>    <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-13"></a>    <span class="n">fout</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-14"></a>    <span class="k">return</span> <span class="s2">"""{'url':'"""</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">webimageurl</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"""',</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-15"></a><span class="s2">    'title': '"""</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">newimagename</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"""',</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-16"></a><span class="s2">    'original':'"""</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"""',</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-17"></a><span class="s2">    'state':'SUCCESS'}"""</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-18"></a>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-19"></a>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-20"></a><span class="nd">@route</span><span class="p">(</span><span class="s1">'/getallhtml'</span><span class="p">)</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-21"></a><span class="k">def</span> <span class="nf">getallhtml</span><span class="p">():</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-22"></a>    <span class="n">contentstr</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">contentstr</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-23"></a>    <span class="n">resultstr</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">unquote</span><span class="p">(</span><span class="n">contentstr</span><span class="p">)</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-24"></a>    <span class="k">print</span><span class="p">(</span><span class="n">resultstr</span><span class="p">)</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-25"></a>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-26"></a>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-27"></a><span class="nd">@route</span><span class="p">(</span><span class="s1">'/getcontent'</span><span class="p">)</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-28"></a><span class="k">def</span> <span class="nf">getcontent</span><span class="p">():</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-29"></a>    <span class="n">contentstr</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">contentstr</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-30"></a>    <span class="n">resultstr</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">unquote</span><span class="p">(</span><span class="n">contentstr</span><span class="p">)</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-31"></a>    <span class="k">print</span><span class="p">(</span><span class="n">resultstr</span><span class="p">)</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-32"></a>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-33"></a>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-34"></a><span class="nd">@route</span><span class="p">(</span><span class="s1">'/getcontenttxt'</span><span class="p">)</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-35"></a><span class="k">def</span> <span class="nf">getcontenttxt</span><span class="p">():</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-36"></a>    <span class="n">contentstr</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">contentstr</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-37"></a>    <span class="n">resultstr</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">unquote</span><span class="p">(</span><span class="n">contentstr</span><span class="p">)</span>
-<a name="rest_code_91f33eecd0a3496db62c356703635610-38"></a>    <span class="k">print</span><span class="p">(</span><span class="n">resultstr</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-1"> 1</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-2"> 2</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-3"> 3</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-4"> 4</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-5"> 5</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-6"> 6</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-7"> 7</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-8"> 8</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-9"> 9</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-10">10</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-11">11</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-12">12</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-13">13</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-14">14</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-15">15</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-16">16</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-17">17</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-18">18</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-19">19</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-20">20</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-21">21</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-22">22</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-23">23</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-24">24</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-25">25</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-26">26</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-27">27</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-28">28</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-29">29</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-30">30</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-31">31</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-32">32</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-33">33</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-34">34</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-35">35</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-36">36</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-37">37</a>
+<a href="posts/ueditorde-pythonqian-yi/#rest_code_d21848d2e7a345db902d141872753223-38">38</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_d21848d2e7a345db902d141872753223-1"></a><span class="nd">@route</span><span class="p">(</span><span class="s1">'/imageup'</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">"POST"</span><span class="p">)</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-2"></a><span class="k">def</span> <span class="nf">imageup</span><span class="p">():</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-3"></a>    <span class="n">fileobj</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="o">.</span><span class="n">upfile</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-4"></a>    <span class="n">filename</span> <span class="o">=</span> <span class="n">fileobj</span><span class="o">.</span><span class="n">filename</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-5"></a>    <span class="n">content</span> <span class="o">=</span> <span class="n">fileobj</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-6"></a>    <span class="n">imagedir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">+</span> <span class="s2">"/static/images"</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-7"></a>    <span class="n">webimagedir</span> <span class="o">=</span> <span class="s2">"/static/images"</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-8"></a>    <span class="n">newimagename</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid1</span><span class="p">())</span> <span class="o">+</span> <span class="n">filename</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-9"></a>    <span class="n">imageurl</span> <span class="o">=</span> <span class="n">imagedir</span> <span class="o">+</span> <span class="s2">"/"</span> <span class="o">+</span> <span class="n">newimagename</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-10"></a>    <span class="n">webimageurl</span> <span class="o">=</span> <span class="n">webimagedir</span> <span class="o">+</span> <span class="s2">"/"</span> <span class="o">+</span> <span class="n">newimagename</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-11"></a>    <span class="n">fout</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">imageurl</span><span class="p">,</span> <span class="s2">"wb"</span><span class="p">)</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-12"></a>    <span class="n">fout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-13"></a>    <span class="n">fout</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-14"></a>    <span class="k">return</span> <span class="s2">"""{'url':'"""</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">webimageurl</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"""',</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-15"></a><span class="s2">    'title': '"""</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">newimagename</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"""',</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-16"></a><span class="s2">    'original':'"""</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"""',</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-17"></a><span class="s2">    'state':'SUCCESS'}"""</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-18"></a>
+<a name="rest_code_d21848d2e7a345db902d141872753223-19"></a>
+<a name="rest_code_d21848d2e7a345db902d141872753223-20"></a><span class="nd">@route</span><span class="p">(</span><span class="s1">'/getallhtml'</span><span class="p">)</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-21"></a><span class="k">def</span> <span class="nf">getallhtml</span><span class="p">():</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-22"></a>    <span class="n">contentstr</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">contentstr</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-23"></a>    <span class="n">resultstr</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">unquote</span><span class="p">(</span><span class="n">contentstr</span><span class="p">)</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-24"></a>    <span class="k">print</span><span class="p">(</span><span class="n">resultstr</span><span class="p">)</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-25"></a>
+<a name="rest_code_d21848d2e7a345db902d141872753223-26"></a>
+<a name="rest_code_d21848d2e7a345db902d141872753223-27"></a><span class="nd">@route</span><span class="p">(</span><span class="s1">'/getcontent'</span><span class="p">)</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-28"></a><span class="k">def</span> <span class="nf">getcontent</span><span class="p">():</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-29"></a>    <span class="n">contentstr</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">contentstr</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-30"></a>    <span class="n">resultstr</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">unquote</span><span class="p">(</span><span class="n">contentstr</span><span class="p">)</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-31"></a>    <span class="k">print</span><span class="p">(</span><span class="n">resultstr</span><span class="p">)</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-32"></a>
+<a name="rest_code_d21848d2e7a345db902d141872753223-33"></a>
+<a name="rest_code_d21848d2e7a345db902d141872753223-34"></a><span class="nd">@route</span><span class="p">(</span><span class="s1">'/getcontenttxt'</span><span class="p">)</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-35"></a><span class="k">def</span> <span class="nf">getcontenttxt</span><span class="p">():</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-36"></a>    <span class="n">contentstr</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">contentstr</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-37"></a>    <span class="n">resultstr</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">unquote</span><span class="p">(</span><span class="n">contentstr</span><span class="p">)</span>
+<a name="rest_code_d21848d2e7a345db902d141872753223-38"></a>    <span class="k">print</span><span class="p">(</span><span class="n">resultstr</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 <p>可以看到，由于之前的javascript中进行了编码，所以这里要用urllib.parse.unquote进行解码。而上传的图片，会放到/static/images目录下。</p>
@@ -640,7 +643,7 @@ body{
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/linuxtian-jia-yong-hu-he-qie-huan-yong-hu/" class="u-url">Linux添加用户和切换用户</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 龙龙
             </span></p>
             <p class="dateline"><a href="posts/linuxtian-jia-yong-hu-he-qie-huan-yong-hu/" rel="bookmark"><time class="published dt-published" datetime="2015-09-08T09:16:20+08:00" title="2015-09-08 09:16">2015-09-08 09:16</time></a></p>
@@ -671,7 +674,7 @@ body{
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/ubuntu1404shang-an-zhuang-jdk/" class="u-url">Ubuntu14.04上安装JDK</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 龙龙
             </span></p>
             <p class="dateline"><a href="posts/ubuntu1404shang-an-zhuang-jdk/" rel="bookmark"><time class="published dt-published" datetime="2015-09-07T19:22:07+08:00" title="2015-09-07 19:22">2015-09-07 19:22</time></a></p>

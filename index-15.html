@@ -88,10 +88,126 @@ body{
             
 
     
+
+
+    
 <div class="postindex">
-    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/hui-gui-ping-dan/" class="u-url">回归平淡</a></h1>
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockershe-ding-gu-ding-ip/" class="u-url">Docker设定固定IP</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/dockershe-ding-gu-ding-ip/" rel="bookmark"><time class="published dt-published" datetime="2017-05-14T14:55:30+08:00" title="2017-05-14 14:55">2017-05-14 14:55</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <ol class="arabic">
+<li>
+<p class="first">新建自定义网络。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_b3451969fae944ddbfe967638bdacc8e-1"></a>&gt;&gt; docker network create --subnet<span class="o">=</span><span class="m">172</span>.16.0.0/16 testnet
+</pre>
+</blockquote>
+</li>
+<li>
+<p class="first">创建虚拟机。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_1dccd73e18014262beaa2a144c4700f1-1"></a>&gt;&gt;  docker run --name t1 -i -t --net<span class="o">=</span>testnet --ip<span class="o">=</span><span class="m">172</span>.16.0.111 -p <span class="m">8080</span>:8080 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
+<a name="rest_code_1dccd73e18014262beaa2a144c4700f1-2"></a>&gt;&gt;  docker run --name t2 -i -t --net<span class="o">=</span>testnet --ip<span class="o">=</span><span class="m">172</span>.16.0.112 -p <span class="m">8081</span>:8081 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
+</pre>
+</blockquote>
+</li>
+<li>
+<p class="first">进入虚拟机，查看当前IP。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-1"></a>&gt;&gt; docker <span class="nb">exec</span> -it t1 /bin/bash
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-2"></a>&gt;&gt; root@2ef31a06d8f8:/# ifconfig
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-3"></a>eth0      Link encap:Ethernet  HWaddr <span class="m">02</span>:42:ac:10:00:6f
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-4"></a>        inet addr:172.16.0.111  Bcast:0.0.0.0  Mask:255.255.0.0
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-5"></a>        inet6 addr: fe80::42:acff:fe10:6f/64 Scope:Link
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-6"></a>        UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-7"></a>        RX packets:22 errors:0 dropped:0 overruns:0 frame:0
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-8"></a>        TX packets:13 errors:0 dropped:0 overruns:0 carrier:0
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-9"></a>        collisions:0 txqueuelen:0
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-10"></a>        RX bytes:1716 <span class="o">(</span><span class="m">1</span>.7 KB<span class="o">)</span>  TX bytes:1026 <span class="o">(</span><span class="m">1</span>.0 KB<span class="o">)</span>
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-11"></a>
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-12"></a>lo        Link encap:Local Loopback
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-13"></a>        inet addr:127.0.0.1  Mask:255.0.0.0
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-14"></a>        inet6 addr: ::1/128 Scope:Host
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-15"></a>        UP LOOPBACK RUNNING  MTU:65536  Metric:1
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-16"></a>        RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-17"></a>        TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-18"></a>        collisions:0 txqueuelen:1
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-19"></a>        RX bytes:0 <span class="o">(</span><span class="m">0</span>.0 B<span class="o">)</span>  TX bytes:0 <span class="o">(</span><span class="m">0</span>.0 B<span class="o">)</span>
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-20"></a>&gt;&gt; docker <span class="nb">exec</span> -it t2 /bin/bash
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-21"></a>&gt;&gt; root@a9cd9a699b05:/# ifconfig
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-22"></a>eth0      Link encap:Ethernet  HWaddr <span class="m">02</span>:42:ac:10:00:70
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-23"></a>        inet addr:172.16.0.112  Bcast:0.0.0.0  Mask:255.255.0.0
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-24"></a>        inet6 addr: fe80::42:acff:fe10:70/64 Scope:Link
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-25"></a>        UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-26"></a>        RX packets:14 errors:0 dropped:0 overruns:0 frame:0
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-27"></a>        TX packets:15 errors:0 dropped:0 overruns:0 carrier:0
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-28"></a>        collisions:0 txqueuelen:0
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-29"></a>        RX bytes:1068 <span class="o">(</span><span class="m">1</span>.0 KB<span class="o">)</span>  TX bytes:1166 <span class="o">(</span><span class="m">1</span>.1 KB<span class="o">)</span>
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-30"></a>
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-31"></a>lo        Link encap:Local Loopback
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-32"></a>        inet addr:127.0.0.1  Mask:255.0.0.0
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-33"></a>        inet6 addr: ::1/128 Scope:Host
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-34"></a>        UP LOOPBACK RUNNING  MTU:65536  Metric:1
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-35"></a>        RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-36"></a>        TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-37"></a>        collisions:0 txqueuelen:1
+<a name="rest_code_195fd11d0d044573bd8dcf0ed07433db-38"></a>        RX bytes:0 <span class="o">(</span><span class="m">0</span>.0 B<span class="o">)</span>  TX bytes:0 <span class="o">(</span><span class="m">0</span>.0 B<span class="o">)</span>
+</pre>
+</blockquote>
+</li>
+<li>
+<p class="first">重启之后，IP地址依然保持之前的设置，并且可以相互ping通。</p>
+</li>
+</ol>
+</div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/android-studiolian-jie-ye-shen-mo-ni-qi-jin-xing-ce-shi/" class="u-url">Android Studio连接夜神模拟器进行测试</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/android-studiolian-jie-ye-shen-mo-ni-qi-jin-xing-ce-shi/" rel="bookmark"><time class="published dt-published" datetime="2017-05-14T14:40:57+08:00" title="2017-05-14 14:40">2017-05-14 14:40</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>在之前的文章 <a class="reference external" href="https://codinglonglong.github.io/posts/android-studiolian-jie-droid4xdiao-shi-app/">https://codinglonglong.github.io/posts/android-studiolian-jie-droid4xdiao-shi-app/</a> 中，我们已经成功使用Droid4X进行APP开发测试，这次我们使用夜神模拟器完成同样的工作。</p>
+<ol class="arabic">
+<li>
+<p class="first">安装夜神模拟器。</p>
+</li>
+<li>
+<p class="first">添加夜神模拟器的可执行路径到系统路径，我的在</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_08a3dff8eeb546b085fd8cd147b1a0a7-1"></a>C:<span class="se">\P</span>rogram Files<span class="se">\n</span>ox<span class="se">\N</span>ox<span class="se">\b</span>in
+</pre>
+</blockquote>
+</li>
+<li>
+<p class="first">启动夜神模拟器服务。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_dda143f915074166947abc9d45413bfb-1"></a>&gt;&gt; nox_adb.exe connect <span class="m">127</span>.0.0.1:62001
+</pre>
+</blockquote>
+<p>出现</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_79a08f039cad458b88ac7c12842fceae-1"></a>* daemon started successfully *
+<a name="rest_code_79a08f039cad458b88ac7c12842fceae-2"></a> connected to <span class="m">127</span>.0.0.1:62001
+</pre>
+</blockquote>
+</li>
+<li>
+<p class="first">在Android Studio中启动调试即可。</p>
+</li>
+</ol>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/hui-gui-ping-dan/" class="u-url">回归平淡</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 龙龙
             </span></p>
             <p class="dateline"><a href="posts/hui-gui-ping-dan/" rel="bookmark"><time class="published dt-published" datetime="2017-05-14T13:25:36+08:00" title="2017-05-14 13:25">2017-05-14 13:25</time></a></p>
@@ -105,7 +221,7 @@ body{
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/long-long-kan-ke-nan-6/" class="u-url">龙龙看柯南（6）</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 龙龙
             </span></p>
             <p class="dateline"><a href="posts/long-long-kan-ke-nan-6/" rel="bookmark"><time class="published dt-published" datetime="2017-04-10T12:03:30+08:00" title="2017-04-10 12:03">2017-04-10 12:03</time></a></p>
@@ -195,7 +311,7 @@ body{
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/" class="u-url">Windows配置Selenium测试环境</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 龙龙
             </span></p>
             <p class="dateline"><a href="posts/windowspei-zhi-seleniumce-shi-huan-jing/" rel="bookmark"><time class="published dt-published" datetime="2017-04-06T13:22:14+08:00" title="2017-04-06 13:22">2017-04-06 13:22</time></a></p>
@@ -261,7 +377,7 @@ body{
     </div>
     </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pipshi-yong-guo-nei-yuan/" class="u-url">pip使用国内源</a></h1>
         <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 龙龙
             </span></p>
             <p class="dateline"><a href="posts/pipshi-yong-guo-nei-yuan/" rel="bookmark"><time class="published dt-published" datetime="2017-04-06T12:55:09+08:00" title="2017-04-06 12:55">2017-04-06 12:55</time></a></p>
@@ -270,106 +386,6 @@ body{
     <pre class="literal-block">
 &gt;&gt; py -3 -m pip install selenium -i http://pypi.doubanio.com/simple/ --trusted-host pypi.doubanio.com
 </pre>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/long-long-kan-ke-nan-5/" class="u-url">龙龙看柯南（5）</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/long-long-kan-ke-nan-5/" rel="bookmark"><time class="published dt-published" datetime="2017-04-05T12:44:28+08:00" title="2017-04-05 12:44">2017-04-05 12:44</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p><strong>句子分析</strong></p>
-<p>だいいち、ワシのあしはまだ．．．</p>
-<p>首先，我的脚还……</p>
-<p><strong>词语分析</strong></p>
-<ol class="arabic simple">
-<li>第一（だいいち）：首先。</li>
-<li>ワシ：我，老年男子的自称。</li>
-<li>足（あし）：脚。</li>
-<li>まだ：还，仍旧。</li>
-</ol>
-<hr class="docutils">
-<p><strong>句子分析</strong></p>
-<p>ヘタな芝居は、やめてくださいよ．．．</p>
-<p>请停止拙劣的演技吧……</p>
-<p><strong>词语分析</strong></p>
-<ol class="arabic simple">
-<li>ヘタ：拙劣。</li>
-<li>芝居（しばい）：演技，花招。</li>
-<li>止める（やめる）：[一段动词]停止。</li>
-</ol>
-<p><strong>语法分析</strong></p>
-<ol class="arabic simple">
-<li>てください：请……。</li>
-</ol>
-<hr class="docutils">
-<p><strong>句子分析</strong></p>
-<p>もう、ネタはバレてんだ！！</p>
-<p>证据马上就要找到了！！</p>
-<p><strong>词语分析</strong></p>
-<ol class="arabic simple">
-<li>もう：就要，不久。</li>
-<li>ネタ：证据。</li>
-<li>バレる：[一段动词]揭穿。</li>
-</ol>
-<p><strong>语法分析</strong></p>
-<ol class="arabic">
-<li>
-<p class="first">んだ：　“んだ”是“んです”的普通体，一般用于以下三种情况：</p>
-<blockquote>
-<ol class="arabic simple">
-<li>用于说明、解释原因；</li>
-<li>用于说话人为了证实自己、说服他人而坚持强硬的主张或表示决心；</li>
-<li>用于说明自己的情况。</li>
-</ol>
-</blockquote>
-</li>
-</ol>
-<hr class="docutils">
-<p><strong>句子分析</strong></p>
-<p>だ、だんな様、足が．．．</p>
-<p>老爷，您的脚……</p>
-<p><strong>词语分析</strong></p>
-<ol class="arabic simple">
-<li>旦那（だんな）：老爷。</li>
-<li>様（さま）：先生（表示尊敬）。</li>
-</ol>
-</div>
-    </div>
-    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/long-long-kan-ke-nan-4/" class="u-url">龙龙看柯南（4）</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn">
-                龙龙
-            </span></p>
-            <p class="dateline"><a href="posts/long-long-kan-ke-nan-4/" rel="bookmark"><time class="published dt-published" datetime="2017-04-05T06:04:08+08:00" title="2017-04-05 06:04">2017-04-05 06:04</time></a></p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div>
-<p><strong>句子分析</strong></p>
-<p>御主人、あなたです！！！</p>
-<p>她丈夫，就是你！！！</p>
-<p><strong>词语分析</strong></p>
-<ol class="arabic simple">
-<li>御主人（ごしゅじん）：她丈夫。</li>
-<li>貴方（あなた）：你。</li>
-</ol>
-<hr class="docutils">
-<p><strong>句子分析</strong></p>
-<p>じょ、冗談はよしたまえ…</p>
-<p>别，这个玩笑真好……</p>
-<p><strong>词语分析</strong></p>
-<ol class="arabic simple">
-<li>じょ：不，别。（<strong>按照句意应该这么翻译，但是词典没查到……</strong>）</li>
-<li>冗談（じょうだん）：玩笑。</li>
-<li>よし：好。</li>
-</ol>
-<p><strong>语法分析</strong></p>
-<ol class="arabic simple">
-<li>たまえ：接在动词连用形后面，表示“...吧”，一般由成年男子使用，常用于命令部下或下辈。</li>
-</ol>
-</div>
     </div>
     </article>
 </div>
