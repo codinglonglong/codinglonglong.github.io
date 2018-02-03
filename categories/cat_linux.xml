@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about Linux)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_linux.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sat, 03 Feb 2018 09:52:29 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>测试时，Docker终端无法显示中文</title><link>https://codinglonglong.github.io/posts/ce-shi-shi-dockerzhong-duan-wu-fa-xian-shi-zhong-wen/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;测试代码的时候，无法用print在Docker终端输出中文，对于这个问题，我们采用的办法是将要输出的信息记录在redis里，然后在主系统通过redis图形客户端查看，这样的好处在于:&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;不需要改动docker镜像本身；&lt;/li&gt;
+&lt;li&gt;redis可以很好地支持中文；&lt;/li&gt;
+&lt;li&gt;测试过程可记录，容易追溯问题所在。&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;</description><category>Docker</category><category>redis</category><guid>https://codinglonglong.github.io/posts/ce-shi-shi-dockerzhong-duan-wu-fa-xian-shi-zhong-wen/</guid><pubDate>Sat, 30 Dec 2017 16:00:02 GMT</pubDate></item><item><title>Redis修改默认端口</title><link>https://codinglonglong.github.io/posts/redisxiu-gai-mo-ren-duan-kou/</link><dc:creator>龙龙</dc:creator><description>&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; emacs /etc/redis/redis.conf
+port 8083
+bind 0.0.0.0
+&amp;gt;&amp;gt; redis-server /etc/redis/redis.conf
+&lt;/pre&gt;</description><category>redis</category><guid>https://codinglonglong.github.io/posts/redisxiu-gai-mo-ren-duan-kou/</guid><pubDate>Sat, 30 Dec 2017 15:31:05 GMT</pubDate></item><item><title>使用Tmux实现终端分屏</title><link>https://codinglonglong.github.io/posts/shi-yong-tmuxshi-xian-zhong-duan-fen-ping/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;在终端下工作时，经常要打开多个窗口，运用Tmux就可以只开一个终端，分屏进行操作了。&lt;/p&gt;
+&lt;p&gt;首先按下Ctrl-b，然后按下对应按键完成功能：&lt;/p&gt;
+&lt;table border="1" class="docutils"&gt;
+&lt;colgroup&gt;
+&lt;col width="19%"&gt;
+&lt;col width="81%"&gt;
+&lt;/colgroup&gt;
+&lt;thead valign="bottom"&gt;
+&lt;tr&gt;&lt;th class="head"&gt;按键&lt;/th&gt;
+&lt;th class="head"&gt;功能&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody valign="top"&gt;
+&lt;tr&gt;&lt;td&gt;s&lt;/td&gt;
+&lt;td&gt;列出所有会话&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;$&lt;/td&gt;
+&lt;td&gt;重命名当前会话&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;d&lt;/td&gt;
+&lt;td&gt;断开当前会话&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;c&lt;/td&gt;
+&lt;td&gt;创建一个新窗口&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;,&lt;/td&gt;
+&lt;td&gt;重命名当前窗口&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;w&lt;/td&gt;
+&lt;td&gt;列出所有窗口&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;%&lt;/td&gt;
+&lt;td&gt;水平分割窗口&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;"&lt;/td&gt;
+&lt;td&gt;竖直分割窗口&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;n&lt;/td&gt;
+&lt;td&gt;下一个窗口&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;p&lt;/td&gt;
+&lt;td&gt;上一个窗口&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;0~9&lt;/td&gt;
+&lt;td&gt;选择对应的窗口&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;q&lt;/td&gt;
+&lt;td&gt;显示窗格的编号&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;l&lt;/td&gt;
+&lt;td&gt;与上一个窗口循环切换&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;o&lt;/td&gt;
+&lt;td&gt;在窗格之间切换&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;}&lt;/td&gt;
+&lt;td&gt;与下一个窗格交换位置&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;{&lt;/td&gt;
+&lt;td&gt;与上一个窗格交换位置&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;!&lt;/td&gt;
+&lt;td&gt;在新窗口中显示当前窗格&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;x&lt;/td&gt;
+&lt;td&gt;关闭当前窗格&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;t&lt;/td&gt;
+&lt;td&gt;显示当前时间&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/div&gt;</description><category>Tmux</category><guid>https://codinglonglong.github.io/posts/shi-yong-tmuxshi-xian-zhong-duan-fen-ping/</guid><pubDate>Sat, 30 Dec 2017 07:36:55 GMT</pubDate></item><item><title>Ubuntu命令行连接wifi</title><link>https://codinglonglong.github.io/posts/ubuntuming-ling-xing-lian-jie-wifi/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; cd /usr/local/bin/
+&amp;gt;&amp;gt; cd /home/long
+&amp;gt;&amp;gt; wpa_passphrase SSID PWD &amp;gt; /home/long/wifi.conf
+&amp;gt;&amp;gt; sudo emacs /etc/network/interfaces
+auto wlan0
+iface wlan0 inet dhcp
+wpa-conf /home/long/wifi.conf
+&amp;gt;&amp;gt; sudo reboot
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;路由器必须要打开DHCP才可以正常连接。&lt;/p&gt;&lt;/div&gt;</description><category>Ubuntu</category><category>wifi</category><guid>https://codinglonglong.github.io/posts/ubuntuming-ling-xing-lian-jie-wifi/</guid><pubDate>Wed, 19 Jul 2017 03:06:54 GMT</pubDate></item><item><title>基于mqtt的json格式消息推送</title><link>https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;基于文章 &lt;a class="reference external" href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/"&gt;https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/&lt;/a&gt; ，我们进一步改进测试程序。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;t2上&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;编写并启动消息接收端。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_381e2d91a0034144ad1e1b673c3ba084-1"&gt; 1&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_381e2d91a0034144ad1e1b673c3ba084-2"&gt; 2&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_381e2d91a0034144ad1e1b673c3ba084-3"&gt; 3&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_381e2d91a0034144ad1e1b673c3ba084-4"&gt; 4&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_381e2d91a0034144ad1e1b673c3ba084-5"&gt; 5&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_381e2d91a0034144ad1e1b673c3ba084-6"&gt; 6&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_381e2d91a0034144ad1e1b673c3ba084-7"&gt; 7&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_381e2d91a0034144ad1e1b673c3ba084-8"&gt; 8&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_381e2d91a0034144ad1e1b673c3ba084-9"&gt; 9&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_381e2d91a0034144ad1e1b673c3ba084-10"&gt;10&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_381e2d91a0034144ad1e1b673c3ba084-11"&gt;11&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_381e2d91a0034144ad1e1b673c3ba084-12"&gt;12&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_381e2d91a0034144ad1e1b673c3ba084-13"&gt;13&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_381e2d91a0034144ad1e1b673c3ba084-14"&gt;14&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_381e2d91a0034144ad1e1b673c3ba084-15"&gt;15&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_381e2d91a0034144ad1e1b673c3ba084-16"&gt;16&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_381e2d91a0034144ad1e1b673c3ba084-17"&gt;17&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_381e2d91a0034144ad1e1b673c3ba084-18"&gt;18&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_381e2d91a0034144ad1e1b673c3ba084-19"&gt;19&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_381e2d91a0034144ad1e1b673c3ba084-20"&gt;20&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_381e2d91a0034144ad1e1b673c3ba084-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;paho.mqtt.client&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;mqtt&lt;/span&gt;
+&lt;a name="rest_code_381e2d91a0034144ad1e1b673c3ba084-2"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;json&lt;/span&gt;
+&lt;a name="rest_code_381e2d91a0034144ad1e1b673c3ba084-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_381e2d91a0034144ad1e1b673c3ba084-4"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;on_connect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;userdata&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;flags&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;rc&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_381e2d91a0034144ad1e1b673c3ba084-5"&gt;&lt;/a&gt;    &lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;subscribe&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"test"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_381e2d91a0034144ad1e1b673c3ba084-6"&gt;&lt;/a&gt;
+&lt;a name="rest_code_381e2d91a0034144ad1e1b673c3ba084-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;on_message&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;userdata&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_381e2d91a0034144ad1e1b673c3ba084-8"&gt;&lt;/a&gt;    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;topic&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;" "&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;payload&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_381e2d91a0034144ad1e1b673c3ba084-9"&gt;&lt;/a&gt;    &lt;span class="n"&gt;message&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;json&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loads&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;payload&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;decode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"utf-8"&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_381e2d91a0034144ad1e1b673c3ba084-10"&gt;&lt;/a&gt;    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"1"&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;a name="rest_code_381e2d91a0034144ad1e1b673c3ba084-11"&gt;&lt;/a&gt;    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;message&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"2"&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;a name="rest_code_381e2d91a0034144ad1e1b673c3ba084-12"&gt;&lt;/a&gt;
+&lt;a name="rest_code_381e2d91a0034144ad1e1b673c3ba084-13"&gt;&lt;/a&gt;&lt;span class="n"&gt;client&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;mqtt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Client&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_381e2d91a0034144ad1e1b673c3ba084-14"&gt;&lt;/a&gt;&lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;on_connect&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;on_connect&lt;/span&gt;
+&lt;a name="rest_code_381e2d91a0034144ad1e1b673c3ba084-15"&gt;&lt;/a&gt;&lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;on_message&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;on_message&lt;/span&gt;
+&lt;a name="rest_code_381e2d91a0034144ad1e1b673c3ba084-16"&gt;&lt;/a&gt;&lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_381e2d91a0034144ad1e1b673c3ba084-17"&gt;&lt;/a&gt;    &lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"172.16.0.111"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1883&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_381e2d91a0034144ad1e1b673c3ba084-18"&gt;&lt;/a&gt;    &lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loop_forever&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_381e2d91a0034144ad1e1b673c3ba084-19"&gt;&lt;/a&gt;&lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="ne"&gt;KeyboardInterrupt&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_381e2d91a0034144ad1e1b673c3ba084-20"&gt;&lt;/a&gt;    &lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;disconnect&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;t3上&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;编写并启动消息发送端。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_4da207db62e84eb88aff51a913ea2130-1"&gt; 1&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_4da207db62e84eb88aff51a913ea2130-2"&gt; 2&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_4da207db62e84eb88aff51a913ea2130-3"&gt; 3&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_4da207db62e84eb88aff51a913ea2130-4"&gt; 4&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_4da207db62e84eb88aff51a913ea2130-5"&gt; 5&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_4da207db62e84eb88aff51a913ea2130-6"&gt; 6&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_4da207db62e84eb88aff51a913ea2130-7"&gt; 7&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_4da207db62e84eb88aff51a913ea2130-8"&gt; 8&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_4da207db62e84eb88aff51a913ea2130-9"&gt; 9&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/#rest_code_4da207db62e84eb88aff51a913ea2130-10"&gt;10&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_4da207db62e84eb88aff51a913ea2130-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;paho.mqtt.client&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;mqtt&lt;/span&gt;
+&lt;a name="rest_code_4da207db62e84eb88aff51a913ea2130-2"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;
+&lt;a name="rest_code_4da207db62e84eb88aff51a913ea2130-3"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;json&lt;/span&gt;
+&lt;a name="rest_code_4da207db62e84eb88aff51a913ea2130-4"&gt;&lt;/a&gt;&lt;span class="n"&gt;client&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;mqtt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Client&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_4da207db62e84eb88aff51a913ea2130-5"&gt;&lt;/a&gt;&lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"172.16.0.111"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_4da207db62e84eb88aff51a913ea2130-6"&gt;&lt;/a&gt;&lt;span class="n"&gt;topic&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"test"&lt;/span&gt;
+&lt;a name="rest_code_4da207db62e84eb88aff51a913ea2130-7"&gt;&lt;/a&gt;&lt;span class="n"&gt;payload&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;"hi"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s2"&gt;"hihi"&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;a name="rest_code_4da207db62e84eb88aff51a913ea2130-8"&gt;&lt;/a&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_4da207db62e84eb88aff51a913ea2130-9"&gt;&lt;/a&gt;    &lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;publish&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;topic&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;json&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;dumps&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;payload&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_4da207db62e84eb88aff51a913ea2130-10"&gt;&lt;/a&gt;    &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;&lt;/div&gt;</description><category>Android</category><category>Linux</category><category>mosquitto</category><category>mqtt</category><category>Python</category><guid>https://codinglonglong.github.io/posts/ji-yu-mqttde-jsonge-shi-xiao-xi-tui-song/</guid><pubDate>Sun, 21 May 2017 10:47:55 GMT</pubDate></item><item><title>基于mqtt的消息推送</title><link>https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;&lt;strong&gt;t1上&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1、安装mosquitto服务器。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_ec3f709146a34f9ca3741d39eff702e6-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; apt install wget
+&lt;a name="rest_code_ec3f709146a34f9ca3741d39eff702e6-2"&gt;&lt;/a&gt;&amp;gt;&amp;gt; wget http://mosquitto.org/files/source/mosquitto-1.4.11.tar.gz
+&lt;a name="rest_code_ec3f709146a34f9ca3741d39eff702e6-3"&gt;&lt;/a&gt;&amp;gt;&amp;gt; tar zxvf mosquitto-1.4.11.tar.gz
+&lt;a name="rest_code_ec3f709146a34f9ca3741d39eff702e6-4"&gt;&lt;/a&gt;&amp;gt;&amp;gt; &lt;span class="nb"&gt;cd&lt;/span&gt; mosquitto-1.4.11
+&lt;a name="rest_code_ec3f709146a34f9ca3741d39eff702e6-5"&gt;&lt;/a&gt;&amp;gt;&amp;gt; apt install libc-ares-dev uuid-dev libwebsockets-dev libssl-dev
+&lt;a name="rest_code_ec3f709146a34f9ca3741d39eff702e6-6"&gt;&lt;/a&gt;&amp;gt;&amp;gt; make binary
+&lt;a name="rest_code_ec3f709146a34f9ca3741d39eff702e6-7"&gt;&lt;/a&gt;&amp;gt;&amp;gt; make install
+&lt;a name="rest_code_ec3f709146a34f9ca3741d39eff702e6-8"&gt;&lt;/a&gt;&amp;gt;&amp;gt; vi /etc/profile
+&lt;a name="rest_code_ec3f709146a34f9ca3741d39eff702e6-9"&gt;&lt;/a&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/usr/local/bin:&lt;span class="nv"&gt;$PATH&lt;/span&gt;
+&lt;a name="rest_code_ec3f709146a34f9ca3741d39eff702e6-10"&gt;&lt;/a&gt;&amp;gt;&amp;gt; &lt;span class="nb"&gt;source&lt;/span&gt; /etc/profile
+&lt;a name="rest_code_ec3f709146a34f9ca3741d39eff702e6-11"&gt;&lt;/a&gt;&amp;gt;&amp;gt; useradd -m mosquitto
+&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;2、启动mosquitto服务。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_fd3e3a27c8784778b39ec6bd0ac7da44-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; mosquitto
+&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;t2上&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1、安装mosquitto的Python客户端。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_60870ef6d6064c0c882d466414e6059d-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; pip3 install paho-mqtt
+&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;2、编写并启动消息接收端。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-1"&gt; 1&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-2"&gt; 2&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-3"&gt; 3&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-4"&gt; 4&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-5"&gt; 5&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-6"&gt; 6&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-7"&gt; 7&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-8"&gt; 8&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-9"&gt; 9&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-10"&gt;10&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-11"&gt;11&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-12"&gt;12&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-13"&gt;13&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-14"&gt;14&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-15"&gt;15&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-16"&gt;16&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_5fdb637abfbc4983a12b866f579029f4-17"&gt;17&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;paho.mqtt.client&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;mqtt&lt;/span&gt;
+&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-2"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;json&lt;/span&gt;
+&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-3"&gt;&lt;/a&gt;
+&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-4"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;on_connect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;userdata&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;flags&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;rc&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-5"&gt;&lt;/a&gt;    &lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;subscribe&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"test"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-6"&gt;&lt;/a&gt;
+&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;on_message&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;userdata&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-8"&gt;&lt;/a&gt;    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;topic&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;" "&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;msg&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;payload&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-9"&gt;&lt;/a&gt;
+&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-10"&gt;&lt;/a&gt;&lt;span class="n"&gt;client&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;mqtt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Client&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-11"&gt;&lt;/a&gt;&lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;on_connect&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;on_connect&lt;/span&gt;
+&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-12"&gt;&lt;/a&gt;&lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;on_message&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;on_message&lt;/span&gt;
+&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-13"&gt;&lt;/a&gt;&lt;span class="k"&gt;try&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-14"&gt;&lt;/a&gt;    &lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"172.16.0.111"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1883&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-15"&gt;&lt;/a&gt;    &lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;loop_forever&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-16"&gt;&lt;/a&gt;&lt;span class="k"&gt;except&lt;/span&gt; &lt;span class="ne"&gt;KeyboardInterrupt&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;a name="rest_code_5fdb637abfbc4983a12b866f579029f4-17"&gt;&lt;/a&gt;    &lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;disconnect&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;t3上&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1、安装mosquitto的Python客户端。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_7ac7e758c87a4dd190f8c36dc5f3d840-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; pip3 install paho-mqtt
+&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;2、编写并启动消息发送端。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_f72a23cbaf8f4553bc168b3a81b41081-1"&gt;1&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_f72a23cbaf8f4553bc168b3a81b41081-2"&gt;2&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_f72a23cbaf8f4553bc168b3a81b41081-3"&gt;3&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_f72a23cbaf8f4553bc168b3a81b41081-4"&gt;4&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_f72a23cbaf8f4553bc168b3a81b41081-5"&gt;5&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_f72a23cbaf8f4553bc168b3a81b41081-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;paho.mqtt.publish&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;publish&lt;/span&gt;
+&lt;a name="rest_code_f72a23cbaf8f4553bc168b3a81b41081-2"&gt;&lt;/a&gt;&lt;span class="n"&gt;host&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"172.16.0.111"&lt;/span&gt;
+&lt;a name="rest_code_f72a23cbaf8f4553bc168b3a81b41081-3"&gt;&lt;/a&gt;&lt;span class="n"&gt;topic&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"test"&lt;/span&gt;
+&lt;a name="rest_code_f72a23cbaf8f4553bc168b3a81b41081-4"&gt;&lt;/a&gt;&lt;span class="n"&gt;payload&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"hi"&lt;/span&gt;
+&lt;a name="rest_code_f72a23cbaf8f4553bc168b3a81b41081-5"&gt;&lt;/a&gt;&lt;span class="n"&gt;publish&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;single&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;topic&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;payload&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;qos&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;hostname&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;host&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;
+&lt;p&gt;还可以这样写&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;table class="codetable"&gt;&lt;tr&gt;&lt;td class="linenos"&gt;&lt;div class="linenodiv"&gt;&lt;pre&gt;&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_8a66e41b42cb4891acb37d3112aab331-1"&gt;1&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_8a66e41b42cb4891acb37d3112aab331-2"&gt;2&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_8a66e41b42cb4891acb37d3112aab331-3"&gt;3&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_8a66e41b42cb4891acb37d3112aab331-4"&gt;4&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_8a66e41b42cb4891acb37d3112aab331-5"&gt;5&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_8a66e41b42cb4891acb37d3112aab331-6"&gt;6&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_8a66e41b42cb4891acb37d3112aab331-7"&gt;7&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_8a66e41b42cb4891acb37d3112aab331-8"&gt;8&lt;/a&gt;
+&lt;a href="https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/#rest_code_8a66e41b42cb4891acb37d3112aab331-9"&gt;9&lt;/a&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/td&gt;&lt;td class="code"&gt;&lt;pre class="code python"&gt;&lt;a name="rest_code_8a66e41b42cb4891acb37d3112aab331-1"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;paho.mqtt.client&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;mqtt&lt;/span&gt;
+&lt;a name="rest_code_8a66e41b42cb4891acb37d3112aab331-2"&gt;&lt;/a&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;time&lt;/span&gt;
+&lt;a name="rest_code_8a66e41b42cb4891acb37d3112aab331-3"&gt;&lt;/a&gt;&lt;span class="n"&gt;client&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;mqtt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Client&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;a name="rest_code_8a66e41b42cb4891acb37d3112aab331-4"&gt;&lt;/a&gt;&lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;connect&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"172.16.0.111"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_8a66e41b42cb4891acb37d3112aab331-5"&gt;&lt;/a&gt;&lt;span class="n"&gt;topic&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"test"&lt;/span&gt;
+&lt;a name="rest_code_8a66e41b42cb4891acb37d3112aab331-6"&gt;&lt;/a&gt;&lt;span class="n"&gt;payload&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"hi"&lt;/span&gt;
+&lt;a name="rest_code_8a66e41b42cb4891acb37d3112aab331-7"&gt;&lt;/a&gt;&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;i&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="nb"&gt;range&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;a name="rest_code_8a66e41b42cb4891acb37d3112aab331-8"&gt;&lt;/a&gt;    &lt;span class="n"&gt;client&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;publish&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;topic&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;payload&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_8a66e41b42cb4891acb37d3112aab331-9"&gt;&lt;/a&gt;    &lt;span class="n"&gt;time&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;sleep&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;要先启动消息接收端，再启动消息发送端。如果分别在两个主机上启动消息接收端和消息发送端，那么就可以实现即时通讯了。&lt;/p&gt;&lt;/div&gt;</description><category>Android</category><category>Linux</category><category>mosquitto</category><category>mqtt</category><category>Python</category><guid>https://codinglonglong.github.io/posts/ji-yu-mqttde-xiao-xi-tui-song/</guid><pubDate>Sun, 21 May 2017 06:59:56 GMT</pubDate></item><item><title>安装Deepin和RemixOS双系统</title><link>https://codinglonglong.github.io/posts/an-zhuang-deepinhe-remixosshuang-xi-tong/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;RemixOS是PC版的Android，可以运行一部分Android应用。&lt;/p&gt;
+&lt;p&gt;RemixOS下载地址： &lt;a class="reference external" href="https://sourceforge.net/projects/remix-os/"&gt;https://sourceforge.net/projects/remix-os/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;1、在Windows上，下载RemixOS安装包，解压缩，用Remix_OS_for_PC_Installation_Tool制作RemixOS安装U盘。&lt;/p&gt;
+&lt;p&gt;2、将安装U盘插入Deepin所在的笔记本（基于Ubuntu的发行版同理）。&lt;/p&gt;
+&lt;p&gt;3、启动Deepin，在根目录下创建文件夹Remix（这里需要管理员权限）。&lt;/p&gt;
+&lt;p&gt;4、在Remix中创建目录DATA（用来存放数据）。&lt;/p&gt;
+&lt;p&gt;5、把U盘上的内容全部拷贝到Remix目录中。&lt;/p&gt;
+&lt;p&gt;6、修改引导文件。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_274e8d7479e84d2eab317171c3d05d6b-1"&gt;&lt;/a&gt;&amp;gt;&amp;gt; sudo gedit /etc/grub.d/40_custom
+&lt;a name="rest_code_274e8d7479e84d2eab317171c3d05d6b-2"&gt;&lt;/a&gt;&lt;span class="c1"&gt;#!/bin/sh&lt;/span&gt;
+&lt;a name="rest_code_274e8d7479e84d2eab317171c3d05d6b-3"&gt;&lt;/a&gt;&lt;span class="nb"&gt;exec&lt;/span&gt; tail -n +3 &lt;span class="nv"&gt;$0&lt;/span&gt;
+&lt;a name="rest_code_274e8d7479e84d2eab317171c3d05d6b-4"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# This file provides an easy way to add custom menu entries.  Simply type the&lt;/span&gt;
+&lt;a name="rest_code_274e8d7479e84d2eab317171c3d05d6b-5"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# menu entries you want to add after this comment.  Be careful not to change&lt;/span&gt;
+&lt;a name="rest_code_274e8d7479e84d2eab317171c3d05d6b-6"&gt;&lt;/a&gt;&lt;span class="c1"&gt;# the 'exec tail' line above.&lt;/span&gt;
+&lt;a name="rest_code_274e8d7479e84d2eab317171c3d05d6b-7"&gt;&lt;/a&gt;menuentry &lt;span class="s1"&gt;'Remix OS For PC'&lt;/span&gt; --class android-x86&lt;span class="o"&gt;{&lt;/span&gt;
+&lt;a name="rest_code_274e8d7479e84d2eab317171c3d05d6b-8"&gt;&lt;/a&gt;    &lt;span class="nb"&gt;set&lt;/span&gt; &lt;span class="nv"&gt;root&lt;/span&gt;&lt;span class="o"&gt;=(&lt;/span&gt;hd0,3&lt;span class="o"&gt;)&lt;/span&gt;
+&lt;a name="rest_code_274e8d7479e84d2eab317171c3d05d6b-9"&gt;&lt;/a&gt;    linux /Remix/kernel &lt;span class="nv"&gt;root&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/sda3/Remix androidboot.hardware&lt;span class="o"&gt;=&lt;/span&gt;remix_cn_x86_64 androidboot.selinux&lt;span class="o"&gt;=&lt;/span&gt;permissive quiet &lt;span class="nv"&gt;DATA&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/Remix/DATA &lt;span class="nv"&gt;SRC&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/Remix nomodeset
+&lt;a name="rest_code_274e8d7479e84d2eab317171c3d05d6b-10"&gt;&lt;/a&gt;    initrd /Remix/initrd.img
+&lt;a name="rest_code_274e8d7479e84d2eab317171c3d05d6b-11"&gt;&lt;/a&gt;&lt;span class="o"&gt;}&lt;/span&gt;
+&lt;a name="rest_code_274e8d7479e84d2eab317171c3d05d6b-12"&gt;&lt;/a&gt;&amp;gt;&amp;gt; sudo grub-install 40_custom
+&lt;a name="rest_code_274e8d7479e84d2eab317171c3d05d6b-13"&gt;&lt;/a&gt;&amp;gt;&amp;gt; sudo update-grub
+&lt;a name="rest_code_274e8d7479e84d2eab317171c3d05d6b-14"&gt;&lt;/a&gt;&amp;gt;&amp;gt; sudo reboot
+&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;经过反复试验，RemixOS总是卡在开机的Logo画面上，两年前，我在同一个笔记本上安装RemixOS时是正常进入系统的。这次放了两个小时都没有进去，也没有任何提示信息……目前估计是系统镜像的问题，网上提到同样问题的人也很多……当前系统的版本是B2016112101。&lt;/p&gt;
+&lt;p&gt;如果有哪位大神解决了这个问题，可以顺便告诉我一下，非常感谢。&lt;/p&gt;
+&lt;p&gt;联系方式在“联系我” &lt;a class="reference external" href="https://codinglonglong.github.io/posts/lian-xi-wo/"&gt;https://codinglonglong.github.io/posts/lian-xi-wo/&lt;/a&gt; 页面中。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1、(hd0,3)指的是第0号硬盘的第3号分区。&lt;/p&gt;
+&lt;p&gt;2、引导文件不要轻易加空格。&lt;/p&gt;&lt;/div&gt;</description><category>Deepin</category><category>RemixOS</category><guid>https://codinglonglong.github.io/posts/an-zhuang-deepinhe-remixosshuang-xi-tong/</guid><pubDate>Sun, 21 May 2017 04:08:11 GMT</pubDate></item><item><title>openSUSE安装nodejs</title><link>https://codinglonglong.github.io/posts/opensusean-zhuang-nodejs/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、下载源码。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; wget https://nodejs.org/dist/v6.10.1/node-v6.10.1-linux-x64.tar.gz
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2、解压。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; tar zxvf node-v6.10.1-linux-x64.tar.gz
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;3、链接命令。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo ln -s /home/long/software/node/bin/node /usr/local/bin/node
+&amp;gt;&amp;gt; sudo ln -s /home/long/software/node/bin/npm /usr/local/bin/npm
+&amp;gt;&amp;gt; long@linux-iyb2:~&amp;gt; node -v
+v6.10.1
+&amp;gt;&amp;gt; long@linux-iyb2:~&amp;gt; npm -v
+3.10.10
+&lt;/pre&gt;
+&lt;/blockquote&gt;&lt;/div&gt;</description><category>nodejs</category><category>openSUSE</category><guid>https://codinglonglong.github.io/posts/opensusean-zhuang-nodejs/</guid><pubDate>Tue, 28 Mar 2017 00:58:42 GMT</pubDate></item><item><title>libdc1394 error: Failed to initialize libdc1394</title><link>https://codinglonglong.github.io/posts/libdc1394-error-failed-to-initialize-libdc1394/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;在使用pydecodeqr时，出现了如下错误信息：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+libdc1394 error: Failed to initialize libdc1394
+&lt;/pre&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;可以通过如下方法解决：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="literal-block"&gt;
+&amp;gt;&amp;gt; sudo ln /dev/null /dev/raw1394
+&lt;/pre&gt;
+&lt;/blockquote&gt;&lt;/div&gt;</description><category>Linux</category><guid>https://codinglonglong.github.io/posts/libdc1394-error-failed-to-initialize-libdc1394/</guid><pubDate>Fri, 03 Mar 2017 11:22:25 GMT</pubDate></item><item><title>修改Docker中的系统时间</title><link>https://codinglonglong.github.io/posts/xiu-gai-dockerzhong-de-xi-tong-shi-jian/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;默认在Docker中无法使用常见的命令修改系统时间，会显示没有权限，但测试程序往往需要修改系统时间，可以通过如下方法解决该问题：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-1"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-2"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-3"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-4"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;07&lt;/span&gt;:39:26 GMT &lt;span class="m"&gt;2017&lt;/span&gt;
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-5"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-1
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-6"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-7"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-8"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;08&lt;/span&gt;:39:35 +01 &lt;span class="m"&gt;2017&lt;/span&gt;
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-9"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-2
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-10"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-11"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-12"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;09&lt;/span&gt;:39:40 +02 &lt;span class="m"&gt;2017&lt;/span&gt;
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-13"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-3
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-14"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-15"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-16"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;10&lt;/span&gt;:39:45 +03 &lt;span class="m"&gt;2017&lt;/span&gt;
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-17"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-4
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-18"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-19"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-20"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;11&lt;/span&gt;:42:57 +04 &lt;span class="m"&gt;2017&lt;/span&gt;
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-21"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-5
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-22"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-23"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-24"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;12&lt;/span&gt;:43:05 +05 &lt;span class="m"&gt;2017&lt;/span&gt;
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-25"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-6
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-26"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-27"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-28"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;13&lt;/span&gt;:43:10 +06 &lt;span class="m"&gt;2017&lt;/span&gt;
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-29"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-7
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-30"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-31"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-32"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;14&lt;/span&gt;:43:15 +07 &lt;span class="m"&gt;2017&lt;/span&gt;
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-33"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-8
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-34"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-35"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-36"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;15&lt;/span&gt;:43:20 +08 &lt;span class="m"&gt;2017&lt;/span&gt;
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-37"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-9
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-38"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-39"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-40"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;16&lt;/span&gt;:43:25 +09 &lt;span class="m"&gt;2017&lt;/span&gt;
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-41"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-10
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-42"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-43"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-44"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;17&lt;/span&gt;:43:30 +10 &lt;span class="m"&gt;2017&lt;/span&gt;
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-45"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-11
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-46"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-47"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-48"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;18&lt;/span&gt;:43:35 +11 &lt;span class="m"&gt;2017&lt;/span&gt;
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-49"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-12
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-50"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-51"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-52"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;19&lt;/span&gt;:43:39 +12 &lt;span class="m"&gt;2017&lt;/span&gt;
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-53"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-13
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-54"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-55"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-56"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt;:43:43 +13 &lt;span class="m"&gt;2017&lt;/span&gt;
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-57"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-14
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-58"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-59"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-60"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;21&lt;/span&gt;:43:50 +14 &lt;span class="m"&gt;2017&lt;/span&gt;
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-61"&gt;&lt;/a&gt;
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-62"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+1
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-63"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-64"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-65"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;06&lt;/span&gt;:44:57 -01 &lt;span class="m"&gt;2017&lt;/span&gt;
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-66"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+2
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-67"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-68"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-69"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;05&lt;/span&gt;:45:01 -02 &lt;span class="m"&gt;2017&lt;/span&gt;
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-70"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+3
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-71"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-72"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-73"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;04&lt;/span&gt;:45:05 -03 &lt;span class="m"&gt;2017&lt;/span&gt;
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-74"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+4
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-75"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-76"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-77"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;03&lt;/span&gt;:45:09 -04 &lt;span class="m"&gt;2017&lt;/span&gt;
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-78"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+5
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-79"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-80"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-81"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;02&lt;/span&gt;:45:13 -05 &lt;span class="m"&gt;2017&lt;/span&gt;
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-82"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+6
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-83"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-84"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-85"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;01&lt;/span&gt;:45:17 -06 &lt;span class="m"&gt;2017&lt;/span&gt;
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-86"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+7
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-87"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-88"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-89"&gt;&lt;/a&gt;Tue Jan &lt;span class="m"&gt;31&lt;/span&gt; &lt;span class="m"&gt;00&lt;/span&gt;:45:24 -07 &lt;span class="m"&gt;2017&lt;/span&gt;
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-90"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+8
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-91"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-92"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-93"&gt;&lt;/a&gt;Mon Jan &lt;span class="m"&gt;30&lt;/span&gt; &lt;span class="m"&gt;23&lt;/span&gt;:45:28 -08 &lt;span class="m"&gt;2017&lt;/span&gt;
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-94"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+9
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-95"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-96"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-97"&gt;&lt;/a&gt;Mon Jan &lt;span class="m"&gt;30&lt;/span&gt; &lt;span class="m"&gt;22&lt;/span&gt;:45:32 -09 &lt;span class="m"&gt;2017&lt;/span&gt;
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-98"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+10
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-99"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-100"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-101"&gt;&lt;/a&gt;Mon Jan &lt;span class="m"&gt;30&lt;/span&gt; &lt;span class="m"&gt;21&lt;/span&gt;:45:37 -10 &lt;span class="m"&gt;2017&lt;/span&gt;
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-102"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+11
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-103"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-104"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-105"&gt;&lt;/a&gt;Mon Jan &lt;span class="m"&gt;30&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt;:45:53 -11 &lt;span class="m"&gt;2017&lt;/span&gt;
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-106"&gt;&lt;/a&gt;root@d26965edacdd:/# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT+12
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-107"&gt;&lt;/a&gt;root@d26965edacdd:/# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-108"&gt;&lt;/a&gt;root@d26965edacdd:/# date
+&lt;a name="rest_code_533521d46cae494c9785a6130dc84379-109"&gt;&lt;/a&gt;Mon Jan &lt;span class="m"&gt;30&lt;/span&gt; &lt;span class="m"&gt;19&lt;/span&gt;:46:00 -12 &lt;span class="m"&gt;2017&lt;/span&gt;
+&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;我们测试一下实际效果：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="code bash"&gt;&lt;a name="rest_code_154716383424438c9c980f23a3d66114-1"&gt;&lt;/a&gt;root@d26965edacdd:/usr/development# cat test.py
+&lt;a name="rest_code_154716383424438c9c980f23a3d66114-2"&gt;&lt;/a&gt;import &lt;span class="nb"&gt;time&lt;/span&gt;
+&lt;a name="rest_code_154716383424438c9c980f23a3d66114-3"&gt;&lt;/a&gt;print&lt;span class="o"&gt;(&lt;/span&gt;time.strftime&lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'%Y-%m-%d %H:%M:%S'&lt;/span&gt;,time.localtime&lt;span class="o"&gt;(&lt;/span&gt;time.time&lt;span class="o"&gt;())))&lt;/span&gt;
+&lt;a name="rest_code_154716383424438c9c980f23a3d66114-4"&gt;&lt;/a&gt;root@d26965edacdd:/usr/development# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT
+&lt;a name="rest_code_154716383424438c9c980f23a3d66114-5"&gt;&lt;/a&gt;root@d26965edacdd:/usr/development# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_154716383424438c9c980f23a3d66114-6"&gt;&lt;/a&gt;root@d26965edacdd:/usr/development# python test.py
+&lt;a name="rest_code_154716383424438c9c980f23a3d66114-7"&gt;&lt;/a&gt;&lt;span class="m"&gt;2017&lt;/span&gt;-01-31 &lt;span class="m"&gt;07&lt;/span&gt;:50:13
+&lt;a name="rest_code_154716383424438c9c980f23a3d66114-8"&gt;&lt;/a&gt;root@d26965edacdd:/usr/development# &lt;span class="nv"&gt;TZ&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;Etc/GMT-8
+&lt;a name="rest_code_154716383424438c9c980f23a3d66114-9"&gt;&lt;/a&gt;root@d26965edacdd:/usr/development# ln -snf /usr/share/zoneinfo/&lt;span class="nv"&gt;$TZ&lt;/span&gt; /etc/localtime  &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;echo&lt;/span&gt; &lt;span class="nv"&gt;$TZ&lt;/span&gt; &amp;gt; /etc/timezone
+&lt;a name="rest_code_154716383424438c9c980f23a3d66114-10"&gt;&lt;/a&gt;root@d26965edacdd:/usr/development# python test.py
+&lt;a name="rest_code_154716383424438c9c980f23a3d66114-11"&gt;&lt;/a&gt;&lt;span class="m"&gt;2017&lt;/span&gt;-01-31 &lt;span class="m"&gt;15&lt;/span&gt;:50:19
+&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;本方法是通过修改时区来“曲线救国”的。&lt;/p&gt;&lt;/div&gt;</description><category>Docker</category><category>Linux</category><guid>https://codinglonglong.github.io/posts/xiu-gai-dockerzhong-de-xi-tong-shi-jian/</guid><pubDate>Tue, 31 Jan 2017 07:36:34 GMT</pubDate></item></channel></rss>

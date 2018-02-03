@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="龙龙的技术博客">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>写程序的龙龙 (old posts, page 9) | 写程序的龙龙</title>
+<link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+<link rel="canonical" href="https://codinglonglong.github.io/index-9.html">
+<link rel="prev" href="index-10.html" type="text/html">
+<link rel="next" href="index-8.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?26f9e777606d49ebbdbe4df058bd028c";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><style>
+body{
+    font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
+}
+</style>
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://codinglonglong.github.io/">
+
+                <span id="blog-title">写程序的龙龙</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="posts/hui-dao-zui-chu-de-qi-dian/">回到最初的起点</a>
+                </li>
+<li>
+<a href="categories/wo-de-shi-ci/">我的诗词</a>
+                </li>
+<li>
+<a href="posts/lian-xi-wo/">联系我</a>
+                </li>
+<li>
+<a href="archive.html">文章存档</a>
+                </li>
+<li>
+<a href="categories/">标签 &amp; 分类</a>
+                </li>
+<li>
+<a href="https://github.com/codinglonglong/">Github</a>
+                </li>
+<li>
+<a href="posts/you-qing-lian-jie/">友情链接</a>
+                </li>
+<li>
+<a href="rss.xml">RSS 源</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+
+    
+
+
+    
+<div class="postindex">
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/" class="u-url">使用Flask-Restplus和Swagger UI最小化实现增删改查</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/" rel="bookmark"><time class="published dt-published" datetime="2017-01-24T17:13:27+08:00" title="2017-01-24 17:13">2017-01-24 17:13</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>继文章 <a class="reference external" href="https://codinglonglong.github.io/posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/">https://codinglonglong.github.io/posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/</a> 之后，我们参考文档实现了一个最小化增删改查的案例。</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-1"> 1</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-2"> 2</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-3"> 3</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-4"> 4</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-5"> 5</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-6"> 6</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-7"> 7</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-8"> 8</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-9"> 9</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-10">10</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-11">11</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-12">12</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-13">13</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-14">14</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-15">15</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-16">16</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-17">17</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-18">18</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-19">19</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-20">20</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-21">21</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-22">22</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-23">23</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-24">24</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-25">25</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-26">26</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-27">27</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-28">28</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-29">29</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-30">30</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-31">31</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-32">32</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-33">33</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-34">34</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-35">35</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-36">36</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-37">37</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-38">38</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-39">39</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-40">40</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-41">41</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-42">42</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-43">43</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-44">44</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-45">45</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-46">46</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-47">47</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-48">48</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-49">49</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-50">50</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-51">51</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-52">52</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-53">53</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-54">54</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-55">55</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-56">56</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-57">57</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-58">58</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-59">59</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-60">60</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-61">61</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-62">62</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-63">63</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-64">64</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-65">65</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-66">66</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-67">67</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-68">68</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-69">69</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-70">70</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-71">71</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-72">72</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-73">73</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-74">74</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-75">75</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-76">76</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-77">77</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-78">78</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-79">79</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-80">80</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-81">81</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-82">82</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-83">83</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-84">84</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-85">85</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-86">86</a>
+<a href="posts/shi-yong-flask-restplushe-swagger-uizui-xiao-hua-shi-xian-zeng-shan-gai-cha/#rest_code_862e21da9e48496da32f4137910846f1-87">87</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_862e21da9e48496da32f4137910846f1-1"></a><span class="c1">#-*-coding:utf-8-*-</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-2"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-3"></a><span class="kn">from</span> <span class="nn">flask.ext.restplus</span> <span class="kn">import</span> <span class="n">Api</span><span class="p">,</span> <span class="n">Resource</span><span class="p">,</span> <span class="n">fields</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-4"></a>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-5"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-6"></a><span class="n">api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">'1.0'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'TodoMVC API'</span><span class="p">,</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-7"></a>        <span class="n">description</span><span class="o">=</span><span class="s1">'A simple TodoMVC API'</span><span class="p">,</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-8"></a>        <span class="p">)</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-9"></a>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-10"></a><span class="n">ns</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">namespace</span><span class="p">(</span><span class="s1">'todos'</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">'TODO operations'</span><span class="p">)</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-11"></a>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-12"></a><span class="n">todo</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">model</span><span class="p">(</span><span class="s1">'Todo'</span><span class="p">,</span> <span class="p">{</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-13"></a>    <span class="s1">'id'</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">Integer</span><span class="p">(</span><span class="n">readOnly</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">'The task unique identifier'</span><span class="p">),</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-14"></a>    <span class="s1">'task'</span><span class="p">:</span> <span class="n">fields</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="n">required</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s1">'The task details'</span><span class="p">)</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-15"></a><span class="p">})</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-16"></a>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-17"></a>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-18"></a><span class="k">class</span> <span class="nc">TodoDAO</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-19"></a>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-20"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-21"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-22"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">todos</span> <span class="o">=</span> <span class="p">[]</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-23"></a>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-24"></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-25"></a>        <span class="k">for</span> <span class="n">todo</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">todos</span><span class="p">:</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-26"></a>            <span class="k">if</span> <span class="n">todo</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span> <span class="o">==</span> <span class="nb">id</span><span class="p">:</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-27"></a>                <span class="k">return</span> <span class="n">todo</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-28"></a>        <span class="n">api</span><span class="o">.</span><span class="n">abort</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s2">"Todo {} doesn't exist"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="p">))</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-29"></a>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-30"></a>    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-31"></a>        <span class="n">todo</span> <span class="o">=</span> <span class="n">data</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-32"></a>        <span class="n">todo</span><span class="p">[</span><span class="s1">'id'</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">counter</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">counter</span> <span class="o">+</span> <span class="mi">1</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-33"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">todos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">todo</span><span class="p">)</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-34"></a>        <span class="k">return</span> <span class="n">todo</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-35"></a>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-36"></a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-37"></a>        <span class="n">todo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-38"></a>        <span class="n">todo</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-39"></a>        <span class="k">return</span> <span class="n">todo</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-40"></a>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-41"></a>    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-42"></a>        <span class="n">todo</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-43"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">todos</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">todo</span><span class="p">)</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-44"></a>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-45"></a>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-46"></a><span class="n">DAO</span> <span class="o">=</span> <span class="n">TodoDAO</span><span class="p">()</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-47"></a><span class="n">DAO</span><span class="o">.</span><span class="n">create</span><span class="p">({</span><span class="s1">'task'</span><span class="p">:</span> <span class="s1">'Build an API'</span><span class="p">})</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-48"></a><span class="n">DAO</span><span class="o">.</span><span class="n">create</span><span class="p">({</span><span class="s1">'task'</span><span class="p">:</span> <span class="s1">'你好'</span><span class="p">})</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-49"></a>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-50"></a>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-51"></a><span class="nd">@ns.route</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-52"></a><span class="k">class</span> <span class="nc">TodoList</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-53"></a>    <span class="sd">'''Shows a list of all todos, and lets you POST to add new tasks'''</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-54"></a>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-55"></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-56"></a>        <span class="sd">'''List all tasks'''</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-57"></a>        <span class="k">return</span> <span class="n">DAO</span><span class="o">.</span><span class="n">todos</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-58"></a>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-59"></a>    <span class="nd">@ns.expect</span><span class="p">(</span><span class="n">todo</span><span class="p">)</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-60"></a>    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-61"></a>        <span class="sd">'''Create a new task'''</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-62"></a>        <span class="k">return</span> <span class="n">DAO</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">api</span><span class="o">.</span><span class="n">payload</span><span class="p">),</span> <span class="mi">201</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-63"></a>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-64"></a>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-65"></a><span class="nd">@ns.route</span><span class="p">(</span><span class="s1">'/&lt;int:id&gt;'</span><span class="p">)</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-66"></a><span class="nd">@ns.response</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s1">'Todo not found'</span><span class="p">)</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-67"></a><span class="nd">@ns.param</span><span class="p">(</span><span class="s1">'id'</span><span class="p">,</span> <span class="s1">'任务标识'</span><span class="p">)</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-68"></a><span class="k">class</span> <span class="nc">Todo</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-69"></a>    <span class="sd">'''Show a single todo item and lets you delete them'''</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-70"></a>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-71"></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-72"></a>        <span class="sd">'''Fetch a given resource'''</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-73"></a>        <span class="k">return</span> <span class="n">DAO</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-74"></a>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-75"></a>    <span class="k">def</span> <span class="nf">delete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-76"></a>        <span class="sd">'''Delete a task given its identifier'''</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-77"></a>        <span class="n">DAO</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-78"></a>        <span class="k">return</span> <span class="s1">''</span><span class="p">,</span> <span class="mi">204</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-79"></a>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-80"></a>    <span class="nd">@ns.expect</span><span class="p">(</span><span class="n">todo</span><span class="p">)</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-81"></a>    <span class="k">def</span> <span class="nf">put</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-82"></a>        <span class="sd">'''Update a task given its identifier'''</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-83"></a>        <span class="k">return</span> <span class="n">DAO</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="nb">id</span><span class="p">,</span> <span class="n">api</span><span class="o">.</span><span class="n">payload</span><span class="p">)</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-84"></a>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-85"></a>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-86"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<a name="rest_code_862e21da9e48496da32f4137910846f1-87"></a>    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">"0.0.0.0"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8080</span><span class="p">)</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p>运行结果：</p>
+<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/flaskswageruifull.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/flaskswageruifull.PNG"><p>在这个例子中，我们实现了五种最基本的API：</p>
+<ol class="arabic simple">
+<li>查询全部todo</li>
+<li>添加todo</li>
+<li>查询某一个todo</li>
+<li>删除某一个todo</li>
+<li>更新某一个todo</li>
+</ol>
+<p>而更复杂的项目都是基于这五种API展开的，从这里我们也可以看出RESTful Web Services的技术美感， <strong>simple is better</strong> 。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/" class="u-url">配置Flask-Restplus和Swagger UI实现API测试文档自动化</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/" rel="bookmark"><time class="published dt-published" datetime="2017-01-24T13:21:42+08:00" title="2017-01-24 13:21">2017-01-24 13:21</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>继文章 <a class="reference external" href="https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/">https://codinglonglong.github.io/posts/dockerpei-zhi-kai-fa-jing-xiang/</a> 之后，我们继续实验。</p>
+<p>1、Docker中安装Flask-Restplus。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_182aad44f06142cebe2cb822e8678f4b-1"></a>pip install flask-restplus
+</pre>
+</blockquote>
+<p>2、主系统编写测试程序main.py。</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_9012c75ce82b4972a06a35e7ddd27759-1"> 1</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_9012c75ce82b4972a06a35e7ddd27759-2"> 2</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_9012c75ce82b4972a06a35e7ddd27759-3"> 3</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_9012c75ce82b4972a06a35e7ddd27759-4"> 4</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_9012c75ce82b4972a06a35e7ddd27759-5"> 5</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_9012c75ce82b4972a06a35e7ddd27759-6"> 6</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_9012c75ce82b4972a06a35e7ddd27759-7"> 7</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_9012c75ce82b4972a06a35e7ddd27759-8"> 8</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_9012c75ce82b4972a06a35e7ddd27759-9"> 9</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_9012c75ce82b4972a06a35e7ddd27759-10">10</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_9012c75ce82b4972a06a35e7ddd27759-11">11</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_9012c75ce82b4972a06a35e7ddd27759-12">12</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_9012c75ce82b4972a06a35e7ddd27759-13">13</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_9012c75ce82b4972a06a35e7ddd27759-14">14</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_9012c75ce82b4972a06a35e7ddd27759-15">15</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_9012c75ce82b4972a06a35e7ddd27759-16">16</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_9012c75ce82b4972a06a35e7ddd27759-17">17</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_9012c75ce82b4972a06a35e7ddd27759-18">18</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_9012c75ce82b4972a06a35e7ddd27759-19">19</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_9012c75ce82b4972a06a35e7ddd27759-20">20</a>
+<a href="posts/pei-zhi-flask-restplushe-swagger-uishi-xian-apice-shi-wen-dang-zi-dong-hua/#rest_code_9012c75ce82b4972a06a35e7ddd27759-21">21</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_9012c75ce82b4972a06a35e7ddd27759-1"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<a name="rest_code_9012c75ce82b4972a06a35e7ddd27759-2"></a><span class="kn">from</span> <span class="nn">flask_restplus</span> <span class="kn">import</span> <span class="n">Api</span><span class="p">,</span> <span class="n">Resource</span><span class="p">,</span> <span class="n">fields</span>
+<a name="rest_code_9012c75ce82b4972a06a35e7ddd27759-3"></a>
+<a name="rest_code_9012c75ce82b4972a06a35e7ddd27759-4"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<a name="rest_code_9012c75ce82b4972a06a35e7ddd27759-5"></a><span class="n">api</span> <span class="o">=</span> <span class="n">Api</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s1">'1.0'</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">'Sample API'</span><span class="p">,</span>
+<a name="rest_code_9012c75ce82b4972a06a35e7ddd27759-6"></a>    <span class="n">description</span><span class="o">=</span><span class="s1">'A sample API'</span><span class="p">,</span>
+<a name="rest_code_9012c75ce82b4972a06a35e7ddd27759-7"></a><span class="p">)</span>
+<a name="rest_code_9012c75ce82b4972a06a35e7ddd27759-8"></a>
+<a name="rest_code_9012c75ce82b4972a06a35e7ddd27759-9"></a><span class="nd">@api.route</span><span class="p">(</span><span class="s1">'/my-resource/&lt;id&gt;'</span><span class="p">)</span>
+<a name="rest_code_9012c75ce82b4972a06a35e7ddd27759-10"></a><span class="nd">@api.doc</span><span class="p">(</span><span class="n">params</span><span class="o">=</span><span class="p">{</span><span class="s1">'id'</span><span class="p">:</span> <span class="s1">'An ID'</span><span class="p">})</span>
+<a name="rest_code_9012c75ce82b4972a06a35e7ddd27759-11"></a><span class="k">class</span> <span class="nc">MyResource</span><span class="p">(</span><span class="n">Resource</span><span class="p">):</span>
+<a name="rest_code_9012c75ce82b4972a06a35e7ddd27759-12"></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+<a name="rest_code_9012c75ce82b4972a06a35e7ddd27759-13"></a>        <span class="k">return</span> <span class="p">{}</span>
+<a name="rest_code_9012c75ce82b4972a06a35e7ddd27759-14"></a>
+<a name="rest_code_9012c75ce82b4972a06a35e7ddd27759-15"></a>    <span class="nd">@api.response</span><span class="p">(</span><span class="mi">403</span><span class="p">,</span> <span class="s1">'Not Authorized'</span><span class="p">)</span>
+<a name="rest_code_9012c75ce82b4972a06a35e7ddd27759-16"></a>    <span class="k">def</span> <span class="nf">post</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+<a name="rest_code_9012c75ce82b4972a06a35e7ddd27759-17"></a>        <span class="n">api</span><span class="o">.</span><span class="n">abort</span><span class="p">(</span><span class="mi">403</span><span class="p">)</span>
+<a name="rest_code_9012c75ce82b4972a06a35e7ddd27759-18"></a>
+<a name="rest_code_9012c75ce82b4972a06a35e7ddd27759-19"></a>
+<a name="rest_code_9012c75ce82b4972a06a35e7ddd27759-20"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<a name="rest_code_9012c75ce82b4972a06a35e7ddd27759-21"></a>    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">host</span><span class="o">=</span><span class="s2">"0.0.0.0"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8080</span><span class="p">)</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p>3、Docker中运行程序。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_6da968c91c024f51ba8ca7c552261dc7-1"></a><span class="nb">cd</span> /usr/development/
+<a name="rest_code_6da968c91c024f51ba8ca7c552261dc7-2"></a>python main.py
+</pre>
+</blockquote>
+<p>4、主系统查看测试结果。</p>
+<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/flaskswaggerui.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/flaskswaggerui.PNG"><p>可以看到通过Swagger UI，我们能够很方便地在浏览器上测试API的可用性。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerpei-zhi-kai-fa-jing-xiang/" class="u-url">Docker配置开发镜像</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/dockerpei-zhi-kai-fa-jing-xiang/" rel="bookmark"><time class="published dt-published" datetime="2017-01-23T23:08:02+08:00" title="2017-01-23 23:08">2017-01-23 23:08</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>在主系统上开发，在Docker中部署，在主系统上测试……不需要一手一台电脑，也不需要担心虚拟机占用资源太高，而且不管主系统是Linux、Windows还是MacOS，开发都是一样的……感觉很不错……</p>
+<ol class="arabic">
+<li>
+<p class="first">新建容器。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_dfcc32c5dd024e8eafb82c7f22e8e8bf-1"></a>docker run --name mypc -i -t -p <span class="m">8080</span>:8080 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash
+</pre>
+</blockquote>
+</li>
+<li>
+<p class="first">Docker中修改Ubuntu软件源。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_8a71c0ba853248bd956fdddadaf52785-1"></a>vi /etc/apt/sources.list
+<a name="rest_code_8a71c0ba853248bd956fdddadaf52785-2"></a>:%s/archive.ubuntu/cn.archive.ubuntu/g
+<a name="rest_code_8a71c0ba853248bd956fdddadaf52785-3"></a>:wq
+</pre>
+</blockquote>
+</li>
+<li>
+<p class="first">Docker中更新软件源。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_0b9c8dc22bcf413ba16c79e9cc4f517c-1"></a>apt update
+</pre>
+</blockquote>
+</li>
+<li>
+<p class="first">Docker中安装Python和Flask。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_09f1e90c0f2d4567b9f97bf254ccbe54-1"></a>apt install python
+<a name="rest_code_09f1e90c0f2d4567b9f97bf254ccbe54-2"></a>apt install python-pip
+<a name="rest_code_09f1e90c0f2d4567b9f97bf254ccbe54-3"></a>apt install python-dev
+<a name="rest_code_09f1e90c0f2d4567b9f97bf254ccbe54-4"></a>pip install flask
+</pre>
+</blockquote>
+</li>
+<li>
+<p class="first">在主系统目录 <strong>~/share/</strong> 下编写测试网站main.py。</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_619a39f223f94702b445dc72474e0fb4-1">1</a>
+<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_619a39f223f94702b445dc72474e0fb4-2">2</a>
+<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_619a39f223f94702b445dc72474e0fb4-3">3</a>
+<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_619a39f223f94702b445dc72474e0fb4-4">4</a>
+<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_619a39f223f94702b445dc72474e0fb4-5">5</a>
+<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_619a39f223f94702b445dc72474e0fb4-6">6</a>
+<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_619a39f223f94702b445dc72474e0fb4-7">7</a>
+<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_619a39f223f94702b445dc72474e0fb4-8">8</a>
+<a href="posts/dockerpei-zhi-kai-fa-jing-xiang/#rest_code_619a39f223f94702b445dc72474e0fb4-9">9</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_619a39f223f94702b445dc72474e0fb4-1"></a><span class="kn">from</span> <span class="nn">flask</span> <span class="kn">import</span> <span class="n">Flask</span>
+<a name="rest_code_619a39f223f94702b445dc72474e0fb4-2"></a><span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<a name="rest_code_619a39f223f94702b445dc72474e0fb4-3"></a>
+<a name="rest_code_619a39f223f94702b445dc72474e0fb4-4"></a><span class="nd">@app.route</span><span class="p">(</span><span class="s1">'/'</span><span class="p">)</span>
+<a name="rest_code_619a39f223f94702b445dc72474e0fb4-5"></a><span class="k">def</span> <span class="nf">hello_world</span><span class="p">():</span>
+<a name="rest_code_619a39f223f94702b445dc72474e0fb4-6"></a>    <span class="k">return</span> <span class="s1">'Hello World!'</span>
+<a name="rest_code_619a39f223f94702b445dc72474e0fb4-7"></a>
+<a name="rest_code_619a39f223f94702b445dc72474e0fb4-8"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
+<a name="rest_code_619a39f223f94702b445dc72474e0fb4-9"></a>    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">"0.0.0.0"</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="s2">"8080"</span><span class="p">)</span>
+</pre></td>
+</tr></table>
+</blockquote>
+</li>
+<li>
+<p class="first">Docker中运行网站。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_3de184267c9f444fab8256d465c1328f-1"></a><span class="nb">cd</span> /usr/development/
+<a name="rest_code_3de184267c9f444fab8256d465c1328f-2"></a>python main.py
+</pre>
+</blockquote>
+</li>
+<li>
+<p class="first">主系统上查看效果。</p>
+</li>
+</ol>
+<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/flaskhelloworld.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/flaskhelloworld.PNG"><p><strong>注意</strong></p>
+<ol class="arabic simple">
+<li>docker run --name mypc -i -t -p 8080:8080 -v ~/share/:/usr/development/ ubuntu:14.04 /bin/bash 中的 <strong>/usr/development/</strong> 不可以是系统已有目录，否则会有权限问题，影响后续的安装。</li>
+<li>如果不喜欢使用vim，第二步中可以先安装emacs，再修改/etc/apt/sources.list。</li>
+</ol>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/dockerchang-yong-ming-ling/" class="u-url">Docker常用命令</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/dockerchang-yong-ming-ling/" rel="bookmark"><time class="published dt-published" datetime="2017-01-21T20:13:52+08:00" title="2017-01-21 20:13">2017-01-21 20:13</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<ol class="arabic">
+<li>
+<p class="first">创建容器。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_6d4f93b2b6524ba698fa42a37ec6705b-1"></a>docker run --name mypc -it ubuntu:16.04 /bin/bash
+</pre>
+</blockquote>
+</li>
+</ol>
+<p>经过实验，目前只有这样创建的容器可以在后边正常start。</p>
+<ol class="arabic" start="2">
+<li>
+<p class="first">查看已有容器及其状态。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_00282a2a82a84931a32b7431d7816a3e-1"></a>docker ps -a
+</pre>
+</blockquote>
+</li>
+<li>
+<p class="first">启动已有容器。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_55877fd45f85487c905b3e8ac417eb29-1"></a>docker start mypc
+</pre>
+</blockquote>
+</li>
+<li>
+<p class="first">登陆正在运行的容器。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_9bde5643197c46d89fb4bbb846c886c0-1"></a>docker <span class="nb">exec</span> -it mypc /bin/bash
+</pre>
+</blockquote>
+</li>
+<li>
+<p class="first">关闭正在运行的容器。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_46976fad557646a1a0b1dafdfe7e019f-1"></a>docker stop mypc
+</pre>
+</blockquote>
+</li>
+<li>
+<p class="first">删除容器。</p>
+<blockquote>
+<pre class="code bash"><a name="rest_code_b4debc330fb34183b1730d815e891c3d-1"></a>docker rm mypc
+</pre>
+</blockquote>
+</li>
+</ol>
+<p><strong>注意</strong> ：重启电脑之前，记得先把VirtualBox里边的虚拟机正常关机，否则等重启回来，容器可能就找不到了。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/windowspei-zhi-docker/" class="u-url">Windows配置Docker</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/windowspei-zhi-docker/" rel="bookmark"><time class="published dt-published" datetime="2017-01-21T17:27:00+08:00" title="2017-01-21 17:27">2017-01-21 17:27</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>因为新笔记本的无线网卡和声卡比较新，目前的Linux发行版都无法很好地支持，所以只好先用Windows来进行开发了……</p>
+<p>第一步，在Windows上部署Linux开发环境，首先考虑到的是用Docker。</p>
+<ol class="arabic">
+<li>
+<p class="first">安装docker-toolbox。访问下载安装： <a class="reference external" href="https://www.docker.com/products/docker-toolbox">https://www.docker.com/products/docker-toolbox</a></p>
+</li>
+<li>
+<p class="first">在开始菜单双击运行Docker Quickstart Terminal，等待……………………直到出现</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/windowspei-zhi-docker/#rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-1">1</a>
+<a href="posts/windowspei-zhi-docker/#rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-2">2</a>
+<a href="posts/windowspei-zhi-docker/#rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-3">3</a>
+<a href="posts/windowspei-zhi-docker/#rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-4">4</a>
+<a href="posts/windowspei-zhi-docker/#rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-5">5</a>
+<a href="posts/windowspei-zhi-docker/#rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-6">6</a>
+<a href="posts/windowspei-zhi-docker/#rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-7">7</a></pre></div></td>
+<td class="code"><pre class="code bash"><a name="rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-1"></a>docker is configured to use the default machine with IP <span class="m">192</span>.168.99.100
+<a name="rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-2"></a>For <span class="nb">help</span> getting started, check out the docs at https://docs.docker.com
+<a name="rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-3"></a>
+<a name="rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-4"></a>Start interactive shell
+<a name="rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-5"></a>
+<a name="rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-6"></a>long@DESKTOP-N79DL8P MINGW64 ~
+<a name="rest_code_d5e57eec9f1e4383854ec7ca7fe11ab6-7"></a>$
+</pre></td>
+</tr></table>
+</blockquote>
+</li>
+<li>
+<p class="first">运行 <strong>docker pull ubuntu:16.04</strong> 。</p>
+</li>
+<li>
+<p class="first">运行 <strong>docker run -it --rm ubuntu:16.04 bash</strong> ，进入ubuntu的交互环境。</p>
+</li>
+</ol>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/vuejsxue-xi-8/" class="u-url">vuejs学习(8)</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/vuejsxue-xi-8/" rel="bookmark"><time class="published dt-published" datetime="2017-01-14T15:07:00+08:00" title="2017-01-14 15:07">2017-01-14 15:07</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>本文要学习的是列表渲染 v-for ，看测试代码 <strong>TodoItem.vue</strong> ：</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-1"> 1</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-2"> 2</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-3"> 3</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-4"> 4</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-5"> 5</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-6"> 6</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-7"> 7</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-8"> 8</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-9"> 9</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-10">10</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-11">11</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-12">12</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-13">13</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-14">14</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-15">15</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-16">16</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-17">17</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-18">18</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-19">19</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-20">20</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-21">21</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-22">22</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-23">23</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-24">24</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-25">25</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-26">26</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-27">27</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-28">28</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-29">29</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-30">30</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-31">31</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-32">32</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-33">33</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-34">34</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-35">35</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-36">36</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-37">37</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-38">38</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-39">39</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-40">40</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-41">41</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-42">42</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-43">43</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-44">44</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-45">45</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-46">46</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-47">47</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-48">48</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-49">49</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-50">50</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-51">51</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-52">52</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-53">53</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-54">54</a>
+<a href="posts/vuejsxue-xi-8/#rest_code_08dadf8fff584ddaab2818b97ca3d261-55">55</a></pre></div></td>
+<td class="code"><pre class="code html"><a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-2"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"todoitem"</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-3"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-4"></a>        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in items1"</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-5"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-6"></a>    <span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">"1"</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-7"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-8"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>项1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-9"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>项2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-10"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>索引<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-11"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-12"></a>        <span class="p">&lt;</span><span class="nt">tr</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item, index in items2"</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-13"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{item[0]}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-14"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{item[1]}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-15"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{index}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-16"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-17"></a>    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-18"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-19"></a>        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"value, key, index in items3"</span><span class="p">&gt;</span>{{index}}==&gt;{{key}}==&gt;{{value}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-20"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-21"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-22"></a>        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in 3"</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-23"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-24"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-25"></a>        <span class="p">&lt;</span><span class="nt">template</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in items5"</span> <span class="na">v-if</span><span class="o">=</span><span class="s">"male"</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-26"></a>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-27"></a>        <span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-28"></a>        <span class="p">&lt;</span><span class="nt">template</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in items6"</span> <span class="na">v-if</span><span class="o">=</span><span class="s">"!male"</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-29"></a>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-30"></a>        <span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-31"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-32"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-33"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-34"></a>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-35"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-36"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-37"></a>    <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-38"></a>        <span class="k">return</span> <span class="p">{</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-39"></a>            <span class="nx">items1</span><span class="o">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-40"></a>            <span class="nx">items2</span><span class="o">:</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]],</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-41"></a>            <span class="nx">items3</span><span class="o">:</span> <span class="p">{</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-42"></a>                <span class="s1">'name'</span><span class="o">:</span> <span class="s1">'Tom'</span><span class="p">,</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-43"></a>                <span class="s1">'age'</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-44"></a>                <span class="s1">'gender'</span><span class="o">:</span> <span class="s1">'male'</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-45"></a>            <span class="p">},</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-46"></a>            <span class="nx">male</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-47"></a>            <span class="nx">items5</span><span class="o">:</span> <span class="p">[</span><span class="s2">"Boy1"</span><span class="p">,</span> <span class="s2">"Boy2"</span><span class="p">,</span> <span class="s2">"Boy3"</span><span class="p">],</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-48"></a>            <span class="nx">items6</span><span class="o">:</span> <span class="p">[</span><span class="s2">"Girl1"</span><span class="p">,</span> <span class="s2">"Girl2"</span><span class="p">,</span> <span class="s2">"Girl3"</span><span class="p">],</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-49"></a>        <span class="p">}</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-50"></a>    <span class="p">},</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-51"></a><span class="p">}</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-52"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-53"></a>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-54"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-55"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p>运行结果：</p>
+<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/vueforrender.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/vueforrender.PNG"><p>在上述的代码中，我们需要学到以下几个问题：</p>
+<ol class="arabic simple">
+<li>vuejs的v-for和Python的for循环有很多相似的地方，比如元素迭代，比如整数迭代。</li>
+<li>vuejs的迭代可以包含索引，如果是列表，用“item, index in items”；如果是对象，用“value, key, index in items”。</li>
+<li>v-for迭代的目标也可以是函数的可迭代返回值，比如返回列表。</li>
+</ol>
+<p>后面的文章我们将学习更复杂的列表渲染。</p>
+</div>
+    </div>
+    </article>
+</div>
+
+        <nav class="postindexpager"><ul class="pager">
+<li class="previous">
+                <a href="index-10.html" rel="prev">Newer posts</a>
+            </li>
+            <li class="next">
+                <a href="index-8.html" rel="next">Older posts</a>
+            </li>
+        </ul></nav>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2018         <a href="mailto:codinglonglong@126.com">龙龙</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
+</body>
+</html>

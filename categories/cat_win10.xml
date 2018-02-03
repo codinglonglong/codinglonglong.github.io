@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>写程序的龙龙 (Posts about win10)</title><link>https://codinglonglong.github.io/</link><description></description><atom:link href="https://codinglonglong.github.io/categories/cat_win10.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><lastBuildDate>Sat, 03 Feb 2018 09:52:29 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Excel中国式排名</title><link>https://codinglonglong.github.io/posts/excelzhong-guo-shi-pai-ming/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;假设Y5是数据的第一行，Y5:Y45是所有数据，那么在排名列的第一行输入&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+=RANK(Y5,$Y$5:$Y$45,0)
+&lt;/pre&gt;
+&lt;p&gt;向下填充之后就实现中国式排名了。&lt;/p&gt;&lt;/div&gt;</description><category>Excel</category><guid>https://codinglonglong.github.io/posts/excelzhong-guo-shi-pai-ming/</guid><pubDate>Mon, 29 Jan 2018 01:28:24 GMT</pubDate></item><item><title>设置IE兼容性访问ntce.cn</title><link>https://codinglonglong.github.io/posts/she-zhi-iejian-rong-xing-fang-wen-ntcecn/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;随着IE逐步被淘汰，很多旧网站都会出现兼容性问题。以ntce.cn为例来解决这个问题：&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-1.PNG"&gt;
+&lt;hr class="docutils"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-2.PNG"&gt;
+&lt;hr class="docutils"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-3.png" src="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-3.png"&gt;
+&lt;hr class="docutils"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-4.PNG"&gt;
+&lt;hr class="docutils"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-5.png" src="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-5.png"&gt;
+&lt;hr class="docutils"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-6.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-6.PNG"&gt;
+&lt;hr class="docutils"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-7.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-7.PNG"&gt;
+&lt;hr class="docutils"&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-8.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/ntce-8.PNG"&gt;&lt;/div&gt;</description><category>IE</category><category>ntce</category><guid>https://codinglonglong.github.io/posts/she-zhi-iejian-rong-xing-fang-wen-ntcecn/</guid><pubDate>Tue, 12 Dec 2017 01:59:24 GMT</pubDate></item><item><title>win10下仅允许一个程序联网，并禁止其他所有程序联网</title><link>https://codinglonglong.github.io/posts/win10xia-jin-yun-xu-yi-ge-cheng-xu-lian-wang-bing-jin-zhi-qi-ta-suo-you-cheng-xu-lian-wang/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;当电脑共享手机热点上网时，为避免浪费流量，就需要设置只让我们需要的程序联网，使用win10自带的防火墙，可以设置所有程序都不能联网，但是无法设置只让一个程序联网。&lt;/p&gt;
+&lt;p&gt;TinyWall（&lt;a class="reference external" href="http://tinywall.pados.hu/"&gt;http://tinywall.pados.hu/&lt;/a&gt;）可以解决这个问题。&lt;/p&gt;
+&lt;p&gt;安装好之后，启动要允许联网的程序，右击托盘图标，点击"管理"，“应用程序例外”，“添加应用程序”，“选择进程”即可。&lt;/p&gt;&lt;/div&gt;</description><category>win10</category><category>防火墙</category><guid>https://codinglonglong.github.io/posts/win10xia-jin-yun-xu-yi-ge-cheng-xu-lian-wang-bing-jin-zhi-qi-ta-suo-you-cheng-xu-lian-wang/</guid><pubDate>Tue, 21 Nov 2017 12:02:14 GMT</pubDate></item><item><title>百度网盘大文件普通下载</title><link>https://codinglonglong.github.io/posts/bai-du-wang-pan-da-wen-jian-pu-tong-xia-zai/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;使用百度网盘下载大文件时，会提示安装客户端，关键是注册还需要手机号码，这对于个人隐私来说，总觉得存在隐患。因为下载文件本身和手机号码间没有必然的联系……&lt;/p&gt;
+&lt;p&gt;也实在感觉到，随着互联网的发展，越来越多根本与手机号码无关的网络服务都在要求使用手机号码注册，最大的“理由”就是找回密码，这也难怪能接到各种陌生电话的骚扰……因为谁也不知道这个号码到底是谁泄露出去的……所以，到头来，一些受苦受难的普通人，只能选择不注册……因为没有你的服务，地球一样可以转……不排除，确实有人不在乎骚扰……&lt;/p&gt;
+&lt;p&gt;对此，我专门进行了实验，两部手机，两个号码，一个专门用来注册日常需要使用的APP和网站，包括填写网购时的快递信息等等；另一个几乎什么都没有注册过……&lt;/p&gt;
+&lt;p&gt;一年过去了，后者安静地，让我感觉到，我的手机主要功能是用来叫我起床，还有写备忘。&lt;/p&gt;
+&lt;p&gt;值得一提的是，任何APP或者网站，在注册时都会告诉我们——此号码只用于找回密码……&lt;/p&gt;
+&lt;p&gt;不过话说回来，当我们有着急的事情，需要临时下载一些文件时，该怎么办呢？&lt;/p&gt;
+&lt;p&gt;可以使用Firefox浏览器 &lt;a class="reference external" href="http://www.firefox.com.cn/"&gt;http://www.firefox.com.cn/&lt;/a&gt; ，在文件下载页面右击，选择“查看元素”，选择“控制台”，在最底下“&amp;gt;&amp;gt;”后面输入：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre class="code js"&gt;&lt;a name="rest_code_f3934978f0bb436c8b0212d5c4a9cb2e-1"&gt;&lt;/a&gt;&lt;span class="nb"&gt;Object&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;defineProperty&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;Object&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getPrototypeOf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;navigator&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="s1"&gt;'platform'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="nx"&gt;get&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(){&lt;/span&gt;&lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s1"&gt;''&lt;/span&gt;&lt;span class="p"&gt;;}});&lt;/span&gt;
+&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;再去点击“下载”按钮，安装客户端的提示就没有了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;附加说明&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;本文不针对任何索要手机号码的网络服务，只表示对互联网行业现状的担忧，因为地球还是在转的。&lt;/p&gt;&lt;/div&gt;</description><category>大文件下载</category><guid>https://codinglonglong.github.io/posts/bai-du-wang-pan-da-wen-jian-pu-tong-xia-zai/</guid><pubDate>Wed, 14 Jun 2017 18:02:22 GMT</pubDate></item><item><title>Win10修改MAC地址</title><link>https://codinglonglong.github.io/posts/win10xiu-gai-macdi-zhi/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;1、打开注册表编辑器，“运行”-&amp;gt;“regedit”。&lt;/p&gt;
+&lt;p&gt;2、找到如下路径，得到下图：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E972-E325-11CE-BFC1-08002bE10318}&lt;/strong&gt;&lt;/p&gt;
+&lt;img alt="https://github.com/longlongpicture/myblogpicture/raw/master/modifymac1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/modifymac1.PNG"&gt;
+&lt;p&gt;3、右击"0003"-&amp;gt;"新建"-&amp;gt;"字符串值"-&amp;gt;"NetworkAddress"。&lt;/p&gt;
+&lt;p&gt;4、双击“NetworkAddress”，输入新的MAC地址值，比如“0028F80AF812”。&lt;/p&gt;
+&lt;p&gt;5、点击“确定”，重启电脑即可。&lt;/p&gt;&lt;/div&gt;</description><category>Network</category><category>win10</category><guid>https://codinglonglong.github.io/posts/win10xiu-gai-macdi-zhi/</guid><pubDate>Fri, 31 Mar 2017 04:15:05 GMT</pubDate></item><item><title>win10双屏下隐藏非主屏任务栏</title><link>https://codinglonglong.github.io/posts/win10shuang-ping-xia-yin-cang-fei-zhu-ping-ren-wu-lan/</link><dc:creator>龙龙</dc:creator><description>&lt;div&gt;&lt;p&gt;win10双屏下默认都有任务栏，貌似占用了有限的可视空间，可以通过如下方法关闭非主屏的任务栏。&lt;/p&gt;
+&lt;ol class="arabic simple"&gt;
+&lt;li&gt;通过“设置”-&amp;gt;“系统”-&amp;gt;“显示”，设置主屏；&lt;/li&gt;
+&lt;li&gt;右击任务栏，点击“属性”；&lt;/li&gt;
+&lt;li&gt;去掉“在所有显示器上显示任务栏”前面的勾，点击“确定”即可。&lt;/li&gt;
+&lt;/ol&gt;&lt;/div&gt;</description><category>win10</category><guid>https://codinglonglong.github.io/posts/win10shuang-ping-xia-yin-cang-fei-zhu-ping-ren-wu-lan/</guid><pubDate>Thu, 12 Jan 2017 10:46:17 GMT</pubDate></item></channel></rss>

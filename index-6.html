@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="龙龙的技术博客">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>写程序的龙龙 (old posts, page 6) | 写程序的龙龙</title>
+<link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+<link rel="canonical" href="https://codinglonglong.github.io/index-6.html">
+<link rel="prev" href="index-7.html" type="text/html">
+<link rel="next" href="index-5.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?26f9e777606d49ebbdbe4df058bd028c";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><style>
+body{
+    font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
+}
+</style>
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://codinglonglong.github.io/">
+
+                <span id="blog-title">写程序的龙龙</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="posts/hui-dao-zui-chu-de-qi-dian/">回到最初的起点</a>
+                </li>
+<li>
+<a href="categories/wo-de-shi-ci/">我的诗词</a>
+                </li>
+<li>
+<a href="posts/lian-xi-wo/">联系我</a>
+                </li>
+<li>
+<a href="archive.html">文章存档</a>
+                </li>
+<li>
+<a href="categories/">标签 &amp; 分类</a>
+                </li>
+<li>
+<a href="https://github.com/codinglonglong/">Github</a>
+                </li>
+<li>
+<a href="posts/you-qing-lian-jie/">友情链接</a>
+                </li>
+<li>
+<a href="rss.xml">RSS 源</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+
+    
+
+
+    
+<div class="postindex">
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/could-not-open-a-connection-to-your-authentication-agent/" class="u-url">Could not open a connection to your authentication agent</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/could-not-open-a-connection-to-your-authentication-agent/" rel="bookmark"><time class="published dt-published" datetime="2017-01-09T22:11:08+08:00" title="2017-01-09 22:11">2017-01-09 22:11</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>在执行ssh-add时，如果出现“Could not open a connection to your authentication agent”这一错误信息，可以通过如下方法解决：</p>
+<pre class="code bash"><a name="rest_code_4357774b0d934e9fbf80b2c82b86ed91-1"></a>&gt;&gt; <span class="nb">eval</span> <span class="sb">`</span>ssh-agent<span class="sb">`</span>
+</pre>
+<p><strong>注意</strong> 是 <strong>`</strong> 而不是 <strong>'</strong> 。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/guan-li-duo-ge-gitzhang-hu/" class="u-url">管理多个git账户</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/guan-li-duo-ge-gitzhang-hu/" rel="bookmark"><time class="published dt-published" datetime="2017-01-09T21:28:59+08:00" title="2017-01-09 21:28">2017-01-09 21:28</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>因为博客用了两个github账户，一个放文章，一个放图片，所以出现了两个git账户同时存在的问题。这时可以通过如下的方法解决冲突：</p>
+<ol class="arabic simple">
+<li>生成两个ssh key.</li>
+</ol>
+<pre class="code bash"><a name="rest_code_47dc01b3c59c4c2db23165799193fc58-1"></a>&gt;&gt; ssh-keygen -t rsa -C <span class="s2">"email address 1"</span>
+<a name="rest_code_47dc01b3c59c4c2db23165799193fc58-2"></a>&gt;&gt; ssh-keygen -t rsa -C <span class="s2">"email address 2"</span>
+</pre>
+<ol class="arabic simple" start="2">
+<li>添加上一步生成的两个ssh key.</li>
+</ol>
+<pre class="code bash"><a name="rest_code_42743c6cbfa741a2b2fd7a0e355d2376-1"></a>&gt;&gt; ssh-add ~/.ssh/id_rsa1
+<a name="rest_code_42743c6cbfa741a2b2fd7a0e355d2376-2"></a>&gt;&gt; ssh-add ~/.ssh/id_rsa2
+</pre>
+<ol class="arabic simple" start="3">
+<li>创建配置文件.</li>
+</ol>
+<pre class="code bash"><a name="rest_code_99ae10759ec94994bfe5999ffc8d6d43-1"></a>&gt;&gt; touch config
+</pre>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/guan-li-duo-ge-gitzhang-hu/#rest_code_a6132711b36c430ab674ebf6dfd52e4e-1"> 1</a>
+<a href="posts/guan-li-duo-ge-gitzhang-hu/#rest_code_a6132711b36c430ab674ebf6dfd52e4e-2"> 2</a>
+<a href="posts/guan-li-duo-ge-gitzhang-hu/#rest_code_a6132711b36c430ab674ebf6dfd52e4e-3"> 3</a>
+<a href="posts/guan-li-duo-ge-gitzhang-hu/#rest_code_a6132711b36c430ab674ebf6dfd52e4e-4"> 4</a>
+<a href="posts/guan-li-duo-ge-gitzhang-hu/#rest_code_a6132711b36c430ab674ebf6dfd52e4e-5"> 5</a>
+<a href="posts/guan-li-duo-ge-gitzhang-hu/#rest_code_a6132711b36c430ab674ebf6dfd52e4e-6"> 6</a>
+<a href="posts/guan-li-duo-ge-gitzhang-hu/#rest_code_a6132711b36c430ab674ebf6dfd52e4e-7"> 7</a>
+<a href="posts/guan-li-duo-ge-gitzhang-hu/#rest_code_a6132711b36c430ab674ebf6dfd52e4e-8"> 8</a>
+<a href="posts/guan-li-duo-ge-gitzhang-hu/#rest_code_a6132711b36c430ab674ebf6dfd52e4e-9"> 9</a>
+<a href="posts/guan-li-duo-ge-gitzhang-hu/#rest_code_a6132711b36c430ab674ebf6dfd52e4e-10">10</a></pre></div></td>
+<td class="code"><pre class="code bash"><a name="rest_code_a6132711b36c430ab674ebf6dfd52e4e-1"></a><span class="c1"># github1</span>
+<a name="rest_code_a6132711b36c430ab674ebf6dfd52e4e-2"></a>Host github1
+<a name="rest_code_a6132711b36c430ab674ebf6dfd52e4e-3"></a>     HostName github.com
+<a name="rest_code_a6132711b36c430ab674ebf6dfd52e4e-4"></a>     PreferredAuthentications publickey
+<a name="rest_code_a6132711b36c430ab674ebf6dfd52e4e-5"></a>     IdentityFile ~/.ssh/id_rsa1
+<a name="rest_code_a6132711b36c430ab674ebf6dfd52e4e-6"></a><span class="c1"># github2</span>
+<a name="rest_code_a6132711b36c430ab674ebf6dfd52e4e-7"></a>Host github2
+<a name="rest_code_a6132711b36c430ab674ebf6dfd52e4e-8"></a>     HostName github.com
+<a name="rest_code_a6132711b36c430ab674ebf6dfd52e4e-9"></a>     PreferredAuthentications publickey
+<a name="rest_code_a6132711b36c430ab674ebf6dfd52e4e-10"></a>     IdentityFile ~/.ssh/id_rsa2
+</pre></td>
+</tr></table>
+<ol class="arabic simple" start="4">
+<li>测试.</li>
+</ol>
+<pre class="code bash"><a name="rest_code_2936e6d7b74542b2b5f76356f5419f0c-1"></a>&gt;&gt; ssh -T git@github1
+<a name="rest_code_2936e6d7b74542b2b5f76356f5419f0c-2"></a>&gt;&gt; ssh -T git@github2
+</pre>
+<p><strong>注意</strong></p>
+<ol class="arabic simple">
+<li>过程之中遇到yes或者no，都输入yes。</li>
+<li>生成的ssh key别忘了放进github的“设置”里，并且注意结尾不能有回车。</li>
+</ol>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/you-qing-lian-jie/" class="u-url">友情链接</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/you-qing-lian-jie/" rel="bookmark"><time class="published dt-published" datetime="2017-01-09T20:26:21+08:00" title="2017-01-09 20:26">2017-01-09 20:26</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <ul class="simple">
+<li>纸鸢@红豆·绿豆 <a class="reference external" href="http://www.cnblogs.com/jlj9520/">http://www.cnblogs.com/jlj9520/</a>
+</li>
+<li>晚起的虫子 <a class="reference external" href="https://dawnkeyan.github.io/">https://dawnkeyan.github.io/</a>
+</li>
+</ul>
+</div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/hui-dao-zui-chu-de-qi-dian/" class="u-url">回到最初的起点</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/hui-dao-zui-chu-de-qi-dian/" rel="bookmark"><time class="published dt-published" datetime="2017-01-09T16:05:11+08:00" title="2017-01-09 16:05">2017-01-09 16:05</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>时间才刚刚过去半年，一切感觉都不对了。没怎么碰代码的自己，在过去的半年里，除了一个字幕生成器以外，几乎没有什么完整的代码。虽然毕业以后，一直在忙碌工作的事情，适应新的环境，还出差学习了视频后期的基础知识，但不写代码的日子，总是在心里缺少些什么。少了刚上大学时“每天一个程序，每个程序都是传奇”的自信，少了争论哪种编程语言最好用时的面红耳赤，少了折腾代码解决bug时的那种驱动感。不过，单纯的我单纯地相信“只要努力，什么时候开始都不晚”，2017年，刚刚忙完教师证，买了新的笔记本，回到最初的起点，重做自己的技术梦。不管以后走不走开发这条路，有一颗热爱技术的心总是好的，因为热爱技术的人往往很可爱~~就像我们几个可爱的小伙伴…………</p>
+<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/sunnychasers.jpg" src="https://github.com/longlongpicture/myblogpicture/raw/master/sunnychasers.jpg">
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/guo-nei-de-pipjing-xiang-yuan/" class="u-url">国内的pip镜像源</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/guo-nei-de-pipjing-xiang-yuan/" rel="bookmark"><time class="published dt-published" datetime="2015-10-15T15:04:24+08:00" title="2015-10-15 15:04">2015-10-15 15:04</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p><a class="reference external" href="http://mirrors.aliyun.com/pypi/simple/">http://mirrors.aliyun.com/pypi/simple/</a></p>
+<p><a class="reference external" href="http://pypi.douban.com/simple/">http://pypi.douban.com/simple/</a></p>
+<p><a class="reference external" href="http://pypi.mirrors.ustc.edu.cn/simple/">http://pypi.mirrors.ustc.edu.cn/simple/</a></p>
+<p><a class="reference external" href="http://pypi.v2ex.com/simple/?allow_list_dir=1">http://pypi.v2ex.com/simple/?allow_list_dir=1</a></p>
+<p>安装的方法：</p>
+<pre class="literal-block">
+&gt;&gt; sudo pip install bottle -i http://pypi.douban.com/simple
+</pre>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/ubuntu1404guan-bi-lan-ya/" class="u-url">Ubuntu14.04关闭蓝牙</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/ubuntu1404guan-bi-lan-ya/" rel="bookmark"><time class="published dt-published" datetime="2015-09-21T21:29:28+08:00" title="2015-09-21 21:29">2015-09-21 21:29</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>一般很少用蓝牙，开着又费电。</p>
+<p>在Ubuntu14.04中默认关闭蓝牙的方法：</p>
+<pre class="literal-block">
+&gt;&gt; sudo emacs /etc/rc.local
+rfkill block bluetooth
+exit 0
+&gt;&gt; sudo reboot
+</pre>
+</div>
+    </div>
+    </article>
+</div>
+
+        <nav class="postindexpager"><ul class="pager">
+<li class="previous">
+                <a href="index-7.html" rel="prev">Newer posts</a>
+            </li>
+            <li class="next">
+                <a href="index-5.html" rel="next">Older posts</a>
+            </li>
+        </ul></nav>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2018         <a href="mailto:codinglonglong@126.com">龙龙</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
+</body>
+</html>

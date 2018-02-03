@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="龙龙的技术博客">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>写程序的龙龙 (old posts, page 18) | 写程序的龙龙</title>
+<link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+<link rel="canonical" href="https://codinglonglong.github.io/index-18.html">
+<link rel="prev" href="index-19.html" type="text/html">
+<link rel="next" href="index-17.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?26f9e777606d49ebbdbe4df058bd028c";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><style>
+body{
+    font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
+}
+</style>
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://codinglonglong.github.io/">
+
+                <span id="blog-title">写程序的龙龙</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="posts/hui-dao-zui-chu-de-qi-dian/">回到最初的起点</a>
+                </li>
+<li>
+<a href="categories/wo-de-shi-ci/">我的诗词</a>
+                </li>
+<li>
+<a href="posts/lian-xi-wo/">联系我</a>
+                </li>
+<li>
+<a href="archive.html">文章存档</a>
+                </li>
+<li>
+<a href="categories/">标签 &amp; 分类</a>
+                </li>
+<li>
+<a href="https://github.com/codinglonglong/">Github</a>
+                </li>
+<li>
+<a href="posts/you-qing-lian-jie/">友情链接</a>
+                </li>
+<li>
+<a href="rss.xml">RSS 源</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+
+    
+
+
+    
+<div class="postindex">
+    <article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/" class="u-url">Python和Java有趣的语法对比（2）——实例化是否调用基类的构造函数</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/" rel="bookmark"><time class="published dt-published" datetime="2017-07-27T21:10:49+08:00" title="2017-07-27 21:10">2017-07-27 21:10</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>Python和Java在子类实例化上也有区别，看下面这个例子：</p>
+<p><strong>Python版本</strong></p>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_ac415af057124bd7a810cf135e6fbcf9-1"> 1</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_ac415af057124bd7a810cf135e6fbcf9-2"> 2</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_ac415af057124bd7a810cf135e6fbcf9-3"> 3</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_ac415af057124bd7a810cf135e6fbcf9-4"> 4</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_ac415af057124bd7a810cf135e6fbcf9-5"> 5</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_ac415af057124bd7a810cf135e6fbcf9-6"> 6</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_ac415af057124bd7a810cf135e6fbcf9-7"> 7</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_ac415af057124bd7a810cf135e6fbcf9-8"> 8</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_ac415af057124bd7a810cf135e6fbcf9-9"> 9</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_ac415af057124bd7a810cf135e6fbcf9-10">10</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_ac415af057124bd7a810cf135e6fbcf9-11">11</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_ac415af057124bd7a810cf135e6fbcf9-12">12</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_ac415af057124bd7a810cf135e6fbcf9-13">13</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_ac415af057124bd7a810cf135e6fbcf9-14">14</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_ac415af057124bd7a810cf135e6fbcf9-15">15</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_ac415af057124bd7a810cf135e6fbcf9-16">16</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_ac415af057124bd7a810cf135e6fbcf9-17">17</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_ac415af057124bd7a810cf135e6fbcf9-18">18</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_ac415af057124bd7a810cf135e6fbcf9-19">19</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-1"></a><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-2"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-3"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">"A的构造函数"</span><span class="p">)</span>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-4"></a>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-5"></a>    <span class="k">def</span> <span class="nf">sayhello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-6"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">"Hello A"</span><span class="p">)</span>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-7"></a>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-8"></a><span class="k">class</span> <span class="nc">B</span><span class="p">(</span><span class="n">A</span><span class="p">):</span>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-9"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-10"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">"B的构造函数"</span><span class="p">)</span>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-11"></a>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-12"></a>    <span class="k">def</span> <span class="nf">sayhello</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-13"></a>        <span class="k">print</span><span class="p">(</span><span class="s2">"Hello B"</span><span class="p">)</span>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-14"></a>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-15"></a>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-16"></a><span class="n">b</span> <span class="o">=</span> <span class="n">B</span><span class="p">()</span>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-17"></a><span class="n">b</span><span class="o">.</span><span class="n">sayhello</span><span class="p">()</span>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-18"></a><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">()</span>
+<a name="rest_code_ac415af057124bd7a810cf135e6fbcf9-19"></a><span class="n">a</span><span class="o">.</span><span class="n">sayhello</span><span class="p">()</span>
+</pre></td>
+</tr></table>
+<p>输出:</p>
+<pre class="literal-block">
+C:\Users\long\Desktop\src\test&gt;python3 test.py
+B的构造函数
+Hello B
+A的构造函数
+Hello A
+</pre>
+<p><strong>Java版本</strong></p>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-1"> 1</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-2"> 2</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-3"> 3</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-4"> 4</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-5"> 5</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-6"> 6</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-7"> 7</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-8"> 8</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-9"> 9</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-10">10</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-11">11</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-12">12</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-13">13</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-14">14</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-15">15</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-16">16</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-17">17</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-18">18</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-19">19</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-20">20</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-21">21</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-22">22</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-23">23</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-24">24</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-25">25</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-2-shi-li-hua-shi-fou-diao-yong-ji-lei-de-gou-zao-han-shu/#rest_code_e0770ce3928842b5a53b2fb8b89eb78c-26">26</a></pre></div></td>
+<td class="code"><pre class="code java"><a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-1"></a><span class="kd">public</span> <span class="kd">class</span> <span class="nc">T1</span><span class="o">{</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-2"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-3"></a>        <span class="n">B</span> <span class="n">b</span> <span class="o">=</span>  <span class="k">new</span> <span class="n">B</span><span class="o">();</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-4"></a>        <span class="n">b</span><span class="o">.</span><span class="na">sayhello</span><span class="o">();</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-5"></a>        <span class="n">A</span> <span class="n">a</span> <span class="o">=</span> <span class="k">new</span> <span class="n">A</span><span class="o">();</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-6"></a>        <span class="n">a</span><span class="o">.</span><span class="na">sayhello</span><span class="o">();</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-7"></a>    <span class="o">}</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-8"></a><span class="o">}</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-9"></a>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-10"></a><span class="kd">class</span> <span class="nc">A</span><span class="o">{</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-11"></a>    <span class="n">A</span><span class="o">(){</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-12"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"A的构造函数"</span><span class="o">);</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-13"></a>    <span class="o">}</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-14"></a>    <span class="kt">void</span> <span class="nf">sayhello</span><span class="o">(){</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-15"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello A"</span><span class="o">);</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-16"></a>    <span class="o">}</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-17"></a><span class="o">}</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-18"></a>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-19"></a><span class="kd">class</span> <span class="nc">B</span> <span class="kd">extends</span> <span class="n">A</span><span class="o">{</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-20"></a>    <span class="n">B</span><span class="o">(){</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-21"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"B的构造函数"</span><span class="o">);</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-22"></a>    <span class="o">}</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-23"></a>    <span class="kt">void</span> <span class="nf">sayhello</span><span class="o">(){</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-24"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello B"</span><span class="o">);</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-25"></a>    <span class="o">}</span>
+<a name="rest_code_e0770ce3928842b5a53b2fb8b89eb78c-26"></a><span class="o">}</span>
+</pre></td>
+</tr></table>
+<p>输出:</p>
+<pre class="literal-block">
+C:\Users\long\Desktop\src\test&gt;javac -encoding UTF8 *.java
+
+C:\Users\long\Desktop\src\test&gt;java T1
+A的构造函数
+B的构造函数
+Hello B
+A的构造函数
+Hello A
+</pre>
+<p>这里体现了Java有趣的地方，对于类继承，Java实例化子类的时候，不仅会调用子类的构造函数，还会自动调用父类的构造函数，而调用子类的实例方法却不会调用父类的实例方法。在这一点上，Python比较符合人的直观感受，都是调用的实例对应的方法，不管是构造函数还是实例方法。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/" class="u-url">Python和Java有趣的语法对比（1）——构造函数默认参数</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/" rel="bookmark"><time class="published dt-published" datetime="2017-07-27T18:15:52+08:00" title="2017-07-27 18:15">2017-07-27 18:15</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>一直在用Python，很少用Java，现在学习Android，为了Native App的流畅性，不得不用Java了。</p>
+<p>普通语法上，Python和Java基本可以完全对译，无非是动态类型和静态类型的区别，但是面向对象上，两者的区别就很有意思了。</p>
+<p>今天我们来研究一下构造函数默认参数这个话题。举个例子：</p>
+<p>如果我们想在类方法执行过程中，有时看到一些debug信息，有时不想看到，而不想每次都重复写输出语句之后再删除，该怎么办呢？</p>
+<p>先来看看Python实现：</p>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_15459325212142b0b0a8dec2bb56ef0a-1"> 1</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_15459325212142b0b0a8dec2bb56ef0a-2"> 2</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_15459325212142b0b0a8dec2bb56ef0a-3"> 3</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_15459325212142b0b0a8dec2bb56ef0a-4"> 4</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_15459325212142b0b0a8dec2bb56ef0a-5"> 5</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_15459325212142b0b0a8dec2bb56ef0a-6"> 6</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_15459325212142b0b0a8dec2bb56ef0a-7"> 7</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_15459325212142b0b0a8dec2bb56ef0a-8"> 8</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_15459325212142b0b0a8dec2bb56ef0a-9"> 9</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_15459325212142b0b0a8dec2bb56ef0a-10">10</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_15459325212142b0b0a8dec2bb56ef0a-11">11</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_15459325212142b0b0a8dec2bb56ef0a-12">12</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_15459325212142b0b0a8dec2bb56ef0a-13">13</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_15459325212142b0b0a8dec2bb56ef0a-14">14</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_15459325212142b0b0a8dec2bb56ef0a-15">15</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_15459325212142b0b0a8dec2bb56ef0a-16">16</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_15459325212142b0b0a8dec2bb56ef0a-17">17</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_15459325212142b0b0a8dec2bb56ef0a-18">18</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_15459325212142b0b0a8dec2bb56ef0a-19">19</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_15459325212142b0b0a8dec2bb56ef0a-20">20</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_15459325212142b0b0a8dec2bb56ef0a-21">21</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_15459325212142b0b0a8dec2bb56ef0a-22">22</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_15459325212142b0b0a8dec2bb56ef0a-23">23</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_15459325212142b0b0a8dec2bb56ef0a-1"></a><span class="k">class</span> <span class="nc">Test</span><span class="p">:</span>
+<a name="rest_code_15459325212142b0b0a8dec2bb56ef0a-2"></a>
+<a name="rest_code_15459325212142b0b0a8dec2bb56ef0a-3"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<a name="rest_code_15459325212142b0b0a8dec2bb56ef0a-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">debug</span> <span class="o">=</span> <span class="n">debug</span>
+<a name="rest_code_15459325212142b0b0a8dec2bb56ef0a-5"></a>
+<a name="rest_code_15459325212142b0b0a8dec2bb56ef0a-6"></a>    <span class="k">def</span> <span class="nf">test_add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numa</span><span class="p">,</span> <span class="n">numb</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<a name="rest_code_15459325212142b0b0a8dec2bb56ef0a-7"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">debug</span> <span class="ow">or</span> <span class="n">debug</span><span class="p">:</span>
+<a name="rest_code_15459325212142b0b0a8dec2bb56ef0a-8"></a>            <span class="k">print</span><span class="p">(</span><span class="s2">"test_add"</span><span class="p">)</span>
+<a name="rest_code_15459325212142b0b0a8dec2bb56ef0a-9"></a>            <span class="k">print</span><span class="p">(</span><span class="s2">"numa:"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">numa</span><span class="p">))</span>
+<a name="rest_code_15459325212142b0b0a8dec2bb56ef0a-10"></a>            <span class="k">print</span><span class="p">(</span><span class="s2">"numb:"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">numb</span><span class="p">))</span>
+<a name="rest_code_15459325212142b0b0a8dec2bb56ef0a-11"></a>        <span class="k">return</span> <span class="n">numa</span> <span class="o">+</span> <span class="n">numb</span>
+<a name="rest_code_15459325212142b0b0a8dec2bb56ef0a-12"></a>
+<a name="rest_code_15459325212142b0b0a8dec2bb56ef0a-13"></a>    <span class="k">def</span> <span class="nf">test_minus</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numa</span><span class="p">,</span> <span class="n">numb</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<a name="rest_code_15459325212142b0b0a8dec2bb56ef0a-14"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">debug</span> <span class="ow">or</span> <span class="n">debug</span><span class="p">:</span>
+<a name="rest_code_15459325212142b0b0a8dec2bb56ef0a-15"></a>            <span class="k">print</span><span class="p">(</span><span class="s2">"test_minus"</span><span class="p">)</span>
+<a name="rest_code_15459325212142b0b0a8dec2bb56ef0a-16"></a>            <span class="k">print</span><span class="p">(</span><span class="s2">"numa:"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">numa</span><span class="p">))</span>
+<a name="rest_code_15459325212142b0b0a8dec2bb56ef0a-17"></a>            <span class="k">print</span><span class="p">(</span><span class="s2">"numb:"</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">numb</span><span class="p">))</span>
+<a name="rest_code_15459325212142b0b0a8dec2bb56ef0a-18"></a>        <span class="k">return</span> <span class="n">numa</span> <span class="o">-</span> <span class="n">numb</span>
+<a name="rest_code_15459325212142b0b0a8dec2bb56ef0a-19"></a>
+<a name="rest_code_15459325212142b0b0a8dec2bb56ef0a-20"></a>
+<a name="rest_code_15459325212142b0b0a8dec2bb56ef0a-21"></a><span class="n">t</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
+<a name="rest_code_15459325212142b0b0a8dec2bb56ef0a-22"></a><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">test_add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<a name="rest_code_15459325212142b0b0a8dec2bb56ef0a-23"></a><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">test_minus</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></td>
+</tr></table>
+<p>输出:</p>
+<pre class="literal-block">
+$ python3 test.py
+3
+-1
+</pre>
+<p>如果想输出一个类里的所有debug，只需要在实例化的时候设置参数就可以了。</p>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_f20ce4df0c2b422d829bfaa58735a626-1">1</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_f20ce4df0c2b422d829bfaa58735a626-2">2</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_f20ce4df0c2b422d829bfaa58735a626-3">3</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_f20ce4df0c2b422d829bfaa58735a626-1"></a><span class="n">t</span> <span class="o">=</span> <span class="n">Test</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<a name="rest_code_f20ce4df0c2b422d829bfaa58735a626-2"></a><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">test_add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<a name="rest_code_f20ce4df0c2b422d829bfaa58735a626-3"></a><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">test_minus</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></td>
+</tr></table>
+<p>输出:</p>
+<pre class="literal-block">
+$ python3 test.py
+test_add
+numa:1
+numb:2
+3
+test_minus
+numa:1
+numb:2
+-1
+</pre>
+<p>如果只想debug某个函数，只需要调用函数的时候设置参数就可以了。</p>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_e4a982a706a94a5cbf29c2d895cbf952-1">1</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_e4a982a706a94a5cbf29c2d895cbf952-2">2</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_e4a982a706a94a5cbf29c2d895cbf952-3">3</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_e4a982a706a94a5cbf29c2d895cbf952-1"></a><span class="n">t</span> <span class="o">=</span> <span class="n">Test</span><span class="p">()</span>
+<a name="rest_code_e4a982a706a94a5cbf29c2d895cbf952-2"></a><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">test_add</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span>
+<a name="rest_code_e4a982a706a94a5cbf29c2d895cbf952-3"></a><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">test_minus</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></td>
+</tr></table>
+<p>输出:</p>
+<pre class="literal-block">
+$ python3 test.py
+test_add
+numa:1
+numb:2
+3
+-1
+</pre>
+<p>如果用Java实现类似的效果，该怎么办呢？要注意到： <strong>Java不支持默认参数</strong></p>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-1"> 1</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-2"> 2</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-3"> 3</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-4"> 4</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-5"> 5</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-6"> 6</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-7"> 7</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-8"> 8</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-9"> 9</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-10">10</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-11">11</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-12">12</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-13">13</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-14">14</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-15">15</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-16">16</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-17">17</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-18">18</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-19">19</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-20">20</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-21">21</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-22">22</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-23">23</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-24">24</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-25">25</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-26">26</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-27">27</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-28">28</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-29">29</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-30">30</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-31">31</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-32">32</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-33">33</a></pre></div></td>
+<td class="code"><pre class="code java"><a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-1"></a><span class="kd">public</span> <span class="kd">class</span> <span class="nc">T1</span><span class="o">{</span>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-2"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-3"></a>        <span class="n">Test</span> <span class="n">t</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Test</span><span class="o">();</span>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-4"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">t</span><span class="o">.</span><span class="na">test_add</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="kc">false</span><span class="o">));</span>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-5"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">t</span><span class="o">.</span><span class="na">test_minus</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="kc">false</span><span class="o">));</span>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-6"></a>    <span class="o">}</span>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-7"></a><span class="o">}</span>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-8"></a>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-9"></a><span class="kd">class</span> <span class="nc">Test</span><span class="o">{</span>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-10"></a>    <span class="kt">boolean</span> <span class="n">debug</span><span class="o">=</span><span class="kc">false</span><span class="o">;</span>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-11"></a>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-12"></a>    <span class="kt">void</span> <span class="nf">set_global</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">debug</span><span class="o">){</span>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-13"></a>        <span class="k">this</span><span class="o">.</span><span class="na">debug</span> <span class="o">=</span> <span class="n">debug</span><span class="o">;</span>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-14"></a>    <span class="o">}</span>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-15"></a>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-16"></a>    <span class="kt">int</span> <span class="nf">test_add</span><span class="o">(</span><span class="kt">int</span> <span class="n">numa</span><span class="o">,</span> <span class="kt">int</span> <span class="n">numb</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">debug</span><span class="o">){</span>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-17"></a>        <span class="k">if</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">debug</span> <span class="o">||</span> <span class="n">debug</span><span class="o">){</span>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-18"></a>            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"test_add"</span><span class="o">);</span>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-19"></a>            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"numa:"</span> <span class="o">+</span> <span class="n">numa</span><span class="o">);</span>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-20"></a>            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"numb:"</span> <span class="o">+</span> <span class="n">numb</span><span class="o">);</span>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-21"></a>        <span class="o">}</span>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-22"></a>        <span class="k">return</span> <span class="n">numa</span> <span class="o">+</span> <span class="n">numb</span><span class="o">;</span>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-23"></a>    <span class="o">}</span>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-24"></a>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-25"></a>    <span class="kt">int</span> <span class="nf">test_minus</span><span class="o">(</span><span class="kt">int</span> <span class="n">numa</span><span class="o">,</span> <span class="kt">int</span> <span class="n">numb</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">debug</span><span class="o">){</span>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-26"></a>        <span class="k">if</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">debug</span> <span class="o">||</span> <span class="n">debug</span><span class="o">){</span>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-27"></a>            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"test_minus"</span><span class="o">);</span>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-28"></a>            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"numa:"</span> <span class="o">+</span> <span class="n">numa</span><span class="o">);</span>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-29"></a>            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"numb:"</span> <span class="o">+</span> <span class="n">numb</span><span class="o">);</span>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-30"></a>        <span class="o">}</span>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-31"></a>        <span class="k">return</span> <span class="n">numa</span> <span class="o">-</span> <span class="n">numb</span><span class="o">;</span>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-32"></a>    <span class="o">}</span>
+<a name="rest_code_de4282fbbadb45d5ac8777f0c72a1ecf-33"></a><span class="o">}</span>
+</pre></td>
+</tr></table>
+<p>输出:</p>
+<pre class="literal-block">
+long@iphone7 MINGW64 ~/Desktop/src/test
+$ javac *.java
+
+long@iphone7 MINGW64 ~/Desktop/src/test
+$ java T1
+3
+-1
+</pre>
+<p>设置类的debug参数。</p>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_437fcd4d33354188a33e2efc223990de-1">1</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_437fcd4d33354188a33e2efc223990de-2">2</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_437fcd4d33354188a33e2efc223990de-3">3</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_437fcd4d33354188a33e2efc223990de-4">4</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_437fcd4d33354188a33e2efc223990de-5">5</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_437fcd4d33354188a33e2efc223990de-6">6</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_437fcd4d33354188a33e2efc223990de-7">7</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_437fcd4d33354188a33e2efc223990de-8">8</a></pre></div></td>
+<td class="code"><pre class="code java"><a name="rest_code_437fcd4d33354188a33e2efc223990de-1"></a><span class="kd">public</span> <span class="kd">class</span> <span class="nc">T1</span><span class="o">{</span>
+<a name="rest_code_437fcd4d33354188a33e2efc223990de-2"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+<a name="rest_code_437fcd4d33354188a33e2efc223990de-3"></a>        <span class="n">Test</span> <span class="n">t</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Test</span><span class="o">();</span>
+<a name="rest_code_437fcd4d33354188a33e2efc223990de-4"></a>        <span class="n">t</span><span class="o">.</span><span class="na">set_global</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+<a name="rest_code_437fcd4d33354188a33e2efc223990de-5"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">t</span><span class="o">.</span><span class="na">test_add</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="kc">false</span><span class="o">));</span>
+<a name="rest_code_437fcd4d33354188a33e2efc223990de-6"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">t</span><span class="o">.</span><span class="na">test_minus</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="kc">false</span><span class="o">));</span>
+<a name="rest_code_437fcd4d33354188a33e2efc223990de-7"></a>    <span class="o">}</span>
+<a name="rest_code_437fcd4d33354188a33e2efc223990de-8"></a><span class="o">}</span>
+</pre></td>
+</tr></table>
+<p>输出:</p>
+<pre class="literal-block">
+long@iphone7 MINGW64 ~/Desktop/src/test
+$ javac *.java
+
+long@iphone7 MINGW64 ~/Desktop/src/test
+$ java T1
+test_add
+numa:1
+numb:2
+3
+test_minus
+numa:1
+numb:2
+-1
+</pre>
+<p>debug某个函数。</p>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_e7cab61f7818459aa0e180c3b65ffe6e-1">1</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_e7cab61f7818459aa0e180c3b65ffe6e-2">2</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_e7cab61f7818459aa0e180c3b65ffe6e-3">3</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_e7cab61f7818459aa0e180c3b65ffe6e-4">4</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_e7cab61f7818459aa0e180c3b65ffe6e-5">5</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_e7cab61f7818459aa0e180c3b65ffe6e-6">6</a>
+<a href="posts/pythonhe-javayou-qu-de-yu-fa-dui-bi-1/#rest_code_e7cab61f7818459aa0e180c3b65ffe6e-7">7</a></pre></div></td>
+<td class="code"><pre class="code java"><a name="rest_code_e7cab61f7818459aa0e180c3b65ffe6e-1"></a><span class="kd">public</span> <span class="kd">class</span> <span class="nc">T1</span><span class="o">{</span>
+<a name="rest_code_e7cab61f7818459aa0e180c3b65ffe6e-2"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+<a name="rest_code_e7cab61f7818459aa0e180c3b65ffe6e-3"></a>        <span class="n">Test</span> <span class="n">t</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Test</span><span class="o">();</span>
+<a name="rest_code_e7cab61f7818459aa0e180c3b65ffe6e-4"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">t</span><span class="o">.</span><span class="na">test_add</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="kc">true</span><span class="o">));</span>
+<a name="rest_code_e7cab61f7818459aa0e180c3b65ffe6e-5"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">t</span><span class="o">.</span><span class="na">test_minus</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="mi">2</span><span class="o">,</span> <span class="kc">false</span><span class="o">));</span>
+<a name="rest_code_e7cab61f7818459aa0e180c3b65ffe6e-6"></a>    <span class="o">}</span>
+<a name="rest_code_e7cab61f7818459aa0e180c3b65ffe6e-7"></a><span class="o">}</span>
+</pre></td>
+</tr></table>
+<p>输出:</p>
+<pre class="literal-block">
+long@iphone7 MINGW64 ~/Desktop/src/test
+$ javac *.java
+
+long@iphone7 MINGW64 ~/Desktop/src/test
+$ java T1
+test_add
+numa:1
+numb:2
+3
+-1
+</pre>
+<p>这也就意味着，由于没有默认参数机制，Java要实现这样的debug，必须要为每个函数设定一个debug参数，总不能每个方法都写一个函数重载吧？要不，就利用IDE进行一遍一遍的单步调试？？</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/javadai-bao-bian-yi-yuan-wen-jian/" class="u-url">Java带包编译源文件</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/javadai-bao-bian-yi-yuan-wen-jian/" rel="bookmark"><time class="published dt-published" datetime="2017-07-22T14:44:00+08:00" title="2017-07-22 14:44">2017-07-22 14:44</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>如果在java代码中给出package，直接编译生成的class文件会无法运行，提示 <strong>“错误: 找不到或无法加载主类”</strong> 。</p>
+<p>目录结构：</p>
+<pre class="literal-block">
+Desktop/src/test/T1.java
+Desktop/src/test/T1.class
+</pre>
+<p>解决办法如下：</p>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/javadai-bao-bian-yi-yuan-wen-jian/#rest_code_4430e564d85d4a76a009fa8e23eb8c84-1">1</a>
+<a href="posts/javadai-bao-bian-yi-yuan-wen-jian/#rest_code_4430e564d85d4a76a009fa8e23eb8c84-2">2</a>
+<a href="posts/javadai-bao-bian-yi-yuan-wen-jian/#rest_code_4430e564d85d4a76a009fa8e23eb8c84-3">3</a>
+<a href="posts/javadai-bao-bian-yi-yuan-wen-jian/#rest_code_4430e564d85d4a76a009fa8e23eb8c84-4">4</a>
+<a href="posts/javadai-bao-bian-yi-yuan-wen-jian/#rest_code_4430e564d85d4a76a009fa8e23eb8c84-5">5</a>
+<a href="posts/javadai-bao-bian-yi-yuan-wen-jian/#rest_code_4430e564d85d4a76a009fa8e23eb8c84-6">6</a></pre></div></td>
+<td class="code"><pre class="code java"><a name="rest_code_4430e564d85d4a76a009fa8e23eb8c84-1"></a><span class="kn">package</span> <span class="nn">src</span><span class="o">;</span>
+<a name="rest_code_4430e564d85d4a76a009fa8e23eb8c84-2"></a><span class="kd">public</span> <span class="kd">class</span> <span class="nc">T1</span><span class="o">{</span>
+<a name="rest_code_4430e564d85d4a76a009fa8e23eb8c84-3"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]){</span>
+<a name="rest_code_4430e564d85d4a76a009fa8e23eb8c84-4"></a>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello World"</span><span class="o">);</span>
+<a name="rest_code_4430e564d85d4a76a009fa8e23eb8c84-5"></a>    <span class="o">}</span>
+<a name="rest_code_4430e564d85d4a76a009fa8e23eb8c84-6"></a><span class="o">}</span>
+</pre></td>
+</tr></table>
+<pre class="literal-block">
+&gt;&gt; long@iphone7 MINGW64 ~/Desktop
+&gt;&gt; $ javac -d . src/test/T1.java
+
+&gt;&gt; long@iphone7 MINGW64 ~/Desktop
+&gt;&gt; $ java src.T1
+&gt;&gt; Hello World
+</pre>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/ubuntuming-ling-xing-lian-jie-wifi/" class="u-url">Ubuntu命令行连接wifi</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/ubuntuming-ling-xing-lian-jie-wifi/" rel="bookmark"><time class="published dt-published" datetime="2017-07-19T11:06:54+08:00" title="2017-07-19 11:06">2017-07-19 11:06</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<pre class="literal-block">
+&gt;&gt; cd /usr/local/bin/
+&gt;&gt; cd /home/long
+&gt;&gt; wpa_passphrase SSID PWD &gt; /home/long/wifi.conf
+&gt;&gt; sudo emacs /etc/network/interfaces
+auto wlan0
+iface wlan0 inet dhcp
+wpa-conf /home/long/wifi.conf
+&gt;&gt; sudo reboot
+</pre>
+<p><strong>注意</strong></p>
+<p>路由器必须要打开DHCP才可以正常连接。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/" class="u-url">最简化的Android入门程序</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/" rel="bookmark"><time class="published dt-published" datetime="2017-07-14T19:57:48+08:00" title="2017-07-14 19:57">2017-07-14 19:57</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<p>用Android Studio创建的空项目包含好几个文件夹和文件，最核心的文件其实只有三个：</p>
+<ol class="arabic simple">
+<li>manifests目录下的AndroidManifest.xml</li>
+<li>java目录下的MainActivity.java</li>
+<li>layout目录下的activity_main.xml</li>
+</ol>
+<p>以下是一个最简单的Android程序，启动后是一个空的页面。</p>
+<ol class="arabic simple">
+<li>AndroidManifest.xml</li>
+</ol>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-1"> 1</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-2"> 2</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-3"> 3</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-4"> 4</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-5"> 5</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-6"> 6</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-7"> 7</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-8"> 8</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-9"> 9</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-10">10</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-11">11</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-12">12</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-13">13</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-14">14</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-15">15</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-16">16</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-17">17</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-18">18</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-19">19</a></pre></div></td>
+<td class="code"><pre class="code xml"><a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-1"></a><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-2"></a><span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-3"></a>    <span class="na">package=</span><span class="s">"com.example.along.homebank"</span><span class="nt">&gt;</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-4"></a>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-5"></a>    <span class="nt">&lt;application</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-6"></a>        <span class="na">android:icon=</span><span class="s">"@mipmap/ic_launcher"</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-7"></a>        <span class="na">android:label=</span><span class="s">"@string/app_name"</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-8"></a>        <span class="na">android:theme=</span><span class="s">"@style/AppTheme"</span><span class="nt">&gt;</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-9"></a>        <span class="nt">&lt;activity</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-10"></a>            <span class="na">android:name=</span><span class="s">".MainActivity"</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-11"></a>            <span class="na">android:label=</span><span class="s">"@string/title_activity_main"</span><span class="nt">&gt;</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-12"></a>            <span class="nt">&lt;intent-filter&gt;</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-13"></a>                <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">"android.intent.action.MAIN"</span><span class="nt">/&gt;</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-14"></a>                <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">"android.intent.category.LAUNCHER"</span><span class="nt">/&gt;</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-15"></a>            <span class="nt">&lt;/intent-filter&gt;</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-16"></a>        <span class="nt">&lt;/activity&gt;</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-17"></a>    <span class="nt">&lt;/application&gt;</span>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-18"></a>
+<a name="rest_code_1ad41c60b7ec49e291fe4bf1f8ff7c2f-19"></a><span class="nt">&lt;/manifest&gt;</span>
+</pre></td>
+</tr></table>
+<p>最关键的是 <strong>&lt;intent-filter&gt;</strong> 部分，里面设置了MainActivity是默认启动的Activity。</p>
+<ol class="arabic simple" start="2">
+<li>MainActivity.java</li>
+</ol>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_19aa4ba93ac041689d1bfdeb14fb5200-1"> 1</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_19aa4ba93ac041689d1bfdeb14fb5200-2"> 2</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_19aa4ba93ac041689d1bfdeb14fb5200-3"> 3</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_19aa4ba93ac041689d1bfdeb14fb5200-4"> 4</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_19aa4ba93ac041689d1bfdeb14fb5200-5"> 5</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_19aa4ba93ac041689d1bfdeb14fb5200-6"> 6</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_19aa4ba93ac041689d1bfdeb14fb5200-7"> 7</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_19aa4ba93ac041689d1bfdeb14fb5200-8"> 8</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_19aa4ba93ac041689d1bfdeb14fb5200-9"> 9</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_19aa4ba93ac041689d1bfdeb14fb5200-10">10</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_19aa4ba93ac041689d1bfdeb14fb5200-11">11</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_19aa4ba93ac041689d1bfdeb14fb5200-12">12</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_19aa4ba93ac041689d1bfdeb14fb5200-13">13</a></pre></div></td>
+<td class="code"><pre class="code java"><a name="rest_code_19aa4ba93ac041689d1bfdeb14fb5200-1"></a><span class="kn">package</span> <span class="nn">com.example.along.homebank</span><span class="o">;</span>
+<a name="rest_code_19aa4ba93ac041689d1bfdeb14fb5200-2"></a>
+<a name="rest_code_19aa4ba93ac041689d1bfdeb14fb5200-3"></a><span class="kn">import</span> <span class="nn">android.os.Bundle</span><span class="o">;</span>
+<a name="rest_code_19aa4ba93ac041689d1bfdeb14fb5200-4"></a><span class="kn">import</span> <span class="nn">android.support.v7.app.AppCompatActivity</span><span class="o">;</span>
+<a name="rest_code_19aa4ba93ac041689d1bfdeb14fb5200-5"></a>
+<a name="rest_code_19aa4ba93ac041689d1bfdeb14fb5200-6"></a><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
+<a name="rest_code_19aa4ba93ac041689d1bfdeb14fb5200-7"></a>
+<a name="rest_code_19aa4ba93ac041689d1bfdeb14fb5200-8"></a>    <span class="nd">@Override</span>
+<a name="rest_code_19aa4ba93ac041689d1bfdeb14fb5200-9"></a>    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+<a name="rest_code_19aa4ba93ac041689d1bfdeb14fb5200-10"></a>        <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+<a name="rest_code_19aa4ba93ac041689d1bfdeb14fb5200-11"></a>        <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_main</span><span class="o">);</span>
+<a name="rest_code_19aa4ba93ac041689d1bfdeb14fb5200-12"></a>    <span class="o">}</span>
+<a name="rest_code_19aa4ba93ac041689d1bfdeb14fb5200-13"></a><span class="o">}</span>
+</pre></td>
+</tr></table>
+<p>最关键的是 <strong>setContentView(R.layout.activity_main);</strong> ，里面设置了程序创建时要渲染的layout，也就是界面。</p>
+<ol class="arabic simple" start="3">
+<li>activity_main.xml</li>
+</ol>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_7d987a873b844d3eb9ee881fb2ff9886-1">1</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_7d987a873b844d3eb9ee881fb2ff9886-2">2</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_7d987a873b844d3eb9ee881fb2ff9886-3">3</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_7d987a873b844d3eb9ee881fb2ff9886-4">4</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_7d987a873b844d3eb9ee881fb2ff9886-5">5</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_7d987a873b844d3eb9ee881fb2ff9886-6">6</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_7d987a873b844d3eb9ee881fb2ff9886-7">7</a>
+<a href="posts/zui-jian-hua-de-androidru-men-cheng-xu/#rest_code_7d987a873b844d3eb9ee881fb2ff9886-8">8</a></pre></div></td>
+<td class="code"><pre class="code xml"><a name="rest_code_7d987a873b844d3eb9ee881fb2ff9886-1"></a><span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+<a name="rest_code_7d987a873b844d3eb9ee881fb2ff9886-2"></a><span class="nt">&lt;android.support.design.widget.CoordinatorLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+<a name="rest_code_7d987a873b844d3eb9ee881fb2ff9886-3"></a>    <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+<a name="rest_code_7d987a873b844d3eb9ee881fb2ff9886-4"></a>    <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span>
+<a name="rest_code_7d987a873b844d3eb9ee881fb2ff9886-5"></a>    <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+<a name="rest_code_7d987a873b844d3eb9ee881fb2ff9886-6"></a>    <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+<a name="rest_code_7d987a873b844d3eb9ee881fb2ff9886-7"></a>    <span class="na">tools:context=</span><span class="s">"com.example.along.homebank.MainActivity"</span><span class="nt">&gt;</span>
+<a name="rest_code_7d987a873b844d3eb9ee881fb2ff9886-8"></a><span class="nt">&lt;/android.support.design.widget.CoordinatorLayout&gt;</span>
+</pre></td>
+</tr></table>
+<p>这个布局文件基本是空的，因为我们什么都没有放进去，所以程序运行时是一个白屏。</p>
+<p>从这个最基本的Android程序中，我们可以看到一种程序设计的通用模式："配置+逻辑+布局"。
+配置负责控制一些全局的东西，逻辑负责控制整个程序的逻辑实现，布局负责控制用户交互。
+就好比做网站，一些JavaScript文件负责配置，大部分JavaScript负责逻辑，HTML和CSS负责布局。
+再经过合理的连接，形成配合，共同完成任务。不得不说，有一种程序设计上的"秩序美"。
+而这种有秩序的紧密配合，在程序开发中处处可见。
+也许这种美就是"自顶向下，逐步求精"和"模块化"两大思想的最好体现。</p>
+</div>
+    </div>
+    </article><article class="h-entry post-text"><header><h1 class="p-name entry-title"><a href="posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/" class="u-url">Python判断网络连接是否正常</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                龙龙
+            </span></p>
+            <p class="dateline"><a href="posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/" rel="bookmark"><time class="published dt-published" datetime="2017-07-12T21:25:51+08:00" title="2017-07-12 21:25">2017-07-12 21:25</time></a></p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_391489a556a04fe6865dc64aacd2153f-1"> 1</a>
+<a href="posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_391489a556a04fe6865dc64aacd2153f-2"> 2</a>
+<a href="posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_391489a556a04fe6865dc64aacd2153f-3"> 3</a>
+<a href="posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_391489a556a04fe6865dc64aacd2153f-4"> 4</a>
+<a href="posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_391489a556a04fe6865dc64aacd2153f-5"> 5</a>
+<a href="posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_391489a556a04fe6865dc64aacd2153f-6"> 6</a>
+<a href="posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_391489a556a04fe6865dc64aacd2153f-7"> 7</a>
+<a href="posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_391489a556a04fe6865dc64aacd2153f-8"> 8</a>
+<a href="posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_391489a556a04fe6865dc64aacd2153f-9"> 9</a>
+<a href="posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_391489a556a04fe6865dc64aacd2153f-10">10</a>
+<a href="posts/pythonpan-duan-wang-luo-lian-jie-shi-fou-zheng-chang/#rest_code_391489a556a04fe6865dc64aacd2153f-11">11</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_391489a556a04fe6865dc64aacd2153f-1"></a><span class="k">def</span> <span class="nf">checkconnection</span><span class="p">():</span>
+<a name="rest_code_391489a556a04fe6865dc64aacd2153f-2"></a>    <span class="n">proxies</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"http"</span><span class="p">:</span> <span class="s2">"http://192.168.1.254:8228"</span><span class="p">,</span> <span class="s2">"https"</span><span class="p">:</span> <span class="s2">"http://192.168.1.254:8228"</span><span class="p">}</span>
+<a name="rest_code_391489a556a04fe6865dc64aacd2153f-3"></a>    <span class="k">try</span><span class="p">:</span>
+<a name="rest_code_391489a556a04fe6865dc64aacd2153f-4"></a>        <span class="n">r1</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"http://www.facebook.com"</span><span class="p">,</span>
+<a name="rest_code_391489a556a04fe6865dc64aacd2153f-5"></a>                          <span class="n">proxies</span><span class="o">=</span><span class="n">proxies</span><span class="p">,</span>
+<a name="rest_code_391489a556a04fe6865dc64aacd2153f-6"></a>                          <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<a name="rest_code_391489a556a04fe6865dc64aacd2153f-7"></a>        <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">r1</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span> <span class="o">==</span> <span class="s2">"200"</span><span class="p">:</span>
+<a name="rest_code_391489a556a04fe6865dc64aacd2153f-8"></a>            <span class="k">return</span> <span class="bp">True</span>
+<a name="rest_code_391489a556a04fe6865dc64aacd2153f-9"></a>        <span class="k">return</span> <span class="bp">False</span>
+<a name="rest_code_391489a556a04fe6865dc64aacd2153f-10"></a>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a name="rest_code_391489a556a04fe6865dc64aacd2153f-11"></a>        <span class="k">return</span> <span class="bp">False</span>
+</pre></td>
+</tr></table>
+<p><strong>注意</strong></p>
+<p>如果不需要测试代理，去掉 <strong>proxies=proxies，</strong> 就可以了。</p>
+</div>
+    </div>
+    </article>
+</div>
+
+        <nav class="postindexpager"><ul class="pager">
+<li class="previous">
+                <a href="index-19.html" rel="prev">Newer posts</a>
+            </li>
+            <li class="next">
+                <a href="index-17.html" rel="next">Older posts</a>
+            </li>
+        </ul></nav>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2018         <a href="mailto:codinglonglong@126.com">龙龙</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
+</body>
+</html>
