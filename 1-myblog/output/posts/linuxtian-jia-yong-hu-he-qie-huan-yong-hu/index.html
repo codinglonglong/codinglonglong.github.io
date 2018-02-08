@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Linux添加用户和切换用户 | 写程序的龙龙</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://codinglonglong.github.io/posts/linuxtian-jia-yong-hu-he-qie-huan-yong-hu/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?26f9e777606d49ebbdbe4df058bd028c";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><style>
+body{
+    font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
+}
+</style>
+<meta name="author" content="龙龙">
+<link rel="prev" href="../ubuntu1404shang-an-zhuang-jdk/" title="Ubuntu14.04上安装JDK" type="text/html">
+<link rel="next" href="../ueditorde-pythonqian-yi/" title="UEditor的Python迁移" type="text/html">
+<meta property="og:site_name" content="写程序的龙龙">
+<meta property="og:title" content="Linux添加用户和切换用户">
+<meta property="og:url" content="https://codinglonglong.github.io/posts/linuxtian-jia-yong-hu-he-qie-huan-yong-hu/">
+<meta property="og:description" content="添加用户
+
+&gt;&gt; sudo adduser long
+
+这时系统会交互输入一些基本信息，按需要输入就可以。但是新添加的用户默认没有执行sudo的权限。
+赋予用户执行sudo的权限
+
+&gt;&gt; sudo usermod  -a -G sudo long
+
+
+切换用户
+
+&gt;&gt; su - long
+
+这样就进入long的用户环境了，毕竟一直用root工作不是很安全，还是建立一个普通用户比较保险。
+
+这里再多">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2015-09-08T09:16:20+08:00">
+<meta property="article:tag" content="Linux">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://codinglonglong.github.io/">
+
+                <span id="blog-title">写程序的龙龙</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../hui-dao-zui-chu-de-qi-dian/">回到最初的起点</a>
+                </li>
+<li>
+<a href="../../categories/wo-de-shi-ci/">我的诗词</a>
+                </li>
+<li>
+<a href="../lian-xi-wo/">联系我</a>
+                </li>
+<li>
+<a href="../../archive.html">文章存档</a>
+                </li>
+<li>
+<a href="../../categories/">标签 &amp; 分类</a>
+                </li>
+<li>
+<a href="https://github.com/codinglonglong/">Github</a>
+                </li>
+<li>
+<a href="../you-qing-lian-jie/">友情链接</a>
+                </li>
+<li>
+<a href="../../rss.xml">RSS 源</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="index.rst" id="sourcelink">Source</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Linux添加用户和切换用户</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    龙龙
+            </span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2015-09-08T09:16:20+08:00" itemprop="datePublished" title="2015-09-08 09:16">2015-09-08 09:16</time></a></p>
+            
+        <p class="sourceline"><a href="index.rst" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>添加用户</p>
+<pre class="literal-block">
+&gt;&gt; sudo adduser long
+</pre>
+<p>这时系统会交互输入一些基本信息，按需要输入就可以。但是新添加的用户默认没有执行sudo的权限。</p>
+<p>赋予用户执行sudo的权限</p>
+<pre class="literal-block">
+&gt;&gt; sudo usermod  -a -G sudo long
+</pre>
+<hr class="docutils">
+<p>切换用户</p>
+<pre class="literal-block">
+&gt;&gt; su - long
+</pre>
+<p>这样就进入long的用户环境了，毕竟一直用root工作不是很安全，还是建立一个普通用户比较保险。</p>
+<hr class="docutils">
+<p>这里再多说一点关于su -、su和sudo的区别：</p>
+<p><strong>su -</strong> : 完全意义上的切换用户，包括环境变量配置之类的。</p>
+<p><strong>su</strong> : 只是切换了当前工作的用户，环境变量配置之类的不变。</p>
+<p><strong>sudo</strong> : 赋予用户执行部分高级功能的权限。</p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/linux/" rel="tag">Linux</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../ubuntu1404shang-an-zhuang-jdk/" rel="prev" title="Ubuntu14.04上安装JDK">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../ueditorde-pythonqian-yi/" rel="next" title="UEditor的Python迁移">Next post</a>
+            </li>
+        </ul></nav></aside></article>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2018         <a href="mailto:codinglonglong@126.com">龙龙</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
+</body>
+</html>

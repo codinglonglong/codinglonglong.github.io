@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>vuejs学习(8) | 写程序的龙龙</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://codinglonglong.github.io/posts/vuejsxue-xi-8/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?26f9e777606d49ebbdbe4df058bd028c";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><style>
+body{
+    font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
+}
+</style>
+<meta name="author" content="龙龙">
+<link rel="prev" href="../vuejsxue-xi-7/" title="vuejs学习(7)" type="text/html">
+<link rel="next" href="../windowspei-zhi-docker/" title="Windows配置Docker" type="text/html">
+<meta property="og:site_name" content="写程序的龙龙">
+<meta property="og:title" content="vuejs学习(8)">
+<meta property="og:url" content="https://codinglonglong.github.io/posts/vuejsxue-xi-8/">
+<meta property="og:description" content="本文要学习的是列表渲染 v-for ，看测试代码 TodoItem.vue ：
+
+ 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-01-14T15:07:00+08:00">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="vue-cli">
+<meta property="article:tag" content="vuejs">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://codinglonglong.github.io/">
+
+                <span id="blog-title">写程序的龙龙</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../hui-dao-zui-chu-de-qi-dian/">回到最初的起点</a>
+                </li>
+<li>
+<a href="../../categories/wo-de-shi-ci/">我的诗词</a>
+                </li>
+<li>
+<a href="../lian-xi-wo/">联系我</a>
+                </li>
+<li>
+<a href="../../archive.html">文章存档</a>
+                </li>
+<li>
+<a href="../../categories/">标签 &amp; 分类</a>
+                </li>
+<li>
+<a href="https://github.com/codinglonglong/">Github</a>
+                </li>
+<li>
+<a href="../you-qing-lian-jie/">友情链接</a>
+                </li>
+<li>
+<a href="../../rss.xml">RSS 源</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="index.rst" id="sourcelink">Source</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">vuejs学习(8)</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    龙龙
+            </span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2017-01-14T15:07:00+08:00" itemprop="datePublished" title="2017-01-14 15:07">2017-01-14 15:07</time></a></p>
+            
+        <p class="sourceline"><a href="index.rst" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>本文要学习的是列表渲染 v-for ，看测试代码 <strong>TodoItem.vue</strong> ：</p>
+<blockquote>
+<table class="codetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-1"> 1</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-2"> 2</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-3"> 3</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-4"> 4</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-5"> 5</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-6"> 6</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-7"> 7</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-8"> 8</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-9"> 9</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-10">10</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-11">11</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-12">12</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-13">13</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-14">14</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-15">15</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-16">16</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-17">17</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-18">18</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-19">19</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-20">20</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-21">21</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-22">22</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-23">23</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-24">24</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-25">25</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-26">26</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-27">27</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-28">28</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-29">29</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-30">30</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-31">31</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-32">32</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-33">33</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-34">34</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-35">35</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-36">36</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-37">37</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-38">38</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-39">39</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-40">40</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-41">41</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-42">42</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-43">43</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-44">44</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-45">45</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-46">46</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-47">47</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-48">48</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-49">49</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-50">50</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-51">51</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-52">52</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-53">53</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-54">54</a>
+<a href="#rest_code_08dadf8fff584ddaab2818b97ca3d261-55">55</a></pre></div></td>
+<td class="code"><pre class="code html"><a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-1"></a><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-2"></a><span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">"todoitem"</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-3"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-4"></a>        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in items1"</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-5"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-6"></a>    <span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">"1"</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-7"></a>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-8"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>项1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-9"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>项2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-10"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>索引<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-11"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-12"></a>        <span class="p">&lt;</span><span class="nt">tr</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item, index in items2"</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-13"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{item[0]}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-14"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{item[1]}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-15"></a>            <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{index}}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-16"></a>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-17"></a>    <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-18"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-19"></a>        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"value, key, index in items3"</span><span class="p">&gt;</span>{{index}}==&gt;{{key}}==&gt;{{value}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-20"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-21"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-22"></a>        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in 3"</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-23"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-24"></a>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-25"></a>        <span class="p">&lt;</span><span class="nt">template</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in items5"</span> <span class="na">v-if</span><span class="o">=</span><span class="s">"male"</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-26"></a>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-27"></a>        <span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-28"></a>        <span class="p">&lt;</span><span class="nt">template</span> <span class="na">v-for</span><span class="o">=</span><span class="s">"item in items6"</span> <span class="na">v-if</span><span class="o">=</span><span class="s">"!male"</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-29"></a>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{item}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-30"></a>        <span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-31"></a>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-32"></a><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-33"></a><span class="p">&lt;/</span><span class="nt">template</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-34"></a>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-35"></a><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-36"></a><span class="kr">export</span> <span class="k">default</span> <span class="p">{</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-37"></a>    <span class="nx">data</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-38"></a>        <span class="k">return</span> <span class="p">{</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-39"></a>            <span class="nx">items1</span><span class="o">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">],</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-40"></a>            <span class="nx">items2</span><span class="o">:</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]],</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-41"></a>            <span class="nx">items3</span><span class="o">:</span> <span class="p">{</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-42"></a>                <span class="s1">'name'</span><span class="o">:</span> <span class="s1">'Tom'</span><span class="p">,</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-43"></a>                <span class="s1">'age'</span><span class="o">:</span> <span class="mi">20</span><span class="p">,</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-44"></a>                <span class="s1">'gender'</span><span class="o">:</span> <span class="s1">'male'</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-45"></a>            <span class="p">},</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-46"></a>            <span class="nx">male</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-47"></a>            <span class="nx">items5</span><span class="o">:</span> <span class="p">[</span><span class="s2">"Boy1"</span><span class="p">,</span> <span class="s2">"Boy2"</span><span class="p">,</span> <span class="s2">"Boy3"</span><span class="p">],</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-48"></a>            <span class="nx">items6</span><span class="o">:</span> <span class="p">[</span><span class="s2">"Girl1"</span><span class="p">,</span> <span class="s2">"Girl2"</span><span class="p">,</span> <span class="s2">"Girl3"</span><span class="p">],</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-49"></a>        <span class="p">}</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-50"></a>    <span class="p">},</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-51"></a><span class="p">}</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-52"></a><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-53"></a>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-54"></a><span class="p">&lt;</span><span class="nt">style</span> <span class="na">scoped</span><span class="p">&gt;</span>
+<a name="rest_code_08dadf8fff584ddaab2818b97ca3d261-55"></a><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</pre></td>
+</tr></table>
+</blockquote>
+<p>运行结果：</p>
+<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/vueforrender.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/vueforrender.PNG"><p>在上述的代码中，我们需要学到以下几个问题：</p>
+<ol class="arabic simple">
+<li>vuejs的v-for和Python的for循环有很多相似的地方，比如元素迭代，比如整数迭代。</li>
+<li>vuejs的迭代可以包含索引，如果是列表，用“item, index in items”；如果是对象，用“value, key, index in items”。</li>
+<li>v-for迭代的目标也可以是函数的可迭代返回值，比如返回列表。</li>
+</ol>
+<p>后面的文章我们将学习更复杂的列表渲染。</p>
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/javascript/" rel="tag">javascript</a></li>
+            <li><a class="tag p-category" href="../../categories/vue-cli/" rel="tag">vue-cli</a></li>
+            <li><a class="tag p-category" href="../../categories/vuejs/" rel="tag">vuejs</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../vuejsxue-xi-7/" rel="prev" title="vuejs学习(7)">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../windowspei-zhi-docker/" rel="next" title="Windows配置Docker">Next post</a>
+            </li>
+        </ul></nav></aside></article>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2018         <a href="mailto:codinglonglong@126.com">龙龙</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exception in thread "main" java.util.zip.ZipException: error in opening zip file | 写程序的龙龙</title>
+<link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
+<link rel="canonical" href="https://codinglonglong.github.io/posts/exception-in-thread-main-javautilzipzipexception-error-in-opening-zip-file/">
+<!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?26f9e777606d49ebbdbe4df058bd028c";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><style>
+body{
+    font-family: "Georgia", "Xin Gothic", "Hiragino Sans GB", "Droid Sans Fallback", "Microsoft YaHei", sans-serif;
+}
+</style>
+<meta name="author" content="龙龙">
+<link rel="prev" href="../vuejsxue-xi-1/" title="vuejs学习(1)" type="text/html">
+<link rel="next" href="../vuejsxue-xi-2/" title="vuejs学习(2)" type="text/html">
+<meta property="og:site_name" content="写程序的龙龙">
+<meta property="og:title" content='Exception in thread "main" java.util.zip.ZipException: error in openin'>
+<meta property="og:url" content="https://codinglonglong.github.io/posts/exception-in-thread-main-javautilzipzipexception-error-in-opening-zip-file/">
+<meta property="og:description" content="在参考 https://reactnative.cn/docs/0.40/getting-started.html 配置react-native的过程中，发生了如下错误：
+Starting JS server...
+    Building and installing the app on the device (cd android &amp;&amp; ./gradlew installDebug)...
+">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2017-01-10T22:59:06+08:00">
+<meta property="article:tag" content="react">
+<meta property="article:tag" content="react-native">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-inverse navbar-static-top"><div class="container">
+<!-- This keeps the margins nice -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://codinglonglong.github.io/">
+
+                <span id="blog-title">写程序的龙龙</span>
+            </a>
+        </div>
+<!-- /.navbar-header -->
+        <div class="collapse navbar-collapse" id="bs-navbar" aria-expanded="false">
+            <ul class="nav navbar-nav">
+<li>
+<a href="../hui-dao-zui-chu-de-qi-dian/">回到最初的起点</a>
+                </li>
+<li>
+<a href="../../categories/wo-de-shi-ci/">我的诗词</a>
+                </li>
+<li>
+<a href="../lian-xi-wo/">联系我</a>
+                </li>
+<li>
+<a href="../../archive.html">文章存档</a>
+                </li>
+<li>
+<a href="../../categories/">标签 &amp; 分类</a>
+                </li>
+<li>
+<a href="https://github.com/codinglonglong/">Github</a>
+                </li>
+<li>
+<a href="../you-qing-lian-jie/">友情链接</a>
+                </li>
+<li>
+<a href="../../rss.xml">RSS 源</a>
+
+                
+            </li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+    <a href="index.rst" id="sourcelink">Source</a>
+    </li>
+
+                
+            </ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        <div class="row">
+            
+            
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Exception in thread "main" java.util.zip.ZipException: error in opening zip file</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                    龙龙
+            </span></p>
+            <p class="dateline"><a href="." rel="bookmark"><time class="published dt-published" datetime="2017-01-10T22:59:06+08:00" itemprop="datePublished" title="2017-01-10 22:59">2017-01-10 22:59</time></a></p>
+            
+        <p class="sourceline"><a href="index.rst" class="sourcelink">Source</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <div>
+<p>在参考 <a class="reference external" href="https://reactnative.cn/docs/0.40/getting-started.html">https://reactnative.cn/docs/0.40/getting-started.html</a> 配置react-native的过程中，发生了如下错误：</p>
+<pre class="code bash"><a name="rest_code_1b967ba4aebd417b94bd1fac9caf84cb-1"></a>Starting JS server...
+<a name="rest_code_1b967ba4aebd417b94bd1fac9caf84cb-2"></a>    Building and installing the app on the device <span class="o">(</span><span class="nb">cd</span> android <span class="o">&amp;&amp;</span> ./gradlew installDebug<span class="o">)</span>...
+<a name="rest_code_1b967ba4aebd417b94bd1fac9caf84cb-3"></a>    Unzipping /home/long/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0/gradle-2.4-all.zip to /home/long/.gradle/wrapper/dists/gradle-2.4-all/6r4uqcc6ovnq6ac6s0txzcpc0
+<a name="rest_code_1b967ba4aebd417b94bd1fac9caf84cb-4"></a>    Exception in thread <span class="s2">"main"</span> java.util.zip.ZipException: error in opening zip file
+<a name="rest_code_1b967ba4aebd417b94bd1fac9caf84cb-5"></a>        at java.util.zip.ZipFile.open<span class="o">(</span>Native Method<span class="o">)</span>
+<a name="rest_code_1b967ba4aebd417b94bd1fac9caf84cb-6"></a>        at java.util.zip.ZipFile.&lt;init&gt;<span class="o">(</span>ZipFile.java:219<span class="o">)</span>
+<a name="rest_code_1b967ba4aebd417b94bd1fac9caf84cb-7"></a>        at java.util.zip.ZipFile.&lt;init&gt;<span class="o">(</span>ZipFile.java:149<span class="o">)</span>
+<a name="rest_code_1b967ba4aebd417b94bd1fac9caf84cb-8"></a>        at java.util.zip.ZipFile.&lt;init&gt;<span class="o">(</span>ZipFile.java:163<span class="o">)</span>
+<a name="rest_code_1b967ba4aebd417b94bd1fac9caf84cb-9"></a>        at org.gradle.wrapper.Install.unzip<span class="o">(</span>Install.java:159<span class="o">)</span>
+<a name="rest_code_1b967ba4aebd417b94bd1fac9caf84cb-10"></a>        at org.gradle.wrapper.Install.access<span class="nv">$500</span><span class="o">(</span>Install.java:26<span class="o">)</span>
+<a name="rest_code_1b967ba4aebd417b94bd1fac9caf84cb-11"></a>        at org.gradle.wrapper.Install<span class="nv">$1</span>.call<span class="o">(</span>Install.java:69<span class="o">)</span>
+<a name="rest_code_1b967ba4aebd417b94bd1fac9caf84cb-12"></a>        at org.gradle.wrapper.Install<span class="nv">$1</span>.call<span class="o">(</span>Install.java:46<span class="o">)</span>
+<a name="rest_code_1b967ba4aebd417b94bd1fac9caf84cb-13"></a>        at org.gradle.wrapper.ExclusiveFileAccessManager.access<span class="o">(</span>ExclusiveFileAccessManager.java:65<span class="o">)</span>
+<a name="rest_code_1b967ba4aebd417b94bd1fac9caf84cb-14"></a>        at org.gradle.wrapper.Install.createDist<span class="o">(</span>Install.java:46<span class="o">)</span>
+<a name="rest_code_1b967ba4aebd417b94bd1fac9caf84cb-15"></a>        at org.gradle.wrapper.WrapperExecutor.execute<span class="o">(</span>WrapperExecutor.java:126<span class="o">)</span>
+<a name="rest_code_1b967ba4aebd417b94bd1fac9caf84cb-16"></a>        at org.gradle.wrapper.GradleWrapperMain.main<span class="o">(</span>GradleWrapperMain.java:61<span class="o">)</span>
+<a name="rest_code_1b967ba4aebd417b94bd1fac9caf84cb-17"></a>Could not install the app on the device, <span class="nb">read</span> the error above <span class="k">for</span> details.
+<a name="rest_code_1b967ba4aebd417b94bd1fac9caf84cb-18"></a>Make sure you have an Android emulator running or a device connected and have
+<a name="rest_code_1b967ba4aebd417b94bd1fac9caf84cb-19"></a><span class="nb">set</span> up your Android development environment:
+<a name="rest_code_1b967ba4aebd417b94bd1fac9caf84cb-20"></a>https://facebook.github.io/react-native/docs/android-setup.html
+</pre>
+<p>解决方法：</p>
+<p>从 <a class="reference external" href="https://services.gradle.org/distributions">https://services.gradle.org/distributions</a> 下载完整的gradle-2.4-all.zip文件，放到 C:\Users\long\.gradle\wrapper\dists\gradle-2.4-all\6r4uqcc6ovnq6ac6s0txzcpc0 目录中即可正常运行 react-native run-android。</p>
+<p>放张成功之后的截图：</p>
+<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/react-native-1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/react-native-1.PNG">
+</div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../../categories/react/" rel="tag">react</a></li>
+            <li><a class="tag p-category" href="../../categories/react-native/" rel="tag">react-native</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="../vuejsxue-xi-1/" rel="prev" title="vuejs学习(1)">Previous post</a>
+            </li>
+            <li class="next">
+                <a href="../vuejsxue-xi-2/" rel="next" title="vuejs学习(2)">Next post</a>
+            </li>
+        </ul></nav></aside></article>
+</div>
+        <!--End of body content-->
+
+        <footer id="footer">
+            Contents © 2018         <a href="mailto:codinglonglong@126.com">龙龙</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a>         
+            
+        </footer>
+</div>
+</div>
+
+
+            <script src="../../assets/js/all-nocdn.js"></script><script>$('a.image-reference:not(.islink) img:not(.islink)').parent().colorbox({rel:"gal",maxWidth:"100%",maxHeight:"100%",scalePhotos:true});</script><!-- fancy dates --><script>
+    moment.locale("en");
+    fancydates(0, "YYYY-MM-DD HH:mm");
+    </script><!-- end fancy dates -->
+</body>
+</html>

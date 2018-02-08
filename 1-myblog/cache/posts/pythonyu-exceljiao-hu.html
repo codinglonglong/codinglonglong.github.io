@@ -1,0 +1,62 @@
+<p>1、安装xlwings，参考 <a class="reference external" href="http://docs.xlwings.org/en/stable/installation.html#installation">http://docs.xlwings.org/en/stable/installation.html#installation</a>。</p>
+<p>2、创建项目。</p>
+<blockquote>
+<pre class="literal-block">
+&gt;&gt; xlwings quickstart myproject
+</pre>
+<p>生成了两个文件。</p>
+<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/exceljiaohu1.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/exceljiaohu1.PNG" />
+<p>其中，myproject.xlsm是Excel文件，myproject.py用来写一些功能函数。</p>
+</blockquote>
+<p>3、打开myproject.py，编写工具。</p>
+<blockquote>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_39c2e0d130234b1f85a5765f7796aac3-1"> 1</a>
+<a href="#rest_code_39c2e0d130234b1f85a5765f7796aac3-2"> 2</a>
+<a href="#rest_code_39c2e0d130234b1f85a5765f7796aac3-3"> 3</a>
+<a href="#rest_code_39c2e0d130234b1f85a5765f7796aac3-4"> 4</a>
+<a href="#rest_code_39c2e0d130234b1f85a5765f7796aac3-5"> 5</a>
+<a href="#rest_code_39c2e0d130234b1f85a5765f7796aac3-6"> 6</a>
+<a href="#rest_code_39c2e0d130234b1f85a5765f7796aac3-7"> 7</a>
+<a href="#rest_code_39c2e0d130234b1f85a5765f7796aac3-8"> 8</a>
+<a href="#rest_code_39c2e0d130234b1f85a5765f7796aac3-9"> 9</a>
+<a href="#rest_code_39c2e0d130234b1f85a5765f7796aac3-10">10</a>
+<a href="#rest_code_39c2e0d130234b1f85a5765f7796aac3-11">11</a>
+<a href="#rest_code_39c2e0d130234b1f85a5765f7796aac3-12">12</a></pre></div></td><td class="code"><pre class="code python"><a name="rest_code_39c2e0d130234b1f85a5765f7796aac3-1"></a><span class="kn">import</span> <span class="nn">xlwings</span>
+<a name="rest_code_39c2e0d130234b1f85a5765f7796aac3-2"></a>
+<a name="rest_code_39c2e0d130234b1f85a5765f7796aac3-3"></a>
+<a name="rest_code_39c2e0d130234b1f85a5765f7796aac3-4"></a><span class="k">def</span> <span class="nf">addlist</span><span class="p">():</span>
+<a name="rest_code_39c2e0d130234b1f85a5765f7796aac3-5"></a>    <span class="n">wb</span> <span class="o">=</span> <span class="n">xlwings</span><span class="o">.</span><span class="n">Book</span><span class="o">.</span><span class="n">caller</span><span class="p">()</span>
+<a name="rest_code_39c2e0d130234b1f85a5765f7796aac3-6"></a>    <span class="n">wb</span><span class="o">.</span><span class="n">sheets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="s2">&quot;A1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,),(</span><span class="mi">2</span><span class="p">,),(</span><span class="mi">3</span><span class="p">,),(</span><span class="mi">4</span><span class="p">,),(</span><span class="mi">5</span><span class="p">,)]</span>
+<a name="rest_code_39c2e0d130234b1f85a5765f7796aac3-7"></a>    <span class="n">wb</span><span class="o">.</span><span class="n">sheets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="s2">&quot;B2&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
+<a name="rest_code_39c2e0d130234b1f85a5765f7796aac3-8"></a>
+<a name="rest_code_39c2e0d130234b1f85a5765f7796aac3-9"></a>
+<a name="rest_code_39c2e0d130234b1f85a5765f7796aac3-10"></a><span class="nd">@xlwings.func</span>
+<a name="rest_code_39c2e0d130234b1f85a5765f7796aac3-11"></a><span class="k">def</span> <span class="nf">sumlist</span><span class="p">(</span><span class="n">ls</span><span class="p">):</span>
+<a name="rest_code_39c2e0d130234b1f85a5765f7796aac3-12"></a>    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span>
+</pre></td></tr></table></blockquote>
+<p>4、打开myproject.xlsm，提示“宏已被禁用”，点击&quot;启用内容&quot;按钮。</p>
+<p>5、按下 Alt+F11，启动Microsoft Visual Basic for Applications，双击&quot;Sheet1&quot;。</p>
+<blockquote>
+<table class="codetable"><tr><td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_8f17b331913a41aea08728a0458a12fe-1">1</a>
+<a href="#rest_code_8f17b331913a41aea08728a0458a12fe-2">2</a>
+<a href="#rest_code_8f17b331913a41aea08728a0458a12fe-3">3</a></pre></div></td><td class="code"><pre class="code basic"><a name="rest_code_8f17b331913a41aea08728a0458a12fe-1"></a><span class="vg">Sub</span><span class="w"> </span><span class="vg">HelloWorld</span><span class="p">()</span>
+<a name="rest_code_8f17b331913a41aea08728a0458a12fe-2"></a><span class="w">    </span><span class="vg">RunPython</span><span class="w"> </span><span class="p">(</span><span class="s2">&quot;import myproject; myproject.addlist()&quot;</span><span class="p">)</span>
+<a name="rest_code_8f17b331913a41aea08728a0458a12fe-3"></a><span class="vg">End</span><span class="w"> </span><span class="vg">Sub</span>
+</pre></td></tr></table></blockquote>
+<p>6、点击工具栏上的绿色三角按钮，执行代码。</p>
+<blockquote>
+<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/exceljiaohu2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/exceljiaohu2.PNG" />
+</blockquote>
+<p>7、测试xlwings选项卡，设置Interpreter（Python解释器）、PYTHONPATH（Python模块路径）、UDF Modules（用户定义函数），点击Import Functions，弹出命令行窗口，最小化不要关闭。</p>
+<blockquote>
+<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/exceljiaohu3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/exceljiaohu3.PNG" />
+</blockquote>
+<p>8、在Excel中编写公式。</p>
+<blockquote>
+<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/exceljiaohu4.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/exceljiaohu4.PNG" />
+</blockquote>
+<p>9、回车可以看到运算结果。</p>
+<blockquote>
+<img alt="https://github.com/longlongpicture/myblogpicture/raw/master/exceljiaohu5.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/exceljiaohu5.PNG" />
+</blockquote>
+<p>通过同样的原理，我们可以用Python完成Excel中需要编写VBA才能完成的事情，尤其结合Python强大的数据分析能力和Excel强大的数据组织能力，可以非常有力地提高数据分析的效率。</p>
