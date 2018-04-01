@@ -56,7 +56,7 @@
 
     .. image:: https://github.com/longlongpicture/myblogpicture/raw/master/exceljiaohu2.PNG
 
-7、测试xlwings选项卡，设置Interpreter（Python解释器）、PYTHONPATH（Python模块路径）、UDF Modules（用户定义函数），点击Import Functions，弹出命令行窗口，最小化不要关闭。
+7、测试xlwings选项卡，设置Interpreter（Python解释器）【C:\\Users\\mayan\\Anaconda3\\python3.exe】、PYTHONPATH（Python模块路径）【C:\\Users\\mayan\\Anaconda3\\Lib\\site-packages】、UDF Modules（用户定义函数）【myproject】，点击Import Functions，弹出命令行窗口，最小化不要关闭。如果没有xlwings选项卡，找到 C:\\Users\\mayan\\Anaconda3\\Lib\\site-packages\\xlwings\\addin ，双击 xlwings.xlam 。
 
     .. image:: https://github.com/longlongpicture/myblogpicture/raw/master/exceljiaohu3.PNG
 

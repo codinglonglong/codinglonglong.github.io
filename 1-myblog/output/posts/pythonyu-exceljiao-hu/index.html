@@ -138,30 +138,30 @@ body{
 <p>3、打开myproject.py，编写工具。</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_39c2e0d130234b1f85a5765f7796aac3-1"> 1</a>
-<a href="#rest_code_39c2e0d130234b1f85a5765f7796aac3-2"> 2</a>
-<a href="#rest_code_39c2e0d130234b1f85a5765f7796aac3-3"> 3</a>
-<a href="#rest_code_39c2e0d130234b1f85a5765f7796aac3-4"> 4</a>
-<a href="#rest_code_39c2e0d130234b1f85a5765f7796aac3-5"> 5</a>
-<a href="#rest_code_39c2e0d130234b1f85a5765f7796aac3-6"> 6</a>
-<a href="#rest_code_39c2e0d130234b1f85a5765f7796aac3-7"> 7</a>
-<a href="#rest_code_39c2e0d130234b1f85a5765f7796aac3-8"> 8</a>
-<a href="#rest_code_39c2e0d130234b1f85a5765f7796aac3-9"> 9</a>
-<a href="#rest_code_39c2e0d130234b1f85a5765f7796aac3-10">10</a>
-<a href="#rest_code_39c2e0d130234b1f85a5765f7796aac3-11">11</a>
-<a href="#rest_code_39c2e0d130234b1f85a5765f7796aac3-12">12</a></pre></div></td>
-<td class="code"><pre class="code python"><a name="rest_code_39c2e0d130234b1f85a5765f7796aac3-1"></a><span class="kn">import</span> <span class="nn">xlwings</span>
-<a name="rest_code_39c2e0d130234b1f85a5765f7796aac3-2"></a>
-<a name="rest_code_39c2e0d130234b1f85a5765f7796aac3-3"></a>
-<a name="rest_code_39c2e0d130234b1f85a5765f7796aac3-4"></a><span class="k">def</span> <span class="nf">addlist</span><span class="p">():</span>
-<a name="rest_code_39c2e0d130234b1f85a5765f7796aac3-5"></a>    <span class="n">wb</span> <span class="o">=</span> <span class="n">xlwings</span><span class="o">.</span><span class="n">Book</span><span class="o">.</span><span class="n">caller</span><span class="p">()</span>
-<a name="rest_code_39c2e0d130234b1f85a5765f7796aac3-6"></a>    <span class="n">wb</span><span class="o">.</span><span class="n">sheets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="s2">"A1"</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,),(</span><span class="mi">2</span><span class="p">,),(</span><span class="mi">3</span><span class="p">,),(</span><span class="mi">4</span><span class="p">,),(</span><span class="mi">5</span><span class="p">,)]</span>
-<a name="rest_code_39c2e0d130234b1f85a5765f7796aac3-7"></a>    <span class="n">wb</span><span class="o">.</span><span class="n">sheets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="s2">"B2"</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
-<a name="rest_code_39c2e0d130234b1f85a5765f7796aac3-8"></a>
-<a name="rest_code_39c2e0d130234b1f85a5765f7796aac3-9"></a>
-<a name="rest_code_39c2e0d130234b1f85a5765f7796aac3-10"></a><span class="nd">@xlwings.func</span>
-<a name="rest_code_39c2e0d130234b1f85a5765f7796aac3-11"></a><span class="k">def</span> <span class="nf">sumlist</span><span class="p">(</span><span class="n">ls</span><span class="p">):</span>
-<a name="rest_code_39c2e0d130234b1f85a5765f7796aac3-12"></a>    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_5911c92d595c406f9980682b43216d6e-1"> 1</a>
+<a href="#rest_code_5911c92d595c406f9980682b43216d6e-2"> 2</a>
+<a href="#rest_code_5911c92d595c406f9980682b43216d6e-3"> 3</a>
+<a href="#rest_code_5911c92d595c406f9980682b43216d6e-4"> 4</a>
+<a href="#rest_code_5911c92d595c406f9980682b43216d6e-5"> 5</a>
+<a href="#rest_code_5911c92d595c406f9980682b43216d6e-6"> 6</a>
+<a href="#rest_code_5911c92d595c406f9980682b43216d6e-7"> 7</a>
+<a href="#rest_code_5911c92d595c406f9980682b43216d6e-8"> 8</a>
+<a href="#rest_code_5911c92d595c406f9980682b43216d6e-9"> 9</a>
+<a href="#rest_code_5911c92d595c406f9980682b43216d6e-10">10</a>
+<a href="#rest_code_5911c92d595c406f9980682b43216d6e-11">11</a>
+<a href="#rest_code_5911c92d595c406f9980682b43216d6e-12">12</a></pre></div></td>
+<td class="code"><pre class="code python"><a name="rest_code_5911c92d595c406f9980682b43216d6e-1"></a><span class="kn">import</span> <span class="nn">xlwings</span>
+<a name="rest_code_5911c92d595c406f9980682b43216d6e-2"></a>
+<a name="rest_code_5911c92d595c406f9980682b43216d6e-3"></a>
+<a name="rest_code_5911c92d595c406f9980682b43216d6e-4"></a><span class="k">def</span> <span class="nf">addlist</span><span class="p">():</span>
+<a name="rest_code_5911c92d595c406f9980682b43216d6e-5"></a>    <span class="n">wb</span> <span class="o">=</span> <span class="n">xlwings</span><span class="o">.</span><span class="n">Book</span><span class="o">.</span><span class="n">caller</span><span class="p">()</span>
+<a name="rest_code_5911c92d595c406f9980682b43216d6e-6"></a>    <span class="n">wb</span><span class="o">.</span><span class="n">sheets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="s2">"A1"</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,),(</span><span class="mi">2</span><span class="p">,),(</span><span class="mi">3</span><span class="p">,),(</span><span class="mi">4</span><span class="p">,),(</span><span class="mi">5</span><span class="p">,)]</span>
+<a name="rest_code_5911c92d595c406f9980682b43216d6e-7"></a>    <span class="n">wb</span><span class="o">.</span><span class="n">sheets</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="s2">"B2"</span><span class="p">)</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
+<a name="rest_code_5911c92d595c406f9980682b43216d6e-8"></a>
+<a name="rest_code_5911c92d595c406f9980682b43216d6e-9"></a>
+<a name="rest_code_5911c92d595c406f9980682b43216d6e-10"></a><span class="nd">@xlwings.func</span>
+<a name="rest_code_5911c92d595c406f9980682b43216d6e-11"></a><span class="k">def</span> <span class="nf">sumlist</span><span class="p">(</span><span class="n">ls</span><span class="p">):</span>
+<a name="rest_code_5911c92d595c406f9980682b43216d6e-12"></a>    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">ls</span><span class="p">)</span>
 </pre></td>
 </tr></table>
 </blockquote>
@@ -169,12 +169,12 @@ body{
 <p>5、按下 Alt+F11，启动Microsoft Visual Basic for Applications，双击"Sheet1"。</p>
 <blockquote>
 <table class="codetable"><tr>
-<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_8f17b331913a41aea08728a0458a12fe-1">1</a>
-<a href="#rest_code_8f17b331913a41aea08728a0458a12fe-2">2</a>
-<a href="#rest_code_8f17b331913a41aea08728a0458a12fe-3">3</a></pre></div></td>
-<td class="code"><pre class="code basic"><a name="rest_code_8f17b331913a41aea08728a0458a12fe-1"></a><span class="vg">Sub</span><span class="w"> </span><span class="vg">HelloWorld</span><span class="p">()</span>
-<a name="rest_code_8f17b331913a41aea08728a0458a12fe-2"></a><span class="w">    </span><span class="vg">RunPython</span><span class="w"> </span><span class="p">(</span><span class="s2">"import myproject; myproject.addlist()"</span><span class="p">)</span>
-<a name="rest_code_8f17b331913a41aea08728a0458a12fe-3"></a><span class="vg">End</span><span class="w"> </span><span class="vg">Sub</span>
+<td class="linenos"><div class="linenodiv"><pre><a href="#rest_code_d1985b8541d6413589c50c531ef6ec35-1">1</a>
+<a href="#rest_code_d1985b8541d6413589c50c531ef6ec35-2">2</a>
+<a href="#rest_code_d1985b8541d6413589c50c531ef6ec35-3">3</a></pre></div></td>
+<td class="code"><pre class="code basic"><a name="rest_code_d1985b8541d6413589c50c531ef6ec35-1"></a><span class="vg">Sub</span><span class="w"> </span><span class="vg">HelloWorld</span><span class="p">()</span>
+<a name="rest_code_d1985b8541d6413589c50c531ef6ec35-2"></a><span class="w">    </span><span class="vg">RunPython</span><span class="w"> </span><span class="p">(</span><span class="s2">"import myproject; myproject.addlist()"</span><span class="p">)</span>
+<a name="rest_code_d1985b8541d6413589c50c531ef6ec35-3"></a><span class="vg">End</span><span class="w"> </span><span class="vg">Sub</span>
 </pre></td>
 </tr></table>
 </blockquote>
@@ -182,7 +182,7 @@ body{
 <blockquote>
 <img alt="https://github.com/longlongpicture/myblogpicture/raw/master/exceljiaohu2.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/exceljiaohu2.PNG">
 </blockquote>
-<p>7、测试xlwings选项卡，设置Interpreter（Python解释器）、PYTHONPATH（Python模块路径）、UDF Modules（用户定义函数），点击Import Functions，弹出命令行窗口，最小化不要关闭。</p>
+<p>7、测试xlwings选项卡，设置Interpreter（Python解释器）【C:\Users\mayan\Anaconda3\python3.exe】、PYTHONPATH（Python模块路径）【C:\Users\mayan\Anaconda3\Lib\site-packages】、UDF Modules（用户定义函数）【myproject】，点击Import Functions，弹出命令行窗口，最小化不要关闭。如果没有xlwings选项卡，找到 C:\Users\mayan\Anaconda3\Lib\site-packages\xlwings\addin ，双击 xlwings.xlam 。</p>
 <blockquote>
 <img alt="https://github.com/longlongpicture/myblogpicture/raw/master/exceljiaohu3.PNG" src="https://github.com/longlongpicture/myblogpicture/raw/master/exceljiaohu3.PNG">
 </blockquote>
