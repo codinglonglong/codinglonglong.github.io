@@ -142,7 +142,7 @@ TRANSLATIONS_PATTERN = '{path}.{lang}.{ext}'
 
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ("/archive.html", "文章归档"),
+        ("/archive.html", "目录"),
         ("/categories/", "标签"),
     ),
 }
