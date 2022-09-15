@@ -1,6 +1,6 @@
 .. title: 如何下载软件
 .. slug: ru-he-xia-zai-ruan-jian
-.. date: 2022-09-15 22:59:35 UTC+08:00
+.. date: 2022-09-15 22:19:35 UTC+08:00
 .. tags: 计算机基础
 .. category: 计算机基础
 .. link: 

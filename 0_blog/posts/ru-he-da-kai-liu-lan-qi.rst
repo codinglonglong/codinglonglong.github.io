@@ -1,6 +1,6 @@
 .. title: 如何打开浏览器
 .. slug: ru-he-da-kai-liu-lan-qi
-.. date: 2022-09-15 22:36:44 UTC+08:00
+.. date: 2022-09-15 21:36:44 UTC+08:00
 .. tags: 计算机基础
 .. category: 计算机基础
 .. link: 

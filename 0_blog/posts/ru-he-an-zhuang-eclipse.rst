@@ -1,6 +1,6 @@
 .. title: 如何安装Eclipse
 .. slug: ru-he-an-zhuang-eclipse
-.. date: 2022-09-15 23:37:24 UTC+08:00
+.. date: 2022-09-15 23:17:24 UTC+08:00
 .. tags: Java
 .. category: Java
 .. link: 
