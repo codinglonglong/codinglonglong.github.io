@@ -1,0 +1,33 @@
+.. title: Java代码案例26——开关分支计算某年某月某日是这一年的第几天
+.. slug: javadai-ma-an-li-26-kai-guan-fen-zhi-ji-suan-mou-nian-mou-yue-mou-ri-shi-zhe-yi-nian-de-di-ji-tian
+.. date: 2022-11-14 23:09:03 UTC+08:00
+.. tags: Java代码案例
+.. category: Java
+.. link: 
+.. description: 
+.. type: text
+
+
+.. code-block:: java
+    :number-lines:
+
+    package xiangmu;
+
+    public class Ceshi {
+        public static void main(String args[]) {
+            System.out.println("+---+---+");
+            System.out.println("|   |   |");
+            System.out.println("|   |   |");
+            System.out.println("+---+---+");
+        }
+    }
+
+
+.. code-block:: text
+
+    +---+---+
+    |   |   |
+    |   |   |
+    +---+---+
+
+

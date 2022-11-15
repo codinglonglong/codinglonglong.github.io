@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article#
+" lang="zh_cn">
+<head>
+<meta charset="utf-8">
+<meta name="description" content="学习是运用一切资源充实自己的过程">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>写程序的龙龙 (旧文章页 3) | 写程序的龙龙</title>
+<link href="assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="zh_cn" href="rss.xml">
+<link rel="canonical" href="https://codinglonglong.github.io/index-3.html">
+<link rel="prev" href="." type="text/html">
+<link rel="next" href="index-2.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]-->
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
+
+<!-- Menubar -->
+
+<nav class="navbar navbar-expand-md static-top mb-4
+navbar-dark
+bg-dark
+"><div class="container">
+<!-- This keeps the margins nice -->
+        <a class="navbar-brand" href=".">
+
+            <span id="blog-title">写程序的龙龙</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="bs-navbar">
+            <ul class="navbar-nav mr-auto">
+<li class="nav-item">
+<a href="archive.html" class="nav-link">目录</a>
+                </li>
+<li class="nav-item">
+<a href="categories/" class="nav-link">标签</a>
+
+                
+            </li>
+</ul>
+<ul class="navbar-nav navbar-right"></ul>
+</div>
+<!-- /.navbar-collapse -->
+    </div>
+<!-- /.container -->
+</nav><!-- End of Menubar --><div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+
+    
+
+
+    
+<div class="postindex">
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/javadai-ma-an-li-16-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-2.html" class="u-url">Java代码案例16——三个正整数求最大值2</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                龙龙
+            </span></p>
+            <p class="dateline">
+            <a href="posts/javadai-ma-an-li-16-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-2.html" rel="bookmark">
+            <time class="published dt-published" datetime="2022-11-01T23:56:08+08:00" itemprop="datePublished" title="2022-11-01 23:56">2022-11-01 23:56</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div class="code"><table class="codetable">
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-16-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-2.html#rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-1"><code data-line-number=" 1"></code></a></td>
+<td class="code"><code><a id="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-1" name="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-1"></a><span class="c1">// Java三个正整数求最大值——嵌套分支</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-16-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-2.html#rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-2"><code data-line-number=" 2"></code></a></td>
+<td class="code"><code><a id="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-2" name="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-2"></a><span class="kn">package</span> <span class="nn">xiangmu</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-16-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-2.html#rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-3"><code data-line-number=" 3"></code></a></td>
+<td class="code"><code><a id="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-3" name="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-3"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-16-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-2.html#rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-4"><code data-line-number=" 4"></code></a></td>
+<td class="code"><code><a id="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-4" name="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-4"></a><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ceshi</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-16-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-2.html#rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-5"><code data-line-number=" 5"></code></a></td>
+<td class="code"><code><a id="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-5" name="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-5"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]</span><span class="p">)</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-16-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-2.html#rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-6"><code data-line-number=" 6"></code></a></td>
+<td class="code"><code><a id="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-6" name="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-6"></a>        <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-16-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-2.html#rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-7"><code data-line-number=" 7"></code></a></td>
+<td class="code"><code><a id="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-7" name="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-7"></a>        <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-16-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-2.html#rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-8"><code data-line-number=" 8"></code></a></td>
+<td class="code"><code><a id="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-8" name="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-8"></a>        <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-16-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-2.html#rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-9"><code data-line-number=" 9"></code></a></td>
+<td class="code"><code><a id="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-9" name="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-9"></a>        <span class="k">if</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;=</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-16-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-2.html#rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-10"><code data-line-number="10"></code></a></td>
+<td class="code"><code><a id="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-10" name="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-10"></a>            <span class="k">if</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;=</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-16-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-2.html#rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-11"><code data-line-number="11"></code></a></td>
+<td class="code"><code><a id="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-11" name="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-11"></a>                <span class="n">dayin</span><span class="p">(</span><span class="s">"最大值是："</span> <span class="o">+</span> <span class="n">a</span><span class="p">);</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-16-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-2.html#rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-12"><code data-line-number="12"></code></a></td>
+<td class="code"><code><a id="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-12" name="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-12"></a>            <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-16-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-2.html#rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-13"><code data-line-number="13"></code></a></td>
+<td class="code"><code><a id="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-13" name="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-13"></a>                <span class="n">dayin</span><span class="p">(</span><span class="s">"最大值是："</span> <span class="o">+</span> <span class="n">c</span><span class="p">);</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-16-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-2.html#rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-14"><code data-line-number="14"></code></a></td>
+<td class="code"><code><a id="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-14" name="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-14"></a>            <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-16-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-2.html#rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-15"><code data-line-number="15"></code></a></td>
+<td class="code"><code><a id="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-15" name="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-15"></a>        <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-16-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-2.html#rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-16"><code data-line-number="16"></code></a></td>
+<td class="code"><code><a id="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-16" name="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-16"></a>            <span class="k">if</span><span class="p">(</span><span class="n">b</span> <span class="o">&gt;=</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-16-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-2.html#rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-17"><code data-line-number="17"></code></a></td>
+<td class="code"><code><a id="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-17" name="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-17"></a>                <span class="n">dayin</span><span class="p">(</span><span class="s">"最大值是："</span> <span class="o">+</span> <span class="n">b</span><span class="p">);</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-16-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-2.html#rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-18"><code data-line-number="18"></code></a></td>
+<td class="code"><code><a id="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-18" name="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-18"></a>            <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-16-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-2.html#rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-19"><code data-line-number="19"></code></a></td>
+<td class="code"><code><a id="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-19" name="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-19"></a>                <span class="n">dayin</span><span class="p">(</span><span class="s">"最大值是："</span> <span class="o">+</span> <span class="n">c</span><span class="p">);</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-16-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-2.html#rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-20"><code data-line-number="20"></code></a></td>
+<td class="code"><code><a id="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-20" name="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-20"></a>            <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-16-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-2.html#rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-21"><code data-line-number="21"></code></a></td>
+<td class="code"><code><a id="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-21" name="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-21"></a>        <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-16-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-2.html#rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-22"><code data-line-number="22"></code></a></td>
+<td class="code"><code><a id="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-22" name="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-22"></a>    <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-16-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-2.html#rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-23"><code data-line-number="23"></code></a></td>
+<td class="code"><code><a id="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-23" name="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-23"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">dayin</span><span class="p">(</span><span class="n">String</span> <span class="n">zifuchuan</span><span class="p">)</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-16-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-2.html#rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-24"><code data-line-number="24"></code></a></td>
+<td class="code"><code><a id="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-24" name="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-24"></a>        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">zifuchuan</span><span class="p">);</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-16-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-2.html#rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-25"><code data-line-number="25"></code></a></td>
+<td class="code"><code><a id="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-25" name="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-25"></a>    <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-16-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-2.html#rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-26"><code data-line-number="26"></code></a></td>
+<td class="code"><code><a id="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-26" name="rest_code_81522ccdf60f40cdb1a99ecd7b7a756b-26"></a><span class="p">}</span>
+</code></td>
+</tr>
+</table></div>
+<pre class="code text"><a id="rest_code_80876ef5c3ae4259ab00f40dbaf726da-1" name="rest_code_80876ef5c3ae4259ab00f40dbaf726da-1" href="posts/javadai-ma-an-li-16-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-2.html#rest_code_80876ef5c3ae4259ab00f40dbaf726da-1"></a>最大值是：10
+</pre>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/javadai-ma-an-li-15-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-1.html" class="u-url">Java代码案例15——三个正整数求最大值1</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                龙龙
+            </span></p>
+            <p class="dateline">
+            <a href="posts/javadai-ma-an-li-15-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-1.html" rel="bookmark">
+            <time class="published dt-published" datetime="2022-11-01T23:50:59+08:00" itemprop="datePublished" title="2022-11-01 23:50">2022-11-01 23:50</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div class="code"><table class="codetable">
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-15-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-1.html#rest_code_5318518384c0466b955f2130a4cbdb0c-1"><code data-line-number=" 1"></code></a></td>
+<td class="code"><code><a id="rest_code_5318518384c0466b955f2130a4cbdb0c-1" name="rest_code_5318518384c0466b955f2130a4cbdb0c-1"></a><span class="c1">// Java三个正整数求最大值——多分支</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-15-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-1.html#rest_code_5318518384c0466b955f2130a4cbdb0c-2"><code data-line-number=" 2"></code></a></td>
+<td class="code"><code><a id="rest_code_5318518384c0466b955f2130a4cbdb0c-2" name="rest_code_5318518384c0466b955f2130a4cbdb0c-2"></a><span class="kn">package</span> <span class="nn">xiangmu</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-15-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-1.html#rest_code_5318518384c0466b955f2130a4cbdb0c-3"><code data-line-number=" 3"></code></a></td>
+<td class="code"><code><a id="rest_code_5318518384c0466b955f2130a4cbdb0c-3" name="rest_code_5318518384c0466b955f2130a4cbdb0c-3"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-15-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-1.html#rest_code_5318518384c0466b955f2130a4cbdb0c-4"><code data-line-number=" 4"></code></a></td>
+<td class="code"><code><a id="rest_code_5318518384c0466b955f2130a4cbdb0c-4" name="rest_code_5318518384c0466b955f2130a4cbdb0c-4"></a><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ceshi</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-15-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-1.html#rest_code_5318518384c0466b955f2130a4cbdb0c-5"><code data-line-number=" 5"></code></a></td>
+<td class="code"><code><a id="rest_code_5318518384c0466b955f2130a4cbdb0c-5" name="rest_code_5318518384c0466b955f2130a4cbdb0c-5"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]</span><span class="p">)</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-15-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-1.html#rest_code_5318518384c0466b955f2130a4cbdb0c-6"><code data-line-number=" 6"></code></a></td>
+<td class="code"><code><a id="rest_code_5318518384c0466b955f2130a4cbdb0c-6" name="rest_code_5318518384c0466b955f2130a4cbdb0c-6"></a>        <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-15-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-1.html#rest_code_5318518384c0466b955f2130a4cbdb0c-7"><code data-line-number=" 7"></code></a></td>
+<td class="code"><code><a id="rest_code_5318518384c0466b955f2130a4cbdb0c-7" name="rest_code_5318518384c0466b955f2130a4cbdb0c-7"></a>        <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-15-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-1.html#rest_code_5318518384c0466b955f2130a4cbdb0c-8"><code data-line-number=" 8"></code></a></td>
+<td class="code"><code><a id="rest_code_5318518384c0466b955f2130a4cbdb0c-8" name="rest_code_5318518384c0466b955f2130a4cbdb0c-8"></a>        <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-15-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-1.html#rest_code_5318518384c0466b955f2130a4cbdb0c-9"><code data-line-number=" 9"></code></a></td>
+<td class="code"><code><a id="rest_code_5318518384c0466b955f2130a4cbdb0c-9" name="rest_code_5318518384c0466b955f2130a4cbdb0c-9"></a>        <span class="k">if</span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;=</span> <span class="n">b</span> <span class="o">&amp;&amp;</span> <span class="n">a</span> <span class="o">&gt;=</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-15-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-1.html#rest_code_5318518384c0466b955f2130a4cbdb0c-10"><code data-line-number="10"></code></a></td>
+<td class="code"><code><a id="rest_code_5318518384c0466b955f2130a4cbdb0c-10" name="rest_code_5318518384c0466b955f2130a4cbdb0c-10"></a>            <span class="n">dayin</span><span class="p">(</span><span class="s">"最大值是："</span> <span class="o">+</span> <span class="n">a</span><span class="p">);</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-15-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-1.html#rest_code_5318518384c0466b955f2130a4cbdb0c-11"><code data-line-number="11"></code></a></td>
+<td class="code"><code><a id="rest_code_5318518384c0466b955f2130a4cbdb0c-11" name="rest_code_5318518384c0466b955f2130a4cbdb0c-11"></a>        <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">b</span> <span class="o">&gt;=</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-15-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-1.html#rest_code_5318518384c0466b955f2130a4cbdb0c-12"><code data-line-number="12"></code></a></td>
+<td class="code"><code><a id="rest_code_5318518384c0466b955f2130a4cbdb0c-12" name="rest_code_5318518384c0466b955f2130a4cbdb0c-12"></a>            <span class="n">dayin</span><span class="p">(</span><span class="s">"最大值是："</span> <span class="o">+</span> <span class="n">b</span><span class="p">);</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-15-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-1.html#rest_code_5318518384c0466b955f2130a4cbdb0c-13"><code data-line-number="13"></code></a></td>
+<td class="code"><code><a id="rest_code_5318518384c0466b955f2130a4cbdb0c-13" name="rest_code_5318518384c0466b955f2130a4cbdb0c-13"></a>        <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-15-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-1.html#rest_code_5318518384c0466b955f2130a4cbdb0c-14"><code data-line-number="14"></code></a></td>
+<td class="code"><code><a id="rest_code_5318518384c0466b955f2130a4cbdb0c-14" name="rest_code_5318518384c0466b955f2130a4cbdb0c-14"></a>            <span class="n">dayin</span><span class="p">(</span><span class="s">"最大值是："</span> <span class="o">+</span> <span class="n">c</span><span class="p">);</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-15-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-1.html#rest_code_5318518384c0466b955f2130a4cbdb0c-15"><code data-line-number="15"></code></a></td>
+<td class="code"><code><a id="rest_code_5318518384c0466b955f2130a4cbdb0c-15" name="rest_code_5318518384c0466b955f2130a4cbdb0c-15"></a>        <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-15-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-1.html#rest_code_5318518384c0466b955f2130a4cbdb0c-16"><code data-line-number="16"></code></a></td>
+<td class="code"><code><a id="rest_code_5318518384c0466b955f2130a4cbdb0c-16" name="rest_code_5318518384c0466b955f2130a4cbdb0c-16"></a>    <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-15-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-1.html#rest_code_5318518384c0466b955f2130a4cbdb0c-17"><code data-line-number="17"></code></a></td>
+<td class="code"><code><a id="rest_code_5318518384c0466b955f2130a4cbdb0c-17" name="rest_code_5318518384c0466b955f2130a4cbdb0c-17"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">dayin</span><span class="p">(</span><span class="n">String</span> <span class="n">zifuchuan</span><span class="p">)</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-15-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-1.html#rest_code_5318518384c0466b955f2130a4cbdb0c-18"><code data-line-number="18"></code></a></td>
+<td class="code"><code><a id="rest_code_5318518384c0466b955f2130a4cbdb0c-18" name="rest_code_5318518384c0466b955f2130a4cbdb0c-18"></a>        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">zifuchuan</span><span class="p">);</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-15-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-1.html#rest_code_5318518384c0466b955f2130a4cbdb0c-19"><code data-line-number="19"></code></a></td>
+<td class="code"><code><a id="rest_code_5318518384c0466b955f2130a4cbdb0c-19" name="rest_code_5318518384c0466b955f2130a4cbdb0c-19"></a>    <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-15-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-1.html#rest_code_5318518384c0466b955f2130a4cbdb0c-20"><code data-line-number="20"></code></a></td>
+<td class="code"><code><a id="rest_code_5318518384c0466b955f2130a4cbdb0c-20" name="rest_code_5318518384c0466b955f2130a4cbdb0c-20"></a><span class="p">}</span>
+</code></td>
+</tr>
+</table></div>
+<pre class="code text"><a id="rest_code_e6d9f81020114100bcdd04f9b3a768ed-1" name="rest_code_e6d9f81020114100bcdd04f9b3a768ed-1" href="posts/javadai-ma-an-li-15-san-ge-zheng-zheng-shu-qiu-zui-da-zhi-1.html#rest_code_e6d9f81020114100bcdd04f9b3a768ed-1"></a>最大值是：5
+</pre>
+    </div>
+    </article>
+</div>
+
+        <ul class="pager postindexpager clearfix">
+<li class="previous"><a href="." rel="prev">较新的文章</a></li>
+            <li class="next"><a href="index-2.html" rel="next">以前的文章</a></li>
+        </ul>
+<!--End of body content--><footer id="footer"></footer>
+</div>
+</div>
+
+
+        <script src="assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>
+

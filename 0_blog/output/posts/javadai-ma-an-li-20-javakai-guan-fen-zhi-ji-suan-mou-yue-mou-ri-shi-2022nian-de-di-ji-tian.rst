@@ -1,4 +1,4 @@
-.. title: Java代码案例20——Java开关分支计算某月某日是2022年的第几天
+.. title: Java代码案例20——开关分支计算某月某日是2022年的第几天
 .. slug: javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian
 .. date: 2022-11-02 00:23:41 UTC+08:00
 .. tags: Java代码案例
