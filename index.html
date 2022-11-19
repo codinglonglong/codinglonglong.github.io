@@ -12,7 +12,7 @@
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="zh_cn" href="rss.xml">
 <link rel="canonical" href="https://codinglonglong.github.io/">
 <link rel="next" href="index-3.html" type="text/html">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/javadai-ma-an-li-29-zi-fu-chuan-zuo-xiang-deng-bi-jiao-shi-xu-yao-shi-yong-equalshan-shu.html" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
@@ -60,7 +60,108 @@ bg-dark
 
     
 <div class="postindex">
-    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/javadai-ma-an-li-29-zi-fu-chuan-zuo-xiang-deng-bi-jiao-shi-xu-yao-shi-yong-equalshan-shu.html" class="u-url">Java代码案例29——字符串相等比较时需要使用equals函数</a></h1>
+    <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html" class="u-url">Java输出ASCII码可见字符表</a></h1>
+        <div class="metadata">
+            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                龙龙
+            </span></p>
+            <p class="dateline">
+            <a href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html" rel="bookmark">
+            <time class="published dt-published" datetime="2022-11-19T23:18:29+08:00" itemprop="datePublished" title="2022-11-19 23:18">2022-11-19 23:18</time></a>
+            </p>
+        </div>
+    </header><div class="p-summary entry-summary">
+    <div class="code"><table class="codetable">
+<tr>
+<td class="linenos linenodiv"><a href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_a162c8125238473dbfe92b5778465c1d-1"><code data-line-number=" 1"></code></a></td>
+<td class="code"><code><a id="rest_code_a162c8125238473dbfe92b5778465c1d-1" name="rest_code_a162c8125238473dbfe92b5778465c1d-1"></a><span class="kn">package</span> <span class="nn">xiangmu</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_a162c8125238473dbfe92b5778465c1d-2"><code data-line-number=" 2"></code></a></td>
+<td class="code"><code><a id="rest_code_a162c8125238473dbfe92b5778465c1d-2" name="rest_code_a162c8125238473dbfe92b5778465c1d-2"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_a162c8125238473dbfe92b5778465c1d-3"><code data-line-number=" 3"></code></a></td>
+<td class="code"><code><a id="rest_code_a162c8125238473dbfe92b5778465c1d-3" name="rest_code_a162c8125238473dbfe92b5778465c1d-3"></a><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ceshi</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_a162c8125238473dbfe92b5778465c1d-4"><code data-line-number=" 4"></code></a></td>
+<td class="code"><code><a id="rest_code_a162c8125238473dbfe92b5778465c1d-4" name="rest_code_a162c8125238473dbfe92b5778465c1d-4"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]</span><span class="p">)</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_a162c8125238473dbfe92b5778465c1d-5"><code data-line-number=" 5"></code></a></td>
+<td class="code"><code><a id="rest_code_a162c8125238473dbfe92b5778465c1d-5" name="rest_code_a162c8125238473dbfe92b5778465c1d-5"></a>        <span class="kt">char</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_a162c8125238473dbfe92b5778465c1d-6"><code data-line-number=" 6"></code></a></td>
+<td class="code"><code><a id="rest_code_a162c8125238473dbfe92b5778465c1d-6" name="rest_code_a162c8125238473dbfe92b5778465c1d-6"></a>        <span class="k">for</span><span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="mi">32</span><span class="p">;</span><span class="n">a</span><span class="o">&lt;</span><span class="mi">127</span><span class="p">;</span><span class="n">a</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_a162c8125238473dbfe92b5778465c1d-7"><code data-line-number=" 7"></code></a></td>
+<td class="code"><code><a id="rest_code_a162c8125238473dbfe92b5778465c1d-7" name="rest_code_a162c8125238473dbfe92b5778465c1d-7"></a>            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">((</span><span class="kt">int</span><span class="p">)</span><span class="n">a</span><span class="o">+</span><span class="s">"\t"</span><span class="p">);</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_a162c8125238473dbfe92b5778465c1d-8"><code data-line-number=" 8"></code></a></td>
+<td class="code"><code><a id="rest_code_a162c8125238473dbfe92b5778465c1d-8" name="rest_code_a162c8125238473dbfe92b5778465c1d-8"></a>            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="s">"\t"</span><span class="p">);</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_a162c8125238473dbfe92b5778465c1d-9"><code data-line-number=" 9"></code></a></td>
+<td class="code"><code><a id="rest_code_a162c8125238473dbfe92b5778465c1d-9" name="rest_code_a162c8125238473dbfe92b5778465c1d-9"></a>            <span class="k">if</span><span class="p">((</span><span class="n">a</span><span class="o">-</span><span class="mi">31</span><span class="p">)</span> <span class="o">%</span> <span class="mi">6</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_a162c8125238473dbfe92b5778465c1d-10"><code data-line-number="10"></code></a></td>
+<td class="code"><code><a id="rest_code_a162c8125238473dbfe92b5778465c1d-10" name="rest_code_a162c8125238473dbfe92b5778465c1d-10"></a>                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_a162c8125238473dbfe92b5778465c1d-11"><code data-line-number="11"></code></a></td>
+<td class="code"><code><a id="rest_code_a162c8125238473dbfe92b5778465c1d-11" name="rest_code_a162c8125238473dbfe92b5778465c1d-11"></a>            <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_a162c8125238473dbfe92b5778465c1d-12"><code data-line-number="12"></code></a></td>
+<td class="code"><code><a id="rest_code_a162c8125238473dbfe92b5778465c1d-12" name="rest_code_a162c8125238473dbfe92b5778465c1d-12"></a>        <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_a162c8125238473dbfe92b5778465c1d-13"><code data-line-number="13"></code></a></td>
+<td class="code"><code><a id="rest_code_a162c8125238473dbfe92b5778465c1d-13" name="rest_code_a162c8125238473dbfe92b5778465c1d-13"></a>    <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_a162c8125238473dbfe92b5778465c1d-14"><code data-line-number="14"></code></a></td>
+<td class="code"><code><a id="rest_code_a162c8125238473dbfe92b5778465c1d-14" name="rest_code_a162c8125238473dbfe92b5778465c1d-14"></a><span class="p">}</span>
+</code></td>
+</tr>
+</table></div>
+<pre class="code text"><a id="rest_code_da19f689307b45e1bd80a77864897fb5-1" name="rest_code_da19f689307b45e1bd80a77864897fb5-1" href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_da19f689307b45e1bd80a77864897fb5-1"></a>32          33      !       34      "       35      #       36      $       37      %
+<a id="rest_code_da19f689307b45e1bd80a77864897fb5-2" name="rest_code_da19f689307b45e1bd80a77864897fb5-2" href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_da19f689307b45e1bd80a77864897fb5-2"></a>38  &amp;       39      '       40      (       41      )       42      *       43      +
+<a id="rest_code_da19f689307b45e1bd80a77864897fb5-3" name="rest_code_da19f689307b45e1bd80a77864897fb5-3" href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_da19f689307b45e1bd80a77864897fb5-3"></a>44  ,       45      -       46      .       47      /       48      0       49      1
+<a id="rest_code_da19f689307b45e1bd80a77864897fb5-4" name="rest_code_da19f689307b45e1bd80a77864897fb5-4" href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_da19f689307b45e1bd80a77864897fb5-4"></a>50  2       51      3       52      4       53      5       54      6       55      7
+<a id="rest_code_da19f689307b45e1bd80a77864897fb5-5" name="rest_code_da19f689307b45e1bd80a77864897fb5-5" href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_da19f689307b45e1bd80a77864897fb5-5"></a>56  8       57      9       58      :       59      ;       60      &lt;       61      =
+<a id="rest_code_da19f689307b45e1bd80a77864897fb5-6" name="rest_code_da19f689307b45e1bd80a77864897fb5-6" href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_da19f689307b45e1bd80a77864897fb5-6"></a>62  &gt;       63      ?       64      @       65      A       66      B       67      C
+<a id="rest_code_da19f689307b45e1bd80a77864897fb5-7" name="rest_code_da19f689307b45e1bd80a77864897fb5-7" href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_da19f689307b45e1bd80a77864897fb5-7"></a>68  D       69      E       70      F       71      G       72      H       73      I
+<a id="rest_code_da19f689307b45e1bd80a77864897fb5-8" name="rest_code_da19f689307b45e1bd80a77864897fb5-8" href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_da19f689307b45e1bd80a77864897fb5-8"></a>74  J       75      K       76      L       77      M       78      N       79      O
+<a id="rest_code_da19f689307b45e1bd80a77864897fb5-9" name="rest_code_da19f689307b45e1bd80a77864897fb5-9" href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_da19f689307b45e1bd80a77864897fb5-9"></a>80  P       81      Q       82      R       83      S       84      T       85      U
+<a id="rest_code_da19f689307b45e1bd80a77864897fb5-10" name="rest_code_da19f689307b45e1bd80a77864897fb5-10" href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_da19f689307b45e1bd80a77864897fb5-10"></a>86  V       87      W       88      X       89      Y       90      Z       91      [
+<a id="rest_code_da19f689307b45e1bd80a77864897fb5-11" name="rest_code_da19f689307b45e1bd80a77864897fb5-11" href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_da19f689307b45e1bd80a77864897fb5-11"></a>92  \       93      ]       94      ^       95      _       96      `       97      a
+<a id="rest_code_da19f689307b45e1bd80a77864897fb5-12" name="rest_code_da19f689307b45e1bd80a77864897fb5-12" href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_da19f689307b45e1bd80a77864897fb5-12"></a>98  b       99      c       100     d       101     e       102     f       103     g
+<a id="rest_code_da19f689307b45e1bd80a77864897fb5-13" name="rest_code_da19f689307b45e1bd80a77864897fb5-13" href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_da19f689307b45e1bd80a77864897fb5-13"></a>104 h       105     i       106     j       107     k       108     l       109     m
+<a id="rest_code_da19f689307b45e1bd80a77864897fb5-14" name="rest_code_da19f689307b45e1bd80a77864897fb5-14" href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_da19f689307b45e1bd80a77864897fb5-14"></a>110 n       111     o       112     p       113     q       114     r       115     s
+<a id="rest_code_da19f689307b45e1bd80a77864897fb5-15" name="rest_code_da19f689307b45e1bd80a77864897fb5-15" href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_da19f689307b45e1bd80a77864897fb5-15"></a>116 t       117     u       118     v       119     w       120     x       121     y
+<a id="rest_code_da19f689307b45e1bd80a77864897fb5-16" name="rest_code_da19f689307b45e1bd80a77864897fb5-16" href="posts/javashu-chu-asciima-ke-jian-zi-fu-biao.html#rest_code_da19f689307b45e1bd80a77864897fb5-16"></a>122 z       123     {       124     |       125     }       126     ~
+</pre>
+    </div>
+    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/javadai-ma-an-li-29-zi-fu-chuan-zuo-xiang-deng-bi-jiao-shi-xu-yao-shi-yong-equalshan-shu.html" class="u-url">Java代码案例29——字符串相等比较时需要使用equals函数</a></h1>
         <div class="metadata">
             <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                 龙龙
@@ -1466,167 +1567,6 @@ bg-dark
 <a id="rest_code_6c2bc22394e247b082f2a5fb17424f0c-17" name="rest_code_6c2bc22394e247b082f2a5fb17424f0c-17" href="posts/javadai-ma-an-li-20-hua-xin.html#rest_code_6c2bc22394e247b082f2a5fb17424f0c-17"></a>                 ^^^^^^^^^^^
 <a id="rest_code_6c2bc22394e247b082f2a5fb17424f0c-18" name="rest_code_6c2bc22394e247b082f2a5fb17424f0c-18" href="posts/javadai-ma-an-li-20-hua-xin.html#rest_code_6c2bc22394e247b082f2a5fb17424f0c-18"></a>                   ^^^^^^^
 <a id="rest_code_6c2bc22394e247b082f2a5fb17424f0c-19" name="rest_code_6c2bc22394e247b082f2a5fb17424f0c-19" href="posts/javadai-ma-an-li-20-hua-xin.html#rest_code_6c2bc22394e247b082f2a5fb17424f0c-19"></a>                     ^^^
-</pre>
-    </div>
-    </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html" class="u-url">Java代码案例20——开关分支计算某月某日是2022年的第几天</a></h1>
-        <div class="metadata">
-            <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
-                龙龙
-            </span></p>
-            <p class="dateline">
-            <a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html" rel="bookmark">
-            <time class="published dt-published" datetime="2022-11-02T00:23:41+08:00" itemprop="datePublished" title="2022-11-02 00:23">2022-11-02 00:23</time></a>
-            </p>
-        </div>
-    </header><div class="p-summary entry-summary">
-    <div class="code"><table class="codetable">
-<tr>
-<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_c8eac47f6fce46b98aac6893b8ef26e8-1"><code data-line-number=" 1"></code></a></td>
-<td class="code"><code><a id="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-1" name="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-1"></a><span class="c1">// Java开关分支计算某月某日是2022年的第几天</span>
-</code></td>
-</tr>
-<tr>
-<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_c8eac47f6fce46b98aac6893b8ef26e8-2"><code data-line-number=" 2"></code></a></td>
-<td class="code"><code><a id="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-2" name="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-2"></a><span class="c1">// 固定年份，暂不考虑闰年的问题</span>
-</code></td>
-</tr>
-<tr>
-<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_c8eac47f6fce46b98aac6893b8ef26e8-3"><code data-line-number=" 3"></code></a></td>
-<td class="code"><code><a id="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-3" name="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-3"></a><span class="kn">package</span> <span class="nn">xiangmu</span><span class="p">;</span>
-</code></td>
-</tr>
-<tr>
-<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_c8eac47f6fce46b98aac6893b8ef26e8-4"><code data-line-number=" 4"></code></a></td>
-<td class="code"><code><a id="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-4" name="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-4"></a>
-</code></td>
-</tr>
-<tr>
-<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_c8eac47f6fce46b98aac6893b8ef26e8-5"><code data-line-number=" 5"></code></a></td>
-<td class="code"><code><a id="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-5" name="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-5"></a><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ceshi</span> <span class="p">{</span>
-</code></td>
-</tr>
-<tr>
-<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_c8eac47f6fce46b98aac6893b8ef26e8-6"><code data-line-number=" 6"></code></a></td>
-<td class="code"><code><a id="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-6" name="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-6"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]</span><span class="p">)</span> <span class="p">{</span>
-</code></td>
-</tr>
-<tr>
-<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_c8eac47f6fce46b98aac6893b8ef26e8-7"><code data-line-number=" 7"></code></a></td>
-<td class="code"><code><a id="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-7" name="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-7"></a>        <span class="kt">int</span> <span class="n">yue</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-</code></td>
-</tr>
-<tr>
-<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_c8eac47f6fce46b98aac6893b8ef26e8-8"><code data-line-number=" 8"></code></a></td>
-<td class="code"><code><a id="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-8" name="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-8"></a>        <span class="kt">int</span> <span class="n">ri</span> <span class="o">=</span> <span class="mi">21</span><span class="p">;</span>
-</code></td>
-</tr>
-<tr>
-<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_c8eac47f6fce46b98aac6893b8ef26e8-9"><code data-line-number=" 9"></code></a></td>
-<td class="code"><code><a id="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-9" name="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-9"></a>        <span class="kt">int</span> <span class="n">tian</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-</code></td>
-</tr>
-<tr>
-<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_c8eac47f6fce46b98aac6893b8ef26e8-10"><code data-line-number="10"></code></a></td>
-<td class="code"><code><a id="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-10" name="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-10"></a>        <span class="k">switch</span><span class="p">(</span><span class="n">yue</span><span class="p">)</span> <span class="p">{</span>
-</code></td>
-</tr>
-<tr>
-<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_c8eac47f6fce46b98aac6893b8ef26e8-11"><code data-line-number="11"></code></a></td>
-<td class="code"><code><a id="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-11" name="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-11"></a>            <span class="k">case</span> <span class="mi">12</span><span class="p">:</span> <span class="n">tian</span> <span class="o">=</span> <span class="n">tian</span> <span class="o">+</span> <span class="mi">30</span><span class="p">;</span>
-</code></td>
-</tr>
-<tr>
-<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_c8eac47f6fce46b98aac6893b8ef26e8-12"><code data-line-number="12"></code></a></td>
-<td class="code"><code><a id="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-12" name="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-12"></a>            <span class="k">case</span> <span class="mi">11</span><span class="p">:</span> <span class="n">tian</span> <span class="o">=</span> <span class="n">tian</span> <span class="o">+</span> <span class="mi">31</span><span class="p">;</span>
-</code></td>
-</tr>
-<tr>
-<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_c8eac47f6fce46b98aac6893b8ef26e8-13"><code data-line-number="13"></code></a></td>
-<td class="code"><code><a id="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-13" name="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-13"></a>            <span class="k">case</span> <span class="mi">10</span><span class="p">:</span> <span class="n">tian</span> <span class="o">=</span> <span class="n">tian</span> <span class="o">+</span> <span class="mi">30</span><span class="p">;</span>
-</code></td>
-</tr>
-<tr>
-<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_c8eac47f6fce46b98aac6893b8ef26e8-14"><code data-line-number="14"></code></a></td>
-<td class="code"><code><a id="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-14" name="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-14"></a>            <span class="k">case</span> <span class="mi">9</span><span class="p">:</span> <span class="n">tian</span> <span class="o">=</span> <span class="n">tian</span> <span class="o">+</span> <span class="mi">31</span><span class="p">;</span>
-</code></td>
-</tr>
-<tr>
-<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_c8eac47f6fce46b98aac6893b8ef26e8-15"><code data-line-number="15"></code></a></td>
-<td class="code"><code><a id="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-15" name="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-15"></a>            <span class="k">case</span> <span class="mi">8</span><span class="p">:</span> <span class="n">tian</span> <span class="o">=</span> <span class="n">tian</span> <span class="o">+</span> <span class="mi">31</span><span class="p">;</span>
-</code></td>
-</tr>
-<tr>
-<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_c8eac47f6fce46b98aac6893b8ef26e8-16"><code data-line-number="16"></code></a></td>
-<td class="code"><code><a id="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-16" name="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-16"></a>            <span class="k">case</span> <span class="mi">7</span><span class="p">:</span> <span class="n">tian</span> <span class="o">=</span> <span class="n">tian</span> <span class="o">+</span> <span class="mi">30</span><span class="p">;</span>
-</code></td>
-</tr>
-<tr>
-<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_c8eac47f6fce46b98aac6893b8ef26e8-17"><code data-line-number="17"></code></a></td>
-<td class="code"><code><a id="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-17" name="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-17"></a>            <span class="k">case</span> <span class="mi">6</span><span class="p">:</span> <span class="n">tian</span> <span class="o">=</span> <span class="n">tian</span> <span class="o">+</span> <span class="mi">31</span><span class="p">;</span>
-</code></td>
-</tr>
-<tr>
-<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_c8eac47f6fce46b98aac6893b8ef26e8-18"><code data-line-number="18"></code></a></td>
-<td class="code"><code><a id="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-18" name="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-18"></a>            <span class="k">case</span> <span class="mi">5</span><span class="p">:</span> <span class="n">tian</span> <span class="o">=</span> <span class="n">tian</span> <span class="o">+</span> <span class="mi">30</span><span class="p">;</span>
-</code></td>
-</tr>
-<tr>
-<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_c8eac47f6fce46b98aac6893b8ef26e8-19"><code data-line-number="19"></code></a></td>
-<td class="code"><code><a id="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-19" name="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-19"></a>            <span class="k">case</span> <span class="mi">4</span><span class="p">:</span> <span class="n">tian</span> <span class="o">=</span> <span class="n">tian</span> <span class="o">+</span> <span class="mi">31</span><span class="p">;</span>
-</code></td>
-</tr>
-<tr>
-<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_c8eac47f6fce46b98aac6893b8ef26e8-20"><code data-line-number="20"></code></a></td>
-<td class="code"><code><a id="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-20" name="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-20"></a>            <span class="k">case</span> <span class="mi">3</span><span class="p">:</span> <span class="n">tian</span> <span class="o">=</span> <span class="n">tian</span> <span class="o">+</span> <span class="mi">28</span><span class="p">;</span>
-</code></td>
-</tr>
-<tr>
-<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_c8eac47f6fce46b98aac6893b8ef26e8-21"><code data-line-number="21"></code></a></td>
-<td class="code"><code><a id="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-21" name="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-21"></a>            <span class="k">case</span> <span class="mi">2</span><span class="p">:</span> <span class="n">tian</span> <span class="o">=</span> <span class="n">tian</span> <span class="o">+</span> <span class="mi">31</span><span class="p">;</span>
-</code></td>
-</tr>
-<tr>
-<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_c8eac47f6fce46b98aac6893b8ef26e8-22"><code data-line-number="22"></code></a></td>
-<td class="code"><code><a id="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-22" name="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-22"></a>            <span class="k">case</span> <span class="mi">1</span><span class="p">:</span> <span class="n">tian</span> <span class="o">=</span> <span class="n">tian</span> <span class="o">+</span> <span class="n">ri</span><span class="p">;</span>
-</code></td>
-</tr>
-<tr>
-<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_c8eac47f6fce46b98aac6893b8ef26e8-23"><code data-line-number="23"></code></a></td>
-<td class="code"><code><a id="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-23" name="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-23"></a>        <span class="p">}</span>
-</code></td>
-</tr>
-<tr>
-<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_c8eac47f6fce46b98aac6893b8ef26e8-24"><code data-line-number="24"></code></a></td>
-<td class="code"><code><a id="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-24" name="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-24"></a>        <span class="n">dayin</span><span class="p">(</span><span class="s">"2022年"</span><span class="o">+</span><span class="n">yue</span><span class="o">+</span><span class="s">"月"</span><span class="o">+</span><span class="n">ri</span><span class="o">+</span><span class="s">"日是这一年的第"</span><span class="o">+</span><span class="n">tian</span><span class="o">+</span><span class="s">"天"</span><span class="p">);</span>
-</code></td>
-</tr>
-<tr>
-<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_c8eac47f6fce46b98aac6893b8ef26e8-25"><code data-line-number="25"></code></a></td>
-<td class="code"><code><a id="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-25" name="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-25"></a>    <span class="p">}</span>
-</code></td>
-</tr>
-<tr>
-<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_c8eac47f6fce46b98aac6893b8ef26e8-26"><code data-line-number="26"></code></a></td>
-<td class="code"><code><a id="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-26" name="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-26"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">dayin</span><span class="p">(</span><span class="n">String</span> <span class="n">zifuchuan</span><span class="p">)</span> <span class="p">{</span>
-</code></td>
-</tr>
-<tr>
-<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_c8eac47f6fce46b98aac6893b8ef26e8-27"><code data-line-number="27"></code></a></td>
-<td class="code"><code><a id="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-27" name="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-27"></a>        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">zifuchuan</span><span class="p">);</span>
-</code></td>
-</tr>
-<tr>
-<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_c8eac47f6fce46b98aac6893b8ef26e8-28"><code data-line-number="28"></code></a></td>
-<td class="code"><code><a id="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-28" name="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-28"></a>    <span class="p">}</span>
-</code></td>
-</tr>
-<tr>
-<td class="linenos linenodiv"><a href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_c8eac47f6fce46b98aac6893b8ef26e8-29"><code data-line-number="29"></code></a></td>
-<td class="code"><code><a id="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-29" name="rest_code_c8eac47f6fce46b98aac6893b8ef26e8-29"></a><span class="p">}</span>
-</code></td>
-</tr>
-</table></div>
-<pre class="code text"><a id="rest_code_cd2df579b5494b90bf39dde301111de4-1" name="rest_code_cd2df579b5494b90bf39dde301111de4-1" href="posts/javadai-ma-an-li-20-javakai-guan-fen-zhi-ji-suan-mou-yue-mou-ri-shi-2022nian-de-di-ji-tian.html#rest_code_cd2df579b5494b90bf39dde301111de4-1"></a>2022年10月21日是这一年的第294天
 </pre>
     </div>
     </article>
