@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# " lang="zh_cn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Java中do...while结构应用场景探究 | 写程序的龙龙</title>
+<link href="../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<meta name="theme-color" content="#5670d4">
+<meta name="generator" content="Nikola (getnikola.com)">
+<link rel="alternate" type="application/rss+xml" title="RSS" hreflang="zh_cn" href="../rss.xml">
+<link rel="canonical" href="https://codinglonglong.github.io/posts/javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html">
+<!--[if lt IE 9]><script src="../assets/js/html5.js"></script><![endif]--><script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ew9g8uqr1q");
+</script><meta name="author" content="龙龙">
+<link rel="prev" href="javadai-ma-an-li-40-biao-zhi-bian-liang-fa-pan-duan-zhi-shu.html" title="Java代码案例40——标志变量法判断质数" type="text/html">
+<meta property="og:site_name" content="写程序的龙龙">
+<meta property="og:title" content="Java中do...while结构应用场景探究">
+<meta property="og:url" content="https://codinglonglong.github.io/posts/javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html">
+<meta property="og:description" content="本文针对如下业务流程的实现方法进行了探究。
+
+检测用户是否已登录，未登录则退出系统
+检测题库名是否有效，无效则退出系统
+检测考试是否还有时间，没有时间则退出系统
+答题，正常退出系统
+
+对比了【多层嵌套分支法】、【标志变量法】和【do...while(false)循环法】，深刻体现了do...while结构在此类业务流程中的巧妙之处。
+
+package xiangmu;
+
+public class ">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="2022-12-16T01:05:36+08:00">
+<meta property="article:tag" content="Java探究">
+</head>
+<body>
+<a href="#content" class="sr-only sr-only-focusable">跳到主内容</a>
+
+<!-- Header and menu bar -->
+<div class="container">
+      <header class="blog-header py-3"><div class="row nbb-header align-items-center">
+          <div class="col-md-3 col-xs-2 col-sm-2" style="width: auto;">
+            <button class="navbar-toggler navbar-light bg-light nbb-navbar-toggler" type="button" data-toggle="collapse" data-target=".bs-nav-collapsible" aria-controls="bs-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse bs-nav-collapsible bootblog4-search-form-holder">
+                
+            </div>
+        </div>
+          <div class="col-md-6 col-xs-10 col-sm-10 bootblog4-brand" style="width: auto;">
+            <a class="navbar-brand blog-header-logo text-dark" href="../">
+
+            <span id="blog-title">写程序的龙龙</span>
+        </a>
+          </div>
+            <div class="col-md-3 justify-content-end align-items-center bs-nav-collapsible collapse flex-collapse bootblog4-right-nav">
+            <nav class="navbar navbar-light bg-white"><ul class="navbar-nav bootblog4-right-nav">
+<li class="nav-item">
+    <a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.rst" id="sourcelink" class="nav-link">源文件</a>
+    </li>
+
+
+                    
+            </ul></nav>
+</div>
+    </div>
+</header><nav class="navbar navbar-expand-md navbar-light bg-white static-top"><div class="collapse navbar-collapse bs-nav-collapsible" id="bs-navbar">
+            <ul class="navbar-nav nav-fill d-flex w-100">
+<li class="nav-item">
+<a href="../archive.html" class="nav-link">目录</a>
+                </li>
+<li class="nav-item">
+<a href="../categories/" class="nav-link">标签</a>
+
+                
+            </li>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</nav>
+</div>
+
+<div class="container" id="content" role="main">
+    <div class="body-content">
+        <!--Body content-->
+        
+        
+        
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="#" class="u-url">Java中do...while结构应用场景探究</a></h1>
+
+        <div class="metadata">
+            <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
+                    龙龙
+            </span></p>
+            <p class="dateline">
+            <a href="#" rel="bookmark">
+            <time class="published dt-published" datetime="2022-12-16T01:05:36+08:00" itemprop="datePublished" title="2022-12-16 01:05">2022-12-16 01:05</time></a>
+            </p>
+            
+        <p class="sourceline"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.rst" class="sourcelink">源文件</a></p>
+
+        </div>
+        
+
+    </header><div class="e-content entry-content" itemprop="articleBody text">
+    <p>本文针对如下业务流程的实现方法进行了探究。</p>
+<ol class="arabic simple">
+<li><p>检测用户是否已登录，未登录则退出系统</p></li>
+<li><p>检测题库名是否有效，无效则退出系统</p></li>
+<li><p>检测考试是否还有时间，没有时间则退出系统</p></li>
+<li><p>答题，正常退出系统</p></li>
+</ol>
+<p>对比了【多层嵌套分支法】、【标志变量法】和【do...while(false)循环法】，深刻体现了do...while结构在此类业务流程中的巧妙之处。</p>
+<!-- TEASER_END -->
+<div class="code"><table class="codetable">
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-1"><code data-line-number=" 1"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-1" name="rest_code_62cde89638cd48ce856470e40b78e7bf-1"></a><span class="kn">package</span> <span class="nn">xiangmu</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-2"><code data-line-number=" 2"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-2" name="rest_code_62cde89638cd48ce856470e40b78e7bf-2"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-3"><code data-line-number=" 3"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-3" name="rest_code_62cde89638cd48ce856470e40b78e7bf-3"></a><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ceshi</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-4"><code data-line-number=" 4"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-4" name="rest_code_62cde89638cd48ce856470e40b78e7bf-4"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]</span><span class="p">)</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-5"><code data-line-number=" 5"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-5" name="rest_code_62cde89638cd48ce856470e40b78e7bf-5"></a>        <span class="c1">// 写法1：多层嵌套分支</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-6"><code data-line-number=" 6"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-6" name="rest_code_62cde89638cd48ce856470e40b78e7bf-6"></a>        <span class="c1">// 如果需要完成的检测函数很多，那么if分支的嵌套层次就会很多</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-7"><code data-line-number=" 7"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-7" name="rest_code_62cde89638cd48ce856470e40b78e7bf-7"></a>        <span class="n">String</span> <span class="n">yhm</span> <span class="o">=</span> <span class="s">"Tom"</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-8"><code data-line-number=" 8"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-8" name="rest_code_62cde89638cd48ce856470e40b78e7bf-8"></a>        <span class="n">String</span> <span class="n">tkm</span> <span class="o">=</span> <span class="s">"Java期末考试"</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-9"><code data-line-number=" 9"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-9" name="rest_code_62cde89638cd48ce856470e40b78e7bf-9"></a>        <span class="kt">double</span> <span class="n">sj</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-10"><code data-line-number="10"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-10" name="rest_code_62cde89638cd48ce856470e40b78e7bf-10"></a>        <span class="k">if</span><span class="p">(</span><span class="n">jiance_yonghudenglu</span><span class="p">(</span><span class="n">yhm</span><span class="p">))</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-11"><code data-line-number="11"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-11" name="rest_code_62cde89638cd48ce856470e40b78e7bf-11"></a>            <span class="k">if</span><span class="p">(</span><span class="n">jiance_tikuyouxiao</span><span class="p">(</span><span class="n">tkm</span><span class="p">))</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-12"><code data-line-number="12"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-12" name="rest_code_62cde89638cd48ce856470e40b78e7bf-12"></a>                <span class="k">if</span><span class="p">(</span><span class="n">jiance_shijian</span><span class="p">(</span><span class="n">sj</span><span class="p">))</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-13"><code data-line-number="13"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-13" name="rest_code_62cde89638cd48ce856470e40b78e7bf-13"></a>                    <span class="n">dati</span><span class="p">();</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-14"><code data-line-number="14"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-14" name="rest_code_62cde89638cd48ce856470e40b78e7bf-14"></a>                <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-15"><code data-line-number="15"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-15" name="rest_code_62cde89638cd48ce856470e40b78e7bf-15"></a>                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"考试时间已用完！"</span><span class="p">);</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-16"><code data-line-number="16"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-16" name="rest_code_62cde89638cd48ce856470e40b78e7bf-16"></a>                <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-17"><code data-line-number="17"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-17" name="rest_code_62cde89638cd48ce856470e40b78e7bf-17"></a>            <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-18"><code data-line-number="18"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-18" name="rest_code_62cde89638cd48ce856470e40b78e7bf-18"></a>                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"题库名无效！"</span><span class="p">);</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-19"><code data-line-number="19"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-19" name="rest_code_62cde89638cd48ce856470e40b78e7bf-19"></a>            <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-20"><code data-line-number="20"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-20" name="rest_code_62cde89638cd48ce856470e40b78e7bf-20"></a>        <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-21"><code data-line-number="21"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-21" name="rest_code_62cde89638cd48ce856470e40b78e7bf-21"></a>            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"用户未登录！"</span><span class="p">);</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-22"><code data-line-number="22"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-22" name="rest_code_62cde89638cd48ce856470e40b78e7bf-22"></a>        <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-23"><code data-line-number="23"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-23" name="rest_code_62cde89638cd48ce856470e40b78e7bf-23"></a>        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"退出系统！"</span><span class="p">);</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-24"><code data-line-number="24"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-24" name="rest_code_62cde89638cd48ce856470e40b78e7bf-24"></a>    <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-25"><code data-line-number="25"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-25" name="rest_code_62cde89638cd48ce856470e40b78e7bf-25"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">jiance_yonghudenglu</span><span class="p">(</span><span class="n">String</span> <span class="n">yonghuming</span><span class="p">)</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-26"><code data-line-number="26"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-26" name="rest_code_62cde89638cd48ce856470e40b78e7bf-26"></a>        <span class="c1">// 检测用户是否已登录，已登录返回true，未登录返回false</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-27"><code data-line-number="27"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-27" name="rest_code_62cde89638cd48ce856470e40b78e7bf-27"></a>        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-28"><code data-line-number="28"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-28" name="rest_code_62cde89638cd48ce856470e40b78e7bf-28"></a>    <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-29"><code data-line-number="29"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-29" name="rest_code_62cde89638cd48ce856470e40b78e7bf-29"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">jiance_tikuyouxiao</span><span class="p">(</span><span class="n">String</span> <span class="n">tikuming</span><span class="p">)</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-30"><code data-line-number="30"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-30" name="rest_code_62cde89638cd48ce856470e40b78e7bf-30"></a>        <span class="c1">// 检测题库名是否有效，有效返回true，无效返回false</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-31"><code data-line-number="31"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-31" name="rest_code_62cde89638cd48ce856470e40b78e7bf-31"></a>        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-32"><code data-line-number="32"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-32" name="rest_code_62cde89638cd48ce856470e40b78e7bf-32"></a>    <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-33"><code data-line-number="33"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-33" name="rest_code_62cde89638cd48ce856470e40b78e7bf-33"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">jiance_shijian</span><span class="p">(</span><span class="kt">double</span> <span class="n">shijian</span><span class="p">)</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-34"><code data-line-number="34"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-34" name="rest_code_62cde89638cd48ce856470e40b78e7bf-34"></a>        <span class="c1">// 检测考试是否还有时间，有时间返回true，没有时间返回false</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-35"><code data-line-number="35"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-35" name="rest_code_62cde89638cd48ce856470e40b78e7bf-35"></a>        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-36"><code data-line-number="36"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-36" name="rest_code_62cde89638cd48ce856470e40b78e7bf-36"></a>    <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-37"><code data-line-number="37"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-37" name="rest_code_62cde89638cd48ce856470e40b78e7bf-37"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">dati</span><span class="p">()</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-38"><code data-line-number="38"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-38" name="rest_code_62cde89638cd48ce856470e40b78e7bf-38"></a>        <span class="c1">// 答题</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-39"><code data-line-number="39"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-39" name="rest_code_62cde89638cd48ce856470e40b78e7bf-39"></a>        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"答题"</span><span class="p">);</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-40"><code data-line-number="40"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-40" name="rest_code_62cde89638cd48ce856470e40b78e7bf-40"></a>    <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_62cde89638cd48ce856470e40b78e7bf-41"><code data-line-number="41"></code></a></td>
+<td class="code"><code><a id="rest_code_62cde89638cd48ce856470e40b78e7bf-41" name="rest_code_62cde89638cd48ce856470e40b78e7bf-41"></a><span class="p">}</span>
+</code></td>
+</tr>
+</table></div>
+<div class="code"><table class="codetable">
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-1"><code data-line-number=" 1"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-1" name="rest_code_3ef85baeec1e4e278ce3038f56337050-1"></a><span class="kn">package</span> <span class="nn">xiangmu</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-2"><code data-line-number=" 2"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-2" name="rest_code_3ef85baeec1e4e278ce3038f56337050-2"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-3"><code data-line-number=" 3"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-3" name="rest_code_3ef85baeec1e4e278ce3038f56337050-3"></a><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ceshi</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-4"><code data-line-number=" 4"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-4" name="rest_code_3ef85baeec1e4e278ce3038f56337050-4"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]</span><span class="p">)</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-5"><code data-line-number=" 5"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-5" name="rest_code_3ef85baeec1e4e278ce3038f56337050-5"></a>        <span class="c1">// 写法2：标志变量法</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-6"><code data-line-number=" 6"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-6" name="rest_code_3ef85baeec1e4e278ce3038f56337050-6"></a>        <span class="c1">// 这样写不需要多层嵌套，但不管之前的检测函数是否通过，后续的每一个检测函数都需要执行</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-7"><code data-line-number=" 7"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-7" name="rest_code_3ef85baeec1e4e278ce3038f56337050-7"></a>        <span class="n">String</span> <span class="n">yhm</span> <span class="o">=</span> <span class="s">"Tom"</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-8"><code data-line-number=" 8"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-8" name="rest_code_3ef85baeec1e4e278ce3038f56337050-8"></a>        <span class="n">String</span> <span class="n">tkm</span> <span class="o">=</span> <span class="s">"Java期末考试"</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-9"><code data-line-number=" 9"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-9" name="rest_code_3ef85baeec1e4e278ce3038f56337050-9"></a>        <span class="kt">double</span> <span class="n">sj</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-10"><code data-line-number="10"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-10" name="rest_code_3ef85baeec1e4e278ce3038f56337050-10"></a>        <span class="kt">int</span> <span class="n">biaozhi</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-11"><code data-line-number="11"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-11" name="rest_code_3ef85baeec1e4e278ce3038f56337050-11"></a>        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">jiance_yonghudenglu</span><span class="p">(</span><span class="n">yhm</span><span class="p">))</span> <span class="p">{</span>    <span class="c1">// !true == false    !false == true</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-12"><code data-line-number="12"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-12" name="rest_code_3ef85baeec1e4e278ce3038f56337050-12"></a>            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"用户未登录！"</span><span class="p">);</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-13"><code data-line-number="13"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-13" name="rest_code_3ef85baeec1e4e278ce3038f56337050-13"></a>            <span class="n">biaozhi</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-14"><code data-line-number="14"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-14" name="rest_code_3ef85baeec1e4e278ce3038f56337050-14"></a>        <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-15"><code data-line-number="15"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-15" name="rest_code_3ef85baeec1e4e278ce3038f56337050-15"></a>        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">jiance_tikuyouxiao</span><span class="p">(</span><span class="n">tkm</span><span class="p">))</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-16"><code data-line-number="16"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-16" name="rest_code_3ef85baeec1e4e278ce3038f56337050-16"></a>            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"题库名无效！"</span><span class="p">);</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-17"><code data-line-number="17"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-17" name="rest_code_3ef85baeec1e4e278ce3038f56337050-17"></a>            <span class="n">biaozhi</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-18"><code data-line-number="18"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-18" name="rest_code_3ef85baeec1e4e278ce3038f56337050-18"></a>        <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-19"><code data-line-number="19"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-19" name="rest_code_3ef85baeec1e4e278ce3038f56337050-19"></a>        <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">jiance_shijian</span><span class="p">(</span><span class="n">sj</span><span class="p">))</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-20"><code data-line-number="20"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-20" name="rest_code_3ef85baeec1e4e278ce3038f56337050-20"></a>            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"考试时间已用完！"</span><span class="p">);</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-21"><code data-line-number="21"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-21" name="rest_code_3ef85baeec1e4e278ce3038f56337050-21"></a>            <span class="n">biaozhi</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-22"><code data-line-number="22"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-22" name="rest_code_3ef85baeec1e4e278ce3038f56337050-22"></a>        <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-23"><code data-line-number="23"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-23" name="rest_code_3ef85baeec1e4e278ce3038f56337050-23"></a>        <span class="k">if</span><span class="p">(</span><span class="n">biaozhi</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-24"><code data-line-number="24"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-24" name="rest_code_3ef85baeec1e4e278ce3038f56337050-24"></a>            <span class="n">dati</span><span class="p">();</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-25"><code data-line-number="25"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-25" name="rest_code_3ef85baeec1e4e278ce3038f56337050-25"></a>        <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-26"><code data-line-number="26"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-26" name="rest_code_3ef85baeec1e4e278ce3038f56337050-26"></a>        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"退出系统！"</span><span class="p">);</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-27"><code data-line-number="27"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-27" name="rest_code_3ef85baeec1e4e278ce3038f56337050-27"></a>    <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-28"><code data-line-number="28"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-28" name="rest_code_3ef85baeec1e4e278ce3038f56337050-28"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">jiance_yonghudenglu</span><span class="p">(</span><span class="n">String</span> <span class="n">yonghuming</span><span class="p">)</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-29"><code data-line-number="29"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-29" name="rest_code_3ef85baeec1e4e278ce3038f56337050-29"></a>        <span class="c1">// 检测用户是否已登录，已登录返回true，未登录返回false</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-30"><code data-line-number="30"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-30" name="rest_code_3ef85baeec1e4e278ce3038f56337050-30"></a>        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-31"><code data-line-number="31"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-31" name="rest_code_3ef85baeec1e4e278ce3038f56337050-31"></a>    <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-32"><code data-line-number="32"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-32" name="rest_code_3ef85baeec1e4e278ce3038f56337050-32"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">jiance_tikuyouxiao</span><span class="p">(</span><span class="n">String</span> <span class="n">tikuming</span><span class="p">)</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-33"><code data-line-number="33"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-33" name="rest_code_3ef85baeec1e4e278ce3038f56337050-33"></a>        <span class="c1">// 检测题库名是否有效，有效返回true，无效返回false</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-34"><code data-line-number="34"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-34" name="rest_code_3ef85baeec1e4e278ce3038f56337050-34"></a>        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-35"><code data-line-number="35"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-35" name="rest_code_3ef85baeec1e4e278ce3038f56337050-35"></a>    <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-36"><code data-line-number="36"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-36" name="rest_code_3ef85baeec1e4e278ce3038f56337050-36"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">jiance_shijian</span><span class="p">(</span><span class="kt">double</span> <span class="n">shijian</span><span class="p">)</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-37"><code data-line-number="37"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-37" name="rest_code_3ef85baeec1e4e278ce3038f56337050-37"></a>        <span class="c1">// 检测考试是否还有时间，有时间返回true，没有时间返回false</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-38"><code data-line-number="38"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-38" name="rest_code_3ef85baeec1e4e278ce3038f56337050-38"></a>        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-39"><code data-line-number="39"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-39" name="rest_code_3ef85baeec1e4e278ce3038f56337050-39"></a>    <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-40"><code data-line-number="40"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-40" name="rest_code_3ef85baeec1e4e278ce3038f56337050-40"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">dati</span><span class="p">()</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-41"><code data-line-number="41"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-41" name="rest_code_3ef85baeec1e4e278ce3038f56337050-41"></a>        <span class="c1">// 答题</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-42"><code data-line-number="42"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-42" name="rest_code_3ef85baeec1e4e278ce3038f56337050-42"></a>        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"答题"</span><span class="p">);</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-43"><code data-line-number="43"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-43" name="rest_code_3ef85baeec1e4e278ce3038f56337050-43"></a>    <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_3ef85baeec1e4e278ce3038f56337050-44"><code data-line-number="44"></code></a></td>
+<td class="code"><code><a id="rest_code_3ef85baeec1e4e278ce3038f56337050-44" name="rest_code_3ef85baeec1e4e278ce3038f56337050-44"></a><span class="p">}</span>
+</code></td>
+</tr>
+</table></div>
+<div class="code"><table class="codetable">
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-1"><code data-line-number=" 1"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-1" name="rest_code_c144cadd641a4a37abcbff252f402731-1"></a><span class="kn">package</span> <span class="nn">xiangmu</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-2"><code data-line-number=" 2"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-2" name="rest_code_c144cadd641a4a37abcbff252f402731-2"></a>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-3"><code data-line-number=" 3"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-3" name="rest_code_c144cadd641a4a37abcbff252f402731-3"></a><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ceshi</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-4"><code data-line-number=" 4"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-4" name="rest_code_c144cadd641a4a37abcbff252f402731-4"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span> <span class="n">args</span><span class="o">[]</span><span class="p">)</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-5"><code data-line-number=" 5"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-5" name="rest_code_c144cadd641a4a37abcbff252f402731-5"></a>        <span class="c1">// 写法3：do...while(false)循环法</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-6"><code data-line-number=" 6"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-6" name="rest_code_c144cadd641a4a37abcbff252f402731-6"></a>        <span class="c1">// 不需要多层if嵌套，只要有一个检测函数不通过，其他检测函数直接被跳过</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-7"><code data-line-number=" 7"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-7" name="rest_code_c144cadd641a4a37abcbff252f402731-7"></a>        <span class="c1">// 既实现了减少代码嵌套层次，又保证了执行效率</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-8"><code data-line-number=" 8"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-8" name="rest_code_c144cadd641a4a37abcbff252f402731-8"></a>        <span class="c1">// 巧妙！！！</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-9"><code data-line-number=" 9"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-9" name="rest_code_c144cadd641a4a37abcbff252f402731-9"></a>        <span class="n">String</span> <span class="n">yhm</span> <span class="o">=</span> <span class="s">"Tom"</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-10"><code data-line-number="10"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-10" name="rest_code_c144cadd641a4a37abcbff252f402731-10"></a>        <span class="n">String</span> <span class="n">tkm</span> <span class="o">=</span> <span class="s">"Java期末考试"</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-11"><code data-line-number="11"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-11" name="rest_code_c144cadd641a4a37abcbff252f402731-11"></a>        <span class="kt">double</span> <span class="n">sj</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-12"><code data-line-number="12"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-12" name="rest_code_c144cadd641a4a37abcbff252f402731-12"></a>        <span class="k">do</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-13"><code data-line-number="13"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-13" name="rest_code_c144cadd641a4a37abcbff252f402731-13"></a>            <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">jiance_yonghudenglu</span><span class="p">(</span><span class="n">yhm</span><span class="p">))</span> <span class="p">{</span>       <span class="c1">// !true == false    !false == true</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-14"><code data-line-number="14"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-14" name="rest_code_c144cadd641a4a37abcbff252f402731-14"></a>                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"用户未登录！"</span><span class="p">);</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-15"><code data-line-number="15"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-15" name="rest_code_c144cadd641a4a37abcbff252f402731-15"></a>                <span class="k">break</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-16"><code data-line-number="16"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-16" name="rest_code_c144cadd641a4a37abcbff252f402731-16"></a>            <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-17"><code data-line-number="17"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-17" name="rest_code_c144cadd641a4a37abcbff252f402731-17"></a>            <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">jiance_tikuyouxiao</span><span class="p">(</span><span class="n">tkm</span><span class="p">))</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-18"><code data-line-number="18"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-18" name="rest_code_c144cadd641a4a37abcbff252f402731-18"></a>                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"题库名无效！"</span><span class="p">);</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-19"><code data-line-number="19"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-19" name="rest_code_c144cadd641a4a37abcbff252f402731-19"></a>                <span class="k">break</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-20"><code data-line-number="20"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-20" name="rest_code_c144cadd641a4a37abcbff252f402731-20"></a>            <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-21"><code data-line-number="21"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-21" name="rest_code_c144cadd641a4a37abcbff252f402731-21"></a>            <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">jiance_shijian</span><span class="p">(</span><span class="n">sj</span><span class="p">))</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-22"><code data-line-number="22"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-22" name="rest_code_c144cadd641a4a37abcbff252f402731-22"></a>                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"考试时间已用完！"</span><span class="p">);</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-23"><code data-line-number="23"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-23" name="rest_code_c144cadd641a4a37abcbff252f402731-23"></a>                <span class="k">break</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-24"><code data-line-number="24"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-24" name="rest_code_c144cadd641a4a37abcbff252f402731-24"></a>            <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-25"><code data-line-number="25"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-25" name="rest_code_c144cadd641a4a37abcbff252f402731-25"></a>            <span class="n">dati</span><span class="p">();</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-26"><code data-line-number="26"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-26" name="rest_code_c144cadd641a4a37abcbff252f402731-26"></a>        <span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-27"><code data-line-number="27"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-27" name="rest_code_c144cadd641a4a37abcbff252f402731-27"></a>        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"退出系统！"</span><span class="p">);</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-28"><code data-line-number="28"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-28" name="rest_code_c144cadd641a4a37abcbff252f402731-28"></a>    <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-29"><code data-line-number="29"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-29" name="rest_code_c144cadd641a4a37abcbff252f402731-29"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">jiance_yonghudenglu</span><span class="p">(</span><span class="n">String</span> <span class="n">yonghuming</span><span class="p">)</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-30"><code data-line-number="30"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-30" name="rest_code_c144cadd641a4a37abcbff252f402731-30"></a>        <span class="c1">// 检测用户是否已登录，已登录返回true，未登录返回false</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-31"><code data-line-number="31"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-31" name="rest_code_c144cadd641a4a37abcbff252f402731-31"></a>        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-32"><code data-line-number="32"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-32" name="rest_code_c144cadd641a4a37abcbff252f402731-32"></a>    <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-33"><code data-line-number="33"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-33" name="rest_code_c144cadd641a4a37abcbff252f402731-33"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">jiance_tikuyouxiao</span><span class="p">(</span><span class="n">String</span> <span class="n">tikuming</span><span class="p">)</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-34"><code data-line-number="34"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-34" name="rest_code_c144cadd641a4a37abcbff252f402731-34"></a>        <span class="c1">// 检测题库名是否有效，有效返回true，无效返回false</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-35"><code data-line-number="35"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-35" name="rest_code_c144cadd641a4a37abcbff252f402731-35"></a>        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-36"><code data-line-number="36"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-36" name="rest_code_c144cadd641a4a37abcbff252f402731-36"></a>    <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-37"><code data-line-number="37"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-37" name="rest_code_c144cadd641a4a37abcbff252f402731-37"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">jiance_shijian</span><span class="p">(</span><span class="kt">double</span> <span class="n">shijian</span><span class="p">)</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-38"><code data-line-number="38"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-38" name="rest_code_c144cadd641a4a37abcbff252f402731-38"></a>        <span class="c1">// 检测考试是否还有时间，有时间返回true，没有时间返回false</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-39"><code data-line-number="39"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-39" name="rest_code_c144cadd641a4a37abcbff252f402731-39"></a>        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-40"><code data-line-number="40"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-40" name="rest_code_c144cadd641a4a37abcbff252f402731-40"></a>    <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-41"><code data-line-number="41"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-41" name="rest_code_c144cadd641a4a37abcbff252f402731-41"></a>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">dati</span><span class="p">()</span> <span class="p">{</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-42"><code data-line-number="42"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-42" name="rest_code_c144cadd641a4a37abcbff252f402731-42"></a>        <span class="c1">// 答题</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-43"><code data-line-number="43"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-43" name="rest_code_c144cadd641a4a37abcbff252f402731-43"></a>        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"答题"</span><span class="p">);</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-44"><code data-line-number="44"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-44" name="rest_code_c144cadd641a4a37abcbff252f402731-44"></a>    <span class="p">}</span>
+</code></td>
+</tr>
+<tr>
+<td class="linenos linenodiv"><a href="javazhong-dowhilejie-gou-ying-yong-chang-jing-tan-jiu.html#rest_code_c144cadd641a4a37abcbff252f402731-45"><code data-line-number="45"></code></a></td>
+<td class="code"><code><a id="rest_code_c144cadd641a4a37abcbff252f402731-45" name="rest_code_c144cadd641a4a37abcbff252f402731-45"></a><span class="p">}</span>
+</code></td>
+</tr>
+</table></div>
+    </div>
+    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+<li><a class="tag p-category" href="../categories/javatan-jiu.html" rel="tag">Java探究</a></li>
+        </ul>
+<ul class="pager hidden-print">
+<li class="previous">
+                <a href="javadai-ma-an-li-40-biao-zhi-bian-liang-fa-pan-duan-zhi-shu.html" rel="prev" title="Java代码案例40——标志变量法判断质数">上一篇文章</a>
+            </li>
+        </ul></nav></aside></article><!--End of body content--><footer id="footer"></footer>
+</div>
+</div>
+
+
+        <script src="../assets/js/all-nocdn.js"></script><script>
+    baguetteBox.run('div#content', {
+        ignoreClass: 'islink',
+        captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
+    </script>
+</body>
+</html>
+
