@@ -25,7 +25,7 @@
 'robots_file:output\\robots.txt', (22528, 136)
 'copy_assets:output\\assets\\js\\gallery.min.js', (23040, 416)
 'copy_assets:output\\assets\\css\\rst_base.css', (23552, 415)
-'sitemap:output\\sitemap.xml', (10458112, 17019)
+'sitemap:output\\sitemap.xml', (10458112, 17018)
 'render_posts', (28160, 56)
 'copy_assets:output\\assets\\css\\html4css1.css', (28672, 415)
 'render_posts:timeline_changes', (29184, 109)
